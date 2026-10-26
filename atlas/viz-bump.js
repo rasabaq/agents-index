@@ -4,19 +4,22 @@
   const R = 9.5; // muted dot radius
   const RH = 11; // highlighted dot radius
   const MAX_PINS = 3;
+  // Pin colors by slot. The first pin (Chile by default) is the focus country, so it gets sunrise.
+  const SLOTS = ['var(--sunrise)', 'var(--magenta)', 'var(--c3)'];
 
   const CSS = `
 .v-bump .bump-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-bottom: 18px; }
 .v-bump .bump-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.v-bump .bump-chip { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 13px; font-weight: 500; color: var(--ink-2); cursor: pointer; }
+.v-bump .bump-chip { display: inline-flex; align-items: center; gap: 7px; height: 30px; padding: 0 11px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255, 255, 255, 0.03); font: 500 11.5px/1 var(--mono); letter-spacing: 0.04em; color: var(--ink-2); cursor: pointer; }
+.v-bump .bump-chip .flag { font-size: 14px; }
 .v-bump .bump-chip:hover { border-color: var(--line-strong); color: var(--ink); }
-.v-bump .bump-chip[aria-pressed='true'] { background: var(--surface-2); border-color: var(--line-strong); color: var(--ink); font-weight: 600; }
+.v-bump .bump-chip[aria-pressed='true'] { background: var(--surface-2); border-color: var(--line-strong); color: var(--ink); }
 .v-bump .bump-key { display: inline-block; width: 14px; border-top: 2.5px solid var(--line-strong); border-radius: 2px; }
-.v-bump .bump-hint { margin: 0; font-size: 13px; color: var(--muted); }
+.v-bump .bump-hint { margin: 0; font: 400 11.5px/1.4 var(--mono); color: var(--muted); }
 .v-bump svg { display: block; width: 100%; overflow: visible; }
 .v-bump .grid { stroke: var(--grid); stroke-width: 1; }
 .v-bump .sep { stroke: var(--line-strong); stroke-width: 1; }
-.v-bump .tick { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.v-bump .tick { fill: var(--muted); font: 500 11px var(--mono); }
 .v-bump .head { fill: var(--ink-2); font-size: 12px; font-weight: 600; }
 .v-bump .head.all { fill: var(--ink); }
 .v-bump .halo { paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
@@ -37,7 +40,7 @@
 .v-bump .lab.on text { fill: var(--ink); font-weight: 650; }
 .v-bump .lab-sep { fill: var(--muted); font-size: 12.5px; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
 .v-bump .lab .ring { fill: transparent; stroke: none; }
-.v-bump .lab:focus-visible .ring { stroke: var(--accent); stroke-width: 2; }
+.v-bump .lab:focus-visible .ring { stroke: var(--sunrise); stroke-width: 1.5; }
 `;
 
   // Competition ranking per column: equal scores share a rank (1, 2, 2, 4).
@@ -91,10 +94,10 @@
       // Pinned countries keep their slot color; a hovered one previews the color it would get when pinned.
       function color(code) {
         const pin = pins.find((p) => p.code === code);
-        if (pin) return `var(--c${pin.slot + 1})`;
+        if (pin) return SLOTS[pin.slot];
         if (code !== hover) return null;
         const s = freeSlot();
-        return s == null ? 'var(--ink)' : `var(--c${s + 1})`;
+        return s == null ? 'var(--ink)' : SLOTS[s];
       }
       function toggle(code) {
         const i = pins.findIndex((p) => p.code === code);
@@ -120,13 +123,13 @@
         .on('pointerenter focus', (e, r) => setHover(r.code))
         .on('pointerleave blur', () => setHover(null));
       chips.append('span').attr('class', 'bump-key').attr('aria-hidden', 'true');
-      chips.append('span').text((r) => `${ctx.emoji(r.code)} ${r.code}`);
+      chips.append('span').html((r) => `${ctx.flag(r.code)}${r.code}`);
 
       function tipHtml(code, col) {
         const r = ctx.byCode[code], p = col.at[code];
         const t = p.tied;
         const tied = !t.length ? '' : t.length > 2 ? `, tied with ${t.length} others` : `, tied with ${t.map((q) => ctx.esc(q.name)).join(' and ')}`;
-        return `<strong>${ctx.emoji(code)} ${ctx.esc(r.name)}</strong>${ctx.esc(col.id === 'overall' ? 'Overall' : col.name)}<br>Rank ${p.rank} of ${N}${tied}<br>Score ${p.score} out of 100`;
+        return `<strong>${ctx.flag(code)}${ctx.esc(r.name)}</strong>${ctx.esc(col.id === 'overall' ? 'Overall' : col.name)}<br>Rank ${p.rank} of ${N}${tied}<br>Score ${p.score} out of 100`;
       }
 
       let measure;

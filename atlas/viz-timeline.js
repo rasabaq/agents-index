@@ -4,7 +4,7 @@
   title: 'Timeline',
   blurb: 'How fast did agent capabilities arrive? Each dot is one cited source, placed at its date in the lane of the category it supports; the bars on top count sources per quarter.',
   render(el, ctx) {
-    const { esc, emoji } = ctx;
+    const { esc, emoji, flag } = ctx;
     const asOf = new Date(`${ctx.meta.asOf}T00:00:00Z`);
     const START = new Date(Date.UTC(2016, 0, 1));
     const BREAK = new Date(Date.UTC(2025, 0, 1)); // time before this is drawn compressed
@@ -60,7 +60,9 @@
     if (!document.getElementById('v-timeline-css')) {
       document.head.insertAdjacentHTML('beforeend', `<style id="v-timeline-css">
 .v-timeline .pill { display: inline-flex; align-items: center; gap: 6px; }
-.v-timeline .legend { margin-bottom: 12px; }
+/* a picked country is the focus: sunrise pill, sunrise bars and dots */
+.v-timeline .pill[aria-pressed='true']:not([data-c='ALL']) { background: var(--sun-tint); border-color: rgba(255, 182, 114, 0.45); color: var(--sunrise); }
+.v-timeline .legend { margin-bottom: 12px; font: 400 11.5px/1.4 var(--mono); }
 .v-timeline .key-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; box-sizing: border-box; }
 .v-timeline .key-dot.filled { background: var(--ink-2); }
 .v-timeline .key-dot.hollow { border: 1.5px solid var(--ink-2); }
@@ -69,12 +71,14 @@
 .v-timeline svg text { font-size: 12px; }
 .v-timeline .lane-name { fill: var(--ink-2); font-size: 13px; }
 .v-timeline .lane-count, .v-timeline .tick, .v-timeline .note { fill: var(--muted); font-variant-numeric: tabular-nums; }
-.v-timeline .tick.year { fill: var(--ink-2); font-weight: 600; }
+.v-timeline svg text.tick, .v-timeline svg text.lane-count, .v-timeline svg text.note { font: 400 11px var(--mono); }
+.v-timeline svg text.tick.year { fill: var(--ink-2); font-weight: 500; }
 .v-timeline .grid { stroke: var(--grid); stroke-width: 1; }
 .v-timeline .lane-rule { stroke: var(--line); stroke-width: 1; }
 .v-timeline .band { fill: var(--surface-2); }
 .v-timeline .bar { fill: var(--accent); }
-.v-timeline .bar-all { fill: var(--grid); }
+.v-timeline .bar.pick { fill: var(--sunrise); }
+.v-timeline .bar-all { fill: var(--line-strong); }
 .v-timeline .qhit { fill: transparent; }
 .v-timeline .qhit:hover + .bar, .v-timeline .bar.hot { opacity: .75; }
 .v-timeline .bar-label { fill: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -82,25 +86,28 @@
 .v-timeline .dot.filled { fill: var(--ink-2); stroke: var(--surface); }
 .v-timeline .dot.hollow { fill: var(--surface); stroke: var(--ink-2); }
 .v-timeline .dot.dim { opacity: .14; }
-.v-timeline .dot.hot { stroke: var(--accent); stroke-width: 3; opacity: 1; }
+.v-timeline .dot.filled.pick { fill: var(--sunrise); }
+.v-timeline .dot.hollow.pick { stroke: var(--sunrise); }
+.v-timeline .dot.hot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; }
 .v-timeline a { outline: none; cursor: pointer; }
-.v-timeline a:focus-visible .dot { stroke: var(--accent); stroke-width: 3; opacity: 1; }
+.v-timeline a:focus-visible .dot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; }
 .v-timeline .ring { fill: none; stroke: var(--ink); stroke-width: 1.5; }
 .v-timeline .leader { stroke: var(--line-strong); stroke-width: 1; }
-.v-timeline .badge { fill: var(--ink); }
-.v-timeline .badge-n { fill: var(--page); font-size: 11px; font-weight: 700; }
+/* key moments are numbered like function keys: magenta caps */
+.v-timeline .badge { fill: var(--magenta); }
+.v-timeline svg text.badge-n { fill: var(--page); font: 500 11px var(--mono); }
 .v-timeline .moments { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 6px; font-size: 13px; color: var(--ink-2); }
 .v-timeline .moments li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: baseline; }
-.v-timeline .moments b { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: var(--ink); color: var(--page); font-size: 11px; }
+.v-timeline .moments b { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 3px; background: var(--magenta); color: var(--page); font: 500 11px/1 var(--mono); }
 .v-timeline .moments .when { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
-.v-timeline .tl-note { margin: 12px 0 0; font-size: 12.5px; color: var(--muted); max-width: 90ch; }
+.v-timeline .tl-note { margin: 12px 0 0; font: 400 11.5px/1.6 var(--mono); color: var(--muted); max-width: 100ch; }
 </style>`);
     }
 
     el.classList.add('v-timeline');
     el.innerHTML = `
       <div class="filters" role="group" aria-label="Highlight sources for one country">
-        ${[['ALL', 'All countries'], ...ctx.meta.countries.map((c) => [c.code, `${emoji(c.code)} ${c.code}`])]
+        ${[['ALL', 'All countries'], ...ctx.meta.countries.map((c) => [c.code, `${flag(c.code)}${c.code}`])]
           .map(([code, label]) => `<button type="button" class="pill" data-c="${code}" aria-pressed="${code === 'ALL'}" ${code !== 'ALL' ? `aria-label="${esc(cName[code])}"` : ''}>${label}</button>`).join('')}
       </div>
       <div class="legend">
@@ -124,10 +131,10 @@
     }));
 
     const tipHtml = (s) => {
-      const caps = [...s.caps].map(([id, cs]) => `<div>${esc(capName[id])}: ${[...cs].join(', ')}</div>`).join('');
+      const caps = [...s.caps].map(([id, cs]) => `<div>${esc(capName[id])}: ${[...cs].map((c) => `<span class="nowrap">${flag(c)}${c}</span>`).join(' ')}</div>`).join('');
       return `<strong>${esc(s.title)}</strong><div style="opacity:.8">${esc(s.publisher)} · ${esc(s.label)} · ${TYPE[s.type] ?? esc(s.type)}</div>
         <div style="margin-top:6px">${caps}</div>
-        <div style="margin-top:4px;opacity:.8">${[...s.countries].map((c) => `${emoji(c)} ${c}`).join('  ')}</div>`;
+        <div style="margin-top:4px;opacity:.8">${[...s.countries].map((c) => `<span class="nowrap">${flag(c)}${c}</span>`).join(' ')}</div>`;
     };
     const atRect = (node) => { const r = node.getBoundingClientRect(); return { clientX: r.left + r.width / 2, clientY: r.top }; };
 
@@ -227,7 +234,7 @@
       // Bar strip.
       const strip = svg.append('g');
       strip.append('text').attr('class', 'lane-name').attr('x', 0).attr('y', phone ? 12 : stripTop + stripH - 4)
-        .text(country === 'ALL' ? 'Sources per quarter' : `Sources per quarter, ${country} in magenta`);
+        .text(country === 'ALL' ? 'Sources per quarter' : `Sources per quarter, ${emoji(country)} ${country} highlighted`);
       const topRound = (x, w, h, base) => {
         const r = Math.min(4, w / 2, h);
         return `M${x},${base}V${base - h + r}Q${x},${base - h} ${x + r},${base - h}H${x + w - r}Q${x + w},${base - h} ${x + w},${base - h + r}V${base}Z`;
@@ -243,7 +250,7 @@
           .on('pointerleave', () => ctx.tip.hide());
         if (!q.all) continue;
         if (country !== 'ALL') gq.append('path').attr('class', 'bar-all').attr('d', topRound(bx, w, yq(q.all), base)).style('pointer-events', 'none');
-        if (q.hit) gq.append('path').attr('class', 'bar').attr('d', topRound(bx, w, yq(q.hit), base)).style('pointer-events', 'none');
+        if (q.hit) gq.append('path').attr('class', `bar${country !== 'ALL' ? ' pick' : ''}`).attr('d', topRound(bx, w, yq(q.hit), base)).style('pointer-events', 'none');
       }
       const peak = quarters.reduce((a, b) => (b.all > a.all ? b : a));
       strip.append('text').attr('class', 'bar-label').attr('x', (peak.xa + peak.xb) / 2).attr('y', base - yq(peak.all) - 5)
@@ -265,7 +272,7 @@
         const bx = d.x, by = annTop + annH / 2;
         svg.append('line').attr('class', 'leader').attr('x1', bx).attr('x2', bx).attr('y1', by + 8).attr('y2', d.cy - R - 4);
         svg.append('circle').attr('class', 'ring').attr('cx', d.x).attr('cy', d.cy).attr('r', R + 3.5);
-        svg.append('circle').attr('class', 'badge').attr('cx', bx).attr('cy', by).attr('r', 8);
+        svg.append('rect').attr('class', 'badge').attr('x', bx - 8).attr('y', by - 8).attr('width', 16).attr('height', 16).attr('rx', 3);
         svg.append('text').attr('class', 'badge-n').attr('x', bx).attr('y', by + 4).attr('text-anchor', 'middle').text(d.s.moment);
       }
 
@@ -276,7 +283,7 @@
         .on('focus', function (e, d) { ctx.tip.show(atRect(this), tipHtml(d.s)); })
         .on('blur', () => ctx.tip.hide());
       links.append('circle').attr('cx', (d) => d.x).attr('cy', (d) => d.cy).attr('r', R)
-        .attr('class', (d) => `dot ${FILLED.has(d.s.type) ? 'filled' : 'hollow'}${match(d.s) ? '' : ' dim'}`);
+        .attr('class', (d) => `dot ${FILLED.has(d.s.type) ? 'filled' : 'hollow'}${match(d.s) ? (country === 'ALL' ? '' : ' pick') : ' dim'}`);
 
       const delaunay = d3.Delaunay.from(dots, (d) => d.x, (d) => d.cy);
       let hot = null;

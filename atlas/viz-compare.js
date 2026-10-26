@@ -10,8 +10,8 @@
 .v-compare .vc-swap svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .v-compare .vc-only { margin-left: auto; }
 .v-compare .vc-head { margin: 0; max-width: 64ch; font-size: 19px; line-height: 1.45; font-weight: 500; color: var(--ink); text-wrap: balance; }
-.v-compare .vc-sub { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
-.v-compare .vc-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin: 18px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
+.v-compare .vc-sub { margin: 6px 0 0; font-size: 14px; color: var(--ink-2); }
+.v-compare .vc-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin: 18px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); font: 400 11px/1.4 var(--mono); color: var(--muted); }
 .v-compare .vc-legend .chip { margin-right: 5px; }
 .v-compare .vc-legend .low { margin: 0 5px 0 0; color: var(--ink-2); }
 .v-compare .vc-key { display: inline-flex; align-items: center; white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -20,9 +20,12 @@
 .v-compare .vc-group { margin-top: 18px; }
 .v-compare .vc-cat, .v-compare .vc-row { display: grid; grid-template-columns: minmax(92px, 1fr) minmax(0, 320px) minmax(92px, 1fr); column-gap: 16px; padding: 0 34px; }
 .v-compare .vc-cat { align-items: end; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
-.v-compare .vc-cat h3 { margin: 0; text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-.v-compare .vc-sw { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; vertical-align: 1px; }
-.v-compare .vc-code { width: 92px; text-align: center; font-size: 12px; font-weight: 600; color: var(--ink-2); white-space: nowrap; }
+.v-compare .vc-cat h3 { margin: 0; text-align: center; font: 500 10.5px/1.4 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+.v-compare .vc-sw { display: inline-block; width: 7px; height: 7px; margin-right: 8px; vertical-align: 1px; }
+/* the first country is magenta and the second sunrise, as in the radar; the gap bar takes the leader's color */
+.v-compare .vc-code { width: 92px; text-align: center; font: 500 11.5px/1 var(--mono); color: var(--accent-ink); white-space: nowrap; }
+.v-compare .vc-code + h3 + .vc-code { color: var(--sunrise); }
+.v-compare .vc-code .flag { font-size: 13px; }
 .v-compare .vc-cat .vc-code:first-child { justify-self: end; }
 
 .v-compare .vc-item { border-bottom: 1px solid var(--line); }
@@ -38,9 +41,9 @@
 .v-compare .vc-track::after { content: ''; position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; margin-left: -0.5px; background: var(--line-strong); }
 .v-compare .vc-fill { position: absolute; top: 0; bottom: 0; background: var(--accent); }
 .v-compare .vc-fill.l { right: 50%; border-radius: 4px 0 0 4px; }
-.v-compare .vc-fill.r { left: 50%; border-radius: 0 4px 4px 0; }
-.v-compare .vc-verdict { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.v-compare .vc-verdict b { font-weight: 600; color: var(--ink-2); }
+.v-compare .vc-fill.r { left: 50%; border-radius: 0 4px 4px 0; background: var(--sunrise); }
+.v-compare .vc-verdict { font: 400 11px/1.3 var(--mono); color: var(--muted); white-space: nowrap; }
+.v-compare .vc-verdict b { font-weight: 500; color: var(--ink); }
 .v-compare .vc-chev { position: absolute; right: 10px; top: 50%; width: 14px; height: 14px; margin-top: -7px; fill: none; stroke: var(--muted); stroke-width: 1.8; transition: transform 0.15s ease; }
 .v-compare .vc-row[aria-expanded='true'] .vc-chev { transform: rotate(180deg); }
 
@@ -87,7 +90,7 @@
         s.textContent = CSS;
         document.head.append(s);
       }
-      const { esc, emoji, STATUSES: S } = ctx;
+      const { esc, emoji, flag, STATUSES: S } = ctx;
       const name = Object.fromEntries(ctx.meta.countries.map((c) => [c.code, c.name]));
       // "the United States" reads right mid-sentence; only names that need an article get one.
       const the = (code) => (/^United /.test(name[code]) ? `the ${name[code]}` : name[code]);
@@ -112,7 +115,7 @@
         <div class="vc-legend">
           ${Object.entries(S).map(([k, s]) => `<span class="vc-key"><span class="chip s-${k}">${s.label}</span>${pts(s.points)}</span>`).join('')}
           <span class="vc-key"><span class="low" aria-hidden="true">?</span>Low confidence</span>
-          <span class="vc-key"><span class="vc-track"><span class="vc-fill r" style="width:37.5%"></span></span>Gap in points, toward the leader</span>
+          <span class="vc-key"><span class="vc-track"><span class="vc-fill l" style="width:25%"></span></span><span class="vc-track"><span class="vc-fill r" style="width:37.5%"></span></span>Gap toward the leader</span>
         </div>
         <div class="vc-list" role="region" aria-label="Capability by capability comparison"></div>`;
       const $ = (s) => el.querySelector(s);
@@ -124,7 +127,7 @@
         const c = cap.countries[code];
         const ev = (c.evidence ?? []).map((e) => `<li><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title)}</a><span>${esc(e.publisher)} · ${esc(e.date)}</span></li>`).join('');
         return `<div class="vc-side">
-          <h4>${emoji(code)} ${esc(name[code])} <span class="chip s-${c.status}">${S[c.status].label}</span></h4>
+          <h4>${flag(code)}${esc(name[code])} <span class="chip s-${c.status}">${S[c.status].label}${c.confidence === 'low' ? '<span class="low"></span>' : ''}</span></h4>
           <p>${esc(c.note)}</p>
           ${c.confidence === 'low' ? '<p class="vc-lowtxt">Low confidence: the sources for this answer are thin or indirect.</p>' : ''}
           ${ev ? `<ul>${ev}</ul>` : '<p class="vc-lowtxt">No sources: we searched and found no availability.</p>'}
@@ -149,9 +152,9 @@
           const ci = ctx.catIndex[cat.category];
           html += `<section class="vc-group">
             <div class="vc-cat">
-              <span class="vc-code" aria-hidden="true">${emoji(a)} ${a}</span>
+              <span class="vc-code" aria-hidden="true">${flag(a)}${a}</span>
               <h3><span class="vc-sw" style="background:${ci.color}"></span>${esc(ci.name)}</h3>
-              <span class="vc-code" aria-hidden="true">${emoji(b)} ${b}</span>
+              <span class="vc-code" aria-hidden="true">${flag(b)}${b}</span>
             </div>
             ${rows.map(({ cap, d }) => {
               const g = Math.abs(d);
@@ -211,7 +214,7 @@
         const c = e.target.closest('.vc-chip');
         if (!c) return ctx.tip.hide();
         const cap = caps[c.closest('.vc-row').dataset.id], cell = cap.countries[c.dataset.code];
-        ctx.tip.show(e, `<strong>${S[cell.status].label} in ${esc(name[c.dataset.code])}</strong>${esc(cell.note)}${cell.confidence === 'low' ? '<br><em>Low confidence.</em>' : ''}`);
+        ctx.tip.show(e, `<strong>${S[cell.status].label} in ${flag(c.dataset.code)}${esc(name[c.dataset.code])}</strong>${esc(cell.note)}${cell.confidence === 'low' ? '<br><em>Low confidence.</em>' : ''}`);
       });
       list.addEventListener('pointerleave', () => ctx.tip.hide());
 

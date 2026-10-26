@@ -9,9 +9,12 @@
 .v-flows svg { display: block; width: 100%; overflow: visible; }
 .v-flows svg text { font-size: 13px; }
 .v-flows svg.narrow text { font-size: 12px; }
-.v-flows .fl-head { fill: var(--muted); font-weight: 500; }
+.v-flows svg text.fl-head { fill: var(--muted); font: 500 10.5px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
 .v-flows .fl-num { fill: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
 .v-flows .fl-bar { fill: var(--muted); }
+/* the hovered country, and both ends of a hovered ribbon, light up in sunrise */
+.v-flows .fl-node.on text, .v-flows .fl-node.on .fl-num { fill: var(--sunrise); }
+.v-flows .fl-node.on .fl-bar { fill: var(--sunrise); filter: var(--sun-glow); }
 .v-flows .fl-rib { fill: var(--accent); fill-opacity: .45; transition: fill-opacity .15s, opacity .15s; }
 .v-flows .fl-rib.home { fill: var(--c3); fill-opacity: .7; }
 .v-flows svg.dim .fl-rib { opacity: .12; }
@@ -19,7 +22,7 @@
 .v-flows svg.dim .fl-rib.home.on { fill-opacity: .8; }
 .v-flows .fl-node { cursor: default; outline: none; }
 .v-flows .fl-hit { fill: transparent; }
-.v-flows .fl-node:focus-visible .fl-hit { stroke: var(--accent); stroke-width: 2; }
+.v-flows .fl-node:focus-visible .fl-hit { stroke: var(--sunrise); stroke-width: 1.5; }
 .v-flows .fl-note { margin: 16px 0 0; color: var(--ink-2); font-size: 14px; }
 .v-flows .fl-note b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
 `;
@@ -35,7 +38,7 @@
         s.textContent = CSS;
         document.head.append(s);
       }
-      const { esc, emoji } = ctx;
+      const { esc, flag } = ctx;
       const tracked = new Set(ctx.meta.countries.map((c) => c.code));
       const markets = ctx.ranking.map((r) => r.code);
       const regionName = new Intl.DisplayNames(['en'], { type: 'region' });
@@ -86,28 +89,29 @@
       const sum = (ls) => d3.sum(ls, (l) => l.names.length);
       const plural = (n, w) => `${n} ${n === 1 ? w : w.replace(/y$/, 'ie') + 's'}`;
 
+      // SVG text: the flag is plain text here; the view CSS gives SVG text the flag font.
       function label(code, narrow) {
         if (code === ELSE) return 'Elsewhere';
-        return `${emoji(code)} ${narrow ? code : nameOf(code)}`;
+        return `${ctx.emoji(code)} ${narrow ? code : nameOf(code)}`;
       }
 
       function nodeTip(n) {
         const rows = n.links.slice().sort((a, b) => b.names.length - a.names.length)
-          .map((l) => { const c = n.side ? l.src : l.dst; return `${c === ELSE ? 'Elsewhere' : `${emoji(c)} ${esc(nameOf(c))}`} · ${l.names.length}`; });
-        if (n.side) return `<strong>${plural(n.value, 'company')}</strong>work in ${emoji(n.code)} ${esc(nameOf(n.code))}, by HQ:<br>${rows.join('<br>')}`;
+          .map((l) => { const c = n.side ? l.src : l.dst; return `${c === ELSE ? 'Elsewhere' : `${flag(c)}${esc(nameOf(c))}`} · ${l.names.length}`; });
+        if (n.side) return `<strong>${plural(n.value, 'company')}</strong>work in ${flag(n.code)}${esc(nameOf(n.code))}, by HQ:<br>${rows.join('<br>')}`;
         const cos = new Set(n.links.flatMap((l) => l.names)).size;
         const head = n.code === ELSE
           ? `Elsewhere: ${[...n.other].sort((a, b) => b[1] - a[1] || nameOf(a[0]).localeCompare(nameOf(b[0]))).map(([c, k]) => `${esc(nameOf(c))} (${k})`).join(', ')}`
-          : `${emoji(n.code)} ${esc(nameOf(n.code))}`;
+          : `${flag(n.code)}${esc(nameOf(n.code))}`;
         return `<strong>${plural(n.value, 'company-market link')}</strong>${plural(cos, 'company')} headquartered in ${head}<br>${rows.join('<br>')}`;
       }
 
       function ribbonTip(l) {
-        const from = l.src === ELSE ? 'Elsewhere' : `${emoji(l.src)} ${esc(nameOf(l.src))}`;
+        const from = l.src === ELSE ? 'Elsewhere' : `${flag(l.src)}${esc(nameOf(l.src))}`;
         const shown = l.names.slice(0, 12).map(esc).join(', ');
         const more = l.names.length > 12 ? `, +${l.names.length - 12} more` : '';
         const home = l.src === l.dst ? ' (home-grown)' : '';
-        return `<strong>${plural(l.names.length, 'company')}</strong>${from} → ${emoji(l.dst)} ${esc(nameOf(l.dst))}${home}<br>${shown}${more}`;
+        return `<strong>${plural(l.names.length, 'company')}</strong>${from} → ${flag(l.dst)}${esc(nameOf(l.dst))}${home}<br>${shown}${more}`;
       }
 
       function draw() {
@@ -195,11 +199,11 @@
             return `M${a},${s0}C${m},${s0} ${m},${t0} ${b},${t0}L${b},${t1}C${m},${t1} ${m},${s1} ${a},${s1}Z`;
           });
 
-        const focus = (pred) => { svg.classed('dim', true); ribs.classed('on', pred); };
-        const clear = () => { svg.classed('dim', false); ribs.classed('on', false); ctx.tip.hide(); };
-        ribs.on('pointerenter pointermove', (e, l) => { focus((r) => r === l); ctx.tip.show(e, ribbonTip(l)); })
+        const focus = (pred, lit) => { svg.classed('dim', true); ribs.classed('on', pred); nodes.classed('on', lit); };
+        const clear = () => { svg.classed('dim', false); ribs.classed('on', false); nodes.classed('on', false); ctx.tip.hide(); };
+        ribs.on('pointerenter pointermove', (e, l) => { focus((r) => r === l, (n) => n.code === (n.side ? l.dst : l.src)); ctx.tip.show(e, ribbonTip(l)); })
           .on('pointerleave', clear);
-        const nodeOn = (e, n) => { focus((r) => n.links.includes(r)); ctx.tip.show(e, nodeTip(n)); };
+        const nodeOn = (e, n) => { focus((r) => n.links.includes(r), (m) => m === n); ctx.tip.show(e, nodeTip(n)); };
         nodes.on('pointerenter pointermove', nodeOn).on('pointerleave', clear)
           .on('focus', function (e, n) {
             const r = this.getBoundingClientRect();

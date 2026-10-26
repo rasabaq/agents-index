@@ -43,6 +43,8 @@ function buildContext({ meta, categories }) {
     meta, categories, ranking, byCode, catIndex, capabilities,
     companies: [...map.values()],
     STATUSES, esc, emoji,
+    // A flag for HTML: emoji font, hidden from screen readers (the code or name next to it is the text).
+    flag: (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`,
     catName: (id) => catIndex[id].name,
     // Resolved value of a CSS token, for canvas or anything that cannot use var() directly.
     css: (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim(),
@@ -60,15 +62,25 @@ function buildContext({ meta, categories }) {
   };
 }
 
+const num = (i) => String(i + 1).padStart(2, '0');
+const slug = (title) => title.toLowerCase().replace(/\W+/g, '-');
+
+// Hero tape: every country by rank. Chile is the focus country (sunrise), as in the bump chart's default pin.
+const flagRow = (ctx) => ctx.ranking.map((r) => `<li${r.code === 'CL' ? ' class="on"' : ''}>${ctx.flag(r.code)}${r.code} <b>${r.score}</b></li>`).join('');
+
 function render(ctx) {
   const views = (window.ATLAS_VIEWS ?? []).slice().sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
-  $('[data-atlas-nav]').innerHTML = views.map((v) => `<a href="#v-${v.id}">${esc(v.title)}</a>`).join('');
+  const nav = $('[data-atlas-nav]');
+  nav.innerHTML = views.map((v, i) => `<a href="#v-${v.id}"><span>${num(i)}</span>${esc(v.title)}</a>`).join('');
   const host = $('[data-atlas-views]');
   views.forEach((v, i) => {
     host.insertAdjacentHTML('beforeend', `
-      <section class="view wrap" id="v-${v.id}">
-        <div class="view-head"><span class="view-num">${String(i + 1).padStart(2, '0')}</span><h2>${esc(v.title)}</h2><p>${esc(v.blurb)}</p></div>
-        <div class="view-frame" data-view="${v.id}"></div>
+      <section class="view wrap" id="v-${v.id}" aria-labelledby="v-${v.id}-h">
+        <div class="view-win">
+          <div class="view-bar" aria-hidden="true"><span class="view-app"><i></i>${num(i)} / ${String(views.length).padStart(2, '0')}</span><span class="view-path">atlas/<b>${slug(v.title)}</b></span><span class="view-fill"></span></div>
+          <div class="view-head"><h2 id="v-${v.id}-h">${esc(v.title)}</h2><p>${esc(v.blurb)}</p></div>
+          <div class="view-frame" data-view="${v.id}"></div>
+        </div>
       </section>`);
     const el = host.querySelector(`[data-view="${v.id}"]`);
     try {
@@ -78,6 +90,15 @@ function render(ctx) {
       el.innerHTML = `<p class="view-error">This view could not be drawn (${esc(err.message)}).</p>`;
     }
   });
+  // The tab of the view in the middle of the screen is the current one; keep it in sight in the scrolling tab strip.
+  const tabs = [...nav.querySelectorAll('a')];
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    tabs.forEach((a) => (a.hash === `#${e.target.id}` ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+    const a = nav.querySelector('[aria-current]');
+    if (a && (a.offsetLeft < nav.scrollLeft || a.offsetLeft + a.offsetWidth > nav.scrollLeft + nav.clientWidth)) nav.scrollTo({ left: a.offsetLeft - 16 });
+  }), { rootMargin: '-45% 0px -54% 0px' });
+  host.querySelectorAll('.view').forEach((s) => io.observe(s));
 }
 
 addEventListener('scroll', () => ($('[data-atlas-tip]').hidden = true), { passive: true });
@@ -86,6 +107,7 @@ try {
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = new Date(`${ctx.meta.asOf}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })));
   const cells = ctx.capabilities.length * ctx.meta.countries.length;
   $('[data-atlas-lede]').textContent = `${ctx.meta.countries.length} countries, ${ctx.capabilities.length} capabilities, ${cells} sourced answers and ${ctx.companies.length} companies. Each view below answers a different question about the same data.`;
+  $('[data-atlas-flags]').innerHTML = flagRow(ctx);
   render(ctx);
 } catch (err) {
   $('main').insertAdjacentHTML('afterbegin', `<p class="wrap error">Could not load the data (${esc(err.message)}).</p>`);

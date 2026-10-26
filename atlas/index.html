@@ -38,14 +38,18 @@
         <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" class="brand-ring"/><circle cx="16" cy="16" r="5" class="brand-core"/></svg>
         <span>Agent Atlas</span>
       </a>
-      <nav class="atlas-nav" aria-label="Views" data-atlas-nav></nav>
+      <span class="atlas-asof">Data as of <span data-asof></span></span>
+    </div>
+    <div class="wrap atlas-tabs-wrap">
+      <nav class="atlas-tabs" aria-label="Views" data-atlas-nav></nav>
     </div>
   </header>
   <main id="top">
     <section class="hero wrap atlas-hero">
-      <p class="kicker">AI Agent Observatory · Data as of <span data-asof></span></p>
-      <h1>Agent Atlas<br><span>What AI agents can do, country by country, in eight pictures.</span></h1>
+      <p class="kicker"><b>$</b> AI Agent Observatory / Agent Atlas</p>
+      <h1>What AI agents can do,<br><span class="tape">country by country.</span></h1>
       <p class="lede" data-atlas-lede></p>
+      <ol class="atlas-flags" aria-label="Overall score by country" data-atlas-flags></ol>
     </section>
     <div data-atlas-views></div>
   </main>
