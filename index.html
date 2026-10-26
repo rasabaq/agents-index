@@ -14,6 +14,8 @@
   <!-- Flag font, subset to every flag the data uses (tracked countries, company HQs and markets). tests check it stays complete. -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=%F0%9F%87%A6%F0%9F%87%AA%F0%9F%87%A6%F0%9F%87%B7%F0%9F%87%A7%F0%9F%87%B7%F0%9F%87%A8%F0%9F%87%A6%F0%9F%87%A8%F0%9F%87%B1%F0%9F%87%A8%F0%9F%87%B3%F0%9F%87%A8%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%B8%F0%9F%87%AB%F0%9F%87%B7%F0%9F%87%AC%F0%9F%87%A7%F0%9F%87%AE%F0%9F%87%B3%F0%9F%87%B2%F0%9F%87%BD%F0%9F%87%B3%F0%9F%87%B1%F0%9F%87%B8%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hero.css">
+  <script type="module" src="hero.js"></script>
   <script type="module" src="app.js"></script>
   <link rel="stylesheet" href="sections.css">
   <script type="module" src="sections.js"></script>
@@ -37,11 +39,33 @@
   </header>
 
   <main id="top">
-    <section class="hero wrap">
-      <p class="kicker">Updated <span data-asof></span></p>
-      <h1>Not how much AI a country has.<br><span>What AI agents can actually do there.</span></h1>
-      <p class="lede">Can an agent buy from a store, pay over the national payment rail, book a table or open your bank account? We track concrete capabilities country by country, and back every status with a source.</p>
-      <dl class="stats" data-stats></dl>
+    <section class="hero" aria-labelledby="hero-title" data-hero>
+      <canvas class="hero-sky" aria-hidden="true"></canvas>
+      <div class="wrap hero-wm-wrap">
+        <div class="hero-top"><span><b>&gt;</b> ai-agent-observatory</span><dl class="hero-stats" data-stats></dl><span>Updated <span data-asof></span></span></div>
+        <canvas class="hero-wm" role="img" aria-label="Agent Observatory"></canvas>
+      </div>
+      <div class="wrap hero-copy">
+        <div class="hero-grid">
+          <div>
+            <h1 id="hero-title"><span>See what AI agents</span> <span>can actually do,</span> <span><span class="hero-tape">country by country.</span></span></h1>
+            <p class="hero-sub"><span>Not how much AI a country has, but <b>what agents can do there</b>. Every status cites a source.</span></p>
+            <ol class="hero-flags" aria-label="Ranking, score out of 100" data-hero-flags></ol>
+            <div class="hero-ctas">
+              <a class="hero-btn hero-btn-1" href="#ranking">Open the ranking <span aria-hidden="true">→</span></a>
+              <a class="hero-btn hero-btn-2" href="#method">How we score</a>
+            </div>
+          </div>
+          <div class="hero-ask" data-hero-ask hidden>
+            <div class="hero-tabs" role="tablist" aria-label="Ask about a country" data-hero-tabs></div>
+            <div role="tabpanel" id="hero-ask-panel" data-hero-panel>
+              <div class="hero-cmd"><span class="hero-ps" aria-hidden="true">$</span><code>observatory ask <span>"<span data-hero-q></span>"</span></code><button type="button" class="hero-copy-btn" data-hero-copy>Copy</button></div>
+              <p class="hero-ans" data-hero-ans></p>
+            </div>
+          </div>
+        </div>
+        <ul class="hero-chips" aria-hidden="true" data-hero-chips></ul>
+      </div>
     </section>
 
     <!-- The data product sits in one terminal window: title bar, numbered tabs, the four sections, key hints. -->
