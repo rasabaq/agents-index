@@ -16,8 +16,9 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const range = (t, i) => (i === 0 ? `≥ ${t.min}` : t.min === 0 ? `< ${TIERS[i - 1].min}` : `${t.min}–${TIERS[i - 1].min - 1}`);
 
-const tile = (r) => `
-  <li><a class="tile" href="#country=${esc(r.code)}" aria-label="${esc(r.name)}, score ${r.score}">
+// A tile is a country picker like the others on the page: app.js selects it and marks it (aria-current).
+const tile = (r, sel) => `
+  <li><a class="tile" href="#country=${esc(r.code)}" data-go-country="${esc(r.code)}" aria-current="${r.code === sel}" aria-label="${esc(r.name)}, score ${r.score}">
     <span class="tile-id"><span class="tile-flag" aria-hidden="true">${emoji(r.code)}</span><b>${esc(r.code)}</b></span>
     <span class="tile-v">${r.score}</span>
     <span class="tile-n">${esc(r.name)}</span>
@@ -25,31 +26,20 @@ const tile = (r) => `
   </a></li>`;
 
 function renderTiers(ranking) {
+  const hash = location.hash.match(/^#country=(\w\w)$/)?.[1];
+  const sel = ranking.some((r) => r.code === hash) ? hash : ranking[0].code;
   $('[data-tiers-title]').textContent = `${word(TIERS.length)} tiers, ${word(ranking.length).toLowerCase()} countries.`;
+  $('[data-cuts]').innerHTML = TIERS.map((t, i) => `<span class="tier-${t.letter.toLowerCase()}"><b>${t.letter}</b>${range(t, i)}</span>`).join('');
   $('[data-tiers]').innerHTML = TIERS.map((t, i) => {
     const rows = ranking.filter((r) => tierOf(r.score) === t.letter);
     const tied = new Set(rows.map((r) => r.score)).size < rows.length;
     return `
       <li class="tier-row tier-${t.letter.toLowerCase()}">
         <p class="tier-l"><b><span class="sr-only">Tier </span>${t.letter}</b><span>${range(t, i)}</span></p>
-        <ul class="tier-r">${rows.length ? rows.map(tile).join('') : '<li class="tile-0">No country yet</li>'}</ul>
+        <ul class="tier-r">${rows.length ? rows.map((r) => tile(r, sel)).join('') : '<li class="tile-0">No country yet</li>'}</ul>
         <p class="tier-k">${rows.length} ${rows.length === 1 ? 'country' : 'countries'}${tied ? ' · tied' : ''}</p>
       </li>`;
   }).join('');
-  $('[data-tiers]').addEventListener('click', (e) => {
-    // The same hash fires no hashchange, so follow it here.
-    if (e.target.closest('.tile')?.hash === location.hash) followHash();
-  });
-}
-
-// app.js reads #country=XX only once, at load. Follow later changes through the country select it listens to.
-function followHash() {
-  const code = location.hash.match(/^#country=(\w\w)$/)?.[1];
-  const sel = $('[data-country-select]');
-  if (!code || ![...sel.options].some((o) => o.value === code)) return;
-  sel.value = code;
-  sel.dispatchEvent(new Event('change'));
-  $('#country').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
 }
 
 /* ---------- numbers band: a magenta dither field shown only inside 5x7 dot-matrix numerals ---------- */
@@ -273,7 +263,6 @@ try {
   renderTiers(scoreCountries(meta, categories));
   renderBand(meta, categories);
   startBand();
-  addEventListener('hashchange', followHash);
 } catch (err) {
   // app.js already tells the reader the data did not load; hide the empty shells.
   document.querySelectorAll('[data-sections]').forEach((el) => (el.hidden = true));

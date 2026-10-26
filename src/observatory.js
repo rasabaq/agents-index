@@ -112,3 +112,53 @@ export const TIERS = [
   { letter: 'D', min: 0 },
 ];
 export const tierOf = (score) => TIERS.find((t) => score >= t.min).letter;
+
+// The same company often appears in several category files; merge it by name. Most markets first.
+export function mergeCompanies(categories) {
+  const map = new Map();
+  for (const cat of categories) {
+    for (const co of cat.companies ?? []) {
+      const key = co.name.toLowerCase();
+      const prev = map.get(key);
+      if (!prev) map.set(key, { ...co, markets: [...new Set(co.markets)], categories: [cat.category], roles: [co.role] });
+      else {
+        prev.markets = [...new Set([...prev.markets, ...co.markets])];
+        if (!prev.categories.includes(cat.category)) prev.categories.push(cat.category);
+        if (!prev.roles.includes(co.role)) prev.roles.push(co.role);
+      }
+    }
+  }
+  return [...map.values()].sort((a, b) => b.markets.length - a.markets.length || a.name.localeCompare(b.name));
+}
+
+// Plain words per category: a short name, and what an agent does there ("an agent can ...").
+export const CATEGORY_WORDS = {
+  commerce: { short: 'Shopping', can: 'shop for you' },
+  payments: { short: 'Payments', can: 'pay' },
+  services: { short: 'Travel', can: 'book travel and local services' },
+  autonomy: { short: 'General agents', can: 'use websites and apps for you' },
+  banking: { short: 'Banking', can: 'move money through your bank' },
+  messaging: { short: 'Chat', can: 'buy and get support in chat' },
+  government: { short: 'Government', can: 'prove who you are to apps' },
+};
+const words = (id) => CATEGORY_WORDS[id] ?? { short: id, can: `use ${id}` };
+export const shortName = (id) => words(id).short;
+
+// A country's strongest and weakest category. On a tie the first in category order wins.
+export function extremes(byCategory) {
+  const ids = Object.keys(byCategory);
+  return {
+    best: ids.reduce((a, b) => (byCategory[b] > byCategory[a] ? b : a)),
+    weak: ids.reduce((a, b) => (byCategory[b] < byCategory[a] ? b : a)),
+  };
+}
+
+// One line about a country, from its category scores. 50 is the line between "can" and "cannot yet".
+export function summarize(name, byCategory) {
+  const { best, weak } = extremes(byCategory);
+  // ponytail: "the" only for names that start with "United"; add an article field to meta.json if more need one
+  const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
+  if (byCategory[weak] >= 50) return `${where}, an agent can ${words(best).can}. Even its weakest area, ${words(weak).short.toLowerCase()}, scores ${byCategory[weak]}.`;
+  if (byCategory[best] < 50) return `${where}, agents are still early. The best category, ${words(best).short.toLowerCase()}, scores ${byCategory[best]}.`;
+  return `${where}, an agent can ${words(best).can}. It cannot ${words(weak).can} yet.`;
+}

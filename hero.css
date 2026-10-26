@@ -77,6 +77,12 @@
 .hero-st.s-none { padding-left: 4px; color: var(--muted); }
 .hero-st.s-none::before { content: ''; width: 9px; height: 2px; border-radius: 2px; background: var(--muted); }
 
+/* the companies with the most live markets */
+.hero-cos { display: grid; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.055); }
+.hero-cos ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+.hero-cos a { font: 500 12.5px/1 var(--font); letter-spacing: -0.01em; color: var(--ink-2); text-decoration: none; }
+.hero-cos a:hover { color: var(--ink); }
+
 /* the eight countries, pinned to the planet. A mouse shortcut: the flag tape above is the accessible list. */
 .hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 64px 0 0; padding: 0; list-style: none; }
 .hero-chips a { position: relative; display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px 0 10px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px;
@@ -86,15 +92,18 @@
 .hero-chips .flag { margin: 0; font-size: 19px; }
 .hero-chip-c { font: 500 11.5px/1 var(--mono); letter-spacing: 0.06em; color: var(--ink-2); }
 .hero-chip-v { font: 600 17px/1 var(--font); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-.hero-chips .is-on { border-color: rgba(255, 182, 114, 0.55); background: rgba(48, 26, 18, 0.5); box-shadow: inset 0 1px 0 rgba(255, 220, 180, 0.12), 0 0 28px -4px rgba(255, 160, 80, 0.4); }
-.hero-chips .is-on .hero-chip-v, .hero-chips .is-on .hero-chip-c { color: var(--sunrise); }
+.hero-chips [aria-current='true'] { border-color: rgba(255, 182, 114, 0.55); background: rgba(48, 26, 18, 0.5); box-shadow: inset 0 1px 0 rgba(255, 220, 180, 0.12), 0 0 28px -4px rgba(255, 160, 80, 0.4); }
+.hero-chips [aria-current='true'] :is(.hero-chip-v, .hero-chip-c) { color: var(--sunrise); }
 .hero-stem { position: absolute; left: 50%; top: 100%; display: none; width: 1px; height: 0; pointer-events: none; background: linear-gradient(rgba(255, 200, 225, 0.42), rgba(255, 140, 190, 0.08)); }
 .hero-stem::after { content: ''; position: absolute; left: -2px; bottom: -2px; width: 5px; height: 5px; border-radius: 50%; background: #ffe1ee; box-shadow: 0 0 6px 2px rgba(255, 46, 136, 0.75), 0 0 16px 4px rgba(255, 46, 136, 0.25); }
-.hero-chips .is-on .hero-stem { background: linear-gradient(rgba(255, 182, 114, 0.6), rgba(255, 182, 114, 0.12)); }
+.hero-chips [aria-current='true'] .hero-stem { background: linear-gradient(rgba(255, 182, 114, 0.6), rgba(255, 182, 114, 0.12)); }
 
 @container (max-width: 1100px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
   .hero-ask { max-width: 560px; }
+  /* keep the eight chips on one row down to about 860px */
+  .hero-chips { gap: 6px; }
+  .hero-chips a { gap: 6px; padding: 0 10px 0 8px; }
   .hero h1 { font-size: clamp(34px, 7.6cqw, 66px); }
 }
 @container (max-width: 720px) {

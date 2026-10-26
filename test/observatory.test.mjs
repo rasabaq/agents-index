@@ -1,6 +1,21 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreCountries, validate } from '../src/observatory.js';
+import { scoreCountries, validate, summarize, mergeCompanies } from '../src/observatory.js';
+
+test('summary line names the best and the weakest category', () => {
+  assert.equal(summarize('Chile', { commerce: 17, payments: 67, services: 33, autonomy: 67 }), 'In Chile, an agent can pay. It cannot shop for you yet.');
+  assert.equal(summarize('United States', { commerce: 90, payments: 60 }), 'In the United States, an agent can shop for you. Even its weakest area, payments, scores 60.');
+  assert.equal(summarize('Peru', { commerce: 10, payments: 40 }), 'In Peru, agents are still early. The best category, payments, scores 40.');
+});
+
+test('companies merge by name across categories', () => {
+  const merged = mergeCompanies([
+    { category: 'shop', companies: [{ name: 'Acme', role: 'r1', markets: ['AA'] }] },
+    { category: 'pay', companies: [{ name: 'acme', role: 'r2', markets: ['BB', 'AA'] }, { name: 'Solo', role: 'r3', markets: ['AA'] }] },
+  ]);
+  assert.deepEqual(merged.map((c) => [c.name, c.markets, c.categories, c.roles]),
+    [['Acme', ['AA', 'BB'], ['shop', 'pay'], ['r1', 'r2']], ['Solo', ['AA'], ['pay'], ['r3']]]);
+});
 
 const ev = [{ title: 'Launch post', url: 'https://example.com/a', type: 'company', date: '2026-05' }];
 const meta = {

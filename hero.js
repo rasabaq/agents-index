@@ -1,7 +1,8 @@
 // The hero: a planet at sunrise whose air dissolves into magenta pixels (WebGL, with a 2D fallback),
 // the pixel wordmark, and the data parts (flag tape, ask box, chips pinned to the planet).
-// It loads the data itself so it does not depend on app.js; country links hand off to app.js's ranking buttons.
-import { STATUSES, scoreCountries } from './src/observatory.js';
+// It loads the data itself so it does not depend on app.js. Its country links carry data-go-country, which app.js
+// handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
+import { STATUSES, scoreCountries, mergeCompanies } from './src/observatory.js';
 
 const hero = document.querySelector('[data-hero]');
 const $ = (sel) => hero.querySelector(sel);
@@ -29,7 +30,7 @@ function geom() {
   const chips = [...row.querySelectorAll('a')];
   // Pins only when the chips sit in one row.
   const one = !narrow && chips.length > 0 && new Set(chips.map((c) => c.offsetTop)).size === 1;
-  const on = row.querySelector('.is-on');
+  const on = row.querySelector('[aria-current="true"]');
   let sx = W * (narrow ? 0.8 : 0.71);
   if (one && on) { const b = on.getBoundingClientRect(); sx = b.left + b.width / 2 - hb.left; }
   const sy = Cy - Math.sqrt(R * R - (sx - Cx) ** 2) + 4;
@@ -330,7 +331,7 @@ document.fonts?.load('28px "Jersey 10"').then(heroAll, () => {});
 document.fonts?.ready.then(heroAll);
 
 /* ---------- data: flag tape, chips and the ask box ---------- */
-let ranking, commerce, focus;
+let ranking, commerce, companies, focus;
 
 // "Can my agent shop in X?" answered from the shopping category.
 function answer(code) {
@@ -345,9 +346,16 @@ function answer(code) {
 function renderCountries() {
   const label = (r) => `${esc(r.name)}, rank ${r.rank}, score ${r.score}`;
   $('[data-hero-flags]').innerHTML = ranking.map((r) => `
-    <li><a href="#country=${r.code}" data-hero-country="${r.code}" aria-label="${label(r)}" aria-current="${r.code === focus}">${flag(r.code)}<span>${r.code}</span><b>${r.score}</b></a></li>`).join('');
+    <li><a href="#country=${r.code}" data-go-country="${r.code}" aria-label="${label(r)}" aria-current="${r.code === focus}">${flag(r.code)}<span>${r.code}</span><b>${r.score}</b></a></li>`).join('');
   row.innerHTML = ranking.map((r) => `
-    <li><a href="#country=${r.code}" data-hero-country="${r.code}" tabindex="-1" class="${r.code === focus ? 'is-on' : ''}">${flag(r.code)}<span class="hero-chip-c">${r.code}</span><span class="hero-chip-v">${r.score}</span><i class="hero-stem"></i></a></li>`).join('');
+    <li><a href="#country=${r.code}" data-go-country="${r.code}" tabindex="-1" aria-current="${r.code === focus}">${flag(r.code)}<span class="hero-chip-c">${r.code}</span><span class="hero-chip-v">${r.score}</span><i class="hero-stem"></i></a></li>`).join('');
+}
+
+// The companies with the most live markets, under the ask box.
+function renderCompanies() {
+  const top = companies.slice(0, 10);
+  $('[data-hero-cos-label]').textContent = `Tracked · ${top.length} of ${companies.length} companies`;
+  $('[data-hero-cos]').innerHTML = top.map((c) => `<li><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a></li>`).join('');
 }
 
 function renderTabs() {
@@ -365,7 +373,7 @@ function ask(code) {
   });
   $('[data-hero-panel]').setAttribute('aria-labelledby', `hero-tab-${code}`);
   $('[data-hero-q]').textContent = `Can my agent shop in ${r.name}?`;
-  $('[data-hero-ans]').innerHTML = `<span class="hero-ret" aria-hidden="true">↳</span><span class="hero-st s-${a.status}">${a.word}</span><span>${a.text}</span><a href="#matrix" data-hero-cells>See the cells</a>`;
+  $('[data-hero-ans]').innerHTML = `<span class="hero-ret" aria-hidden="true">↳</span><span class="hero-st s-${a.status}">${a.word}</span><span>${a.text}</span><a href="#matrix">See the cells</a>`;
 }
 
 function wire() {
@@ -384,21 +392,12 @@ function wire() {
     b.focus();
     ask(b.dataset.ask);
   });
-  hero.addEventListener('click', (e) => {
-    const link = e.target.closest('[data-hero-country]');
-    if (link) {
-      // app.js's ranking button selects the country, updates the hash and scrolls to the profile.
-      const go = document.querySelector(`[data-ranking] [data-go-country="${link.dataset.heroCountry}"]`);
-      if (!go) return; // app.js not ready: the plain #country= link still works on reload
-      e.preventDefault();
-      focus = link.dataset.heroCountry;
-      renderCountries();
-      size(); // the sun moves over the new country
-      drawSky(gl ? now() : T0);
-      go.click();
-    }
-    // Show only the shopping rows in the matrix, then follow the #matrix link.
-    if (e.target.closest('[data-hero-cells]')) document.querySelector('[data-filters] [data-cat="commerce"]')?.click();
+  // app.js already marked the new country (aria-current); move the sun over its chip and ask about it.
+  document.addEventListener('countrychange', (e) => {
+    focus = e.detail;
+    size();
+    drawSky(gl ? now() : T0);
+    ask(focus);
   });
   $('[data-hero-copy]').addEventListener('click', async (e) => {
     const btn = e.currentTarget, q = $('[data-hero-q]');
@@ -423,10 +422,12 @@ try {
   const categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
   ranking = scoreCountries(meta, categories);
   commerce = categories.find((c) => c.category === 'commerce');
+  companies = mergeCompanies(categories);
   const fromHash = location.hash.match(/^#country=(\w\w)$/)?.[1];
   focus = ranking.some((r) => r.code === fromHash) ? fromHash : ranking[0].code;
   renderCountries();
   renderTabs();
+  renderCompanies();
   ask(focus);
   wire();
   $('[data-hero-ask]').hidden = false;
