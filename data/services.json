@@ -55,7 +55,7 @@
         },
         "DE": {
           "status": "live",
-          "note": "ChatGPT reservations through OpenTable are listed as global, but OpenTable has few German restaurants and this could not be re-checked; TheFork's ChatGPT app launched in other EU markets, not Germany, and Google AI Mode booking is not offered in the EU.",
+          "note": "ChatGPT reservations through OpenTable are listed as global, but OpenTable has few German restaurants; news reports say the TheFork app in ChatGPT is also live in Germany, but no TheFork or OpenAI page confirms it, and Google AI Mode booking is not offered in the EU.",
           "evidence": [
             {
               "title": "ChatGPT release notes (OpenTable reservations available globally)",
@@ -72,10 +72,10 @@
               "type": "news"
             },
             {
-              "title": "ChatGPT aceita reservas de restaurantes (TheFork app in Portugal, Spain, France, Italy and UK)",
-              "publisher": "E-Konomista",
-              "url": "https://www.e-konomista.pt/chatgpt-aceita-reservas-restaurantes/",
-              "date": "2026-01-06",
+              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes a través de ChatGPT (TheFork app also live in Germany)",
+              "publisher": "Forbes España",
+              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
+              "date": "2025-12-22",
               "type": "news"
             }
           ],
@@ -96,7 +96,7 @@
         },
         "MX": {
           "status": "live",
-          "note": "ChatGPT finds and books tables through OpenTable, which runs a Mexico marketplace; Google AI Mode booking has not launched in Mexico.",
+          "note": "ChatGPT finds and books tables through OpenTable, which runs a Mexico marketplace, but a search found no OpenTable or OpenAI page that confirms Mexican restaurants show up in ChatGPT; Google AI Mode booking has not launched in Mexico.",
           "evidence": [
             {
               "title": "ChatGPT release notes (OpenTable reservations available globally)",
@@ -180,13 +180,6 @@
               "type": "company"
             },
             {
-              "title": "Google's AI Mode can now track flight prices, help book hotels and more",
-              "publisher": "TechCrunch",
-              "url": "https://techcrunch.com/2026/08/27/googles-ai-mode-can-now-track-flight-prices-help-book-hotels-and-more/",
-              "date": "2026-08-27",
-              "type": "news"
-            },
-            {
               "title": "Introducing apps in ChatGPT and the new Apps SDK",
               "publisher": "OpenAI",
               "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
@@ -266,16 +259,8 @@
               "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
               "date": "2025-10-06",
               "type": "company"
-            },
-            {
-              "title": "ChatGPT Travel Apps Are Now a Thing, Starting with Booking.com and Expedia",
-              "publisher": "Skift",
-              "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
-              "date": "2025-10-06",
-              "type": "news"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "MX": {
           "status": "live",
@@ -289,17 +274,17 @@
               "type": "company"
             },
             {
-              "title": "ChatGPT Travel Apps Are Now a Thing, Starting with Booking.com and Expedia",
-              "publisher": "Skift",
-              "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
-              "date": "2025-10-06",
-              "type": "news"
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
             }
           ]
         },
         "CL": {
           "status": "live",
-          "note": "The Booking.com app in ChatGPT is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Despegar or LATAM agents were not verified and Google AI Mode hotel booking is US-only.",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; no Despegar or LATAM app in ChatGPT was found (Despegar's SOFIA assistant works only in its own app and website), and Google AI Mode hotel booking is US-only.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -315,12 +300,11 @@
               "date": "2025-10-06",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "CO": {
           "status": "live",
-          "note": "The Booking.com app in ChatGPT is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Despegar or Avianca agents were not verified and Google AI Mode hotel booking is US-only.",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; no Despegar or Avianca app in ChatGPT was found (Despegar's SOFIA assistant works only in its own app and website), and Google AI Mode hotel booking is US-only.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -336,8 +320,7 @@
               "date": "2025-10-06",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "IN": {
           "status": "live",
@@ -351,11 +334,11 @@
               "type": "company"
             },
             {
-              "title": "ChatGPT Travel Apps Are Now a Thing, Starting with Booking.com and Expedia",
-              "publisher": "Skift",
-              "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
-              "date": "2025-10-06",
-              "type": "news"
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
             }
           ]
         }
@@ -380,29 +363,49 @@
           ]
         },
         "GB": {
-          "status": "none",
-          "note": "No agent ordering was found for the UK: the Uber, Uber Eats and DoorDash apps in ChatGPT are US-only, and no Deliveroo, Alexa+ or Gemini ordering agent was found (search budget ran out, so medium confidence).",
+          "status": "live",
+          "note": "Just Eat's AI assistant in its iOS and Android apps (launched first in the UK in January 2026) takes requests by voice or text, such as \"order my usual Friday night curry\", and fills the basket for checkout in the app; Just Eat ordering through Alexa+ was announced in March 2026 but no launch was found, no Deliveroo agent was found, and the Uber, Uber Eats and DoorDash apps in ChatGPT are US-only.",
           "evidence": [
             {
-              "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
-              "publisher": "TechCrunch",
-              "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
-              "date": "2025-12-29",
-              "type": "news"
+              "title": "Introducing the next evolution of ordering: Just Eat Takeaway.com unveils AI-voice assistant (launching first in the UK)",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/en-WW/259937-introducing-the-next-evolution-of-ordering-just-eat-takeaway-com-unveils-ai-voice-assistant/",
+              "date": "2026-01-27",
+              "type": "company"
+            },
+            {
+              "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe (after UK and Germany launches; can fill the basket and order your usual)",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
+              "date": "2026-08-11",
+              "type": "company"
+            },
+            {
+              "title": "DID SOMEBODY SAY…. \"Alexa, what's for dinner\"? (Just Eat ordering on Alexa+ in the UK, launching soon)",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/en-WW/263507-did-somebody-say-alexa-what-s-for-dinner/",
+              "date": "2026-03-19",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "DE": {
-          "status": "none",
-          "note": "No agent ordering was found for Germany: the Uber, Uber Eats and DoorDash apps in ChatGPT are US-only, Wolt's newsroom shows no AI agent, and no Lieferando, Alexa+ or Gemini ordering agent was found (medium confidence).",
+          "status": "live",
+          "note": "Lieferando, Just Eat Takeaway.com's German brand, has had an AI assistant in its app since April 2025 that takes orders by text or voice and fills the basket for checkout; Wolt's newsroom shows no AI agent, and the Uber, Uber Eats and DoorDash apps in ChatGPT are US-only.",
           "evidence": [
             {
-              "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
-              "publisher": "TechCrunch",
-              "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
-              "date": "2025-12-29",
-              "type": "news"
+              "title": "Lieferando vereinfacht Bestellungen mit KI-Assistent",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/de-DE/248473-lieferando-vereinfacht-bestellungen-mit-ki-assistent/",
+              "date": "2025-04-01",
+              "type": "company"
+            },
+            {
+              "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe (after UK and Germany launches; can fill the basket and order your usual)",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
+              "date": "2026-08-11",
+              "type": "company"
             },
             {
               "title": "Wolt press room (no AI ordering agent news)",
@@ -411,8 +414,7 @@
               "date": "2026-10",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "BR": {
           "status": "limited",
@@ -436,7 +438,7 @@
         },
         "MX": {
           "status": "none",
-          "note": "No agent ordering was found for Mexico: the Uber and Uber Eats apps in ChatGPT are US-only, and no Rappi, DiDi Food, Alexa+ or Gemini ordering agent was confirmed (medium confidence).",
+          "note": "No agent ordering was found for Mexico: the Uber and Uber Eats apps in ChatGPT are US-only, Alexa+ food ordering is US-only, Rappi's WhatsApp assistant (Adri) was announced but no launch was found, and DiDi Food's DiMi agent (2026) only serves restaurants, not shoppers.",
           "evidence": [
             {
               "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
@@ -450,7 +452,7 @@
         },
         "CL": {
           "status": "none",
-          "note": "No agent ordering was found for Chile: the Uber and Uber Eats apps in ChatGPT are US-only, and no Rappi, PedidosYa or DiDi ordering agent was confirmed; Uber's own app has AI voice ride booking, but no country list (medium confidence).",
+          "note": "No agent ordering was found for Chile: the Uber and Uber Eats apps in ChatGPT are US-only, Rappi's WhatsApp assistant (Adri) was announced but no launch was found, PedidosYa's only AI feature found is a 2023 dish recommender in its own app, and no DiDi ordering agent was found; Uber's own app has AI voice ride booking, but no country list.",
           "evidence": [
             {
               "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
@@ -484,7 +486,7 @@
         },
         "IN": {
           "status": "live",
-          "note": "Swiggy's MCP servers (Food, Instamart, Dineout, since January 2026) and Zomato's MCP server let ChatGPT, Claude or Gemini build a cart and place an order once the user adds a custom connector.",
+          "note": "Swiggy's MCP servers (Food, Instamart, Dineout, since January 2026) let ChatGPT, Claude or Gemini build a cart and place an order once the user adds a custom connector, and Zomato's MCP server (marked for testing) does the same in Claude.",
           "evidence": [
             {
               "title": "Swiggy MCP: Now Open for Developers & Enterprises",
@@ -501,11 +503,11 @@
               "type": "news"
             },
             {
-              "title": "Order Food From Your Terminal with Zomato MCP",
-              "publisher": "Analytics Vidhya",
-              "url": "https://www.analyticsvidhya.com/blog/2025/11/zomato-mcp-server/",
-              "date": "2025-11",
-              "type": "news"
+              "title": "Zomato MCP server (food ordering for AI assistants)",
+              "publisher": "Zomato",
+              "url": "https://github.com/Zomato/mcp-server-manifest",
+              "date": "2025-09",
+              "type": "company"
             }
           ]
         }
@@ -664,7 +666,7 @@
     {
       "name": "Zomato (Eternal)",
       "hq": "IN",
-      "url": "https://www.analyticsvidhya.com/blog/2025/11/zomato-mcp-server/",
+      "url": "https://github.com/Zomato/mcp-server-manifest",
       "role": "Runs an MCP server for AI food ordering and is a Google AI Mode restaurant booking partner.",
       "markets": [
         "IN"
@@ -799,6 +801,19 @@
       "role": "Announced a WhatsApp AI assistant and voice-note ordering for Colombia.",
       "markets": [
         "CO"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Just Eat Takeaway.com",
+      "hq": "NL",
+      "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
+      "role": "Runs an AI assistant in the Just Eat and Lieferando apps that takes food orders by voice or text and fills the basket for checkout.",
+      "markets": [
+        "GB",
+        "DE"
       ],
       "capabilities": [
         "services.delivery-rides"
