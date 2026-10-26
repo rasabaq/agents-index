@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05060b">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Agent Observatory</title>
   <meta name="description" content="What AI agents can actually do in each country: shop, pay, book, bank and more. Every status is backed by a source.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232a78d6'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ff2e88'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%2305060b'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&family=Jersey+10&display=swap" rel="stylesheet">
+  <!-- Flag font, subset to every flag the data uses (tracked countries, company HQs and markets). tests check it stays complete. -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=%F0%9F%87%A6%F0%9F%87%AA%F0%9F%87%A6%F0%9F%87%B7%F0%9F%87%A7%F0%9F%87%B7%F0%9F%87%A8%F0%9F%87%A6%F0%9F%87%A8%F0%9F%87%B1%F0%9F%87%A8%F0%9F%87%B3%F0%9F%87%A8%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%B8%F0%9F%87%AB%F0%9F%87%B7%F0%9F%87%AC%F0%9F%87%A7%F0%9F%87%AE%F0%9F%87%B3%F0%9F%87%B2%F0%9F%87%BD%F0%9F%87%B3%F0%9F%87%B1%F0%9F%87%B8%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="module" src="app.js"></script>
 </head>
@@ -27,9 +31,6 @@
         <a href="#method">Method</a>
         <a href="atlas/">Atlas</a>
       </nav>
-      <button class="theme" type="button" aria-label="Switch color theme">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3Z"/></svg>
-      </button>
     </div>
   </header>
 
@@ -42,7 +43,7 @@
     </section>
 
     <section id="ranking" class="wrap block">
-      <div class="block-head">
+      <div class="block-head" data-kicker="Ranking">
         <h2>Ranking</h2>
         <p>Score out of 100. It is the mean of seven equally weighted categories. Select a country to see its profile.</p>
       </div>
@@ -50,7 +51,7 @@
     </section>
 
     <section id="matrix" class="wrap block">
-      <div class="block-head">
+      <div class="block-head" data-kicker="Capabilities">
         <h2>What agents can do, by country</h2>
         <p>Select any cell to see the products and sources behind it.</p>
       </div>
@@ -62,7 +63,7 @@
     </section>
 
     <section id="country" class="wrap block">
-      <div class="block-head">
+      <div class="block-head" data-kicker="Countries">
         <h2>Country profile</h2>
         <label class="select">
           <span class="sr-only">Country</span>
@@ -73,7 +74,7 @@
     </section>
 
     <section id="companies" class="wrap block">
-      <div class="block-head">
+      <div class="block-head" data-kicker="Companies">
         <h2>Who makes it possible</h2>
         <p>The companies and institutions behind each capability, where they are based, and where their agent features work.</p>
       </div>
@@ -84,7 +85,7 @@
     </section>
 
     <section id="method" class="wrap block method">
-      <div class="block-head">
+      <div class="block-head" data-kicker="Method">
         <h2>Method</h2>
         <p>Inputs are easy to count. Outcomes are what matter. We measure outcomes.</p>
       </div>

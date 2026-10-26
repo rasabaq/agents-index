@@ -71,7 +71,7 @@ function renderStats() {
 function renderRanking() {
   $('[data-ranking]').innerHTML = ranking.map((r) => `
     <li>
-      <button type="button" class="rank-row" data-go-country="${r.code}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}">
+      <button type="button" class="rank-row" data-go-country="${r.code}" aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}">
         <span class="rank-num">${r.rank}</span>
         <span class="rank-name">${flag(r.code)}${esc(r.name)}</span>
         <span class="rank-bar" aria-hidden="true"><span style="width:${r.score}%"></span></span>
@@ -84,7 +84,7 @@ function renderRanking() {
 
 function renderLegend() {
   $('[data-legend]').innerHTML = Object.entries(STATUSES).map(([k, s]) => `<span class="legend-item">${chip(k)}<span>${s.hint}</span></span>`).join('')
-    + '<span class="legend-item"><span class="chip s-none">Status<span class="low">?</span></span><span>Low confidence: sources are thin.</span></span>';
+    + '<span class="legend-item"><span class="low" aria-hidden="true">?</span><span>Low confidence: sources are thin.</span></span>';
 }
 
 function renderFilters() {
@@ -163,6 +163,7 @@ function selectCountry(code, scroll) {
   state.country = code;
   $('[data-country-select]').value = code;
   history.replaceState(null, '', `#country=${code}`);
+  document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderProfile();
   if (scroll) $('#country').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 }
@@ -260,23 +261,7 @@ function wireTooltip() {
   addEventListener('scroll', () => (tip.hidden = true), { passive: true });
 }
 
-function theme() {
-  const root = document.documentElement;
-  try {
-    const saved = localStorage.getItem('theme');
-    if (saved) root.dataset.theme = saved;
-  } catch {}
-  $('.theme').addEventListener('click', () => {
-    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = dark ? 'light' : 'dark';
-    try {
-      localStorage.setItem('theme', root.dataset.theme);
-    } catch {}
-  });
-}
-
 // Start last: the helpers above are consts and must exist before init runs.
-theme();
 try {
   meta = await getJson('meta');
   categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));

@@ -113,7 +113,7 @@
   (window.ATLAS_VIEWS ??= []).push({
     id: 'map',
     title: 'World map',
-    blurb: 'Shows where in the world agents can act today: each dot is a patch of land, and a stronger blue means a higher overall score out of 100.',
+    blurb: 'Shows where in the world agents can act today: each dot is a patch of land, and a brighter dot means a higher overall score out of 100.',
     render(el, ctx) {
       if (!document.getElementById('v-map-style')) {
         document.head.insertAdjacentHTML('beforeend', `<style id="v-map-style">${CSS}</style>`);

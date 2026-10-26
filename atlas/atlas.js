@@ -37,9 +37,6 @@ function buildContext({ meta, categories }) {
       }
     }
   }
-  const themeListeners = [];
-  new MutationObserver(() => themeListeners.forEach((f) => f())).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => themeListeners.forEach((f) => f()));
   const tipEl = $('[data-atlas-tip]');
 
   return {
@@ -49,11 +46,6 @@ function buildContext({ meta, categories }) {
     catName: (id) => catIndex[id].name,
     // Resolved value of a CSS token, for canvas or anything that cannot use var() directly.
     css: (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim(),
-    isDark: () => {
-      const t = document.documentElement.dataset.theme;
-      return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    },
-    onThemeChange: (fn) => themeListeners.push(fn),
     // Shared tooltip: tip.show(event, html) near the pointer, tip.hide().
     tip: {
       show(e, html) {
@@ -88,20 +80,6 @@ function render(ctx) {
   });
 }
 
-function theme() {
-  const root = document.documentElement;
-  try {
-    const saved = localStorage.getItem('theme');
-    if (saved) root.dataset.theme = saved;
-  } catch {}
-  $('.theme').addEventListener('click', () => {
-    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = dark ? 'light' : 'dark';
-    try { localStorage.setItem('theme', root.dataset.theme); } catch {}
-  });
-}
-
-theme();
 addEventListener('scroll', () => ($('[data-atlas-tip]').hidden = true), { passive: true });
 try {
   const ctx = buildContext(await load());

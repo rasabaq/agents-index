@@ -227,7 +227,7 @@
       // Bar strip.
       const strip = svg.append('g');
       strip.append('text').attr('class', 'lane-name').attr('x', 0).attr('y', phone ? 12 : stripTop + stripH - 4)
-        .text(country === 'ALL' ? 'Sources per quarter' : `Sources per quarter, ${country} in blue`);
+        .text(country === 'ALL' ? 'Sources per quarter' : `Sources per quarter, ${country} in magenta`);
       const topRound = (x, w, h, base) => {
         const r = Math.min(4, w / 2, h);
         return `M${x},${base}V${base - h + r}Q${x},${base - h} ${x + r},${base - h}H${x + w - r}Q${x + w},${base - h} ${x + w},${base - h + r}V${base}Z`;

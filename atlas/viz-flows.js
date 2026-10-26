@@ -12,17 +12,11 @@
 .v-flows .fl-head { fill: var(--muted); font-weight: 500; }
 .v-flows .fl-num { fill: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
 .v-flows .fl-bar { fill: var(--muted); }
-.v-flows .fl-rib { fill: var(--accent); fill-opacity: .32; transition: fill-opacity .15s, opacity .15s; }
-.v-flows .fl-rib.home { fill: var(--c3); fill-opacity: .55; }
+.v-flows .fl-rib { fill: var(--accent); fill-opacity: .45; transition: fill-opacity .15s, opacity .15s; }
+.v-flows .fl-rib.home { fill: var(--c3); fill-opacity: .7; }
 .v-flows svg.dim .fl-rib { opacity: .12; }
 .v-flows svg.dim .fl-rib.on { opacity: 1; fill-opacity: .6; }
 .v-flows svg.dim .fl-rib.home.on { fill-opacity: .8; }
-:root[data-theme='dark'] .v-flows .fl-rib { fill-opacity: .45; }
-:root[data-theme='dark'] .v-flows .fl-rib.home { fill-opacity: .7; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) .v-flows .fl-rib { fill-opacity: .45; }
-  :root:not([data-theme='light']) .v-flows .fl-rib.home { fill-opacity: .7; }
-}
 .v-flows .fl-node { cursor: default; outline: none; }
 .v-flows .fl-hit { fill: transparent; }
 .v-flows .fl-node:focus-visible .fl-hit { stroke: var(--accent); stroke-width: 2; }
@@ -225,7 +219,7 @@
         if (w && w !== lastW) { lastW = w; draw(); }
       }).observe(el);
       draw();
-      document.fonts?.ready.then(draw); // label widths are measured; remeasure once Inter loads
+      document.fonts?.ready.then(draw); // label widths are measured; remeasure once the web font loads
     },
   });
 })();
