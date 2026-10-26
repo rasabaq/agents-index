@@ -1,0 +1,22 @@
+{
+  "asOf": "2026-10-25",
+  "countries": [
+    { "code": "US", "name": "United States", "flag": "🇺🇸", "region": "North America" },
+    { "code": "GB", "name": "United Kingdom", "flag": "🇬🇧", "region": "Europe" },
+    { "code": "DE", "name": "Germany", "flag": "🇩🇪", "region": "Europe" },
+    { "code": "IN", "name": "India", "flag": "🇮🇳", "region": "Asia" },
+    { "code": "BR", "name": "Brazil", "flag": "🇧🇷", "region": "Latin America" },
+    { "code": "MX", "name": "Mexico", "flag": "🇲🇽", "region": "Latin America" },
+    { "code": "CL", "name": "Chile", "flag": "🇨🇱", "region": "Latin America" },
+    { "code": "CO", "name": "Colombia", "flag": "🇨🇴", "region": "Latin America" }
+  ],
+  "categories": [
+    { "id": "commerce", "name": "Shopping & checkout", "blurb": "Agents that find and buy products for you." },
+    { "id": "payments", "name": "Agent payments", "blurb": "Payment rails that let an agent pay safely on your behalf." },
+    { "id": "services", "name": "Travel & local services", "blurb": "Agents that book tables, trips, rides and deliveries." },
+    { "id": "autonomy", "name": "General-purpose agents", "blurb": "Agents that use websites, apps and phones the way a person does." },
+    { "id": "banking", "name": "Banking & open finance", "blurb": "Agents that read accounts and move money through banks." },
+    { "id": "messaging", "name": "Chat & messaging", "blurb": "Agents that sell, support and take payments inside chat apps." },
+    { "id": "government", "name": "Government & identity", "blurb": "Agents that prove who you are and handle public services." }
+  ]
+}
