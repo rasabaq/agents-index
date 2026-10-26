@@ -1,14 +1,14 @@
 {
   "asOf": "2026-10-25",
   "countries": [
-    { "code": "US", "name": "United States", "flag": "🇺🇸", "region": "North America" },
-    { "code": "GB", "name": "United Kingdom", "flag": "🇬🇧", "region": "Europe" },
-    { "code": "DE", "name": "Germany", "flag": "🇩🇪", "region": "Europe" },
-    { "code": "IN", "name": "India", "flag": "🇮🇳", "region": "Asia" },
-    { "code": "BR", "name": "Brazil", "flag": "🇧🇷", "region": "Latin America" },
-    { "code": "MX", "name": "Mexico", "flag": "🇲🇽", "region": "Latin America" },
-    { "code": "CL", "name": "Chile", "flag": "🇨🇱", "region": "Latin America" },
-    { "code": "CO", "name": "Colombia", "flag": "🇨🇴", "region": "Latin America" }
+    { "code": "US", "name": "United States", "region": "North America" },
+    { "code": "GB", "name": "United Kingdom", "region": "Europe" },
+    { "code": "DE", "name": "Germany", "region": "Europe" },
+    { "code": "IN", "name": "India", "region": "Asia" },
+    { "code": "BR", "name": "Brazil", "region": "Latin America" },
+    { "code": "MX", "name": "Mexico", "region": "Latin America" },
+    { "code": "CL", "name": "Chile", "region": "Latin America" },
+    { "code": "CO", "name": "Colombia", "region": "Latin America" }
   ],
   "categories": [
     { "id": "commerce", "name": "Shopping & checkout", "blurb": "Agents that find and buy products for you." },

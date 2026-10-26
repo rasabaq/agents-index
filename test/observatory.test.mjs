@@ -43,12 +43,14 @@ test('validate catches the mistakes that break trust', () => {
   const bad = structuredClone(categories);
   bad[0].capabilities[0].countries.AA.evidence = []; // live without a source
   bad[0].capabilities[1].countries.BB.status = 'maybe';
+  bad[0].capabilities[1].countries.CC.confidence = 'high';
   delete bad[1].capabilities[0].countries.CC;
   bad[1].companies = [{ name: 'X', role: 'r', url: 'not a url', markets: ['ZZ'], capabilities: [] }];
   const errors = validate(meta, bad).join('\n');
   assert.match(errors, /shop\.a\/AA: "live" needs evidence/);
   assert.match(errors, /shop\.b\/BB: bad status "maybe"/);
   assert.match(errors, /pay\.a\/CC: missing/);
+  assert.match(errors, /shop\.b\/CC: confidence can only be "low"/);
   assert.match(errors, /bad url/);
   assert.match(errors, /unknown market "ZZ"/);
 });

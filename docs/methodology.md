@@ -41,6 +41,7 @@ Rules:
 - Every Live, Limited or Announced cell must cite at least one source with a URL. `npm run validate` enforces this.
 - Primary sources come first: company, regulator and paper. News is used only when nothing primary exists.
 - When the sources disagree or are unclear, the cell takes the lower status and the note says why.
+- A cell whose sources are thin or indirect carries `"confidence": "low"`. The site marks it with a `?`. Treat it as a lead to check, not a finding. Its score still counts.
 
 ## Score and ranking
 

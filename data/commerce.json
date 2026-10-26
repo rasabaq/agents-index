@@ -1,0 +1,759 @@
+{
+  "category": "commerce",
+  "capabilities": [
+    {
+      "id": "commerce.in-chat-checkout",
+      "name": "Buy inside an AI assistant",
+      "question": "Can an AI assistant buy from a merchant for you without you leaving the chat?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Google AI Mode and Gemini (agentic checkout and Universal Cart), Microsoft Copilot Checkout, Perplexity Instant Buy with PayPal and Alexa+ shopping all work for US users; ChatGPT Instant Checkout launched in the US but OpenAI moved checkout to merchant apps in March 2026.",
+          "evidence": [
+            {
+              "title": "Universal Cart launch",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+              "date": "2026-10-15",
+              "type": "company"
+            },
+            {
+              "title": "Agentic checkout for holiday AI shopping",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            },
+            {
+              "title": "Copilot gets shopping feature, US first out",
+              "publisher": "Computerworld",
+              "url": "https://www.computerworld.com/article/4115064/copilot-gets-shopping-feature-us-first-out.html",
+              "date": "2026-01-09",
+              "type": "news"
+            },
+            {
+              "title": "PayPal and Perplexity debut Instant Buy ahead of Black Friday shopping",
+              "publisher": "PYMNTS",
+              "url": "https://www.pymnts.com/artificial-intelligence-2/2025/paypal-and-perplexity-debut-instant-buy-ahead-of-black-friday-shopping",
+              "date": "2025-11-25",
+              "type": "news"
+            },
+            {
+              "title": "Microsoft Copilot direct checkout on Shopify agentic storefronts",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "OpenAI shifts checkout plans in agentic commerce strategy",
+              "publisher": "Digital Commerce 360",
+              "url": "https://digitalcommerce360.com/2026/03/06/openai-shifts-checkout-plans-agentic-commerce-strategy/",
+              "date": "2026-03-06",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "note": "Only Alexa+ early access (invite or new Echo buyers, since March 2026) can order from Amazon by voice; Google says UCP checkout in AI Mode and Gemini will reach the UK after Canada and Australia, and Copilot, Perplexity and Google checkout are US-only.",
+          "evidence": [
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Amazon brings Alexa+ to the UK",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/03/19/amazon-brings-alexa-to-the-uk",
+              "date": "2026-03-19",
+              "type": "news"
+            },
+            {
+              "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+              "date": "2026-05-20",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "note": "Only Alexa+ is available, in early access since May 2026, and Amazon does not list its shopping features by country; Google agentic checkout leaves Europe out (US and Australia only).",
+          "evidence": [
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "limited",
+          "note": "Only Alexa+ is available, in early access since June 2026; ChatGPT, Google, Copilot and Perplexity checkout are not offered in Brazil.",
+          "evidence": [
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ launches in early access in Brazil",
+              "publisher": "Thurrott",
+              "url": "https://thurrott.com/a-i/337617/alexa-launches-in-early-access-in-brazil",
+              "date": "2026-06-19",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "MX": {
+          "status": "limited",
+          "note": "Only Alexa+ is available, in early access since January 2026; no ChatGPT, Google, Copilot or Perplexity checkout is offered in Mexico.",
+          "evidence": [
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CL": {
+          "status": "none",
+          "note": "No in-chat checkout found: Google agentic checkout is US and Australia only, Copilot Checkout is US only, and Alexa+ is not in Chile.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "none",
+          "note": "No in-chat checkout found: Google agentic checkout is US and Australia only, Copilot Checkout is US only, and Alexa+ is not in Colombia.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "limited",
+          "note": "Pilots only: Google is testing a Flipkart Buy button in Gemini and AI Mode for some users, Razorpay and NPCI run UPI checkout pilots in ChatGPT and Claude, and Alexa+ (with shopping) is in early access.",
+          "evidence": [
+            {
+              "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
+              "date": "2026-09-26",
+              "type": "news"
+            },
+            {
+              "title": "Razorpay, NPCI launch Agentic Payments on Anthropic's Claude; Zomato, Swiggy, Zepto go live",
+              "publisher": "Business Today",
+              "url": "https://www.businesstoday.in/amp/technology/news/story/razorpay-npci-launch-agentic-payments-on-anthropics-claude-zomato-swiggy-zepto-go-live-517307-2026-02-20",
+              "date": "2026-02-20",
+              "type": "news"
+            },
+            {
+              "title": "Razorpay, NPCI and OpenAI launch agentic payments on ChatGPT",
+              "publisher": "Business Standard",
+              "url": "https://www.business-standard.com/companies/news/razorpay-npci-and-openai-launch-agentic-payments-on-chatgpt-125100900601_1.html",
+              "date": "2025-10-09",
+              "type": "news"
+            },
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        }
+      }
+    },
+    {
+      "id": "commerce.marketplace-agent",
+      "name": "Marketplace agent buys for you",
+      "question": "Can a marketplace's own AI agent buy things for you?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Amazon's Alexa for Shopping (with Rufus) can auto-buy at a set price for all US customers, Walmart's Sparky auto-reorders repeat items, and Amazon Buy for Me (buying from other brand sites) is still a beta for some US users.",
+          "evidence": [
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-05",
+              "type": "company"
+            },
+            {
+              "title": "Amazon Shopping app Buy for Me",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Walmart's Sparky agent drives AI sales",
+              "publisher": "Digital Commerce 360",
+              "url": "https://www.digitalcommerce360.com/2026/05/22/walmart-sparky-agent-ai-sales-supply-chain/amp/",
+              "date": "2026-05-22",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "note": "Only Amazon's Alexa+ in early access can order from Amazon for you; Rufus works in the UK, but its Auto Buy and Buy for Me are documented only in the US.",
+          "evidence": [
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa for Shopping (US only)",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-05",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "note": "Only Amazon's Alexa+ in early access (since May 2026); Rufus is live in Germany, but its Auto Buy is documented only in the US.",
+          "evidence": [
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "limited",
+          "note": "Only Amazon's Alexa+ in early access (since June 2026); Mercado Libre is testing a shopping assistant and has registered the MAGO name for a buying agent, but neither is launched.",
+          "evidence": [
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Mercado Libre prepara una IA que compra, invierte y paga por vos",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/68836-mercado-libre-plan-secreto-mago-ia-manejar-plata-compras-inteligencia-artificial",
+              "date": "2026-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "MX": {
+          "status": "limited",
+          "note": "Only Amazon's Alexa+ in early access (since January 2026); no Mercado Libre or Walmart Mexico agent that buys for you was found.",
+          "evidence": [
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CL": {
+          "status": "none",
+          "note": "No marketplace buying agent found: Falabella is only exploring agents, Mercado Libre's buying agent is not launched, and Alexa+ is not in Chile.",
+          "evidence": [
+            {
+              "title": "Mercado Libre IA: claves para el futuro del retail 2026",
+              "publisher": "ITSeller",
+              "url": "https://www.itseller.cl/2026/07/16/mercado-libre-ia-claves-para-el-futuro-del-retail-2026/",
+              "date": "2026-07-16",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "none",
+          "note": "No marketplace buying agent found: Mercado Libre's buying agent is not launched and no Rappi or Falabella buying agent was found.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "limited",
+          "note": "Flipkart's payments app super.money started rolling out agents that shop on Flipkart in September 2026, and Amazon's Alexa+ (with shopping) is in early access; neither has reached all users yet. Amazon India's Rufus only sends deal alerts, with no Auto Buy.",
+          "evidence": [
+            {
+              "title": "Flipkart's Super.money lets AI agents shop for you",
+              "publisher": "NewsBytes",
+              "url": "https://www.newsbytesapp.com/news/science/flipkart-s-super-money-lets-ai-agents-shop-for-you/story",
+              "date": "2026-09-11",
+              "type": "news"
+            },
+            {
+              "title": "Flipkart brings AI agents to automate online shopping",
+              "publisher": "StartupTalky",
+              "url": "https://startuptalky.com/news/flipkart-brings-ai-agents/",
+              "date": "2026-09",
+              "type": "news"
+            },
+            {
+              "title": "How to find the best deals during the Amazon Great Indian Festival 2026",
+              "publisher": "Amazon India",
+              "url": "https://www.aboutamazon.in/news/retail/amazon-shopping-app-features-best-deals",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        }
+      }
+    },
+    {
+      "id": "commerce.merchant-protocol",
+      "name": "Merchants sell to AI agents",
+      "question": "Can local merchants sell to AI agents through an open protocol or platform?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "US merchants can sell to agents through Shopify Agentic Storefronts (ChatGPT, Google AI Mode and Gemini, Copilot, Meta), Stripe Agentic Commerce Suite, PayPal Agent Ready and Store Sync, and Google UCP; OpenAI ACP product feeds need approval.",
+          "evidence": [
+            {
+              "title": "Agentic storefronts",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Sell through agents with Agentic Commerce Suite",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "PayPal agentic commerce services",
+              "publisher": "PayPal",
+              "url": "https://paypal.ai/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Universal Commerce Protocol for Merchant Center",
+              "publisher": "Google for Developers",
+              "url": "https://developers.google.com/merchant/ucp",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Agentic Commerce Protocol: get started",
+              "publisher": "OpenAI",
+              "url": "https://developers.openai.com/commerce/guides/get-started",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "UK merchants can onboard to Stripe Agentic Commerce Suite (GB is on its country list) and to Shopify Agentic Storefronts, but the agents that buy mostly serve shoppers in the US, Canada and Australia; Google UCP checkout for UK shoppers is only announced.",
+          "evidence": [
+            {
+              "title": "Sell through agents with Agentic Commerce Suite (supported countries)",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+              "date": "2026-05-20",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "German merchants can onboard to Stripe Agentic Commerce Suite (DE is on its country list) and to Shopify Agentic Storefronts, but the agents that buy mostly serve shoppers in the US, Canada and Australia.",
+          "evidence": [
+            {
+              "title": "Sell through agents with Agentic Commerce Suite (supported countries)",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "limited",
+          "note": "Only Brazilian Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US (ChatGPT, Copilot) or the US, Canada and Australia (Google); Stripe Agentic Commerce Suite does not list Brazil.",
+          "evidence": [
+            {
+              "title": "Agentic storefronts: Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Agentic storefronts: ChatGPT",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Sell through agents with Agentic Commerce Suite (supported countries)",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "limited",
+          "note": "Only Mexican Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; Stripe Agentic Commerce Suite does not list Mexico.",
+          "evidence": [
+            {
+              "title": "Agentic storefronts: Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Sell through agents with Agentic Commerce Suite (supported countries)",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "limited",
+          "note": "Only Chilean Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; no local agentic commerce rail was found.",
+          "evidence": [
+            {
+              "title": "Agentic storefronts: Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "limited",
+          "note": "Only Colombian Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; no local agentic commerce rail was found.",
+          "evidence": [
+            {
+              "title": "Agentic storefronts: Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "limited",
+          "note": "Razorpay Agentic Payments on UPI (with NPCI, for ChatGPT and Claude) is a pilot with about 50 brands, and Indian Shopify stores can sell through Agentic Storefronts only to US, Canadian or Australian shoppers.",
+          "evidence": [
+            {
+              "title": "Can Razorpay turn ChatGPT into India's next commerce channel?",
+              "publisher": "Inc42",
+              "url": "https://inc42.com/features/can-razorpay-turn-chatgpt-into-indias-next-commerce-channel/",
+              "date": "2026",
+              "type": "news"
+            },
+            {
+              "title": "Razorpay, NPCI launch Agentic Payments on Anthropic's Claude",
+              "publisher": "Business Today",
+              "url": "https://www.businesstoday.in/amp/technology/news/story/razorpay-npci-launch-agentic-payments-on-anthropics-claude-zomato-swiggy-zepto-go-live-517307-2026-02-20",
+              "date": "2026-02-20",
+              "type": "news"
+            },
+            {
+              "title": "Agentic storefronts: Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "OpenAI",
+      "hq": "US",
+      "url": "https://developers.openai.com/commerce",
+      "role": "Co-created the Agentic Commerce Protocol and lets ChatGPT buy from merchants, now mainly through merchant apps, plus a UPI pilot in India.",
+      "markets": [
+        "US",
+        "IN"
+      ],
+      "capabilities": [
+        "commerce.in-chat-checkout",
+        "commerce.merchant-protocol"
+      ]
+    },
+    {
+      "name": "Google",
+      "hq": "US",
+      "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+      "role": "Runs agentic checkout and Universal Cart in AI Mode and Gemini on its open Universal Commerce Protocol, and is testing Flipkart checkout in India.",
+      "markets": [
+        "US",
+        "IN"
+      ],
+      "capabilities": [
+        "commerce.in-chat-checkout",
+        "commerce.merchant-protocol"
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "hq": "US",
+      "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft",
+      "role": "Copilot Checkout lets US shoppers buy from PayPal, Stripe and Shopify merchants inside Copilot.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "commerce.in-chat-checkout"
+      ]
+    },
+    {
+      "name": "Perplexity",
+      "hq": "US",
+      "url": "https://www.pymnts.com/artificial-intelligence-2/2025/paypal-and-perplexity-debut-instant-buy-ahead-of-black-friday-shopping",
+      "role": "Instant Buy lets US users pay merchants with PayPal inside Perplexity answers.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "commerce.in-chat-checkout"
+      ]
+    },
+    {
+      "name": "Amazon",
+      "hq": "US",
+      "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+      "role": "Alexa+ and Alexa for Shopping (with Rufus) order, auto-buy and use Buy for Me on other sites for customers; outside the US Alexa+ is in early access.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "IN"
+      ],
+      "capabilities": [
+        "commerce.in-chat-checkout",
+        "commerce.marketplace-agent"
+      ]
+    },
+    {
+      "name": "Walmart",
+      "hq": "US",
+      "url": "https://www.digitalcommerce360.com/2026/05/22/walmart-sparky-agent-ai-sales-supply-chain/amp/",
+      "role": "Sparky, Walmart's shopping agent, automatically reorders repeat items for customers.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "commerce.marketplace-agent"
+      ]
+    },
+    {
+      "name": "Flipkart (super.money)",
+      "hq": "IN",
+      "url": "https://startuptalky.com/news/flipkart-brings-ai-agents/",
+      "role": "Flipkart's payments app super.money is rolling out agents that shop on Flipkart for users, and Flipkart is Google's checkout test partner in Gemini.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "commerce.marketplace-agent",
+        "commerce.in-chat-checkout"
+      ]
+    },
+    {
+      "name": "Razorpay",
+      "hq": "IN",
+      "url": "https://inc42.com/features/can-razorpay-turn-chatgpt-into-indias-next-commerce-channel/",
+      "role": "Agentic Payments lets Indian merchants take UPI payments from ChatGPT and Claude in a pilot.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "commerce.merchant-protocol",
+        "commerce.in-chat-checkout"
+      ]
+    },
+    {
+      "name": "NPCI",
+      "hq": "IN",
+      "url": "https://www.business-standard.com/companies/news/razorpay-npci-and-openai-launch-agentic-payments-on-chatgpt-125100900601_1.html",
+      "role": "Runs UPI, whose Reserve Pay and UPI Circle features let AI agents pay without a PIN prompt each time, in pilot.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ]
+    },
+    {
+      "name": "Anthropic",
+      "hq": "US",
+      "url": "https://www.businesstoday.in/amp/technology/news/story/razorpay-npci-launch-agentic-payments-on-anthropics-claude-zomato-swiggy-zepto-go-live-517307-2026-02-20",
+      "role": "Claude can order from Zomato, Swiggy and Zepto with UPI in an Indian pilot.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "commerce.in-chat-checkout"
+      ]
+    },
+    {
+      "name": "Stripe",
+      "hq": "US",
+      "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+      "role": "Agentic Commerce Suite and Shared Payment Tokens let merchants list products for agents and accept agent payments.",
+      "markets": [
+        "US",
+        "GB",
+        "DE"
+      ],
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ]
+    },
+    {
+      "name": "Shopify",
+      "hq": "CA",
+      "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+      "role": "Agentic Storefronts puts store catalogs into ChatGPT, Google AI Mode and Gemini, Copilot and Meta Muse, for stores in any country selling to US, Canadian or Australian shoppers.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ]
+    },
+    {
+      "name": "PayPal",
+      "hq": "US",
+      "url": "https://paypal.ai/",
+      "role": "Agent Ready and Store Sync let PayPal merchants be found and paid in Copilot, Perplexity and Google AI checkout.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "commerce.merchant-protocol",
+        "commerce.in-chat-checkout"
+      ]
+    },
+    {
+      "name": "Meta",
+      "hq": "US",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+      "role": "The Muse agent can shop and pay through Stripe Link and Shopify connectors in the US and Canada.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "commerce.in-chat-checkout"
+      ]
+    },
+    {
+      "name": "Mercado Libre",
+      "hq": "AR",
+      "url": "https://www.iproup.com/finanzas/68836-mercado-libre-plan-secreto-mago-ia-manejar-plata-compras-inteligencia-artificial",
+      "role": "Is testing a shopping assistant and a planned buying agent (MAGO) for its marketplace and Mercado Pago; nothing has launched in the target countries yet.",
+      "markets": [],
+      "capabilities": [
+        "commerce.marketplace-agent"
+      ]
+    }
+  ]
+}

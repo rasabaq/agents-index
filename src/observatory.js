@@ -66,6 +66,7 @@ export function validate(meta, categories) {
         }
         if (!STATUSES[cell.status]) errors.push(`${where}/${code}: bad status "${cell.status}"`);
         if (!cell.note) errors.push(`${where}/${code}: needs a note`);
+        if (cell.confidence !== undefined && cell.confidence !== 'low') errors.push(`${where}/${code}: confidence can only be "low"`);
         if (cell.status !== 'none' && !cell.evidence?.length) errors.push(`${where}/${code}: "${cell.status}" needs evidence`);
         for (const ev of cell.evidence ?? []) checkEvidence(ev, `${where}/${code}`, errors);
       }

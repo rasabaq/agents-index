@@ -1,0 +1,967 @@
+{
+  "category": "autonomy",
+  "capabilities": [
+    {
+      "id": "autonomy.browser-agent",
+      "name": "Agent browses and acts on websites",
+      "question": "Can an AI agent open websites and click, type and fill forms for you?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "ChatGPT agent (paid plans), Claude in Chrome (paid plans), Perplexity Comet (free) and Google's Chrome auto browse (AI Pro and Ultra, US only) all browse and act on websites.",
+          "evidence": [
+            {
+              "title": "New ChatGPT Agent AI is now available to Plus users worldwide",
+              "publisher": "BGR",
+              "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+              "date": "2025-07-25",
+              "type": "news"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Perplexity's Comet AI browser is now free for everyone",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/ai/perplexitys-comet-ai-browser-is-now-free-for-everyone-170017509.html",
+              "date": "2025-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Gemini in Chrome and Skills: how they work, where it's available",
+              "publisher": "Pasquale Pillitteri",
+              "url": "https://pasqualepillitteri.it/en/news/3256/gemini-in-chrome-skills-how-they-work-countries-availability",
+              "date": "2026-05",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "ChatGPT agent, Claude in Chrome and Perplexity Comet work in the UK; Google's Gemini in Chrome and its auto browse agent are not in the UK yet.",
+          "evidence": [
+            {
+              "title": "New ChatGPT Agent AI is now available to Plus users worldwide",
+              "publisher": "BGR",
+              "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+              "date": "2025-07-25",
+              "type": "news"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Perplexity's Comet AI browser is now free for everyone",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/ai/perplexitys-comet-ai-browser-is-now-free-for-everyone-170017509.html",
+              "date": "2025-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Gemini in Chrome expands further to Latin America and the Middle East",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/2191174/gemini-in-chrome-expands-to-latin-america-middle-east",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "ChatGPT agent (held back in the EEA at launch, later rolled out), Claude in Chrome and Perplexity Comet work in Germany and in German; Google's Gemini in Chrome and auto browse are still blocked in the EU.",
+          "evidence": [
+            {
+              "title": "New ChatGPT Agent AI is now available to Plus users worldwide",
+              "publisher": "BGR",
+              "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+              "date": "2025-07-25",
+              "type": "news"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Perplexity's Comet AI browser is now free for everyone",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/ai/perplexitys-comet-ai-browser-is-now-free-for-everyone-170017509.html",
+              "date": "2025-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Gemini in Chrome expands further to Latin America and the Middle East",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/2191174/gemini-in-chrome-expands-to-latin-america-middle-east",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "BR": {
+          "status": "live",
+          "note": "ChatGPT agent (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Portuguese prompts; Google's Chrome auto browse is US-only.",
+          "evidence": [
+            {
+              "title": "New ChatGPT Agent AI is now available to Plus users worldwide",
+              "publisher": "BGR",
+              "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+              "date": "2025-07-25",
+              "type": "news"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Perplexity's Comet AI browser is now free for everyone",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/ai/perplexitys-comet-ai-browser-is-now-free-for-everyone-170017509.html",
+              "date": "2025-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Gemini in Chrome expands further to Latin America and the Middle East",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/2191174/gemini-in-chrome-expands-to-latin-america-middle-east",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "ChatGPT agent (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is US-only.",
+          "evidence": [
+            {
+              "title": "New ChatGPT Agent AI is now available to Plus users worldwide",
+              "publisher": "BGR",
+              "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+              "date": "2025-07-25",
+              "type": "news"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Perplexity's Comet AI browser is now free for everyone",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/ai/perplexitys-comet-ai-browser-is-now-free-for-everyone-170017509.html",
+              "date": "2025-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Gemini in Chrome expands further to Latin America and the Middle East",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/2191174/gemini-in-chrome-expands-to-latin-america-middle-east",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "ChatGPT agent (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is US-only.",
+          "evidence": [
+            {
+              "title": "New ChatGPT Agent AI is now available to Plus users worldwide",
+              "publisher": "BGR",
+              "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+              "date": "2025-07-25",
+              "type": "news"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Perplexity's Comet AI browser is now free for everyone",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/ai/perplexitys-comet-ai-browser-is-now-free-for-everyone-170017509.html",
+              "date": "2025-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Gemini in Chrome expands further to Latin America and the Middle East",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/2191174/gemini-in-chrome-expands-to-latin-america-middle-east",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ]
+        },
+        "CO": {
+          "status": "live",
+          "note": "ChatGPT agent (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is US-only.",
+          "evidence": [
+            {
+              "title": "New ChatGPT Agent AI is now available to Plus users worldwide",
+              "publisher": "BGR",
+              "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+              "date": "2025-07-25",
+              "type": "news"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Perplexity's Comet AI browser is now free for everyone",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/ai/perplexitys-comet-ai-browser-is-now-free-for-everyone-170017509.html",
+              "date": "2025-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Gemini in Chrome expands further to Latin America and the Middle East",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/2191174/gemini-in-chrome-expands-to-latin-america-middle-east",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "ChatGPT agent (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Hindi and English prompts; Google's Chrome auto browse is US-only.",
+          "evidence": [
+            {
+              "title": "New ChatGPT Agent AI is now available to Plus users worldwide",
+              "publisher": "BGR",
+              "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+              "date": "2025-07-25",
+              "type": "news"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Perplexity's Comet AI browser is now free for everyone",
+              "publisher": "Engadget",
+              "url": "https://engadget.com/ai/perplexitys-comet-ai-browser-is-now-free-for-everyone-170017509.html",
+              "date": "2025-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Gemini in Chrome and Skills: how they work, where it's available",
+              "publisher": "Pasquale Pillitteri",
+              "url": "https://pasqualepillitteri.it/en/news/3256/gemini-in-chrome-skills-how-they-work-countries-availability",
+              "date": "2026-05",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "autonomy.calls-for-you",
+      "name": "Agent phones a business for you",
+      "question": "Can an AI agent phone a local business for you to ask prices or book?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Google Search AI Mode can phone local businesses for prices and availability for signed-in adults in English (evolved from the 'Ask for Me' Labs test).",
+          "evidence": [
+            {
+              "title": "Google Search can now call local businesses using AI",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-search-can-now-call-local-businesses-using-ai/551294/",
+              "date": "2025-07-16",
+              "type": "news"
+            },
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "none",
+          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "evidence": [
+            {
+              "title": "Google Search can now call local businesses using AI",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-search-can-now-call-local-businesses-using-ai/551294/",
+              "date": "2025-07-16",
+              "type": "news"
+            },
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "none",
+          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "evidence": [
+            {
+              "title": "Google Search can now call local businesses using AI",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-search-can-now-call-local-businesses-using-ai/551294/",
+              "date": "2025-07-16",
+              "type": "news"
+            },
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "none",
+          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "evidence": [
+            {
+              "title": "Google Search can now call local businesses using AI",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-search-can-now-call-local-businesses-using-ai/551294/",
+              "date": "2025-07-16",
+              "type": "news"
+            },
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "none",
+          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "evidence": [
+            {
+              "title": "Google Search can now call local businesses using AI",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-search-can-now-call-local-businesses-using-ai/551294/",
+              "date": "2025-07-16",
+              "type": "news"
+            },
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "none",
+          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "evidence": [
+            {
+              "title": "Google Search can now call local businesses using AI",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-search-can-now-call-local-businesses-using-ai/551294/",
+              "date": "2025-07-16",
+              "type": "news"
+            },
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "none",
+          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "evidence": [
+            {
+              "title": "Google Search can now call local businesses using AI",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-search-can-now-call-local-businesses-using-ai/551294/",
+              "date": "2025-07-16",
+              "type": "news"
+            },
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "none",
+          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "evidence": [
+            {
+              "title": "Google Search can now call local businesses using AI",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-search-can-now-call-local-businesses-using-ai/551294/",
+              "date": "2025-07-16",
+              "type": "news"
+            },
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "autonomy.personal-assistant-actions",
+      "name": "Assistant takes actions across apps",
+      "question": "Can a phone or home assistant take real actions in your apps, like sending messages or ordering?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Gemini connected apps (calls, messages, WhatsApp, Calendar, Instacart, OpenTable), Alexa+ (free with Prime) and Gemini Spark act across apps; Apple's Siri AI app actions are in English beta.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.10.13 connected apps update)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-10-13",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ is now available to everyone in the US, free with Prime",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-available-free-prime-members-us",
+              "date": "2026-02-04",
+              "type": "company"
+            },
+            {
+              "title": "Apple ships Siri AI today, but not in the EU or China",
+              "publisher": "PPC Land",
+              "url": "https://ppc.land/apple-ships-siri-ai-today-but-not-in-the-eu-or-china/",
+              "date": "2026-09-14",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "Gemini connected apps send messages, make calls and add calendar events; Alexa+ is in free Early Access and Siri AI is in English beta; Gemini Spark excludes the UK.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Amazon's Alexa+ now available in the UK at no additional cost during Early Access",
+              "publisher": "MacTrast",
+              "url": "https://www.mactrast.com/2026/03/amazons-alexa-now-available-in-the-uk-at-no-additional-cost-during-early-access/amp/",
+              "date": "2026-03",
+              "type": "news"
+            },
+            {
+              "title": "Apple ships Siri AI today, but not in the EU or China",
+              "publisher": "PPC Land",
+              "url": "https://ppc.land/apple-ships-siri-ai-today-but-not-in-the-eu-or-china/",
+              "date": "2026-09-14",
+              "type": "news"
+            },
+            {
+              "title": "What's new for Gemini Spark",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17171264",
+              "date": "2026-07-17",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "Gemini connected apps work in German on Android; Alexa+ is in invite-based Early Access since May 2026; Apple's Siri AI and Gemini Spark are not available in the EU.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Amazon Alexa+ startet offiziell in Deutschland",
+              "publisher": "Mobiflip",
+              "url": "https://www.mobiflip.de/amazon-alexa-plus-deutschland/",
+              "date": "2026-05",
+              "type": "news"
+            },
+            {
+              "title": "Apple ships Siri AI today, but not in the EU or China",
+              "publisher": "PPC Land",
+              "url": "https://ppc.land/apple-ships-siri-ai-today-but-not-in-the-eu-or-china/",
+              "date": "2026-09-14",
+              "type": "news"
+            },
+            {
+              "title": "What's new for Gemini Spark",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17171264",
+              "date": "2026-07-17",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "Gemini connected apps work in Portuguese on Android and some partner apps launched in Brazil; Alexa+ is reported in Early Access; Siri AI Portuguese beta was due in October 2026.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.10.13 connected apps update)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-10-13",
+              "type": "company"
+            },
+            {
+              "title": "Apple ships Siri AI today, but not in the EU or China",
+              "publisher": "PPC Land",
+              "url": "https://ppc.land/apple-ships-siri-ai-today-but-not-in-the-eu-or-china/",
+              "date": "2026-09-14",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "Gemini connected apps work in Spanish on Android; Alexa+ launched in Spanish in Early Access in January 2026; Siri AI Spanish beta was due in October 2026.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "How Alexa+ learned local culture and language (Mexico launch)",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/amazon-alexa-plus-AI-culture-language",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Apple ships Siri AI today, but not in the EU or China",
+              "publisher": "PPC Land",
+              "url": "https://ppc.land/apple-ships-siri-ai-today-but-not-in-the-eu-or-china/",
+              "date": "2026-09-14",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "Gemini connected apps work in Spanish on Android; Alexa+ is not offered here; Siri AI is a beta in English, with Spanish due in October 2026.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Apple ships Siri AI today, but not in the EU or China",
+              "publisher": "PPC Land",
+              "url": "https://ppc.land/apple-ships-siri-ai-today-but-not-in-the-eu-or-china/",
+              "date": "2026-09-14",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "live",
+          "note": "Gemini connected apps work in Spanish on Android; Alexa+ is not offered here; Siri AI is a beta in English, with Spanish due in October 2026.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Apple ships Siri AI today, but not in the EU or China",
+              "publisher": "PPC Land",
+              "url": "https://ppc.land/apple-ships-siri-ai-today-but-not-in-the-eu-or-china/",
+              "date": "2026-09-14",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "live",
+          "note": "Gemini connected apps work in Hindi and English on Android; Alexa+ is in Early Access in Hindi and English since September 2026 with Swiggy, MakeMyTrip and EazyDiner links.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.10.13 connected apps update)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-10-13",
+              "type": "company"
+            },
+            {
+              "title": "Amazon launches Alexa+ in India with Hindi support",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/16/amazon-launches-alexa-in-india-with-hindi-support/",
+              "date": "2026-09-16",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "OpenAI",
+      "hq": "US",
+      "url": "https://bgr.com/1921652/chatgpt-agent-ai-launch-pro-plus-team/",
+      "role": "ChatGPT agent runs a virtual browser that navigates sites and completes tasks for paid users.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "autonomy.browser-agent"
+      ]
+    },
+    {
+      "name": "Anthropic",
+      "hq": "US",
+      "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+      "role": "Claude in Chrome reads pages and clicks, types and fills forms in the user's own browser on paid plans.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "autonomy.browser-agent"
+      ]
+    },
+    {
+      "name": "Perplexity",
+      "hq": "US",
+      "url": "https://www.perplexity.ai/comet",
+      "role": "Comet is a free AI browser whose assistant acts on web pages for the user.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "autonomy.browser-agent"
+      ]
+    },
+    {
+      "name": "Google",
+      "hq": "US",
+      "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+      "role": "Gemini connected apps act across Android and Google apps, Chrome auto browse acts on sites (US), and AI Mode phones businesses (US).",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "autonomy.browser-agent",
+        "autonomy.calls-for-you",
+        "autonomy.personal-assistant-actions"
+      ]
+    },
+    {
+      "name": "Amazon",
+      "hq": "US",
+      "url": "https://www.aboutamazon.com/news/devices/alexa-plus-available-free-prime-members-us",
+      "role": "Alexa+ orders, books and controls smart homes through voice and partner services.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "MX",
+        "BR",
+        "IN"
+      ],
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ]
+    },
+    {
+      "name": "Apple",
+      "hq": "US",
+      "url": "https://ppc.land/apple-ships-siri-ai-today-but-not-in-the-eu-or-china/",
+      "role": "Siri AI uses personal context and App Intents to act in apps like Messages and WhatsApp, in beta and outside the EU.",
+      "markets": [
+        "US",
+        "GB",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ]
+    }
+  ]
+}

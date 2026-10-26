@@ -22,9 +22,10 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `docs/methodology.md` | How the data is collected and scored |
+| `index.html`, `app.js`, `styles.css` | The site: ranking, capability matrix, country profiles, companies |
 
 ## Update the data
 
-1. Edit a category file in `data/`. Every Live, Limited or Announced cell needs a source URL.
+1. Edit a category file in `data/`. Every Live, Limited or Announced cell needs a source URL. Add `"confidence": "low"` when the sources are thin.
 2. Run `npm run validate`.
 3. Bump `asOf` in `data/meta.json`.

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Agent Observatory</title>
+  <meta name="description" content="What AI agents can actually do in each country: shop, pay, book, bank and more. Every status is backed by a source.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232a78d6'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="AI Agent Observatory, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" class="brand-ring"/><circle cx="16" cy="16" r="5" class="brand-core"/></svg>
+        <span>AI Agent Observatory</span>
+      </a>
+      <nav aria-label="Sections">
+        <a href="#ranking">Ranking</a>
+        <a href="#matrix">Capabilities</a>
+        <a href="#country">Countries</a>
+        <a href="#companies">Companies</a>
+        <a href="#method">Method</a>
+      </nav>
+      <button class="theme" type="button" aria-label="Switch color theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="kicker">Updated <span data-asof></span></p>
+      <h1>Not how much AI a country has.<br><span>What AI agents can actually do there.</span></h1>
+      <p class="lede">Can an agent buy from a store, pay over the national payment rail, book a table or open your bank account? We track concrete capabilities country by country, and back every status with a source.</p>
+      <dl class="stats" data-stats></dl>
+    </section>
+
+    <section id="ranking" class="wrap block">
+      <div class="block-head">
+        <h2>Ranking</h2>
+        <p>Score out of 100. It is the mean of seven equally weighted categories. Select a country to see its profile.</p>
+      </div>
+      <ol class="ranking" data-ranking></ol>
+    </section>
+
+    <section id="matrix" class="wrap block">
+      <div class="block-head">
+        <h2>What agents can do, by country</h2>
+        <p>Select any cell to see the products and sources behind it.</p>
+      </div>
+      <div class="legend" data-legend></div>
+      <div class="filters" role="group" aria-label="Filter by category" data-filters></div>
+      <div class="matrix-scroll">
+        <table class="matrix" data-matrix></table>
+      </div>
+    </section>
+
+    <section id="country" class="wrap block">
+      <div class="block-head">
+        <h2>Country profile</h2>
+        <label class="select">
+          <span class="sr-only">Country</span>
+          <select data-country-select></select>
+        </label>
+      </div>
+      <div data-profile></div>
+    </section>
+
+    <section id="companies" class="wrap block">
+      <div class="block-head">
+        <h2>Who makes it possible</h2>
+        <p>The companies and institutions behind each capability, where they are based, and where their agent features work.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter companies by market" data-company-filters></div>
+      <div class="table-scroll">
+        <table class="companies" data-companies></table>
+      </div>
+    </section>
+
+    <section id="method" class="wrap block method">
+      <div class="block-head">
+        <h2>Method</h2>
+        <p>Inputs are easy to count. Outcomes are what matter. We measure outcomes.</p>
+      </div>
+      <div class="method-grid">
+        <article>
+          <h3>Two lenses</h3>
+          <p><strong>Research.</strong> Reports, papers and regulation, such as central-bank rules, open-finance timelines and digital-ID laws.</p>
+          <p><strong>Companies.</strong> What builders actually ship, and where: supported-country pages, launch posts and developer docs. Every company is recorded with its HQ and live markets.</p>
+        </article>
+        <article>
+          <h3>Status levels</h3>
+          <ul class="status-list" data-status-list></ul>
+        </article>
+        <article>
+          <h3>Score</h3>
+          <p class="formula">category = mean(points) × 100<br>country = mean(categories)</p>
+          <p>Each cell takes the best status across all products. Live, Limited and Announced cells must cite a source, and the build rejects them otherwise. When the sources are unclear, a cell takes the lower status.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>AI Agent Observatory · Data as of <span data-asof></span> · Availability changes fast. A cell says what was true on that date.</p>
+  </footer>
+
+  <dialog class="detail" data-detail aria-labelledby="detail-title">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <div data-detail-body></div>
+  </dialog>
+  <div class="tip" role="tooltip" data-tip hidden></div>
+</body>
+</html>
