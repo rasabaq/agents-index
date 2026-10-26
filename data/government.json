@@ -1,0 +1,646 @@
+{
+  "category": "government",
+  "capabilities": [
+    {
+      "id": "government.digital-id-api",
+      "name": "National digital ID for apps",
+      "question": "Can an AI agent use a national digital ID or data wallet to prove who a person is to a private app?",
+      "countries": {
+        "US": {
+          "status": "limited",
+          "note": "There is no national ID; Login.gov serves only government agencies, and state mobile driver's licenses in Google, Samsung and Apple wallets can be checked by businesses, but only about 20 states issue them.",
+          "evidence": [
+            {
+              "title": "Login.gov is now accepting mobile driver's licenses",
+              "publisher": "Nextgov/FCW",
+              "url": "https://www.nextgov.com/digital-government/2026/09/logingov-now-accepting-mobile-drivers-licenses/416146/",
+              "date": "2026-09",
+              "type": "news"
+            },
+            {
+              "title": "Verify with Google Wallet digital IDs",
+              "publisher": "Google for Developers",
+              "url": "https://developers.google.com/wallet/identity/verify",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Login.gov roadmap, August 2026",
+              "publisher": "GSA Login.gov",
+              "url": "https://login.gov/docs/login-gov-roadmap-august-2026.pdf",
+              "date": "2026-08",
+              "type": "report"
+            }
+          ]
+        },
+        "GB": {
+          "status": "announced",
+          "note": "GOV.UK One Login serves central government only and GOV.UK Wallet holds just the veteran card; a sandbox for private firms to check the digital driving licence was planned for October 2026, and the national digital ID scheme was dropped in July 2026.",
+          "evidence": [
+            {
+              "title": "GOV.UK Wallet - Roadmap for modern digital government",
+              "publisher": "UK Government (DSIT/GDS)",
+              "url": "https://roadmap-for-modern-digital-government.campaign.gov.uk/join-up-services/govuk-wallet",
+              "date": "2026-09",
+              "type": "report"
+            },
+            {
+              "title": "Burnham's move to scrap UK's digital ID plans earns cheers and criticism",
+              "publisher": "Al Jazeera",
+              "url": "https://www.aljazeera.com/amp/news/2026/7/20/burnhams-move-to-scrap-uks-digital-id-plans-earns-cheers-and-criticism",
+              "date": "2026-07-20",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "DE": {
+          "status": "live",
+          "note": "Any company can accept the Online-Ausweis (eID) after it gets a state authorization certificate or uses a certified eID service; the EUDI wallet 'd-you' is due on 2 January 2027.",
+          "evidence": [
+            {
+              "title": "Diensteanbieter werden",
+              "publisher": "Personalausweisportal (BMI)",
+              "url": "https://www.personalausweisportal.de/Webs/PA/DE/wirtschaft/diensteanbieter-werden/diensteanbieter-werden-node.html",
+              "date": "2025",
+              "type": "regulation"
+            },
+            {
+              "title": "eID-Service",
+              "publisher": "Personalausweisportal (BMI)",
+              "url": "https://www.personalausweisportal.de/Webs/PA/DE/wirtschaft/technik/eID-service/eid-service-node.html",
+              "date": "2025",
+              "type": "regulation"
+            },
+            {
+              "title": "EUDI-Wallet d-you",
+              "publisher": "Macwelt",
+              "url": "https://www.macwelt.de/article/3230255/eudi-wallet-d-you.html",
+              "date": "2026",
+              "type": "news"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "SERPRO's Datavalid API lets private firms check a person's face and data against official records such as the CNH; the gov.br login itself is open mainly to public bodies.",
+          "evidence": [
+            {
+              "title": "Nova versão do Datavalid amplia modalidades de validação",
+              "publisher": "SERPRO",
+              "url": "https://www.serpro.gov.br/menu/noticias/noticias-2024/nova-versao-do-datavalid",
+              "date": "2024",
+              "type": "company"
+            },
+            {
+              "title": "Datavalid API Docs",
+              "publisher": "SERPRO",
+              "url": "https://apicenter.estaleiro.serpro.gov.br/documentacao/datavalid/en/",
+              "date": "2025",
+              "type": "company"
+            },
+            {
+              "title": "Autenticação Digital (Login Único) - Catálogo de APIs",
+              "publisher": "Conecta gov.br",
+              "url": "https://www.gov.br/conecta/catalogo/apis/brasil-cidadao-login-unico",
+              "date": "2020-09",
+              "type": "regulation"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "Banks and firms check the INE voter credential, the de facto national ID, through INE's data and face verification service; Llave MX and the biometric CURP are not yet open to private apps.",
+          "evidence": [
+            {
+              "title": "Ni con datos biométricos la CURP desplaza al INE",
+              "publisher": "Xataka México",
+              "url": "https://www.xataka.com.mx/otros-1/mexico-quiere-que-todos-tengan-curp-biometrica-bancos-tramites-solo-manda-credencial-ine",
+              "date": "2026",
+              "type": "news"
+            },
+            {
+              "title": "INE verificará identidad con nueva solución de validación facial digital",
+              "publisher": "DPL News",
+              "url": "https://dplnews.com/?p=113738",
+              "date": "2023",
+              "type": "news"
+            },
+            {
+              "title": "Lineamientos para la implementación y operación de Llave MX",
+              "publisher": "Diario Oficial de la Federación",
+              "url": "https://dof.gob.mx/nota_detalle.php?codigo=5748515&fecha=06%2F02%2F2025",
+              "date": "2025-02-06",
+              "type": "regulation"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CL": {
+          "status": "limited",
+          "note": "ClaveÚnica can be used only by private bodies with a signed agreement, such as pension funds (AFP) and e-signature providers, under terms published in November 2025.",
+          "evidence": [
+            {
+              "title": "Términos y condiciones ClaveÚnica",
+              "publisher": "Secretaría de Gobierno Digital",
+              "url": "https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica",
+              "date": "2025-11",
+              "type": "regulation"
+            },
+            {
+              "title": "Gobierno Digital entrega recomendaciones para un correcto uso de ClaveÚnica",
+              "publisher": "Ministerio de Hacienda",
+              "url": "https://www.hacienda.cl/noticias-y-eventos/noticias/gobierno-digital-entrega-recomendaciones-para-un-correcto-uso-de-claveunica",
+              "date": "2025-08",
+              "type": "regulation"
+            }
+          ]
+        },
+        "CO": {
+          "status": "live",
+          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators, and the Cédula Digital is accepted by entities that choose to; Carpeta Ciudadana stays a public-sector service.",
+          "evidence": [
+            {
+              "title": "Resolución Registraduría 13691 de 2016 (aliados tecnológicos)",
+              "publisher": "Registraduría Nacional / Colpensiones normativa",
+              "url": "https://normativa.colpensiones.gov.co/colpens/docs/resolucion_registraduria_13691_2016.htm",
+              "date": "2016",
+              "type": "regulation"
+            },
+            {
+              "title": "BBVA, primer banco en implementar la verificación biométrica en Colombia",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.com/es/innovacion/bbva-primer-banco-implementar-la-verificacion-biometrica-colombia/",
+              "date": "2016",
+              "type": "company"
+            },
+            {
+              "title": "Cómo sacar la cédula digital en Colombia en 2026",
+              "publisher": "El Espectador",
+              "url": "https://www.elespectador.com/colombia/como-sacar-la-cedula-digital-en-colombia-en-2026-requisitos-precio-y-paso-a-paso/",
+              "date": "2026",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "live",
+          "note": "Aadhaar eKYC and face authentication are open to approved private entities (417 KUAs, about 26 billion eKYC calls in FY2025-26), and DigiLocker lets registered firms pull documents with user consent.",
+          "evidence": [
+            {
+              "title": "eKYC Dashboard",
+              "publisher": "UIDAI",
+              "url": "https://uidai.gov.in/en/aadhaar-dashboard/ekyc",
+              "date": "2026",
+              "type": "report"
+            },
+            {
+              "title": "SOP for submission of applications by private entities",
+              "publisher": "UIDAI",
+              "url": "https://uidai.gov.in/images/SOP_Application_form_Template_of_letters_for_Private_entities_11032025.pdf",
+              "date": "2025-03-11",
+              "type": "regulation"
+            },
+            {
+              "title": "IT ministry notifies rules allowing private entities to carry out Aadhaar authentication",
+              "publisher": "Scroll.in",
+              "url": "https://scroll.in/latest/1078654/it-ministry-notifies-rules-allowing-private-entities-to-carry-out-aadhaar-authentication",
+              "date": "2025-01",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "government.ai-public-services",
+      "name": "Government AI service assistant",
+      "question": "Can an AI agent use a government AI assistant to finish a public-service task, not just get answers?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "The IRS AI voice bot lets signed-in taxpayers set up or change payment plans and request transcripts; IRS web chatbots and most state chatbots only answer questions.",
+          "evidence": [
+            {
+              "title": "Using voice and chat bots to improve the collection taxpayer experience",
+              "publisher": "IRS",
+              "url": "https://www.irs.gov/about-irs/using-voice-and-chat-bots-to-improve-the-collection-taxpayer-experience",
+              "date": "2022-09",
+              "type": "company"
+            },
+            {
+              "title": "Privacy Impact Assessment: Taxpayer Services chatbot",
+              "publisher": "IRS",
+              "url": "https://www.irs.gov/pub/irs-pia/ts-am-iclc-pia.pdf",
+              "date": "2026-06-05",
+              "type": "report"
+            },
+            {
+              "title": "NASCIO Agentic AI Report 2026",
+              "publisher": "NASCIO",
+              "url": "https://www.nascio.org/wp-content/uploads/2026/03/NASCIO_Agentic-AI-Report_2026_.a11y.pdf",
+              "date": "2026-03",
+              "type": "report"
+            }
+          ],
+          "confidence": "low"
+        },
+        "GB": {
+          "status": "limited",
+          "note": "GOV.UK Chat in the GOV.UK app answers questions from GOV.UK guidance but does not complete tasks; an agent pilot for 16 to 24 year olds is testing next steps, and agentic features are planned from March 2027.",
+          "evidence": [
+            {
+              "title": "GOV.UK app - Roadmap for modern digital government",
+              "publisher": "UK Government (DSIT/GDS)",
+              "url": "https://roadmap-for-modern-digital-government.campaign.gov.uk/join-up-services/govuk-app",
+              "date": "2026",
+              "type": "report"
+            },
+            {
+              "title": "AI chatbot fully integrated into GOV.UK app",
+              "publisher": "Civil Service World",
+              "url": "https://www.civilserviceworld.com/news/article/govuk-ai-chatbot-launched",
+              "date": "2026-05",
+              "type": "news"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "note": "Only city chatbots such as Stuttgart's AI chatbot (in trial) answer questions, F13 and BärGPT serve civil servants only, and Bremen's KOMPASS application helper is due from late 2026.",
+          "evidence": [
+            {
+              "title": "Chatbot der Stadt Stuttgart",
+              "publisher": "Landeshauptstadt Stuttgart",
+              "url": "https://www.stuttgart.de/service/dienstleistungen/chatbot/",
+              "date": "2025-04-24",
+              "type": "company"
+            },
+            {
+              "title": "KI-Assistent für das Serviceportal Bremen",
+              "publisher": "Freie Hansestadt Bremen",
+              "url": "https://www.service.bremen.de/ki-assistent-fuer-das-serviceportal-bremen-verwaltungsleistungen-einfacher-finden-und-nutzen-208174",
+              "date": "2026",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "limited",
+          "note": "Chat GOV.BR answers Enem and Sisu questions through WhatsApp notifications and INSS's Helô assistant answers benefit questions; the government says completing transactions by chatbot is the next step.",
+          "evidence": [
+            {
+              "title": "Governo do Brasil orienta estudantes sobre resultado do Enem pela Caixa Postal GOV.BR",
+              "publisher": "Secom - Governo Federal",
+              "url": "https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2026/01/governo-do-brasil-orienta-estudantes-sobre-resultado-do-enem-pela-caixa-postal-gov.br",
+              "date": "2026-01",
+              "type": "company"
+            },
+            {
+              "title": "Ministério da Gestão e CPQD fazem balanço de primeiras ações de IA do projeto INSPIRE",
+              "publisher": "Ministério da Gestão e da Inovação",
+              "url": "https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/maio/ministerio-da-gestao-e-cpqd-fazem-balanco-de-primeiras-acoes-de-inteligencia-artificial-do-projeto-inspire",
+              "date": "2026-05",
+              "type": "report"
+            },
+            {
+              "title": "Ministra Dweck aposta em IA para revolucionar serviços públicos",
+              "publisher": "Jornal de Brasília",
+              "url": "https://jornaldebrasilia.com.br/noticias/brasil/ministra-dweck-aposta-em-ia-para-revolucionar-servicos-publicos-brasileiros/",
+              "date": "2026-02",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "limited",
+          "note": "Ventanilla 24/7 on gob.mx is an AI agent in testing that helps people find and start trámites, but it does not yet finish them end to end.",
+          "evidence": [
+            {
+              "title": "El gobierno mexicano ya prueba una IA para atender ciudadanos",
+              "publisher": "Xataka México",
+              "url": "https://www.xataka.com.mx/robotica-e-ia/gobierno-mexico-quiere-atender-tramites-ia-burocracia-ventanilla-24-7-promete-resolverlos-minutos",
+              "date": "2026-03-26",
+              "type": "news"
+            },
+            {
+              "title": "México gradúa a su primera generación de 10 mil expertos en IA",
+              "publisher": "El Imparcial",
+              "url": "https://www.elimparcial.com/mexico/2026/05/05/mexico-gradua-a-su-primera-generacion-de-10-mil-expertos-en-ia-para-alcanzar-la-soberania-tecnologica-y-reducir-la-dependencia-de-proveedores-de-software-extranjeros/",
+              "date": "2026-05-05",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "limited",
+          "note": "ChileAtiende's generative AI assistant only gives general guidance on trámites and cannot see a person's records or file anything.",
+          "evidence": [
+            {
+              "title": "Términos y condiciones de uso",
+              "publisher": "ChileAtiende",
+              "url": "https://www.chileatiende.gob.cl/terminos-y-condiciones",
+              "date": "2026",
+              "type": "regulation"
+            }
+          ]
+        },
+        "CO": {
+          "status": "limited",
+          "note": "Robi, the assistant on the GOV.CO portal, guides people on trámites around the clock, and MinTIC announced AI chatbots for requests and complaints in July 2026; neither completes tasks.",
+          "evidence": [
+            {
+              "title": "Ministerio TIC lanza Robi y GOV.CO 2.0",
+              "publisher": "MinTIC",
+              "url": "https://mintic.gov.co/portal/inicio/Sala-de-prensa/Noticias/405434:Ministerio-TIC-lanza-Robi-y-GOV-CO-2-0-herramientas-inteligentes-que-modernizan-la-interaccion-digital-con-el-Estado",
+              "date": "2025-09",
+              "type": "company"
+            },
+            {
+              "title": "Colombia impulsa la IA en la administración para automatizar trámites",
+              "publisher": "El Español",
+              "url": "https://www.elespanol.com/invertia/disruptores-americas/20260716/colombia-impulsa-ia-administracion-automatizar-tramites-mejorar-servicios-publicos/1003744317756_0.html",
+              "date": "2026-07-16",
+              "type": "news"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "UIDAI's Udai chatbot checks Aadhaar update status and files grievances, and Kisan e-Mitra (built on Bhashini) answers PM-KISAN questions and handles grievances in many languages.",
+          "evidence": [
+            {
+              "title": "CRM Division (Udai chatbot)",
+              "publisher": "UIDAI",
+              "url": "https://uidai.gov.in/en/crm-division",
+              "date": "2026-07",
+              "type": "company"
+            },
+            {
+              "title": "Kisan e-Mitra AI chatbot",
+              "publisher": "PIB, Ministry of Agriculture & Farmers Welfare",
+              "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=1982790",
+              "date": "2023-12",
+              "type": "regulation"
+            },
+            {
+              "title": "Empowering millions of Indian farmers with instant AI chatbot support",
+              "publisher": "Wadhwani AI",
+              "url": "https://www.wadhwaniai.org/empowering-millions-of-indian-farmers-with-instant-ai-chatbot-support/",
+              "date": "2025-07",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "UIDAI",
+      "hq": "IN",
+      "url": "https://uidai.gov.in",
+      "role": "Runs Aadhaar authentication and eKYC so approved apps can verify a person, and the Udai chatbot for Aadhaar tasks.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "government.digital-id-api",
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "National e-Governance Division (DigiLocker)",
+      "hq": "IN",
+      "url": "https://www.digilocker.gov.in",
+      "role": "Runs DigiLocker and Meri Pehchaan so registered firms can fetch a user's government documents with consent.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "Digital India Bhashini Division",
+      "hq": "IN",
+      "url": "https://bhashini.gov.in",
+      "role": "Provides translation and speech models that let government assistants such as Kisan e-Mitra work in Indian languages.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Wadhwani AI",
+      "hq": "IN",
+      "url": "https://www.wadhwaniai.org",
+      "role": "Built the LLM upgrade of Kisan e-Mitra that answers farmer questions and handles grievances.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Government Digital Service (GDS)",
+      "hq": "GB",
+      "url": "https://www.gov.uk/government/organisations/government-digital-service",
+      "role": "Runs GOV.UK One Login, GOV.UK Wallet and GOV.UK Chat in the GOV.UK app.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "government.digital-id-api",
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Anthropic",
+      "hq": "US",
+      "url": "https://www.anthropic.com",
+      "role": "Supplies the Claude model behind GOV.UK Chat, according to Civil Service World.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "SERPRO",
+      "hq": "BR",
+      "url": "https://www.serpro.gov.br",
+      "role": "Sells the Datavalid API that lets private apps check faces and personal data against official Brazilian records.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "Secretaria de Governo Digital (MGI)",
+      "hq": "BR",
+      "url": "https://www.gov.br/gestao/pt-br",
+      "role": "Runs the gov.br login and builds Chat GOV.BR through the government AI centre.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "government.digital-id-api",
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Agencia de Transformación Digital y Telecomunicaciones (ATDT)",
+      "hq": "MX",
+      "url": "https://www.llave.gob.mx/",
+      "role": "Runs Llave MX and the Ventanilla 24/7 AI agent on gob.mx.",
+      "markets": [
+        "MX"
+      ],
+      "capabilities": [
+        "government.digital-id-api",
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Instituto Nacional Electoral (INE)",
+      "hq": "MX",
+      "url": "https://www.ine.mx",
+      "role": "Runs the voter-credential data and face verification service that banks use to confirm identity.",
+      "markets": [
+        "MX"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "Secretaría de Gobierno Digital (Ministerio de Hacienda)",
+      "hq": "CL",
+      "url": "https://digital.gob.cl",
+      "role": "Runs ClaveÚnica and approves which private bodies may use it.",
+      "markets": [
+        "CL"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "ChileAtiende (Instituto de Previsión Social)",
+      "hq": "CL",
+      "url": "https://www.chileatiende.gob.cl",
+      "role": "Runs the generative AI assistant that guides people on state trámites.",
+      "markets": [
+        "CL"
+      ],
+      "capabilities": [
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Registraduría Nacional del Estado Civil",
+      "hq": "CO",
+      "url": "https://www.registraduria.gov.co",
+      "role": "Issues the Cédula Digital and lets certified operators check identities against its biometric database.",
+      "markets": [
+        "CO"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "Certicámara",
+      "hq": "CO",
+      "url": "https://www.certicamara.com",
+      "role": "Certified biometric operator that connects private firms to Registraduría identity checks.",
+      "markets": [
+        "CO"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "MinTIC",
+      "hq": "CO",
+      "url": "https://mintic.gov.co",
+      "role": "Runs the GOV.CO portal and its Robi assistant, plus the public-sector AI chatbot program.",
+      "markets": [
+        "CO"
+      ],
+      "capabilities": [
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Bundesdruckerei (D-Trust)",
+      "hq": "DE",
+      "url": "https://www.bundesdruckerei.de",
+      "role": "Provides authorization certificates and eID services so companies can accept the German Online-Ausweis.",
+      "markets": [
+        "DE"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "Governikus",
+      "hq": "DE",
+      "url": "https://www.governikus.de",
+      "role": "Runs eID services and the AusweisIDent identification service that plug the Online-Ausweis into private apps.",
+      "markets": [
+        "DE"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "GSA (Login.gov)",
+      "hq": "US",
+      "url": "https://login.gov",
+      "role": "Runs Login.gov sign-in and identity proofing for US government services, now accepting mobile driver's licenses.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "Google",
+      "hq": "US",
+      "url": "https://developers.google.com/wallet/identity/verify",
+      "role": "Lets businesses verify state-issued digital IDs and age from Google Wallet through the Digital Credentials API.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "Internal Revenue Service (IRS)",
+      "hq": "US",
+      "url": "https://www.irs.gov",
+      "role": "Runs AI voice and chat bots that answer tax questions and set up payment plans.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "government.ai-public-services"
+      ]
+    }
+  ]
+}

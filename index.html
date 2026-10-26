@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05060b">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Agent Observatory</title>
+  <meta name="description" content="What AI agents can actually do in each country: shop, pay, book, bank and more. Every status is backed by a source.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ff2e88'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%2305060b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&family=Jersey+10&display=swap" rel="stylesheet">
+  <!-- Flag font, subset to every flag the data uses (tracked countries, company HQs and markets). tests check it stays complete. -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=%F0%9F%87%A6%F0%9F%87%AA%F0%9F%87%A6%F0%9F%87%B7%F0%9F%87%A7%F0%9F%87%B7%F0%9F%87%A8%F0%9F%87%A6%F0%9F%87%A8%F0%9F%87%B1%F0%9F%87%A8%F0%9F%87%B3%F0%9F%87%A8%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%B8%F0%9F%87%AB%F0%9F%87%B7%F0%9F%87%AC%F0%9F%87%A7%F0%9F%87%AE%F0%9F%87%B3%F0%9F%87%B2%F0%9F%87%BD%F0%9F%87%B3%F0%9F%87%B1%F0%9F%87%B8%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="console.css">
+  <script type="module" src="hero.js"></script>
+  <script type="module" src="app.js"></script>
+  <link rel="stylesheet" href="sections.css">
+  <script type="module" src="sections.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="AI Agent Observatory, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" class="brand-ring"/><circle cx="16" cy="16" r="5" class="brand-core"/></svg>
+        <span>AI Agent Observatory</span>
+      </a>
+      <nav aria-label="Sections">
+        <a href="#ranking">Ranking</a>
+        <a href="#matrix">Matrix</a>
+        <a href="#country">Countries</a>
+        <a href="#companies">Companies</a>
+        <a href="#tiers">Tiers</a>
+        <a href="#method">Method</a>
+        <a href="atlas/">Atlas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title" data-hero>
+      <canvas class="hero-sky" aria-hidden="true"></canvas>
+      <div class="wrap hero-wm-wrap">
+        <div class="hero-top"><span><b>&gt;</b> ai-agent-observatory</span><dl class="hero-stats" data-stats></dl><span>Updated <span data-asof></span></span></div>
+        <canvas class="hero-wm" role="img" aria-label="Agent Observatory"></canvas>
+      </div>
+      <div class="wrap hero-copy">
+        <div class="hero-grid">
+          <div>
+            <h1 id="hero-title"><span>See what AI agents</span> <span>can actually do,</span> <span><span class="hero-tape">country by country.</span></span></h1>
+            <p class="hero-sub"><span>Not how much AI a country has, but <b>what agents can do there</b>. Every status cites a source.</span></p>
+            <ol class="hero-flags" aria-label="Ranking, score out of 100" data-hero-flags></ol>
+            <div class="hero-ctas">
+              <a class="hero-btn hero-btn-1" href="#ranking">Open the ranking <span aria-hidden="true">→</span></a>
+              <a class="hero-btn hero-btn-2" href="#method">How we score</a>
+            </div>
+          </div>
+          <div class="hero-ask" data-hero-ask hidden>
+            <div class="hero-tabs" role="tablist" aria-label="Ask about a country" data-hero-tabs></div>
+            <div role="tabpanel" id="hero-ask-panel" data-hero-panel>
+              <div class="hero-cmd"><span class="hero-ps" aria-hidden="true">$</span><code>observatory ask <span>"<span data-hero-q></span>"</span></code><button type="button" class="hero-copy-btn" data-hero-copy>Copy</button></div>
+              <p class="hero-ans" data-hero-ans></p>
+            </div>
+            <div class="hero-cos">
+              <p class="label" data-hero-cos-label></p>
+              <ul data-hero-cos></ul>
+            </div>
+          </div>
+        </div>
+        <ul class="hero-chips" aria-hidden="true" data-hero-chips></ul>
+      </div>
+    </section>
+
+    <!-- The data product: one terminal window over the bottom of the hero. A country list on the left,
+         the selected country on the right, then the matrix, the ranking, the categories and the newest sources. -->
+    <div class="term" data-term>
+      <div class="term-bar">
+        <span class="term-app"><i aria-hidden="true"></i>Observatory</span>
+        <span class="term-path">countries / <b data-term-country></b></span>
+        <span class="term-fill" aria-hidden="true"></span>
+        <span class="term-date"><i aria-hidden="true"></i>Data <span data-asof-iso></span></span>
+      </div>
+      <div class="term-tabs">
+        <nav aria-label="Dashboard" data-tabs>
+          <a href="#ranking" aria-keyshortcuts="1"><span>1</span>Ranking</a>
+          <a href="#matrix" aria-keyshortcuts="2"><span>2</span>Matrix</a>
+          <a href="#country" aria-keyshortcuts="3" aria-current="location"><span>3</span>Countries</a>
+          <a href="#companies" aria-keyshortcuts="4"><span>4</span>Companies</a>
+          <a href="#evidence" aria-keyshortcuts="5"><span>5</span>Sources</a>
+        </nav>
+        <p class="term-sel" data-term-sel></p>
+      </div>
+      <div class="term-body">
+        <aside class="term-side" aria-label="Countries by score">
+          <p class="label">Tier · score</p>
+          <ul class="clist" data-clist></ul>
+        </aside>
+        <div class="term-main">
+          <section id="country" class="cn" aria-labelledby="cn-title" data-country></section>
+          <div class="kpis" data-kpis></div>
+          <div class="panels">
+            <section id="matrix" class="card panel panel-mx" aria-labelledby="mx-title">
+              <header><h2 id="mx-title">Status matrix</h2><span class="label" data-mx-count></span></header>
+              <div class="mx" role="table" aria-labelledby="mx-title" data-matrix></div>
+              <footer class="mx-legend" data-legend></footer>
+            </section>
+            <div class="panels-r">
+              <section id="ranking" class="card panel" aria-labelledby="rk-title">
+                <header><h2 id="rk-title">Ranking</h2><span class="label">Score 0–100 · tier</span></header>
+                <ol class="rank" data-ranking></ol>
+                <p class="note" data-points></p>
+              </section>
+              <section class="card panel" aria-labelledby="cat-title">
+                <header><h2 id="cat-title" data-cats-title>By category</h2><span class="label">0–100</span></header>
+                <ul class="cats" data-cats></ul>
+                <p class="note" data-cats-note></p>
+              </section>
+              <section id="evidence" class="card panel" aria-labelledby="ev-title">
+                <header><h2 id="ev-title">Newest evidence</h2><span class="tag" data-feed-count></span></header>
+                <ul class="feed" data-feed></ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="term-keys">
+        <span><kbd>1</kbd>–<kbd>5</kbd>jump to a panel</span>
+        <span><kbd>J</kbd><kbd>K</kbd>next or previous country</span>
+        <span><kbd>Esc</kbd>close details</span>
+        <span class="label" data-term-count></span>
+      </p>
+    </div>
+
+    <section id="tiers" class="wrap sec" data-sections>
+      <div class="sec-h">
+        <div>
+          <p class="label">Tier list · score 0–100</p>
+          <h2><span data-tiers-title>Tiers</span> <span class="dim">Cut every 10 points.</span></h2>
+        </div>
+        <p class="cuts" aria-label="Tier cut-offs" data-cuts></p>
+      </div>
+      <ol class="tier-list" data-tiers></ol>
+    </section>
+
+    <section class="band" aria-labelledby="band-title" data-sections>
+      <header class="band-h">
+        <p class="kicker">The dataset · as of <span data-asof></span></p>
+        <h2 id="band-title">Counted <span class="tape">cell by cell.</span></h2>
+      </header>
+      <div class="nums" data-nums><canvas class="nums-cv" aria-hidden="true"></canvas></div>
+    </section>
+
+    <section id="companies" class="wrap sec">
+      <div class="sec-h">
+        <div>
+          <p class="label" data-companies-label>Companies</p>
+          <h2>Who makes it possible. <span class="dim">Based where, live where.</span></h2>
+        </div>
+      </div>
+      <div class="card panel co-panel">
+        <div class="filters" role="group" aria-label="Filter companies by market" data-company-filters></div>
+        <div class="table-scroll" tabindex="0" aria-label="Companies">
+          <table class="companies" data-companies></table>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="wrap sec">
+      <div class="sec-h sec-h-c">
+        <p class="label">Method</p>
+        <h2>Every status cites a source. <span class="dim">Thin evidence looks thin.</span></h2>
+      </div>
+      <div class="fcards">
+        <article class="fc">
+          <div class="crop" aria-hidden="true"><div class="crop-in glass" data-crop-row></div></div>
+          <div class="fc-tx">
+            <h3 data-method-cells>One matrix</h3>
+            <p>Each cell takes the best status across all products, and links to its sources. We read two kinds of source: research and regulation, and what companies actually ship.</p>
+          </div>
+        </article>
+        <article class="fc">
+          <div class="crop" aria-hidden="true"><div class="crop-in glass">
+            <p class="label">Sure · Low confidence</p>
+            <div class="pairs" data-crop-pairs></div>
+          </div></div>
+          <div class="fc-tx">
+            <h3>Doubt is drawn, not hidden</h3>
+            <p><span data-method-low></span> When the sources are unclear, a cell takes the lower status.</p>
+          </div>
+        </article>
+        <article class="fc">
+          <div class="crop" aria-hidden="true"><div class="crop-in glass cterm" data-crop-term></div></div>
+          <div class="fc-tx">
+            <h3>Seven categories, equal weight</h3>
+            <p>A category scores the mean of its cells' points. A country scores the mean of its categories. Live, Limited and Announced cells must cite a source, or the build fails.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot foot-site">
+    <p>AI Agent Observatory · Availability changes fast. A cell says what was true on <span data-asof></span>.</p>
+    <p data-foot-count></p>
+  </footer>
+
+  <dialog class="detail" data-detail aria-labelledby="detail-title">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <div data-detail-body></div>
+  </dialog>
+  <div class="tip" role="tooltip" data-tip hidden></div>
+</body>
+</html>

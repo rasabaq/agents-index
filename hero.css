@@ -1,0 +1,127 @@
+/* Hero: the planet at sunrise, the pixel wordmark, the headline, the ask box and the eight countries.
+   hero.js draws the two canvases and fills the data parts. Colors come from the tokens in styles.css. */
+.hero { position: relative; isolation: isolate; overflow: hidden; container-type: inline-size; padding: 0 0 470px; }
+.hero-sky { position: absolute; inset: 0 auto auto 0; z-index: 0; display: block; width: 100%; height: 100%; }
+/* Shown until the first frame is drawn, and if scripts never run. */
+.hero::before { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(70% 45% at 71% 92%, rgba(255, 46, 136, 0.18), transparent 70%), linear-gradient(#030308, #0a0714 70%, #1a0c22); }
+.hero.is-ready::before { display: none; }
+.hero::after { content: ''; position: absolute; inset: auto 0 0; height: 200px; z-index: 1; pointer-events: none; background: linear-gradient(rgba(5, 6, 11, 0), var(--page)); }
+.hero > .wrap { position: relative; z-index: 3; }
+
+/* the pixel wordmark */
+.hero-wm-wrap { padding-top: 28px; }
+.hero-top { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 18px; font: 500 11px/1.4 var(--mono); color: var(--muted); }
+.hero-top b { font-weight: 500; color: var(--magenta); }
+.hero-top span:has(> [data-asof]:empty) { display: none; } /* data failed to load */
+/* app.js fills [data-stats] with <div><dt>label</dt><dd>n</dd></div>; show it as one line: "8 countries · 18 capabilities" */
+.hero-stats { display: flex; flex-wrap: wrap; margin: 0; }
+.hero-stats div { display: flex; gap: 0.6ch; white-space: nowrap; }
+.hero-stats dd { order: -1; margin: 0; }
+.hero-stats div + div::before { content: '·'; order: -2; margin: 0 0.4ch 0 0.9ch; }
+.hero-wm { display: block; width: 100%; height: 280px; }
+
+/* headline, sub-line, flag tape, buttons */
+.hero-copy { padding-top: 56px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: 48px; align-items: start; }
+.hero h1 { max-width: none; margin: 0; font: 600 clamp(36px, 5.2cqw, 66px)/0.95 var(--font); letter-spacing: -0.06em; color: var(--ink); text-wrap: initial; }
+.hero h1 > span { display: block; color: inherit; }
+.hero h1 > span + span { margin-top: 0.03em; }
+.hero h1 > span:last-child { margin-top: 0.1em; }
+/* black label tape: the one magenta line of the headline */
+.hero h1 .hero-tape { display: inline-block; line-height: 0.98; padding: 0.01em 0.16em 0.1em 0.07em; margin-left: -0.07em; background: #000; color: var(--magenta); }
+.hero-sub { max-width: 54ch; margin: 24px 0 0; font-size: 16px; line-height: 2; }
+.hero-sub span { padding: 5px 10px; background: #000; color: var(--ink-2); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hero-sub b { font-weight: 500; color: var(--ink); }
+
+/* flag tape: one piece per country, in rank order; 2px gaps let the sky show through */
+.hero-flags { display: flex; flex-wrap: wrap; gap: 2px; margin: 14px 0 0; padding: 0; list-style: none; font: 500 12px/1 var(--mono); font-variant-numeric: tabular-nums; }
+.hero-flags a { display: inline-flex; align-items: baseline; padding: 8px 9px 9px 7px; background: #000; color: var(--ink-2); text-decoration: none; white-space: nowrap; border-radius: 0; }
+.hero-flags .flag { width: 1.5em; margin-right: 0.15em; font-size: 1.1em; vertical-align: -0.08em; }
+.hero-flags b { margin-left: 6px; font-weight: 500; color: var(--ink); }
+.hero-flags a:hover b, .hero-flags a:hover { color: var(--ink); background: #0d0d12; }
+.hero-flags [aria-current='true'], .hero-flags [aria-current='true'] b { color: var(--sunrise); }
+
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.hero-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 10px; font: 500 14px/1 var(--font); letter-spacing: -0.005em; white-space: nowrap; text-decoration: none; transition: background-color 0.15s, border-color 0.15s; }
+.hero-btn-1 { background: var(--ink); color: var(--page); box-shadow: 0 8px 30px -8px rgba(255, 46, 136, 0.5); }
+.hero-btn-1:hover { background: #fff; }
+.hero-btn-1 span { opacity: 0.6; }
+.hero-btn-2 { border: 1px solid rgba(255, 255, 255, 0.16); color: var(--ink); background: rgba(10, 9, 16, 0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.hero-btn-2:hover { border-color: rgba(255, 255, 255, 0.3); }
+
+/* ask box: a fixed question per country, answered from the shopping category */
+.hero-ask { padding: 6px 16px 16px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 14px; background: var(--glass); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); box-shadow: var(--shadow); }
+.hero-tabs { display: flex; gap: 2px; margin: 0 -4px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid rgba(255, 255, 255, 0.055); }
+.hero-tabs button { position: relative; flex: none; display: inline-flex; align-items: center; padding: 11px 6px 12px; border: 0; background: none; cursor: pointer; font: 500 11px/1 var(--mono); letter-spacing: 0.1em; color: var(--muted); }
+.hero-tabs button:hover { color: var(--ink-2); }
+.hero-tabs button[aria-selected='true'] { color: var(--ink); }
+.hero-tabs button[aria-selected='true']::after { content: ''; position: absolute; inset: auto 5px -1px; height: 2px; border-radius: 2px; background: var(--sunrise); }
+.hero-tabs button:focus-visible { outline-offset: -2px; }
+.hero-tabs .flag { margin-right: 2px; font-size: 1.1em; }
+.hero-cmd { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; min-height: 44px; margin-top: 14px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 10px; background: rgba(3, 3, 8, 0.62); font: 400 12.5px/1 var(--mono); }
+.hero-ps { display: grid; place-items: center; padding-left: 4px; color: var(--magenta); }
+.hero-cmd code { display: block; min-width: 0; padding: 11px 4px; overflow-wrap: anywhere; font: inherit; line-height: 1.5; color: var(--ink); }
+.hero-cmd code span { color: var(--ink-2); }
+.hero-copy-btn { margin: 7px 7px 7px 0; padding: 0 10px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 6px; background: none; cursor: pointer; font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+.hero-copy-btn:hover { color: var(--ink); border-color: rgba(255, 255, 255, 0.2); }
+.hero-ans { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+.hero-ret { color: var(--muted); }
+.hero-ans a { margin-left: auto; color: var(--accent-ink); font-weight: 500; text-decoration: none; white-space: nowrap; }
+.hero-ans a:hover { text-decoration: underline; }
+/* status pill: order reads by fill (solid, half, outline, dash), never by hue */
+.hero-st { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 9px; border: 1px solid transparent; border-radius: 99px; font: 500 11.5px/1 var(--font); white-space: nowrap; }
+.hero-st.s-live { background: var(--s-live); border-color: var(--s-live); color: var(--s-live-ink); }
+.hero-st.s-limited { border-color: rgba(244, 241, 238, 0.42); background: linear-gradient(90deg, rgba(244, 241, 238, 0.2) 50%, transparent 0); color: var(--ink); }
+.hero-st.s-announced { border-color: rgba(244, 241, 238, 0.32); color: var(--ink-2); }
+.hero-st.s-none { padding-left: 4px; color: var(--muted); }
+.hero-st.s-none::before { content: ''; width: 9px; height: 2px; border-radius: 2px; background: var(--muted); }
+
+/* the companies with the most live markets */
+.hero-cos { display: grid; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.055); }
+.hero-cos ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+.hero-cos a { font: 500 12.5px/1 var(--font); letter-spacing: -0.01em; color: var(--ink-2); text-decoration: none; }
+.hero-cos a:hover { color: var(--ink); }
+
+/* the eight countries, pinned to the planet. A mouse shortcut: the flag tape above is the accessible list. */
+.hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 64px 0 0; padding: 0; list-style: none; }
+.hero-chips a { position: relative; display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px 0 10px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px;
+  background: rgba(16, 12, 24, 0.46); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: var(--ink); text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 30px -12px rgba(0, 0, 0, 0.7); }
+.hero-chips a:hover { border-color: rgba(255, 255, 255, 0.28); }
+.hero-chips .flag { margin: 0; font-size: 19px; }
+.hero-chip-c { font: 500 11.5px/1 var(--mono); letter-spacing: 0.06em; color: var(--ink-2); }
+.hero-chip-v { font: 600 17px/1 var(--font); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.hero-chips [aria-current='true'] { border-color: rgba(255, 182, 114, 0.55); background: rgba(48, 26, 18, 0.5); box-shadow: inset 0 1px 0 rgba(255, 220, 180, 0.12), 0 0 28px -4px rgba(255, 160, 80, 0.4); }
+.hero-chips [aria-current='true'] :is(.hero-chip-v, .hero-chip-c) { color: var(--sunrise); }
+.hero-stem { position: absolute; left: 50%; top: 100%; display: none; width: 1px; height: 0; pointer-events: none; background: linear-gradient(rgba(255, 200, 225, 0.42), rgba(255, 140, 190, 0.08)); }
+.hero-stem::after { content: ''; position: absolute; left: -2px; bottom: -2px; width: 5px; height: 5px; border-radius: 50%; background: #ffe1ee; box-shadow: 0 0 6px 2px rgba(255, 46, 136, 0.75), 0 0 16px 4px rgba(255, 46, 136, 0.25); }
+.hero-chips [aria-current='true'] .hero-stem { background: linear-gradient(rgba(255, 182, 114, 0.6), rgba(255, 182, 114, 0.12)); }
+
+@container (max-width: 1100px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .hero-ask { max-width: 560px; }
+  /* keep the eight chips on one row down to about 860px */
+  .hero-chips { gap: 6px; }
+  .hero-chips a { gap: 6px; padding: 0 10px 0 8px; }
+  .hero h1 { font-size: clamp(34px, 7.6cqw, 66px); }
+}
+@container (max-width: 720px) {
+  .hero { padding-bottom: 300px; }
+  .hero-wm-wrap { padding-top: 20px; }
+  .hero-top { font-size: 10.5px; margin-bottom: 14px; }
+  /* the stats wrap here, so plain gaps read better than dots that could start a line */
+  .hero-stats { gap: 0 14px; }
+  .hero-stats div + div::before { display: none; }
+  .hero-tabs button { padding: 11px 3px 12px; letter-spacing: 0.04em; }
+  .hero-tabs .flag { width: 1.2em; margin-right: 3px; }
+  .hero-copy { padding-top: 36px; }
+  .hero h1 { font-size: clamp(32px, 10.4cqw, 60px); }
+  .hero-sub { font-size: 15px; }
+  .hero-ask { padding: 4px 12px 14px; }
+  .hero-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 40px; }
+  .hero-chips a { display: flex; flex-direction: column; justify-content: center; gap: 4px; height: 70px; padding: 0; }
+  .hero-chips .flag { font-size: 18px; }
+  .hero-chip-c { font-size: 10px; }
+  .hero-chip-v { font-size: 15px; }
+}

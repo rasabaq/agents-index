@@ -1,0 +1,88 @@
+/* Agent Atlas. Builds on ../styles.css tokens; adds the categorical series, the tab strip, the view windows
+   and the small status marks the views share. */
+:root {
+  /* categorical slots in fixed order, tuned for the dark page; category i uses --c{i+1}.
+     The first two are the brand colors; the rest stay apart in hue so adjacent categories never blur together. */
+  --c1: var(--magenta); --c2: var(--sunrise); --c3: #5bc0eb; --c4: #a78bfa; --c5: #6ee7b7; --c6: #e8e26b; --c7: #ff6b4a; --c8: var(--ink-2);
+  --grid: var(--line);
+  --sun-tint: rgba(255, 182, 114, 0.1);
+  --sun-glow: drop-shadow(0 0 5px rgba(255, 170, 90, 0.55));
+}
+/* the header holds two rows: brand, then the view tabs */
+html { scroll-padding-top: 116px; }
+
+.wrap { padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.nav { top: env(safe-area-inset-top, 0px); }
+.nav-inner { height: 56px; }
+.atlas-asof { margin-left: auto; font: 500 10.5px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.atlas-home { margin-left: 24px; font: 500 10.5px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.atlas-home:hover, .atlas-home:focus-visible { color: var(--ink); }
+
+/* tab strip: a terminal title bar with numbered tabs; the current view gets a sunrise underline.
+   Scoped under .nav so it wins over the site nav rules (which also hide nav links on small screens). */
+.nav .atlas-tabs { display: flex; align-items: stretch; height: 40px; margin: 0 -1px; border: solid var(--line); border-width: 1px 1px 0; border-radius: 10px 10px 0 0; background: rgba(10, 10, 18, 0.72); overflow-x: auto; scrollbar-width: none; font: 400 12px/1 var(--mono); }
+.nav .atlas-tabs::-webkit-scrollbar { display: none; }
+.nav .atlas-tabs::before { content: 'Views'; display: flex; align-items: center; gap: 8px; flex: none; padding: 0 12px; border-radius: 9px 0 0 0; background: var(--ink); color: var(--page); font-weight: 500; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; }
+.nav .atlas-tabs a { display: flex; align-items: center; gap: 7px; flex: none; padding: 0 10px; border-right: 1px solid var(--line); border-radius: 0; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+.nav .atlas-tabs a span { color: var(--magenta); }
+.nav .atlas-tabs a:hover { background: rgba(244, 241, 238, 0.05); color: var(--ink); }
+.nav .atlas-tabs a[aria-current='true'] { background: rgba(244, 241, 238, 0.08); color: var(--ink); box-shadow: inset 0 -2px 0 var(--sunrise); }
+.nav .atlas-tabs a[aria-current='true'] span { color: var(--sunrise); }
+.nav .atlas-tabs a:focus-visible { outline-offset: -3px; }
+
+/* hero: mono kicker, tight headline with the key phrase on black label tape, then one tape piece per country */
+.atlas-hero { padding-bottom: 16px; }
+.atlas-hero .kicker b { font-weight: 500; color: var(--magenta); }
+.atlas-hero h1 { max-width: none; color: var(--ink); }
+.atlas-hero h1 .tape { display: inline-block; margin-top: 0.06em; margin-left: -0.07em; padding: 0.01em 0.16em 0.1em 0.07em; background: #000; color: var(--magenta); }
+.atlas-flags { display: flex; flex-wrap: wrap; gap: 2px; margin: 22px 0 0; padding: 0; list-style: none; font: 500 12px/1 var(--mono); font-variant-numeric: tabular-nums; }
+.atlas-flags li { display: inline-flex; align-items: baseline; padding: 8px 10px 9px 8px; background: #000; color: var(--ink-2); white-space: nowrap; }
+.atlas-flags .flag { width: 1.5em; margin-right: 0.2em; font-size: 1.1em; vertical-align: -0.08em; }
+.atlas-flags b { margin-left: 6px; font-weight: 500; color: var(--ink); }
+.atlas-flags .on, .atlas-flags .on b { color: var(--sunrise); }
+
+/* each view is a glass window: a title bar (inverted number chip, mono path), the head, then the view itself */
+.view { padding-top: 32px; }
+.view-win { background: var(--glass); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.view-bar { display: flex; align-items: center; gap: 12px; height: 36px; padding-right: 14px; border-bottom: 1px solid var(--line); font: 400 11px/1 var(--mono); color: var(--muted); white-space: nowrap; }
+.view-app { align-self: stretch; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-radius: 15px 0 0 0; background: var(--ink); color: var(--page); font-weight: 500; font-size: 10.5px; letter-spacing: 0.1em; }
+.view-app i { width: 7px; height: 7px; background: var(--magenta); }
+.view-path { overflow: hidden; text-overflow: ellipsis; }
+.view-path b { font-weight: 500; color: var(--ink); }
+.view-fill { flex: 1; min-width: 12px; height: 1px; background: repeating-linear-gradient(90deg, var(--line-strong) 0 3px, transparent 3px 6px); }
+.view-head { padding: 26px 24px 0; }
+.view-head h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 560; letter-spacing: -0.045em; }
+.view-head p { margin: 8px 0 0; max-width: 72ch; color: var(--ink-2); }
+.view-frame { position: relative; min-width: 0; padding: 24px; }
+.view-error { color: var(--muted); }
+/* SVG text falls back to the flag font, so flags drawn inside charts match the ones in HTML */
+.view svg text { fill: var(--ink-2); font-family: var(--font), var(--flag); }
+.view select { font-family: var(--font), var(--flag); }
+
+/* shared bits views may use */
+.atlas-tip { max-width: 320px; }
+.atlas-tip .flag { margin-right: 3px; }
+.atlas-controls { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.atlas-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font: 400 11.5px/1.4 var(--mono); color: var(--ink-2); }
+.atlas-legend .sw { display: inline-block; width: 10px; height: 10px; margin-right: 7px; border-radius: 2px; vertical-align: -1px; }
+
+/* small status marks (capsules): fill carries the order, never hue. Live solid, Limited half filled,
+   Announced outline, Not yet a faint dash. .q (low confidence) adds a dashed ring, or breaks the dash. */
+.smark { display: inline-block; flex: none; width: 18px; height: 9px; border: 1.5px solid var(--s-live); border-radius: 99px; background: var(--s-live); vertical-align: middle; }
+.smark.limited { border-color: var(--s-limited); background: linear-gradient(90deg, var(--s-limited) 50%, transparent 0); }
+.smark.announced { border-color: var(--s-limited); background: none; opacity: 0.85; }
+.smark.none { width: 10px; height: 2px; border: 0; border-radius: 2px; background: var(--s-none-ink); opacity: 0.85; }
+.smark.q { outline: 1px dashed var(--ink-2); outline-offset: 2px; }
+.smark.none.q { outline: 0; width: 14px; background: repeating-linear-gradient(90deg, var(--s-none-ink) 0 3px, transparent 3px 5px); }
+
+@media (max-width: 520px) {
+  html { scroll-padding-top: 108px; }
+  .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .nav-inner { height: 52px; }
+  .atlas-asof { display: none; }
+  .atlas-home { margin-left: auto; }
+  .atlas-flags li { padding: 7px 8px 8px 6px; }
+  .view { padding-top: 20px; }
+  .view-head { padding: 20px 16px 0; }
+  .view-frame { padding: 16px; }
+}

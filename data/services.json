@@ -1,0 +1,808 @@
+{
+  "category": "services",
+  "capabilities": [
+    {
+      "id": "services.restaurant-booking",
+      "name": "Book a restaurant table",
+      "question": "Can an AI agent find an open table and book it, or hand you off to finish the booking?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Google AI Mode finds real-time slots on OpenTable, Resy and Tock for all US users without Labs, and since August 2026 ChatGPT finds bookable tables through OpenTable, Resy and Yelp on all plans.",
+          "evidence": [
+            {
+              "title": "Explore new ways to plan and book travel with AI in Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/agentic-plans-booking-travel-canvas-ai-mode/",
+              "date": "2025-11-17",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT release notes (restaurant reservations with OpenTable, Resy and Yelp)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "Google AI Mode books UK tables through TheFork, SevenRooms, ResDiary, OpenTable and others (the final step is on the partner site), and ChatGPT reservations work through OpenTable and the TheFork app.",
+          "evidence": [
+            {
+              "title": "Booking restaurants in the UK just got easier with AI in Search",
+              "publisher": "Google",
+              "url": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/ai-mode-restaurants-uk/",
+              "date": "2026-04-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT aceita reservas de restaurantes (TheFork app, first markets include UK)",
+              "publisher": "E-Konomista",
+              "url": "https://www.e-konomista.pt/chatgpt-aceita-reservas-restaurantes/",
+              "date": "2026-01-06",
+              "type": "news"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "ChatGPT reservations through OpenTable are listed as global, but OpenTable has few German restaurants and this could not be re-checked; TheFork's ChatGPT app launched in other EU markets, not Germany, and Google AI Mode booking is not offered in the EU.",
+          "evidence": [
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            },
+            {
+              "title": "Google AI Mode: globaler Rollout, keine EU",
+              "publisher": "Retail News",
+              "url": "https://retail-news.de/google-ai-mode-globaler-rollout-keine-eu/",
+              "date": "2025-08",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT aceita reservas de restaurantes (TheFork app in Portugal, Spain, France, Italy and UK)",
+              "publisher": "E-Konomista",
+              "url": "https://www.e-konomista.pt/chatgpt-aceita-reservas-restaurantes/",
+              "date": "2026-01-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "BR": {
+          "status": "none",
+          "note": "Google AI Mode table booking has not launched in Brazil, and ChatGPT's OpenTable, Resy and Yelp reservations have little or no Brazilian coverage; no iFood or local booking agent was found.",
+          "evidence": [
+            {
+              "title": "ChatGPT release notes (OpenTable global, Resy US, Yelp US and Canada)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "ChatGPT finds and books tables through OpenTable, which runs a Mexico marketplace; Google AI Mode booking has not launched in Mexico.",
+          "evidence": [
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CL": {
+          "status": "none",
+          "note": "No agent booking was found: Google AI Mode booking has not launched in Chile and OpenTable, the global ChatGPT partner, has little Chilean coverage.",
+          "evidence": [
+            {
+              "title": "ChatGPT release notes (OpenTable global, Resy US, Yelp US and Canada)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "none",
+          "note": "No agent booking was found: Google AI Mode booking has not launched in Colombia and OpenTable, the global ChatGPT partner, has little Colombian coverage.",
+          "evidence": [
+            {
+              "title": "ChatGPT release notes (OpenTable global, Resy US, Yelp US and Canada)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "Google AI Mode finds open tables on Swiggy, Zomato and EazyDiner and links to the booking page, and Swiggy's Dineout MCP server lets ChatGPT or Claude book a table.",
+          "evidence": [
+            {
+              "title": "Google AI Mode gets agentic capabilities for restaurant reservations in India",
+              "publisher": "FoneArena",
+              "url": "https://www.fonearena.com/blog/479780/google-ai-mode-agentic-restaurant-reservations-india.html",
+              "date": "2026-04",
+              "type": "news"
+            },
+            {
+              "title": "Google adds agentic restaurant booking (UK and India)",
+              "publisher": "Verdict Foodservice",
+              "url": "https://www.verdictfoodservice.com/news/google-adds-agentic-restaurant/",
+              "date": "2026-04-10",
+              "type": "news"
+            },
+            {
+              "title": "Swiggy MCP: Now Open for Developers & Enterprises",
+              "publisher": "Swiggy",
+              "url": "https://mcp.swiggy.com/builders",
+              "date": "2026",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "services.travel-booking",
+      "name": "Find and book travel or hotels",
+      "question": "Can an AI agent find a hotel or trip and book it, or hand you off to finish the booking?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Google AI Mode lets US users book hotels from Booking.com, Expedia, Marriott, Hilton and others with Google Pay via \"Continue on Google\" (rolling out in English since August 2026), and the Booking.com and Expedia apps work inside ChatGPT; flights still hand off to airline sites.",
+          "evidence": [
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            },
+            {
+              "title": "Google's AI Mode can now track flight prices, help book hotels and more",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/27/googles-ai-mode-can-now-track-flight-prices-help-book-hotels-and-more/",
+              "date": "2026-08-27",
+              "type": "news"
+            },
+            {
+              "title": "Introducing apps in ChatGPT and the new Apps SDK",
+              "publisher": "OpenAI",
+              "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+              "date": "2025-10-06",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "The Booking.com app in ChatGPT is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book, and the Eurostar app in ChatGPT finds trains and hands off to eurostar.com; Google AI Mode hotel booking is still US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Eurostar launches ChatGPT app",
+              "publisher": "Deep Arrival",
+              "url": "https://deeparrival.com/news/eurostar-chatgpt-app-august-2026/",
+              "date": "2026-08-18",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT release notes (app directory: apps for all logged-in users, availability varies by region)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2025-12-18",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book, and ChatGPT apps now run in EEA countries such as Spain, France and Italy (TheFork); Google AI Mode hotel booking is US-only (medium confidence for Germany).",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT aceita reservas de restaurantes (TheFork app in Portugal, Spain, France, Italy and UK)",
+              "publisher": "E-Konomista",
+              "url": "https://www.e-konomista.pt/chatgpt-aceita-reservas-restaurantes/",
+              "date": "2026-01-06",
+              "type": "news"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search (hotel booking US only; some features unavailable in EEA)",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "The Booking.com and Expedia apps in ChatGPT launched for logged-in users outside the EEA, Switzerland and UK in October 2025, starting in English, and show live hotel options that hand off to the partner to book; Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Introducing apps in ChatGPT and the new Apps SDK",
+              "publisher": "OpenAI",
+              "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+              "date": "2025-10-06",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Travel Apps Are Now a Thing, Starting with Booking.com and Expedia",
+              "publisher": "Skift",
+              "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
+              "date": "2025-10-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "MX": {
+          "status": "live",
+          "note": "The Booking.com and Expedia apps in ChatGPT work outside the EEA, Switzerland and UK and hand off a chosen hotel to the partner to book; Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Introducing apps in ChatGPT and the new Apps SDK",
+              "publisher": "OpenAI",
+              "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+              "date": "2025-10-06",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Travel Apps Are Now a Thing, Starting with Booking.com and Expedia",
+              "publisher": "Skift",
+              "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
+              "date": "2025-10-06",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "The Booking.com app in ChatGPT is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Despegar or LATAM agents were not verified and Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Introducing apps in ChatGPT and the new Apps SDK",
+              "publisher": "OpenAI",
+              "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+              "date": "2025-10-06",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "live",
+          "note": "The Booking.com app in ChatGPT is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Despegar or Avianca agents were not verified and Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Introducing apps in ChatGPT and the new Apps SDK",
+              "publisher": "OpenAI",
+              "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+              "date": "2025-10-06",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "live",
+          "note": "The Booking.com and Expedia apps in ChatGPT work in India and hand off a chosen hotel to the partner; MakeMyTrip agents were not verified and Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Introducing apps in ChatGPT and the new Apps SDK",
+              "publisher": "OpenAI",
+              "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+              "date": "2025-10-06",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Travel Apps Are Now a Thing, Starting with Booking.com and Expedia",
+              "publisher": "Skift",
+              "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
+              "date": "2025-10-06",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "services.delivery-rides",
+      "name": "Order food, groceries or rides",
+      "question": "Can an AI agent order food, groceries or a ride for you?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "The DoorDash app in ChatGPT builds grocery carts from US retailers for checkout on DoorDash; Instacart and Uber were named ChatGPT app partners, but their current scope was not checked.",
+          "evidence": [
+            {
+              "title": "DoorDash Launches Grocery Shopping App Within ChatGPT",
+              "publisher": "DoorDash via Business Wire",
+              "url": "https://www.businesswire.com/news/home/20251217400178/en/DoorDash-Launches-Grocery-Shopping-App-Within-ChatGPT",
+              "date": "2025-12-17",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "none",
+          "note": "No agent ordering was found for the UK: the Uber, Uber Eats and DoorDash apps in ChatGPT are US-only, and no Deliveroo, Alexa+ or Gemini ordering agent was found (search budget ran out, so medium confidence).",
+          "evidence": [
+            {
+              "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
+              "date": "2025-12-29",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "DE": {
+          "status": "none",
+          "note": "No agent ordering was found for Germany: the Uber, Uber Eats and DoorDash apps in ChatGPT are US-only, Wolt's newsroom shows no AI agent, and no Lieferando, Alexa+ or Gemini ordering agent was found (medium confidence).",
+          "evidence": [
+            {
+              "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
+              "date": "2025-12-29",
+              "type": "news"
+            },
+            {
+              "title": "Wolt press room (no AI ordering agent news)",
+              "publisher": "Wolt",
+              "url": "https://press.wolt.com/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "BR": {
+          "status": "limited",
+          "note": "iFood's Ailo agent takes food orders by chat in WhatsApp, open to the general public as a test since October 2025, and hands off a confirmed cart with a link to the iFood app to pay; the only iFood app found in ChatGPT is a merchant tool (Fala Delivery), not consumer ordering, and the Uber Eats ChatGPT app is US-only.",
+          "evidence": [
+            {
+              "title": "iFood lança agente de IA que permite fazer pedidos pelo WhatsApp",
+              "publisher": "Canaltech",
+              "url": "https://canaltech.com.br/apps/ifood-lanca-agente-de-ia-que-permite-fazer-pedidos-pelo-whatsapp-veja-como-usar/",
+              "date": "2025-10-10",
+              "type": "news"
+            },
+            {
+              "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
+              "date": "2025-12-29",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "none",
+          "note": "No agent ordering was found for Mexico: the Uber and Uber Eats apps in ChatGPT are US-only, and no Rappi, DiDi Food, Alexa+ or Gemini ordering agent was confirmed (medium confidence).",
+          "evidence": [
+            {
+              "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
+              "date": "2025-12-29",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CL": {
+          "status": "none",
+          "note": "No agent ordering was found for Chile: the Uber and Uber Eats apps in ChatGPT are US-only, and no Rappi, PedidosYa or DiDi ordering agent was confirmed; Uber's own app has AI voice ride booking, but no country list (medium confidence).",
+          "evidence": [
+            {
+              "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber and others (Uber, Uber Eats and DoorDash US only)",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
+              "date": "2025-12-29",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "announced",
+          "note": "Rappi announced in 2025 a WhatsApp AI assistant for ordering in natural language and voice-note ordering in Colombia, but no launch was confirmed; the Uber and Uber Eats apps in ChatGPT are US-only.",
+          "evidence": [
+            {
+              "title": "Rappi anuncia asistente de IA en WhatsApp (Colombia)",
+              "publisher": "Mobile Time Latinoamérica",
+              "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
+              "date": "2025-09-30",
+              "type": "news"
+            },
+            {
+              "title": "Rappi lanzará pedidos por voz con IA en Colombia",
+              "publisher": "Descubre",
+              "url": "https://www.descubre.vc/noticia/rappi-lanzar-pedidos-por-voz-con-ia-en-colombia-2025-08-31",
+              "date": "2025-08-31",
+              "type": "news"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "Swiggy's MCP servers (Food, Instamart, Dineout, since January 2026) and Zomato's MCP server let ChatGPT, Claude or Gemini build a cart and place an order once the user adds a custom connector.",
+          "evidence": [
+            {
+              "title": "Swiggy MCP: Now Open for Developers & Enterprises",
+              "publisher": "Swiggy",
+              "url": "https://mcp.swiggy.com/builders",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "How Swiggy Is Using AI Agents To Take Commerce Beyond Its App",
+              "publisher": "Inc42",
+              "url": "https://inc42.com/buzz/how-swiggy-is-using-ai-agents-to-take-commerce-beyond-its-app/",
+              "date": "2026",
+              "type": "news"
+            },
+            {
+              "title": "Order Food From Your Terminal with Zomato MCP",
+              "publisher": "Analytics Vidhya",
+              "url": "https://www.analyticsvidhya.com/blog/2025/11/zomato-mcp-server/",
+              "date": "2025-11",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "Google",
+      "hq": "US",
+      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "role": "AI Mode finds open restaurant tables across booking partners and lets US users book hotels with Google Pay.",
+      "markets": [
+        "US",
+        "GB",
+        "IN"
+      ],
+      "capabilities": [
+        "services.restaurant-booking",
+        "services.travel-booking"
+      ]
+    },
+    {
+      "name": "OpenAI",
+      "hq": "US",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "role": "ChatGPT finds restaurant reservations and hosts third-party apps for travel and delivery.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "services.restaurant-booking",
+        "services.travel-booking",
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "OpenTable",
+      "hq": "US",
+      "url": "https://www.opentable.com",
+      "role": "Supplies real-time table inventory and bookings to Google AI Mode and ChatGPT.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "MX"
+      ],
+      "capabilities": [
+        "services.restaurant-booking"
+      ]
+    },
+    {
+      "name": "Resy",
+      "hq": "US",
+      "url": "https://resy.com",
+      "role": "Supplies US table availability to Google AI Mode and ChatGPT.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "services.restaurant-booking"
+      ]
+    },
+    {
+      "name": "Tock",
+      "hq": "US",
+      "url": "https://www.exploretock.com",
+      "role": "Supplies US reservation availability to Google AI Mode.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "services.restaurant-booking"
+      ]
+    },
+    {
+      "name": "Yelp",
+      "hq": "US",
+      "url": "https://www.yelp.com",
+      "role": "Lets ChatGPT find and book tables and join waitlists in the US and Canada.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "services.restaurant-booking"
+      ]
+    },
+    {
+      "name": "TheFork",
+      "hq": "FR",
+      "url": "https://www.thefork.com",
+      "role": "Supplies UK and European table bookings to Google AI Mode and runs a TheFork app inside ChatGPT in the UK, Spain, France, Italy and Portugal.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "services.restaurant-booking"
+      ]
+    },
+    {
+      "name": "SevenRooms",
+      "hq": "US",
+      "url": "https://sevenrooms.com",
+      "role": "Booking partner for Google AI Mode restaurant reservations in the UK.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "services.restaurant-booking"
+      ]
+    },
+    {
+      "name": "ResDiary",
+      "hq": "GB",
+      "url": "https://www.resdiary.com",
+      "role": "Booking partner for Google AI Mode restaurant reservations in the UK.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "services.restaurant-booking"
+      ]
+    },
+    {
+      "name": "EazyDiner",
+      "hq": "IN",
+      "url": "https://www.eazydiner.com",
+      "role": "Booking partner for Google AI Mode restaurant reservations in India.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "services.restaurant-booking"
+      ]
+    },
+    {
+      "name": "Swiggy",
+      "hq": "IN",
+      "url": "https://mcp.swiggy.com/builders",
+      "role": "Runs MCP servers so AI assistants can order food and Instamart groceries and book Dineout tables, and is a Google AI Mode booking partner.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "services.restaurant-booking",
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Zomato (Eternal)",
+      "hq": "IN",
+      "url": "https://www.analyticsvidhya.com/blog/2025/11/zomato-mcp-server/",
+      "role": "Runs an MCP server for AI food ordering and is a Google AI Mode restaurant booking partner.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "services.restaurant-booking",
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Booking.com",
+      "hq": "NL",
+      "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+      "role": "Runs a hotel search app inside ChatGPT and is a hotel partner for Google AI Mode checkout.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "services.travel-booking"
+      ]
+    },
+    {
+      "name": "Expedia Group",
+      "hq": "US",
+      "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
+      "role": "Runs a travel app inside ChatGPT and is a hotel partner (Expedia, Hotels.com) for Google AI Mode checkout.",
+      "markets": [
+        "US",
+        "BR",
+        "MX",
+        "IN"
+      ],
+      "capabilities": [
+        "services.travel-booking"
+      ]
+    },
+    {
+      "name": "Marriott International",
+      "hq": "US",
+      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "role": "Hotel partner whose rooms US users can book inside Google AI Mode.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "services.travel-booking"
+      ]
+    },
+    {
+      "name": "Hilton",
+      "hq": "US",
+      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "role": "Hotel partner whose rooms US users can book inside Google AI Mode.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "services.travel-booking"
+      ]
+    },
+    {
+      "name": "Trip.com",
+      "hq": "CN",
+      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "role": "Booking partner for hotel checkout inside Google AI Mode in the US.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "services.travel-booking"
+      ]
+    },
+    {
+      "name": "Eurostar",
+      "hq": "GB",
+      "url": "https://deeparrival.com/news/eurostar-chatgpt-app-august-2026/",
+      "role": "Runs a ChatGPT app that finds trains and fares and hands off to eurostar.com to book.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "services.travel-booking"
+      ]
+    },
+    {
+      "name": "DoorDash",
+      "hq": "US",
+      "url": "https://www.businesswire.com/news/home/20251217400178/en/DoorDash-Launches-Grocery-Shopping-App-Within-ChatGPT",
+      "role": "Runs a ChatGPT app that builds grocery carts from US retailers for checkout.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Uber",
+      "hq": "US",
+      "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
+      "role": "Runs Uber and Uber Eats apps inside ChatGPT that plan rides and meal orders and hand off to the Uber apps to pay; US only.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "iFood",
+      "hq": "BR",
+      "url": "https://canaltech.com.br/apps/ifood-lanca-agente-de-ia-que-permite-fazer-pedidos-pelo-whatsapp-veja-como-usar/",
+      "role": "Runs Ailo, a WhatsApp AI agent that builds a food order by chat and hands off to the iFood app to pay.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Rappi",
+      "hq": "CO",
+      "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
+      "role": "Announced a WhatsApp AI assistant and voice-note ordering for Colombia.",
+      "markets": [
+        "CO"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    }
+  ]
+}

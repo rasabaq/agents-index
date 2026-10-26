@@ -1,0 +1,573 @@
+{
+  "category": "messaging",
+  "capabilities": [
+    {
+      "id": "messaging.business-ai-agent",
+      "name": "Business AI agents in chat",
+      "question": "Can a business run an AI agent that sells and supports customers in a chat app?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Meta Business Agent has been open to businesses globally on WhatsApp, Messenger and Instagram since June 2026, and Google's Business Agent chat in Search is live for US retailers.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Google Announces AI Mode Checkout Protocol and Business Agent",
+              "publisher": "Search Engine Journal",
+              "url": "https://www.searchenginejournal.com/google-announces-ai-mode-checkout-protocol-business-agent/564764/",
+              "date": "2026-01",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "Meta Business Agent is open globally on WhatsApp, Messenger and Instagram (announced at Meta's Conversations event in London), and WhatsApp partners such as 360dialog deploy it through the API.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Meta's AI agent for WhatsApp Business is now available globally",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+              "date": "2026-06-03",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "DE": {
+          "status": "live",
+          "note": "Meta Business Agent reached the EU in mid-July 2026 after the regional rollout, and Berlin-based 360dialog offers it on the WhatsApp Business Platform, although some verticals (finance, health, alcohol and others) are excluded.",
+          "evidence": [
+            {
+              "title": "Meta Business Agent: Check eligibility",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent overview",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "Brazil was the first region where the Meta Business Agent API opened, it is billed in BRL, and local platforms Blip, Zenvia and Yalo run AI sales and support agents on WhatsApp.",
+          "evidence": [
+            {
+              "title": "Upcoming pricing updates for Meta Business Agent, service and utility messages",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+              "date": "2026-07",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent: Check eligibility",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Zenvia Customer Cloud",
+              "publisher": "Zenvia",
+              "url": "https://zenvia.com/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "Mexico was one of Meta's first Business AI test markets, Meta Business Agent is now global, and Mexico's Yalo sells AI sales agents on WhatsApp.",
+          "evidence": [
+            {
+              "title": "Meta's AI agent for WhatsApp Business is now available globally",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+              "date": "2026-06-03",
+              "type": "news"
+            },
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Yalo: Plataforma de ventas inteligente con agentes",
+              "publisher": "Yalo",
+              "url": "https://www.yalo.ai/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "Meta Business Agent is open to businesses globally on WhatsApp, Messenger and Instagram. Meta publishes no country exclusion list (it limits by business type, such as finance and health), and we found no Chile-specific launch page.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent overview",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Check eligibility for Meta Business Agent",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "live",
+          "note": "Meta Business Agent is open to businesses globally, with no published country exclusion list (it limits by business type, such as finance and health), and Colombia's Treble sells AI agents for WhatsApp sales and support.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "La mejor plataforma de IA para WhatsApp",
+              "publisher": "Treble",
+              "url": "https://treble.ai/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check eligibility for Meta Business Agent",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "live",
+          "note": "India was an early Business AI test market, Meta Business Agent is now billed there in INR, and Gupshup runs AI agents on WhatsApp for Indian enterprises.",
+          "evidence": [
+            {
+              "title": "Upcoming pricing updates for Meta Business Agent, service and utility messages",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+              "date": "2026-07",
+              "type": "company"
+            },
+            {
+              "title": "Meta's AI agent for WhatsApp Business is now available globally",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+              "date": "2026-06-03",
+              "type": "news"
+            },
+            {
+              "title": "Gupshup AI Agents",
+              "publisher": "Gupshup",
+              "url": "https://www.gupshup.ai/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "messaging.pay-in-chat",
+      "name": "Pay inside a chat",
+      "question": "Can a customer pay an agent or business without leaving the chat?",
+      "countries": {
+        "US": {
+          "status": "limited",
+          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. WhatsApp payments are not launched in the US.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Apple expands Business Chat with new businesses and additional countries",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2018/10/02/apple-expands-business-chat-with-new-businesses-and-additional-countries",
+              "date": "2018-10-02",
+              "type": "news"
+            },
+            {
+              "title": "WhatsApp payments: supported countries",
+              "publisher": "Infobip",
+              "url": "https://www.infobip.com/blog/whatsapp-payments",
+              "date": "2025-10",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. WhatsApp payments are not launched in the UK.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Apple expands Business Chat with new businesses and additional countries",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2018/10/02/apple-expands-business-chat-with-new-businesses-and-additional-countries",
+              "date": "2018-10-02",
+              "type": "news"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "note": "Only a niche channel: Telegram bot payments through Stripe let businesses take card payments inside the chat. WhatsApp payments are not offered in Germany.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "The WhatsApp Payments API for Brazil lets businesses send an order in chat that the customer pays by Pix code, card, boleto or payment link, although the Pix flow still hands off to the bank app and only works with Brazilian numbers.",
+          "evidence": [
+            {
+              "title": "Payments API - Brazil",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/overview/",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Payments API (Brazil only)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/messaging/payments/payments-api-brazil-only",
+              "date": "2026",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "limited",
+          "note": "Only a niche channel: Telegram bot payments through Stripe work for Mexican businesses. WhatsApp payments in Mexico are only tested, with no official launch date.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "WhatsApp payments: supported countries",
+              "publisher": "Infobip",
+              "url": "https://www.infobip.com/blog/whatsapp-payments",
+              "date": "2025-10",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "none",
+          "note": "No mainstream way to pay inside a chat was found: WhatsApp payments are not offered in Chile, and Stripe, the main Telegram payment provider, does not sign up businesses there.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "none",
+          "note": "No mainstream way to pay inside a chat was found: WhatsApp payments are not offered in Colombia, and Stripe, the main Telegram payment provider, does not sign up businesses there.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "WhatsApp Pay runs on UPI, and the WhatsApp Payments API lets businesses take UPI, card and netbanking payments in chat through BillDesk, Razorpay, PayU or Zaakpay.",
+          "evidence": [
+            {
+              "title": "Receive payments via payment gateways on WhatsApp",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Receive UPI Payments Through WhatsApp",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/upi-intent",
+              "date": "2026",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "Meta",
+      "hq": "US",
+      "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+      "role": "Meta Business Agent answers customers, recommends products and closes sales in chat, and WhatsApp's Payments API takes payments in chat in Brazil and India.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "messaging.business-ai-agent",
+        "messaging.pay-in-chat"
+      ]
+    },
+    {
+      "name": "Google",
+      "hq": "US",
+      "url": "https://www.searchenginejournal.com/google-announces-ai-mode-checkout-protocol-business-agent/564764/",
+      "role": "Business Agent lets shoppers chat with a retailer's AI sales associate inside Google Search.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ]
+    },
+    {
+      "name": "360dialog",
+      "hq": "DE",
+      "url": "https://360dialog.com",
+      "role": "WhatsApp Business Solution Provider that deploys Meta Business Agent and the Brazil Payments API for businesses.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "messaging.business-ai-agent",
+        "messaging.pay-in-chat"
+      ]
+    },
+    {
+      "name": "Blip",
+      "hq": "BR",
+      "url": "https://www.blip.ai",
+      "role": "Conversational platform that lets enterprises run AI sales and support agents on WhatsApp and other chat apps.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ]
+    },
+    {
+      "name": "Zenvia",
+      "hq": "BR",
+      "url": "https://zenvia.com/",
+      "role": "Customer cloud that runs AI agents to sell and support customers over WhatsApp and other channels.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ]
+    },
+    {
+      "name": "Yalo",
+      "hq": "MX",
+      "url": "https://www.yalo.ai/",
+      "role": "Sales platform that runs AI agents for consumer brands on WhatsApp across Latin America.",
+      "markets": [
+        "MX",
+        "BR"
+      ],
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ]
+    },
+    {
+      "name": "Treble",
+      "hq": "CO",
+      "url": "https://treble.ai/",
+      "role": "AI platform for WhatsApp that automates sales and support conversations for Latin American companies.",
+      "markets": [
+        "CO",
+        "MX"
+      ],
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ]
+    },
+    {
+      "name": "Gupshup",
+      "hq": "US",
+      "url": "https://www.gupshup.ai/",
+      "role": "Platform for building and running AI agents on WhatsApp and other messaging channels, with a large base in India.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ]
+    },
+    {
+      "name": "Telegram",
+      "hq": "AE",
+      "url": "https://core.telegram.org/bots/payments",
+      "role": "Bot Payments API lets bots take payments inside the chat through providers such as Stripe, with no Telegram commission.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "messaging.pay-in-chat"
+      ]
+    },
+    {
+      "name": "Stripe",
+      "hq": "US",
+      "url": "https://stripe.com/global",
+      "role": "Payment provider behind Telegram bot payments for businesses in its supported countries.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "BR",
+        "MX"
+      ],
+      "capabilities": [
+        "messaging.pay-in-chat"
+      ]
+    },
+    {
+      "name": "Razorpay",
+      "hq": "IN",
+      "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg",
+      "role": "One of the payment gateways that let Indian businesses take UPI and card payments inside WhatsApp chats.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "messaging.pay-in-chat"
+      ]
+    },
+    {
+      "name": "PayU",
+      "hq": "NL",
+      "url": "https://payu.in",
+      "role": "One of the payment gateways that let Indian businesses take payments inside WhatsApp chats.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "messaging.pay-in-chat"
+      ]
+    }
+  ]
+}

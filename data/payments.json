@@ -1,0 +1,704 @@
+{
+  "category": "payments",
+  "capabilities": [
+    {
+      "id": "payments.card-agent-token",
+      "name": "Card network agent credential",
+      "question": "Can an AI agent pay a merchant with a card network's agent token (Visa, Mastercard, Amex)?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Mastercard said it would enable all US cardholders for Agent Pay by late 2025, and Visa Intelligent Commerce runs live transactions across many US agents; Amex launched its ACE kit and agent purchase protection in April 2026.",
+          "evidence": [
+            {
+              "title": "Mastercard Unveils New Tools and Collaborations to Power Smarter, Safer Agentic Commerce",
+              "publisher": "Mastercard",
+              "url": "https://investor.mastercard.com/investor-news/investor-news-details/2025/Mastercard-Unveils-New-Tools-and-Collaborations-to-Power-Smarter-Safer-Agentic-Commerce/default.aspx",
+              "date": "2025-09-10",
+              "type": "company"
+            },
+            {
+              "title": "Mastercard: \"Agentic commerce is here\"",
+              "publisher": "Digital Commerce 360",
+              "url": "https://www.digitalcommerce360.com/2025/10/31/mastercard-agentic-commerce-is-here/",
+              "date": "2025-10-31",
+              "type": "news"
+            },
+            {
+              "title": "Visa Announces Global Expansion of Agentic Ready Program",
+              "publisher": "Visa",
+              "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22341.html",
+              "date": "2026-04-29",
+              "type": "company"
+            },
+            {
+              "title": "American Express debuts Agentic Commerce Experiences (ACE) developer kit and agent purchase protection",
+              "publisher": "Business Wire via Eagle-Tribune",
+              "url": "https://www.eagletribune.com/region/american-express-debuts-agentic-commerce-experiences-ace-developer-kit-and-announces-industry-first-protection-for/article_0aed4835-c886-5dee-867d-976a006c806a.html",
+              "date": "2026-04-14",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "GB": {
+          "status": "limited",
+          "note": "Visa Intelligent Commerce ran live agent purchases with UK issuers such as Barclays, HSBC UK, Lloyds, NatWest and Nationwide, but only at a few participating merchants such as Frasers and lastminute.com.",
+          "evidence": [
+            {
+              "title": "Visa and banks across Europe reach the next phase of agentic commerce, unlocking secure access to merchants",
+              "publisher": "Visa UK",
+              "url": "https://www.visa.co.uk/about-visa/newsroom/press-releases.3457328.html",
+              "date": "2026-07-02",
+              "type": "company"
+            },
+            {
+              "title": "Visa partners with European banks and merchants for agentic commerce launch",
+              "publisher": "FStech",
+              "url": "https://fstech.co.uk/fst/Visa_Partners_With_European_Banks_And_Merchants_For_Agentic_Commerce_Launch.php",
+              "date": "2026-07",
+              "type": "news"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "note": "Mastercard Agent Pay completed Germany's first agent purchase with Deutsche Bank, DZ Bank and N26 cards, but only in a closed-loop pilot.",
+          "evidence": [
+            {
+              "title": "Mastercard-Pilot: Agent Pay ohne Issuer-Umbau bei Deutsche Bank, DZ Bank und N26",
+              "publisher": "IT Finanzmagazin",
+              "url": "https://www.it-finanzmagazin.de/mastercard-pilot-agent-pay-ohne-issuer-umbau-bei-deutsche-bank-dz-bank-und-n26-246419/",
+              "date": "2026-06-25",
+              "type": "news"
+            }
+          ]
+        },
+        "BR": {
+          "status": "limited",
+          "note": "Santander and Visa ran a controlled Visa Intelligent Commerce pilot purchase in Brazil, and Itaú took part in Mastercard Agent Pay's controlled live transactions; neither is open to all cardholders.",
+          "evidence": [
+            {
+              "title": "Santander and Visa Deliver Latin America's First End-to-End Payments Powered by AI Agents",
+              "publisher": "Banco Santander",
+              "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
+              "date": "2026-03-12",
+              "type": "company"
+            },
+            {
+              "title": "Mastercard finalises live agentic transactions in Latin America",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/mastercard-completes-live-agentic-payment-transactions-across-latin-america",
+              "date": "2026-03-25",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "limited",
+          "note": "Santander and Visa ran a controlled Visa Intelligent Commerce pilot purchase in Mexico, and Banamex took part in Mastercard Agent Pay's controlled live transactions.",
+          "evidence": [
+            {
+              "title": "Santander and Visa Deliver Latin America's First End-to-End Payments Powered by AI Agents",
+              "publisher": "Banco Santander",
+              "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
+              "date": "2026-03-12",
+              "type": "company"
+            },
+            {
+              "title": "Mastercard finalises live agentic transactions in Latin America",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/mastercard-completes-live-agentic-payment-transactions-across-latin-america",
+              "date": "2026-03-25",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "limited",
+          "note": "Santander and Visa ran a controlled Visa Intelligent Commerce pilot purchase in Chile, and Banco Falabella and Banco Ripley took part in Mastercard Agent Pay's controlled live transactions.",
+          "evidence": [
+            {
+              "title": "Santander and Visa Deliver Latin America's First End-to-End Payments Powered by AI Agents",
+              "publisher": "Banco Santander",
+              "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
+              "date": "2026-03-12",
+              "type": "company"
+            },
+            {
+              "title": "Mastercard Advances Agentic Payments in Latin America and the Caribbean With Live Transactions Completed Across the Region",
+              "publisher": "Financial IT",
+              "url": "https://financialit.net/news/payments/mastercard-advances-agentic-payments-latin-america-and-caribbean-live-transactions",
+              "date": "2026-03",
+              "type": "news"
+            }
+          ]
+        },
+        "CO": {
+          "status": "limited",
+          "note": "Bancolombia and Davivienda took part in Mastercard Agent Pay's controlled live transactions in Latin America; Colombia was not in the Santander and Visa pilot.",
+          "evidence": [
+            {
+              "title": "Mastercard finalises live agentic transactions in Latin America",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/mastercard-completes-live-agentic-payment-transactions-across-latin-america",
+              "date": "2026-03-25",
+              "type": "news"
+            },
+            {
+              "title": "Mastercard unveils Agent Pay in Latin America and the Caribbean",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/news/latin-america/en/newsroom/press-releases/pr-en/2025/december/mastercard-unveils-agent-pay-in-latin-america-and-the-caribbean/",
+              "date": "2025-12",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "limited",
+          "note": "Mastercard Agent Pay completed India's first fully authenticated agent purchase with Axis Bank and RBL Bank cards in a controlled demo in February 2026.",
+          "evidence": [
+            {
+              "title": "Mastercard Advances Agentic AI Commerce in India",
+              "publisher": "PaymentsJournal",
+              "url": "https://www.paymentsjournal.com/mastercard-advances-agentic-ai-commerce-in-india/",
+              "date": "2026-02-23",
+              "type": "news"
+            },
+            {
+              "title": "Mastercard completes fully authenticated agentic commerce transaction in India",
+              "publisher": "VARINDIA",
+              "url": "https://www.varindia.com/news/mastercard-completes-fully-authenticated-agentic-commerce-transaction-in-india",
+              "date": "2026-02",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "payments.instant-rail-agent",
+      "name": "Agent pays over instant rail",
+      "question": "Can an AI agent send a payment for you over the country's instant-payment rail?",
+      "countries": {
+        "US": {
+          "status": "none",
+          "note": "No agent payments over FedNow or RTP found; 2026 FedNow work covers request-for-payment and cross-border pilots, not agents.",
+          "evidence": [
+            {
+              "title": "FedNow Readies Cross-Border and Payment Request Pilots",
+              "publisher": "PYMNTS",
+              "url": "https://www.pymnts.com/real-time-payments/2026/fednow-service-readies-cross-border-capabilities-and-request-for-payment-pilot/",
+              "date": "2026-07",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "none",
+          "note": "No agent payment over Faster Payments found; GoCardless's 'first UK agentic bank payment' set up a Direct Debit (not Faster Payments) inside the FCA AI Live Testing programme, and HM Treasury is still consulting on agent payment rules.",
+          "evidence": [
+            {
+              "title": "GoCardless processes the first agentic account-to-account payment in the UK",
+              "publisher": "GoCardless",
+              "url": "https://gocardless.com/blog/gocardless-first-agentic-payment-uk",
+              "date": "2026-09-22",
+              "type": "company"
+            },
+            {
+              "title": "HM Treasury Proposes Major Overhaul of UK Payments Regulation",
+              "publisher": "Skadden",
+              "url": "https://www.skadden.com/insights/publications/2026/07/hm-treasury-proposes-major-overhaul",
+              "date": "2026-07",
+              "type": "report"
+            }
+          ],
+          "confidence": "low"
+        },
+        "DE": {
+          "status": "none",
+          "note": "No agent payments over SEPA Instant or Wero found; Wero is live for people in Germany but has no agent feature.",
+          "evidence": [
+            {
+              "title": "N26 expands instant payment offer with introduction of European digital payment solution Wero",
+              "publisher": "N26",
+              "url": "https://n26.com/en-eu/press/press-release/n26-expands-instant-payment-offer-with-introduction-of-european-digital-payment-solution-wero",
+              "date": "2026-08-11",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "Nubank's AI assistant sends Pix from text or voice for all app users, Mercado Pago's Mago assistant sends Pix, and Iniciador put a Pix agent-payments MCP into production; the user still confirms each payment.",
+          "evidence": [
+            {
+              "title": "Pix com Inteligência Artificial agora no App e WhatsApp do Nu",
+              "publisher": "Nubank",
+              "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
+              "date": "2024-12",
+              "type": "company"
+            },
+            {
+              "title": "Assistente de IA do Mercado Pago: como funciona e como usar",
+              "publisher": "Mercado Pago",
+              "url": "https://www.mercadopago.com.br/blog/como-funciona-assistente-ia-mercado-pago",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Iniciador launches Brazil's first agentic payments MCP on Pix",
+              "publisher": "Iniciador",
+              "url": "https://iniciador.com.br/en/conteudos/iniciador-anuncia-pagamentos-agenticos-full-stack-ai-toolkit",
+              "date": "2026-05-19",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "Mercado Pago's Mago assistant makes transfers by text or voice in Mexico after user confirmation; Mercado Pago connects directly to SPEI, but sources do not say outright that Mago transfers use SPEI.",
+          "evidence": [
+            {
+              "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
+              "publisher": "Descubre.vc",
+              "url": "https://www.descubre.vc/noticia/mercado-pago-lanza-mago-su-nuevo-asistente-de-ia-financiera-2026-09-28",
+              "date": "2026-09-28",
+              "type": "news"
+            },
+            {
+              "title": "Mercado Pago activa Mago: cómo funciona su IA por texto y voz",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/innovacion/71987-mercado-pago-activa-mago-como-funciona-su-ia-por-texto-y-voz",
+              "date": "2026-10-01",
+              "type": "news"
+            },
+            {
+              "title": "Mercado Pago se conecta al SPEI",
+              "publisher": "Expansión",
+              "url": "https://expansion.mx/economia/2024/03/12/mercado-pago-spei",
+              "date": "2024-03-12",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CL": {
+          "status": "limited",
+          "note": "Mercado Pago's Mago assistant prepares and sends transfers in Chile after user confirmation, over Chile's instant interbank transfer (TEF) system; rollout breadth in Chile is not stated. Rated limited because the Chile rollout reach of Mercado Pago transfers by its assistant is unclear.",
+          "evidence": [
+            {
+              "title": "Mercado Pago lanzó Mago, su asistente con IA para gestionar finanzas y negocios",
+              "publisher": "Chócale",
+              "url": "https://chocale.cl/2026/09/mercado-pago-lanzo-mago-su-asistente-con-ia-para-gestionar-finanzas-y-negocios/",
+              "date": "2026-09",
+              "type": "news"
+            },
+            {
+              "title": "Mago llega a Chile: el asistente personal de Mercado Pago",
+              "publisher": "G5 Noticias",
+              "url": "https://g5noticias.cl/2026/09/11/mago-llega-a-chile-el-asistente-personal-de-mercado-pago-que-simplifica-el-dia-a-dia-de-personas-y-negocios/",
+              "date": "2026-09-11",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "limited",
+          "note": "Tpaga launched a WhatsApp AI agent that sends money over Bre-B from text or voice notes; it is one fintech and its rollout scope is not stated.",
+          "evidence": [
+            {
+              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar",
+              "publisher": "La República",
+              "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
+              "date": "2026-07-08",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "limited",
+          "note": "NPCI, Razorpay and OpenAI run a private beta for UPI payments inside ChatGPT using UPI Reserve Pay, and Amazon Pay launched an agentic UPI Smart Wallet at GFF 2026; NPCI's agent protocol has no public go-live date.",
+          "evidence": [
+            {
+              "title": "Razorpay Pilots Agentic Payments Beta with NPCI and OpenAI",
+              "publisher": "Fintech News Singapore",
+              "url": "https://fintechnews.sg/120057/fintech-india/razorpay-agentic-payments/",
+              "date": "2025-10-13",
+              "type": "news"
+            },
+            {
+              "title": "NPCI Says AI Shouldn't Approve UPI Payments at GFF 2026",
+              "publisher": "MediaNama",
+              "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
+              "date": "2026-09-10",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "payments.wallet-agent",
+      "name": "Wallet lets agent pay",
+      "question": "Can a wallet or fintech app let an AI agent pay for you?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "PayPal checkout works inside Perplexity and Microsoft Copilot Checkout, and Stripe's Link Agent Wallet lets agents pay for US customers.",
+          "evidence": [
+            {
+              "title": "PayPal Launches Agentic Shopping with Perplexity",
+              "publisher": "PayPal",
+              "url": "https://newsroom.paypal-corp.com/2025-11-PayPal-Launches-Agentic-Shopping-with-Perplexity",
+              "date": "2025-11-25",
+              "type": "company"
+            },
+            {
+              "title": "PayPal Powers Microsoft's Launch of Copilot Checkout",
+              "publisher": "PayPal",
+              "url": "https://newsroom.paypal-corp.com/2026-01-08-PayPal-Powers-Microsofts-Launch-of-Copilot-Checkout",
+              "date": "2026-01-08",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet.md",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "note": "Stripe shared payment tokens support GB but are still in preview, and Stripe's Link Agent Wallet is US and Canada only.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=seller",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "note": "Stripe shared payment tokens support DE but are still in preview, and Stripe's Link Agent Wallet is US and Canada only.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=seller",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "Mercado Pago's Mago agent and Nubank's AI assistant make Pix payments and transfers for users, with the user confirming each one.",
+          "evidence": [
+            {
+              "title": "Mago, seu assistente",
+              "publisher": "Mercado Pago",
+              "url": "https://www.mercadopago.com.br/assistente-pessoal",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Pix por áudio e mensagem: tudo o que você precisa saber",
+              "publisher": "Nubank",
+              "url": "https://blog.nubank.com.br/pix-por-audio-mensagem/",
+              "date": "2025",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "Mercado Pago's Mago agent, launched widely in October 2026, makes payments and transfers for users in Mexico after they confirm.",
+          "evidence": [
+            {
+              "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
+              "publisher": "Descubre.vc",
+              "url": "https://www.descubre.vc/noticia/mercado-pago-lanza-mago-su-nuevo-asistente-de-ia-financiera-2026-09-28",
+              "date": "2026-09-28",
+              "type": "news"
+            },
+            {
+              "title": "Mercado Pago activa Mago: cómo funciona su IA por texto y voz",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/innovacion/71987-mercado-pago-activa-mago-como-funciona-su-ia-por-texto-y-voz",
+              "date": "2026-10-01",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and prepares payments and transfers that the user confirms.",
+          "evidence": [
+            {
+              "title": "Mercado Pago lanzó Mago, su asistente con IA para gestionar finanzas y negocios",
+              "publisher": "Chócale",
+              "url": "https://chocale.cl/2026/09/mercado-pago-lanzo-mago-su-asistente-con-ia-para-gestionar-finanzas-y-negocios/",
+              "date": "2026-09",
+              "type": "news"
+            }
+          ]
+        },
+        "CO": {
+          "status": "limited",
+          "note": "Tpaga's WhatsApp AI agent pays bills and sends money for users; Mercado Pago's Mago is not listed for Colombia, and Tpaga's rollout scope is not stated.",
+          "evidence": [
+            {
+              "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
+              "publisher": "Descubre.vc",
+              "url": "https://www.descubre.vc/noticia/tpaga-lanza-primer-agente-de-ia-en-colombia-para-pagos-por-whatsapp-2026-07-08",
+              "date": "2026-07-08",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "limited",
+          "note": "Razorpay's Agentic Payments for ChatGPT is a private beta, Amazon Pay's agentic Smart Wallet launched at GFF 2026, and Pine Labs showed an agentic commerce stack; no Paytm or PhonePe agent payments found.",
+          "evidence": [
+            {
+              "title": "Razorpay Pilots Agentic Payments Beta with NPCI and OpenAI",
+              "publisher": "Fintech News Singapore",
+              "url": "https://fintechnews.sg/120057/fintech-india/razorpay-agentic-payments/",
+              "date": "2025-10-13",
+              "type": "news"
+            },
+            {
+              "title": "NPCI Says AI Shouldn't Approve UPI Payments at GFF 2026",
+              "publisher": "MediaNama",
+              "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
+              "date": "2026-09-10",
+              "type": "news"
+            },
+            {
+              "title": "GFF 2026: Agentic AI Leads India's Fintech Launches",
+              "publisher": "StartupFeed",
+              "url": "https://startupfeed.in/gff-2026-agentic-ai-fintech-product-launches/",
+              "date": "2026-09",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "Visa",
+      "hq": "US",
+      "url": "https://developer.visa.com/capabilities/visa-intelligent-commerce",
+      "role": "Visa Intelligent Commerce gives agents tokenized Visa credentials with passkey checks so they can buy for cardholders.",
+      "markets": [
+        "US",
+        "GB",
+        "BR",
+        "MX",
+        "CL"
+      ],
+      "capabilities": [
+        "payments.card-agent-token"
+      ]
+    },
+    {
+      "name": "Mastercard",
+      "hq": "US",
+      "url": "https://www.mastercard.com/us/en/news-and-trends/stories/2025/agentic-commerce-momentum.html",
+      "role": "Mastercard Agent Pay issues agentic tokens so registered agents can pay with a cardholder's Mastercard.",
+      "markets": [
+        "US",
+        "DE",
+        "BR",
+        "MX",
+        "CL",
+        "CO",
+        "IN"
+      ],
+      "capabilities": [
+        "payments.card-agent-token"
+      ]
+    },
+    {
+      "name": "American Express",
+      "hq": "US",
+      "url": "https://www.eagletribune.com/region/american-express-debuts-agentic-commerce-experiences-ace-developer-kit-and-announces-industry-first-protection-for/article_0aed4835-c886-5dee-867d-976a006c806a.html",
+      "role": "The Amex ACE developer kit lets cardmembers approve agents to buy with their card, with agent purchase protection.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "payments.card-agent-token"
+      ]
+    },
+    {
+      "name": "Banco Santander",
+      "hq": "ES",
+      "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
+      "role": "Issued the cards used in Visa Intelligent Commerce agent pilot purchases in Latin America.",
+      "markets": [
+        "BR",
+        "MX",
+        "CL"
+      ],
+      "capabilities": [
+        "payments.card-agent-token"
+      ]
+    },
+    {
+      "name": "Stripe",
+      "hq": "US",
+      "url": "https://docs.stripe.com/agentic-commerce",
+      "role": "Shared payment tokens and Link Agent Wallet let agents pay sellers with a customer's saved payment method.",
+      "markets": [
+        "US",
+        "GB",
+        "DE"
+      ],
+      "capabilities": [
+        "payments.wallet-agent",
+        "payments.card-agent-token"
+      ]
+    },
+    {
+      "name": "PayPal",
+      "hq": "US",
+      "url": "https://paypal.ai/",
+      "role": "PayPal agentic commerce services power checkout inside Perplexity and Microsoft Copilot.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "payments.wallet-agent"
+      ]
+    },
+    {
+      "name": "Mercado Pago",
+      "hq": "AR",
+      "url": "https://www.mercadopago.com.br/assistente-pessoal",
+      "role": "The Mago AI agent makes payments and transfers (including Pix in Brazil) for users after they confirm.",
+      "markets": [
+        "BR",
+        "MX",
+        "CL"
+      ],
+      "capabilities": [
+        "payments.wallet-agent",
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "Nubank",
+      "hq": "BR",
+      "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
+      "role": "Its AI assistant sends Pix from voice or text in the app and on WhatsApp.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "payments.wallet-agent",
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "Iniciador",
+      "hq": "BR",
+      "url": "https://iniciador.com.br/en/conteudos/iniciador-anuncia-pagamentos-agenticos-full-stack-ai-toolkit",
+      "role": "Its MCP server lets AI agents propose Pix payments that the user approves with biometrics.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "Banco Central do Brasil",
+      "hq": "BR",
+      "url": "https://www.bcb.gov.br/estabilidadefinanceira/pix",
+      "role": "Runs Pix, the instant rail that Brazilian AI assistants use to send payments.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "Tpaga",
+      "hq": "CO",
+      "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
+      "role": "Its WhatsApp AI agent pays bills and sends money over Bre-B from text or voice notes.",
+      "markets": [
+        "CO"
+      ],
+      "capabilities": [
+        "payments.wallet-agent",
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "NPCI",
+      "hq": "IN",
+      "url": "https://www.npci.org.in/",
+      "role": "Runs UPI and its Reserve Pay and Circle features that let users pre-authorise agent payments in the ChatGPT pilot.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "Razorpay",
+      "hq": "IN",
+      "url": "https://fintechnews.sg/120057/fintech-india/razorpay-agentic-payments/",
+      "role": "Runs the Agentic Payments beta that lets ChatGPT pay merchants over UPI, and processed Mastercard's Indian agent pilot.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "payments.instant-rail-agent",
+        "payments.wallet-agent",
+        "payments.card-agent-token"
+      ]
+    },
+    {
+      "name": "Amazon Pay India",
+      "hq": "IN",
+      "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
+      "role": "Launched a consent-based Smart Wallet for agentic UPI payments.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "payments.wallet-agent",
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "Pine Labs",
+      "hq": "IN",
+      "url": "https://startupfeed.in/gff-2026-agentic-ai-fintech-product-launches/",
+      "role": "Its agentic commerce stack lets AI agents complete purchases within user-set limits.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "payments.wallet-agent"
+      ]
+    }
+  ]
+}

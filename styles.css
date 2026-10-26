@@ -1,0 +1,192 @@
+/* Orbit Signal tokens. The site is dark only. This block is the shared contract:
+   every page (site and Atlas) styles itself with these names, so change values here, not in components.
+
+   Surfaces   --page (space black), --surface (opaque panel), --surface-2 (raised, hover, tracks),
+              --glass (see-through panel) with --blur (its backdrop filter)
+   Text       --ink (warm white), --ink-2 (grey, body copy), --muted (labels, hints; AA on --page and --surface)
+   Lines      --line (hairline), --line-strong (hover borders, separators)
+   Brand      --magenta (brand voice: mark, kickers, prompts, keys)
+              --sunrise (light: the selected country, focus ring)
+              --accent (= magenta, for charts and highlights), --accent-ink (readable magenta for links)
+   Status     --s-live, --s-limited, --s-announced, --s-none and their -ink text colors.
+              Order reads by fill, not hue: Live solid light, Limited half filled, Announced outline,
+              Not yet faint. Low confidence adds a dashed ring.
+   Tiers      --tier-s (>= 80), --tier-a (70-79), --tier-b (60-69), --tier-c (50-59), --tier-d (< 50);
+              tier colors always sit behind dark text (--page) and the letter is always shown.
+   Type       --font (Geist: UI, headlines), --mono (JetBrains Mono: micro labels), --pixel (Jersey 10:
+              pixel wordmark and big letters only), --flag (emoji fonts for flags)
+   Shape      --radius (panels), --shadow (lifted panels) */
+:root {
+  color-scheme: dark;
+  --page: #05060b;
+  --surface: #0e0f18;
+  --surface-2: #171925;
+  --glass: rgba(13, 12, 22, 0.58);
+  --blur: blur(18px) saturate(140%);
+  --ink: #f4f1ee;
+  --ink-2: #b0b3c2;
+  --muted: #7e8192;
+  --line: #232533;
+  --line-strong: #363948;
+  --magenta: #ff2e88;
+  --sunrise: #ffb672;
+  --accent: #ff2e88;
+  --accent-ink: #ff7ab0;
+  --s-live: #f4f1ee;
+  --s-live-ink: #05060b;
+  --s-limited: #9a9dae;
+  --s-limited-ink: #f4f1ee;
+  --s-announced: #5e6173;
+  --s-announced-ink: #b0b3c2;
+  --s-none: #1a1c28;
+  --s-none-ink: #7e8192;
+  --tier-s: #ffe6c8;
+  --tier-a: #ffb672;
+  --tier-b: #ff8a6e;
+  --tier-c: #ff5a8c;
+  --tier-d: #e0287e;
+  --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 30px 70px -30px rgba(0, 0, 0, 0.85);
+  --radius: 14px;
+  --font: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --pixel: 'Jersey 10', 'JetBrains Mono', ui-monospace, monospace;
+  --flag: 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; background: var(--page); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  position: relative;
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 15px/1.55 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+/* Star dust and a faint sunrise glow, drawn once behind everything. Three tile sizes so the pattern does not repeat visibly. */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(1px 1px at 23px 41px, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 151px 297px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 389px 213px, rgba(255, 182, 114, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 271px 367px, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 61px 131px, rgba(255, 46, 136, 0.5), transparent),
+    radial-gradient(1px 1px at 173px 19px, rgba(255, 255, 255, 0.25), transparent),
+    radial-gradient(1px 1px at 233px 89px, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(1px 1px at 97px 241px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 19px 197px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(90% 60% at 80% -10%, rgba(255, 46, 136, 0.09), transparent 70%),
+    radial-gradient(70% 50% at 0% 0%, rgba(255, 182, 114, 0.05), transparent 70%);
+  background-size: 409px 409px, 409px 409px, 409px 409px, 557px 557px, 557px 557px, 557px 557px, 283px 283px, 283px 283px, 283px 283px, 100% 100%, 100% 100%;
+}
+a { color: var(--accent-ink); text-decoration-thickness: 1px; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); text-underline-offset: 3px; }
+a:hover { text-decoration-color: currentColor; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 1.5px solid var(--sunrise); outline-offset: 2px; border-radius: 6px; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.2; letter-spacing: -0.03em; font-weight: 560; }
+.wrap { max-width: 1264px; margin: 0 auto; padding: 0 24px; }
+.muted { color: var(--muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* micro label: mono, spaced capitals */
+.label { margin: 0; font: 500 10px/1.2 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.label .flag { margin: 0 0.35em 0 0.1em; }
+.kicker { margin: 0 0 14px; font: 500 11px/1.4 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.flag { display: inline-block; width: 1.32em; margin-right: 4px; font-family: var(--flag); font-style: normal; text-align: center; letter-spacing: 0; text-transform: none; }
+.nowrap { white-space: nowrap; }
+select, option { color-scheme: dark; }
+
+/* nav */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--page) 78%, transparent);
+  -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; gap: 24px; height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15.5px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand svg { width: 18px; height: 18px; }
+.brand-ring { fill: var(--magenta); }
+.brand-core { fill: var(--page); }
+.nav nav { display: flex; gap: 2px; margin-left: auto; }
+.nav nav a { padding: 7px 10px; border-radius: 8px; color: var(--ink-2); text-decoration: none; font: 500 11.5px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.nav nav a:hover { background: var(--surface-2); color: var(--ink); }
+
+/* hero */
+.hero { padding-top: 96px; padding-bottom: 48px; }
+.hero h1 { font-size: clamp(36px, 5.6vw, 66px); line-height: 0.98; font-weight: 600; letter-spacing: -0.055em; max-width: 19ch; text-wrap: balance; }
+.hero h1 span { color: var(--ink-2); }
+.lede { max-width: 60ch; margin: 26px 0 0; font-size: 17px; color: var(--ink-2); }
+
+/* legend, filters */
+.legend { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-bottom: 16px; font-size: 13px; color: var(--ink-2); }
+.legend-item { display: inline-flex; align-items: center; gap: 8px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.pill { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255, 255, 255, 0.03); font: 500 11.5px/1 var(--mono); letter-spacing: 0.04em; color: var(--ink-2); cursor: pointer; transition: border-color 0.15s, color 0.15s; }
+.pill .flag { font-size: 14px; }
+.pill:hover { border-color: var(--line-strong); color: var(--ink); }
+.pill[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--page); }
+
+/* status marks: smooth capsules. Live solid, Limited half filled, Announced outline, Not yet faint. */
+.s-live { background: var(--s-live); color: var(--s-live-ink); box-shadow: inset 0 0 0 1px var(--s-live); }
+.s-limited { background: linear-gradient(90deg, color-mix(in srgb, var(--s-limited) 40%, transparent) 50%, transparent 0); color: var(--s-limited-ink); box-shadow: inset 0 0 0 1px var(--s-limited); }
+.s-announced { background: transparent; color: var(--s-announced-ink); box-shadow: inset 0 0 0 1px var(--s-announced); }
+.s-none { background: var(--s-none); color: var(--s-none-ink); }
+.chip { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 22px; padding: 0 10px; border-radius: 999px; font: 500 11.5px/1 var(--font); white-space: nowrap; }
+.chip.s-none { background: transparent; padding-left: 4px; }
+.chip.s-none::before { content: ''; flex: none; width: 9px; height: 2px; border-radius: 2px; background: currentColor; opacity: 0.8; }
+/* low confidence: a dashed ring around the mark. Inside a mark the ring replaces the ? (screen readers get the label);
+   on its own, .low draws a small dashed capsule for legends. */
+.chip:has(.low), .chip.q { outline: 1px dashed rgba(244, 241, 238, 0.6); outline-offset: 2px; }
+.chip .low { display: none; }
+.low { display: inline-block; width: 18px; height: 10px; margin: 0 6px 0 0; border: 1px dashed var(--ink-2); border-radius: 999px; color: transparent; font-size: 0; vertical-align: middle; }
+.low-note { display: block; margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+/* tooltip */
+.tip { position: fixed; z-index: 30; max-width: 300px; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: 10px; background: rgba(14, 15, 24, 0.92); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); color: var(--ink-2); font-size: 13px; line-height: 1.45; pointer-events: none; box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8); }
+.tip strong { display: block; margin-bottom: 4px; color: var(--ink); font-weight: 500; }
+
+/* detail dialog */
+.detail { width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 64px); padding: 28px; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--surface); color: var(--ink); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 40px 90px -20px rgba(0, 0, 0, 0.9), 0 0 60px -20px rgba(255, 46, 136, 0.25); }
+.detail::backdrop { background: rgba(3, 3, 8, 0.6); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.detail h3 { font-size: 22px; line-height: 1.25; letter-spacing: -0.035em; padding-right: 32px; }
+.detail h4 { margin: 24px 0 10px; font: 500 10.5px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.detail p { color: var(--ink-2); }
+.detail .muted { color: var(--muted); }
+.detail-status { margin: 14px 0 0; }
+.close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); color: var(--ink-2); font-size: 20px; line-height: 1; cursor: pointer; }
+.close:hover { color: var(--ink); border-color: var(--line-strong); }
+.sources { margin: 0; padding-left: 20px; }
+.sources li { margin-bottom: 12px; }
+.sources li::marker { font: 500 11px var(--mono); color: var(--muted); }
+.sources a { font-weight: 500; }
+.src-meta { display: block; margin-top: 2px; font-size: 12.5px; color: var(--muted); }
+.suggest { margin: 18px 0 0; font-size: 12.5px; }
+.detail .suggest a { color: var(--muted); }
+.detail .suggest a:hover { color: var(--ink-2); }
+.tag { display: inline-block; margin-right: 6px; padding: 1px 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-2); font: 500 10px/1.4 var(--mono); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* select (Atlas pickers) */
+.select select { appearance: none; height: 38px; padding: 0 36px 0 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%237e8192' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center; color: var(--ink); font: inherit; font-weight: 500; cursor: pointer; }
+.select select:hover { border-color: var(--line-strong); }
+
+.foot { display: flex; padding-top: 72px; padding-bottom: 48px; font: 400 11.5px/1.6 var(--mono); color: var(--muted); }
+.foot p { flex: 1; margin: 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.error { margin-top: 32px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+
+@media (max-width: 900px) {
+  .nav nav { display: none; }
+}
+@media (max-width: 520px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding-top: 56px; }
+  .lede { font-size: 16px; }
+}
+
+/* tier colors: each tier sets --c; tier blocks put dark text on it and always show the letter */
+.tier-s { --c: var(--tier-s); }
+.tier-a { --c: var(--tier-a); }
+.tier-b { --c: var(--tier-b); }
+.tier-c { --c: var(--tier-c); }
+.tier-d { --c: var(--tier-d); }
