@@ -1,4 +1,4 @@
-import { STATUSES, scoreCountries } from './src/observatory.js';
+import { STATUSES, scoreCountries, tierOf } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -9,6 +9,9 @@ const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
 });
 
 const state = { category: 'all', market: 'all', country: null };
+// The four sections inside the terminal frame, in tab order. Keys 1 to 4 jump to them.
+const SECTIONS = ['ranking', 'matrix', 'country', 'companies'];
+const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 let meta, categories, ranking, byCode, capIndex, companies;
 
 function init() {
@@ -29,6 +32,8 @@ function init() {
   renderCompanyFilters();
   renderCompanies();
   renderStatusList();
+  renderTerm();
+  wireTerm();
   wireTooltip();
 }
 
@@ -37,6 +42,13 @@ const catName = (id) => meta.categories.find((c) => c.id === id).name;
 const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
 const flag = (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`;
 const chip = (status) => `<span class="chip s-${status}">${STATUSES[status].label}</span>`;
+// Pass an empty label when the word "tier" is already on screen next to the letter.
+const tier = (score, label = '<span class="sr-only">Tier </span>') => {
+  const t = tierOf(score);
+  return `<span class="tier tier-${t.toLowerCase()}">${label}${t}</span>`;
+};
+const countSources = () => new Set(categories.flatMap((cat) => cat.capabilities.flatMap((cap) =>
+  Object.values(cap.countries).flatMap((cell) => (cell.evidence ?? []).map((e) => e.url))))).size;
 
 // The same company often appears in several category files; show it once.
 function mergeCompanies() {
@@ -57,12 +69,10 @@ function mergeCompanies() {
 }
 
 function renderStats() {
-  const cells = categories.flatMap((c) => c.capabilities.flatMap((cap) => Object.values(cap.countries)));
-  const sources = new Set(cells.flatMap((c) => (c.evidence ?? []).map((e) => e.url))).size;
   const items = [
     [meta.countries.length, 'countries'],
     [Object.keys(capIndex).length, 'capabilities'],
-    [sources, 'sources'],
+    [countSources(), 'sources'],
     [companies.length, 'companies tracked'],
   ];
   $('[data-stats]').innerHTML = items.map(([n, l]) => `<div><dt>${l}</dt><dd>${n}</dd></div>`).join('');
@@ -71,9 +81,10 @@ function renderStats() {
 function renderRanking() {
   $('[data-ranking]').innerHTML = ranking.map((r) => `
     <li>
-      <button type="button" class="rank-row" data-go-country="${r.code}" aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}">
+      <button type="button" class="rank-row" data-go-country="${r.code}" aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}, tier ${tierOf(r.score)}">
         <span class="rank-num">${r.rank}</span>
         <span class="rank-name">${flag(r.code)}${esc(r.name)}</span>
+        ${tier(r.score)}
         <span class="rank-bar" aria-hidden="true"><span style="width:${r.score}%"></span></span>
         <span class="rank-score">${r.score}</span>
         <span class="rank-counts">${r.counts.live} live · ${r.counts.limited} limited</span>
@@ -102,7 +113,7 @@ function renderFilters() {
 
 function renderMatrix() {
   const cols = ranking;
-  const head = `<thead><tr><th scope="col" class="cap-col">Capability</th>${cols.map((c) => `<th scope="col"><span class="col-head">${flag(c.code)}<span>${c.code}</span></span></th>`).join('')}</tr></thead>`;
+  const head = `<thead><tr><th scope="col" class="cap-col">Capability</th>${cols.map((c) => `<th scope="col"${c.code === state.country ? ' class="sel"' : ''}><span class="col-head">${flag(c.code)}<span>${c.code}</span></span></th>`).join('')}</tr></thead>`;
   const body = categories
     .filter((cat) => state.category === 'all' || cat.category === state.category)
     .map((cat) => `
@@ -113,7 +124,7 @@ function renderMatrix() {
             <th scope="row" class="cap-col"><span class="cap-name">${esc(cap.name)}</span><span class="cap-q">${esc(cap.question)}</span></th>
             ${cols.map((c) => {
               const cell = cap.countries[c.code];
-              return `<td><button type="button" class="cell s-${cell.status}" data-cap="${cap.id}" data-code="${c.code}" aria-label="${esc(cap.name)} in ${esc(c.name)}: ${STATUSES[cell.status].label}${cell.confidence ? ', low confidence' : ''}">${STATUSES[cell.status].label}${cell.confidence ? '<span class="low" aria-hidden="true">?</span>' : ''}</button></td>`;
+              return `<td${c.code === state.country ? ' class="sel"' : ''}><button type="button" class="cell s-${cell.status}" data-cap="${cap.id}" data-code="${c.code}" aria-label="${esc(cap.name)} in ${esc(c.name)}: ${STATUSES[cell.status].label}${cell.confidence ? ', low confidence' : ''}">${STATUSES[cell.status].label}${cell.confidence ? '<span class="low" aria-hidden="true">?</span>' : ''}</button></td>`;
             }).join('')}
           </tr>`).join('')}
       </tbody>`).join('');
@@ -165,7 +176,9 @@ function selectCountry(code, scroll) {
   history.replaceState(null, '', `#country=${code}`);
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderProfile();
-  if (scroll) $('#country').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  renderMatrix();
+  renderTerm();
+  if (scroll) $('#country').scrollIntoView({ behavior: scrollBehavior() });
 }
 
 function renderProfile() {
@@ -182,7 +195,7 @@ function renderProfile() {
     <div class="profile">
       <div class="profile-score">
         <p class="big-flag" aria-hidden="true">${emoji(r.code)}</p>
-        <p class="profile-name">${esc(r.name)}</p>
+        <p class="profile-name">${esc(r.name)}${tier(r.score)}</p>
         <p class="profile-num"><span>${r.score}</span>/100</p>
         <p class="muted">Rank ${r.rank} of ${ranking.length} · ${esc(r.region)}</p>
       </div>
@@ -212,8 +225,8 @@ function renderProfile() {
 
 function renderCompanyFilters() {
   const el = $('[data-company-filters]');
-  const opts = [['all', 'All markets'], ...ranking.map((r) => [r.code, `${emoji(r.code)} ${r.name}`])];
-  el.innerHTML = opts.map(([id, name]) => `<button type="button" class="pill" data-market="${id}" aria-pressed="${state.market === id}">${esc(name)}</button>`).join('');
+  const opts = [['all', 'All markets'], ...ranking.map((r) => [r.code, `${flag(r.code)}${esc(r.name)}`])];
+  el.innerHTML = opts.map(([id, html]) => `<button type="button" class="pill" data-market="${id}" aria-pressed="${state.market === id}">${html}</button>`).join('');
   el.onclick = (e) => {
     const b = e.target.closest('[data-market]');
     if (!b) return;
@@ -232,13 +245,54 @@ function renderCompanies() {
         <th scope="row"><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a><span class="co-cats">${c.categories.map((id) => `<span>${esc(catName(id))}</span>`).join('')}</span></th>
         <td class="nowrap">${flag(c.hq)}${esc(c.hq)}</td>
         <td><ul class="co-roles">${c.roles.map((r) => `<li>${esc(r)}</li>`).join('')}</ul></td>
-        <td class="markets">${ranking.map((r) => `<span class="mk ${c.markets.includes(r.code) ? 'on' : ''}" title="${esc(r.name)}">${r.code}</span>`).join('')}</td>
+        <td class="markets">${ranking.map((r) => `<span class="mk ${c.markets.includes(r.code) ? 'on' : ''}" title="${esc(r.name)}">${flag(r.code)}${r.code}</span>`).join('')}</td>
       </tr>`).join('')}
     </tbody>`;
 }
 
 function renderStatusList() {
   $('[data-status-list]').innerHTML = Object.entries(STATUSES).map(([k, s]) => `<li>${chip(k)}<span><strong>${s.points}</strong> point${s.points === 1 ? '' : 's'}. ${s.hint}</span></li>`).join('');
+}
+
+// The terminal header follows the selected country: the path, and the chip right of the tabs.
+function renderTerm() {
+  const r = ranking.find((x) => x.code === state.country);
+  $('[data-term-country]').textContent = r.name.toLowerCase();
+  $('[data-term-sel]').innerHTML = `${flag(r.code)}<b>${r.code}</b> · ${r.score} · tier ${tier(r.score, '')}`;
+  $('[data-term-count]').textContent = `${Object.keys(capIndex).length * ranking.length} cells · ${countSources()} sources`;
+}
+
+function wireTerm() {
+  const jump = (id) => $(`#${id}`).scrollIntoView({ behavior: scrollBehavior() });
+  // The tabs are real links. Scrolling here instead keeps #country=XX in the address bar.
+  $('[data-tabs]').onclick = (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    e.preventDefault();
+    jump(a.hash.slice(1));
+  };
+
+  // Mark the tab of the first section that crosses a band near the top of the screen.
+  const tabs = [...document.querySelectorAll('[data-tabs] a')];
+  const seen = new Set();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => (en.isIntersecting ? seen.add(en.target.id) : seen.delete(en.target.id)));
+    const current = SECTIONS.find((id) => seen.has(id));
+    tabs.forEach((a) => (a.hash === `#${current}` ? a.setAttribute('aria-current', 'location') : a.removeAttribute('aria-current')));
+  }, { rootMargin: '-25% 0px -60% 0px' });
+  SECTIONS.forEach((id) => io.observe($(`#${id}`)));
+
+  // Keys 1 to 4 jump to a section, / picks a country. Typing in a field or an open dialog wins.
+  addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.metaKey || e.altKey || $('[data-detail]').open) return;
+    if (e.target.closest?.('input, select, textarea, [contenteditable]')) return;
+    if (/^[1-4]$/.test(e.key)) jump(SECTIONS[e.key - 1]);
+    else if (e.key === '/') {
+      e.preventDefault();
+      jump('country');
+      $('[data-country-select]').focus({ preventScroll: true });
+    }
+  });
 }
 
 function wireTooltip() {
@@ -248,7 +302,7 @@ function wireTooltip() {
     const b = e.target.closest('[data-cap]');
     if (!b || e.pointerType === 'touch') return;
     const cell = capIndex[b.dataset.cap].countries[b.dataset.code];
-    tip.innerHTML = `<strong>${esc(byCode[b.dataset.code].name)} · ${STATUSES[cell.status].label}${cell.confidence ? ' · low confidence' : ''}</strong>${esc(cell.note)}`;
+    tip.innerHTML = `<strong>${flag(b.dataset.code)}${esc(byCode[b.dataset.code].name)} · ${STATUSES[cell.status].label}${cell.confidence ? ' · low confidence' : ''}</strong>${esc(cell.note)}`;
     tip.hidden = false;
     const r = b.getBoundingClientRect();
     const w = tip.offsetWidth;
