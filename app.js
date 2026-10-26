@@ -125,6 +125,14 @@ function renderMatrix() {
   };
 }
 
+function correctionUrl(cap, code, cell) {
+  const q = new URLSearchParams({
+    title: `Correction: ${cap.id} in ${code}`,
+    body: `Capability: ${cap.id}\nCountry: ${byCode[code].name} (${code})\nCurrent status: ${STATUSES[cell.status].label}\n\nCorrect status and source:\n`,
+  });
+  return `https://github.com/rasabaq/ai-agent-observatory/issues/new?${q}`;
+}
+
 function openDetail(capId, code) {
   const cap = capIndex[capId];
   const cell = cap.countries[code];
@@ -138,7 +146,8 @@ function openDetail(capId, code) {
     ${ev.length ? `<ol class="sources">${ev.map((e) => `
       <li><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title)}</a>
         <span class="src-meta"><span class="tag">${esc(e.type)}</span>${esc(e.publisher ?? '')}${e.date ? ` · ${esc(e.date)}` : ''}</span></li>`).join('')}</ol>`
-      : '<p class="muted">No availability found. Nothing to cite yet.</p>'}`;
+      : '<p class="muted">No availability found. Nothing to cite yet.</p>'}
+    <p class="suggest"><a href="${esc(correctionUrl(cap, code, cell))}" target="_blank" rel="noopener noreferrer">Suggest a correction</a></p>`;
   $('[data-tip]').hidden = true;
   $('[data-detail]').showModal();
 }
