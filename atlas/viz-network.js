@@ -4,17 +4,17 @@
   title: 'Company network',
   blurb: 'Which companies connect which countries? Each small dot is a company, linked to every country it works in; global players sit in the middle, local ones cluster around their country.',
   render(el, ctx) {
-    const { esc, emoji } = ctx;
+    const { esc, emoji, flag } = ctx;
     if (!document.getElementById('v-network-style')) {
       document.head.insertAdjacentHTML('beforeend', `<style id="v-network-style">
 .v-network { font-family: var(--font); }
 .v-network .v-network-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; margin-bottom: 16px; }
 .v-network .v-network-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.v-network .v-network-chip { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-2); font-size: 13px; line-height: 1.3; cursor: pointer; }
-.v-network .v-network-chip:hover { background: var(--surface-2); color: var(--ink); }
+.v-network .v-network-chip { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255, 255, 255, 0.03); color: var(--ink-2); font: 500 11.5px/1 var(--mono); letter-spacing: 0.04em; cursor: pointer; }
+.v-network .v-network-chip:hover { border-color: var(--line-strong); color: var(--ink); }
 .v-network .v-network-chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--page); }
 .v-network .v-network-chip .n { margin-left: 5px; font-variant-numeric: tabular-nums; opacity: .7; }
-.v-network .v-network-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); }
+.v-network .v-network-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 400 11.5px/1.4 var(--mono); color: var(--ink-2); }
 .v-network .v-network-legend span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 .v-network .v-network-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
 .v-network .v-network-legend .country { width: 12px; height: 12px; box-sizing: border-box; background: var(--surface); border: 1.5px solid var(--ink-2); }
@@ -26,14 +26,18 @@
 .v-network .co.regional { fill: var(--c2); }
 .v-network .co.local { fill: var(--c3); }
 .v-network .ct .body { fill: var(--surface); stroke: var(--ink-2); stroke-width: 1.5; }
-.v-network svg text.code { fill: var(--ink); font-size: 12px; font-weight: 600; letter-spacing: .02em; }
+.v-network svg text.code { fill: var(--ink); font: 500 11.5px var(--mono); letter-spacing: .04em; }
 .v-network svg text.flag { font-size: 15px; }
 .v-network svg text.lbl { fill: var(--ink); font-size: 12.5px; font-weight: 500; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; paint-order: stroke; pointer-events: none; }
 .v-network .nd { outline: none; cursor: default; }
-.v-network .nd:focus-visible .ring { stroke: var(--accent); stroke-width: 2; fill: none; }
+.v-network .nd:focus-visible .ring { stroke: var(--sunrise); stroke-width: 1.5; fill: none; }
 .v-network .lk, .v-network .nd, .v-network .lbl { transition: opacity .15s; }
 .v-network svg.hl .lk:not(.on), .v-network svg.hl .nd:not(.on), .v-network svg.hl .lbl:not(.on) { opacity: .12; }
-.v-network svg.hl .lk.on { stroke: var(--ink-2); }
+.v-network svg.hl .lk.on { stroke: color-mix(in srgb, var(--sunrise) 65%, transparent); }
+/* the node under the pointer or in focus lights up in sunrise */
+.v-network .ct.hot .body { stroke: var(--sunrise); filter: var(--sun-glow); }
+.v-network .ct.hot text.code { fill: var(--sunrise); }
+.v-network .nd.hot:not(.ct) .ring { stroke: var(--sunrise); stroke-width: 1.5; }
 @media (max-width: 560px) {
   .v-network .v-network-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px; }
   .v-network .v-network-chip { white-space: nowrap; flex: none; }
@@ -151,11 +155,13 @@
         nodeSel.classed('on', (d) => nb.has(d));
         linkSel.classed('on', (l) => l.source === n || l.target === n);
         lblG.selectAll('.lbl').classed('on', (d) => nb.has(d));
+        nodeSel.classed('hot', (d) => d === n);
         ctx.tip.show(e, tipHtml(n));
         document.querySelector('[data-atlas-tip]').classList.add('v-network-tip');
       }
       function clear() {
         svg.classed('hl', false);
+        nodeSel.classed('hot', false);
         ctx.tip.hide();
         document.querySelector('[data-atlas-tip]').classList.remove('v-network-tip');
       }
@@ -225,14 +231,14 @@
         const works = shown.filter((c) => vis(c) && c.markets.includes(n.id)).length;
         const home = shown.filter((c) => vis(c) && c.hq === n.id).length;
         const scope = filter === 'all' ? '' : ` in ${esc(ctx.catName(filter))}`;
-        return `<strong>${emoji(n.id)} ${esc(countryName[n.id])}</strong>
+        return `<strong>${flag(n.id)}${esc(countryName[n.id])}</strong>
           ${works} ${works === 1 ? 'company works' : 'companies work'} here${scope}<br>
           ${home} ${home === 1 ? 'is' : 'are'} home-grown (headquartered here)`;
       }
       const c = n.co;
       return `<strong>${esc(c.name)}</strong>
-        HQ ${emoji(c.hq)} ${esc(c.hq)} · ${n.mk.length} ${n.mk.length === 1 ? 'market' : 'markets'}<br>
-        <span class="flags">${n.mk.map((m) => `<span style="white-space: nowrap">${emoji(m)} ${esc(m)}</span>`).join(' &nbsp;')}</span><br>
+        HQ ${flag(c.hq)}${esc(c.hq)} · ${n.mk.length} ${n.mk.length === 1 ? 'market' : 'markets'}<br>
+        <span class="flags">${n.mk.map((m) => `<span style="white-space: nowrap">${flag(m)}${esc(m)}</span>`).join(' &nbsp;')}</span><br>
         ${c.categories.map((id) => esc(ctx.catName(id))).join(' · ')}
         <span class="role">${esc(c.roles[0])}</span>`;
     }

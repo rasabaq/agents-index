@@ -14,11 +14,11 @@
 
   const STYLE = `
 .v-radar { font-family: var(--font); }
-.v-radar h3 { margin: 0; font-size: 15px; font-weight: 600; color: var(--ink); }
+.v-radar h3 { margin: 0; font: 500 11px/1.4 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
 .v-radar .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .v-radar .bar h3 { margin-right: 4px; }
 .v-radar .pick { display: inline-flex; align-items: center; gap: 8px; }
-.v-radar .vs { color: var(--muted); font-size: 13px; }
+.v-radar .vs { color: var(--muted); font: 400 11.5px/1 var(--mono); }
 .v-radar .sw, .v-radar-k { display: inline-block; flex: none; width: 10px; height: 10px; border-radius: 3px; }
 .v-radar .c1, .v-radar-k.c1 { background: var(--c1); }
 .v-radar .c2, .v-radar-k.c2 { background: var(--c2); }
@@ -41,7 +41,8 @@
 .v-radar .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 .v-radar .tbl th, .v-radar .tbl td { padding: 7px 0; border-bottom: 1px solid var(--line); text-align: left; font-weight: 400; color: var(--ink-2); }
 .v-radar .tbl td, .v-radar .tbl thead th + th { width: 64px; text-align: right; color: var(--ink); font-variant-numeric: tabular-nums; }
-.v-radar .tbl thead th { padding-top: 0; font-size: 12px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.v-radar .tbl thead th { padding-top: 0; font: 500 10.5px/1.4 var(--mono); letter-spacing: 0.08em; color: var(--muted); white-space: nowrap; }
+.v-radar .tbl thead th:first-child { letter-spacing: 0.16em; text-transform: uppercase; }
 .v-radar .tbl thead .sw { margin-right: 6px; vertical-align: -1px; }
 .v-radar .tbl td.hi { font-weight: 650; }
 .v-radar .tbl tfoot th, .v-radar .tbl tfoot td { border-bottom: 0; font-weight: 600; color: var(--ink); }
@@ -49,13 +50,22 @@
 .v-radar .tbl tbody th { padding-left: 4px; }
 .v-radar .tbl tbody td:last-child { padding-right: 4px; }
 .v-radar .head { margin: 28px 0 14px; padding-top: 24px; border-top: 1px solid var(--line); }
-.v-radar .head p { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+.v-radar .head p { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
 .v-radar .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.v-radar .card { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.v-radar .card { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(3, 3, 8, 0.55); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
 .v-radar .card:hover { border-color: var(--line-strong); }
+/* mini shapes stay grey; the two countries in the compare chart take its colors */
+.v-radar .card .shape { fill: var(--ink-2); fill-opacity: 0.08; stroke: var(--ink-2); stroke-width: 1.5; }
+.v-radar .card .dot { fill: var(--ink-2); }
+.v-radar .card[data-k='1'] { border-color: color-mix(in srgb, var(--c1) 45%, var(--line)); }
+.v-radar .card[data-k='2'] { border-color: color-mix(in srgb, var(--c2) 45%, var(--line)); box-shadow: 0 0 26px -10px rgba(255, 160, 80, 0.45); }
+.v-radar .card[data-k='1'] .shape, .v-radar .card[data-k='1'] .dot { fill: var(--c1); stroke: var(--c1); }
+.v-radar .card[data-k='2'] .shape, .v-radar .card[data-k='2'] .dot { fill: var(--c2); stroke: var(--c2); }
+.v-radar .card[data-k] .shape { fill-opacity: 0.12; }
+.v-radar .card[data-k] .dot { stroke: var(--surface); }
 .v-radar .card:focus-visible { border-radius: 12px; }
 .v-radar .card svg { display: block; width: 100%; height: auto; overflow: visible; }
-.v-radar .rank { position: absolute; top: 10px; left: 12px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.v-radar .rank { position: absolute; top: 12px; left: 12px; font: 500 11px/1 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
 .v-radar .card .sw { position: absolute; top: 13px; right: 12px; }
 .v-radar .cap { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 13.5px; line-height: 1.35; }
 .v-radar .name { min-width: 0; font-weight: 500; }
@@ -80,7 +90,7 @@
     blurb: 'What shape is each country’s agent readiness? Each spoke is one category, scored from 0 at the centre to 100 at the edge, so a big, round shape means agents can do a lot across the board.',
     render(el, ctx) {
       if (!document.getElementById('v-radar-style')) document.head.insertAdjacentHTML('beforeend', `<style id="v-radar-style">${STYLE}</style>`);
-      const { esc, emoji, ranking, byCode, tip } = ctx;
+      const { esc, emoji, flag, ranking, byCode, tip } = ctx;
       const cats = ctx.meta.categories;
       const N = cats.length, STEP = (2 * Math.PI) / N;
 
@@ -101,7 +111,7 @@
       const arc = d3.arc();
       const wedges = (r) => cats.map((c, i) => `<path class="hit" data-i="${i}" d="${arc({ innerRadius: 0, outerRadius: r, startAngle: i * STEP - STEP / 2, endAngle: i * STEP + STEP / 2 })}"/>`).join('');
       const liveOf = (code, id) => `${live[code][id]} of ${total[id]} capabilities live`;
-      const flagName = (code) => `${emoji(code)} ${esc(byCode[code].name)}`;
+      const flagName = (code) => `${flag(code)}${esc(byCode[code].name)}`;
 
       let pair = [byCode.US ? 'US' : ranking[0].code, byCode.CL ? 'CL' : ranking[1].code];
       if (pair[0] === pair[1]) pair[1] = ranking.find((r) => r.code !== pair[0]).code;
@@ -172,7 +182,7 @@
         big.setAttribute('viewBox', `${-W / 2} ${f(bb.y - 4)} ${W} ${Math.ceil(bb.height + 8)}`);
         big.setAttribute('aria-label', `Radar chart comparing ${byCode[a].name} (score ${byCode[a].score}) and ${byCode[b].name} (score ${byCode[b].score}) across ${N} categories. Exact values are in the table.`);
 
-        const head = (code, k) => `<th scope="col"><span class="sw c${k}" aria-hidden="true"></span>${emoji(code)} ${code}</th>`;
+        const head = (code, k) => `<th scope="col"><span class="sw c${k}" aria-hidden="true"></span>${flag(code)}${code}</th>`;
         tbl.innerHTML = `<thead><tr><th scope="col">Category</th>${head(a, 1)}${head(b, 2)}</tr></thead>
           <tbody>${cats.map((c, i) => `<tr data-i="${i}"><th scope="row">${esc(c.name)}</th><td class="${va[i] > vb[i] ? 'hi' : ''}">${va[i]}</td><td class="${vb[i] > va[i] ? 'hi' : ''}">${vb[i]}</td></tr>`).join('')}</tbody>
           <tfoot><tr><th scope="row">Overall score</th><td>${byCode[a].score}</td><td>${byCode[b].score}</td></tr></tfoot>`;
@@ -183,6 +193,7 @@
         grid.querySelectorAll('.card').forEach((card) => {
           const k = pair.indexOf(card.dataset.code);
           card.querySelector('.sw').className = k < 0 ? 'sw' : `sw c${k + 1}`;
+          if (k < 0) delete card.dataset.k; else card.dataset.k = k + 1;
         });
         drawCompare();
       };
