@@ -15,6 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=%F0%9F%87%A6%F0%9F%87%AA%F0%9F%87%A6%F0%9F%87%B7%F0%9F%87%A7%F0%9F%87%B7%F0%9F%87%A8%F0%9F%87%A6%F0%9F%87%A8%F0%9F%87%B1%F0%9F%87%A8%F0%9F%87%B3%F0%9F%87%A8%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%B8%F0%9F%87%AB%F0%9F%87%B7%F0%9F%87%AC%F0%9F%87%A7%F0%9F%87%AE%F0%9F%87%B3%F0%9F%87%B2%F0%9F%87%BD%F0%9F%87%B3%F0%9F%87%B1%F0%9F%87%B8%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="module" src="app.js"></script>
+  <link rel="stylesheet" href="sections.css">
+  <script type="module" src="sections.js"></script>
 </head>
 <body>
   <header class="nav">
@@ -109,6 +111,22 @@
         <span class="term-count" data-term-count></span>
       </p>
     </div>
+
+    <section id="tiers" class="wrap block" data-sections>
+      <div class="block-head" data-kicker="Tiers">
+        <h2 data-tiers-title>Tiers</h2>
+        <p>The same score as the ranking, cut into letter grades. The cut-offs are fixed, so a grade means the same thing every release.</p>
+      </div>
+      <ol class="tier-list" data-tiers></ol>
+    </section>
+
+    <section class="band" aria-labelledby="band-title" data-sections>
+      <header class="band-h">
+        <p class="kicker">The dataset · as of <span data-asof></span></p>
+        <h2 id="band-title">Counted <span class="tape">cell by cell.</span></h2>
+      </header>
+      <div class="nums" data-nums><canvas class="nums-cv" aria-hidden="true"></canvas></div>
+    </section>
 
     <section id="method" class="wrap block method">
       <div class="block-head" data-kicker="Method">
