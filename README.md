@@ -10,6 +10,7 @@ In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile
 npm start          # serves the site on http://localhost:8080
 npm test           # scoring and validation tests
 npm run validate   # checks every data file and prints the ranking
+npm run check-links  # fails on dead source links (404/410)
 ```
 
 The site has no build step and no dependencies. Node 20 or later runs the checks.
