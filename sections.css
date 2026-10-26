@@ -1,14 +1,11 @@
 /* Tier list and numbers band (sections.js). Uses the tokens from styles.css only. */
 
-/* tier list: the tier color block with a pixel edge, then one tile per country */
-.tier-s { --c: var(--tier-s); }
-.tier-a { --c: var(--tier-a); }
-.tier-b { --c: var(--tier-b); }
-.tier-c { --c: var(--tier-c); }
-.tier-d { --c: var(--tier-d); }
+/* tier list: the tier color block with a pixel edge, then one tile per country.
+   The .tier-s … .tier-d colors come from styles.css. Rows use .tier-row because
+   .tier is the dashboard's small letter badge. */
 .tier-list { margin: 0; padding: 0; list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.tier { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; align-items: center; min-height: 124px; }
-.tier + .tier { border-top: 1px solid var(--page); }
+.tier-row { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; align-items: center; min-height: 124px; }
+.tier-row + .tier-row { border-top: 1px solid var(--page); }
 .tier-l { position: relative; align-self: stretch; display: grid; place-content: center; justify-items: center; gap: 2px; margin: 0; background: var(--c); color: var(--page); }
 /* the pixel edge: the tier color dissolves into the row in a 4px checker */
 .tier-l::after {
@@ -76,7 +73,7 @@
 .sep { flex: none; width: calc(var(--dot) - 4px); height: calc(var(--dot) - 4px); margin-top: calc(3 * var(--dot)); background: var(--magenta); }
 
 @media (max-width: 720px) {
-  .tier { grid-template-columns: 64px minmax(0, 1fr); }
+  .tier-row { grid-template-columns: 64px minmax(0, 1fr); }
   .tier-k { display: none; }
   .tier-l b { font-size: 44px; }
   .tier-r { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 10px 10px 10px 22px; }

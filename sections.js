@@ -30,7 +30,7 @@ function renderTiers(ranking) {
     const rows = ranking.filter((r) => tierOf(r.score) === t.letter);
     const tied = new Set(rows.map((r) => r.score)).size < rows.length;
     return `
-      <li class="tier tier-${t.letter.toLowerCase()}">
+      <li class="tier-row tier-${t.letter.toLowerCase()}">
         <p class="tier-l"><b><span class="sr-only">Tier </span>${t.letter}</b><span>${range(t, i)}</span></p>
         <ul class="tier-r">${rows.length ? rows.map(tile).join('') : '<li class="tile-0">No country yet</li>'}</ul>
         <p class="tier-k">${rows.length} ${rows.length === 1 ? 'country' : 'countries'}${tied ? ' · tied' : ''}</p>

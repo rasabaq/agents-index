@@ -15,6 +15,8 @@ html { scroll-padding-top: 116px; }
 .nav { top: env(safe-area-inset-top, 0px); }
 .nav-inner { height: 56px; }
 .atlas-asof { margin-left: auto; font: 500 10.5px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.atlas-home { margin-left: 24px; font: 500 10.5px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.atlas-home:hover, .atlas-home:focus-visible { color: var(--ink); }
 
 /* tab strip: a terminal title bar with numbered tabs; the current view gets a sunrise underline.
    Scoped under .nav so it wins over the site nav rules (which also hide nav links on small screens). */
@@ -78,6 +80,7 @@ html { scroll-padding-top: 116px; }
   .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
   .nav-inner { height: 52px; }
   .atlas-asof { display: none; }
+  .atlas-home { margin-left: auto; }
   .atlas-flags li { padding: 7px 8px 8px 6px; }
   .view { padding-top: 20px; }
   .view-head { padding: 20px 16px 0; }
