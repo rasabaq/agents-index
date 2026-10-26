@@ -102,3 +102,13 @@ function isUrl(s) {
     return false;
   }
 }
+
+// Letter grades for a score out of 100. The cut-offs are fixed so a grade means the same thing every release.
+export const TIERS = [
+  { letter: 'S', min: 80 },
+  { letter: 'A', min: 70 },
+  { letter: 'B', min: 60 },
+  { letter: 'C', min: 50 },
+  { letter: 'D', min: 0 },
+];
+export const tierOf = (score) => TIERS.find((t) => score >= t.min).letter;

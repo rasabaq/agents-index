@@ -42,47 +42,73 @@
       <dl class="stats" data-stats></dl>
     </section>
 
-    <section id="ranking" class="wrap block">
-      <div class="block-head" data-kicker="Ranking">
-        <h2>Ranking</h2>
-        <p>Score out of 100. It is the mean of seven equally weighted categories. Select a country to see its profile.</p>
+    <!-- The data product sits in one terminal window: title bar, numbered tabs, the four sections, key hints. -->
+    <div class="term">
+      <div class="term-bar">
+        <span class="term-app"><i aria-hidden="true"></i>Observatory</span>
+        <span class="term-path">observatory / countries / <b data-term-country></b></span>
+        <span class="term-fill" aria-hidden="true"></span>
+        <span class="term-date"><i aria-hidden="true"></i>Data <span data-asof></span></span>
       </div>
-      <ol class="ranking" data-ranking></ol>
-    </section>
+      <div class="term-tabs">
+        <nav aria-label="Dashboard sections" data-tabs>
+          <a href="#ranking" aria-keyshortcuts="1"><span>1</span>Ranking</a>
+          <a href="#matrix" aria-keyshortcuts="2"><span>2</span>Capabilities</a>
+          <a href="#country" aria-keyshortcuts="3"><span>3</span>Countries</a>
+          <a href="#companies" aria-keyshortcuts="4"><span>4</span>Companies</a>
+        </nav>
+        <p class="term-sel" data-term-sel></p>
+      </div>
+      <div class="term-body">
+        <section id="ranking" class="wrap block">
+          <div class="block-head" data-kicker="Ranking">
+            <h2>Ranking</h2>
+            <p>Score out of 100. It is the mean of seven equally weighted categories. Select a country to see its profile.</p>
+          </div>
+          <ol class="ranking" data-ranking></ol>
+        </section>
 
-    <section id="matrix" class="wrap block">
-      <div class="block-head" data-kicker="Capabilities">
-        <h2>What agents can do, by country</h2>
-        <p>Select any cell to see the products and sources behind it.</p>
-      </div>
-      <div class="legend" data-legend></div>
-      <div class="filters" role="group" aria-label="Filter by category" data-filters></div>
-      <div class="matrix-scroll">
-        <table class="matrix" data-matrix></table>
-      </div>
-    </section>
+        <section id="matrix" class="wrap block">
+          <div class="block-head" data-kicker="Capabilities">
+            <h2>What agents can do, by country</h2>
+            <p>Select any cell to see the products and sources behind it.</p>
+          </div>
+          <div class="legend" data-legend></div>
+          <div class="filters" role="group" aria-label="Filter by category" data-filters></div>
+          <div class="matrix-scroll">
+            <table class="matrix" data-matrix></table>
+          </div>
+        </section>
 
-    <section id="country" class="wrap block">
-      <div class="block-head" data-kicker="Countries">
-        <h2>Country profile</h2>
-        <label class="select">
-          <span class="sr-only">Country</span>
-          <select data-country-select></select>
-        </label>
-      </div>
-      <div data-profile></div>
-    </section>
+        <section id="country" class="wrap block">
+          <div class="block-head" data-kicker="Countries">
+            <h2>Country profile</h2>
+            <label class="select">
+              <span class="sr-only">Country</span>
+              <select data-country-select aria-keyshortcuts="/"></select>
+            </label>
+          </div>
+          <div data-profile></div>
+        </section>
 
-    <section id="companies" class="wrap block">
-      <div class="block-head" data-kicker="Companies">
-        <h2>Who makes it possible</h2>
-        <p>The companies and institutions behind each capability, where they are based, and where their agent features work.</p>
+        <section id="companies" class="wrap block">
+          <div class="block-head" data-kicker="Companies">
+            <h2>Who makes it possible</h2>
+            <p>The companies and institutions behind each capability, where they are based, and where their agent features work.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Filter companies by market" data-company-filters></div>
+          <div class="table-scroll">
+            <table class="companies" data-companies></table>
+          </div>
+        </section>
       </div>
-      <div class="filters" role="group" aria-label="Filter companies by market" data-company-filters></div>
-      <div class="table-scroll">
-        <table class="companies" data-companies></table>
-      </div>
-    </section>
+      <p class="term-keys">
+        <span><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd>jump to a section</span>
+        <span><kbd>/</kbd>pick a country</span>
+        <span><kbd>Esc</kbd>close details</span>
+        <span class="term-count" data-term-count></span>
+      </p>
+    </div>
 
     <section id="method" class="wrap block method">
       <div class="block-head" data-kicker="Method">
