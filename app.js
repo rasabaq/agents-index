@@ -138,7 +138,7 @@ function openDetail(capId, code) {
   const cell = cap.countries[code];
   const ev = cell.evidence ?? [];
   $('[data-detail-body]').innerHTML = `
-    <p class="kicker">${esc(catName(cap.category))} · ${flag(code)} ${esc(byCode[code].name)}</p>
+    <p class="kicker">${esc(catName(cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
     <p class="detail-status">${chip(cell.status)}${cell.confidence ? '<span class="low-note">Low confidence. Sources are thin or indirect, so treat this cell as a lead to check.</span>' : ''}</p>
     <p>${esc(cell.note)}</p>
