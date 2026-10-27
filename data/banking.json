@@ -756,5 +756,248 @@
         "banking.bank-agent-actions"
       ]
     }
+  ],
+  "repos": [
+    {
+      "repo": "plaid/plaid-node",
+      "name": "Plaid Node library",
+      "role": "Official Node.js client for Plaid, the main US account aggregator: link bank accounts, read balances and transactions, and start bank payments.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "plaid"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 588,
+        "contributors": 106,
+        "pushedAt": "2026-10-19",
+        "archived": false,
+        "downloadsMonth": 3261931,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "plaid/plaid-python",
+      "name": "Plaid Python library",
+      "role": "Official Python client for Plaid, so an agent written in Python can read linked bank accounts and transactions.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "plaid-python"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 522,
+        "contributors": 86,
+        "pushedAt": "2026-10-19",
+        "archived": false,
+        "downloadsMonth": 2851165,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "pluggyai/pluggy-node",
+      "name": "Pluggy Node SDK",
+      "role": "Official Node.js client for Pluggy, a Brazilian aggregator that connects to banks through Open Finance Brasil to read accounts and start Pix payments.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "pluggy-sdk"
+        }
+      ],
+      "origin": "BR",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 20,
+        "contributors": 21,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": 72474,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "fintoc-com/fintoc-python",
+      "name": "Fintoc Python library",
+      "role": "Official Python client for Fintoc, a Chilean service that reads bank account movements and starts bank transfer payments.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "fintoc"
+        }
+      ],
+      "origin": "CL",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 83,
+        "contributors": 23,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 9798,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "OpenBankProject/OBP-API",
+      "name": "Open Bank Project API",
+      "role": "Open-source API server a bank runs to give apps and agents standard open banking access to accounts, transactions and payments (PSD2, UK and Berlin Group styles).",
+      "capabilities": [
+        "banking.open-finance-access",
+        "banking.bank-agent-actions"
+      ],
+      "images": [
+        "openbankproject/obp-api"
+      ],
+      "origin": "DE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 1743,
+        "contributors": 48,
+        "pushedAt": "2026-10-20",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 594371
+      }
+    },
+    {
+      "repo": "OpenBankingUK/read-write-api-specs",
+      "name": "UK Open Banking Read/Write API specs",
+      "role": "The official UK open banking standard that licensed apps use to read account data and start payments, including variable recurring payments, at UK banks.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 111,
+        "contributors": 25,
+        "pushedAt": "2026-10-20",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "apache/fineract",
+      "name": "Apache Fineract",
+      "role": "Open-source core banking system with a full API for accounts, loans, savings and transfers, so a bank or microfinance lender can let its own assistant move money.",
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ],
+      "images": [
+        "apache/fineract"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 2576,
+        "contributors": 405,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 4594761
+      }
+    },
+    {
+      "repo": "actualbudget/actual",
+      "name": "Actual Budget",
+      "role": "Self-hosted budgeting app that syncs bank accounts through GoCardless, SimpleFIN, Pluggy, Enable Banking and Akahu, with a Node API an agent can drive.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@actual-app/api"
+        }
+      ],
+      "images": [
+        "actualbudget/actual-server"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 29797,
+        "contributors": 775,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 66413,
+        "dockerPulls": 39907494
+      }
+    },
+    {
+      "repo": "firefly-iii/firefly-iii",
+      "name": "Firefly III",
+      "role": "Self-hosted personal finance manager with a REST API, so an agent can read and record your bank transactions.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "images": [
+        "fireflyiii/core"
+      ],
+      "origin": "NL",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 25015,
+        "contributors": 204,
+        "pushedAt": "2026-10-26",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 31087009
+      }
+    },
+    {
+      "repo": "firefly-iii/data-importer",
+      "name": "Firefly III Data Importer",
+      "role": "Pulls bank transactions into Firefly III through third-party open banking providers or bank files.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "images": [
+        "fireflyiii/data-importer"
+      ],
+      "origin": "NL",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 852,
+        "contributors": 46,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 14005657
+      }
+    },
+    {
+      "repo": "we-promise/sure",
+      "name": "Sure",
+      "role": "Self-hosted personal finance app, the community fork of Maybe, that syncs bank accounts through Plaid and other providers and has a built-in AI assistant.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 10695,
+        "contributors": 429,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    }
   ]
 }
