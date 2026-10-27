@@ -468,42 +468,19 @@
               "url": "https://canaltech.com.br/apps/ifood-lanca-agente-de-ia-que-permite-fazer-pedidos-pelo-whatsapp-veja-como-usar/",
               "date": "2025-10-10",
               "type": "news"
-            },
-            {
-              "title": "ChatGPT Integration for Eaters (Uber results show only for users in the US)",
-              "publisher": "Uber",
-              "url": "https://help.uber.com/en/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
-              "date": "2025-11",
-              "type": "company"
             }
           ]
         },
         "MX": {
           "status": "none",
           "note": "No agent ordering was found for Mexico: Uber's help center says the Uber Eats app in ChatGPT shows results only for users in the US, Alexa+ food ordering is US-only, Rappi's WhatsApp assistant (Adri) was announced, mainly for Colombia, with no Mexico launch found, and DiDi Food's DiMi agent (August 2026) only serves restaurants, not shoppers. Searched in October 2026: Rappi, DiDi Food, Uber Eats; kept at low confidence because no company page states the absence.",
-          "evidence": [
-            {
-              "title": "ChatGPT Integration for Eaters (Uber results show only for users in the US)",
-              "publisher": "Uber",
-              "url": "https://help.uber.com/en/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
-              "date": "2025-11",
-              "type": "company"
-            }
-          ],
+          "evidence": [],
           "confidence": "low"
         },
         "CL": {
           "status": "none",
           "note": "No agent ordering was found for Chile: Uber's help center says the Uber Eats app in ChatGPT shows results only for users in the US, Rappi's WhatsApp assistant (Adri) was announced, mainly for Colombia, with no Chile launch found, PedidosYa's only AI feature found is a 2023 dish recommender in its own app (Santiago only), and no DiDi ordering agent was found. Searched in October 2026: Rappi, PedidosYa, Uber Eats, DiDi; kept at low confidence because no company page states the absence.",
-          "evidence": [
-            {
-              "title": "ChatGPT Integration for Eaters (Uber results show only for users in the US)",
-              "publisher": "Uber",
-              "url": "https://help.uber.com/en/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
-              "date": "2025-11",
-              "type": "company"
-            }
-          ],
+          "evidence": [],
           "confidence": "low"
         },
         "CO": {
