@@ -111,7 +111,7 @@ const REGISTRIES = ['npm', 'pypi'];
 const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s ?? '');
 
 // How much an open-source repo is really used: counted installs, not stars. Stars measure attention.
-// Downloads are per month, summed over its npm and PyPI packages. Docker pulls are lifetime, so their bar is higher.
+// Downloads are per month, from its busiest npm or PyPI package. Docker pulls are lifetime, so their bar is higher.
 // Key order is the display order.
 export const REPO_USE = {
   wide: { label: 'Widely used', hint: '1M+ installs a month, or 100M+ Docker pulls.' },

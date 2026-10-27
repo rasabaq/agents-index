@@ -749,7 +749,7 @@
         "contributors": 369,
         "pushedAt": "2026-10-27",
         "archived": false,
-        "downloadsMonth": 2090633,
+        "downloadsMonth": 1153250,
         "dockerPulls": null
       }
     },
@@ -799,7 +799,7 @@
         "contributors": 41,
         "pushedAt": "2026-10-27",
         "archived": false,
-        "downloadsMonth": 167354,
+        "downloadsMonth": 100448,
         "dockerPulls": null
       }
     },
@@ -849,7 +849,7 @@
         "contributors": 90,
         "pushedAt": "2026-10-14",
         "archived": false,
-        "downloadsMonth": 46720,
+        "downloadsMonth": 39858,
         "dockerPulls": null
       }
     },
@@ -874,7 +874,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 528543
+        "dockerPulls": 252503
       }
     },
     {
@@ -895,7 +895,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 68947
+        "dockerPulls": 68953
       }
     },
     {

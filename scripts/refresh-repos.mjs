@@ -44,7 +44,9 @@ const downloads = async (p) => p.registry === 'npm'
   ? (await json(`https://api.npmjs.org/downloads/point/last-month/${p.name}`)).downloads
   : (await json(`https://pypistats.org/api/packages/${p.name.toLowerCase()}/recent`)).data.last_month;
 
-const sum = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) : null);
+// A repo's packages are often installed together (langchain pulls in langchain-core), so take the
+// busiest one instead of adding them up, which would count the same install twice.
+const top = (xs) => (xs.length ? Math.max(...xs) : null);
 
 async function measure(r) {
   const info = await (await gh(`repos/${r.repo}`)).json();
@@ -59,8 +61,8 @@ async function measure(r) {
     contributors: await contributors(r.repo),
     pushedAt: info.pushed_at.slice(0, 10),
     archived: info.archived,
-    downloadsMonth: sum(dls),
-    dockerPulls: sum(pulls),
+    downloadsMonth: top(dls),
+    dockerPulls: top(pulls),
   };
 }
 
