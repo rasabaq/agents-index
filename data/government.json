@@ -18,6 +18,13 @@
               "type": "news"
             },
             {
+              "title": "Accepted ID types: mobile driver's licenses in a digital wallet",
+              "publisher": "Login.gov",
+              "url": "https://www.login.gov/help/verify-your-identity/accepted-id-type/",
+              "date": "2026",
+              "type": "company"
+            },
+            {
               "title": "Verify with Google Wallet digital IDs",
               "publisher": "Google for Developers",
               "url": "https://developers.google.com/wallet/identity/verify",
@@ -35,7 +42,7 @@
         },
         "GB": {
           "status": "announced",
-          "note": "GOV.UK One Login serves central government only and GOV.UK Wallet holds just the veteran card; since 1 September 2026 certified digital verification services can test checks of a sample driving licence in a GOV.UK Wallet sandbox, but it is not a live service, and the national digital ID scheme was dropped in July 2026.",
+          "note": "GOV.UK One Login serves central government only and GOV.UK Wallet holds just the veteran card; since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving licence in a GOV.UK Wallet sandbox, but it is not a production service. Private firms can use certified DVS providers (46 providers, 64 services on the statutory register in July 2026), and the national digital ID scheme was dropped in July 2026.",
           "evidence": [
             {
               "title": "How to access the GOV.UK Wallet sandbox",
@@ -56,6 +63,13 @@
               "publisher": "UK Government (DSIT/GDS)",
               "url": "https://roadmap-for-modern-digital-government.campaign.gov.uk/join-up-services/govuk-wallet",
               "date": "2026-09",
+              "type": "report"
+            },
+            {
+              "title": "Digital Verification Services 2026 Annual Report on the operation of Part 2 of the Data (Use and Access) Act 2025",
+              "publisher": "UK Government (DSIT, OfDIA)",
+              "url": "https://assets.publishing.service.gov.uk/media/6a54d8b51228eb26a4cab83a/Annual_Report_of_Part_2_DUAA__1_.pdf",
+              "date": "2026-07-14",
               "type": "report"
             },
             {
@@ -96,7 +110,7 @@
         },
         "BR": {
           "status": "live",
-          "note": "SERPRO's Datavalid API lets private firms check a person's face and data against official records such as the CNH; the gov.br login itself is open mainly to public bodies.",
+          "note": "SERPRO's Datavalid API lets approved firms check a person's face, liveness, registration data and CNH QR code against official records; the gov.br login itself is open mainly to public bodies.",
           "evidence": [
             {
               "title": "Nova versão do Datavalid amplia modalidades de validação",
@@ -123,7 +137,7 @@
         },
         "MX": {
           "status": "live",
-          "note": "Banks and firms with a signed agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo; Llave MX and the biometric CURP are not yet open to private apps.",
+          "note": "Banks and firms with a signed agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo; the Llave MX rules require federal platforms to use it for sign-in but set no access for private apps, and the biometric CURP is not yet open to private apps.",
           "evidence": [
             {
               "title": "Acuerdo INE/CG92/2016: Servicio de Verificación de los Datos de la Credencial para Votar",
@@ -167,6 +181,13 @@
           "note": "ClaveÚnica can be used only by private bodies with a signed agreement, such as pension funds (AFP) and e-signature providers, under terms published in November 2025.",
           "evidence": [
             {
+              "title": "Resolución Exenta 733/2025: aprueba términos y condiciones para la integración y uso de ClaveÚnica",
+              "publisher": "Ministerio de Hacienda, Secretaría de Gobierno Digital",
+              "url": "https://wikiguias.digital.gob.cl/documentos/rex._733_e6606_2025_aprueba_t%C3%A9rminos_de_uso_de_clave%C3%BAnica.pdf",
+              "date": "2025-10-22",
+              "type": "regulation"
+            },
+            {
               "title": "Términos y condiciones ClaveÚnica",
               "publisher": "Secretaría de Gobierno Digital",
               "url": "https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica",
@@ -184,13 +205,20 @@
         },
         "CO": {
           "status": "live",
-          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators, and since 2024 banks can also check a face in real time against Registraduría records with the Cédula Digital PIN, a face match or both; Carpeta Ciudadana stays a public-sector service.",
+          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators (fingerprint, and face at level 2), with 2026 tariffs set by Resolución 1500 of 2026, and since 2024 banks can also check a face in real time against Registraduría records with the Cédula Digital PIN, a face match or both; Carpeta Ciudadana stays a public-sector service.",
           "evidence": [
             {
               "title": "Resolución Registraduría 13691 de 2016 (aliados tecnológicos)",
               "publisher": "Registraduría Nacional / Colpensiones normativa",
               "url": "https://normativa.colpensiones.gov.co/colpens/docs/resolucion_registraduria_13691_2016.htm",
               "date": "2016",
+              "type": "regulation"
+            },
+            {
+              "title": "Resolución 1500 de 2026 (RNEC): tarifas de acceso a las bases de datos de identificación y autenticación biométrica",
+              "publisher": "Registraduría Nacional del Estado Civil (compilación Cancillería)",
+              "url": "https://cancilleria.gov.co/normograma/compilacion/docs/resolucion_registraduria_1500_2026.htm",
+              "date": "2026-02-11",
               "type": "regulation"
             },
             {
@@ -218,7 +246,7 @@
         },
         "IN": {
           "status": "live",
-          "note": "Aadhaar eKYC and face authentication are open to approved private entities (417 KUAs, about 26 billion eKYC calls in FY2025-26), and DigiLocker lets registered firms pull documents with user consent.",
+          "note": "Aadhaar eKYC and face authentication are open to approved private entities (417 KUAs and about 26 billion eKYC transactions on UIDAI's dashboard), and DigiLocker lets registered firms pull documents with user consent.",
           "evidence": [
             {
               "title": "eKYC Dashboard",
@@ -254,6 +282,13 @@
               "url": "https://datacatalog.worldbank.org/search/dataset/0040787",
               "date": "2026-03",
               "type": "report"
+            },
+            {
+              "title": "E-Government Survey 2024, Chapter 1 (Box 1.5: Aadhaar in India)",
+              "publisher": "UN DESA",
+              "url": "https://desapublications.un.org/sites/default/files/publications/2024-09/(Chapter%201)%20E-Government%20Survey%202024%201392024.pdf",
+              "date": "2024-09",
+              "type": "report"
             }
           ]
         }
@@ -266,7 +301,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "The IRS voice bot lets taxpayers who prove who they are set up and manage payment plans and make payments, as the Treasury inspector general confirmed in June 2026; IRS web chatbots use set answers, not generative AI, and most state chatbots only answer questions.",
+          "note": "The IRS voice bot lets taxpayers who prove who they are set up and manage payment plans and make payments (deployed in June 2022; the Treasury inspector general's June 2026 report describes it but tested only chat); IRS web chatbots use set answers, not generative AI, and most state chatbots only answer questions.",
           "evidence": [
             {
               "title": "Using voice and chat bots to improve the collection taxpayer experience",
@@ -420,7 +455,7 @@
         },
         "IN": {
           "status": "live",
-          "note": "UIDAI's Udai chatbot checks Aadhaar update status and files grievances, and Kisan e-Mitra (built on Bhashini) answers PM-KISAN questions and handles grievances in many languages.",
+          "note": "UIDAI's Udai chatbot (Hindi and English) checks Aadhaar update status and files grievances, and Kisan e-Mitra (built on Bhashini, 11 languages) answers PM-KISAN questions and handles grievances.",
           "evidence": [
             {
               "title": "CRM Division (Udai chatbot)",
