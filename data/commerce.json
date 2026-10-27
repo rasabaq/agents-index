@@ -144,7 +144,7 @@
         },
         "MX": {
           "status": "limited",
-          "note": "Only Alexa+ is available, in early access since January 2026, and it can order and pay for you (for example food orders). Gemini lists Mexico for shopping, but its Buy button needs Google Pay agentic checkout, which is US and Australia only; no ChatGPT, Copilot or Perplexity checkout is offered, and no Mercado Libre, Walmart México or Liverpool checkout inside a chat was found.",
+          "note": "Only Alexa+ is available, in early access since January 2026, and it can order and pay for you (for example food orders). Gemini lists Mexico for shopping, but its Buy button needs Google Pay agentic checkout, which is US and Australia only; no ChatGPT, Copilot or Perplexity checkout is offered, and no Mercado Libre or Walmart México checkout inside a chat was found. Liverpool has only announced groundwork (November 2025, with commercetools) to let shoppers buy in ChatGPT \"where supported\"; no live launch was found.",
           "evidence": [
             {
               "title": "Alexa+ international launch",
@@ -173,12 +173,19 @@
               "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "commercetools and Liverpool: agentic commerce press release",
+              "publisher": "commercetools",
+              "url": "https://commercetools.com/press-releases/commercetools-and-liverpool-agentic-commerce",
+              "date": "2025-11-05",
+              "type": "company"
             }
           ]
         },
         "CL": {
           "status": "none",
-          "note": "No in-chat checkout found: Gemini lists Chile for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US only, and Alexa+ is not in Chile. Jumbo's WhatsApp assistant builds a cart, but you pay on jumbo.cl or in its app, and we found no chat checkout from Falabella, Ripley or Lider.",
+          "note": "No in-chat checkout found: Gemini lists Chile for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US only, and Alexa+ is not in Chile. Jumbo's AI WhatsApp assistant (launched June 2026, later reported nationwide) builds a cart, but you finish and pay on jumbo.cl or in its app. Lider's web assistant Lider iA adds recipe items to the cart, and we found no chat checkout from Falabella, Ripley or Lider. Still low confidence: only trade press covers Jumbo, and searches of Cencosud and Falabella sites found no primary page.",
           "evidence": [
             {
               "title": "Use agentic checkout with Google Pay",
@@ -213,7 +220,7 @@
         },
         "CO": {
           "status": "none",
-          "note": "No in-chat checkout found: Gemini lists Colombia for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US only, and Alexa+ is not in Colombia. Rappi has only announced a WhatsApp ordering assistant, and we found no chat checkout from Éxito or Falabella.",
+          "note": "No in-chat checkout found: Gemini lists Colombia for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US only, and Alexa+ is not in Colombia. Rappi's WhatsApp ordering assistant was a beta in December 2025 and we found no statement that you can pay inside the chat, and we found no chat checkout from Éxito or Falabella.",
           "evidence": [
             {
               "title": "Use agentic checkout with Google Pay",
@@ -376,7 +383,7 @@
         },
         "MX": {
           "status": "limited",
-          "note": "Only Amazon's Alexa+ in early access (since January 2026) can buy from Amazon for you. Walmart México's Sparky (in its app since September 2026) recommends products but was not shown to buy, Mercado Libre's buying agent is still in testing, and no Rufus launch in Mexico was found.",
+          "note": "Only Amazon's Alexa+ in early access (since January 2026) can buy from Amazon for you. Walmart México's Sparky (in its app since 24 September 2026) helps find and compare products, and its press release does not mention adding to cart or paying, Mercado Libre's buying agent is still in testing, and no Rufus launch in Mexico was found.",
           "evidence": [
             {
               "title": "Alexa+ international launch",
@@ -393,17 +400,17 @@
               "type": "company"
             },
             {
-              "title": "Walmart México lanza Sparky, su nuevo asistente de compras con inteligencia artificial",
-              "publisher": "La Crónica de Hoy",
-              "url": "https://www.cronica.com.mx/tendencias/2026/10/08/walmart-mexico-lanza-sparky-su-nuevo-asistente-de-compras-con-inteligencia-artificial/",
-              "date": "2026-10-08",
-              "type": "news"
+              "title": "Presentamos Sparky, nuestro nuevo asistente de compras impulsado por IA",
+              "publisher": "Walmart de México",
+              "url": "https://www.walmartmexico.com/sala-de-prensa/2026/09/presentamos-sparky--nuestro-nuevo-asistente-de-compras-impulsado",
+              "date": "2026-09-24",
+              "type": "company"
             }
           ]
         },
         "CL": {
           "status": "none",
-          "note": "No marketplace buying agent found: Jumbo (Cencosud) has a WhatsApp AI that builds a grocery cart in Santiago and Valparaíso, but you pay on jumbo.cl or in its app; Falabella is only exploring agents, Mercado Libre's buying agent is not launched, no Ripley or Lider agent was found, and Alexa+ is not in Chile.",
+          "note": "No marketplace buying agent found: Jumbo (Cencosud) has a WhatsApp AI that builds a grocery cart in Santiago and Valparaíso, but you pay on jumbo.cl or in its app; Falabella: no customer buying agent found in searches (only internal AI work); Mercado Libre's buying agent is not launched, Lider has a web assistant (Lider iA) that fills a cart from recipes but does not pay; no Ripley agent was found, and Alexa+ is not in Chile. Low confidence: Chile claims rest on trade press, with no Cencosud, Falabella, Ripley or Lider primary page found.",
           "evidence": [
             {
               "title": "Mercado Libre IA: claves para el futuro del retail 2026",
@@ -424,7 +431,7 @@
         },
         "CO": {
           "status": "announced",
-          "note": "Rappi announced in 2025 a WhatsApp AI assistant that takes orders in plain language, with voice-note ordering planned for 2026, but no launch was confirmed; no Éxito or Falabella buying agent was found, and Mercado Libre's buying agent is not launched.",
+          "note": "Rappi announced a WhatsApp AI assistant in September 2025 that takes orders in plain language by text or voice note. Its Colombia manager said in December 2025 it ran as a beta, with a wider launch planned for 2026; no general launch was confirmed. No Éxito or Falabella buying agent was found (Éxito has an older WhatsApp ordering chatbot from 2020), and Mercado Libre's buying agent is not launched. Low confidence: only trade press covers Rappi; rappi.com and about.rappi.com showed no announcement.",
           "evidence": [
             {
               "title": "Rappi anuncia asistente de IA en WhatsApp (Colombia)",
