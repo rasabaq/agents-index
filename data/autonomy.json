@@ -975,9 +975,10 @@
           "name": "browser-use"
         }
       ],
+      "origin": "US",
       "usage": {
         "asOf": "2026-10-27",
-        "stars": 119290,
+        "stars": 119291,
         "contributors": 384,
         "pushedAt": "2026-10-27",
         "archived": false,
@@ -998,13 +999,452 @@
           "name": "@playwright/mcp"
         }
       ],
+      "origin": "US",
       "usage": {
         "asOf": "2026-10-27",
-        "stars": 38705,
+        "stars": 38706,
         "contributors": 71,
         "pushedAt": "2026-10-22",
         "archived": false,
         "downloadsMonth": 24354243,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "browserbase/stagehand",
+      "name": "Stagehand",
+      "role": "Browser automation SDK where an agent acts on web pages from plain-English steps like \"click the sign-in button\".",
+      "capabilities": [
+        "autonomy.browser-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@browserbasehq/stagehand"
+        },
+        {
+          "registry": "pypi",
+          "name": "stagehand"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 25841,
+        "contributors": 49,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 6112527,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Skyvern-AI/skyvern",
+      "name": "Skyvern",
+      "role": "Agent that uses vision and a language model to fill forms and run tasks on websites it has never seen before.",
+      "capabilities": [
+        "autonomy.browser-agent"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "skyvern"
+        },
+        {
+          "registry": "npm",
+          "name": "@skyvern/client"
+        }
+      ],
+      "images": [
+        "skyvern/skyvern"
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 23287,
+        "contributors": 96,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 17818,
+        "dockerPulls": 22880
+      }
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "name": "OpenHands",
+      "role": "Open agent platform that writes code, runs commands and browses the web to finish a task on its own.",
+      "capabilities": [
+        "autonomy.browser-agent"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "openhands-ai"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 91999,
+        "contributors": 587,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 461064,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "bytedance/UI-TARS-desktop",
+      "name": "UI-TARS Desktop and Agent TARS",
+      "role": "Desktop and browser agent that looks at the screen and clicks and types to use apps and websites for you.",
+      "capabilities": [
+        "autonomy.browser-agent",
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@agent-tars/cli"
+        },
+        {
+          "registry": "npm",
+          "name": "@ui-tars/sdk"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 39404,
+        "contributors": 50,
+        "pushedAt": "2026-10-09",
+        "archived": false,
+        "downloadsMonth": 3401,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "simular-ai/Agent-S",
+      "name": "Agent S",
+      "role": "Framework for agents that use a computer like a person does, moving the mouse and typing across apps.",
+      "capabilities": [
+        "autonomy.browser-agent",
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "gui-agents"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 12778,
+        "contributors": 28,
+        "pushedAt": "2026-10-24",
+        "archived": false,
+        "downloadsMonth": 1565,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "droidrun/mobilerun",
+      "name": "Mobilerun (formerly DroidRun)",
+      "role": "Framework that lets an agent control an Android or iOS phone: open apps, tap, type and finish tasks.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "mobilerun"
+        },
+        {
+          "registry": "pypi",
+          "name": "droidrun"
+        }
+      ],
+      "origin": "DE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 9841,
+        "contributors": 37,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 8525,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "pipecat-ai/pipecat",
+      "name": "Pipecat",
+      "role": "Python framework for real-time voice agents that can place and answer phone calls and hold a conversation.",
+      "capabilities": [
+        "autonomy.calls-for-you"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "pipecat-ai"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 16849,
+        "contributors": 381,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 1043553,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "livekit/agents",
+      "name": "LiveKit Agents",
+      "role": "Framework for voice agents that talk in real time, including over regular phone lines (SIP) to call a business.",
+      "capabilities": [
+        "autonomy.calls-for-you"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "livekit-agents"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 14962,
+        "contributors": 580,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 3609910,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "n8n-io/n8n",
+      "name": "n8n",
+      "role": "Workflow automation tool where an AI agent can take real actions in hundreds of apps, like sending email or messages.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "n8n"
+        }
+      ],
+      "images": [
+        "n8nio/n8n"
+      ],
+      "origin": "DE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 208776,
+        "contributors": 843,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 328204,
+        "dockerPulls": 277308882
+      }
+    },
+    {
+      "repo": "langgenius/dify",
+      "name": "Dify",
+      "role": "Platform to build AI assistants and agents that call tools and APIs to act in other apps.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "images": [
+        "langgenius/dify-api",
+        "langgenius/dify-web"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 159706,
+        "contributors": 1576,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 41886849
+      }
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "name": "LangChain",
+      "role": "Python framework to build agents that call tools and APIs to take actions for a user.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "langchain"
+        },
+        {
+          "registry": "pypi",
+          "name": "langchain-core"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 148555,
+        "contributors": 3747,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 315284423,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "name": "LangGraph",
+      "role": "Library to run long, multi-step agents with memory and human approval steps before they act.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "langgraph"
+        },
+        {
+          "registry": "pypi",
+          "name": "langgraph-checkpoint"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 43992,
+        "contributors": 293,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 86414200,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "crewAIInc/crewAI",
+      "name": "CrewAI",
+      "role": "Framework where a team of agents shares a task and uses tools to get it done.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "crewai"
+        },
+        {
+          "registry": "pypi",
+          "name": "crewai-tools"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 60172,
+        "contributors": 366,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 4269007,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "microsoft/autogen",
+      "name": "AutoGen",
+      "role": "Microsoft framework for agents that talk to each other and use tools to finish tasks.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "autogen-agentchat"
+        },
+        {
+          "registry": "pypi",
+          "name": "autogen-core"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 61588,
+        "contributors": 536,
+        "pushedAt": "2026-10-16",
+        "archived": false,
+        "downloadsMonth": 788487,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "openai/openai-agents-python",
+      "name": "OpenAI Agents SDK",
+      "role": "Small Python SDK to build agents that call tools, hand off to other agents and act for a user.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "openai-agents"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 30330,
+        "contributors": 408,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 12449784,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "modelcontextprotocol/python-sdk",
+      "name": "MCP Python SDK",
+      "role": "Official Python SDK for the Model Context Protocol, the open standard that connects agents to apps and tools.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "mcp"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 24684,
+        "contributors": 197,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 235193557,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "modelcontextprotocol/typescript-sdk",
+      "name": "MCP TypeScript SDK",
+      "role": "Official TypeScript SDK for the Model Context Protocol, the open standard that connects agents to apps and tools.",
+      "capabilities": [
+        "autonomy.personal-assistant-actions"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@modelcontextprotocol/sdk"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 13662,
+        "contributors": 196,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 172306898,
         "dockerPulls": null
       }
     }
