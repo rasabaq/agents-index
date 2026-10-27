@@ -407,6 +407,8 @@
       "name": "Meta",
       "hq": "US",
       "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+      "homepage": "https://about.meta.com/",
+      "icon": null,
       "role": "Meta Business Agent answers customers, recommends products and closes sales in chat, and WhatsApp's Payments API takes payments in chat in Brazil and India.",
       "markets": [
         "US",
@@ -427,6 +429,8 @@
       "name": "Google",
       "hq": "US",
       "url": "https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/",
+      "homepage": "https://www.google.com/",
+      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
       "role": "Business Agent lets shoppers chat with a retailer's AI sales associate inside Google Search.",
       "markets": [
         "US"
@@ -439,6 +443,8 @@
       "name": "360dialog",
       "hq": "DE",
       "url": "https://360dialog.com",
+      "homepage": "https://360dialog.com/",
+      "icon": "https://framerusercontent.com/images/jCsm2IXNOOfEvUqkW8uqby4EsJk.png",
       "role": "WhatsApp Business Solution Provider that deploys Meta Business Agent and the Brazil Payments API for businesses.",
       "markets": [
         "US",
@@ -459,6 +465,8 @@
       "name": "Blip",
       "hq": "BR",
       "url": "https://www.blip.ai",
+      "homepage": "https://www.blip.ai/",
+      "icon": "https://www.blip.ai/wp-content/uploads/2023/06/Favicon.svg",
       "role": "Conversational platform that lets enterprises run AI sales and support agents on WhatsApp and other chat apps.",
       "markets": [
         "BR"
@@ -471,6 +479,8 @@
       "name": "Zenvia",
       "hq": "BR",
       "url": "https://zenvia.com/",
+      "homepage": "https://zenvia.com/",
+      "icon": "https://zenvia.com/favicon.png",
       "role": "Customer cloud that runs AI agents to sell and support customers over WhatsApp and other channels.",
       "markets": [
         "BR"
@@ -483,6 +493,8 @@
       "name": "Yalo",
       "hq": "MX",
       "url": "https://www.yalo.ai/",
+      "homepage": "https://www.yalo.ai/",
+      "icon": "https://cdn.prod.website-files.com/6864212f89b49a1b6c4568db/686c375c802b0228dca4c912_256x256.png",
       "role": "Sales platform that runs AI agents for consumer brands on WhatsApp across Latin America.",
       "markets": [
         "MX",
@@ -496,6 +508,8 @@
       "name": "Treble",
       "hq": "CO",
       "url": "https://treble.ai/",
+      "homepage": "https://treble.ai/",
+      "icon": "https://treble.ai/wp-content/uploads/2026/02/Frame-1171275166-300x300.png",
       "role": "AI platform for WhatsApp that automates sales and support conversations for Latin American companies.",
       "markets": [
         "CO",
@@ -509,6 +523,8 @@
       "name": "Gupshup",
       "hq": "US",
       "url": "https://www.gupshup.ai/",
+      "homepage": "https://www.gupshup.ai/",
+      "icon": "https://www.gupshup.ai/apple-icon-57x57.png",
       "role": "Platform for building and running AI agents on WhatsApp and other messaging channels, with a large base in India.",
       "markets": [
         "IN"
@@ -521,6 +537,8 @@
       "name": "Telegram",
       "hq": "AE",
       "url": "https://core.telegram.org/bots/payments",
+      "homepage": "https://telegram.org/",
+      "icon": "https://telegram.org/img/apple-touch-icon.png",
       "role": "Bot Payments API lets bots take payments inside the chat through providers such as Stripe, with no Telegram commission.",
       "markets": [
         "US",
@@ -540,6 +558,8 @@
       "name": "Stripe",
       "hq": "US",
       "url": "https://stripe.com/global",
+      "homepage": "https://stripe.com/",
+      "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
       "role": "Payment provider behind Telegram bot payments for businesses in its supported countries.",
       "markets": [
         "US",
@@ -556,6 +576,8 @@
       "name": "Razorpay",
       "hq": "IN",
       "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg",
+      "homepage": "https://razorpay.com/",
+      "icon": null,
       "role": "One of the payment gateways that let Indian businesses take UPI and card payments inside WhatsApp chats.",
       "markets": [
         "IN"
@@ -568,6 +590,8 @@
       "name": "PayU",
       "hq": "NL",
       "url": "https://payu.in",
+      "homepage": "https://payu.in/",
+      "icon": "https://payu.in/favicon.ico",
       "role": "One of the payment gateways that let Indian businesses take payments inside WhatsApp chats.",
       "markets": [
         "IN"
@@ -575,6 +599,362 @@
       "capabilities": [
         "messaging.pay-in-chat"
       ]
+    }
+  ],
+  "repos": [
+    {
+      "repo": "RasaHQ/rasa",
+      "name": "Rasa",
+      "role": "Python framework to build text and voice assistants that understand customers and answer them in chat apps.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "rasa"
+        }
+      ],
+      "images": [
+        "rasa/rasa"
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 21360,
+        "contributors": 600,
+        "pushedAt": "2026-07-24",
+        "archived": false,
+        "downloadsMonth": 234951,
+        "dockerPulls": 41741811
+      }
+    },
+    {
+      "repo": "botpress/botpress",
+      "name": "Botpress",
+      "role": "Platform and SDK to build LLM agents and connect them to WhatsApp, Messenger, Telegram and web chat.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@botpress/sdk"
+        },
+        {
+          "registry": "npm",
+          "name": "@botpress/client"
+        },
+        {
+          "registry": "npm",
+          "name": "@botpress/cli"
+        }
+      ],
+      "origin": "CA",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 14971,
+        "contributors": 80,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": 174463,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "chatwoot/chatwoot",
+      "name": "Chatwoot",
+      "role": "Self-hosted customer support inbox for WhatsApp, Instagram, email and web chat, with an AI agent that answers customers and hands off to people.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "images": [
+        "chatwoot/chatwoot"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 38413,
+        "contributors": 406,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 11132956
+      }
+    },
+    {
+      "repo": "baptisteArno/typebot.io",
+      "name": "Typebot",
+      "role": "Self-hosted chatbot builder that runs AI conversations on WhatsApp and the web.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "images": [
+        "baptistearno/typebot-builder",
+        "baptistearno/typebot-viewer"
+      ],
+      "origin": "FR",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 10582,
+        "contributors": 92,
+        "pushedAt": "2026-10-26",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 1829897
+      }
+    },
+    {
+      "repo": "evolution-foundation/evolution-api",
+      "name": "Evolution API",
+      "role": "Self-hosted WhatsApp API that connects a business number to bots and AI agents, popular across Brazil.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "images": [
+        "evoapicloud/evolution-api"
+      ],
+      "origin": "BR",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 9974,
+        "contributors": 170,
+        "pushedAt": "2026-07-14",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 4320323
+      }
+    },
+    {
+      "repo": "WhiskeySockets/Baileys",
+      "name": "Baileys",
+      "role": "JavaScript library that lets a bot send and receive WhatsApp messages over the WhatsApp Web protocol.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "baileys"
+        },
+        {
+          "registry": "npm",
+          "name": "@whiskeysockets/baileys"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 11470,
+        "contributors": 195,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 4919445,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "wwebjs/whatsapp-web.js",
+      "name": "whatsapp-web.js",
+      "role": "Node.js library that lets a bot read and answer WhatsApp chats through WhatsApp Web.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "whatsapp-web.js"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 22811,
+        "contributors": 135,
+        "pushedAt": "2026-10-25",
+        "archived": false,
+        "downloadsMonth": 426122,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "wppconnect-team/wppconnect",
+      "name": "WPPConnect",
+      "role": "Brazilian Node.js library to automate a WhatsApp number so a bot can chat with customers.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@wppconnect-team/wppconnect"
+        }
+      ],
+      "origin": "BR",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 3509,
+        "contributors": 46,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 22138,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "devlikeapro/waha",
+      "name": "WAHA",
+      "role": "Self-hosted WhatsApp HTTP API that lets any agent send and receive WhatsApp messages over REST.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "images": [
+        "devlikeapro/waha"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 7697,
+        "contributors": 22,
+        "pushedAt": "2026-10-22",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 3065146
+      }
+    },
+    {
+      "repo": "python-telegram-bot/python-telegram-bot",
+      "name": "python-telegram-bot",
+      "role": "Python library to build Telegram bots that chat with customers and send invoices they can pay in the chat.",
+      "capabilities": [
+        "messaging.business-ai-agent",
+        "messaging.pay-in-chat"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "python-telegram-bot"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 29533,
+        "contributors": 213,
+        "pushedAt": "2026-10-19",
+        "archived": false,
+        "downloadsMonth": 6764113,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "aiogram/aiogram",
+      "name": "aiogram",
+      "role": "Async Python framework for Telegram bots, including invoices and in-chat payments.",
+      "capabilities": [
+        "messaging.business-ai-agent",
+        "messaging.pay-in-chat"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "aiogram"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 5909,
+        "contributors": 148,
+        "pushedAt": "2026-10-25",
+        "archived": false,
+        "downloadsMonth": 2756261,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "grammyjs/grammY",
+      "name": "grammY",
+      "role": "TypeScript framework for Telegram bots, including invoices and in-chat payments.",
+      "capabilities": [
+        "messaging.business-ai-agent",
+        "messaging.pay-in-chat"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "grammy"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 3783,
+        "contributors": 60,
+        "pushedAt": "2026-10-16",
+        "archived": false,
+        "downloadsMonth": 16698628,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "telegraf/telegraf",
+      "name": "Telegraf",
+      "role": "Node.js framework for Telegram bots, including invoices and in-chat payments.",
+      "capabilities": [
+        "messaging.business-ai-agent",
+        "messaging.pay-in-chat"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "telegraf"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 9202,
+        "contributors": 154,
+        "pushedAt": "2026-09-24",
+        "archived": false,
+        "downloadsMonth": 1624196,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "yagop/node-telegram-bot-api",
+      "name": "node-telegram-bot-api",
+      "role": "Node.js client for the Telegram Bot API, so a bot can chat and send invoices paid in the chat.",
+      "capabilities": [
+        "messaging.business-ai-agent",
+        "messaging.pay-in-chat"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "node-telegram-bot-api"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 9217,
+        "contributors": 99,
+        "pushedAt": "2026-09-07",
+        "archived": false,
+        "downloadsMonth": 1182982,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "glific/glific",
+      "name": "Glific",
+      "role": "WhatsApp chatbot platform for nonprofits, with AI skills that answer from a knowledge base inside chat flows. A Digital Public Good.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 223,
+        "contributors": 39,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
     }
   ]
 }

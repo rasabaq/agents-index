@@ -57,8 +57,8 @@
 .band-h h2 { font: 600 clamp(30px, 4.4vw, 52px)/1 var(--font); letter-spacing: -0.055em; text-wrap: balance; }
 .tape { display: inline-block; line-height: 0.98; padding: 0.01em 0.16em 0.1em 0.07em; margin-left: -0.07em; background: #000; color: var(--magenta); }
 .nums { --dot: 24px; position: relative; display: flex; justify-content: center; align-items: flex-start; gap: 20px; max-width: 1112px; margin: 0 auto; }
-.nums.stack { display: grid; justify-content: center; gap: 40px; }
-.nums.stack .sep { display: none; }
+.nums.stacked { display: grid; justify-content: center; gap: 40px; }
+.nums.stacked .sep { display: none; }
 .nums-cv { position: absolute; left: 0; top: 0; display: block; image-rendering: pixelated; }
 /* 1px gaps cut every 4px shader cell into a square */
 .nums-cv, .sep {

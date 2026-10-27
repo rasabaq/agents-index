@@ -11,10 +11,12 @@ test('the flag font subset covers every flag in the data', () => {
   const meta = JSON.parse(read('data/meta.json'));
   const codes = new Set(meta.countries.map((c) => c.code));
   for (const cat of meta.categories) {
-    for (const co of JSON.parse(read(`data/${cat.id}.json`)).companies ?? []) {
+    const data = JSON.parse(read(`data/${cat.id}.json`));
+    for (const co of data.companies ?? []) {
       codes.add(co.hq);
       co.markets.forEach((m) => codes.add(m));
     }
+    for (const r of data.repos ?? []) if (r.origin) codes.add(r.origin);
   }
   for (const page of ['index.html', 'atlas/index.html']) {
     const text = decodeURIComponent(read(page).match(/family=Noto\+Color\+Emoji&text=([^&"]+)/)[1]);

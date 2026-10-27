@@ -538,6 +538,8 @@
       "name": "Google",
       "hq": "US",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "homepage": "https://www.google.com/",
+      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
       "role": "AI Mode finds open restaurant tables across booking partners and lets US users book hotels with Google Pay.",
       "markets": [
         "US",
@@ -553,6 +555,8 @@
       "name": "OpenAI",
       "hq": "US",
       "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "homepage": "https://openai.com/",
+      "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
       "role": "ChatGPT finds restaurant reservations and hosts third-party apps for travel and delivery.",
       "markets": [
         "US",
@@ -574,6 +578,8 @@
       "name": "OpenTable",
       "hq": "US",
       "url": "https://www.opentable.com",
+      "homepage": "https://www.opentable.com/",
+      "icon": "https://www.opentable.com/favicon.ico",
       "role": "Supplies real-time table inventory and bookings to Google AI Mode and ChatGPT.",
       "markets": [
         "US",
@@ -589,6 +595,8 @@
       "name": "Resy",
       "hq": "US",
       "url": "https://resy.com",
+      "homepage": "https://resy.com/",
+      "icon": "https://resy.com/images/favicon.ico?v=5",
       "role": "Supplies US table availability to Google AI Mode and ChatGPT.",
       "markets": [
         "US"
@@ -601,6 +609,8 @@
       "name": "Tock",
       "hq": "US",
       "url": "https://www.exploretock.com",
+      "homepage": "https://www.exploretock.com/",
+      "icon": "https://www.exploretock.com/assets/favicon/v5/apple-touch-icon-57x57.png",
       "role": "Supplies US reservation availability to Google AI Mode.",
       "markets": [
         "US"
@@ -613,6 +623,8 @@
       "name": "Yelp",
       "hq": "US",
       "url": "https://www.yelp.com",
+      "homepage": "https://www.yelp.com/",
+      "icon": "https://www.yelp.com/favicon.ico",
       "role": "Lets ChatGPT find and book tables and join waitlists in the US and Canada.",
       "markets": [
         "US"
@@ -625,6 +637,8 @@
       "name": "TheFork",
       "hq": "FR",
       "url": "https://www.thefork.com",
+      "homepage": "https://www.thefork.com/",
+      "icon": "https://www.thefork.com/favicon.ico",
       "role": "Supplies UK and European table bookings to Google AI Mode and runs a TheFork app inside ChatGPT in the UK, Spain, France, Italy and Portugal.",
       "markets": [
         "GB"
@@ -637,6 +651,8 @@
       "name": "SevenRooms",
       "hq": "US",
       "url": "https://sevenrooms.com",
+      "homepage": "https://sevenrooms.com/",
+      "icon": "https://sevenrooms.com/favicon.ico",
       "role": "Booking partner for Google AI Mode restaurant reservations in the UK.",
       "markets": [
         "GB"
@@ -649,6 +665,8 @@
       "name": "ResDiary",
       "hq": "GB",
       "url": "https://www.resdiary.com",
+      "homepage": "https://www.resdiary.com/",
+      "icon": "https://resdiary.com/hubfs/Icon_%20resdiary_favicon.png",
       "role": "Booking partner for Google AI Mode restaurant reservations in the UK.",
       "markets": [
         "GB"
@@ -661,6 +679,8 @@
       "name": "EazyDiner",
       "hq": "IN",
       "url": "https://www.eazydiner.com",
+      "homepage": "https://www.eazydiner.com/",
+      "icon": "https://www.eazydiner.com/images/apple-touch-icon.png",
       "role": "Booking partner for Google AI Mode restaurant reservations in India.",
       "markets": [
         "IN"
@@ -673,6 +693,8 @@
       "name": "Swiggy",
       "hq": "IN",
       "url": "https://mcp.swiggy.com/builders",
+      "homepage": "https://www.swiggy.com/",
+      "icon": null,
       "role": "Runs MCP servers so AI assistants can order food and Instamart groceries and book Dineout tables, and is a Google AI Mode booking partner.",
       "markets": [
         "IN"
@@ -686,6 +708,8 @@
       "name": "Zomato (Eternal)",
       "hq": "IN",
       "url": "https://github.com/Zomato/mcp-server-manifest",
+      "homepage": "https://www.zomato.com/",
+      "icon": "https://b.zmtcdn.com/data/o2_assets/31e648cbaa2ca2fb5fbec1e76710f3821785325659.png",
       "role": "Runs an MCP server for AI food ordering and is a Google AI Mode restaurant booking partner.",
       "markets": [
         "IN"
@@ -699,6 +723,8 @@
       "name": "Booking.com",
       "hq": "NL",
       "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+      "homepage": "https://www.booking.com/",
+      "icon": null,
       "role": "Runs a hotel search app inside ChatGPT and is a hotel partner for Google AI Mode checkout.",
       "markets": [
         "US",
@@ -718,6 +744,8 @@
       "name": "Expedia Group",
       "hq": "US",
       "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
+      "homepage": "https://www.expediagroup.com/",
+      "icon": "https://www.expediagroup.com/favicon.ico",
       "role": "Runs a travel app inside ChatGPT and is a hotel partner (Expedia, Hotels.com) for Google AI Mode checkout.",
       "markets": [
         "US",
@@ -733,6 +761,8 @@
       "name": "Marriott International",
       "hq": "US",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "homepage": "https://www.marriott.com/",
+      "icon": "https://www.marriott.com/favicon.ico",
       "role": "Hotel partner whose rooms US users can book inside Google AI Mode.",
       "markets": [
         "US"
@@ -745,6 +775,8 @@
       "name": "Hilton",
       "hq": "US",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "homepage": "https://www.hilton.com/",
+      "icon": null,
       "role": "Hotel partner whose rooms US users can book inside Google AI Mode.",
       "markets": [
         "US"
@@ -757,6 +789,8 @@
       "name": "Trip.com",
       "hq": "CN",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "homepage": "https://www.trip.com/",
+      "icon": "https://www.trip.com/favicon.ico",
       "role": "Booking partner for hotel checkout inside Google AI Mode in the US.",
       "markets": [
         "US"
@@ -769,6 +803,8 @@
       "name": "Eurostar",
       "hq": "GB",
       "url": "https://deeparrival.com/news/eurostar-chatgpt-app-august-2026/",
+      "homepage": "https://www.eurostar.com/",
+      "icon": "https://static.eurostar.com/ui/design-system/apple-touch-icon.png",
       "role": "Runs a ChatGPT app that finds trains and fares and hands off to eurostar.com to book.",
       "markets": [
         "GB"
@@ -781,6 +817,8 @@
       "name": "DoorDash",
       "hq": "US",
       "url": "https://www.businesswire.com/news/home/20251217400178/en/DoorDash-Launches-Grocery-Shopping-App-Within-ChatGPT",
+      "homepage": "https://www.doordash.com/",
+      "icon": null,
       "role": "Runs a ChatGPT app that builds grocery carts from US retailers for checkout.",
       "markets": [
         "US"
@@ -793,6 +831,8 @@
       "name": "Uber",
       "hq": "US",
       "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
+      "homepage": "https://www.uber.com/",
+      "icon": "https://www.uber.com/favicon.ico",
       "role": "Runs Uber and Uber Eats apps inside ChatGPT that plan rides and meal orders and hand off to the Uber apps to pay; US only.",
       "markets": [
         "US"
@@ -805,6 +845,8 @@
       "name": "iFood",
       "hq": "BR",
       "url": "https://canaltech.com.br/apps/ifood-lanca-agente-de-ia-que-permite-fazer-pedidos-pelo-whatsapp-veja-como-usar/",
+      "homepage": "https://www.ifood.com.br/",
+      "icon": null,
       "role": "Runs Ailo, a WhatsApp AI agent that builds a food order by chat and hands off to the iFood app to pay.",
       "markets": [
         "BR"
@@ -817,6 +859,8 @@
       "name": "Rappi",
       "hq": "CO",
       "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
+      "homepage": "https://www.rappi.com/",
+      "icon": "https://www.rappi.cl/pwa-icons/192x192.png",
       "role": "Announced a WhatsApp AI assistant and voice-note ordering for Colombia.",
       "markets": [
         "CO"
@@ -829,6 +873,8 @@
       "name": "Just Eat Takeaway.com",
       "hq": "NL",
       "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
+      "homepage": "https://www.justeattakeaway.com/",
+      "icon": "https://s205.q4cdn.com/266311280/files/favicon.ico",
       "role": "Runs an AI assistant in the Just Eat and Lieferando apps that takes food orders by voice or text and fills the basket for checkout.",
       "markets": [
         "GB",
@@ -837,6 +883,297 @@
       "capabilities": [
         "services.delivery-rides"
       ]
+    }
+  ],
+  "repos": [
+    {
+      "repo": "Swiggy/swiggy-mcp-server-manifest",
+      "name": "Swiggy MCP Server",
+      "role": "Swiggy's official MCP server, which lets an agent such as ChatGPT or Claude search restaurants, fill a cart, order food or groceries and book a table in India.",
+      "capabilities": [
+        "services.delivery-rides",
+        "services.restaurant-booking"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 162,
+        "contributors": 5,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Zomato/mcp-server-manifest",
+      "name": "Zomato MCP Server",
+      "role": "Zomato's official MCP server, which lets an agent find restaurants, browse menus, fill a cart and place a food order in India.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 186,
+        "contributors": 4,
+        "pushedAt": "2026-05-01",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "nammayatri/nammayatri",
+      "name": "Namma Yatri",
+      "role": "Open ride-hailing platform behind Namma Yatri in India, built on the Beckn open network, with the backend for riders, drivers and ride booking.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 2577,
+        "contributors": 247,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Project-OSRM/osrm-backend",
+      "name": "OSRM",
+      "role": "Fast routing engine on OpenStreetMap that ride and delivery apps use to find routes, travel times and the best order of stops.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@project-osrm/osrm"
+        }
+      ],
+      "images": [
+        "osrm/osrm-backend"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 8177,
+        "contributors": 236,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 8537,
+        "dockerPulls": 121793703
+      }
+    },
+    {
+      "repo": "valhalla/valhalla",
+      "name": "Valhalla",
+      "role": "Routing engine on OpenStreetMap for cars, bikes, walking and transit, used by ride and delivery apps for routes, travel times and maps.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "pyvalhalla"
+        }
+      ],
+      "images": [
+        "valhalla/valhalla"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 6378,
+        "contributors": 285,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 13062,
+        "dockerPulls": 292227
+      }
+    },
+    {
+      "repo": "graphhopper/graphhopper",
+      "name": "GraphHopper",
+      "role": "Routing engine on OpenStreetMap that delivery and fleet apps use for routes, travel times and route planning.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "origin": "DE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 6746,
+        "contributors": 145,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "fleetbase/fleetbase",
+      "name": "Fleetbase",
+      "role": "Self-hosted delivery and logistics platform with order, driver and shop apps, used to run on-demand food and parcel delivery.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "packages": [
+        {
+          "registry": "packagist",
+          "name": "fleetbase/core-api"
+        }
+      ],
+      "images": [
+        "fleetbase/fleetbase-api"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 4411,
+        "contributors": 28,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 8810,
+        "dockerPulls": 71420
+      }
+    },
+    {
+      "repo": "tastyigniter/TastyIgniter",
+      "name": "TastyIgniter",
+      "role": "Self-hosted restaurant system for online food orders and table reservations.",
+      "capabilities": [
+        "services.restaurant-booking",
+        "services.delivery-rides"
+      ],
+      "origin": "GB",
+      "packages": [
+        {
+          "registry": "packagist",
+          "name": "tastyigniter/core"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 3814,
+        "contributors": 33,
+        "pushedAt": "2026-10-17",
+        "archived": false,
+        "downloadsMonth": 6920,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "googlemaps/google-maps-services-python",
+      "name": "Google Maps Services (Python)",
+      "role": "Python client for Google Maps web services that lets an agent search places such as restaurants and hotels, check details and get directions.",
+      "capabilities": [
+        "services.restaurant-booking",
+        "services.travel-booking"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "googlemaps"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 4985,
+        "contributors": 68,
+        "pushedAt": "2026-10-06",
+        "archived": false,
+        "downloadsMonth": 3144295,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "duffelhq/duffel-api-javascript",
+      "name": "Duffel API (JavaScript)",
+      "role": "JavaScript client for Duffel, which lets an agent search airline offers, book flights and add stays through one API.",
+      "capabilities": [
+        "services.travel-booking"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@duffel/api"
+        }
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 60,
+        "contributors": 43,
+        "pushedAt": "2026-10-26",
+        "archived": false,
+        "downloadsMonth": 216143,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Qloapps/QloApps",
+      "name": "QloApps",
+      "role": "Open-source hotel booking engine and property system that lets a hotel take reservations online.",
+      "capabilities": [
+        "services.travel-booking"
+      ],
+      "images": [
+        "webkul/qloapps_docker"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 14452,
+        "contributors": 24,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 61918
+      }
+    },
+    {
+      "repo": "opentripplanner/OpenTripPlanner",
+      "name": "OpenTripPlanner",
+      "role": "Multi-modal trip planner used by transit agencies that finds door-to-door journeys by bus, train, bike and walking.",
+      "capabilities": [
+        "services.travel-booking"
+      ],
+      "images": [
+        "opentripplanner/opentripplanner"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 2766,
+        "contributors": 280,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 1915637
+      }
+    },
+    {
+      "repo": "openbnb-org/mcp-server-airbnb",
+      "name": "Airbnb MCP Server",
+      "role": "MCP server that lets an agent search Airbnb listings and read their details, prices and links to book.",
+      "capabilities": [
+        "services.travel-booking"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@openbnb/mcp-server-airbnb"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 551,
+        "contributors": 5,
+        "pushedAt": "2026-08-06",
+        "archived": false,
+        "downloadsMonth": 6580,
+        "dockerPulls": null
+      }
     }
   ]
 }

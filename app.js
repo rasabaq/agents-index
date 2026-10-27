@@ -1,16 +1,17 @@
-import { STATUSES, scoreCountries, tierOf, mergeCompanies, summarize, extremes, shortName } from './src/observatory.js';
+import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, summarize, extremes, shortName } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+const fmtMonth = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
   if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
   return r.json();
 });
 
-const state = { market: 'all', country: null };
+const state = { market: 'all', use: 'all', country: null };
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
-let meta, categories, ranking, byCode, capIndex, companies, cells;
+let meta, categories, ranking, byCode, capIndex, companies, repos, cells;
 
 function init() {
   ranking = scoreCountries(meta, categories);
@@ -19,6 +20,7 @@ function init() {
   // Every cell with its capability and country, in category order.
   cells = Object.values(capIndex).flatMap((cap) => meta.countries.map((c) => ({ cap, code: c.code, cell: cap.countries[c.code] })));
   companies = mergeCompanies(categories);
+  repos = rankRepos(categories);
   state.country = hashCountry() ?? ranking[0].code;
 
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
@@ -30,10 +32,13 @@ function init() {
   renderFeed();
   renderCompanyFilters();
   renderCompanies();
+  renderRepoFilters();
+  renderRepos();
   renderCounts();
   renderCountry();
   wire();
   wireTooltip();
+  wireLogos();
 }
 
 const hashCountry = () => {
@@ -51,6 +56,10 @@ const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${S
 const ordinal = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : { 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] ?? 'th');
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
 const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
+// A small logo before a company or repo name. The name sits right next to it, so the image has empty alt text.
+// No logo, or one that fails to load, becomes a monogram (see wireLogos).
+const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
+const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-name="${esc(name)}">` : monogram(name));
 
 function renderStats() {
   const items = [
@@ -241,10 +250,44 @@ function renderCompanies() {
     <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
     <tbody>${rows.map((c) => `
       <tr>
-        <th scope="row"><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a><span class="co-cats">${c.categories.map((id) => `<span>${esc(shortName(id))}</span>`).join('')}</span></th>
+        <th scope="row"><a class="co-name" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a><span class="co-cats">${c.categories.map((id) => `<span>${esc(shortName(id))}</span>`).join('')}</span></th>
         <td class="nowrap">${flag(c.hq)}${esc(c.hq)}</td>
         <td><p class="co-roles" title="${esc(c.roles.join(' '))}">${esc(c.roles.join(' '))}</p></td>
         <td class="markets"><span class="sr-only">${c.markets.map((m) => byCode[m]?.name ?? m).join(', ')}</span>${ranking.map((r) => `<i class="${c.markets.includes(r.code) ? 'on' : ''}" title="${esc(r.name)}" aria-hidden="true">${r.code}</i>`).join('')}</td>
+      </tr>`).join('')}
+    </tbody>`;
+}
+
+function renderRepoFilters() {
+  const el = $('[data-repo-filters]');
+  const opts = [['all', 'All'], ...Object.keys(REPO_USE).filter((k) => repos.some((r) => r.use === k)).map((k) => [k, REPO_USE[k].label])];
+  el.innerHTML = opts.map(([id, label]) => `<button type="button" class="pill" data-use="${id}" aria-pressed="${state.use === id}"${id === 'all' ? '' : ` title="${esc(REPO_USE[id].hint)}"`}>${esc(label)}</button>`).join('');
+  el.onclick = (e) => {
+    const b = e.target.closest('[data-use]');
+    if (!b) return;
+    state.use = b.dataset.use;
+    el.querySelectorAll('[data-use]').forEach((x) => x.setAttribute('aria-pressed', x === b));
+    renderRepos();
+  };
+}
+
+// Big numbers read compact (8.1M, 240K); an en dash means nothing to count.
+const compact = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
+const count = (n, label) => `<td class="num" data-label="${label}">${n == null ? '–' : compact.format(n)}</td>`;
+
+// Open-source repos, most used first: the tier comes from installs, never from stars.
+function renderRepos() {
+  const rows = repos.filter((r) => state.use === 'all' || r.use === state.use);
+  $('[data-repos-label]').textContent = `Open source · ${rows.length} of ${repos.length}`;
+  $('[data-repos]').innerHTML = `
+    <thead><tr><th scope="col">Repo</th><th scope="col">What it lets agents do</th><th scope="col">Real use</th><th scope="col" class="num">Installs a month</th><th scope="col" class="num">Docker pulls</th><th scope="col" class="num">Stars</th><th scope="col" class="num">Last commit</th></tr></thead>
+    <tbody>${rows.map((r) => `
+      <tr>
+        <th scope="row"><a class="co-name" href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener noreferrer">${logo(`https://github.com/${r.repo.split('/')[0]}.png?size=64`, r.name)}<span>${r.origin ? flag(r.origin) : ''}${esc(r.name)}</span></a><span class="co-cats"><span>${r.repo.split('/').map((x) => `<span class="nowrap">${esc(x)}</span>`).join('/<wbr>')}</span><span>${esc(shortName(r.category))}</span></span></th>
+        <td><p class="co-roles">${esc(r.role)}</p></td>
+        <td><span class="chip u-${r.use}" title="${esc(REPO_USE[r.use].hint)}">${REPO_USE[r.use].label}</span></td>
+        ${count(r.usage.downloadsMonth, 'Installs')}${count(r.usage.dockerPulls, 'Pulls')}${count(r.usage.stars, 'Stars')}
+        <td class="num" data-label="Commit"><time datetime="${r.usage.pushedAt}" title="${r.usage.pushedAt}">${fmtMonth(r.usage.pushedAt)}</time></td>
       </tr>`).join('')}
     </tbody>`;
 }
@@ -271,7 +314,7 @@ function renderMethod() {
 function renderCounts() {
   const text = `${cells.length} cells · ${sourcesOf(cells)} sources`;
   $('[data-term-count]').textContent = text;
-  $('[data-foot-count]').textContent = `${text} · ${companies.length} companies`;
+  $('[data-foot-count]').textContent = `${text} · ${companies.length} companies · ${repos.length}\u00a0open\u2011source repos`;
 }
 
 function wire() {
@@ -304,7 +347,7 @@ function wire() {
     go(a);
   };
 
-  // Keys 1 to 5 follow the tabs, J and K step through the ranking. Typing in a field or an open dialog wins.
+  // Keys 1 to 6 follow the tabs, J and K step through the ranking. Typing in a field or an open dialog wins.
   addEventListener('keydown', (e) => {
     if (e.ctrlKey || e.metaKey || e.altKey || $('[data-detail]').open) return;
     if (e.target.closest?.('input, select, textarea, [contenteditable]')) return;
@@ -336,6 +379,13 @@ function wireTooltip() {
     if (!e.relatedTarget?.closest?.('[data-cap]')) tip.hidden = true;
   });
   addEventListener('scroll', () => (tip.hidden = true), { passive: true });
+}
+
+// A logo that fails to load (moved, blocked, or not an image) is swapped for the monogram.
+function wireLogos() {
+  document.addEventListener('error', (e) => {
+    if (e.target instanceof HTMLImageElement && e.target.classList.contains('logo')) e.target.outerHTML = monogram(e.target.dataset.name);
+  }, true);
 }
 
 // Start last: the helpers above are consts and must exist before init runs.

@@ -673,6 +673,8 @@
       "name": "OpenAI",
       "hq": "US",
       "url": "https://developers.openai.com/commerce",
+      "homepage": "https://openai.com/",
+      "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
       "role": "Co-created the Agentic Commerce Protocol and lets ChatGPT buy from merchants, now mainly through merchant apps, plus a UPI pilot in India.",
       "markets": [
         "US",
@@ -687,6 +689,8 @@
       "name": "Google",
       "hq": "US",
       "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+      "homepage": "https://www.google.com/",
+      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
       "role": "Runs agentic checkout and Universal Cart in AI Mode and Gemini on its open Universal Commerce Protocol, and is testing Flipkart checkout in India.",
       "markets": [
         "US",
@@ -701,6 +705,8 @@
       "name": "Microsoft",
       "hq": "US",
       "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft",
+      "homepage": "https://www.microsoft.com/",
+      "icon": "https://www.microsoft.com/favicon.ico?v2",
       "role": "Copilot Checkout lets US shoppers buy from PayPal, Stripe and Shopify merchants inside Copilot.",
       "markets": [
         "US"
@@ -713,6 +719,8 @@
       "name": "Perplexity",
       "hq": "US",
       "url": "https://newsroom.paypal-corp.com/2025-11-PayPal-and-Perplexity-Launch-Instant-Buy",
+      "homepage": "https://www.perplexity.ai/",
+      "icon": "https://www.perplexity.ai/favicon.svg",
       "role": "Instant Buy lets US users pay merchants with PayPal inside Perplexity answers.",
       "markets": [
         "US"
@@ -725,6 +733,8 @@
       "name": "Amazon",
       "hq": "US",
       "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+      "homepage": "https://www.aboutamazon.com/",
+      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
       "role": "Alexa+ and Alexa for Shopping (with Rufus) order, auto-buy and use Buy for Me on other sites for customers; outside the US Alexa+ is in early access.",
       "markets": [
         "US",
@@ -743,6 +753,8 @@
       "name": "Walmart",
       "hq": "US",
       "url": "https://corporate.walmart.com/news/2025/06/06/walmart-the-future-of-shopping-is-agentic-meet-sparky",
+      "homepage": "https://corporate.walmart.com/",
+      "icon": "https://corporate.walmart.com/content/dam/corporate/site-images/WMT-Spark-New-SparkYellow-RGB.svg",
       "role": "Sparky, Walmart's shopping agent, automatically reorders repeat items for US customers; Walmart México added Sparky to its app in September 2026 for product advice.",
       "markets": [
         "US"
@@ -755,6 +767,8 @@
       "name": "Flipkart (super.money)",
       "hq": "IN",
       "url": "https://startuptalky.com/news/flipkart-brings-ai-agents/",
+      "homepage": "https://super.money/",
+      "icon": "https://super.money/favicon.ico",
       "role": "Flipkart's payments app super.money is rolling out agents that shop on Flipkart for users, and Flipkart is Google's checkout test partner in Gemini.",
       "markets": [
         "IN"
@@ -768,6 +782,8 @@
       "name": "Razorpay",
       "hq": "IN",
       "url": "https://razorpay.com/newsroom/razorpay-npci-and-openai-come-together-to-launch-agentic-payments-ushering-in-ai-driven-commerce-at-national-scale/",
+      "homepage": "https://razorpay.com/",
+      "icon": null,
       "role": "Agentic Payments lets Indian merchants take UPI payments from ChatGPT and Claude in a pilot.",
       "markets": [
         "IN"
@@ -781,6 +797,8 @@
       "name": "NPCI",
       "hq": "IN",
       "url": "https://www.business-standard.com/companies/news/razorpay-npci-and-openai-launch-agentic-payments-on-chatgpt-125100900601_1.html",
+      "homepage": "https://www.npci.org.in/",
+      "icon": null,
       "role": "Runs UPI, whose Reserve Pay and UPI Circle features let AI agents pay without a PIN prompt each time, in pilot.",
       "markets": [
         "IN"
@@ -793,6 +811,8 @@
       "name": "Anthropic",
       "hq": "US",
       "url": "https://razorpay.com/newsroom/razorpay-npci-launch-agentic-payments-on-claude-powering-zomato-swiggy-zepto-at-the-india-ai-impact-summit/",
+      "homepage": "https://www.anthropic.com/",
+      "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
       "role": "Claude can order from Zomato, Swiggy and Zepto with UPI in an Indian pilot.",
       "markets": [
         "IN"
@@ -805,6 +825,8 @@
       "name": "Stripe",
       "hq": "US",
       "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+      "homepage": "https://stripe.com/",
+      "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
       "role": "Agentic Commerce Suite and Shared Payment Tokens let merchants list products for agents and accept agent payments.",
       "markets": [
         "US",
@@ -819,6 +841,8 @@
       "name": "Shopify",
       "hq": "CA",
       "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+      "homepage": "https://www.shopify.com/",
+      "icon": "https://cdn.shopify.com/b/shopify-brochure2-assets/c97c60ca19c64a8b5378d9f9e971f7bd.png",
       "role": "Agentic Storefronts puts store catalogs into ChatGPT, Google AI Mode and Gemini, Copilot and Meta Muse, for stores in any country selling to US, Canadian or Australian shoppers.",
       "markets": [
         "US",
@@ -838,6 +862,8 @@
       "name": "PayPal",
       "hq": "US",
       "url": "https://paypal.ai/",
+      "homepage": "https://www.paypal.com/",
+      "icon": "https://www.paypalobjects.com/marketing/web/icons/monogram/pp64.png",
       "role": "Agent Ready and Store Sync let PayPal merchants be found and paid in Copilot, Perplexity and Google AI checkout.",
       "markets": [
         "US"
@@ -851,6 +877,8 @@
       "name": "Meta",
       "hq": "US",
       "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+      "homepage": "https://about.meta.com/",
+      "icon": null,
       "role": "The Muse agent can shop and pay through Stripe Link and Shopify connectors in the US and Canada.",
       "markets": [
         "US"
@@ -863,6 +891,8 @@
       "name": "Mercado Libre",
       "hq": "AR",
       "url": "https://www.iproup.com/finanzas/68836-mercado-libre-plan-secreto-mago-ia-manejar-plata-compras-inteligencia-artificial",
+      "homepage": "https://www.mercadolibre.com/",
+      "icon": "https://http2.mlstatic.com/ui/navigation/5.6.1/mercadolibre/60x60-precomposed.png",
       "role": "Is testing a shopping assistant and a planned buying agent (MAGO) for its marketplace and Mercado Pago; nothing has launched in the target countries yet.",
       "markets": [],
       "capabilities": [
@@ -873,6 +903,8 @@
       "name": "Magazine Luiza (Magalu)",
       "hq": "BR",
       "url": "https://www.magazineluiza.com.br/lp/whatsapp-da-lu",
+      "homepage": "https://www.magazineluiza.com.br/",
+      "icon": "https://www.magazineluiza.com.br/favicon.ico",
       "role": "Its AI assistant Lu sells inside WhatsApp, from product search to Pix or card payment and order tracking.",
       "markets": [
         "BR"
@@ -886,6 +918,8 @@
       "name": "Rappi",
       "hq": "CO",
       "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
+      "homepage": "https://www.rappi.com/",
+      "icon": "https://www.rappi.cl/pwa-icons/192x192.png",
       "role": "Announced a WhatsApp AI assistant for ordering in plain language and by voice note in Colombia; no launch is confirmed yet.",
       "markets": [
         "CO"
@@ -893,6 +927,217 @@
       "capabilities": [
         "commerce.marketplace-agent"
       ]
+    }
+  ],
+  "repos": [
+    {
+      "repo": "agentic-commerce-protocol/agentic-commerce-protocol",
+      "name": "Agentic Commerce Protocol (ACP)",
+      "role": "Open standard from OpenAI and Stripe that lets an AI agent check out a cart at a merchant on behalf of a buyer.",
+      "capabilities": [
+        "commerce.in-chat-checkout",
+        "commerce.merchant-protocol"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 1587,
+        "contributors": 26,
+        "pushedAt": "2026-07-18",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Universal-Commerce-Protocol/ucp",
+      "name": "Universal Commerce Protocol (UCP)",
+      "role": "Open protocol, led by Google with retailers and platforms, that lets an AI agent find products, build a cart and pay at any merchant that supports it.",
+      "capabilities": [
+        "commerce.in-chat-checkout",
+        "commerce.merchant-protocol"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 3454,
+        "contributors": 67,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "medusajs/medusa",
+      "name": "Medusa",
+      "role": "Open-source commerce engine whose store and admin APIs let agents browse products, build carts and place orders.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@medusajs/medusa"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 36960,
+        "contributors": 593,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 599677,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "saleor/saleor",
+      "name": "Saleor",
+      "role": "Headless commerce platform with a GraphQL API (and an official MCP server) that agents can use to search products, manage carts and place orders.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 23485,
+        "contributors": 331,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "woocommerce/woocommerce",
+      "name": "WooCommerce",
+      "role": "WordPress store plugin that ships a built-in MCP endpoint, so an agent can read products and orders and act on a shop.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 10570,
+        "contributors": 2149,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "spree/spree",
+      "name": "Spree Commerce",
+      "role": "Open-source commerce platform with a local MCP server that lets an agent manage a store through chat.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@spree/sdk"
+        }
+      ],
+      "images": [
+        "spreecommerce/spree"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 15781,
+        "contributors": 1247,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 2191,
+        "dockerPulls": 38530
+      }
+    },
+    {
+      "repo": "vendurehq/vendure",
+      "name": "Vendure",
+      "role": "Headless commerce platform whose typed GraphQL shop API is built to be called by LLM tools, MCP servers and agent frameworks.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@vendure/core"
+        }
+      ],
+      "origin": "AT",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 8546,
+        "contributors": 319,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 60150,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "bagisto/bagisto",
+      "name": "Bagisto",
+      "role": "Open-source store and multi-vendor marketplace platform from India, with official agent skills and an MCP server for AI tools.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "origin": "IN",
+      "packages": [
+        {
+          "registry": "packagist",
+          "name": "bagisto/bagisto"
+        }
+      ],
+      "images": [
+        "webkul/bagisto"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 28279,
+        "contributors": 327,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": 3298,
+        "dockerPulls": 32427
+      }
+    },
+    {
+      "repo": "beckn/beckn-onix",
+      "name": "Beckn-ONIX",
+      "role": "Adapter that connects buyer and seller apps to Beckn open networks such as India's ONDC, so any app or agent can discover and order from any seller on the network.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "images": [
+        "fidedocker/onix-adapter"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 100,
+        "contributors": 43,
+        "pushedAt": "2026-10-01",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 8716
+      }
+    },
+    {
+      "repo": "ONDC-Official/ONDC-Protocol-Specs",
+      "name": "ONDC Protocol Specs",
+      "role": "API specification of India's Open Network for Digital Commerce, which lets any buyer app search and order from sellers on any other app.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 146,
+        "contributors": 6,
+        "pushedAt": "2025-01-31",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
     }
   ]
 }

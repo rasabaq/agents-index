@@ -495,6 +495,8 @@
       "name": "UIDAI",
       "hq": "IN",
       "url": "https://uidai.gov.in",
+      "homepage": "https://www.uidai.gov.in/",
+      "icon": "https://www.uidai.gov.in/favicon.ico",
       "role": "Runs Aadhaar authentication and eKYC so approved apps can verify a person, and the Udai chatbot for Aadhaar tasks.",
       "markets": [
         "IN"
@@ -508,6 +510,8 @@
       "name": "National e-Governance Division (DigiLocker)",
       "hq": "IN",
       "url": "https://www.digilocker.gov.in",
+      "homepage": "https://www.digilocker.gov.in/",
+      "icon": "https://cdn.digilocker.gov.in/digilocker-landing-page/assets/img/meta/apple-touch-icon.png",
       "role": "Runs DigiLocker and Meri Pehchaan so registered firms can fetch a user's government documents with consent.",
       "markets": [
         "IN"
@@ -520,6 +524,8 @@
       "name": "Digital India Bhashini Division",
       "hq": "IN",
       "url": "https://bhashini.gov.in",
+      "homepage": "https://bhashini.gov.in/",
+      "icon": "https://bhashini.gov.in/favicon.ico",
       "role": "Provides translation and speech models that let government assistants such as Kisan e-Mitra work in Indian languages.",
       "markets": [
         "IN"
@@ -532,6 +538,8 @@
       "name": "Wadhwani AI",
       "hq": "IN",
       "url": "https://www.wadhwaniai.org",
+      "homepage": "https://www.wadhwaniai.org/",
+      "icon": "https://www.wadhwaniai.org/wp-content/uploads/2025/09/cropped-Group-4-270x270-1.jpg",
       "role": "Built the LLM upgrade of Kisan e-Mitra that answers farmer questions and handles grievances.",
       "markets": [
         "IN"
@@ -544,6 +552,8 @@
       "name": "Government Digital Service (GDS)",
       "hq": "GB",
       "url": "https://www.gov.uk/government/organisations/government-digital-service",
+      "homepage": "https://www.gov.uk/",
+      "icon": "https://www.gov.uk/assets/frontend/govuk-icon-180-d45a306f0549414cfa5085f16e4a3816a77558b139e5bc226f23162d1d0decb0.png",
       "role": "Runs GOV.UK One Login, GOV.UK Wallet and GOV.UK Chat in the GOV.UK app.",
       "markets": [
         "GB"
@@ -557,6 +567,8 @@
       "name": "Anthropic",
       "hq": "US",
       "url": "https://www.anthropic.com",
+      "homepage": "https://www.anthropic.com/",
+      "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
       "role": "Supplies the Claude model behind GOV.UK Chat, according to Civil Service World.",
       "markets": [
         "GB"
@@ -569,6 +581,8 @@
       "name": "SERPRO",
       "hq": "BR",
       "url": "https://www.serpro.gov.br",
+      "homepage": "https://www.serpro.gov.br/",
+      "icon": "https://www.serpro.gov.br/favicon.ico",
       "role": "Sells the Datavalid API that lets private apps check faces and personal data against official Brazilian records.",
       "markets": [
         "BR"
@@ -581,6 +595,8 @@
       "name": "Secretaria de Governo Digital (MGI)",
       "hq": "BR",
       "url": "https://www.gov.br/gestao/pt-br",
+      "homepage": "https://www.gov.br/",
+      "icon": "https://www.gov.br/++theme++padrao_govbr/favicons/apple-touch-icon.png",
       "role": "Runs the gov.br login and builds Chat GOV.BR through the government AI centre.",
       "markets": [
         "BR"
@@ -594,6 +610,8 @@
       "name": "Agencia de Transformación Digital y Telecomunicaciones (ATDT)",
       "hq": "MX",
       "url": "https://www.llave.gob.mx/",
+      "homepage": "https://www.gob.mx/",
+      "icon": null,
       "role": "Runs Llave MX and the Ventanilla 24/7 AI agent on gob.mx.",
       "markets": [
         "MX"
@@ -607,6 +625,8 @@
       "name": "Instituto Nacional Electoral (INE)",
       "hq": "MX",
       "url": "https://www.ine.mx",
+      "homepage": "https://www.ine.mx/",
+      "icon": "https://www.ine.mx/wp-content/uploads/2026/09/cropped-faviconI_NE_2026-180x180.png",
       "role": "Runs the voter-credential data and face verification service that banks use to confirm identity.",
       "markets": [
         "MX"
@@ -619,6 +639,8 @@
       "name": "Secretaría de Gobierno Digital (Ministerio de Hacienda)",
       "hq": "CL",
       "url": "https://digital.gob.cl",
+      "homepage": "https://digital.gob.cl/",
+      "icon": "https://cms-dgd-prod.s3-us-west-2.amazonaws.com/static/favicon/apple-icon-57x57.png",
       "role": "Runs ClaveÚnica and approves which private bodies may use it.",
       "markets": [
         "CL"
@@ -631,6 +653,8 @@
       "name": "ChileAtiende (Instituto de Previsión Social)",
       "hq": "CL",
       "url": "https://www.chileatiende.gob.cl",
+      "homepage": "https://www.chileatiende.gob.cl/",
+      "icon": "https://www.chileatiende.gob.cl/images/favicon.ico",
       "role": "Runs the generative AI assistant that guides people on state trámites.",
       "markets": [
         "CL"
@@ -643,6 +667,8 @@
       "name": "Registraduría Nacional del Estado Civil",
       "hq": "CO",
       "url": "https://www.registraduria.gov.co",
+      "homepage": "https://www.registraduria.gov.co/",
+      "icon": "https://www.registraduria.gov.co/IMG/favicon.png",
       "role": "Issues the Cédula Digital and lets certified operators check identities against its biometric database.",
       "markets": [
         "CO"
@@ -655,6 +681,8 @@
       "name": "Certicámara",
       "hq": "CO",
       "url": "https://www.certicamara.com",
+      "homepage": "https://www.certicamara.com/",
+      "icon": "https://web.certicamara.com/sites/default/files/Favicon.gif",
       "role": "Certified biometric operator that connects private firms to Registraduría identity checks.",
       "markets": [
         "CO"
@@ -667,6 +695,8 @@
       "name": "MinTIC",
       "hq": "CO",
       "url": "https://mintic.gov.co",
+      "homepage": "https://www.mintic.gov.co/",
+      "icon": "https://www.mintic.gov.co/favicon.ico",
       "role": "Runs the GOV.CO portal and its Robi assistant, plus the public-sector AI chatbot program.",
       "markets": [
         "CO"
@@ -679,6 +709,8 @@
       "name": "Bundesdruckerei (D-Trust)",
       "hq": "DE",
       "url": "https://www.bundesdruckerei.de",
+      "homepage": "https://www.bundesdruckerei.de/",
+      "icon": "https://www.bundesdruckerei.de/themes/custom/bdr_bootstrap5/assets/img/touch-icons/group/group_desktopicon_120px.png",
       "role": "Provides authorization certificates and eID services so companies can accept the German Online-Ausweis.",
       "markets": [
         "DE"
@@ -691,6 +723,8 @@
       "name": "Governikus",
       "hq": "DE",
       "url": "https://www.governikus.de",
+      "homepage": "https://www.governikus.de/",
+      "icon": "https://www.governikus.de/wp-content/uploads/2026/08/cropped-Governikus_Profil_Avatar-01-180x180.png",
       "role": "Runs eID services and the AusweisIDent identification service that plug the Online-Ausweis into private apps.",
       "markets": [
         "DE"
@@ -703,6 +737,8 @@
       "name": "GSA (Login.gov)",
       "hq": "US",
       "url": "https://login.gov",
+      "homepage": "https://login.gov/",
+      "icon": "https://login.gov/apple-touch-icon.png",
       "role": "Runs Login.gov sign-in and identity proofing for US government services, now accepting mobile driver's licenses.",
       "markets": [
         "US"
@@ -715,6 +751,8 @@
       "name": "Google",
       "hq": "US",
       "url": "https://developers.google.com/wallet/identity/verify",
+      "homepage": "https://www.google.com/",
+      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
       "role": "Lets businesses verify state-issued digital IDs and age from Google Wallet through the Digital Credentials API.",
       "markets": [
         "US"
@@ -727,6 +765,8 @@
       "name": "Internal Revenue Service (IRS)",
       "hq": "US",
       "url": "https://www.irs.gov",
+      "homepage": "https://www.irs.gov/",
+      "icon": "https://www.irs.gov/themes/custom/pup_base/favicon.ico",
       "role": "Runs AI voice and chat bots that answer tax questions and set up payment plans.",
       "markets": [
         "US"
@@ -734,6 +774,258 @@
       "capabilities": [
         "government.ai-public-services"
       ]
+    }
+  ],
+  "repos": [
+    {
+      "repo": "keycloak/keycloak",
+      "name": "Keycloak",
+      "role": "Identity server that many governments run as their login broker; an agent can sign a person in and get tokens through standard OpenID Connect.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@keycloak/keycloak-admin-client"
+        }
+      ],
+      "images": [
+        "keycloak/keycloak"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 37551,
+        "contributors": 1972,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 1577117,
+        "dockerPulls": 19087844
+      }
+    },
+    {
+      "repo": "mosip/esignet",
+      "name": "MOSIP eSignet",
+      "role": "OpenID Connect login on top of a national ID built with MOSIP, so an app can check who a person is with their national ID.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "images": [
+        "mosipid/esignet",
+        "mosipid/oidc-ui"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 39,
+        "contributors": 61,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 185501
+      }
+    },
+    {
+      "repo": "Governikus/AusweisApp",
+      "name": "AusweisApp",
+      "role": "Germany's official eID app and SDK; it lets an app read and prove a person's identity from the German ID card.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "images": [
+        "governikus/ausweisapp2"
+      ],
+      "origin": "DE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 782,
+        "contributors": 20,
+        "pushedAt": "2026-10-14",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 12308
+      }
+    },
+    {
+      "repo": "18F/identity-idp",
+      "name": "Login.gov",
+      "role": "The code behind Login.gov, the US government sign-in and identity check that agencies plug into with OpenID Connect or SAML.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 594,
+        "contributors": 197,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "govuk-one-login/authentication-api",
+      "name": "GOV.UK One Login",
+      "role": "Sign-in backend for GOV.UK One Login, the UK government account that services use to know who a person is.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 19,
+        "contributors": 76,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "eu-digital-identity-wallet/eudi-app-android-wallet-ui",
+      "name": "EU Digital Identity Wallet",
+      "role": "Reference Android wallet for the EU Digital Identity Wallet; it holds ID credentials and shares them with apps over OpenID4VP.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 229,
+        "contributors": 20,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "openwallet-foundation/acapy",
+      "name": "ACA-Py",
+      "role": "Server agent that issues, holds and checks verifiable credentials, used by governments to run digital ID and credential services.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "acapy-agent"
+        },
+        {
+          "registry": "pypi",
+          "name": "aries-cloudagent"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 493,
+        "contributors": 171,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 2159,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "nordic-institute/X-Road",
+      "name": "X-Road",
+      "role": "Secure data exchange layer that lets government systems (first in Estonia and Finland) ask each other for a person's data on their behalf.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "images": [
+        "niis/xroad-security-server-sidecar"
+      ],
+      "origin": "EE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 871,
+        "contributors": 106,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 1418878
+      }
+    },
+    {
+      "repo": "alphagov/govuk-chat",
+      "name": "GOV.UK Chat",
+      "role": "The UK government AI assistant that answers questions from GOV.UK content and points people to the right service.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 16,
+        "contributors": 31,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "egovernments/Digit-Core",
+      "name": "DIGIT",
+      "role": "Platform behind Indian state and city services such as complaints, property tax and licences; its APIs let software file and track a service request.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "images": [
+        "egovio/egov-localization",
+        "egovio/egov-accesscontrol",
+        "egovio/egov-persister"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 55,
+        "contributors": 35,
+        "pushedAt": "2026-10-26",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 486108
+      }
+    },
+    {
+      "repo": "Sunbird-RC/sunbird-rc-core",
+      "name": "Sunbird RC",
+      "role": "Electronic registries and verifiable credentials, so apps can issue and check signed records such as certificates. A Digital Public Good.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "images": [
+        "dockerhub/sunbird-rc-core"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 27,
+        "contributors": 55,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 20772
+      }
+    },
+    {
+      "repo": "credebl/platform",
+      "name": "CREDEBL",
+      "role": "Decentralised identity platform that issues and verifies verifiable credentials through open-standard wallets and agents. A Digital Public Good.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 74,
+        "contributors": 37,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
     }
   ]
 }

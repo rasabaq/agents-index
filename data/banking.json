@@ -478,6 +478,8 @@
       "name": "Plaid",
       "hq": "US",
       "url": "https://plaid.com/",
+      "homepage": "https://plaid.com/",
+      "icon": "https://plaid.com/assets/img/favicons/apple-touch-icon.png",
       "role": "Connects apps to bank accounts so agents can read balances and transactions and start bank payments.",
       "markets": [
         "US",
@@ -491,6 +493,8 @@
       "name": "TrueLayer",
       "hq": "GB",
       "url": "https://truelayer.com/",
+      "homepage": "https://truelayer.com/",
+      "icon": "https://truelayer.com/icons/icon-48x48.png?v=5db58021c7b05029ddf717674d5b768e",
       "role": "Open banking platform for account data, Pay by Bank and VRP payments.",
       "markets": [
         "GB",
@@ -504,6 +508,8 @@
       "name": "Tink (Visa)",
       "hq": "SE",
       "url": "https://tink.com/",
+      "homepage": "https://tink.com/",
+      "icon": "https://tink.com/favicon.ico",
       "role": "Single API for PSD2 account data and payment initiation across European banks.",
       "markets": [
         "GB",
@@ -517,6 +523,8 @@
       "name": "Belvo",
       "hq": "MX",
       "url": "https://belvo.com/",
+      "homepage": "https://belvo.com/",
+      "icon": "https://belvo.com/wp-content/uploads/2026/09/favicon-512x312-1-225x225.png",
       "role": "Open finance data and bank payment APIs, including Pix Automático in Brazil.",
       "markets": [
         "MX",
@@ -530,6 +538,8 @@
       "name": "Pluggy",
       "hq": "BR",
       "url": "https://pluggy.ai/",
+      "homepage": "https://pluggy.ai/",
+      "icon": "https://www.pluggy.ai/images/logos/pluggy-icon.svg",
       "role": "Open Finance Brasil connector to over 220 institutions through one API.",
       "markets": [
         "BR"
@@ -542,6 +552,8 @@
       "name": "Fintoc",
       "hq": "CL",
       "url": "https://fintoc.com/",
+      "homepage": "https://fintoc.com/",
+      "icon": "https://www.fintoc.com/apple-icon.png?e6c5fcc567fc49c9",
       "role": "Payment APIs for bank transfers and recurring billing ahead of Chile's open finance regime.",
       "markets": [
         "CL"
@@ -554,6 +566,8 @@
       "name": "Setu",
       "hq": "IN",
       "url": "https://setu.co/",
+      "homepage": "https://setu.co/",
+      "icon": "https://framerusercontent.com/images/mbFRne9qNTrOhiqc0h2DJuE0FDw.png",
       "role": "APIs to pull financial data through Account Aggregators and collect UPI payments.",
       "markets": [
         "IN"
@@ -566,6 +580,8 @@
       "name": "Sahamati",
       "hq": "IN",
       "url": "https://sahamati.org.in/sahamati-ecosystem-map/",
+      "homepage": "https://sahamati.org.in/",
+      "icon": "https://sahamati.org.in/wp-content/uploads/2025/11/cropped-Sahamati_Fav-Icon_32x32-1-180x180.png",
       "role": "Industry body and RBI-recognised SRO that runs the Account Aggregator registry and certification.",
       "markets": [
         "IN"
@@ -578,6 +594,8 @@
       "name": "NPCI",
       "hq": "IN",
       "url": "https://www.npci.org.in/what-we-do/upi/product-overview",
+      "homepage": "https://www.npci.org.in/",
+      "icon": null,
       "role": "Runs UPI, which lets third-party apps and voice tools start payments.",
       "markets": [
         "IN"
@@ -591,6 +609,8 @@
       "name": "Banco Central do Brasil",
       "hq": "BR",
       "url": "https://www.bcb.gov.br/estabilidadefinanceira/openfinance",
+      "homepage": "https://www.bcb.gov.br/",
+      "icon": "https://www.bcb.gov.br/favicon.ico",
       "role": "Regulator that runs Open Finance Brasil and Pix, including payment initiation by ITPs.",
       "markets": [
         "BR"
@@ -603,6 +623,8 @@
       "name": "Comisión para el Mercado Financiero (CMF)",
       "hq": "CL",
       "url": "https://www.cmfchile.cl/portal/prensa/615/w3-article-100482.html",
+      "homepage": "https://www.cmfchile.cl/",
+      "icon": "https://www.cmfchile.cl/favicon.ico",
       "role": "Regulator setting up Chile's Sistema de Finanzas Abiertas, due July 2027.",
       "markets": [
         "CL"
@@ -615,6 +637,8 @@
       "name": "Superintendencia Financiera de Colombia",
       "hq": "CO",
       "url": "https://www.superfinanciera.gov.co/publicaciones/10116156/sfc-trabaja-en-hitos-requeridos-para-implementar-modelo-de-finanzas-abiertas-obligatorias-cesar-ferrari/",
+      "homepage": "https://www.superfinanciera.gov.co/",
+      "icon": "https://www.superfinanciera.gov.co/info/superfinancierav8/web/portal/img/favicon.png",
       "role": "Regulator writing the standards and participant directory for Colombia's mandatory open finance.",
       "markets": [
         "CO"
@@ -627,6 +651,8 @@
       "name": "Consumer Financial Protection Bureau",
       "hq": "US",
       "url": "https://www.consumerfinance.gov/compliance/compliance-resources/other-applicable-requirements/personal-financial-data-rights/",
+      "homepage": "https://www.consumerfinance.gov/",
+      "icon": "https://www.consumerfinance.gov/favicon.ico",
       "role": "Regulator behind the stayed Section 1033 data rights rule now being rewritten.",
       "markets": [
         "US"
@@ -639,6 +665,8 @@
       "name": "Bank of America",
       "hq": "US",
       "url": "https://info.bankofamerica.com/en/digital-banking/erica",
+      "homepage": "https://www.bankofamerica.com/",
+      "icon": "https://www.bankofamerica.com/homepage/spa-assets/images/assets-images-global-favicon-apple-touch-icon-CSX889b28c.png",
       "role": "Its Erica assistant sends Zelle payments and schedules bill payments.",
       "markets": [
         "US"
@@ -651,6 +679,8 @@
       "name": "Nubank",
       "hq": "BR",
       "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
+      "homepage": "https://nubank.com.br/",
+      "icon": "https://nubank.com.br/favicon.ico",
       "role": "Its AI sends Pix from text, photo or voice in the app and on WhatsApp.",
       "markets": [
         "BR"
@@ -663,6 +693,8 @@
       "name": "Itaú Unibanco",
       "hq": "BR",
       "url": "https://www.itau.com.br/media/dam/m/6faa1448dd30b9a0/original/27-07-2026-Itau-Unibanco-lanc-a-ia-i-nova-experie-ncia-conversacional-que-levara-a-IA-generativa-a-todos-os-produtos-e-servic-os-do-banco.pdf",
+      "homepage": "https://www.itau.com.br/",
+      "icon": null,
       "role": "Its ia.i assistant does transactions, including voice Pix in Brazil, and Itaú Chile offers voice transfers.",
       "markets": [
         "BR",
@@ -676,6 +708,8 @@
       "name": "BBVA México",
       "hq": "MX",
       "url": "https://www.bbva.mx/personas/landings/asistente-virtual.html",
+      "homepage": "https://www.bbva.mx/",
+      "icon": "https://www.bbva.mx/content/dam/library/favicons/apple-touch-icon.png",
       "role": "Its Blue assistant makes transfers and card payments from typed or spoken commands.",
       "markets": [
         "MX"
@@ -688,6 +722,8 @@
       "name": "Revolut",
       "hq": "GB",
       "url": "https://www.revolut.com/air-ai-by-revolut/",
+      "homepage": "https://www.revolut.com/",
+      "icon": "https://assets.revolut.com/assets/favicons/apple-touch-icon.png",
       "role": "Its AIR assistant freezes cards and buys eSIMs in the UK app.",
       "markets": [
         "GB"
@@ -700,6 +736,8 @@
       "name": "Tpaga",
       "hq": "CO",
       "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
+      "homepage": "https://tpaga.co/",
+      "icon": "https://tpaga.co/favicon.ico?favicon.0ng_vlz0rr_rq.ico",
       "role": "Its WhatsApp AI agent pays bills and sends Bre-B transfers from text or voice notes.",
       "markets": [
         "CO"
@@ -712,6 +750,8 @@
       "name": "Zopa",
       "hq": "GB",
       "url": "https://www.zopa.com/current-account/ai",
+      "homepage": "https://www.zopa.com/",
+      "icon": "https://www.datocms-assets.com/23873/1770736571-favicon.svg?w=180&fm=png",
       "role": "Its AI assistant sends money and pays bills from voice or chat for UK current account customers.",
       "markets": [
         "GB"
@@ -724,6 +764,8 @@
       "name": "Indian Bank",
       "hq": "IN",
       "url": "https://www.analyticsinsight.net/news/indian-bank-debuts-ai-tara-voice-banking-in-10-languages-at-global-fintech-fest-2026",
+      "homepage": "https://indianbank.in/",
+      "icon": null,
       "role": "Its AI-TARA voice assistant does fund transfers and IMPS in 10 languages.",
       "markets": [
         "IN"
@@ -736,6 +778,8 @@
       "name": "Starling Bank",
       "hq": "GB",
       "url": "https://www.starlingbank.com/news/starling-launches-agentic-ai-assistant/",
+      "homepage": "https://www.starlingbank.com/",
+      "icon": "https://www.starlingbank.com/favicon.ico",
       "role": "Its Starling Assistant sets up savings transfers and organises bill payments from voice or chat.",
       "markets": [
         "GB"
@@ -748,6 +792,8 @@
       "name": "Davivienda (DaviPlata)",
       "hq": "CO",
       "url": "https://blog.davivienda.com/detail/inclusion-inteligencia-artificial-y-mas-ahora-los-colombianos-podran-manejar-su-dinero-con-su-voz-o-",
+      "homepage": "https://www.davivienda.com/",
+      "icon": null,
       "role": "Its DaviPlata wallet lets enrolled users move money by voice or AI chat.",
       "markets": [
         "CO"
@@ -755,6 +801,249 @@
       "capabilities": [
         "banking.bank-agent-actions"
       ]
+    }
+  ],
+  "repos": [
+    {
+      "repo": "plaid/plaid-node",
+      "name": "Plaid Node library",
+      "role": "Official Node.js client for Plaid, the main US account aggregator: link bank accounts, read balances and transactions, and start bank payments.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "plaid"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 588,
+        "contributors": 106,
+        "pushedAt": "2026-10-19",
+        "archived": false,
+        "downloadsMonth": 3261931,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "plaid/plaid-python",
+      "name": "Plaid Python library",
+      "role": "Official Python client for Plaid, so an agent written in Python can read linked bank accounts and transactions.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "plaid-python"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 522,
+        "contributors": 86,
+        "pushedAt": "2026-10-19",
+        "archived": false,
+        "downloadsMonth": 2851165,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "pluggyai/pluggy-node",
+      "name": "Pluggy Node SDK",
+      "role": "Official Node.js client for Pluggy, a Brazilian aggregator that connects to banks through Open Finance Brasil to read accounts and start Pix payments.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "pluggy-sdk"
+        }
+      ],
+      "origin": "BR",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 20,
+        "contributors": 21,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": 72474,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "fintoc-com/fintoc-python",
+      "name": "Fintoc Python library",
+      "role": "Official Python client for Fintoc, a Chilean service that reads bank account movements and starts bank transfer payments.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "fintoc"
+        }
+      ],
+      "origin": "CL",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 83,
+        "contributors": 23,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 9798,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "OpenBankProject/OBP-API",
+      "name": "Open Bank Project API",
+      "role": "Open-source API server a bank runs to give apps and agents standard open banking access to accounts, transactions and payments (PSD2, UK and Berlin Group styles).",
+      "capabilities": [
+        "banking.open-finance-access",
+        "banking.bank-agent-actions"
+      ],
+      "images": [
+        "openbankproject/obp-api"
+      ],
+      "origin": "DE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 1743,
+        "contributors": 48,
+        "pushedAt": "2026-10-20",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 594384
+      }
+    },
+    {
+      "repo": "OpenBankingUK/read-write-api-specs",
+      "name": "UK Open Banking Read/Write API specs",
+      "role": "The official UK open banking standard that licensed apps use to read account data and start payments, including variable recurring payments, at UK banks.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 111,
+        "contributors": 25,
+        "pushedAt": "2026-10-20",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "apache/fineract",
+      "name": "Apache Fineract",
+      "role": "Open-source core banking system with a full API for accounts, loans, savings and transfers, so a bank or microfinance lender can let its own assistant move money.",
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ],
+      "images": [
+        "apache/fineract"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 2576,
+        "contributors": 405,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 4594765
+      }
+    },
+    {
+      "repo": "actualbudget/actual",
+      "name": "Actual Budget",
+      "role": "Self-hosted budgeting app that syncs bank accounts through GoCardless, SimpleFIN, Pluggy, Enable Banking and Akahu, with a Node API an agent can drive.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@actual-app/api"
+        }
+      ],
+      "images": [
+        "actualbudget/actual-server"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 29797,
+        "contributors": 775,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 66413,
+        "dockerPulls": 39908037
+      }
+    },
+    {
+      "repo": "firefly-iii/firefly-iii",
+      "name": "Firefly III",
+      "role": "Self-hosted personal finance manager with a REST API, so an agent can read and record your bank transactions.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "images": [
+        "fireflyiii/core"
+      ],
+      "origin": "NL",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 25015,
+        "contributors": 204,
+        "pushedAt": "2026-10-26",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 31087302
+      }
+    },
+    {
+      "repo": "firefly-iii/data-importer",
+      "name": "Firefly III Data Importer",
+      "role": "Pulls bank transactions into Firefly III through third-party open banking providers or bank files.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "images": [
+        "fireflyiii/data-importer"
+      ],
+      "origin": "NL",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 852,
+        "contributors": 46,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 14005799
+      }
+    },
+    {
+      "repo": "we-promise/sure",
+      "name": "Sure",
+      "role": "Self-hosted personal finance app, the community fork of Maybe, that syncs bank accounts through Plaid and other providers and has a built-in AI assistant.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 10695,
+        "contributors": 429,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
     }
   ]
 }
