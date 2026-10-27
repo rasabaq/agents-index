@@ -1071,7 +1071,6 @@
       "images": [
         "fidedocker/onix-adapter"
       ],
-      "origin": "IN",
       "usage": {
         "asOf": "2026-10-27",
         "stars": 100,
