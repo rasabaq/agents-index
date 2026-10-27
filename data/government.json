@@ -18,6 +18,13 @@
               "type": "news"
             },
             {
+              "title": "Accepted ID types: mobile driver's licenses in a digital wallet",
+              "publisher": "Login.gov",
+              "url": "https://www.login.gov/help/verify-your-identity/accepted-id-type/",
+              "date": "2026",
+              "type": "company"
+            },
+            {
               "title": "Verify with Google Wallet digital IDs",
               "publisher": "Google for Developers",
               "url": "https://developers.google.com/wallet/identity/verify",
@@ -35,13 +42,34 @@
         },
         "GB": {
           "status": "announced",
-          "note": "GOV.UK One Login serves central government only and GOV.UK Wallet holds just the veteran card; a sandbox for private firms to check the digital driving licence was planned for October 2026, and the national digital ID scheme was dropped in July 2026.",
+          "note": "GOV.UK One Login serves central government only and GOV.UK Wallet holds just the veteran card; since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving licence in a GOV.UK Wallet sandbox, but it is not a production service. Private firms can use certified DVS providers (46 providers, 64 services on the statutory register in July 2026), and the national digital ID scheme was dropped in July 2026.",
           "evidence": [
+            {
+              "title": "How to access the GOV.UK Wallet sandbox",
+              "publisher": "GOV.UK (Government Digital Service)",
+              "url": "https://www.gov.uk/guidance/how-to-access-the-govuk-wallet-sandbox",
+              "date": "2026-09-01",
+              "type": "regulation"
+            },
+            {
+              "title": "Using GOV.UK Wallet in the digital identity sector",
+              "publisher": "GOV.UK (Government Digital Service)",
+              "url": "https://www.gov.uk/guidance/using-govuk-wallet-in-the-digital-identity-sector",
+              "date": "2026-09-01",
+              "type": "regulation"
+            },
             {
               "title": "GOV.UK Wallet - Roadmap for modern digital government",
               "publisher": "UK Government (DSIT/GDS)",
               "url": "https://roadmap-for-modern-digital-government.campaign.gov.uk/join-up-services/govuk-wallet",
               "date": "2026-09",
+              "type": "report"
+            },
+            {
+              "title": "Digital Verification Services 2026 Annual Report on the operation of Part 2 of the Data (Use and Access) Act 2025",
+              "publisher": "UK Government (DSIT, OfDIA)",
+              "url": "https://assets.publishing.service.gov.uk/media/6a54d8b51228eb26a4cab83a/Annual_Report_of_Part_2_DUAA__1_.pdf",
+              "date": "2026-07-14",
               "type": "report"
             },
             {
@@ -51,8 +79,7 @@
               "date": "2026-07-20",
               "type": "news"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "DE": {
           "status": "live",
@@ -73,17 +100,17 @@
               "type": "regulation"
             },
             {
-              "title": "EUDI-Wallet d-you",
-              "publisher": "Macwelt",
-              "url": "https://www.macwelt.de/article/3230255/eudi-wallet-d-you.html",
+              "title": "EUDI-Wallet",
+              "publisher": "Bundesministerium für Digitales und Staatsmodernisierung (BMDS)",
+              "url": "https://bmds.bund.de/themen/digitaler-staat/digitale-identitaeten/eudi-wallet",
               "date": "2026",
-              "type": "news"
+              "type": "regulation"
             }
           ]
         },
         "BR": {
           "status": "live",
-          "note": "SERPRO's Datavalid API lets private firms check a person's face and data against official records such as the CNH; the gov.br login itself is open mainly to public bodies.",
+          "note": "SERPRO's Datavalid API lets approved firms check a person's face, liveness, registration data and CNH QR code against official records; the gov.br login itself is open mainly to public bodies.",
           "evidence": [
             {
               "title": "Nova versão do Datavalid amplia modalidades de validação",
@@ -110,8 +137,22 @@
         },
         "MX": {
           "status": "live",
-          "note": "Banks and firms check the INE voter credential, the de facto national ID, through INE's data and face verification service; Llave MX and the biometric CURP are not yet open to private apps.",
+          "note": "Banks and firms with a signed agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo; the Llave MX rules require federal platforms to use it for sign-in but set no access for private apps, and the biometric CURP is not yet open to private apps.",
           "evidence": [
+            {
+              "title": "Acuerdo INE/CG92/2016: Servicio de Verificación de los Datos de la Credencial para Votar",
+              "publisher": "Instituto Nacional Electoral (INE)",
+              "url": "https://repositoriodocumental.ine.mx/xmlui/bitstream/handle/123456789/87473/CGor201602-26_ap_13.pdf",
+              "date": "2016-02-26",
+              "type": "regulation"
+            },
+            {
+              "title": "INE-Check & RENAPO - General Information",
+              "publisher": "Veridas",
+              "url": "https://docs.veridas.com/digital-onboarding-general-information/cloud/2026.5/third-party-services/INE-Check-and-RENAPO/",
+              "date": "2026",
+              "type": "company"
+            },
             {
               "title": "Ni con datos biométricos la CURP desplaza al INE",
               "publisher": "Xataka México",
@@ -120,26 +161,32 @@
               "type": "news"
             },
             {
-              "title": "INE verificará identidad con nueva solución de validación facial digital",
-              "publisher": "DPL News",
-              "url": "https://dplnews.com/?p=113738",
-              "date": "2023",
-              "type": "news"
-            },
-            {
               "title": "Lineamientos para la implementación y operación de Llave MX",
               "publisher": "Diario Oficial de la Federación",
               "url": "https://dof.gob.mx/nota_detalle.php?codigo=5748515&fecha=06%2F02%2F2025",
               "date": "2025-02-06",
               "type": "regulation"
+            },
+            {
+              "title": "Identification for Development (ID4D) Global Dataset",
+              "publisher": "World Bank",
+              "url": "https://datacatalog.worldbank.org/search/dataset/0040787",
+              "date": "2026-03",
+              "type": "report"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "CL": {
           "status": "limited",
           "note": "ClaveÚnica can be used only by private bodies with a signed agreement, such as pension funds (AFP) and e-signature providers, under terms published in November 2025.",
           "evidence": [
+            {
+              "title": "Resolución Exenta 733/2025: aprueba términos y condiciones para la integración y uso de ClaveÚnica",
+              "publisher": "Ministerio de Hacienda, Secretaría de Gobierno Digital",
+              "url": "https://wikiguias.digital.gob.cl/documentos/rex._733_e6606_2025_aprueba_t%C3%A9rminos_de_uso_de_clave%C3%BAnica.pdf",
+              "date": "2025-10-22",
+              "type": "regulation"
+            },
             {
               "title": "Términos y condiciones ClaveÚnica",
               "publisher": "Secretaría de Gobierno Digital",
@@ -158,13 +205,20 @@
         },
         "CO": {
           "status": "live",
-          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators, and the Cédula Digital is accepted by entities that choose to; Carpeta Ciudadana stays a public-sector service.",
+          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators (fingerprint, and face at level 2), with 2026 tariffs set by Resolución 1500 of 2026, and since 2024 banks can also check a face in real time against Registraduría records with the Cédula Digital PIN, a face match or both; Carpeta Ciudadana stays a public-sector service.",
           "evidence": [
             {
               "title": "Resolución Registraduría 13691 de 2016 (aliados tecnológicos)",
               "publisher": "Registraduría Nacional / Colpensiones normativa",
               "url": "https://normativa.colpensiones.gov.co/colpens/docs/resolucion_registraduria_13691_2016.htm",
               "date": "2016",
+              "type": "regulation"
+            },
+            {
+              "title": "Resolución 1500 de 2026 (RNEC): tarifas de acceso a las bases de datos de identificación y autenticación biométrica",
+              "publisher": "Registraduría Nacional del Estado Civil (compilación Cancillería)",
+              "url": "https://cancilleria.gov.co/normograma/compilacion/docs/resolucion_registraduria_1500_2026.htm",
+              "date": "2026-02-11",
               "type": "regulation"
             },
             {
@@ -175,18 +229,24 @@
               "type": "company"
             },
             {
-              "title": "Cómo sacar la cédula digital en Colombia en 2026",
-              "publisher": "El Espectador",
-              "url": "https://www.elespectador.com/colombia/como-sacar-la-cedula-digital-en-colombia-en-2026-requisitos-precio-y-paso-a-paso/",
-              "date": "2026",
-              "type": "news"
+              "title": "Registraduría Nacional pone a disposición del sector financiero tecnología",
+              "publisher": "Registraduría Nacional del Estado Civil",
+              "url": "https://www.registraduria.gov.co/Registraduria-Nacional-pone-a-disposicion-del-sector-financiero-tecnologia-de.html",
+              "date": "2024",
+              "type": "company"
+            },
+            {
+              "title": "Identification for Development (ID4D) Global Dataset",
+              "publisher": "World Bank",
+              "url": "https://datacatalog.worldbank.org/search/dataset/0040787",
+              "date": "2026-03",
+              "type": "report"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "IN": {
           "status": "live",
-          "note": "Aadhaar eKYC and face authentication are open to approved private entities (417 KUAs, about 26 billion eKYC calls in FY2025-26), and DigiLocker lets registered firms pull documents with user consent.",
+          "note": "Aadhaar eKYC and face authentication are open to approved private entities (417 KUAs and about 26 billion eKYC transactions on UIDAI's dashboard), and DigiLocker lets registered firms pull documents with user consent.",
           "evidence": [
             {
               "title": "eKYC Dashboard",
@@ -203,11 +263,32 @@
               "type": "regulation"
             },
             {
-              "title": "IT ministry notifies rules allowing private entities to carry out Aadhaar authentication",
-              "publisher": "Scroll.in",
-              "url": "https://scroll.in/latest/1078654/it-ministry-notifies-rules-allowing-private-entities-to-carry-out-aadhaar-authentication",
-              "date": "2025-01",
-              "type": "news"
+              "title": "Government launches Aadhaar Good Governance portal to streamline approval process for Aadhaar authentication requests",
+              "publisher": "PIB, Ministry of Electronics & IT",
+              "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2106755",
+              "date": "2025-02",
+              "type": "regulation"
+            },
+            {
+              "title": "The design of digital financial infrastructure: lessons from India (BIS Papers No 106)",
+              "publisher": "Bank for International Settlements",
+              "url": "https://www.bis.org/publications/paper-106-design-digital-financial-infrastructure-lessons-india.pdf",
+              "date": "2019-12-15",
+              "type": "report"
+            },
+            {
+              "title": "Identification for Development (ID4D) Global Dataset",
+              "publisher": "World Bank",
+              "url": "https://datacatalog.worldbank.org/search/dataset/0040787",
+              "date": "2026-03",
+              "type": "report"
+            },
+            {
+              "title": "E-Government Survey 2024, Chapter 1 (Box 1.5: Aadhaar in India)",
+              "publisher": "UN DESA",
+              "url": "https://desapublications.un.org/sites/default/files/publications/2024-09/(Chapter%201)%20E-Government%20Survey%202024%201392024.pdf",
+              "date": "2024-09",
+              "type": "report"
             }
           ]
         }
@@ -220,7 +301,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "The IRS AI voice bot lets signed-in taxpayers set up or change payment plans and request transcripts; IRS web chatbots and most state chatbots only answer questions.",
+          "note": "The IRS voice bot lets taxpayers who prove who they are set up and manage payment plans and make payments (deployed in June 2022; the Treasury inspector general's June 2026 report describes it but tested only chat); IRS web chatbots use set answers, not generative AI, and most state chatbots only answer questions.",
           "evidence": [
             {
               "title": "Using voice and chat bots to improve the collection taxpayer experience",
@@ -237,14 +318,20 @@
               "type": "report"
             },
             {
+              "title": "Opportunities Exist to Improve the Quality of Chat Applications (Report 2026-308-029)",
+              "publisher": "Treasury Inspector General for Tax Administration (TIGTA)",
+              "url": "https://www.tigta.gov/sites/default/files/reports/2026-06/2026308029fr.pdf",
+              "date": "2026-06-15",
+              "type": "report"
+            },
+            {
               "title": "NASCIO Agentic AI Report 2026",
               "publisher": "NASCIO",
               "url": "https://www.nascio.org/wp-content/uploads/2026/03/NASCIO_Agentic-AI-Report_2026_.a11y.pdf",
               "date": "2026-03",
               "type": "report"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "GB": {
           "status": "limited",
@@ -305,31 +392,31 @@
               "type": "report"
             },
             {
-              "title": "Ministra Dweck aposta em IA para revolucionar serviços públicos",
-              "publisher": "Jornal de Brasília",
-              "url": "https://jornaldebrasilia.com.br/noticias/brasil/ministra-dweck-aposta-em-ia-para-revolucionar-servicos-publicos-brasileiros/",
+              "title": "MGI aposta em IA para transformar serviços públicos e fortalecer a soberania digital",
+              "publisher": "Ministério da Gestão e da Inovação",
+              "url": "https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/fevereiro/mgi-aposta-em-ia-para-transformar-servicos-publicos-e-fortalecer-a-soberania-digital",
               "date": "2026-02",
-              "type": "news"
+              "type": "company"
             }
           ]
         },
         "MX": {
           "status": "limited",
-          "note": "Ventanilla 24/7 on gob.mx is an AI agent in testing that helps people find and start trámites, but it does not yet finish them end to end.",
+          "note": "Ventanilla 24/7, the AI assistant on gob.mx and WhatsApp, has been live since January 2026 and helps people find and follow up trámites, but the government plans to let it finish trámites only by 2030.",
           "evidence": [
             {
-              "title": "El gobierno mexicano ya prueba una IA para atender ciudadanos",
-              "publisher": "Xataka México",
-              "url": "https://www.xataka.com.mx/robotica-e-ia/gobierno-mexico-quiere-atender-tramites-ia-burocracia-ventanilla-24-7-promete-resolverlos-minutos",
-              "date": "2026-03-26",
-              "type": "news"
+              "title": "Ventanilla 24/7, el canal de contacto del Gobierno de México con la ciudadanía, supera un millón de atenciones",
+              "publisher": "Agencia de Transformación Digital y Telecomunicaciones (ATDT)",
+              "url": "https://www.gob.mx/atdt/comunicacion/ventanilla-24-7-el-canal-de-contacto-del-gobierno-de-mexico-con-la-ciudadania-supera-un-millon-de-atenciones",
+              "date": "2026",
+              "type": "company"
             },
             {
-              "title": "México gradúa a su primera generación de 10 mil expertos en IA",
-              "publisher": "El Imparcial",
-              "url": "https://www.elimparcial.com/mexico/2026/05/05/mexico-gradua-a-su-primera-generacion-de-10-mil-expertos-en-ia-para-alcanzar-la-soberania-tecnologica-y-reducir-la-dependencia-de-proveedores-de-software-extranjeros/",
-              "date": "2026-05-05",
-              "type": "news"
+              "title": "Agenda 2030: Inteligencia artificial",
+              "publisher": "Agencia de Transformación Digital y Telecomunicaciones (ATDT)",
+              "url": "https://www.gob.mx/atdt/agendas/2030/inteligencia-artificial",
+              "date": "2026",
+              "type": "report"
             }
           ]
         },
@@ -358,17 +445,17 @@
               "type": "company"
             },
             {
-              "title": "Colombia impulsa la IA en la administración para automatizar trámites",
-              "publisher": "El Español",
-              "url": "https://www.elespanol.com/invertia/disruptores-americas/20260716/colombia-impulsa-ia-administracion-automatizar-tramites-mejorar-servicios-publicos/1003744317756_0.html",
-              "date": "2026-07-16",
-              "type": "news"
+              "title": "MinTIC transforma la gestión pública con seis modelos de Inteligencia Artificial para optimizar servicios y procesos institucionales",
+              "publisher": "MinTIC",
+              "url": "https://www.mintic.gov.co/portal/inicio/Sala-de-prensa/Noticias/439551:MinTIC-transforma-la-gestion-publica-con-seis-modelos-de-Inteligencia-Artificial-para-optimizar-servicios-y-procesos-institucionales",
+              "date": "2026-07",
+              "type": "company"
             }
           ]
         },
         "IN": {
           "status": "live",
-          "note": "UIDAI's Udai chatbot checks Aadhaar update status and files grievances, and Kisan e-Mitra (built on Bhashini) answers PM-KISAN questions and handles grievances in many languages.",
+          "note": "UIDAI's Udai chatbot (Hindi and English) checks Aadhaar update status and files grievances, and Kisan e-Mitra (built on Bhashini, 11 languages) answers PM-KISAN questions and handles grievances.",
           "evidence": [
             {
               "title": "CRM Division (Udai chatbot)",
@@ -385,14 +472,20 @@
               "type": "regulation"
             },
             {
+              "title": "If an individual can file a complaint using Udai Chatbot?",
+              "publisher": "UIDAI",
+              "url": "https://www.uidai.gov.in/en/1016-english-uk/faqs/about-uidai/uidai-chatbot-ask-aadhaar/13721-can-resident-file-a-complaint-using-aadhaar-mitra-chatbot.html",
+              "date": "2026",
+              "type": "company"
+            },
+            {
               "title": "Empowering millions of Indian farmers with instant AI chatbot support",
               "publisher": "Wadhwani AI",
               "url": "https://www.wadhwaniai.org/empowering-millions-of-indian-farmers-with-instant-ai-chatbot-support/",
               "date": "2025-07",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         }
       }
     }

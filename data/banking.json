@@ -35,7 +35,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "The CMA9 open banking mandate gives licensed apps account data and payment initiation, and commercial Variable Recurring Payments went live under the UK Payments Initiative in June 2026 for a first wave of regulated sectors only.",
+          "note": "The CMA9 open banking mandate gives licensed apps account data and payment initiation, and the UK Payments Initiative launched its commercial Variable Recurring Payments scheme in June 2026, starting with a first wave of lower-risk sectors only.",
           "evidence": [
             {
               "title": "Commercial VRP & UKPI",
@@ -45,11 +45,11 @@
               "type": "report"
             },
             {
-              "title": "UK cVRPs wave one launch",
-              "publisher": "Payment Expert",
-              "url": "https://paymentexpert.com/2026/05/22/uk-cvrps-wave-one-launch-payments/",
-              "date": "2026-05-22",
-              "type": "news"
+              "title": "Open banking takes next step forward with launch of UK Payments Initiative scheme",
+              "publisher": "Financial Conduct Authority",
+              "url": "https://www.fca.org.uk/news/statements/open-banking-launch-uk-payments-initiative-scheme",
+              "date": "2026-06-02",
+              "type": "regulation"
             },
             {
               "title": "UK Payments Initiative: UK banks and fintechs launch new payment scheme",
@@ -89,7 +89,7 @@
         },
         "BR": {
           "status": "live",
-          "note": "Open Finance Brasil, run by the Banco Central, is mandatory for large institutions and lets licensed payment initiators (ITPs) start Pix, Pix Automatico and no-redirect (JSR) payments, and the R$500 JSR cap was lifted from October 2026.",
+          "note": "Open Finance Brasil, run by the Banco Central, is mandatory for large institutions and lets licensed payment initiators (ITPs) start Pix, Pix Automatico and no-redirect (JSR) payments, and IN BCB 746 removes the fixed R$500 cap on JSR payments from 1 October 2026.",
           "evidence": [
             {
               "title": "Open Finance",
@@ -99,11 +99,11 @@
               "type": "regulation"
             },
             {
-              "title": "Banco Central estabelece novo limite para o Pix por aproximação",
-              "publisher": "Jornal Contábil",
-              "url": "https://jornalcontabil.com.br/noticia/banco-central-estabelece-novo-limite-para-o-pix-por-aproximacao/",
-              "date": "2026-06",
-              "type": "news"
+              "title": "Instrução Normativa BCB nº 746, de 16 de junho de 2026",
+              "publisher": "Banco Central do Brasil (Diário Oficial da União, copy hosted by Poder360)",
+              "url": "https://static.poder360.com.br/uploads/2026/06/BC-PIX-APROXIMACAO.pdf",
+              "date": "2026-06-17",
+              "type": "regulation"
             },
             {
               "title": "Belvo rolls out Pix Automático",
@@ -118,6 +118,13 @@
           "status": "announced",
           "note": "Article 76 of the 2018 Fintech Law mandates open APIs, but only open-data (and credit bureau) rules exist; the CNBV and Banxico have still not issued the transactional-data rules, so there is no regulated access to your accounts, and aggregators like Belvo work outside a mandated regime.",
           "evidence": [
+            {
+              "title": "Ley para Regular las Instituciones de Tecnología Financiera (Article 76)",
+              "publisher": "Comisión Nacional Bancaria y de Valores",
+              "url": "https://www.cnbv.gob.mx/Normatividad/Ley%20para%20Regular%20las%20Instituciones%20de%20Tecnolog%C3%ADa%20Financiera.pdf",
+              "date": "2018-03",
+              "type": "regulation"
+            },
             {
               "title": "Se desinfla el open finance en México: de una ley pionera a una realidad operativa",
               "publisher": "LatamFintech",
@@ -146,11 +153,11 @@
           "note": "Ley Fintec 21.521 created the CMF Sistema de Finanzas Abiertas (NCG 514, technical standards in NCG 569 of June 2026), but the CMF pushed its start from July 2026 to July 2027, so it is not live yet.",
           "evidence": [
             {
-              "title": "Fintech pierden la pulseada: CMF aplaza hasta 2027 la entrada en vigencia de las finanzas abiertas",
-              "publisher": "Diario Financiero",
-              "url": "https://www.df.cl/mercados/banca-fintech/fintech-pierden-la-pulseada-cmf-aplaza-hasta-2027-la-entrada-en-vigencia",
-              "date": "2026-06",
-              "type": "news"
+              "title": "CMF modifica la normativa que regula el Sistema de Finanzas Abiertas e incorpora anexo técnico",
+              "publisher": "Comisión para el Mercado Financiero",
+              "url": "https://www.cmfchile.cl/portal/prensa/625/w4-article-110881.html",
+              "date": "2026-06-01",
+              "type": "regulation"
             },
             {
               "title": "CMF modifica la NCG N°514 e incorpora estándares técnicos para la implementación del Sistema de Finanzas Abiertas",
@@ -180,11 +187,11 @@
               "type": "regulation"
             },
             {
-              "title": "Minhacienda reglamentó el sistema de finanzas abiertas en Colombia",
-              "publisher": "INCP",
-              "url": "https://incp.org.co/publicaciones/infoincp-publicaciones/informacion-para-empresas/entorno/financiero/2026/04/minhacienda-reglamento-el-sistema-de-finanzas-abiertas-en-colombia/",
-              "date": "2026-04",
-              "type": "news"
+              "title": "Decreto 368 de 2026",
+              "publisher": "Función Pública",
+              "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=275576",
+              "date": "2026-04-07",
+              "type": "regulation"
             },
             {
               "title": "La SFC expide regulación sobre las finanzas abiertas en Colombia",
@@ -207,11 +214,11 @@
               "type": "report"
             },
             {
-              "title": "India's Account Aggregator ecosystem facilitates nearly 3.8 crore financial services in FY26",
-              "publisher": "NewKerala",
-              "url": "https://www.newkerala.com/news/a/indias-account-aggregator-ecosystem-facilitates-nearly-38-crore-263.htm",
-              "date": "2026-06",
-              "type": "news"
+              "title": "Account Aggregator crosses 500 million consents as India marks 5th AA Foundation Day",
+              "publisher": "Sahamati",
+              "url": "https://sahamati.org.in/media-article/account-aggregator-crosses-500-million-consents-as-india-marks-5th-aa-foundation-day/",
+              "date": "2026-09-02",
+              "type": "company"
             },
             {
               "title": "UPI product overview",
@@ -243,28 +250,35 @@
           ]
         },
         "GB": {
-          "status": "limited",
-          "note": "Zopa's AI assistant sends money and pays bills from voice or chat, and in September 2026 it was rolling out to all Zopa current account customers after a trial. Lloyds said its agentic assistant would carry out payment requests, with rollout from early 2026. Revolut's AIR freezes cards and buys eSIMs, and NatWest Cora handles questions and fraud claims. Searches for Monzo and Starling ran out before they were checked.",
+          "status": "live",
+          "note": "Zopa's AI assistant, Ask, sends money, requests payments and pays invoices from a photo, by voice or chat, for its Biscuit current account customers (launched September 2026). Starling Assistant (March 2026) sets up savings transfers and organises bill payments for personal customers who opt in. Revolut's AIR freezes cards and buys eSIMs, and NatWest Cora handles questions and fraud claims. Lloyds said its agentic assistant would carry out payment requests, but in October 2026 we found no sign it had reached all customers, and we found no Monzo assistant that moves money.",
           "evidence": [
             {
-              "title": "Zopa moves into AI voice banking services",
-              "publisher": "Tech.eu",
-              "url": "https://tech.eu/2026/09/16/zopa-moves-into-voice-ai-banking-services/",
+              "title": "Zopa unveils UK's most helpful banking AI",
+              "publisher": "Zopa",
+              "url": "https://www.zopa.com/blog/article/zopa-unveils-uks-most-helpful-banking-ai",
               "date": "2026-09-16",
-              "type": "news"
+              "type": "company"
+            },
+            {
+              "title": "Zopa AI",
+              "publisher": "Zopa",
+              "url": "https://www.zopa.com/current-account/ai",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Starling launches agentic AI assistant",
+              "publisher": "Starling Bank",
+              "url": "https://www.starlingbank.com/news/starling-launches-agentic-ai-assistant/",
+              "date": "2026-03-20",
+              "type": "company"
             },
             {
               "title": "Lloyds Banking to launch AI-powered financial assistant",
               "publisher": "Retail Banker International",
               "url": "https://www.retailbankerinternational.com/news/lloyds-banking-ai-financial-assistant/",
               "date": "2025-11-07",
-              "type": "news"
-            },
-            {
-              "title": "Revolut launches AI-powered in-app financial assistant",
-              "publisher": "The Paypers",
-              "url": "https://thepaypers.com/fintech/news/revolut-launches-ai-powered-in-app-financial-assistant",
-              "date": "2026-04-09",
               "type": "news"
             },
             {
@@ -275,18 +289,24 @@
               "type": "news"
             },
             {
+              "title": "Revolut enters new era of money intelligence with launch of AI assistant",
+              "publisher": "Revolut",
+              "url": "https://www.revolut.com/news/revolut_enters_new_era_of_money_intelligence_with_launch_of_ai_assistant/",
+              "date": "2026-04-09",
+              "type": "company"
+            },
+            {
               "title": "Being a trusted partner for tomorrow's banking through technology",
               "publisher": "NatWest Group",
               "url": "https://www.natwestgroup.com/news-and-insights/latest-stories/ai-and-data/2026/feb/being-a-trusted-partner-for-tomorrows-banking-through-technology.html",
               "date": "2026-02",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "DE": {
           "status": "none",
-          "note": "Commerzbank's Ava can block cards, check balances and order products, but we found no sign it makes transfers, Sparkasse chat channels say they do not accept transfer orders, and bunq describes its Finn assistant (December 2025 upgrade) as support and information only. N26, Deutsche Bank and ING Germany were not checked.",
+          "note": "Commerzbank's Ava can block cards, check balances and order products, but we found no sign it makes transfers, Sparkasse chat channels say they do not accept transfer orders, and bunq describes its Finn assistant (December 2025 upgrade) as support and information only. In October 2026 N26's press room listed no AI assistant, ING's virtual assistant in its app only answers questions, and searches found nothing for Deutsche Bank beyond an old Siri transfer feature. Searches for DKB's AI support assistant showed only customer service, with no sign of transfers. We kept the flag because no bank page rules out a launch we missed.",
           "evidence": [
             {
               "title": "Commerzbank launches AI-based Banking Avatar",
@@ -307,6 +327,20 @@
               "publisher": "Kreissparkasse Saarpfalz",
               "url": "https://www.ksk-saarpfalz.de/content/dam/myif/ksk-saarpfalz/work/dokumente/pdf/allgemein/Sicherheitshinweise_Beraterchat.pdf",
               "date": "2024",
+              "type": "company"
+            },
+            {
+              "title": "Banking ohne Stirnrunzeln: Mit der ING App geht alles einfach",
+              "publisher": "ING Deutschland",
+              "url": "https://www.ing.de/hilfe/app/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Press",
+              "publisher": "N26",
+              "url": "https://n26.com/en-de/press",
+              "date": "2026-10",
               "type": "company"
             }
           ],
@@ -331,11 +365,11 @@
               "type": "company"
             },
             {
-              "title": "Bradesco lança Pix por comando de voz no WhatsApp",
-              "publisher": "Baguete",
-              "url": "https://www.baguete.com.br/noticias/bradesco-lanca-pix-por-comando-de-voz-no-whatsapp",
-              "date": "2025-07",
-              "type": "news"
+              "title": "Como falar com a BIA e como ela pode te ajudar",
+              "publisher": "Bradesco",
+              "url": "https://banco.bradesco/bia/",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
@@ -361,7 +395,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "Itaú Chile launched voice and text transfers to third parties in its app in June 2026, where an AI agent fills in the transfer and the user confirms with Itaú Pass; we found no similar feature at BancoEstado or Banco de Chile.",
+          "note": "Itaú Chile launched voice and text transfers to third parties in its app in June 2026, where an AI agent fills in the transfer and the user confirms with Itaú Pass. News reports do not say whether all customers have it, and we found no Itaú page that confirms the rollout. In October 2026 we found no similar feature at BancoEstado, Banco de Chile, BCI or Santander Chile.",
           "evidence": [
             {
               "title": "Itaú Chile lanza Transferencias por Voz y da un paso hacia la banca conversacional",
@@ -375,8 +409,15 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Only the payments app Tpaga (not a bank) launched a WhatsApp AI agent in July 2026 that pays bills and sends Bre-B transfers; Bancolombia's Tabot only answers questions.",
+          "note": "Davivienda's DaviPlata wallet let users who signed up with a QR code move money by voice or AI chat in a first phase from June 2024, but we could not confirm it is open to all users today. The payments app Tpaga (not a bank) launched a WhatsApp AI agent in July 2026 that pays bills and sends Bre-B transfers. Bancolombia's Tabot only answers questions, and we found no assistant that moves money at Nequi.",
           "evidence": [
+            {
+              "title": "En DaviPlata ahora podrá manejar su dinero con la voz",
+              "publisher": "Banco Davivienda",
+              "url": "https://blog.davivienda.com/detail/inclusion-inteligencia-artificial-y-mas-ahora-los-colombianos-podran-manejar-su-dinero-con-su-voz-o-",
+              "date": "2024-06",
+              "type": "company"
+            },
             {
               "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
               "publisher": "La República",
@@ -396,7 +437,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "Indian Bank's AI-TARA voice assistant (September 2026) does fund transfers and IMPS in 10 languages, and NPCI's Hello! UPI voice payments roll out in phases, but we found no such feature at HDFC, ICICI or SBI.",
+          "note": "Indian Bank's AI-TARA voice assistant (unveiled September 2026) does fund transfers and IMPS in 10 languages, according to news reports, but the bank's own investor deck only calls it a voice AI relationship manager and does not say all customers have it. NPCI's Hello! UPI voice payments roll out in phases, and Axis Bank's new branch kiosk (September 2026) has an AI assistant that fills in forms for services like utility bill payments. SBI's YONO Ji assistant answers questions for YONO Business users, and we found no assistant that moves money at HDFC or ICICI.",
           "evidence": [
             {
               "title": "Indian Bank debuts AI-TARA voice banking in 10 languages at Global Fintech Fest 2026",
@@ -404,6 +445,20 @@
               "url": "https://www.analyticsinsight.net/news/indian-bank-debuts-ai-tara-voice-banking-in-10-languages-at-global-fintech-fest-2026",
               "date": "2026-09-10",
               "type": "news"
+            },
+            {
+              "title": "Performance Analysis Q2/H1 FY27",
+              "publisher": "Indian Bank",
+              "url": "https://indianbank.bank.in/documents/d/guest/presentation-september-2026",
+              "date": "2026-09",
+              "type": "company"
+            },
+            {
+              "title": "Axis Bank and Hitachi Payment Services unveil AI-powered solutions for smarter banking and merchant payment experiences",
+              "publisher": "Axis Bank",
+              "url": "https://www.axis.bank.in/about-us/press-releases/axis-bank-and-hitachi-payment-services-unveil-ai-powered-solutions-for-smarter-banking-and-merchant-payment-experiences",
+              "date": "2026-09-11",
+              "type": "company"
             },
             {
               "title": "AI-powered conversational payments to launch on India's UPI",
@@ -632,7 +687,7 @@
     {
       "name": "Revolut",
       "hq": "GB",
-      "url": "https://thepaypers.com/fintech/news/revolut-launches-ai-powered-in-app-financial-assistant",
+      "url": "https://www.revolut.com/air-ai-by-revolut/",
       "role": "Its AIR assistant freezes cards and buys eSIMs in the UK app.",
       "markets": [
         "GB"
@@ -656,7 +711,7 @@
     {
       "name": "Zopa",
       "hq": "GB",
-      "url": "https://tech.eu/2026/09/16/zopa-moves-into-voice-ai-banking-services/",
+      "url": "https://www.zopa.com/current-account/ai",
       "role": "Its AI assistant sends money and pays bills from voice or chat for UK current account customers.",
       "markets": [
         "GB"
@@ -672,6 +727,30 @@
       "role": "Its AI-TARA voice assistant does fund transfers and IMPS in 10 languages.",
       "markets": [
         "IN"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Starling Bank",
+      "hq": "GB",
+      "url": "https://www.starlingbank.com/news/starling-launches-agentic-ai-assistant/",
+      "role": "Its Starling Assistant sets up savings transfers and organises bill payments from voice or chat.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Davivienda (DaviPlata)",
+      "hq": "CO",
+      "url": "https://blog.davivienda.com/detail/inclusion-inteligencia-artificial-y-mas-ahora-los-colombianos-podran-manejar-su-dinero-con-su-voz-o-",
+      "role": "Its DaviPlata wallet lets enrolled users move money by voice or AI chat.",
+      "markets": [
+        "CO"
       ],
       "capabilities": [
         "banking.bank-agent-actions"
