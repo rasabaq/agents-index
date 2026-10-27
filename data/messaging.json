@@ -626,7 +626,7 @@
         "pushedAt": "2026-07-24",
         "archived": false,
         "downloadsMonth": 234951,
-        "dockerPulls": 41741810
+        "dockerPulls": 41741811
       }
     },
     {
@@ -678,7 +678,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 11132884
+        "dockerPulls": 11132956
       }
     },
     {
@@ -700,7 +700,7 @@
         "pushedAt": "2026-10-26",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 1829885
+        "dockerPulls": 1829897
       }
     },
     {
@@ -721,7 +721,7 @@
         "pushedAt": "2026-07-14",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 4320219
+        "dockerPulls": 4320323
       }
     },
     {
@@ -815,7 +815,7 @@
         "pushedAt": "2026-10-22",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 3065113
+        "dockerPulls": 3065146
       }
     },
     {
@@ -935,6 +935,24 @@
         "pushedAt": "2026-09-07",
         "archived": false,
         "downloadsMonth": 1182982,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "glific/glific",
+      "name": "Glific",
+      "role": "WhatsApp chatbot platform for nonprofits, with AI skills that answer from a knowledge base inside chat flows. A Digital Public Good.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 223,
+        "contributors": 39,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
         "dockerPulls": null
       }
     }

@@ -34,6 +34,6 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 2. Run `npm run validate`.
 3. Bump `asOf` in `data/meta.json`.
 
-To add an open-source repo, add it to `repos[]` in the category file it serves, with `repo` ("owner/name"), `name`, `role`, `capabilities`, and its `packages` (`npm` or `pypi`) and Docker Hub `images` if it ships any. Then run `npm run refresh-repos <category>` to fill its `usage` from GitHub, npm, PyPI and Docker Hub.
+To add an open-source repo, add it to `repos[]` in the category file it serves, with `repo` ("owner/name"), `name`, `role`, `capabilities`, and its `packages` (`npm`, `pypi` or `packagist`) and Docker Hub `images` if it ships any. Then run `npm run refresh-repos <category>` to fill its `usage` from GitHub, npm, PyPI, Packagist and Docker Hub.
 
 Every company has a `url` (the source for what it does) and a `homepage` (its own site). Run `npm run refresh-sites <category>` to store the logo from its homepage in `icon`: the apple-touch-icon, else the largest icon link, else `/favicon.ico`. Sites that block scripts get `null`, and the page shows a monogram. Repo logos are the GitHub owner's avatar, so they need no data.

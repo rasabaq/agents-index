@@ -964,7 +964,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": 8537,
-        "dockerPulls": 121793699
+        "dockerPulls": 121793703
       }
     },
     {
@@ -1018,6 +1018,12 @@
       "capabilities": [
         "services.delivery-rides"
       ],
+      "packages": [
+        {
+          "registry": "packagist",
+          "name": "fleetbase/core-api"
+        }
+      ],
       "images": [
         "fleetbase/fleetbase-api"
       ],
@@ -1027,7 +1033,7 @@
         "contributors": 28,
         "pushedAt": "2026-10-27",
         "archived": false,
-        "downloadsMonth": null,
+        "downloadsMonth": 8810,
         "dockerPulls": 71420
       }
     },
@@ -1040,13 +1046,19 @@
         "services.delivery-rides"
       ],
       "origin": "GB",
+      "packages": [
+        {
+          "registry": "packagist",
+          "name": "tastyigniter/core"
+        }
+      ],
       "usage": {
         "asOf": "2026-10-27",
         "stars": 3814,
         "contributors": 33,
         "pushedAt": "2026-10-17",
         "archived": false,
-        "downloadsMonth": null,
+        "downloadsMonth": 6920,
         "dockerPulls": null
       }
     },

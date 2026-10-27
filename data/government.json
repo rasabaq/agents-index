@@ -800,7 +800,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": 1577117,
-        "dockerPulls": 19087617
+        "dockerPulls": 19087844
       }
     },
     {
@@ -822,7 +822,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 185500
+        "dockerPulls": 185501
       }
     },
     {
@@ -944,7 +944,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 1418864
+        "dockerPulls": 1418878
       }
     },
     {
@@ -986,6 +986,45 @@
         "archived": false,
         "downloadsMonth": null,
         "dockerPulls": 486108
+      }
+    },
+    {
+      "repo": "Sunbird-RC/sunbird-rc-core",
+      "name": "Sunbird RC",
+      "role": "Electronic registries and verifiable credentials, so apps can issue and check signed records such as certificates. A Digital Public Good.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "images": [
+        "dockerhub/sunbird-rc-core"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 27,
+        "contributors": 55,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 20772
+      }
+    },
+    {
+      "repo": "credebl/platform",
+      "name": "CREDEBL",
+      "role": "Decentralised identity platform that issues and verifies verifiable credentials through open-standard wallets and agents. A Digital Public Good.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 74,
+        "contributors": 37,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
       }
     }
   ]
