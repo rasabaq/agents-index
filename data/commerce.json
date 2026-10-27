@@ -894,5 +894,210 @@
         "commerce.marketplace-agent"
       ]
     }
+  ],
+  "repos": [
+    {
+      "repo": "agentic-commerce-protocol/agentic-commerce-protocol",
+      "name": "Agentic Commerce Protocol (ACP)",
+      "role": "Open standard from OpenAI and Stripe that lets an AI agent check out a cart at a merchant on behalf of a buyer.",
+      "capabilities": [
+        "commerce.in-chat-checkout",
+        "commerce.merchant-protocol"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 1587,
+        "contributors": 26,
+        "pushedAt": "2026-07-18",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Universal-Commerce-Protocol/ucp",
+      "name": "Universal Commerce Protocol (UCP)",
+      "role": "Open protocol, led by Google with retailers and platforms, that lets an AI agent find products, build a cart and pay at any merchant that supports it.",
+      "capabilities": [
+        "commerce.in-chat-checkout",
+        "commerce.merchant-protocol"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 3454,
+        "contributors": 67,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "medusajs/medusa",
+      "name": "Medusa",
+      "role": "Open-source commerce engine whose store and admin APIs let agents browse products, build carts and place orders.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@medusajs/medusa"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 36960,
+        "contributors": 593,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 599677,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "saleor/saleor",
+      "name": "Saleor",
+      "role": "Headless commerce platform with a GraphQL API (and an official MCP server) that agents can use to search products, manage carts and place orders.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 23485,
+        "contributors": 331,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "woocommerce/woocommerce",
+      "name": "WooCommerce",
+      "role": "WordPress store plugin that ships a built-in MCP endpoint, so an agent can read products and orders and act on a shop.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 10570,
+        "contributors": 2149,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "spree/spree",
+      "name": "Spree Commerce",
+      "role": "Open-source commerce platform with a local MCP server that lets an agent manage a store through chat.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@spree/sdk"
+        }
+      ],
+      "images": [
+        "spreecommerce/spree"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 15781,
+        "contributors": 1247,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 2191,
+        "dockerPulls": 38530
+      }
+    },
+    {
+      "repo": "vendurehq/vendure",
+      "name": "Vendure",
+      "role": "Headless commerce platform whose typed GraphQL shop API is built to be called by LLM tools, MCP servers and agent frameworks.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@vendure/core"
+        }
+      ],
+      "origin": "AT",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 8546,
+        "contributors": 319,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 60150,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "bagisto/bagisto",
+      "name": "Bagisto",
+      "role": "Open-source store and multi-vendor marketplace platform from India, with official agent skills and an MCP server for AI tools.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "images": [
+        "webkul/bagisto"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 28279,
+        "contributors": 327,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 32425
+      }
+    },
+    {
+      "repo": "beckn/beckn-onix",
+      "name": "Beckn-ONIX",
+      "role": "Adapter that connects buyer and seller apps to Beckn open networks such as India's ONDC, so any app or agent can discover and order from any seller on the network.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "images": [
+        "fidedocker/onix-adapter"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 100,
+        "contributors": 43,
+        "pushedAt": "2026-10-01",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 8716
+      }
+    },
+    {
+      "repo": "ONDC-Official/ONDC-Protocol-Specs",
+      "name": "ONDC Protocol Specs",
+      "role": "API specification of India's Open Network for Digital Commerce, which lets any buyer app search and order from sellers on any other app.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 146,
+        "contributors": 6,
+        "pushedAt": "2025-01-31",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    }
   ]
 }
