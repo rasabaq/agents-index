@@ -2,7 +2,7 @@
 // A view is a classic script that pushes { id, title, blurb, render(el, ctx) } onto window.ATLAS_VIEWS.
 import { STATUSES, scoreCountries } from '../src/observatory.js';
 
-const ORDER = ['map', 'periodic', 'radar', 'bump', 'range', 'compare', 'flows', 'network', 'timeline'];
+const ORDER = ['map', 'periodic', 'radar', 'bump', 'range', 'compare', 'gap', 'flows', 'network', 'timeline'];
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
