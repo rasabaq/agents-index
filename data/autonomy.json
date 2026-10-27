@@ -851,6 +851,8 @@
       "name": "OpenAI",
       "hq": "US",
       "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+      "homepage": "https://openai.com/",
+      "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
       "role": "ChatGPT Work's cloud browser opens sites, clicks and fills forms for paid users; it replaced ChatGPT agent in August 2026.",
       "markets": [
         "US",
@@ -870,6 +872,8 @@
       "name": "Anthropic",
       "hq": "US",
       "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+      "homepage": "https://www.anthropic.com/",
+      "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
       "role": "Claude in Chrome reads pages and clicks, types and fills forms in the user's own browser on paid plans.",
       "markets": [
         "US",
@@ -889,6 +893,8 @@
       "name": "Perplexity",
       "hq": "US",
       "url": "https://www.perplexity.ai/comet",
+      "homepage": "https://www.perplexity.ai/",
+      "icon": "https://www.perplexity.ai/favicon.svg",
       "role": "Comet is a free AI browser whose assistant acts on web pages for the user.",
       "markets": [
         "US",
@@ -908,6 +914,8 @@
       "name": "Google",
       "hq": "US",
       "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+      "homepage": "https://www.google.com/",
+      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
       "role": "Gemini connected apps act across Android and Google apps, Chrome auto browse acts on sites (US and India), and AI Mode phones businesses (US).",
       "markets": [
         "US",
@@ -929,6 +937,8 @@
       "name": "Amazon",
       "hq": "US",
       "url": "https://www.aboutamazon.com/news/devices/alexa-plus-available-free-prime-members-us",
+      "homepage": "https://www.aboutamazon.com/",
+      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
       "role": "Alexa+ orders, books and controls smart homes through voice and partner services.",
       "markets": [
         "US",
@@ -946,6 +956,8 @@
       "name": "Apple",
       "hq": "US",
       "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+      "homepage": "https://www.apple.com/",
+      "icon": "https://www.apple.com/favicon.ico",
       "role": "Siri AI uses personal context and App Intents to act in apps like Messages and WhatsApp, in beta and outside the EU.",
       "markets": [
         "US",

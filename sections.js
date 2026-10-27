@@ -173,12 +173,12 @@ function startBand() {
   function fit() {
     const setDot = (d) => nums.style.setProperty('--dot', `${d}px`);
     const room = nums.clientWidth;
-    nums.classList.remove('stack');
+    nums.classList.remove('stacked');
     for (const d of [24, 20, 16, 12]) {
       setDot(d);
       if (items.at(-1).getBoundingClientRect().right - items[0].getBoundingClientRect().left <= room) return;
     }
-    nums.classList.add('stack');
+    nums.classList.add('stacked');
     for (const d of [16, 12, 8]) {
       setDot(d);
       if (Math.max(...numEls.map((el) => el.offsetWidth)) <= room) return;
