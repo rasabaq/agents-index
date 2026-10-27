@@ -720,5 +720,201 @@
         "payments.wallet-agent"
       ]
     }
+  ],
+  "repos": [
+    {
+      "repo": "x402-foundation/x402",
+      "name": "x402",
+      "role": "Open protocol that revives HTTP 402 so an agent can pay for an API or web page per request with a stablecoin wallet, without an account.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "x402"
+        },
+        {
+          "registry": "npm",
+          "name": "@x402/core"
+        },
+        {
+          "registry": "pypi",
+          "name": "x402"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 6764,
+        "contributors": 369,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 2090633,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "google-agentic-commerce/AP2",
+      "name": "Agent Payments Protocol (AP2)",
+      "role": "Open protocol from Google for signed mandates that prove a user let an agent pay, with cards, wallets or stablecoins.",
+      "capabilities": [
+        "payments.card-agent-token",
+        "payments.wallet-agent"
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 3250,
+        "contributors": 19,
+        "pushedAt": "2026-06-17",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "stripe/ai",
+      "name": "Stripe Agent Toolkit",
+      "role": "Stripe tools and MCP server that let an agent create payment links, invoices, customers and refunds on a Stripe account.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@stripe/agent-toolkit"
+        },
+        {
+          "registry": "npm",
+          "name": "@stripe/mcp"
+        },
+        {
+          "registry": "pypi",
+          "name": "stripe-agent-toolkit"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 1976,
+        "contributors": 41,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 167354,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "wevm/mppx",
+      "name": "mppx (Machine Payments Protocol)",
+      "role": "TypeScript SDK for the Machine Payments Protocol from Stripe and Tempo, so an agent can pay a service per call from its wallet.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "mppx"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 188,
+        "contributors": 32,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 200334,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "coinbase/agentkit",
+      "name": "Coinbase AgentKit",
+      "role": "Toolkit that gives an agent its own crypto wallet so it can hold funds, send payments and pay x402 APIs.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@coinbase/agentkit"
+        },
+        {
+          "registry": "pypi",
+          "name": "coinbase-agentkit"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 1340,
+        "contributors": 90,
+        "pushedAt": "2026-10-14",
+        "archived": false,
+        "downloadsMonth": 46720,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "juspay/hyperswitch",
+      "name": "Hyperswitch",
+      "role": "Self-hosted payments switch from Juspay that routes payments across many processors and vaults cards, tokens and wallets; a base an agent checkout can run on.",
+      "capabilities": [
+        "payments.card-agent-token",
+        "payments.wallet-agent"
+      ],
+      "images": [
+        "juspaydotin/hyperswitch-router",
+        "juspaydotin/hyperswitch-drainer",
+        "juspaydotin/hyperswitch-producer"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 45421,
+        "contributors": 264,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 528543
+      }
+    },
+    {
+      "repo": "razorpay/razorpay-mcp-server",
+      "name": "Razorpay MCP Server",
+      "role": "Razorpay's official MCP server, so an agent can create UPI payment links and QR codes, take payments and issue refunds in India.",
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ],
+      "images": [
+        "razorpay/mcp"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 231,
+        "contributors": 17,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 68947
+      }
+    },
+    {
+      "repo": "bacen/pix-api",
+      "name": "Pix API",
+      "role": "Brazil central bank's open API spec for Pix, the standard interface any app or agent uses to create and pay Pix charges.",
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ],
+      "origin": "BR",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 2992,
+        "contributors": 3,
+        "pushedAt": "2026-08-19",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    }
   ]
 }
