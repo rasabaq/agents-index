@@ -60,9 +60,9 @@ Stars measure attention, not use. A repo can trend for a week and never run anyw
 
 | Tier | Rule |
 | --- | --- |
-| Widely used | 1M+ installs a month (npm + PyPI), or 100M+ Docker Hub pulls |
+| Widely used | 1M+ installs a month (busiest npm, PyPI or Packagist package), or 100M+ Docker Hub pulls |
 | In real use | 50k+ installs a month, or 1M+ Docker Hub pulls |
-| Not measured | Ships no npm, PyPI or Docker Hub package we can count |
+| Not measured | Ships no npm, PyPI, Packagist or Docker Hub package we can count |
 | Mostly stars | 5k+ stars, but below the install bars |
 | Niche | Few stars and few installs |
 | Dormant | Archived, or no commit in the 6 months before it was measured |
