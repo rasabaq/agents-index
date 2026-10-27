@@ -735,5 +735,261 @@
         "government.ai-public-services"
       ]
     }
+  ],
+  "repos": [
+    {
+      "repo": "keycloak/keycloak",
+      "name": "Keycloak",
+      "role": "Identity server that many governments run as their login broker; an agent can sign a person in and get tokens through standard OpenID Connect.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@keycloak/keycloak-admin-client"
+        }
+      ],
+      "images": [
+        "keycloak/keycloak"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 37551,
+        "contributors": 1972,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 1577117,
+        "dockerPulls": 19087357
+      }
+    },
+    {
+      "repo": "mosip/esignet",
+      "name": "MOSIP eSignet",
+      "role": "OpenID Connect login on top of a national ID built with MOSIP, so an app can check who a person is with their national ID.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "images": [
+        "mosipid/esignet",
+        "mosipid/oidc-ui"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 39,
+        "contributors": 61,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 209707
+      }
+    },
+    {
+      "repo": "Governikus/AusweisApp",
+      "name": "AusweisApp",
+      "role": "Germany's official eID app and SDK; it lets an app read and prove a person's identity from the German ID card.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "images": [
+        "governikus/ausweisapp2"
+      ],
+      "origin": "DE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 782,
+        "contributors": 20,
+        "pushedAt": "2026-10-14",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 12308
+      }
+    },
+    {
+      "repo": "18F/identity-idp",
+      "name": "Login.gov",
+      "role": "The code behind Login.gov, the US government sign-in and identity check that agencies plug into with OpenID Connect or SAML.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 594,
+        "contributors": 197,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "govuk-one-login/authentication-api",
+      "name": "GOV.UK One Login",
+      "role": "Sign-in backend for GOV.UK One Login, the UK government account that services use to know who a person is.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 19,
+        "contributors": 76,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "eu-digital-identity-wallet/eudi-app-android-wallet-ui",
+      "name": "EU Digital Identity Wallet",
+      "role": "Reference Android wallet for the EU Digital Identity Wallet; it holds ID credentials and shares them with apps over OpenID4VP.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 229,
+        "contributors": 20,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "openwallet-foundation/acapy",
+      "name": "ACA-Py",
+      "role": "Server agent that issues, holds and checks verifiable credentials, used by governments to run digital ID and credential services.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "acapy-agent"
+        },
+        {
+          "registry": "pypi",
+          "name": "aries-cloudagent"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 493,
+        "contributors": 171,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 2971,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "nordic-institute/X-Road",
+      "name": "X-Road",
+      "role": "Secure data exchange layer that lets government systems (first in Estonia and Finland) ask each other for a person's data on their behalf.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "images": [
+        "niis/xroad-security-server-sidecar"
+      ],
+      "origin": "EE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 871,
+        "contributors": 106,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 1418863
+      }
+    },
+    {
+      "repo": "alphagov/govuk-chat",
+      "name": "GOV.UK Chat",
+      "role": "The UK government AI assistant that answers questions from GOV.UK content and points people to the right service.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 16,
+        "contributors": 31,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "egovernments/Digit-Core",
+      "name": "DIGIT",
+      "role": "Platform behind Indian state and city services such as complaints, property tax and licences; its APIs let software file and track a service request.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "images": [
+        "egovio/egov-localization",
+        "egovio/egov-accesscontrol",
+        "egovio/egov-persister"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 55,
+        "contributors": 35,
+        "pushedAt": "2026-10-26",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 1016206
+      }
+    },
+    {
+      "repo": "openfisca/openfisca-core",
+      "name": "OpenFisca",
+      "role": "Rules-as-code engine that turns tax and benefit law into an API, so software can work out what a person is owed or must pay.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "openfisca-core"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 249,
+        "contributors": 71,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": 24551,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "decidim/decidim",
+      "name": "Decidim",
+      "role": "Participation platform that city and national governments run for proposals, votes and consultations; it has a GraphQL API.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "images": [
+        "decidim/decidim"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 1841,
+        "contributors": 169,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 530977
+      }
+    }
   ]
 }
