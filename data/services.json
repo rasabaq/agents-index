@@ -918,7 +918,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": 8537,
-        "dockerPulls": 121793682
+        "dockerPulls": 121793683
       }
     },
     {
@@ -982,7 +982,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 71412
+        "dockerPulls": 71413
       }
     },
     {
@@ -1091,7 +1091,7 @@
         "pushedAt": "2026-10-27",
         "archived": false,
         "downloadsMonth": null,
-        "dockerPulls": 1915634
+        "dockerPulls": 1915635
       }
     },
     {
