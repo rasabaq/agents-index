@@ -540,6 +540,11 @@
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "homepage": "https://www.google.com/",
       "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "preview": {
+        "title": "3 new ways to plan and book travel in Search",
+        "description": "Book hotels and track airfares, plus view miles and rewards with AI Mode in Google Search.",
+        "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Search_Travel_Blog_Hero_8.27.width-1300.png"
+      },
       "role": "AI Mode finds open restaurant tables across booking partners and lets US users book hotels with Google Pay.",
       "markets": [
         "US",
@@ -557,6 +562,11 @@
       "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
       "homepage": "https://openai.com/",
       "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "preview": {
+        "title": "ChatGPT release notes | OpenAI Help Center",
+        "description": "Review the latest updates and release notes for ChatGPT.",
+        "image": "https://help.openai.com/og-image.png"
+      },
       "role": "ChatGPT finds restaurant reservations and hosts third-party apps for travel and delivery.",
       "markets": [
         "US",
@@ -580,6 +590,7 @@
       "url": "https://www.opentable.com",
       "homepage": "https://www.opentable.com/",
       "icon": "https://www.opentable.com/favicon.ico",
+      "preview": null,
       "role": "Supplies real-time table inventory and bookings to Google AI Mode and ChatGPT.",
       "markets": [
         "US",
@@ -597,6 +608,11 @@
       "url": "https://resy.com",
       "homepage": "https://resy.com/",
       "icon": "https://resy.com/images/favicon.ico?v=5",
+      "preview": {
+        "title": "Resy | Right This Way",
+        "description": "Discover restaurants to love in your city and beyond. Get the latest restaurant intel and explore Resy’s curated guides to find the right spot for any occasion. Book your table now through the Resy iOS or Android app, or on Resy.com.",
+        "image": "https://s3.amazonaws.com/resy.com/images/social/facebook-preview.png"
+      },
       "role": "Supplies US table availability to Google AI Mode and ChatGPT.",
       "markets": [
         "US"
@@ -611,6 +627,11 @@
       "url": "https://www.exploretock.com",
       "homepage": "https://www.exploretock.com/",
       "icon": "https://www.exploretock.com/assets/favicon/v5/apple-touch-icon-57x57.png",
+      "preview": {
+        "title": "Tock - Reservations - Restaurants, Bars, and Wineries",
+        "description": "Book reservations, takeout, and unique culinary experiences at restaurants, bars, and wineries around the globe.",
+        "image": "https://storage.googleapis.com/tock-public-assets/tock-social-share/04-20-22-Tock-Share-Graphic.jpg"
+      },
       "role": "Supplies US reservation availability to Google AI Mode.",
       "markets": [
         "US"
@@ -625,6 +646,7 @@
       "url": "https://www.yelp.com",
       "homepage": "https://www.yelp.com/",
       "icon": "https://www.yelp.com/favicon.ico",
+      "preview": null,
       "role": "Lets ChatGPT find and book tables and join waitlists in the US and Canada.",
       "markets": [
         "US"
@@ -639,6 +661,7 @@
       "url": "https://www.thefork.com",
       "homepage": "https://www.thefork.com/",
       "icon": "https://www.thefork.com/favicon.ico",
+      "preview": null,
       "role": "Supplies UK and European table bookings to Google AI Mode and runs a TheFork app inside ChatGPT in the UK, Spain, France, Italy and Portugal.",
       "markets": [
         "GB"
@@ -653,6 +676,11 @@
       "url": "https://sevenrooms.com",
       "homepage": "https://sevenrooms.com/",
       "icon": "https://sevenrooms.com/favicon.ico",
+      "preview": {
+        "title": "Hospitality & Restaurant Marketing & Operations Software | SevenRooms",
+        "description": "Grow your hospitality business with an all-in-one marketing and operations platform that has built-in guest analytics, integrations and more.",
+        "image": "https://cdn.builder.io/api/v1/image/assets%2Facabda4a1104467f93cbad15a924c9a3%2F258e980b6e594040ada629af66ed9c7e"
+      },
       "role": "Booking partner for Google AI Mode restaurant reservations in the UK.",
       "markets": [
         "GB"
@@ -667,6 +695,11 @@
       "url": "https://www.resdiary.com",
       "homepage": "https://www.resdiary.com/",
       "icon": "https://resdiary.com/hubfs/Icon_%20resdiary_favicon.png",
+      "preview": {
+        "title": "ResDiary: Restaurant Booking System",
+        "description": "Attract more diners, streamline operations, improve customer experience, and increase revenue with ResDiary's user-friendly restaurant booking system.",
+        "image": null
+      },
       "role": "Booking partner for Google AI Mode restaurant reservations in the UK.",
       "markets": [
         "GB"
@@ -681,6 +714,11 @@
       "url": "https://www.eazydiner.com",
       "homepage": "https://www.eazydiner.com/",
       "icon": "https://www.eazydiner.com/images/apple-touch-icon.png",
+      "preview": {
+        "title": "Find the Best Restaurants with Great Deals | Eazydiner",
+        "description": "India's #1 dining and restaurant discovery service. Get up to 50% off on food and drinks. Book a table for FREE and check menus, users' reviews, and photos.",
+        "image": null
+      },
       "role": "Booking partner for Google AI Mode restaurant reservations in India.",
       "markets": [
         "IN"
@@ -695,6 +733,11 @@
       "url": "https://mcp.swiggy.com/builders",
       "homepage": "https://www.swiggy.com/",
       "icon": null,
+      "preview": {
+        "title": "Swiggy Builders Club | Cook on Swiggy’s MCP APIs",
+        "description": "Cook on Swiggy's MCP platform. Open to developers, startups, and enterprises.",
+        "image": "https://mcp.swiggy.com/builders/social-card"
+      },
       "role": "Runs MCP servers so AI assistants can order food and Instamart groceries and book Dineout tables, and is a Google AI Mode booking partner.",
       "markets": [
         "IN"
@@ -710,6 +753,11 @@
       "url": "https://github.com/Zomato/mcp-server-manifest",
       "homepage": "https://www.zomato.com/",
       "icon": "https://b.zmtcdn.com/data/o2_assets/31e648cbaa2ca2fb5fbec1e76710f3821785325659.png",
+      "preview": {
+        "title": "GitHub - Zomato/mcp-server-manifest",
+        "description": "Contribute to Zomato/mcp-server-manifest development by creating an account on GitHub.",
+        "image": "https://avatars.githubusercontent.com/u/1112143?s=400&v=4"
+      },
       "role": "Runs an MCP server for AI food ordering and is a Google AI Mode restaurant booking partner.",
       "markets": [
         "IN"
@@ -725,6 +773,11 @@
       "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
       "homepage": "https://www.booking.com/",
       "icon": null,
+      "preview": {
+        "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+        "description": "Today, Booking.com has unveiled a range of new AI-driven innovations bringing customers a faster, more seamless car rental experience - just in time for the peak travel and road trip season. Rental cars will soon hit the open road en masse, with 1 in 4 (26%) planning to take a r…",
+        "image": "https://content.presspage.com/uploads/685/05339dcf-027e-4a5f-896e-5139b0bd9ae7/cf1920_carhireinsuranceatbooking.jpg?16716"
+      },
       "role": "Runs a hotel search app inside ChatGPT and is a hotel partner for Google AI Mode checkout.",
       "markets": [
         "US",
@@ -746,6 +799,11 @@
       "url": "https://skift.com/2025/10/06/expedia-booking-chatgpt-apps-openai/",
       "homepage": "https://www.expediagroup.com/",
       "icon": "https://www.expediagroup.com/favicon.ico",
+      "preview": {
+        "title": "ChatGPT Travel Apps Are Now a Thing – Starting with Booking.com and Expedia",
+        "description": "OpenAI announced its plan to evolve ChatGPT into a developer-friendly environment where third parties can build and launch AI apps.",
+        "image": "https://skift.com/wp-content/uploads/2025/02/AdobeStock_580896365_Editorial_Use_Only.jpg?resize=1024,683"
+      },
       "role": "Runs a travel app inside ChatGPT and is a hotel partner (Expedia, Hotels.com) for Google AI Mode checkout.",
       "markets": [
         "US",
@@ -763,6 +821,11 @@
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "homepage": "https://www.marriott.com/",
       "icon": "https://www.marriott.com/favicon.ico",
+      "preview": {
+        "title": "3 new ways to plan and book travel in Search",
+        "description": "Book hotels and track airfares, plus view miles and rewards with AI Mode in Google Search.",
+        "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Search_Travel_Blog_Hero_8.27.width-1300.png"
+      },
       "role": "Hotel partner whose rooms US users can book inside Google AI Mode.",
       "markets": [
         "US"
@@ -777,6 +840,11 @@
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "homepage": "https://www.hilton.com/",
       "icon": null,
+      "preview": {
+        "title": "3 new ways to plan and book travel in Search",
+        "description": "Book hotels and track airfares, plus view miles and rewards with AI Mode in Google Search.",
+        "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Search_Travel_Blog_Hero_8.27.width-1300.png"
+      },
       "role": "Hotel partner whose rooms US users can book inside Google AI Mode.",
       "markets": [
         "US"
@@ -791,6 +859,11 @@
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "homepage": "https://www.trip.com/",
       "icon": "https://www.trip.com/favicon.ico",
+      "preview": {
+        "title": "3 new ways to plan and book travel in Search",
+        "description": "Book hotels and track airfares, plus view miles and rewards with AI Mode in Google Search.",
+        "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Search_Travel_Blog_Hero_8.27.width-1300.png"
+      },
       "role": "Booking partner for hotel checkout inside Google AI Mode in the US.",
       "markets": [
         "US"
@@ -805,6 +878,11 @@
       "url": "https://deeparrival.com/news/eurostar-chatgpt-app-august-2026/",
       "homepage": "https://www.eurostar.com/",
       "icon": "https://static.eurostar.com/ui/design-system/apple-touch-icon.png",
+      "preview": {
+        "title": "Eurostar Opens ChatGPT App for Train Search | Deep Arrival",
+        "description": "Eurostar launched an official ChatGPT app for schedule and fare search in the UK, Belgium, and the Netherlands, with booking still completed on eurostar.com.",
+        "image": "https://deeparrival.com/wp-content/uploads/2026/08/da-news-86eea8aafabc6374ccf0c8d9b6a00e06e3d6a767069be83b87073fda2b329b5d-3b8caf4fe47df377.jpg"
+      },
       "role": "Runs a ChatGPT app that finds trains and fares and hands off to eurostar.com to book.",
       "markets": [
         "GB"
@@ -819,6 +897,7 @@
       "url": "https://www.businesswire.com/news/home/20251217400178/en/DoorDash-Launches-Grocery-Shopping-App-Within-ChatGPT",
       "homepage": "https://www.doordash.com/",
       "icon": null,
+      "preview": null,
       "role": "Runs a ChatGPT app that builds grocery carts from US retailers for checkout.",
       "markets": [
         "US"
@@ -833,6 +912,11 @@
       "url": "https://techcrunch.com/2025/12/29/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others",
       "homepage": "https://www.uber.com/",
       "icon": "https://www.uber.com/favicon.ico",
+      "preview": {
+        "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others | TechCrunch",
+        "description": "Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.",
+        "image": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2195918462.jpg?w=1024"
+      },
       "role": "Runs Uber and Uber Eats apps inside ChatGPT that plan rides and meal orders and hand off to the Uber apps to pay; US only.",
       "markets": [
         "US"
@@ -847,6 +931,11 @@
       "url": "https://canaltech.com.br/apps/ifood-lanca-agente-de-ia-que-permite-fazer-pedidos-pelo-whatsapp-veja-como-usar/",
       "homepage": "https://www.ifood.com.br/",
       "icon": null,
+      "preview": {
+        "title": "iFood lança agente de IA que permite fazer pedidos pelo WhatsApp; veja como usar",
+        "description": "iFood lança o Ailo, agente de IA generativa que te permite fazer pedidos pelo WhatsApp; veja como utilizar",
+        "image": "https://t.ctcdn.com.br/1Wt0YocsMAzRAR095QgsT0oaomk=/1200x675/smart/i1063131.png"
+      },
       "role": "Runs Ailo, a WhatsApp AI agent that builds a food order by chat and hands off to the iFood app to pay.",
       "markets": [
         "BR"
@@ -861,6 +950,11 @@
       "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
       "homepage": "https://www.rappi.com/",
       "icon": "https://www.rappi.cl/pwa-icons/192x192.png",
+      "preview": {
+        "title": "Rappi integrará asistente de IA en WhatsApp en Colombia",
+        "description": "Rappi anunció el desarrollo de un asistente conversacional de inteligencia artificial que funcionará dentro de WhatsApp.",
+        "image": "https://mobiletime.la/wp-content/uploads/2025/01/bordado-delivery6RD.jpg"
+      },
       "role": "Announced a WhatsApp AI assistant and voice-note ordering for Colombia.",
       "markets": [
         "CO"
@@ -875,6 +969,11 @@
       "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
       "homepage": "https://www.justeattakeaway.com/",
       "icon": "https://s205.q4cdn.com/266311280/files/favicon.ico",
+      "preview": {
+        "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe to make discovering your next order as easy as having a…",
+        "description": "The AI Voice Assistant is designed for those indecisive moments, helping customers discover their next order through natural conversation.",
+        "image": "https://d21buns5ku92am.cloudfront.net/69466/images/693538-396A8110-5dbac7-large-1786357134.jpg"
+      },
       "role": "Runs an AI assistant in the Just Eat and Lieferando apps that takes food orders by voice or text and fills the basket for checkout.",
       "markets": [
         "GB",

@@ -409,6 +409,11 @@
       "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
       "homepage": "https://about.meta.com/",
       "icon": null,
+      "preview": {
+        "title": "Be There for Every Customer With Meta Business Agent",
+        "description": "Meta Business Agent is AI that lets every business show up for every customer, as if they had an infinite team behind them.",
+        "image": "https://about.fb.com/wp-content/uploads/2026/06/Newsroom-post-title-here_Header.jpg?w=1200"
+      },
       "role": "Meta Business Agent answers customers, recommends products and closes sales in chat, and WhatsApp's Payments API takes payments in chat in Brazil and India.",
       "markets": [
         "US",
@@ -431,6 +436,11 @@
       "url": "https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/",
       "homepage": "https://www.google.com/",
       "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "preview": {
+        "title": "New tech and tools for retailers to succeed in an agentic shopping era",
+        "description": "An overview of Google’s new open standard for agentic commerce and AI tools to help retailers connect with shoppers and drive sales.",
+        "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GeminiinRetailJan26_Social.width-1300.png"
+      },
       "role": "Business Agent lets shoppers chat with a retailer's AI sales associate inside Google Search.",
       "markets": [
         "US"
@@ -445,6 +455,11 @@
       "url": "https://360dialog.com",
       "homepage": "https://360dialog.com/",
       "icon": "https://framerusercontent.com/images/jCsm2IXNOOfEvUqkW8uqby4EsJk.png",
+      "preview": {
+        "title": "WhatsApp Business Solutions Platform | 360Dialog",
+        "description": "Get access to WhatsApp Business API, marketing tools, and automation solutions from a single official Meta partner. Join 100,000 onboarded businesses.",
+        "image": "https://framerusercontent.com/assets/t3ELN7eRqVUEWAur35U4YNOszNs.png"
+      },
       "role": "WhatsApp Business Solution Provider that deploys Meta Business Agent and the Brazil Payments API for businesses.",
       "markets": [
         "US",
@@ -467,6 +482,11 @@
       "url": "https://www.blip.ai",
       "homepage": "https://www.blip.ai/",
       "icon": "https://www.blip.ai/wp-content/uploads/2023/06/Favicon.svg",
+      "preview": {
+        "title": "Blip: Inteligência Conversacional para resultado de negócio",
+        "description": "Conversas que geram resultado. Descubra como marcas enterprise transformam cada interação em crescimento com a Blip.",
+        "image": "https://www.blip.ai/wp-content/uploads/2023/06/Blip_ThumbGeral_PT-1.png"
+      },
       "role": "Conversational platform that lets enterprises run AI sales and support agents on WhatsApp and other chat apps.",
       "markets": [
         "BR"
@@ -481,6 +501,11 @@
       "url": "https://zenvia.com/",
       "homepage": "https://zenvia.com/",
       "icon": "https://zenvia.com/favicon.png",
+      "preview": {
+        "title": "Zenvia | Plataforma de comunicação",
+        "description": "Conheça a Zenvia Customer Cloud, a solução de IA completa para vender mais e atender melhor sua base de clientes via WhatsApp e multicanal.",
+        "image": "https://zenvia.com/wp-content/uploads/2022/12/zenvia.jpg"
+      },
       "role": "Customer cloud that runs AI agents to sell and support customers over WhatsApp and other channels.",
       "markets": [
         "BR"
@@ -495,6 +520,11 @@
       "url": "https://www.yalo.ai/",
       "homepage": "https://www.yalo.ai/",
       "icon": "https://cdn.prod.website-files.com/6864212f89b49a1b6c4568db/686c375c802b0228dca4c912_256x256.png",
+      "preview": {
+        "title": "Yalo | Plataforma de ventas inteligente con agentes",
+        "description": "Yalo ayuda a grandes empresas a mejorar la relación con sus clientes y aumentar las ventas de forma omnicanal.",
+        "image": "https://cdn.prod.website-files.com/6864212f89b49a1b6c4568db/687f481b47591da6ffa6c6c4_main-687f4809acc9b.webp"
+      },
       "role": "Sales platform that runs AI agents for consumer brands on WhatsApp across Latin America.",
       "markets": [
         "MX",
@@ -510,6 +540,11 @@
       "url": "https://treble.ai/",
       "homepage": "https://treble.ai/",
       "icon": "https://treble.ai/wp-content/uploads/2026/02/Frame-1171275166-300x300.png",
+      "preview": {
+        "title": "La mejor plataforma de IA para WhatsApp | treble.ai",
+        "description": "Conoce Treble.ai, la mejor solución de IA para WhatsApp adaptada a cualquier empresa. Llega a más clientes con WhatsApp automatizado.",
+        "image": null
+      },
       "role": "AI platform for WhatsApp that automates sales and support conversations for Latin American companies.",
       "markets": [
         "CO",
@@ -525,6 +560,11 @@
       "url": "https://www.gupshup.ai/",
       "homepage": "https://www.gupshup.ai/",
       "icon": "https://www.gupshup.ai/apple-icon-57x57.png",
+      "preview": {
+        "title": "Gupshup.ai | Autonomous AI Agents for Sales, Marketing & Customer Support",
+        "description": "Deploy secure, scalable AI Agents with enterprise-ready infrastructure. Gupshup powers billions of customer conversations across channels and industries.",
+        "image": null
+      },
       "role": "Platform for building and running AI agents on WhatsApp and other messaging channels, with a large base in India.",
       "markets": [
         "IN"
@@ -539,6 +579,11 @@
       "url": "https://core.telegram.org/bots/payments",
       "homepage": "https://telegram.org/",
       "icon": "https://telegram.org/img/apple-touch-icon.png",
+      "preview": {
+        "title": "Bot Payments API",
+        "description": "Telegram Bot Payments are a free and open platform that allows sellers to accept payments for goods and services from Telegram…",
+        "image": null
+      },
       "role": "Bot Payments API lets bots take payments inside the chat through providers such as Stripe, with no Telegram commission.",
       "markets": [
         "US",
@@ -560,6 +605,11 @@
       "url": "https://stripe.com/global",
       "homepage": "https://stripe.com/",
       "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+      "preview": {
+        "title": "Stripe global availability",
+        "description": "Once Stripe is supported in your country, you’ll be able to accept payments from customers anywhere in the world.",
+        "image": null
+      },
       "role": "Payment provider behind Telegram bot payments for businesses in its supported countries.",
       "markets": [
         "US",
@@ -578,6 +628,7 @@
       "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg",
       "homepage": "https://razorpay.com/",
       "icon": null,
+      "preview": null,
       "role": "One of the payment gateways that let Indian businesses take UPI and card payments inside WhatsApp chats.",
       "markets": [
         "IN"
@@ -592,6 +643,11 @@
       "url": "https://payu.in",
       "homepage": "https://payu.in/",
       "icon": "https://payu.in/favicon.ico",
+      "preview": {
+        "title": "PayU - Best Digital Payment Solutions for Businesses | 150+ Payment Methods",
+        "description": "PayU enables businesses in India to accept digital payments from credit cards, debit cards, net banking, BNPL, QR, UPI, Wallets and more.",
+        "image": null
+      },
       "role": "One of the payment gateways that let Indian businesses take payments inside WhatsApp chats.",
       "markets": [
         "IN"

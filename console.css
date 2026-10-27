@@ -189,6 +189,12 @@
 /* logos sit on a light tile, so dark marks stay visible on the dark page; the monogram is the fallback */
 .logo { flex: none; width: 22px; height: 22px; padding: 2px; border-radius: 6px; background: var(--ink); object-fit: contain; }
 .logo.mono { display: grid; place-items: center; padding: 0; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line-strong); color: var(--ink-2); font: 500 11px/1 var(--mono); }
+/* website preview card, on hover or keyboard focus of a company or repo name (app.js wirePreview) */
+.web-tip { width: 300px; max-width: calc(100vw - 16px); padding: 0; overflow: hidden; }
+.web-tip img { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: cover; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+.web-tip div { padding: 10px 12px 12px; }
+.web-tip p { display: -webkit-box; margin: 0 0 8px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.web-tip span { font: 500 10.5px/1 var(--mono); letter-spacing: 0.08em; color: var(--muted); }
 .co-cats { display: flex; flex-wrap: wrap; gap: 0 10px; margin-top: 3px; font: 400 10.5px/1.5 var(--mono); color: var(--muted); }
 .companies td:nth-child(2) { font: 500 11.5px/1.7 var(--mono); color: var(--ink-2); }
 .co-roles { max-width: 56ch; margin: 0; line-height: 1.45; color: var(--ink-2); }

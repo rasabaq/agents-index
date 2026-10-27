@@ -39,6 +39,7 @@ function init() {
   wire();
   wireTooltip();
   wireLogos();
+  wirePreview();
 }
 
 const hashCountry = () => {
@@ -250,7 +251,7 @@ function renderCompanies() {
     <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
     <tbody>${rows.map((c) => `
       <tr>
-        <th scope="row"><a class="co-name" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a><span class="co-cats">${c.categories.map((id) => `<span>${esc(shortName(id))}</span>`).join('')}</span></th>
+        <th scope="row"><a class="co-name" href="${esc(c.url)}" data-web="co" data-key="${esc(c.name)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a><span class="co-cats">${c.categories.map((id) => `<span>${esc(shortName(id))}</span>`).join('')}</span></th>
         <td class="nowrap">${flag(c.hq)}${esc(c.hq)}</td>
         <td><p class="co-roles" title="${esc(c.roles.join(' '))}">${esc(c.roles.join(' '))}</p></td>
         <td class="markets"><span class="sr-only">${c.markets.map((m) => byCode[m]?.name ?? m).join(', ')}</span>${ranking.map((r) => `<i class="${c.markets.includes(r.code) ? 'on' : ''}" title="${esc(r.name)}" aria-hidden="true">${r.code}</i>`).join('')}</td>
@@ -283,7 +284,7 @@ function renderRepos() {
     <thead><tr><th scope="col">Repo</th><th scope="col">What it lets agents do</th><th scope="col">Real use</th><th scope="col" class="num">Installs a month</th><th scope="col" class="num">Docker pulls</th><th scope="col" class="num">Stars</th><th scope="col" class="num">Last commit</th></tr></thead>
     <tbody>${rows.map((r) => `
       <tr>
-        <th scope="row"><a class="co-name" href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener noreferrer">${logo(`https://github.com/${r.repo.split('/')[0]}.png?size=64`, r.name)}<span>${r.origin ? flag(r.origin) : ''}${esc(r.name)}</span></a><span class="co-cats"><span>${r.repo.split('/').map((x) => `<span class="nowrap">${esc(x)}</span>`).join('/<wbr>')}</span><span>${esc(shortName(r.category))}</span></span></th>
+        <th scope="row"><a class="co-name" href="https://github.com/${esc(r.repo)}" data-web="repo" data-key="${esc(r.repo)}" target="_blank" rel="noopener noreferrer">${logo(`https://github.com/${r.repo.split('/')[0]}.png?size=64`, r.name)}<span>${r.origin ? flag(r.origin) : ''}${esc(r.name)}</span></a><span class="co-cats"><span>${r.repo.split('/').map((x) => `<span class="nowrap">${esc(x)}</span>`).join('/<wbr>')}</span><span>${esc(shortName(r.category))}</span></span></th>
         <td><p class="co-roles">${esc(r.role)}</p></td>
         <td><span class="chip u-${r.use}" title="${esc(REPO_USE[r.use].hint)}">${REPO_USE[r.use].label}</span></td>
         ${count(r.usage.downloadsMonth, 'Installs')}${count(r.usage.dockerPulls, 'Pulls')}${count(r.usage.stars, 'Stars')}
@@ -386,6 +387,59 @@ function wireLogos() {
   document.addEventListener('error', (e) => {
     if (e.target instanceof HTMLImageElement && e.target.classList.contains('logo')) e.target.outerHTML = monogram(e.target.dataset.name);
   }, true);
+}
+
+// A preview card for company and repo links, on mouse hover or keyboard focus. Touch screens get none: the link just
+// opens. Everything in it comes from the data (refresh-sites, or GitHub's own preview image); nothing is fetched live.
+function wirePreview() {
+  const card = $('[data-web-tip]');
+  const canHover = matchMedia('(hover: hover) and (pointer: fine)');
+  const byName = Object.fromEntries(companies.map((c) => [c.name, c]));
+  const byRepo = Object.fromEntries(repos.map((r) => [r.repo, r]));
+  const content = (a) => {
+    if (a.dataset.web === 'repo') {
+      const r = byRepo[a.dataset.key];
+      return { image: `https://opengraph.githubassets.com/1/${r.repo}`, title: r.repo, description: r.role, url: `https://github.com/${r.repo}` };
+    }
+    const c = byName[a.dataset.key];
+    return { image: c.preview?.image, title: c.preview?.title ?? c.name, description: c.preview?.description ?? c.roles[0], url: c.url };
+  };
+  let current = null;
+  function show(a) {
+    const p = content(a);
+    current = a;
+    card.innerHTML = `${p.image ? `<img src="${esc(p.image)}" alt="" width="300" height="158" decoding="async">` : ''}
+      <div><strong>${esc(p.title)}</strong>${p.description ? `<p>${esc(p.description)}</p>` : ''}<span>${esc(new URL(p.url).hostname.replace(/^www\./, ''))}</span></div>`;
+    card.querySelector('img')?.addEventListener('error', (e) => e.target.remove());
+    card.hidden = false;
+    place();
+  }
+  // Below the link, or above it when there is no room; always inside the viewport.
+  function place() {
+    const r = current.getBoundingClientRect(), w = card.offsetWidth, h = card.offsetHeight;
+    card.style.left = `${Math.min(Math.max(8, r.left), innerWidth - w - 8)}px`;
+    card.style.top = `${r.bottom + 8 + h <= innerHeight - 8 ? r.bottom + 8 : Math.max(8, r.top - h - 8)}px`;
+  }
+  const hide = () => {
+    card.hidden = true;
+    current = null;
+  };
+  for (const host of [$('[data-companies]'), $('[data-repos]')]) {
+    host.addEventListener('pointerover', (e) => {
+      const a = e.target.closest('[data-web]');
+      if (a && a !== current && e.pointerType === 'mouse' && canHover.matches) show(a);
+    });
+    host.addEventListener('pointerout', (e) => current && !current.contains(e.relatedTarget) && hide());
+    host.addEventListener('focusin', (e) => {
+      const a = e.target.closest('[data-web]');
+      if (a?.matches(':focus-visible')) show(a);
+    });
+    host.addEventListener('focusout', hide);
+  }
+  // Capture catches scrolling inside the table panels too. Focusing a link scrolls it into view, so a card opened
+  // by the keyboard follows its link; a hover card closes.
+  document.addEventListener('scroll', () => current && (current === document.activeElement ? place() : hide()), { capture: true, passive: true });
+  addEventListener('keydown', (e) => e.key === 'Escape' && hide());
 }
 
 // Start last: the helpers above are consts and must exist before init runs.

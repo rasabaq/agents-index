@@ -853,6 +853,11 @@
       "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
       "homepage": "https://openai.com/",
       "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "preview": {
+        "title": "Using cloud browser in ChatGPT | OpenAI Help Center",
+        "description": "Let ChatGPT handle supported web tasks, including on websites where you sign in.",
+        "image": "https://help.openai.com/og-image.png"
+      },
       "role": "ChatGPT Work's cloud browser opens sites, clicks and fills forms for paid users; it replaced ChatGPT agent in August 2026.",
       "markets": [
         "US",
@@ -874,6 +879,11 @@
       "url": "https://claude.com/blog/claude-in-chrome-generally-available",
       "homepage": "https://www.anthropic.com/",
       "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+      "preview": {
+        "title": "Claude in Chrome is generally available | Claude by Anthropic",
+        "description": null,
+        "image": null
+      },
       "role": "Claude in Chrome reads pages and clicks, types and fills forms in the user's own browser on paid plans.",
       "markets": [
         "US",
@@ -895,6 +905,11 @@
       "url": "https://www.perplexity.ai/comet",
       "homepage": "https://www.perplexity.ai/",
       "icon": "https://www.perplexity.ai/favicon.svg",
+      "preview": {
+        "title": "Comet Browser: a Personal AI Assistant",
+        "description": "Comet browser by Perplexity is the AI browser that acts as a personal assistant. Automate tasks, research the web, organize your email, and more with Comet.",
+        "image": "https://framerusercontent.com/images/gIzwIp40XiQ2WjnJNpHRNJfZy0c.png"
+      },
       "role": "Comet is a free AI browser whose assistant acts on web pages for the user.",
       "markets": [
         "US",
@@ -916,6 +931,11 @@
       "url": "https://support.google.com/gemini/answer/13695044?hl=en",
       "homepage": "https://www.google.com/",
       "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "preview": {
+        "title": "Use & manage Connected Apps in Gemini - Computer - Gemini Apps Help",
+        "description": "Gemini Apps can connect to other apps to complete your request and give you more helpful responses. With your permission, Gemini can also help you take actions, like editing and managing your content",
+        "image": null
+      },
       "role": "Gemini connected apps act across Android and Google apps, Chrome auto browse acts on sites (US and India), and AI Mode phones businesses (US).",
       "markets": [
         "US",
@@ -939,6 +959,11 @@
       "url": "https://www.aboutamazon.com/news/devices/alexa-plus-available-free-prime-members-us",
       "homepage": "https://www.aboutamazon.com/",
       "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "preview": {
+        "title": "Alexa+ now available to everyone in the US—and free for Prime members",
+        "description": "Alexa+ is a Prime benefit, giving members a powerful AI assistant accessible by voice, browser, and the Alexa app for no additional cost.",
+        "image": "https://assets.aboutamazon.com/dims4/default/e7437a4/2147483647/strip/true/crop/2000x1000+0+24/resize/1200x600!/quality/90/?url=https%3A%2F%2Fassets.aboutamazon.com%2F4f%2F4c%2F8616b7a1401fafad101082e6c04d%2Falexa-prime-members-amazon-news-as-020426.png"
+      },
       "role": "Alexa+ orders, books and controls smart homes through voice and partner services.",
       "markets": [
         "US",
@@ -958,6 +983,11 @@
       "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
       "homepage": "https://www.apple.com/",
       "icon": "https://www.apple.com/favicon.ico",
+      "preview": {
+        "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+        "description": "Apple today released the next generation of Apple Intelligence.",
+        "image": "https://www.apple.com/newsroom/images/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/tile/Apple-Siri-AI-hero-video-lp.jpg.og.jpg?202610260224"
+      },
       "role": "Siri AI uses personal context and App Intents to act in apps like Messages and WhatsApp, in beta and outside the EU.",
       "markets": [
         "US",

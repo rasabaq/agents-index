@@ -84,6 +84,11 @@ export function validate(meta, categories) {
       if (!isUrl(co.homepage)) errors.push(`${where}: needs a homepage (its own site, used for its logo)`);
       if (co.icon === undefined) errors.push(`${where}: no icon yet; run npm run refresh-sites`);
       else if (co.icon !== null && !/^https:\/\//.test(co.icon)) errors.push(`${where}: icon must be an https URL, or null when the site has none`);
+      const p = co.preview;
+      if (p === undefined) errors.push(`${where}: no preview yet; run npm run refresh-sites`);
+      else if (p !== null && (typeof p.title !== 'string' || !p.title || (p.description !== null && typeof p.description !== 'string') || (p.image !== null && !/^https:\/\//.test(p.image ?? '')))) {
+        errors.push(`${where}: preview needs a title, a description or null, and an https image or null`);
+      }
       for (const m of co.markets ?? []) if (!codes.has(m)) errors.push(`${where}: unknown market "${m}"`);
       for (const c of co.capabilities ?? []) if (!capIds.has(c)) errors.push(`${where}: unknown capability "${c}"`);
     }

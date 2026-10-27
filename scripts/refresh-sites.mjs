@@ -1,6 +1,8 @@
-// Usage: node scripts/refresh-sites.mjs [category ...] — reads each company's homepage and stores the URL of its
-// icon in the data: apple-touch-icon first, then the largest icon link, then /favicon.ico. The URL must load as an
-// image. When nothing loads (or the site blocks scripts) it stores null and the page shows a monogram instead.
+// Usage: node scripts/refresh-sites.mjs [category ...] — for each company:
+// - icon: from its homepage, apple-touch-icon first, then the largest icon link, then /favicon.ico. The URL must load
+//   as an image. When nothing loads (or the site blocks scripts) it stores null and the page shows a monogram.
+// - preview: from the page its link opens (url), the og:image, title and description for the hover card. null when
+//   the page cannot be read; the card then falls back to the company's name and role.
 import { readFile, writeFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { get } from './http.mjs';
@@ -69,33 +71,69 @@ async function icon(homepage) {
 // A copy of obj with the extra fields placed right after `key`, so the data files stay easy to read.
 const after = (obj, key, extra) => Object.fromEntries(Object.entries(obj).filter(([k]) => !(k in extra)).flatMap((e) => (e[0] === key ? [e, ...Object.entries(extra)] : [e])));
 
+const metaTag = (html, ...keys) => {
+  const all = tags(html, 'meta');
+  for (const k of keys) {
+    const m = all.find((t) => (t.property ?? t.name)?.toLowerCase() === k && t.content?.trim());
+    if (m) return m.content.trim().replace(/\s+/g, ' ');
+  }
+  return null;
+};
+const clip = (s, n) => (s && s.length > n ? `${s.slice(0, n - 1).trimEnd()}…` : s);
+
+// Title, description and image URL for a preview card, from a page's head. The image is a candidate; main() checks it loads.
+export function readPreview(html, base) {
+  const title = metaTag(html, 'og:title', 'twitter:title') ?? decode(html.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1] ?? '').trim().replace(/\s+/g, ' ');
+  const image = metaTag(html, 'og:image:secure_url', 'og:image', 'twitter:image');
+  let src = null;
+  try {
+    src = image ? new URL(image, base).href : null;
+  } catch {}
+  return {
+    title: clip(title, 120) || null,
+    description: clip(metaTag(html, 'og:description', 'twitter:description', 'description'), 280),
+    image: src?.startsWith('https://') ? src : null,
+  };
+}
+
+async function preview(url) {
+  const res = await get(url, BROWSER);
+  const p = readPreview(await res.text(), res.url);
+  if (p.image) p.image = await firstImage([p.image]);
+  return p.title ? p : null;
+}
+
 async function main() {
   const file = (id) => new URL(`../data/${id}.json`, import.meta.url);
   const meta = JSON.parse(await readFile(file('meta'), 'utf8'));
   const ids = process.argv.slice(2).length ? process.argv.slice(2) : meta.categories.map((c) => c.id);
-  const cache = new Map(); // homepage -> Promise of an icon URL, so a company listed in several files is read once
+  const cache = new Map(); // URL -> Promise of its result, so a page shared by several entries is read once
   const problems = [];
-  const lookup = (homepage) => {
-    if (!cache.has(homepage)) {
-      cache.set(homepage, icon(homepage).catch((err) => {
-        problems.push(`${homepage}: ${err.message}`);
+  const lookup = (kind, read, url) => {
+    if (!cache.has(`${kind} ${url}`)) {
+      cache.set(`${kind} ${url}`, read(url).catch((err) => {
+        problems.push(`${kind} ${url}: ${err.message}`);
         return null;
       }));
     }
-    return cache.get(homepage);
+    return cache.get(`${kind} ${url}`);
   };
   for (const id of ids) {
     const data = JSON.parse(await readFile(file(id), 'utf8'));
     const queue = [...(data.companies ?? []).keys()];
     await Promise.all(Array.from({ length: 6 }, async () => {
-      for (let i; (i = queue.shift()) !== undefined; ) data.companies[i] = after(data.companies[i], 'homepage', { icon: await lookup(data.companies[i].homepage) });
+      for (let i; (i = queue.shift()) !== undefined; ) {
+        const co = data.companies[i];
+        data.companies[i] = after(co, 'homepage', { icon: await lookup('icon', icon, co.homepage), preview: await lookup('preview', preview, co.url) });
+      }
     }));
     await writeFile(file(id), `${JSON.stringify(data, null, 2)}\n`);
     const n = data.companies?.length ?? 0;
-    console.log(`${id}: ${n - (data.companies ?? []).filter((c) => !c.icon).length} of ${n} companies have an icon`);
+    const has = (k) => (data.companies ?? []).filter((c) => c[k]).length;
+    console.log(`${id}: ${n} companies, ${has('icon')} with an icon, ${has('preview')} with a preview`);
   }
   // A blocked homepage is not an error: the company keeps a monogram. List them so a person can check.
-  if (problems.length) console.log(`Could not read ${problems.length} homepage(s):\n- ${problems.join('\n- ')}`);
+  if (problems.length) console.log(`Could not read ${problems.length} page(s):\n- ${problems.join('\n- ')}`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main();

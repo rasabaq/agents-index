@@ -522,6 +522,7 @@
       "url": "https://developer.visa.com/capabilities/visa-intelligent-commerce",
       "homepage": "https://www.visa.com/",
       "icon": "https://www.visa.cl/content/dam/VCOM/Brand/favicon.ico",
+      "preview": null,
       "role": "Visa Intelligent Commerce gives agents tokenized Visa credentials with passkey checks so they can buy for cardholders.",
       "markets": [
         "US",
@@ -541,6 +542,7 @@
       "url": "https://www.mastercard.com/us/en/news-and-trends/stories/2025/agentic-commerce-momentum.html",
       "homepage": "https://www.mastercard.com/",
       "icon": null,
+      "preview": null,
       "role": "Mastercard Agent Pay issues agentic tokens so registered agents can pay with a cardholder's Mastercard.",
       "markets": [
         "US",
@@ -561,6 +563,11 @@
       "url": "https://www.americanexpress.com/en-us/company/agentic-commerce/",
       "homepage": "https://www.americanexpress.com/",
       "icon": "https://www.americanexpress.com/favicon.ico",
+      "preview": {
+        "title": "Agentic Commerce Experiences | American Express",
+        "description": "Discover how American Express is powering agentic commerce. Explore the capabilities for developers and our vision for Merchants and Card Members.",
+        "image": null
+      },
       "role": "The Amex ACE developer kit lets cardmembers approve agents to buy with their card, with agent purchase protection.",
       "markets": [
         "US"
@@ -575,6 +582,11 @@
       "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
       "homepage": "https://www.santander.com/",
       "icon": "https://www.santander.com/content/dam/santander-com/resources/favicon/apple-touch-icon.png",
+      "preview": {
+        "title": "Santander and Visa Deliver Latin America’s First End-to-End Payments Powered by AI Agents",
+        "description": "Powered by Visa Intelligent Commerce, this milestone demonstrates secure, AI assisted transactions and establishes a scalable foundation for agentic commerce adoption across the region",
+        "image": "https://www.santander.com/content/dam/santander-com/es/contenido-paginas/sala-de-comunicaci%C3%B3n/imagenes/im-np-2020-01-29-resultados-2019-viajera.jpg.transform/rendition-sm/image.jpg"
+      },
       "role": "Issued the cards used in Visa Intelligent Commerce agent pilot purchases in Latin America.",
       "markets": [
         "BR",
@@ -591,6 +603,11 @@
       "url": "https://docs.stripe.com/agentic-commerce",
       "homepage": "https://stripe.com/",
       "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+      "preview": {
+        "title": "Agentic commerce",
+        "description": "Enable commerce between buyers and sellers through agents.",
+        "image": null
+      },
       "role": "Shared payment tokens and Link Agent Wallet let agents pay sellers with a customer's saved payment method.",
       "markets": [
         "US",
@@ -608,6 +625,11 @@
       "url": "https://paypal.ai/",
       "homepage": "https://www.paypal.com/",
       "icon": "https://www.paypalobjects.com/marketing/web/icons/monogram/pp64.png",
+      "preview": {
+        "title": "Agentic Commerce Solutions for Businesses | PayPal CL",
+        "description": "Unlock the future of AI commerce with PayPal. Use Store Sync & Agent Ready to sell across AI experiences and turn checkouts into conversions.",
+        "image": "https://www.paypalobjects.com/marketing/web26/us/agentic-ai/paypal.ai/mkt-us-page-agentic-ai-component-meta-new-size-all.jpg"
+      },
       "role": "PayPal agentic commerce services power checkout inside Perplexity and Microsoft Copilot.",
       "markets": [
         "US"
@@ -622,6 +644,11 @@
       "url": "https://www.mercadopago.com.br/assistente-pessoal",
       "homepage": "https://www.mercadopago.com.br/",
       "icon": "https://http2.mlstatic.com/frontend-assets/mp-web-navigation/ui-navigation/7.8.2/mercadopago/favicon.svg",
+      "preview": {
+        "title": "Mago: a inteligência financeira do Mercado Pago",
+        "description": "Cuide do seu dinheiro de forma inteligente com o agente de IA do Mercado Pago. Crie lembretes, movimente seu dinheiro e tome a melhor decisão sobre suas finanças.",
+        "image": "https://http2.mlstatic.com/storage/mobile-on-demand-resources/image/og-image-mlb_xxhdpi?updatedAt=0"
+      },
       "role": "The Mago AI agent makes payments and transfers (including Pix in Brazil) for users after they confirm.",
       "markets": [
         "BR",
@@ -638,7 +665,12 @@
       "hq": "BR",
       "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
       "homepage": "https://nubank.com.br/",
-      "icon": "https://nubank.com.br/favicon.ico",
+      "icon": "https://www.datocms-assets.com/120597/1741817368-favicon.ico?auto=format&h=192&w=192",
+      "preview": {
+        "title": "Pix com Inteligência Artificial agora no App e WhatsApp do Nu",
+        "description": "Em testes desde agosto deste ano, mais clientes contarão com novas experiências ao usar o meio de pagamento pelo aplicativo ou pelo WhatsApp, podendo transacionar valores com mensagens de voz, texto ou imagem",
+        "image": "https://nu.com/media/2024/05/1-1-150x150.png?crop=1"
+      },
       "role": "Its AI assistant sends Pix from voice or text in the app and on WhatsApp.",
       "markets": [
         "BR"
@@ -654,6 +686,11 @@
       "url": "https://iniciador.com.br/en/conteudos/iniciador-anuncia-pagamentos-agenticos-full-stack-ai-toolkit",
       "homepage": "https://iniciador.com.br/",
       "icon": "https://iniciador.com.br/apple-icon.png?apple-icon.0rxpxrel559y3.png",
+      "preview": {
+        "title": "Iniciador launches Brazil's first agentic payments MCP on Pix",
+        "description": "The launch puts Brazil's instant payment rail in the global race for AI agent infrastructure — and positions Iniciador as the strategic tech partner for banks and fintechs.",
+        "image": "https://iniciador.com.br/static/images/posts/launch-2026-05-19.png"
+      },
       "role": "Its MCP server lets AI agents propose Pix payments that the user approves with biometrics.",
       "markets": [
         "BR"
@@ -668,6 +705,11 @@
       "url": "https://www.bcb.gov.br/estabilidadefinanceira/pix",
       "homepage": "https://www.bcb.gov.br/",
       "icon": "https://www.bcb.gov.br/favicon.ico",
+      "preview": {
+        "title": "Banco Central do Brasil",
+        "description": "O Banco Central do Brasil tem o objetivo fundamental de assegurar a estabilidade de preços, zelar pela estabilidade do sistema financeiro, suavizar as flutuações do nível de atividade econômica e fomentar o pleno emprego.",
+        "image": "https://www.bcb.gov.br/assets/img/bc_marca_bg.png"
+      },
       "role": "Runs Pix, the instant rail that Brazilian AI assistants use to send payments.",
       "markets": [
         "BR"
@@ -682,6 +724,11 @@
       "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
       "homepage": "https://tpaga.co/",
       "icon": "https://tpaga.co/favicon.ico?favicon.0ng_vlz0rr_rq.ico",
+      "preview": {
+        "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
+        "description": "El agente entiende lenguaje natural, con lo cual el usuario puede escribir y mandar una nota de voz para ordenar pagos de recibos o a otras personas",
+        "image": "https://img.lalr.co/cms/2024/02/08114817/Tpaga.jpg?size=xl&ratio=r40_21&f=jpg"
+      },
       "role": "Its WhatsApp AI agent pays bills and sends money over Bre-B from text or voice notes.",
       "markets": [
         "CO"
@@ -697,6 +744,7 @@
       "url": "https://www.npci.org.in/",
       "homepage": "https://www.npci.org.in/",
       "icon": null,
+      "preview": null,
       "role": "Runs UPI and its Reserve Pay and Circle features that let users pre-authorise agent payments in the ChatGPT pilot.",
       "markets": [
         "IN"
@@ -711,6 +759,11 @@
       "url": "https://razorpay.com/newsroom/razorpay-npci-and-openai-come-together-to-launch-agentic-payments-ushering-in-ai-driven-commerce-at-national-scale/",
       "homepage": "https://razorpay.com/",
       "icon": null,
+      "preview": {
+        "title": "Razorpay, NPCI, and OpenAI Come Together to Launch Agentic Payments, Ushering in AI-Driven Commerce at National Scale -…",
+        "description": "INDIA, Mumbai – 9 October 2025: Artificial Intelligence is transforming how people discover, choose, and pay for products and services. Today, India takes a",
+        "image": "https://d6xcmfyh68wv8.cloudfront.net/newsroom-content/uploads/2025/10/Razorpay-NPCI-and-OpenAI-Come-Together-to-Launch-Agentic-Payments-1024x678.png"
+      },
       "role": "Runs the Agentic Payments beta that lets ChatGPT pay merchants over UPI, and processed Mastercard's Indian agent pilot.",
       "markets": [
         "IN"
@@ -727,6 +780,11 @@
       "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
       "homepage": "https://www.amazonpay.in/",
       "icon": "https://www.amazon.in/favicon.ico",
+      "preview": {
+        "title": "NPCI Says AI Shouldn’t Approve UPI Payments at GFF 2026",
+        "description": "NPCI director Ajay Kumar Choudhary says AI agents may recommend UPI payments, but authentication and final settlement must remain deterministic and auditable.",
+        "image": "https://www.medianama.com/wp-content/uploads/2016/05/NPCI-e1464601536174.jpg.jpg"
+      },
       "role": "Launched a consent-based Smart Wallet for agentic UPI payments.",
       "markets": [
         "IN"
@@ -742,6 +800,11 @@
       "url": "https://startupfeed.in/gff-2026-agentic-ai-fintech-product-launches/",
       "homepage": "https://www.pinelabs.com/",
       "icon": "https://www.pinelabs.com/favicon.ico",
+      "preview": {
+        "title": "GFF 2026: Agentic AI Leads India's Fintech Launches",
+        "description": "BharatPe, PhonePe, Pine Labs and NPCI unveiled agentic AI and cardless payment tools at GFF 2026 in Mumbai. Here is what each of them launched.",
+        "image": "https://startupfeed.in/wp-content/uploads/2026/09/gff-2026-fintech-launches-agentic-ai-cardless-payments-1536x864.jpg"
+      },
       "role": "Its agentic commerce stack lets AI agents complete purchases within user-set limits.",
       "markets": [
         "IN"

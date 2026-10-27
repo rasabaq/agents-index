@@ -1,9 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validate } from '../src/observatory.js';
-import { iconCandidates } from '../scripts/refresh-sites.mjs';
+import { iconCandidates, readPreview } from '../scripts/refresh-sites.mjs';
 
-const company = (over) => ({ name: 'Co', role: 'r', url: 'https://example.com/news', homepage: 'https://co.example/', icon: null, markets: [], capabilities: [], ...over });
+const company = (over) => ({ name: 'Co', role: 'r', url: 'https://example.com/news', homepage: 'https://co.example/', icon: null, preview: null, markets: [], capabilities: [], ...over });
 const check = (co) => validate({ countries: [], categories: [{ id: 'a' }] }, [{ category: 'a', capabilities: [{ id: 'a.x', name: 'x', question: 'q?', countries: {} }], companies: [co] }]).join('\n');
 
 test('validate checks company homepages and icons', () => {
@@ -12,6 +12,20 @@ test('validate checks company homepages and icons', () => {
   assert.match(check(company({ homepage: undefined })), /needs a homepage/);
   assert.match(check(company({ icon: undefined })), /no icon yet; run npm run refresh-sites/);
   assert.match(check(company({ icon: 'http://co.example/icon.png' })), /icon must be an https URL/);
+});
+
+test('validate checks company previews', () => {
+  assert.equal(check(company({ preview: { title: 'T', description: null, image: 'https://co.example/og.png' } })), '');
+  assert.match(check(company({ preview: undefined })), /no preview yet/);
+  assert.match(check(company({ preview: { title: '', description: null, image: null } })), /preview needs a title/);
+  assert.match(check(company({ preview: { title: 'T', description: null, image: 'http://co.example/og.png' } })), /preview needs a title/);
+});
+
+test('preview reads og tags first, then the title and meta description', () => {
+  const page = `<head><title>Fallback</title><meta name="description" content="Plain &amp; short">
+    <meta property="og:title" content="Agent checkout"><meta property="og:image" content="/og.png"></head>`;
+  assert.deepEqual(readPreview(page, 'https://co.example/news/1'), { title: 'Agent checkout', description: 'Plain & short', image: 'https://co.example/og.png' });
+  assert.deepEqual(readPreview('<title>Only</title>', 'https://co.example/'), { title: 'Only', description: null, image: null });
 });
 
 test('icon candidates: apple-touch-icon, then the largest icon, then /favicon.ico; https only', () => {

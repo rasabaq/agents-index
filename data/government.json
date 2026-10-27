@@ -497,6 +497,7 @@
       "url": "https://uidai.gov.in",
       "homepage": "https://www.uidai.gov.in/",
       "icon": "https://www.uidai.gov.in/favicon.ico",
+      "preview": null,
       "role": "Runs Aadhaar authentication and eKYC so approved apps can verify a person, and the Udai chatbot for Aadhaar tasks.",
       "markets": [
         "IN"
@@ -512,6 +513,11 @@
       "url": "https://www.digilocker.gov.in",
       "homepage": "https://www.digilocker.gov.in/",
       "icon": "https://cdn.digilocker.gov.in/digilocker-landing-page/assets/img/meta/apple-touch-icon.png",
+      "preview": {
+        "title": "DigiLocker | Access, Share & Verify Digital Documents",
+        "description": "Access, share and instantly verify trusted government-issued documents, certificates and digital records through DigiLocker.",
+        "image": "https://cdn.digilocker.gov.in/digilocker-landing-page/assets/img/meta/social-share-og.jpg"
+      },
       "role": "Runs DigiLocker and Meri Pehchaan so registered firms can fetch a user's government documents with consent.",
       "markets": [
         "IN"
@@ -526,6 +532,11 @@
       "url": "https://bhashini.gov.in",
       "homepage": "https://bhashini.gov.in/",
       "icon": "https://bhashini.gov.in/favicon.ico",
+      "preview": {
+        "title": "Bhashini",
+        "description": "BHASHINI aims to transcend language barriers, ensuring that every citizen can effortlessly access digital services in their own language.",
+        "image": null
+      },
       "role": "Provides translation and speech models that let government assistants such as Kisan e-Mitra work in Indian languages.",
       "markets": [
         "IN"
@@ -540,6 +551,11 @@
       "url": "https://www.wadhwaniai.org",
       "homepage": "https://www.wadhwaniai.org/",
       "icon": "https://www.wadhwaniai.org/wp-content/uploads/2025/09/cropped-Group-4-270x270-1.jpg",
+      "preview": {
+        "title": "Wadhwani AI - Transforming Lives Through Responsible AI",
+        "description": "Explore Wadhwani AI’s innovative AI solutions improving healthcare, farming, and public services to drive scalable and sustainable impact across India.",
+        "image": null
+      },
       "role": "Built the LLM upgrade of Kisan e-Mitra that answers farmer questions and handles grievances.",
       "markets": [
         "IN"
@@ -554,6 +570,11 @@
       "url": "https://www.gov.uk/government/organisations/government-digital-service",
       "homepage": "https://www.gov.uk/",
       "icon": "https://www.gov.uk/assets/frontend/govuk-icon-180-d45a306f0549414cfa5085f16e4a3816a77558b139e5bc226f23162d1d0decb0.png",
+      "preview": {
+        "title": "Government Digital Service",
+        "description": "We are the digital centre of government. We serve the public, central government departments and the wider public sector. GDS is part of the Department for Digital, Culture, Media and Sport .",
+        "image": "https://www.gov.uk/assets/collections/govuk-opengraph-image-4196a4d6333cf92aaf720047f56cfd91b3532d7635fc21ebcf0d5897df6b5f77.png"
+      },
       "role": "Runs GOV.UK One Login, GOV.UK Wallet and GOV.UK Chat in the GOV.UK app.",
       "markets": [
         "GB"
@@ -569,6 +590,11 @@
       "url": "https://www.anthropic.com",
       "homepage": "https://www.anthropic.com/",
       "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+      "preview": {
+        "title": "Home",
+        "description": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+        "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg"
+      },
       "role": "Supplies the Claude model behind GOV.UK Chat, according to Civil Service World.",
       "markets": [
         "GB"
@@ -583,6 +609,11 @@
       "url": "https://www.serpro.gov.br",
       "homepage": "https://www.serpro.gov.br/",
       "icon": "https://www.serpro.gov.br/favicon.ico",
+      "preview": {
+        "title": "Serpro",
+        "description": null,
+        "image": null
+      },
       "role": "Sells the Datavalid API that lets private apps check faces and personal data against official Brazilian records.",
       "markets": [
         "BR"
@@ -597,6 +628,11 @@
       "url": "https://www.gov.br/gestao/pt-br",
       "homepage": "https://www.gov.br/",
       "icon": "https://www.gov.br/++theme++padrao_govbr/favicons/apple-touch-icon.png",
+      "preview": {
+        "title": "Ministério da Gestão e da Inovação em Serviços Públicos",
+        "description": null,
+        "image": "https://www.gov.br/gestao/logo.png"
+      },
       "role": "Runs the gov.br login and builds Chat GOV.BR through the government AI centre.",
       "markets": [
         "BR"
@@ -612,6 +648,7 @@
       "url": "https://www.llave.gob.mx/",
       "homepage": "https://www.gob.mx/",
       "icon": null,
+      "preview": null,
       "role": "Runs Llave MX and the Ventanilla 24/7 AI agent on gob.mx.",
       "markets": [
         "MX"
@@ -627,6 +664,11 @@
       "url": "https://www.ine.mx",
       "homepage": "https://www.ine.mx/",
       "icon": "https://www.ine.mx/wp-content/uploads/2026/09/cropped-faviconI_NE_2026-180x180.png",
+      "preview": {
+        "title": "Instituto Nacional Electoral – INE - Instituto Nacional Electoral",
+        "description": "El Instituto Nacional Electoral organiza procesos electorales libres, equitativos y confiables para garantizar el ejercicio de los derechos electorales.",
+        "image": "https://portal.ine.mx/wp-content/uploads/2023/01/Credencial_votar-1.png"
+      },
       "role": "Runs the voter-credential data and face verification service that banks use to confirm identity.",
       "markets": [
         "MX"
@@ -641,6 +683,11 @@
       "url": "https://digital.gob.cl",
       "homepage": "https://digital.gob.cl/",
       "icon": "https://cms-dgd-prod.s3-us-west-2.amazonaws.com/static/favicon/apple-icon-57x57.png",
+      "preview": {
+        "title": "Transformación Digital del Estado al servicio de las personas",
+        "description": "La innovación, el uso estratégico de tecnologías y la colaboración, son nuestras herramientas para un Estado moderno y eficiente, que contribuya a una mejor calidad de vida de las personas.",
+        "image": "https://cms-dgd-prod.s3-us-west-2.amazonaws.com/static/img/logo-1000x1000.png"
+      },
       "role": "Runs ClaveÚnica and approves which private bodies may use it.",
       "markets": [
         "CL"
@@ -655,6 +702,11 @@
       "url": "https://www.chileatiende.gob.cl",
       "homepage": "https://www.chileatiende.gob.cl/",
       "icon": "https://www.chileatiende.gob.cl/images/favicon.ico",
+      "preview": {
+        "title": "ChileAtiende",
+        "description": "Encuentra información sobre beneficios y servicios del Estado. ¡Estamos para orientarte!",
+        "image": "https://www.chileatiende.gob.cl/images/og_chatiende.png"
+      },
       "role": "Runs the generative AI assistant that guides people on state trámites.",
       "markets": [
         "CL"
@@ -669,6 +721,11 @@
       "url": "https://www.registraduria.gov.co",
       "homepage": "https://www.registraduria.gov.co/",
       "icon": "https://www.registraduria.gov.co/IMG/favicon.png",
+      "preview": {
+        "title": "Registraduría Nacional del Estado Civil",
+        "description": "La Registraduría Nacional del Estado Civil es una entidad con autonomía administrativa, contractual y presupuestal, organizada de manera desconcentrada, que tiene a su cargo el registro de la vida civil e identificación de los colombianos y la realización de los procesos elector…",
+        "image": "https://www.registraduria.gov.co/IMG/jpg/og-rnec-1.jpg"
+      },
       "role": "Issues the Cédula Digital and lets certified operators check identities against its biometric database.",
       "markets": [
         "CO"
@@ -683,6 +740,11 @@
       "url": "https://www.certicamara.com",
       "homepage": "https://www.certicamara.com/",
       "icon": "https://web.certicamara.com/sites/default/files/Favicon.gif",
+      "preview": {
+        "title": "Certicámara — Firma digital, certificados SSL y seguridad de la información en Colombia",
+        "description": "Expertos en soluciones de certificación digital, firma electrónica y seguridad de la información en Colombia",
+        "image": "https://web.certicamara.com/img/logo_certicamara.png"
+      },
       "role": "Certified biometric operator that connects private firms to Registraduría identity checks.",
       "markets": [
         "CO"
@@ -696,7 +758,8 @@
       "hq": "CO",
       "url": "https://mintic.gov.co",
       "homepage": "https://www.mintic.gov.co/",
-      "icon": "https://www.mintic.gov.co/favicon.ico",
+      "icon": "https://mintic.gov.co/favicon.ico",
+      "preview": null,
       "role": "Runs the GOV.CO portal and its Robi assistant, plus the public-sector AI chatbot program.",
       "markets": [
         "CO"
@@ -711,6 +774,11 @@
       "url": "https://www.bundesdruckerei.de",
       "homepage": "https://www.bundesdruckerei.de/",
       "icon": "https://www.bundesdruckerei.de/themes/custom/bdr_bootstrap5/assets/img/touch-icons/group/group_desktopicon_120px.png",
+      "preview": {
+        "title": "Die Bundesdruckerei-Gruppe | Sicherheitslösungen \"Made in Germany\"",
+        "description": "Die Unternehmen der Bundesdruckerei-Gruppe sorgen mit ihren Dienstleistungen und Technologien für den Schutz digitaler Identitäten, sensibler Daten und IT-Infrastrukturen und schaffen so Vertrauen in der digitalen und analogen Welt.",
+        "image": null
+      },
       "role": "Provides authorization certificates and eID services so companies can accept the German Online-Ausweis.",
       "markets": [
         "DE"
@@ -725,6 +793,11 @@
       "url": "https://www.governikus.de",
       "homepage": "https://www.governikus.de/",
       "icon": "https://www.governikus.de/wp-content/uploads/2026/08/cropped-Governikus_Profil_Avatar-01-180x180.png",
+      "preview": {
+        "title": "Startseite",
+        "description": "Software für die digitale Verwaltung: Mit unseren Lösungen für die öffentliche Verwaltung legen wir die Basis für die digitale Transformation",
+        "image": "https://www.governikus.de/wp-content/uploads/2019/01/gebaeude-governikus.jpg"
+      },
       "role": "Runs eID services and the AusweisIDent identification service that plug the Online-Ausweis into private apps.",
       "markets": [
         "DE"
@@ -739,6 +812,11 @@
       "url": "https://login.gov",
       "homepage": "https://login.gov/",
       "icon": "https://login.gov/apple-touch-icon.png",
+      "preview": {
+        "title": "The public’s one account for government. | Login.gov",
+        "description": "Use one account and password for secure, private access to participating government agencies.",
+        "image": "https://login.gov/assets/img/login-gov-600x314.png"
+      },
       "role": "Runs Login.gov sign-in and identity proofing for US government services, now accepting mobile driver's licenses.",
       "markets": [
         "US"
@@ -753,6 +831,11 @@
       "url": "https://developers.google.com/wallet/identity/verify",
       "homepage": "https://www.google.com/",
       "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "preview": {
+        "title": "Genel bakış &nbsp;|&nbsp; Verify with Google Wallet &nbsp;|&nbsp; Google for Developers",
+        "description": "Google Cüzdan'daki kimliklerle ve dijital sürücü belgesiyle doğrulayın",
+        "image": "https://www.gstatic.com/devrel-devsite/prod/v5a0f9ff8b593048661361a49e11ab98a8b1ac025e19e60e6189f2b56796f8a43/developers/images/opengraph/google-blue.png"
+      },
       "role": "Lets businesses verify state-issued digital IDs and age from Google Wallet through the Digital Credentials API.",
       "markets": [
         "US"
@@ -767,6 +850,11 @@
       "url": "https://www.irs.gov",
       "homepage": "https://www.irs.gov/",
       "icon": "https://www.irs.gov/themes/custom/pup_base/favicon.ico",
+      "preview": {
+        "title": "Home | Internal Revenue Service",
+        "description": "Pay your taxes. Get your refund status. Find IRS forms and answers to tax questions. We help you understand and meet your federal tax responsibilities.",
+        "image": "https://www.irs.gov/pub/image/irs_logo.jpg"
+      },
       "role": "Runs AI voice and chat bots that answer tax questions and set up payment plans.",
       "markets": [
         "US"

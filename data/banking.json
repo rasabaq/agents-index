@@ -480,6 +480,11 @@
       "url": "https://plaid.com/",
       "homepage": "https://plaid.com/",
       "icon": "https://plaid.com/assets/img/favicons/apple-touch-icon.png",
+      "preview": {
+        "title": "Plaid: Enabling all companies to build fintech solutions",
+        "description": "Plaid helps all companies build fintech solutions by making it easy, safe and reliable for people to connect their financial data to apps and services.",
+        "image": "https://plaid.com/assets/img/plaid-social-card-landscape.jpg"
+      },
       "role": "Connects apps to bank accounts so agents can read balances and transactions and start bank payments.",
       "markets": [
         "US",
@@ -495,6 +500,11 @@
       "url": "https://truelayer.com/",
       "homepage": "https://truelayer.com/",
       "icon": "https://truelayer.com/icons/icon-48x48.png?v=5db58021c7b05029ddf717674d5b768e",
+      "preview": {
+        "title": "TrueLayer - Europe's leading open banking platform",
+        "description": "We power faster and safer online payments with our open banking payments network. Onboard users, accept payments & make payouts in seconds. Learn more today.",
+        "image": "https://truelayer.com/static/b68f10faa858a9f7f295692c8c8a18b7-b68f10faa858a9f7f295692c8c8a18b7.png"
+      },
       "role": "Open banking platform for account data, Pay by Bank and VRP payments.",
       "markets": [
         "GB",
@@ -510,6 +520,11 @@
       "url": "https://tink.com/",
       "homepage": "https://tink.com/",
       "icon": "https://tink.com/favicon.ico",
+      "preview": {
+        "title": "Tink | European open banking platform | 6000 connections",
+        "description": "Tink’s open banking platform lets you connect to over 6000 European banks and institutions, and get enriched and categorised financial data – through 1 API.",
+        "image": "https://images.ctfassets.net/c78bhj3obgck/7ddZROl3Xa9yeXmEqqEWAw/1f50d188175132f8847166c9cfdef0f8/Tink-a-Visa-solution-OG.png?h=630"
+      },
       "role": "Single API for PSD2 account data and payment initiation across European banks.",
       "markets": [
         "GB",
@@ -525,6 +540,11 @@
       "url": "https://belvo.com/",
       "homepage": "https://belvo.com/",
       "icon": "https://belvo.com/wp-content/uploads/2026/09/favicon-512x312-1-225x225.png",
+      "preview": {
+        "title": "Belvo | The leading open finance data and payments platform in Latin America",
+        "description": "Belvo enables financial innovators in Latin America to access and interpret financial data and make payments to build better services.",
+        "image": "https://belvo.com/wp-content/uploads/2026/02/featured-image-eng-scaled.png"
+      },
       "role": "Open finance data and bank payment APIs, including Pix Automático in Brazil.",
       "markets": [
         "MX",
@@ -540,6 +560,11 @@
       "url": "https://pluggy.ai/",
       "homepage": "https://pluggy.ai/",
       "icon": "https://www.pluggy.ai/images/logos/pluggy-icon.svg",
+      "preview": {
+        "title": "Pluggy · Infraestrutura de Open Finance para o Brasil",
+        "description": "APIs para conectar dados bancários, cobrar e movimentar dinheiro. De qualquer banco, para qualquer banco. Tudo.",
+        "image": "https://www.pluggy.ai/opengraph-image?8e0808c0f58c8037"
+      },
       "role": "Open Finance Brasil connector to over 220 institutions through one API.",
       "markets": [
         "BR"
@@ -554,6 +579,11 @@
       "url": "https://fintoc.com/",
       "homepage": "https://fintoc.com/",
       "icon": "https://www.fintoc.com/apple-icon.png?e6c5fcc567fc49c9",
+      "preview": {
+        "title": "Fintoc | Plataforma de Pagos y API para Empresas en Chile",
+        "description": "Sistema operativo de pagos para escalar tu negocio. Recibe pagos online, cobra suscripciones y optimiza con IA. +1200 empresas confían en Fintoc.",
+        "image": "https://9zjwe62qxerp8z8t.public.blob.vercel-storage.com/og/og-default.webp"
+      },
       "role": "Payment APIs for bank transfers and recurring billing ahead of Chile's open finance regime.",
       "markets": [
         "CL"
@@ -568,6 +598,11 @@
       "url": "https://setu.co/",
       "homepage": "https://setu.co/",
       "icon": "https://framerusercontent.com/images/mbFRne9qNTrOhiqc0h2DJuE0FDw.png",
+      "preview": {
+        "title": "Setu — UPI Payments, KYC & Credit Infrastructure APIs",
+        "description": "Identity verification, onboarding, Account Aggregator, UPI collections and Bharat Connect APIs—the infrastructure behind India’s digital economy.",
+        "image": "https://framerusercontent.com/images/pWCDocser8ypG8i5kF6whc4U.png"
+      },
       "role": "APIs to pull financial data through Account Aggregators and collect UPI payments.",
       "markets": [
         "IN"
@@ -582,6 +617,11 @@
       "url": "https://sahamati.org.in/sahamati-ecosystem-map/",
       "homepage": "https://sahamati.org.in/",
       "icon": "https://sahamati.org.in/wp-content/uploads/2025/11/cropped-Sahamati_Fav-Icon_32x32-1-180x180.png",
+      "preview": {
+        "title": "Ecosystem Map - Sahamati",
+        "description": "The Account Aggregator (AA) ecosystem is transforming how financial data is shared in India through secure, consent-based frameworks. Our ecosystem map",
+        "image": null
+      },
       "role": "Industry body and RBI-recognised SRO that runs the Account Aggregator registry and certification.",
       "markets": [
         "IN"
@@ -596,6 +636,7 @@
       "url": "https://www.npci.org.in/what-we-do/upi/product-overview",
       "homepage": "https://www.npci.org.in/",
       "icon": null,
+      "preview": null,
       "role": "Runs UPI, which lets third-party apps and voice tools start payments.",
       "markets": [
         "IN"
@@ -611,6 +652,11 @@
       "url": "https://www.bcb.gov.br/estabilidadefinanceira/openfinance",
       "homepage": "https://www.bcb.gov.br/",
       "icon": "https://www.bcb.gov.br/favicon.ico",
+      "preview": {
+        "title": "Banco Central do Brasil",
+        "description": "O Banco Central do Brasil tem o objetivo fundamental de assegurar a estabilidade de preços, zelar pela estabilidade do sistema financeiro, suavizar as flutuações do nível de atividade econômica e fomentar o pleno emprego.",
+        "image": "https://www.bcb.gov.br/assets/img/bc_marca_bg.png"
+      },
       "role": "Regulator that runs Open Finance Brasil and Pix, including payment initiation by ITPs.",
       "markets": [
         "BR"
@@ -625,6 +671,11 @@
       "url": "https://www.cmfchile.cl/portal/prensa/615/w3-article-100482.html",
       "homepage": "https://www.cmfchile.cl/",
       "icon": "https://www.cmfchile.cl/favicon.ico",
+      "preview": {
+        "title": "CMF pone en consulta pública modificaciones a la normativa que regula el Sistema de Finanzas Abiertas (SFA) - CMF Chile…",
+        "description": "Sitio web institucional de la Comisión para el Mercado Financiero (CMF).",
+        "image": "https://www.cmfchile.cl/portal/prensa/625/articles-100482_imagen_portada.thumb_landscape_md.webp?ts=1781810277"
+      },
       "role": "Regulator setting up Chile's Sistema de Finanzas Abiertas, due July 2027.",
       "markets": [
         "CL"
@@ -639,6 +690,11 @@
       "url": "https://www.superfinanciera.gov.co/publicaciones/10116156/sfc-trabaja-en-hitos-requeridos-para-implementar-modelo-de-finanzas-abiertas-obligatorias-cesar-ferrari/",
       "homepage": "https://www.superfinanciera.gov.co/",
       "icon": "https://www.superfinanciera.gov.co/info/superfinancierav8/web/portal/img/favicon.png",
+      "preview": {
+        "title": "SFC trabaja en hitos requeridos para implementar modelo de finanzas abiertas obligatorias: César Ferrari",
+        "description": "SFC trabaja en hitos requeridos para implementar modelo de finanzas abiertas obligatorias: César Ferrari",
+        "image": null
+      },
       "role": "Regulator writing the standards and participant directory for Colombia's mandatory open finance.",
       "markets": [
         "CO"
@@ -653,6 +709,7 @@
       "url": "https://www.consumerfinance.gov/compliance/compliance-resources/other-applicable-requirements/personal-financial-data-rights/",
       "homepage": "https://www.consumerfinance.gov/",
       "icon": "https://www.consumerfinance.gov/favicon.ico",
+      "preview": null,
       "role": "Regulator behind the stayed Section 1033 data rights rule now being rewritten.",
       "markets": [
         "US"
@@ -667,6 +724,11 @@
       "url": "https://info.bankofamerica.com/en/digital-banking/erica",
       "homepage": "https://www.bankofamerica.com/",
       "icon": "https://www.bankofamerica.com/homepage/spa-assets/images/assets-images-global-favicon-apple-touch-icon-CSX889b28c.png",
+      "preview": {
+        "title": "Erica® - Virtual Financial Assistant | Bank of America",
+        "description": "Stay on top of your finances with Erica®, your virtual financial assistant in the Bank of America Mobile Banking app. See how Erica can help.",
+        "image": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/Logos/en_US/logos/colored_flagscape-v2.png"
+      },
       "role": "Its Erica assistant sends Zelle payments and schedules bill payments.",
       "markets": [
         "US"
@@ -680,7 +742,12 @@
       "hq": "BR",
       "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
       "homepage": "https://nubank.com.br/",
-      "icon": "https://nubank.com.br/favicon.ico",
+      "icon": "https://www.datocms-assets.com/120597/1741817368-favicon.ico?auto=format&h=192&w=192",
+      "preview": {
+        "title": "Pix com Inteligência Artificial agora no App e WhatsApp do Nu",
+        "description": "Em testes desde agosto deste ano, mais clientes contarão com novas experiências ao usar o meio de pagamento pelo aplicativo ou pelo WhatsApp, podendo transacionar valores com mensagens de voz, texto ou imagem",
+        "image": "https://nu.com/media/2024/05/1-1-150x150.png?crop=1"
+      },
       "role": "Its AI sends Pix from text, photo or voice in the app and on WhatsApp.",
       "markets": [
         "BR"
@@ -695,6 +762,7 @@
       "url": "https://www.itau.com.br/media/dam/m/6faa1448dd30b9a0/original/27-07-2026-Itau-Unibanco-lanc-a-ia-i-nova-experie-ncia-conversacional-que-levara-a-IA-generativa-a-todos-os-produtos-e-servic-os-do-banco.pdf",
       "homepage": "https://www.itau.com.br/",
       "icon": null,
+      "preview": null,
       "role": "Its ia.i assistant does transactions, including voice Pix in Brazil, and Itaú Chile offers voice transfers.",
       "markets": [
         "BR",
@@ -710,6 +778,11 @@
       "url": "https://www.bbva.mx/personas/landings/asistente-virtual.html",
       "homepage": "https://www.bbva.mx/",
       "icon": "https://www.bbva.mx/content/dam/library/favicons/apple-touch-icon.png",
+      "preview": {
+        "title": "Asistente virtual | BBVA México",
+        "description": null,
+        "image": null
+      },
       "role": "Its Blue assistant makes transfers and card payments from typed or spoken commands.",
       "markets": [
         "MX"
@@ -724,6 +797,11 @@
       "url": "https://www.revolut.com/air-ai-by-revolut/",
       "homepage": "https://www.revolut.com/",
       "icon": "https://assets.revolut.com/assets/favicons/apple-touch-icon.png",
+      "preview": {
+        "title": "AIR | AI by Revolut | Revolut GB",
+        "description": "Your money now has a 24/7 personal assistant. With AIR, short for AI by Revolut, you get tailored insights, a clearer view of your money, and the power to turn daily tasks into a quick conversation. The Revolut you know. The features you rely on. AIR is ready for your questions.",
+        "image": "https://assets.revolut.com/website/images/img-og-retail.png"
+      },
       "role": "Its AIR assistant freezes cards and buys eSIMs in the UK app.",
       "markets": [
         "GB"
@@ -738,6 +816,11 @@
       "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
       "homepage": "https://tpaga.co/",
       "icon": "https://tpaga.co/favicon.ico?favicon.0ng_vlz0rr_rq.ico",
+      "preview": {
+        "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
+        "description": "El agente entiende lenguaje natural, con lo cual el usuario puede escribir y mandar una nota de voz para ordenar pagos de recibos o a otras personas",
+        "image": "https://img.lalr.co/cms/2024/02/08114817/Tpaga.jpg?size=xl&ratio=r40_21&f=jpg"
+      },
       "role": "Its WhatsApp AI agent pays bills and sends Bre-B transfers from text or voice notes.",
       "markets": [
         "CO"
@@ -752,6 +835,11 @@
       "url": "https://www.zopa.com/current-account/ai",
       "homepage": "https://www.zopa.com/",
       "icon": "https://www.datocms-assets.com/23873/1770736571-favicon.svg?w=180&fm=png",
+      "preview": {
+        "title": "Zopa AI | The Bank Account You Can Talk To",
+        "description": "Ask Zopa's AI to split a bill, pay from a photo or show where your money went, by text or voice. Available with Biscuit, Zopa's free current account. T&Cs apply",
+        "image": "https://www.datocms-assets.com/23873/1681817758-zp11-twitter-card-1200-600-v1-7dccba76579a1e622d163ae5a062570a.png?auto=format&fit=max&w=1200"
+      },
       "role": "Its AI assistant sends money and pays bills from voice or chat for UK current account customers.",
       "markets": [
         "GB"
@@ -766,6 +854,11 @@
       "url": "https://www.analyticsinsight.net/news/indian-bank-debuts-ai-tara-voice-banking-in-10-languages-at-global-fintech-fest-2026",
       "homepage": "https://indianbank.in/",
       "icon": null,
+      "preview": {
+        "title": "Indian Bank Debuts AI-TARA Voice Banking in 10 Languages at Global Fintech Fest 2026",
+        "description": "Indian Bank launched three digital banking solutions at the Global Fintech Fest 2026 on September 10. The public sector bank introduced AI-TARA, Smart Wealth an",
+        "image": "https://media.assettype.com/analyticsinsight%2F2026-09-11%2F40ytlr6g%2FIndian-Bank-Launches-Digital-Solutions-to-Transform-Personal-Banking-and-Cash-Management-at-Global-Fintech-Fest-2026.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100"
+      },
       "role": "Its AI-TARA voice assistant does fund transfers and IMPS in 10 languages.",
       "markets": [
         "IN"
@@ -780,6 +873,11 @@
       "url": "https://www.starlingbank.com/news/starling-launches-agentic-ai-assistant/",
       "homepage": "https://www.starlingbank.com/",
       "icon": "https://www.starlingbank.com/favicon.ico",
+      "preview": {
+        "title": "Starling launches UK’s first Agentic AI financial assistant | Starling",
+        "description": "Starling launches UK’s first Agentic AI financial assistant",
+        "image": "https://www.starlingbank.com/images/1920x1080/d1188be09b/starling-assistant.jpg"
+      },
       "role": "Its Starling Assistant sets up savings transfers and organises bill payments from voice or chat.",
       "markets": [
         "GB"
@@ -794,6 +892,11 @@
       "url": "https://blog.davivienda.com/detail/inclusion-inteligencia-artificial-y-mas-ahora-los-colombianos-podran-manejar-su-dinero-con-su-voz-o-",
       "homepage": "https://www.davivienda.com/",
       "icon": null,
+      "preview": {
+        "title": "Blog Davivienda | Aquí pasan muchas cosas",
+        "description": "Aquí encontrará todo lo que pasa en la Casita Roja, manténgase actualizado con las últimas noticias y temas que son tendencia en el Banco Davivienda, encuentre temas económicos, de sostenibilidad, innovación y mucho más, ¡Bienvenidos!",
+        "image": null
+      },
       "role": "Its DaviPlata wallet lets enrolled users move money by voice or AI chat.",
       "markets": [
         "CO"
