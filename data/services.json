@@ -838,5 +838,284 @@
         "services.delivery-rides"
       ]
     }
+  ],
+  "repos": [
+    {
+      "repo": "Swiggy/swiggy-mcp-server-manifest",
+      "name": "Swiggy MCP Server",
+      "role": "Swiggy's official MCP server, which lets an agent such as ChatGPT or Claude search restaurants, fill a cart, order food or groceries and book a table in India.",
+      "capabilities": [
+        "services.delivery-rides",
+        "services.restaurant-booking"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 162,
+        "contributors": 5,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Zomato/mcp-server-manifest",
+      "name": "Zomato MCP Server",
+      "role": "Zomato's official MCP server, which lets an agent find restaurants, browse menus, fill a cart and place a food order in India.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 186,
+        "contributors": 4,
+        "pushedAt": "2026-05-01",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "nammayatri/nammayatri",
+      "name": "Namma Yatri",
+      "role": "Open ride-hailing platform behind Namma Yatri in India, built on the Beckn open network, with the backend for riders, drivers and ride booking.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 2577,
+        "contributors": 247,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Project-OSRM/osrm-backend",
+      "name": "OSRM",
+      "role": "Fast routing engine on OpenStreetMap that ride and delivery apps use to find routes, travel times and the best order of stops.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@project-osrm/osrm"
+        }
+      ],
+      "images": [
+        "osrm/osrm-backend"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 8177,
+        "contributors": 236,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 8537,
+        "dockerPulls": 121793682
+      }
+    },
+    {
+      "repo": "valhalla/valhalla",
+      "name": "Valhalla",
+      "role": "Routing engine on OpenStreetMap for cars, bikes, walking and transit, used by ride and delivery apps for routes, travel times and maps.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "pyvalhalla"
+        }
+      ],
+      "images": [
+        "valhalla/valhalla"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 6378,
+        "contributors": 285,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 13062,
+        "dockerPulls": 292227
+      }
+    },
+    {
+      "repo": "graphhopper/graphhopper",
+      "name": "GraphHopper",
+      "role": "Routing engine on OpenStreetMap that delivery and fleet apps use for routes, travel times and route planning.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "origin": "DE",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 6746,
+        "contributors": 145,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "fleetbase/fleetbase",
+      "name": "Fleetbase",
+      "role": "Self-hosted delivery and logistics platform with order, driver and shop apps, used to run on-demand food and parcel delivery.",
+      "capabilities": [
+        "services.delivery-rides"
+      ],
+      "images": [
+        "fleetbase/fleetbase-api"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 4411,
+        "contributors": 28,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 71412
+      }
+    },
+    {
+      "repo": "tastyigniter/TastyIgniter",
+      "name": "TastyIgniter",
+      "role": "Self-hosted restaurant system for online food orders and table reservations.",
+      "capabilities": [
+        "services.restaurant-booking",
+        "services.delivery-rides"
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 3814,
+        "contributors": 33,
+        "pushedAt": "2026-10-17",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "googlemaps/google-maps-services-python",
+      "name": "Google Maps Services (Python)",
+      "role": "Python client for Google Maps web services that lets an agent search places such as restaurants and hotels, check details and get directions.",
+      "capabilities": [
+        "services.restaurant-booking",
+        "services.travel-booking"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "googlemaps"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 4985,
+        "contributors": 68,
+        "pushedAt": "2026-10-06",
+        "archived": false,
+        "downloadsMonth": 3144295,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "duffelhq/duffel-api-javascript",
+      "name": "Duffel API (JavaScript)",
+      "role": "JavaScript client for Duffel, which lets an agent search airline offers, book flights and add stays through one API.",
+      "capabilities": [
+        "services.travel-booking"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@duffel/api"
+        }
+      ],
+      "origin": "GB",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 60,
+        "contributors": 43,
+        "pushedAt": "2026-10-26",
+        "archived": false,
+        "downloadsMonth": 216143,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Qloapps/QloApps",
+      "name": "QloApps",
+      "role": "Open-source hotel booking engine and property system that lets a hotel take reservations online.",
+      "capabilities": [
+        "services.travel-booking"
+      ],
+      "images": [
+        "webkul/qloapps_docker"
+      ],
+      "origin": "IN",
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 14452,
+        "contributors": 24,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 61918
+      }
+    },
+    {
+      "repo": "opentripplanner/OpenTripPlanner",
+      "name": "OpenTripPlanner",
+      "role": "Multi-modal trip planner used by transit agencies that finds door-to-door journeys by bus, train, bike and walking.",
+      "capabilities": [
+        "services.travel-booking"
+      ],
+      "images": [
+        "opentripplanner/opentripplanner"
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 2766,
+        "contributors": 280,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 1915634
+      }
+    },
+    {
+      "repo": "openbnb-org/mcp-server-airbnb",
+      "name": "Airbnb MCP Server",
+      "role": "MCP server that lets an agent search Airbnb listings and read their details, prices and links to book.",
+      "capabilities": [
+        "services.travel-booking"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@openbnb/mcp-server-airbnb"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 551,
+        "contributors": 5,
+        "pushedAt": "2026-08-06",
+        "archived": false,
+        "downloadsMonth": 6580,
+        "dockerPulls": null
+      }
+    }
   ]
 }
