@@ -81,6 +81,9 @@ export function validate(meta, categories) {
       const where = `${cat.category}: company "${co.name}"`;
       if (!co.name || !co.role) errors.push(`${where}: needs a name and a role`);
       if (!isUrl(co.url)) errors.push(`${where}: bad url`);
+      if (!isUrl(co.homepage)) errors.push(`${where}: needs a homepage (its own site, used for its logo)`);
+      if (co.icon === undefined) errors.push(`${where}: no icon yet; run npm run refresh-sites`);
+      else if (co.icon !== null && !/^https:\/\//.test(co.icon)) errors.push(`${where}: icon must be an https URL, or null when the site has none`);
       for (const m of co.markets ?? []) if (!codes.has(m)) errors.push(`${where}: unknown market "${m}"`);
       for (const c of co.capabilities ?? []) if (!capIds.has(c)) errors.push(`${where}: unknown capability "${c}"`);
     }

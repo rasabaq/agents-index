@@ -520,6 +520,8 @@
       "name": "Visa",
       "hq": "US",
       "url": "https://developer.visa.com/capabilities/visa-intelligent-commerce",
+      "homepage": "https://www.visa.com/",
+      "icon": "https://www.visa.cl/content/dam/VCOM/Brand/favicon.ico",
       "role": "Visa Intelligent Commerce gives agents tokenized Visa credentials with passkey checks so they can buy for cardholders.",
       "markets": [
         "US",
@@ -537,6 +539,8 @@
       "name": "Mastercard",
       "hq": "US",
       "url": "https://www.mastercard.com/us/en/news-and-trends/stories/2025/agentic-commerce-momentum.html",
+      "homepage": "https://www.mastercard.com/",
+      "icon": null,
       "role": "Mastercard Agent Pay issues agentic tokens so registered agents can pay with a cardholder's Mastercard.",
       "markets": [
         "US",
@@ -555,6 +559,8 @@
       "name": "American Express",
       "hq": "US",
       "url": "https://www.americanexpress.com/en-us/company/agentic-commerce/",
+      "homepage": "https://www.americanexpress.com/",
+      "icon": "https://www.americanexpress.com/favicon.ico",
       "role": "The Amex ACE developer kit lets cardmembers approve agents to buy with their card, with agent purchase protection.",
       "markets": [
         "US"
@@ -567,6 +573,8 @@
       "name": "Banco Santander",
       "hq": "ES",
       "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
+      "homepage": "https://www.santander.com/",
+      "icon": "https://www.santander.com/content/dam/santander-com/resources/favicon/apple-touch-icon.png",
       "role": "Issued the cards used in Visa Intelligent Commerce agent pilot purchases in Latin America.",
       "markets": [
         "BR",
@@ -581,6 +589,8 @@
       "name": "Stripe",
       "hq": "US",
       "url": "https://docs.stripe.com/agentic-commerce",
+      "homepage": "https://stripe.com/",
+      "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
       "role": "Shared payment tokens and Link Agent Wallet let agents pay sellers with a customer's saved payment method.",
       "markets": [
         "US",
@@ -596,6 +606,8 @@
       "name": "PayPal",
       "hq": "US",
       "url": "https://paypal.ai/",
+      "homepage": "https://www.paypal.com/",
+      "icon": "https://www.paypalobjects.com/marketing/web/icons/monogram/pp64.png",
       "role": "PayPal agentic commerce services power checkout inside Perplexity and Microsoft Copilot.",
       "markets": [
         "US"
@@ -608,6 +620,8 @@
       "name": "Mercado Pago",
       "hq": "AR",
       "url": "https://www.mercadopago.com.br/assistente-pessoal",
+      "homepage": "https://www.mercadopago.com.br/",
+      "icon": "https://http2.mlstatic.com/frontend-assets/mp-web-navigation/ui-navigation/7.8.2/mercadopago/favicon.svg",
       "role": "The Mago AI agent makes payments and transfers (including Pix in Brazil) for users after they confirm.",
       "markets": [
         "BR",
@@ -623,6 +637,8 @@
       "name": "Nubank",
       "hq": "BR",
       "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
+      "homepage": "https://nubank.com.br/",
+      "icon": "https://nubank.com.br/favicon.ico",
       "role": "Its AI assistant sends Pix from voice or text in the app and on WhatsApp.",
       "markets": [
         "BR"
@@ -636,6 +652,8 @@
       "name": "Iniciador",
       "hq": "BR",
       "url": "https://iniciador.com.br/en/conteudos/iniciador-anuncia-pagamentos-agenticos-full-stack-ai-toolkit",
+      "homepage": "https://iniciador.com.br/",
+      "icon": "https://iniciador.com.br/apple-icon.png?apple-icon.0rxpxrel559y3.png",
       "role": "Its MCP server lets AI agents propose Pix payments that the user approves with biometrics.",
       "markets": [
         "BR"
@@ -648,6 +666,8 @@
       "name": "Banco Central do Brasil",
       "hq": "BR",
       "url": "https://www.bcb.gov.br/estabilidadefinanceira/pix",
+      "homepage": "https://www.bcb.gov.br/",
+      "icon": "https://www.bcb.gov.br/favicon.ico",
       "role": "Runs Pix, the instant rail that Brazilian AI assistants use to send payments.",
       "markets": [
         "BR"
@@ -660,6 +680,8 @@
       "name": "Tpaga",
       "hq": "CO",
       "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
+      "homepage": "https://tpaga.co/",
+      "icon": "https://tpaga.co/favicon.ico?favicon.0ng_vlz0rr_rq.ico",
       "role": "Its WhatsApp AI agent pays bills and sends money over Bre-B from text or voice notes.",
       "markets": [
         "CO"
@@ -673,6 +695,8 @@
       "name": "NPCI",
       "hq": "IN",
       "url": "https://www.npci.org.in/",
+      "homepage": "https://www.npci.org.in/",
+      "icon": null,
       "role": "Runs UPI and its Reserve Pay and Circle features that let users pre-authorise agent payments in the ChatGPT pilot.",
       "markets": [
         "IN"
@@ -685,6 +709,8 @@
       "name": "Razorpay",
       "hq": "IN",
       "url": "https://razorpay.com/newsroom/razorpay-npci-and-openai-come-together-to-launch-agentic-payments-ushering-in-ai-driven-commerce-at-national-scale/",
+      "homepage": "https://razorpay.com/",
+      "icon": null,
       "role": "Runs the Agentic Payments beta that lets ChatGPT pay merchants over UPI, and processed Mastercard's Indian agent pilot.",
       "markets": [
         "IN"
@@ -699,6 +725,8 @@
       "name": "Amazon Pay India",
       "hq": "IN",
       "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
+      "homepage": "https://www.amazonpay.in/",
+      "icon": "https://www.amazon.in/favicon.ico",
       "role": "Launched a consent-based Smart Wallet for agentic UPI payments.",
       "markets": [
         "IN"
@@ -712,6 +740,8 @@
       "name": "Pine Labs",
       "hq": "IN",
       "url": "https://startupfeed.in/gff-2026-agentic-ai-fintech-product-launches/",
+      "homepage": "https://www.pinelabs.com/",
+      "icon": "https://www.pinelabs.com/favicon.ico",
       "role": "Its agentic commerce stack lets AI agents complete purchases within user-set limits.",
       "markets": [
         "IN"

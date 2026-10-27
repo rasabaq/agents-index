@@ -7,6 +7,7 @@
     "test": "node --test",
     "validate": "node scripts/validate.mjs",
     "check-links": "node scripts/check-links.mjs",
-    "refresh-repos": "node scripts/refresh-repos.mjs"
+    "refresh-repos": "node scripts/refresh-repos.mjs",
+    "refresh-sites": "node scripts/refresh-sites.mjs"
   }
 }

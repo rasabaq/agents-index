@@ -4,6 +4,7 @@
 // Needs a GitHub token (GITHUB_TOKEN, or a logged-in `gh`): unauthenticated calls stop after 60 an hour.
 import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
+import { get } from './http.mjs';
 
 const file = (id) => new URL(`../data/${id}.json`, import.meta.url);
 const meta = JSON.parse(await readFile(file('meta'), 'utf8'));
@@ -15,18 +16,7 @@ try {
 } catch {}
 const today = new Date().toISOString().slice(0, 10);
 
-// Retries 429 and 5xx a few times; pypistats in particular rate-limits bursts.
-async function get(url, headers = {}) {
-  for (let i = 0; ; i++) {
-    const res = await fetch(url, { headers: { 'user-agent': 'ai-agent-observatory', ...headers }, signal: AbortSignal.timeout(30000) });
-    if ((res.status === 429 || res.status >= 500) && i < 4) {
-      await new Promise((r) => setTimeout(r, 2000 * 2 ** i));
-      continue;
-    }
-    if (!res.ok) throw new Error(`${res.status} ${url}`);
-    return res;
-  }
-}
+// get() retries 429 and 5xx a few times; pypistats in particular rate-limits bursts.
 const json = async (url, headers) => (await get(url, headers)).json();
 const gh = (path) => get(`https://api.github.com/${path}`, token ? { authorization: `Bearer ${token}` } : {});
 
