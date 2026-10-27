@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Mastercard said it would enable all US cardholders for Agent Pay by late 2025, and Visa says Visa Intelligent Commerce is rolled out across many agents with live transactions; Amex launched its ACE kit and agent purchase protection in April 2026. We found no Mastercard or Visa source saying every US cardholder can use it today, and Mastercard's September 2026 release gives no rollout numbers.",
+          "note": "Mastercard said it would enable all US cardholders for Agent Pay by late 2025, and Visa says Visa Intelligent Commerce is rolled out across many agents with live transactions; Amex launched its ACE kit and agent purchase protection in April 2026. We found no Mastercard or Visa source saying every US cardholder can use it today, and Mastercard's September 2026 release gives no rollout numbers. In October 2026 we re-checked Mastercard's 2025 and September 2026 releases and Visa's December 2025 and April 2026 releases: Mastercard's CEO said in October 2025 that Citi and U.S. Bank cardholders could use Agent Pay (reported by Digital Commerce 360), and Visa's April 2026 release says live transactions are taking place, but no primary source says the Mastercard rollout to all US cardholders was completed. We keep 'live' on the Citi, U.S. Bank and Visa evidence; 'limited' is the fallback if that is judged too strong.",
           "evidence": [
             {
               "title": "Mastercard Unveils New Tools and Collaborations to Power Smarter, Safer Agentic Commerce",
@@ -269,8 +269,8 @@
           ]
         },
         "MX": {
-          "status": "live",
-          "note": "Mercado Pago's Mago assistant sends money by text or voice in Mexico after user confirmation, and Mercado Pago connects directly to SPEI; we searched Mercado Pago's Mexico blog, help center and newsroom in October 2026 but found no page that says Mago can send to a CLABE or over SPEI.",
+          "status": "limited",
+          "note": "Mercado Pago's Mago assistant prepares transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI; we searched Mercado Pago's Mexico blog, help center and developer pages again in October 2026 but found no page that says Mago sends to a CLABE or over SPEI, and the press only says Mago 'does transfers'. Lowered from live because the SPEI link is unproven.",
           "evidence": [
             {
               "title": "Asistente personal de Mercado Pago: qué es y para qué sirve",
@@ -298,7 +298,7 @@
         },
         "CL": {
           "status": "limited",
-          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms; we searched Mercado Pago Chile's site, help center and newsroom in October 2026 but found no official page that says Mago sends money to other banks over TEF, and the Chile rollout reach is not stated.",
+          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms; we searched Mercado Pago Chile's site, help center and newsroom in October 2026 but found no official page that says Mago sends money to other banks over TEF, and the Chile rollout reach is not stated. Mercado Pago's September 2026 Chile release says Mago prepares transfers and needs user confirmation, but no page names the TEF rail.",
           "evidence": [
             {
               "title": "Mercado Pago lanzó Mago, su asistente con IA para gestionar finanzas y negocios",
@@ -319,7 +319,7 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Tpaga launched a WhatsApp AI agent that sends money over Bre-B from text or voice notes; it is one fintech and its rollout scope is not stated. In October 2026 we checked Tpaga's website and Banco de la República's Bre-B page and searched for Nequi, Daviplata, Bancolombia and Mercado Pago agents, but found no primary source for an agent on Bre-B.",
+          "note": "Tpaga launched a WhatsApp AI agent that sends money over Bre-B from text or voice notes; it is one fintech and its rollout scope is not stated. In October 2026 we checked Tpaga's website and Banco de la República's Bre-B page and searched for Nequi, Daviplata, Bancolombia and Mercado Pago agents, but found no primary source for an agent on Bre-B. Banco de la República's Bre-B page shows the rail is live with 245 entities but does not mention AI agents.",
           "evidence": [
             {
               "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar",
@@ -327,6 +327,13 @@
               "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
               "date": "2026-07-08",
               "type": "news"
+            },
+            {
+              "title": "Bre-B: sistema de pagos inmediatos interoperable",
+              "publisher": "Banco de la República",
+              "url": "https://www.banrep.gov.co/es/bre-b",
+              "date": "2026",
+              "type": "report"
             }
           ],
           "confidence": "low"
@@ -466,7 +473,7 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Tpaga's WhatsApp AI agent pays bills and sends money for users, and its rollout scope is not stated. In October 2026 we found no Tpaga page about the agent, no agent that pays for users at Nequi or Daviplata, and no sign that Mercado Pago's Mago has launched in Colombia.",
+          "note": "Tpaga's WhatsApp AI agent pays bills and sends money for users, and its rollout scope is not stated. In October 2026 we found no Tpaga page about the agent, no agent that pays for users at Nequi or Daviplata, and no sign that Mercado Pago's Mago has launched in Colombia. Mago's Mercado Pago markets are Argentina, Brazil, Chile and Mexico, not Colombia.",
           "evidence": [
             {
               "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
