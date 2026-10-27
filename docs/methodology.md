@@ -52,9 +52,28 @@ country score  = mean(category scores)
 
 Every category weighs the same, so a category with more capabilities does not dominate. Countries with equal scores share a rank. The code is in `src/observatory.js`, and the tests are in `test/`.
 
+## Open source: what is really used
+
+Companies are one way a capability reaches people. Open-source projects are the other: a bank, a shop or a government team can build an agent on them without asking anyone. Each category file lists the biggest open-source repos behind its capabilities in `repos[]`.
+
+Stars measure attention, not use. A repo can trend for a week and never run anywhere. So each repo gets a **real-use tier** from what we can count:
+
+| Tier | Rule |
+| --- | --- |
+| Widely used | 1M+ installs a month (npm + PyPI), or 100M+ Docker Hub pulls |
+| In real use | 50k+ installs a month, or 1M+ Docker Hub pulls |
+| Not measured | Ships no npm, PyPI or Docker Hub package we can count |
+| Mostly stars | 5k+ stars, but below the install bars |
+| Niche | Few stars and few installs |
+| Dormant | Archived, or no commit in the 6 months before it was measured |
+
+`npm run refresh-repos` measures every repo and writes its `usage` snapshot: stars, contributors, last push, monthly downloads and Docker pulls. The rules live in `repoUse()` in `src/observatory.js`. Repos do not change the country score.
+
+Limits: downloads include CI machines and mirrors, Docker pulls are lifetime and include automated pulls, and images on other registries (such as ghcr.io) cannot be counted. Treat a tier as an order of magnitude, not a census.
+
 ## Known limits
 
 - Availability changes every week. Each dataset carries an `asOf` date.
-- "Live" means available, not widely used. Adoption is not measured yet.
+- "Live" means available, not widely used. Adoption of products is not measured; only open-source repos get a real-use tier.
 - Language support is noted, but it is not scored separately.
 - The list of capabilities is opinionated. Add a capability by adding an entry to a category file in `data/`.

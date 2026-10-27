@@ -85,7 +85,61 @@ export function validate(meta, categories) {
       for (const c of co.capabilities ?? []) if (!capIds.has(c)) errors.push(`${where}: unknown capability "${c}"`);
     }
   }
+
+  const repoIds = new Set();
+  for (const cat of categories) {
+    for (const r of cat.repos ?? []) {
+      const where = `${cat.category}: repo "${r.repo}"`;
+      if (!/^[\w.-]+\/[\w.-]+$/.test(r.repo ?? '')) errors.push(`${where}: repo must be "owner/name"`);
+      if (repoIds.has(r.repo?.toLowerCase())) errors.push(`${where}: listed twice; keep it in one file`);
+      repoIds.add(r.repo?.toLowerCase());
+      if (!r.name || !r.role) errors.push(`${where}: needs a name and a role`);
+      if (!r.capabilities?.length) errors.push(`${where}: needs at least one capability`);
+      for (const c of r.capabilities ?? []) if (!capIds.has(c)) errors.push(`${where}: unknown capability "${c}"`);
+      for (const p of r.packages ?? []) if (!REGISTRIES.includes(p.registry) || !p.name) errors.push(`${where}: package needs a name and a registry (${REGISTRIES.join(', ')})`);
+      for (const i of r.images ?? []) if (!/^[\w.-]+\/[\w.-]+$/.test(i)) errors.push(`${where}: Docker Hub image must be "namespace/name"`);
+      if (r.origin !== undefined && !/^[A-Z]{2}$/.test(r.origin)) errors.push(`${where}: origin must be an ISO country code`);
+      const u = r.usage;
+      if (!u) errors.push(`${where}: no usage yet; run npm run refresh-repos`);
+      else if (!isDate(u.asOf) || !isDate(u.pushedAt) || !Number.isInteger(u.stars)) errors.push(`${where}: usage needs asOf, pushedAt and stars`);
+    }
+  }
   return errors;
+}
+
+const REGISTRIES = ['npm', 'pypi'];
+const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s ?? '');
+
+// How much an open-source repo is really used: counted installs, not stars. Stars measure attention.
+// Downloads are per month, summed over its npm and PyPI packages. Docker pulls are lifetime, so their bar is higher.
+// Key order is the display order.
+export const REPO_USE = {
+  wide: { label: 'Widely used', hint: '1M+ installs a month, or 100M+ Docker pulls.' },
+  real: { label: 'In real use', hint: '50k+ installs a month, or 1M+ Docker pulls.' },
+  unmeasured: { label: 'Not measured', hint: 'Ships no npm, PyPI or Docker Hub package we can count.' },
+  buzz: { label: 'Mostly stars', hint: '5k+ stars, but few installs.' },
+  niche: { label: 'Niche', hint: 'Few stars and few installs.' },
+  dormant: { label: 'Dormant', hint: 'Archived, or no commit in the 6 months before it was measured.' },
+};
+
+export function repoUse(u) {
+  if (u.archived || Date.parse(u.asOf) - Date.parse(u.pushedAt) > 182 * 864e5) return 'dormant';
+  const dl = u.downloadsMonth ?? 0;
+  const pulls = u.dockerPulls ?? 0;
+  if (dl >= 1e6 || pulls >= 1e8) return 'wide';
+  if (dl >= 5e4 || pulls >= 1e6) return 'real';
+  if (u.downloadsMonth == null && u.dockerPulls == null) return 'unmeasured';
+  return u.stars >= 5000 ? 'buzz' : 'niche';
+}
+
+// Every repo across the category files, most-used first: by tier, then installs, then stars.
+export function rankRepos(categories) {
+  const order = Object.keys(REPO_USE);
+  return categories
+    .flatMap((cat) => (cat.repos ?? []).map((r) => ({ ...r, category: cat.category, use: repoUse(r.usage) })))
+    .sort((a, b) => order.indexOf(a.use) - order.indexOf(b.use)
+      || (b.usage.downloadsMonth ?? 0) - (a.usage.downloadsMonth ?? 0)
+      || b.usage.stars - a.usage.stars);
 }
 
 function checkEvidence(ev, where, errors) {

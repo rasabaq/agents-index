@@ -960,5 +960,53 @@
         "autonomy.personal-assistant-actions"
       ]
     }
+  ],
+  "repos": [
+    {
+      "repo": "browser-use/browser-use",
+      "name": "Browser Use",
+      "role": "Python library that lets a language model drive a real browser: open pages, click, type and fill forms.",
+      "capabilities": [
+        "autonomy.browser-agent"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "browser-use"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 119290,
+        "contributors": 384,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 8061974,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "microsoft/playwright-mcp",
+      "name": "Playwright MCP",
+      "role": "MCP server that gives any agent a Playwright browser it can navigate, click and type in.",
+      "capabilities": [
+        "autonomy.browser-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@playwright/mcp"
+        }
+      ],
+      "usage": {
+        "asOf": "2026-10-27",
+        "stars": 38705,
+        "contributors": 71,
+        "pushedAt": "2026-10-22",
+        "archived": false,
+        "downloadsMonth": 24354243,
+        "dockerPulls": null
+      }
+    }
   ]
 }
