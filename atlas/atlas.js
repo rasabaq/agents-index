@@ -2,7 +2,7 @@
 // A view is a classic script that pushes { id, title, blurb, render(el, ctx) } onto window.ATLAS_VIEWS.
 import { STATUSES, scoreCountries } from '../src/observatory.js';
 
-const ORDER = ['map', 'periodic', 'radar', 'bump', 'compare', 'flows', 'network', 'timeline'];
+const ORDER = ['map', 'periodic', 'radar', 'bump', 'compare', 'gap', 'flows', 'network', 'timeline'];
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
@@ -42,7 +42,7 @@ function buildContext({ meta, categories }) {
   return {
     meta, categories, ranking, byCode, catIndex, capabilities,
     companies: [...map.values()],
-    STATUSES, esc, emoji,
+    STATUSES, scoreCountries, esc, emoji,
     // A flag for HTML: emoji font, hidden from screen readers (the code or name next to it is the text).
     flag: (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`,
     catName: (id) => catIndex[id].name,
