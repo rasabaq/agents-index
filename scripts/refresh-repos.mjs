@@ -1,5 +1,5 @@
 // Usage: node scripts/refresh-repos.mjs [category ...] — measures every open-source repo in the data files
-// and writes its `usage` snapshot: GitHub stars, contributors and last push, monthly npm + PyPI downloads,
+// and writes its `usage` snapshot: GitHub stars, contributors and last push, monthly npm, PyPI and Packagist downloads,
 // and lifetime Docker Hub pulls. Pass category ids to refresh only those files.
 // Needs a GitHub token (GITHUB_TOKEN, or a logged-in `gh`): unauthenticated calls stop after 60 an hour.
 import { readFile, writeFile } from 'node:fs/promises';
@@ -40,9 +40,12 @@ async function contributors(repo) {
   }
 }
 
-const downloads = async (p) => p.registry === 'npm'
-  ? (await json(`https://api.npmjs.org/downloads/point/last-month/${p.name}`)).downloads
-  : (await json(`https://pypistats.org/api/packages/${p.name.toLowerCase()}/recent`)).data.last_month;
+const MONTHLY = {
+  npm: async (name) => (await json(`https://api.npmjs.org/downloads/point/last-month/${name}`)).downloads,
+  pypi: async (name) => (await json(`https://pypistats.org/api/packages/${name.toLowerCase()}/recent`)).data.last_month,
+  packagist: async (name) => (await json(`https://packagist.org/packages/${name}/stats.json`)).downloads.monthly,
+};
+const downloads = (p) => MONTHLY[p.registry](p.name);
 
 // A repo's packages are often installed together (langchain pulls in langchain-core), so take the
 // busiest one instead of adding them up, which would count the same install twice.

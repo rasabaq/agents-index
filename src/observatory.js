@@ -107,16 +107,16 @@ export function validate(meta, categories) {
   return errors;
 }
 
-const REGISTRIES = ['npm', 'pypi'];
+const REGISTRIES = ['npm', 'pypi', 'packagist'];
 const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s ?? '');
 
 // How much an open-source repo is really used: counted installs, not stars. Stars measure attention.
-// Downloads are per month, from its busiest npm or PyPI package. Docker pulls are lifetime, so their bar is higher.
+// Downloads are per month, from its busiest npm, PyPI or Packagist package. Docker pulls are lifetime, so their bar is higher.
 // Key order is the display order.
 export const REPO_USE = {
   wide: { label: 'Widely used', hint: '1M+ installs a month, or 100M+ Docker pulls.' },
   real: { label: 'In real use', hint: '50k+ installs a month, or 1M+ Docker pulls.' },
-  unmeasured: { label: 'Not measured', hint: 'Ships no npm, PyPI or Docker Hub package we can count.' },
+  unmeasured: { label: 'Not measured', hint: 'Ships no npm, PyPI, Packagist or Docker Hub package we can count.' },
   buzz: { label: 'Mostly stars', hint: '5k+ stars, but few installs.' },
   niche: { label: 'Niche', hint: 'Few stars and few installs.' },
   dormant: { label: 'Dormant', hint: 'Archived, or no commit in the 6 months before it was measured.' },
