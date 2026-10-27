@@ -947,49 +947,6 @@
         "downloadsMonth": null,
         "dockerPulls": 1016206
       }
-    },
-    {
-      "repo": "openfisca/openfisca-core",
-      "name": "OpenFisca",
-      "role": "Rules-as-code engine that turns tax and benefit law into an API, so software can work out what a person is owed or must pay.",
-      "capabilities": [
-        "government.ai-public-services"
-      ],
-      "packages": [
-        {
-          "registry": "pypi",
-          "name": "openfisca-core"
-        }
-      ],
-      "usage": {
-        "asOf": "2026-10-27",
-        "stars": 249,
-        "contributors": 71,
-        "pushedAt": "2026-10-23",
-        "archived": false,
-        "downloadsMonth": 24551,
-        "dockerPulls": null
-      }
-    },
-    {
-      "repo": "decidim/decidim",
-      "name": "Decidim",
-      "role": "Participation platform that city and national governments run for proposals, votes and consultations; it has a GraphQL API.",
-      "capabilities": [
-        "government.ai-public-services"
-      ],
-      "images": [
-        "decidim/decidim"
-      ],
-      "usage": {
-        "asOf": "2026-10-27",
-        "stars": 1841,
-        "contributors": 169,
-        "pushedAt": "2026-10-27",
-        "archived": false,
-        "downloadsMonth": null,
-        "dockerPulls": 530977
-      }
     }
   ]
 }
