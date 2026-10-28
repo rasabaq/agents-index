@@ -18,5 +18,12 @@
     { "id": "banking", "name": "Banking & open finance", "blurb": "Agents that read accounts and move money through banks." },
     { "id": "messaging", "name": "Chat & messaging", "blurb": "Agents that sell, support and take payments inside chat apps." },
     { "id": "government", "name": "Government & identity", "blurb": "Agents that prove who you are and handle public services." }
+  ],
+  "gapReasons": [
+    { "id": "no-rule", "label": "No rule in force yet" },
+    { "id": "rail-closed", "label": "The rail exists, but agents can't use it" },
+    { "id": "not-launched", "label": "The company hasn't launched here" },
+    { "id": "pilot-only", "label": "Pilot only" },
+    { "id": "assist-only", "label": "It helps, but you do the last step" }
   ]
 }
