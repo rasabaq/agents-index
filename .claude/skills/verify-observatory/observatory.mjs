@@ -75,10 +75,10 @@ async function connect(s) {
   return { send, evaluate, on, close: () => ws.close() };
 }
 
-// Emulation (viewport, color scheme, language) and the error collector belong to the session that set them and
+// Emulation (viewport, color scheme, language, time zone) and the error collector belong to the session that set them and
 // vanish when it detaches. So `up` starts this holder: it stays attached and applies whatever state.json asks for.
 // Headless Chrome windows cannot go below 500px wide, so a 400px phone needs this override anyway.
-const VIEW = (s) => JSON.stringify({ width: s.width, height: s.height, scheme: s.scheme, lang: s.lang });
+const VIEW = (s) => JSON.stringify({ width: s.width, height: s.height, scheme: s.scheme, lang: s.lang, tz: s.tz });
 async function hold(s) {
   const c = await connect(s);
   await c.send('Page.addScriptToEvaluateOnNewDocument', { source: COLLECTOR });
@@ -90,6 +90,8 @@ async function hold(s) {
       await c.send('Emulation.setDeviceMetricsOverride', { width: now.width, height: now.height, deviceScaleFactor: 1, mobile: false });
       await c.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: now.scheme }] });
       await c.send('Emulation.setUserAgentOverride', { userAgent: now.userAgent, ...(now.lang ? { acceptLanguage: now.lang } : {}) });
+      // The site guesses the visitor's country from the time zone, so runs pin one (UTC by default) to stay repeatable.
+      await c.send('Emulation.setTimezoneOverride', { timezoneId: now.tz ?? 'UTC' });
       applied = VIEW(now);
       writeFileSync(join(s.dir, 'held.json'), applied);
     }
@@ -173,11 +175,12 @@ const commands = {
   async open() {
     const s = currentRun();
     const path = args[0] ?? '/';
-    // Each open sets the whole view; anything not given goes back to the default (1440 × 900, dark, browser language).
+    // Each open sets the whole view; anything not given goes back to the default (1440 × 900, dark, browser language, UTC).
     s.width = Number(flags.width ?? 1440);
     s.height = Number(flags.height ?? (s.width <= 500 ? 860 : 900));
     s.scheme = flags.scheme ?? 'dark';
     s.lang = flags.lang ?? null;
+    s.tz = flags.tz ?? 'UTC';
     await applyView(s);
     const c = await connect(s);
     let loaded;
@@ -190,7 +193,7 @@ const commands = {
     await done;
     await waitFor(c, flags.wait ?? (url.pathname.startsWith('/atlas') ? '[data-atlas-views] .view' : '#cn-title'));
     await sleep(Number(flags.settle ?? 800));
-    const info = await c.evaluate(`({ url: location.href, title: document.title, width: innerWidth, height: innerHeight, scheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', languages: navigator.languages })`);
+    const info = await c.evaluate(`({ url: location.href, title: document.title, width: innerWidth, height: innerHeight, scheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', languages: navigator.languages, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone })`);
     log(s, { cmd: 'open', path, ...info });
     console.log(JSON.stringify(info, null, 2));
     c.close();
@@ -296,7 +299,7 @@ const commands = {
     console.log(`Usage: node .claude/skills/verify-observatory/observatory.mjs <command>
   up [--port N]                                   start server + headless Chrome, print run id, URL, evidence dir
   doctor                                          read-only health check (exit 1 when unhealthy)
-  open <path> [--width 1440|400] [--height N] [--lang es-CL] [--scheme dark|light] [--wait <css>]
+  open <path> [--width 1440|400] [--height N] [--lang es-CL] [--tz America/Santiago] [--scheme dark|light] [--wait <css>]
   eval '<js>'                                     run JS in the page, print the JSON result
   click '<css>'                                   real mouse click on the first match
   press <key>                                     real key press (Escape, Enter, Tab, ArrowDown, j, k, 1-6)
