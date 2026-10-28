@@ -3,7 +3,7 @@
   "capabilities": [
     {
       "id": "messaging.business-ai-agent",
-      "name": "Business AI agents in chat",
+      "name": "Run an AI agent in chat for your business",
       "question": "Can a business run an AI agent that sells and supports customers in a chat app?",
       "countries": {
         "US": {
@@ -215,7 +215,7 @@
     },
     {
       "id": "messaging.pay-in-chat",
-      "name": "Pay inside a chat",
+      "name": "Pay a business without leaving the chat",
       "question": "Can a customer pay an agent or business without leaving the chat?",
       "countries": {
         "US": {
