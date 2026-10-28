@@ -3,7 +3,7 @@
   "capabilities": [
     {
       "id": "government.digital-id-api",
-      "name": "National digital ID for apps",
+      "name": "Prove who you are with a national digital ID",
       "question": "Can an AI agent use a national digital ID or data wallet to prove who a person is to a private app?",
       "countries": {
         "US": {
@@ -38,7 +38,8 @@
               "date": "2026-08",
               "type": "report"
             }
-          ]
+          ],
+          "gapReason": "rail-closed"
         },
         "GB": {
           "status": "announced",
@@ -79,7 +80,8 @@
               "date": "2026-07-20",
               "type": "news"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "DE": {
           "status": "live",
@@ -201,7 +203,8 @@
               "date": "2025-08",
               "type": "regulation"
             }
-          ]
+          ],
+          "gapReason": "rail-closed"
         },
         "CO": {
           "status": "live",
@@ -296,7 +299,7 @@
     },
     {
       "id": "government.ai-public-services",
-      "name": "Government AI service assistant",
+      "name": "Finish a public-service task with a government assistant",
       "question": "Can an AI agent use a government AI assistant to finish a public-service task, not just get answers?",
       "countries": {
         "US": {
@@ -351,7 +354,8 @@
               "date": "2026-05",
               "type": "news"
             }
-          ]
+          ],
+          "gapReason": "assist-only"
         },
         "DE": {
           "status": "limited",
@@ -371,7 +375,8 @@
               "date": "2026",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "assist-only"
         },
         "BR": {
           "status": "limited",
@@ -398,7 +403,8 @@
               "date": "2026-02",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "assist-only"
         },
         "MX": {
           "status": "limited",
@@ -418,7 +424,8 @@
               "date": "2026",
               "type": "report"
             }
-          ]
+          ],
+          "gapReason": "assist-only"
         },
         "CL": {
           "status": "limited",
@@ -431,7 +438,8 @@
               "date": "2026",
               "type": "regulation"
             }
-          ]
+          ],
+          "gapReason": "assist-only"
         },
         "CO": {
           "status": "limited",
@@ -451,7 +459,8 @@
               "date": "2026-07",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "assist-only"
         },
         "IN": {
           "status": "live",
