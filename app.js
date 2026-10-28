@@ -169,9 +169,13 @@ function renderFeed() {
 }
 
 function correctionUrl(cap, code, cell) {
+  // Fills the data-correction issue form (.github/ISSUE_TEMPLATE/data-correction.yml); the keys are its field ids.
   const q = new URLSearchParams({
+    template: 'data-correction.yml',
     title: `Correction: ${cap.id} in ${code}`,
-    body: `Capability: ${cap.id}\nCountry: ${byCode[code].name} (${code})\nCurrent status: ${STATUSES[cell.status].label}\n\nCorrect status and source:\n`,
+    country: `${byCode[code].name} (${code})`,
+    capability: `${cap.name} (${cap.id})`,
+    current: STATUSES[cell.status].label,
   });
   return `https://github.com/rasabaq/ai-agent-observatory/issues/new?${q}`;
 }

@@ -37,3 +37,12 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 To add an open-source repo, add it to `repos[]` in the category file it serves, with `repo` ("owner/name"), `name`, `role`, `capabilities`, and its `packages` (`npm`, `pypi` or `packagist`) and Docker Hub `images` if it ships any. Then run `npm run refresh-repos <category>` to fill its `usage` from GitHub, npm, PyPI, Packagist and Docker Hub.
 
 Every company has a `url` (the source for what it does) and a `homepage` (its own site). Run `npm run refresh-sites <category>` to store the logo from its homepage in `icon`: the apple-touch-icon, else the largest icon link, else `/favicon.ico`. Sites that block scripts get `null`, and the page shows a monogram. Repo logos are the GitHub owner's avatar, so they need no data.
+
+## Contribute
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). To report a wrong status, open a [data correction](https://github.com/rasabaq/ai-agent-observatory/issues/new?template=data-correction.yml), or use "Suggest a correction" on any cell of the site.
+
+## License
+
+- Code: [MIT](LICENSE).
+- Data in `data/`: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (see [data/LICENSE](data/LICENSE)). You may reuse it with credit to the AI Agent Observatory.
