@@ -1,4 +1,4 @@
-import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, summarize, extremes, shortName } from './src/observatory.js';
+import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, startCountry, guessCountry, verdict, couldClose } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -9,9 +9,11 @@ const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
   return r.json();
 });
 
-const state = { market: 'all', use: 'all', country: null };
+const state = { market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false };
+// Long tables show this many rows until Show all is pressed.
+const FIRST_ROWS = 10;
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
-let meta, categories, ranking, byCode, capIndex, companies, repos, cells;
+let meta, categories, ranking, byCode, capIndex, companies, repos, cells, region;
 
 function init() {
   ranking = scoreCountries(meta, categories);
@@ -20,8 +22,12 @@ function init() {
   // Every cell with its capability and country, in category order.
   cells = Object.values(capIndex).flatMap((cap) => meta.countries.map((c) => ({ cap, code: c.code, cell: cap.countries[c.code] })));
   companies = mergeCompanies(categories);
+  region = Object.fromEntries(meta.countries.map((c) => [c.code, c.region]));
   repos = rankRepos(categories);
-  state.country = hashCountry() ?? ranking[0].code;
+  const codes = meta.countries.map((c) => c.code);
+  state.country = startCountry(codes, location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
+  // The visitor's own country, when time zone or language tells us; the head says "Your country" only for it.
+  state.own = guessCountry(codes, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
 
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   $('[data-asof-iso]').textContent = meta.asOf;
@@ -36,6 +42,7 @@ function init() {
   renderRepos();
   renderCounts();
   renderCountry();
+  showSideChip();
   wire();
   wireTooltip();
   wireLogos();
@@ -53,9 +60,19 @@ const chip = (status, low) => `<span class="chip s-${status}${low ? ' q' : ''}">
 // A small status capsule for the matrix: the fill carries the order, a dashed ring means low confidence.
 const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : ''}" aria-hidden="true"></i>`;
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', low confidence' : ''}`;
-const ordinal = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : { 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] ?? 'th');
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
 const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
+// Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
+// Cells may not have one yet.
+const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
+// Live cells per category, for the verdict: a category with one live cell is something agents "can" do.
+const liveBy = (mine) => Object.fromEntries(meta.categories.map((c) => [c.id, mine.filter((x) => x.cap.category === c.id && x.cell.status === 'live').length]));
+function mainReason(mine, catIds) {
+  const n = {};
+  for (const { cap, cell } of mine) if (catIds.includes(cap.category) && cell.status !== 'live' && gapLabel(cell.gapReason)) n[cell.gapReason] = (n[cell.gapReason] ?? 0) + 1;
+  const top = Object.keys(n).sort((a, b) => n[b] - n[a])[0];
+  return top && gapLabel(top);
+}
 // A small logo before a company or repo name. The name sits right next to it, so the image has empty alt text.
 // No logo, or one that fails to load, becomes a monogram (see wireLogos).
 const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
@@ -74,6 +91,14 @@ function renderStats() {
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}, tier ${tierOf(r.score)}"`;
 
 // Left of the console: every country with its tier letter and score. Selecting one fills the rest.
+// On phones the country list is a strip that scrolls sideways; keep the selected country in it, centred.
+function showSideChip() {
+  const side = $('.term-side'), b = side.querySelector('[aria-current="true"]');
+  if (!b || side.scrollWidth <= side.clientWidth) return;
+  const s = side.getBoundingClientRect(), r = b.getBoundingClientRect();
+  side.scrollLeft += r.left - s.left - (s.width - r.width) / 2;
+}
+
 function renderSide() {
   $('[data-clist]').innerHTML = ranking.map((r) => `
     <li><button type="button" class="tier-${tierOf(r.score).toLowerCase()}" data-go-country="${r.code}" ${pick(r)}>
@@ -87,6 +112,7 @@ function renderRanking() {
       <span class="rk-n">${i && ranking[i - 1].rank === r.rank ? '=' : ''}${r.rank}</span>${flag(r.code)}<span class="rk-c">${r.code}</span>
       <span class="rk-t">${tierOf(r.score)}</span><span class="bars"><b style="width:${r.score}%"></b></span><span class="rk-v">${r.score}</span>
     </button></li>`).join('');
+  $('[data-rk-count]').textContent = `${ranking.length} countries tracked so far`;
   $('[data-points]').textContent = Object.values(STATUSES).map((s) => `${s.label} ${s.points}`).join(' · ');
 }
 
@@ -108,24 +134,40 @@ function renderCountry() {
 
   $('[data-country]').innerHTML = `
     <div>
-      <p class="label">Country · rank ${r.rank} of ${ranking.length}${ties.length ? `, tied with ${ties.map((t) => `${flag(t.code)}${t.code}`).join(', ')}` : ''}</p>
+      <p class="label">${r.code === state.own ? 'Your country' : 'Country'} · ${ranking.length} countries tracked so far</p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
-      <p class="cn-lede">${esc(summarize(r.name, r.byCategory))}</p>
+      <p class="cn-lede cn-verdict">${esc(verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
     </div>
     <div class="cn-r">
+      <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>
       <button type="button" class="btn btn-sm" data-go-country="${other.code}">Compare with ${flag(other.code)}${other.code}</button>
       <button type="button" class="btn btn-sm" data-sources>${nSources} sources</button>
     </div>`;
 
-  const parts = Object.keys(STATUSES).map((k) => [k, r.counts[k]]);
+  // Score in context: this country next to the best one and the average, then the two plain lists.
+  const best = ranking[0];
+  const avg = Math.round(ranking.reduce((s, x) => s + x.score, 0) / ranking.length);
+  const bar = (label, v, on) => `<li${on ? ' class="on"' : ''}><span>${label}</span><span class="bars"><b style="width:${v}%"></b></span><span class="rk-v">${v}</span></li>`;
+  const works = mine.filter((x) => x.cell.status === 'live');
+  const notYet = mine.filter((x) => x.cell.status !== 'live').sort((a, b) => STATUSES[b.cell.status].points - STATUSES[a.cell.status].points);
+  const item = ({ cap, cell }, extra = '') => `<li><button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
+    ${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(cap.name)}${extra}</span></button></li>`;
+  const why = ({ cap, cell }) => {
+    const reason = gapLabel(cell.gapReason);
+    const cos = couldClose(categories.find((c) => c.category === cap.category).companies, cap.id, r.code, region).slice(0, 3);
+    return `${reason ? `<small>${esc(reason)}</small>` : ''}${cos.length ? `<small class="mc-co">Could close it: ${cos.map((co) => `${esc(co.name)} (already in ${co.near.map((m) => `${flag(m)}${m}`).join(' ')})`).join(', ')}</small>` : ''}`;
+  };
   $('[data-kpis]').innerHTML = `
-    <div class="card kpi"><p class="label">Score</p><p class="kpi-v">${r.score}<small>/ 100</small></p>
-      <span class="meter"><b style="width:${r.score}%"></b></span><span class="badge badge-s">Tier ${tierOf(r.score)} · ${ordinal(r.rank)}${ties.length ? ' tied' : ''}</span></div>
-    <div class="card kpi"><p class="label">Live now</p><p class="kpi-v">${r.counts.live}<small>of ${total}</small></p>
-      <span class="stack" role="img" aria-label="${parts.map(([k, n]) => `${n} ${STATUSES[k].label.toLowerCase()}`).join(', ')}">${parts.filter(([, n]) => n).map(([k, n]) => `<i class="k-${k}" style="flex:${n}"></i>`).join('')}</span>
-      <span class="stack-k" aria-hidden="true">${parts.map(([k, n], j) => `<b>${n}</b> ${STATUSES[k].label.toLowerCase()}${j === 1 ? '<br>' : j < 3 ? ' · ' : ''}`).join('')}</span></div>
-    <div class="card kpi"><p class="label">Low confidence</p><p class="kpi-v">${low}<small>cell${low === 1 ? '' : 's'}</small></p><span class="chip s-limited q">Dashed = thin evidence</span></div>
-    <div class="card kpi"><p class="label">Sources</p><p class="kpi-v">${nSources}</p><span class="badge">Every cell cited</span></div>`;
+    <div class="card kpi mc-score">
+      <p class="label">Score</p>
+      <p class="kpi-v">${r.score}<small>/ 100 · rank ${r.rank} of ${ranking.length}${ties.length ? ', tied' : ''}</small></p>
+      <ul class="mc-bars">${bar(`${flag(r.code)}${r.code}`, r.score, true)}${best.code === r.code ? '' : bar(`Best: ${flag(best.code)}${best.code}`, best.score)}${bar(`Average of ${ranking.length}`, avg)}</ul>
+      <p class="mc-note">The share of agent abilities that work today. Data as of ${fmtDate(meta.asOf)}. ${low ? `A dashed ring marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
+    </div>
+    <section class="card kpi mc-list" aria-labelledby="mc-works"><h3 id="mc-works" class="label">Works today · ${works.length} of ${total}</h3>
+      ${works.length ? `<ul>${works.map((x) => item(x)).join('')}</ul>` : '<p class="mc-note">Nothing is generally available yet.</p>'}</section>
+    <section class="card kpi mc-list" aria-labelledby="mc-not"><h3 id="mc-not" class="label">Not yet · ${notYet.length} of ${total}</h3>
+      ${notYet.length ? `<ul>${notYet.map((x) => item(x, why(x))).join('')}</ul>` : '<p class="mc-note">Everything we track works here.</p>'}</section>`;
 
   const { weak } = extremes(r.byCategory);
   $('[data-cats-title]').innerHTML = `${flag(r.code)}${esc(r.name)} by category`;
@@ -224,12 +266,15 @@ function openSources(code) {
 function selectCountry(code, scroll) {
   if (!byCode[code]) return;
   const refocus = $('[data-country]').contains(document.activeElement);
+  const fromPicker = document.activeElement?.matches('[data-pick-country]');
   state.country = code;
   history.replaceState(null, '', `#country=${code}`);
   // Every country picker on the page (hero, console, tier list) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
-  if (refocus) $('#cn-title').focus({ preventScroll: true });
+  showSideChip();
+  if (fromPicker) $('[data-pick-country]').focus({ preventScroll: true });
+  else if (refocus) $('#cn-title').focus({ preventScroll: true });
   document.dispatchEvent(new CustomEvent('countrychange', { detail: code }));
   if (scroll) $('#country').scrollIntoView({ behavior: scrollBehavior() });
 }
@@ -247,17 +292,24 @@ function renderCompanyFilters() {
   };
 }
 
+// A "Show all N" / "Show fewer" button under a long table. Returns the rows to draw.
+function firstRows(rows, all, el, what) {
+  el.innerHTML = rows.length > FIRST_ROWS ? `<button type="button" class="pill" aria-expanded="${all}">${all ? 'Show fewer' : `Show all ${rows.length} ${what}`}</button>` : '';
+  return all ? rows : rows.slice(0, FIRST_ROWS);
+}
+
 function renderCompanies() {
-  const rows = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
-  $('[data-companies-label]').textContent = `Companies · ${rows.length} of ${companies.length}`;
+  const matching = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
+  const rows = firstRows(matching, state.allCompanies, $('[data-companies-more]'), 'companies');
+  $('[data-companies-label]').textContent = `Companies · ${matching.length} of ${companies.length}`;
   $('[data-companies]').innerHTML = `
     <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
     <tbody>${rows.map((c) => `
       <tr>
-        <th scope="row"><a class="co-name" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a><span class="co-cats">${c.categories.map((id) => `<span>${esc(shortName(id))}</span>`).join('')}</span></th>
+        <th scope="row"><a class="co-name" href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a>${c.categories.length > 1 ? '' : `<span class="co-cats"><span>${esc(shortName(c.categories[0]))}</span></span>`}</th>
         <td class="nowrap">${flag(c.hq)}${esc(c.hq)}</td>
         <td><p class="co-roles" title="${esc(c.roles.join(' '))}">${esc(c.roles.join(' '))}</p></td>
-        <td class="markets"><span class="sr-only">${c.markets.map((m) => byCode[m]?.name ?? m).join(', ')}</span>${ranking.map((r) => `<i class="${c.markets.includes(r.code) ? 'on' : ''}" title="${esc(r.name)}" aria-hidden="true">${r.code}</i>`).join('')}</td>
+        <td class="markets">${c.categories.map((id) => `<span class="mk-row">${c.categories.length > 1 ? `<span class="mk-cat">${esc(shortName(id))}</span>` : ''}<span class="sr-only">${esc(shortName(id))}: ${c.marketsBy[id].map((m) => byCode[m]?.name ?? m).join(', ')}</span>${ranking.map((r) => `<i class="${c.marketsBy[id].includes(r.code) ? 'on' : ''}" title="${esc(r.name)}" aria-hidden="true">${r.code}</i>`).join('')}</span>`).join('')}</td>
       </tr>`).join('')}
     </tbody>`;
 }
@@ -281,8 +333,9 @@ const count = (n, label) => `<td class="num" data-label="${label}">${n == null ?
 
 // Open-source repos, most used first: the tier comes from installs, never from stars.
 function renderRepos() {
-  const rows = repos.filter((r) => state.use === 'all' || r.use === state.use);
-  $('[data-repos-label]').textContent = `Open source · ${rows.length} of ${repos.length}`;
+  const matching = repos.filter((r) => state.use === 'all' || r.use === state.use);
+  const rows = firstRows(matching, state.allRepos, $('[data-repos-more]'), 'repos');
+  $('[data-repos-label]').textContent = `Open source · ${matching.length} of ${repos.length}`;
   $('[data-repos]').innerHTML = `
     <thead><tr><th scope="col">Repo</th><th scope="col">What it lets agents do</th><th scope="col">Real use</th><th scope="col" class="num">Installs a month</th><th scope="col" class="num">Docker pulls</th><th scope="col" class="num">Stars</th><th scope="col" class="num">Last commit</th></tr></thead>
     <tbody>${rows.map((r) => `
@@ -318,7 +371,9 @@ function renderMethod() {
 function renderCounts() {
   const text = `${cells.length} cells · ${sourcesOf(cells)} sources`;
   $('[data-term-count]').textContent = text;
-  $('[data-foot-count]').textContent = `${text} · ${companies.length} companies · ${repos.length}\u00a0open\u2011source repos`;
+  // Each item carries its leading separator and never breaks inside, so a wrapped line never ends with "·".
+  const parts = [`${cells.length} cells`, `${sourcesOf(cells)} sources`, `${companies.length} companies`, `${repos.length} open-source repos`];
+  $('[data-foot-count]').innerHTML = parts.map((p, i) => `<span class="nowrap">${i ? '· ' : ''}${esc(p)}</span>`).join(' ');
 }
 
 function wire() {
@@ -330,6 +385,30 @@ function wire() {
     selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
   });
   addEventListener('hashchange', () => hashCountry() && selectCountry(hashCountry(), true));
+  // Show all / Show fewer under the Companies and Open source tables. Fewer scrolls back to the table's top.
+  $('[data-companies-more]').addEventListener('click', (e) => {
+    if (!e.target.closest('button')) return;
+    state.allCompanies = !state.allCompanies;
+    renderCompanies();
+    // The render replaced the button; keep keyboard focus on it.
+    $('[data-companies-more] button')?.focus({ preventScroll: true });
+    if (!state.allCompanies) $('#companies').scrollIntoView({ behavior: scrollBehavior() });
+  });
+  $('[data-repos-more]').addEventListener('click', (e) => {
+    if (!e.target.closest('button')) return;
+    state.allRepos = !state.allRepos;
+    renderRepos();
+    $('[data-repos-more] button')?.focus({ preventScroll: true });
+    if (!state.allRepos) $('#opensource').scrollIntoView({ behavior: scrollBehavior() });
+  });
+  $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
+
+  // Phones: the Menu button opens the section links; picking one closes it.
+  const nav = $('.nav'), menu = $('[data-nav-menu]');
+  const setMenu = (open) => { nav.classList.toggle('open', open); menu.setAttribute('aria-expanded', open); };
+  menu.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  nav.querySelector('nav').addEventListener('click', (e) => e.target.closest('a') && setMenu(false));
+  addEventListener('keydown', (e) => e.key === 'Escape' && nav.classList.contains('open') && (setMenu(false), menu.focus()));
 
   // Cells in the matrix and the feed open their details; the sources button lists the country's sources.
   $('[data-term]').addEventListener('click', (e) => {

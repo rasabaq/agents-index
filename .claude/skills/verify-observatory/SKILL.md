@@ -71,7 +71,7 @@ It exits 1 and prints `unhealthy` when any check fails. Then run `down` and `up`
 
 | Command | What it does |
 | --- | --- |
-| `node $H open '<path>' [--width 1440\|400] [--lang es-CL] [--scheme dark\|light] [--wait '<css>']` | Loads a page and waits for it to render. |
+| `node $H open '<path>' [--width 1440\|400] [--lang es-CL] [--tz America/Santiago] [--scheme dark\|light] [--wait '<css>']` | Loads a page and waits for it to render. The time zone is UTC unless `--tz` sets one, because the site guesses the visitor's country from it. |
 | `node $H click '<css>'` | A real mouse click at the centre of the first match, after scrolling it into view. |
 | `node $H press <key>` | A real key press: `Escape`, `Enter`, `Tab`, `ArrowDown`, `j`, `k`, `1`–`6`. |
 | `node $H eval '<js>'` | Reads page state and prints JSON. Use it to read, not to act: act with `click` and `press`. |

@@ -65,6 +65,8 @@
 .term-side { padding: 18px 10px; border-right: 1px solid rgba(255, 255, 255, 0.055); }
 .term-side > .label { padding: 0 10px 10px; }
 .clist { margin: 0; padding: 0; list-style: none; }
+/* the country list stays in view while the panels scroll past (below the nav and the console tabs) */
+@media (min-width: 761px) { .term-side .clist { position: sticky; top: 108px; } }
 .clist button { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 6px; width: 100%; height: 30px; padding: 0 10px 0 7px; border: 0; border-radius: 7px; background: none; color: var(--ink-2); font: 400 11.5px/1 var(--mono); text-align: left; cursor: pointer; }
 .clist button:hover { background: rgba(255, 255, 255, 0.04); }
 .clist .flag { margin: 0; }
@@ -100,6 +102,28 @@
 .stack-k b { font-weight: 500; color: var(--ink-2); }
 
 /* the panels: the matrix on the left, ranking, categories and sources stacked on the right */
+/* my country: score in context across the top, then "Works today" and "Not yet" side by side; each item opens the cell */
+.kpis { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); align-items: start; }
+.mc-score { grid-column: 1 / -1; display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 10px 32px; }
+.mc-score .label { grid-column: 1 / -1; }
+.cn-verdict { max-width: 62ch; font-size: 17px; line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+.cn-r .select select { height: 32px; font-size: 13px; }
+.mc-bars { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.mc-bars li { display: grid; grid-template-columns: 116px minmax(0, 1fr) 26px; align-items: center; gap: 10px; font: 400 11.5px/1.2 var(--mono); color: var(--muted); }
+.mc-bars li.on { color: var(--sunrise); }
+.mc-bars li.on .bars b { background: linear-gradient(90deg, rgba(255, 182, 114, 0.4), var(--sunrise)); }
+.mc-bars .flag { margin: 0 4px 0 0; }
+.mc-note { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+/* the chip column is as wide as the widest chip in that list (subgrid), so short lists have no wide gap */
+.mc-list ul { display: grid; grid-template-columns: max-content minmax(0, 1fr); margin: 0; padding: 0; list-style: none; }
+.mc-list li, .mc-list button { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; }
+.mc-list li + li { border-top: 1px solid rgba(255, 255, 255, 0.055); }
+.mc-list button { align-items: start; column-gap: 12px; width: calc(100% + 12px); margin: 0 -6px; padding: 8px 6px; border: 0; border-radius: 7px; background: none; color: var(--ink); font: 400 13.5px/1.35 var(--font); text-align: left; cursor: pointer; }
+.mc-list button:hover { background: rgba(255, 255, 255, 0.04); }
+.mc-list .chip { justify-self: start; margin-top: -1px; }
+.mc-t small { display: block; margin-top: 3px; font-size: 12px; line-height: 1.4; color: var(--ink-2); }
+.mc-t small.mc-co { color: var(--muted); }
+.mc-t .flag { width: auto; margin: 0 2px 0 0; }
 .panels { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 10px; }
 .panels-r { display: grid; align-content: start; gap: 10px; min-width: 0; }
 .panel { padding: 16px; }
@@ -176,11 +200,12 @@
 /* ---------- companies and open source: a filter and a table that scrolls inside its panel ---------- */
 .co-panel { padding: 16px; }
 .co-panel .filters { margin-bottom: 14px; }
-.table-scroll { position: relative; max-height: 560px; overflow: auto; border: 1px solid rgba(255, 255, 255, 0.055); border-radius: 10px; background: rgba(3, 3, 8, 0.35); }
-.table-scroll:focus-visible { outline-offset: 2px; }
+/* the tables grow with the page (no inner scroll box, which traps swipes on phones); long lists show the first rows and a Show all button */
+.table-wrap { position: relative; border: 1px solid rgba(255, 255, 255, 0.055); border-radius: 10px; background: rgba(3, 3, 8, 0.35); }
+.more-row:not(:empty) { display: flex; justify-content: center; margin-top: 14px; }
 .table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .table th, .table td { padding: 10px 14px; border-top: 1px solid rgba(255, 255, 255, 0.055); text-align: left; vertical-align: top; }
-.table thead th { position: sticky; top: 0; z-index: 1; padding-top: 13px; border-top: 0; background: #0b0b13; box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.055); font: 500 10px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.table thead th { position: sticky; top: 60px; z-index: 1; padding-top: 13px; border-top: 0; background: #0b0b13; box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.055); font: 500 10px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .table tbody th { min-width: 150px; font-weight: 500; }
 .table tbody th a { color: var(--ink); text-decoration: none; }
 .table tbody th a:hover { text-decoration: underline; }
@@ -194,6 +219,9 @@
 .co-roles { max-width: 56ch; margin: 0; line-height: 1.45; color: var(--ink-2); }
 .markets { white-space: nowrap; }
 .markets i { display: inline-block; margin: 0 2px 2px 0; padding: 3px 5px; border-radius: 99px; box-shadow: inset 0 0 0 1px var(--line); font: 500 9.5px/1 var(--mono); font-style: normal; color: var(--muted); }
+.mk-row { display: block; }
+.mk-row + .mk-row { margin-top: 4px; }
+.mk-cat { display: block; margin-bottom: 2px; font: 400 10px/1.4 var(--mono); color: var(--muted); }
 .markets i.on { background: var(--s-live); box-shadow: none; color: var(--s-live-ink); }
 
 .sec-note { max-width: 36ch; margin: 0; font-size: 14px; color: var(--ink-2); }
@@ -237,6 +265,8 @@
 .fc-tx p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
 
 .foot-site { gap: 0; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.foot-links a { color: var(--ink-2); }
 .foot-site p + p { flex: none; padding-left: 24px; text-transform: uppercase; letter-spacing: 0.12em; font-size: 10.5px; }
 
 /* ---------- smaller screens ---------- */
@@ -246,6 +276,9 @@
   .fcards { grid-template-columns: minmax(0, 1fr); max-width: 560px; margin: 0 auto; }
 }
 @media (max-width: 760px) {
+  .kpis { grid-template-columns: minmax(0, 1fr); }
+  .mc-score { grid-template-columns: minmax(0, 1fr); }
+  .cn-verdict { font-size: 15.5px; }
   .term { width: calc(100% - 24px); margin-top: -200px; }
   .term-date, .term-sel { display: none; }
   .term-tabs a { padding: 0 12px; }

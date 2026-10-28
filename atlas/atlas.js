@@ -72,6 +72,15 @@ function render(ctx) {
   const views = (window.ATLAS_VIEWS ?? []).slice().sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
   const nav = $('[data-atlas-nav]');
   nav.innerHTML = views.map((v, i) => `<a href="#v-${v.id}"><span>${num(i)}</span>${esc(v.title)}</a>`).join('');
+  // When more tabs hide past an edge, fade that edge so the strip reads as scrollable.
+  const more = () => {
+    nav.classList.toggle('more', nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1);
+    nav.classList.toggle('more-l', nav.scrollLeft > 1);
+  };
+  nav.addEventListener('scroll', more, { passive: true });
+  addEventListener('resize', more);
+  document.fonts?.ready.then(more);
+  more();
   const host = $('[data-atlas-views]');
   views.forEach((v, i) => {
     host.insertAdjacentHTML('beforeend', `
@@ -96,9 +105,20 @@ function render(ctx) {
     if (!e.isIntersecting) return;
     tabs.forEach((a) => (a.hash === `#${e.target.id}` ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
     const a = nav.querySelector('[aria-current]');
-    if (a && (a.offsetLeft < nav.scrollLeft || a.offsetLeft + a.offsetWidth > nav.scrollLeft + nav.clientWidth)) nav.scrollTo({ left: a.offsetLeft - 16 });
+    // Keep it clear of the 56px edge fades: scroll when it sits inside one, leaving 64px on the left.
+    if (a) {
+      const n = nav.getBoundingClientRect(), r = a.getBoundingClientRect();
+      if (r.left < n.left + 56 || r.right > n.right - 56) nav.scrollTo({ left: nav.scrollLeft + r.left - n.left - 64 });
+    }
   }), { rootMargin: '-45% 0px -54% 0px' });
   host.querySelectorAll('.view').forEach((s) => io.observe(s));
+  // Above the first view (the hero), no tab is current; the strip goes back to its start.
+  const first = host.querySelector('.view');
+  addEventListener('scroll', () => {
+    if (!first || first.getBoundingClientRect().top < innerHeight * 0.45 || !nav.querySelector('[aria-current]')) return;
+    tabs.forEach((a) => a.removeAttribute('aria-current'));
+    nav.scrollTo({ left: 0 });
+  }, { passive: true });
 }
 
 addEventListener('scroll', () => ($('[data-atlas-tip]').hidden = true), { passive: true });

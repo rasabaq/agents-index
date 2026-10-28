@@ -178,15 +178,18 @@ export const TIERS = [
 export const tierOf = (score) => TIERS.find((t) => score >= t.min).letter;
 
 // The same company often appears in several category files; merge it by name. Most markets first.
+// `markets` is the union; `marketsBy` keeps each category's own markets, since a company can be live for one
+// capability in a country and not for another.
 export function mergeCompanies(categories) {
   const map = new Map();
   for (const cat of categories) {
     for (const co of cat.companies ?? []) {
       const key = co.name.toLowerCase();
       const prev = map.get(key);
-      if (!prev) map.set(key, { ...co, markets: [...new Set(co.markets)], categories: [cat.category], roles: [co.role] });
+      if (!prev) map.set(key, { ...co, markets: [...new Set(co.markets)], categories: [cat.category], roles: [co.role], marketsBy: { [cat.category]: [...new Set(co.markets)] } });
       else {
         prev.markets = [...new Set([...prev.markets, ...co.markets])];
+        prev.marketsBy[cat.category] = [...new Set([...(prev.marketsBy[cat.category] ?? []), ...co.markets])];
         if (!prev.categories.includes(cat.category)) prev.categories.push(cat.category);
         if (!prev.roles.includes(co.role)) prev.roles.push(co.role);
       }
@@ -225,4 +228,66 @@ export function summarize(name, byCategory) {
   if (byCategory[weak] >= 50) return `${where}, an agent can ${words(best).can}. Even its weakest area, ${words(weak).short.toLowerCase()}, scores ${byCategory[weak]}.`;
   if (byCategory[best] < 50) return `${where}, agents are still early. The best category, ${words(best).short.toLowerCase()}, scores ${byCategory[best]}.`;
   return `${where}, an agent can ${words(best).can}. It cannot ${words(weak).can} yet.`;
+}
+
+// Time zones of the tracked countries, so a visitor in Santiago with an English browser still starts on Chile.
+// The US is left out on purpose: it is the default anyway.
+const ZONES = {
+  CL: /^(America\/(Santiago|Punta_Arenas)|Pacific\/Easter)$/,
+  CO: /^America\/Bogota$/,
+  MX: /^America\/(Mexico_City|Cancun|Merida|Monterrey|Matamoros|Chihuahua|Ciudad_Juarez|Ojinaga|Mazatlan|Bahia_Banderas|Hermosillo|Tijuana)$/,
+  BR: /^America\/(Sao_Paulo|Bahia|Fortaleza|Recife|Maceio|Belem|Araguaina|Santarem|Manaus|Cuiaba|Campo_Grande|Porto_Velho|Boa_Vista|Rio_Branco|Eirunepe|Noronha)$/,
+  IN: /^Asia\/(Kolkata|Calcutta)$/,
+  GB: /^Europe\/London$/,
+  DE: /^Europe\/(Berlin|Busingen)$/,
+};
+
+// The visitor's own country, if we can tell: their time zone first, then the region of their browser languages
+// (es-CL → CL). null when neither names a tracked country.
+export function guessCountry(codes, languages = [], timeZone = '') {
+  const byZone = Object.keys(ZONES).find((code) => ZONES[code].test(timeZone));
+  if (codes.includes(byZone)) return byZone;
+  for (const lang of languages) {
+    const region = lang.match(/-([A-Za-z]{2})\b/)?.[1]?.toUpperCase();
+    if (codes.includes(region)) return region;
+  }
+  return null;
+}
+
+// The country a visitor starts on: the #country= hash, else their own country, else the United States.
+export function startCountry(codes, hash, languages = [], timeZone = '') {
+  const fromHash = hash.match(/^#country=(\w\w)$/)?.[1];
+  if (codes.includes(fromHash)) return fromHash;
+  return guessCountry(codes, languages, timeZone) ?? (codes.includes('US') ? 'US' : codes[0]);
+}
+
+// "a, b or c"; a comma before the last word when a part already has an "and" or "or" in it, so it still reads.
+const join = (xs, word) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')}${xs.some((x) => / (and|or) /.test(x)) ? ',' : ''} ${word} ${xs.at(-1)}`);
+
+// The verdict at the top of a country. It agrees with the Works today and Not yet lists: "can" names up to two
+// categories with at least one live cell (highest score first), "cannot yet" up to two with none (lowest first).
+// liveBy maps a category id to its number of live cells. reasonFor(categoryIds) returns the most common gap reason
+// label among those categories' cells, or nothing, so the reason always belongs to the gaps the sentence names.
+export function verdict(name, byCategory, liveBy, reasonFor = () => null) {
+  const ids = Object.keys(byCategory);
+  const can = ids.filter((id) => liveBy[id] > 0).sort((a, b) => byCategory[b] - byCategory[a]).slice(0, 2).map((id) => words(id).can);
+  const cannotIds = ids.filter((id) => !liveBy[id]).sort((a, b) => byCategory[a] - byCategory[b]).slice(0, 2);
+  const cannot = cannotIds.map((id) => words(id).can);
+  const reason = cannotIds.length ? reasonFor(cannotIds) : null;
+  const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
+  const why = reason ? ` Main reason: ${reason}.` : '';
+  if (!cannot.length) return `${where}, AI agents can ${join(can, 'and')} today, and something works in every area, though not all of it yet.`;
+  if (!can.length) return `${where}, nothing we track works for AI agents yet: they cannot ${join(cannot, 'or')}.${why}`;
+  return `${where}, AI agents can ${join(can, 'and')} today, but cannot yet ${join(cannot, 'or')}.${why}`;
+}
+
+// Companies that could close a gap: in the same category file, they enable this capability and work in a country
+// of the same region, but not in this one. They must already work in two or more countries, so a national agency or
+// a one-country bank next door is not offered as a fix. `region` maps a country code to its region.
+export function couldClose(companies, capId, code, region) {
+  return (companies ?? [])
+    .filter((co) => (co.capabilities ?? []).includes(capId) && co.markets.length > 1 && !co.markets.includes(code))
+    .map((co) => ({ ...co, near: co.markets.filter((m) => m !== code && region[m] === region[code]) }))
+    .filter((co) => co.near.length)
+    .sort((a, b) => b.near.length - a.near.length || a.name.localeCompare(b.name));
 }
