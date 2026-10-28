@@ -377,6 +377,7 @@
         },
         "GB": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
           "evidence": [
             {
@@ -397,6 +398,7 @@
         },
         "DE": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
           "evidence": [
             {
@@ -417,6 +419,7 @@
         },
         "BR": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
           "evidence": [
             {
@@ -437,6 +440,7 @@
         },
         "MX": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
           "evidence": [
             {
@@ -457,6 +461,7 @@
         },
         "CL": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
           "evidence": [
             {
@@ -477,6 +482,7 @@
         },
         "CO": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
           "evidence": [
             {
@@ -497,6 +503,7 @@
         },
         "IN": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
           "evidence": [
             {
@@ -524,7 +531,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Gemini connected apps (calls, messages, WhatsApp, Calendar, Instacart, OpenTable), Alexa+ (free with Prime) and Gemini Spark act across apps; Apple's Siri AI app actions are in English beta.",
+          "note": "Gemini connected apps (calls, messages, WhatsApp, Calendar, Instacart, OpenTable), Alexa+ (free with Prime) and Gemini Spark act across apps; Apple's Siri AI app actions are in English beta; OpenAI's dots, always-on agents with their own cloud computer that work across connected apps, are rolling out to Pro and Business Premium users in markets outside the EEA, Switzerland and the UK.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -559,6 +566,20 @@
               "publisher": "Apple",
               "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
               "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "Introducing dots",
+              "publisher": "OpenAI",
+              "url": "https://openai.com/index/introducing-dots/",
+              "date": "2026-09-29",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI Help Center",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
               "type": "company"
             }
           ]
