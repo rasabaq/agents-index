@@ -56,6 +56,7 @@
         },
         "GB": {
           "status": "limited",
+          "gapReason": "pilot-only",
           "note": "Only Alexa+ early access (invite or new Echo buyers, since March 2026) can order from Amazon by voice; Google says UCP checkout in AI Mode and Gemini will reach the UK after Canada and Australia, and Copilot, Perplexity and Google checkout are US-only.",
           "evidence": [
             {
@@ -83,6 +84,7 @@
         },
         "DE": {
           "status": "limited",
+          "gapReason": "not-launched",
           "note": "Only Alexa+ is available, in early access since May 2026, and Amazon does not list its shopping features by country; Google agentic checkout leaves Europe out (US and Australia only).",
           "evidence": [
             {
@@ -144,6 +146,7 @@
         },
         "MX": {
           "status": "limited",
+          "gapReason": "not-launched",
           "note": "Only Alexa+ is available, in early access since January 2026, and it can order and pay for you (for example food orders). Gemini lists Mexico for shopping, but its Buy button needs Google Pay agentic checkout, which is US and Australia only; no ChatGPT, Copilot or Perplexity checkout is offered, and no Mercado Libre or Walmart México checkout inside a chat was found. Liverpool has only announced groundwork (November 2025, with commercetools) to let shoppers buy in ChatGPT \"where supported\"; no live launch was found.",
           "evidence": [
             {
@@ -185,6 +188,7 @@
         },
         "CL": {
           "status": "none",
+          "gapReason": "assist-only",
           "note": "No in-chat checkout found: Gemini lists Chile for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US only, and Alexa+ is not in Chile. Jumbo's AI WhatsApp assistant (launched June 2026, later reported nationwide) builds a cart, but you finish and pay on jumbo.cl or in its app. Lider's web assistant Lider iA adds recipe items to the cart, and we found no chat checkout from Falabella, Ripley or Lider. Still low confidence: only trade press covers Jumbo, and searches of Cencosud and Falabella sites found no primary page.",
           "evidence": [
             {
@@ -220,6 +224,7 @@
         },
         "CO": {
           "status": "none",
+          "gapReason": "assist-only",
           "note": "No in-chat checkout found: Gemini lists Colombia for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US only, and Alexa+ is not in Colombia. Rappi's WhatsApp ordering assistant was a beta in December 2025 and we found no statement that you can pay inside the chat, and we found no chat checkout from Éxito or Falabella.",
           "evidence": [
             {
@@ -248,6 +253,7 @@
         },
         "IN": {
           "status": "limited",
+          "gapReason": "pilot-only",
           "note": "Pilots only: Razorpay and NPCI run UPI checkout pilots in ChatGPT (a private beta with bigbasket) and in Claude (Zomato, Swiggy and Zepto, for a small group of users), Google is testing a Flipkart Buy button in Gemini and AI Mode for some users, and Alexa+ (with shopping) is in early access.",
           "evidence": [
             {
@@ -316,6 +322,7 @@
         },
         "GB": {
           "status": "limited",
+          "gapReason": "not-launched",
           "note": "Only Amazon's Alexa+ in early access can order from Amazon for you; Rufus works in the UK, but its Auto Buy and Buy for Me are documented only in the US.",
           "evidence": [
             {
@@ -336,6 +343,7 @@
         },
         "DE": {
           "status": "limited",
+          "gapReason": "not-launched",
           "note": "Only Amazon's Alexa+ in early access (since May 2026); Rufus is live in Germany, but its Auto Buy is documented only in the US.",
           "evidence": [
             {
@@ -383,6 +391,7 @@
         },
         "MX": {
           "status": "limited",
+          "gapReason": "assist-only",
           "note": "Only Amazon's Alexa+ in early access (since January 2026) can buy from Amazon for you. Walmart México's Sparky (in its app since 24 September 2026) helps find and compare products, and its press release does not mention adding to cart or paying, Mercado Libre's buying agent is still in testing, and no Rufus launch in Mexico was found.",
           "evidence": [
             {
@@ -410,6 +419,7 @@
         },
         "CL": {
           "status": "none",
+          "gapReason": "assist-only",
           "note": "No marketplace buying agent found: Jumbo (Cencosud) has a WhatsApp AI that builds a grocery cart in Santiago and Valparaíso, but you pay on jumbo.cl or in its app; Falabella: no customer buying agent found in searches (only internal AI work); Mercado Libre's buying agent is not launched, Lider has a web assistant (Lider iA) that fills a cart from recipes but does not pay; no Ripley agent was found, and Alexa+ is not in Chile. Low confidence: Chile claims rest on trade press, with no Cencosud, Falabella, Ripley or Lider primary page found.",
           "evidence": [
             {
@@ -431,6 +441,7 @@
         },
         "CO": {
           "status": "announced",
+          "gapReason": "not-launched",
           "note": "Rappi announced a WhatsApp AI assistant in September 2025 that takes orders in plain language by text or voice note. Its Colombia manager said in December 2025 it ran as a beta, with a wider launch planned for 2026; no general launch was confirmed. No Éxito or Falabella buying agent was found (Éxito has an older WhatsApp ordering chatbot from 2020), and Mercado Libre's buying agent is not launched. Low confidence: only trade press covers Rappi; rappi.com and about.rappi.com showed no announcement.",
           "evidence": [
             {
@@ -452,6 +463,7 @@
         },
         "IN": {
           "status": "limited",
+          "gapReason": "pilot-only",
           "note": "Flipkart's payments app super.money started rolling out agents that shop on Flipkart in September 2026, and Amazon's Alexa+ (with shopping) is in early access; neither has reached all users yet. Amazon India's Rufus only sends deal alerts, with no Auto Buy.",
           "evidence": [
             {
@@ -567,6 +579,7 @@
         },
         "BR": {
           "status": "limited",
+          "gapReason": "rail-closed",
           "note": "Only Brazilian Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US (ChatGPT, Copilot) or the US, Canada and Australia (Google); Stripe Agentic Commerce Suite does not list Brazil.",
           "evidence": [
             {
@@ -594,6 +607,7 @@
         },
         "MX": {
           "status": "limited",
+          "gapReason": "rail-closed",
           "note": "Only Mexican Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; Stripe Agentic Commerce Suite does not list Mexico.",
           "evidence": [
             {
@@ -614,6 +628,7 @@
         },
         "CL": {
           "status": "limited",
+          "gapReason": "rail-closed",
           "note": "Only Chilean Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; no local agentic commerce rail was found.",
           "evidence": [
             {
@@ -627,6 +642,7 @@
         },
         "CO": {
           "status": "limited",
+          "gapReason": "rail-closed",
           "note": "Only Colombian Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; no local agentic commerce rail was found.",
           "evidence": [
             {
@@ -640,6 +656,7 @@
         },
         "IN": {
           "status": "limited",
+          "gapReason": "pilot-only",
           "note": "Razorpay Agentic Payments on UPI (with NPCI, for ChatGPT and Claude) is a pilot with about 50 brands, and Indian Shopify stores can sell through Agentic Storefronts only to US, Canadian or Australian shoppers.",
           "evidence": [
             {
