@@ -61,8 +61,7 @@
 .hero-tabs .flag { margin-right: 2px; font-size: 1.1em; }
 .hero-cmd { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; min-height: 44px; margin-top: 14px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 10px; background: rgba(3, 3, 8, 0.62); font: 400 12.5px/1 var(--mono); }
 .hero-ps { display: grid; place-items: center; padding-left: 4px; color: var(--magenta); }
-.hero-cmd code { display: block; min-width: 0; padding: 11px 4px; overflow-wrap: anywhere; font: inherit; line-height: 1.5; color: var(--ink); }
-.hero-cmd code span { color: var(--ink-2); }
+.hero-q { min-width: 0; margin: 0; padding: 11px 4px; overflow-wrap: anywhere; font: 500 13.5px/1.5 var(--font); color: var(--ink); }
 .hero-copy-btn { margin: 7px 7px 7px 0; padding: 0 10px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 6px; background: none; cursor: pointer; font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
 .hero-copy-btn:hover { color: var(--ink); border-color: rgba(255, 255, 255, 0.2); }
 .hero-ans { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); }

@@ -15,6 +15,7 @@ test('companies merge by name across categories', () => {
   ]);
   assert.deepEqual(merged.map((c) => [c.name, c.markets, c.categories, c.roles]),
     [['Acme', ['AA', 'BB'], ['shop', 'pay'], ['r1', 'r2']], ['Solo', ['AA'], ['pay'], ['r3']]]);
+  assert.deepEqual(merged[0].marketsBy, { shop: ['AA'], pay: ['BB', 'AA'] });
 });
 
 const ev = [{ title: 'Launch post', url: 'https://example.com/a', type: 'company', date: '2026-05' }];

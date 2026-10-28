@@ -65,6 +65,8 @@
 .term-side { padding: 18px 10px; border-right: 1px solid rgba(255, 255, 255, 0.055); }
 .term-side > .label { padding: 0 10px 10px; }
 .clist { margin: 0; padding: 0; list-style: none; }
+/* the country list stays in view while the panels scroll past (below the nav and the console tabs) */
+@media (min-width: 761px) { .term-side .clist { position: sticky; top: 108px; } }
 .clist button { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 6px; width: 100%; height: 30px; padding: 0 10px 0 7px; border: 0; border-radius: 7px; background: none; color: var(--ink-2); font: 400 11.5px/1 var(--mono); text-align: left; cursor: pointer; }
 .clist button:hover { background: rgba(255, 255, 255, 0.04); }
 .clist .flag { margin: 0; }
@@ -198,11 +200,12 @@
 /* ---------- companies and open source: a filter and a table that scrolls inside its panel ---------- */
 .co-panel { padding: 16px; }
 .co-panel .filters { margin-bottom: 14px; }
-.table-scroll { position: relative; max-height: 560px; overflow: auto; border: 1px solid rgba(255, 255, 255, 0.055); border-radius: 10px; background: rgba(3, 3, 8, 0.35); }
-.table-scroll:focus-visible { outline-offset: 2px; }
+/* the tables grow with the page (no inner scroll box, which traps swipes on phones); long lists show the first rows and a Show all button */
+.table-wrap { position: relative; border: 1px solid rgba(255, 255, 255, 0.055); border-radius: 10px; background: rgba(3, 3, 8, 0.35); }
+.more-row:not(:empty) { display: flex; justify-content: center; margin-top: 14px; }
 .table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .table th, .table td { padding: 10px 14px; border-top: 1px solid rgba(255, 255, 255, 0.055); text-align: left; vertical-align: top; }
-.table thead th { position: sticky; top: 0; z-index: 1; padding-top: 13px; border-top: 0; background: #0b0b13; box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.055); font: 500 10px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.table thead th { position: sticky; top: 60px; z-index: 1; padding-top: 13px; border-top: 0; background: #0b0b13; box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.055); font: 500 10px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .table tbody th { min-width: 150px; font-weight: 500; }
 .table tbody th a { color: var(--ink); text-decoration: none; }
 .table tbody th a:hover { text-decoration: underline; }
@@ -216,6 +219,9 @@
 .co-roles { max-width: 56ch; margin: 0; line-height: 1.45; color: var(--ink-2); }
 .markets { white-space: nowrap; }
 .markets i { display: inline-block; margin: 0 2px 2px 0; padding: 3px 5px; border-radius: 99px; box-shadow: inset 0 0 0 1px var(--line); font: 500 9.5px/1 var(--mono); font-style: normal; color: var(--muted); }
+.mk-row { display: block; }
+.mk-row + .mk-row { margin-top: 4px; }
+.mk-cat { display: block; margin-bottom: 2px; font: 400 10px/1.4 var(--mono); color: var(--muted); }
 .markets i.on { background: var(--s-live); box-shadow: none; color: var(--s-live-ink); }
 
 .sec-note { max-width: 36ch; margin: 0; font-size: 14px; color: var(--ink-2); }
@@ -259,6 +265,8 @@
 .fc-tx p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
 
 .foot-site { gap: 0; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.foot-links a { color: var(--ink-2); }
 .foot-site p + p { flex: none; padding-left: 24px; text-transform: uppercase; letter-spacing: 0.12em; font-size: 10.5px; }
 
 /* ---------- smaller screens ---------- */

@@ -355,7 +355,7 @@ function renderCountries() {
 function renderCompanies() {
   const top = companies.slice(0, 10);
   $('[data-hero-cos-label]').textContent = `Tracked · ${top.length} of ${companies.length} companies`;
-  $('[data-hero-cos]').innerHTML = top.map((c) => `<li><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a></li>`).join('');
+  $('[data-hero-cos]').innerHTML = top.map((c) => `<li><a href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a></li>`).join('');
 }
 
 function renderTabs() {
@@ -399,17 +399,21 @@ function wire() {
     drawSky(gl ? now() : T0);
     ask(focus);
   });
+  // Copies a link that opens the page on the asked-about country, to share.
   $('[data-hero-copy]').addEventListener('click', async (e) => {
-    const btn = e.currentTarget, q = $('[data-hero-q]');
+    const btn = e.currentTarget;
+    const code = hero.querySelector('[data-ask][aria-selected="true"]')?.dataset.ask ?? focus;
+    const link = `${location.origin}${location.pathname}#country=${code}`;
     try {
-      await navigator.clipboard.writeText(q.textContent);
+      await navigator.clipboard.writeText(link);
       btn.textContent = 'Copied';
     } catch {
-      // No clipboard access (http, old browser): select the question so the reader can copy it by hand.
-      getSelection().selectAllChildren(q);
-      btn.textContent = 'Selected';
+      // No clipboard access (http, old browser): put the link in the address bar to copy from there.
+      // replaceState, not location.hash, so the page does not jump to the console.
+      history.replaceState(null, '', `#country=${code}`);
+      btn.textContent = 'In the address bar';
     }
-    setTimeout(() => (btn.textContent = 'Copy'), 1600);
+    setTimeout(() => (btn.textContent = 'Copy link'), 1600);
   });
 }
 

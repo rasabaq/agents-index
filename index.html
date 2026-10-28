@@ -28,7 +28,8 @@
         <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" class="brand-ring"/><circle cx="16" cy="16" r="5" class="brand-core"/></svg>
         <span>AI Agent Observatory</span>
       </a>
-      <nav aria-label="Sections">
+      <button type="button" class="nav-menu" aria-expanded="false" aria-controls="site-nav" data-nav-menu>Menu</button>
+      <nav id="site-nav" aria-label="Sections">
         <a href="#ranking">Ranking</a>
         <a href="#matrix">Matrix</a>
         <a href="#country">Countries</a>
@@ -62,7 +63,7 @@
           <div class="hero-ask" data-hero-ask hidden>
             <div class="hero-tabs" role="tablist" aria-label="Ask about a country" data-hero-tabs></div>
             <div role="tabpanel" id="hero-ask-panel" data-hero-panel>
-              <div class="hero-cmd"><span class="hero-ps" aria-hidden="true">$</span><code>observatory ask <span>"<span data-hero-q></span>"</span></code><button type="button" class="hero-copy-btn" data-hero-copy>Copy</button></div>
+              <div class="hero-cmd"><span class="hero-ps" aria-hidden="true">?</span><p class="hero-q" data-hero-q></p><button type="button" class="hero-copy-btn" data-hero-copy>Copy link</button></div>
               <p class="hero-ans" data-hero-ans></p>
             </div>
             <div class="hero-cos">
@@ -111,7 +112,7 @@
             </section>
             <div class="panels-r">
               <section id="ranking" class="card panel" aria-labelledby="rk-title">
-                <header><h2 id="rk-title">Ranking</h2><span class="label">Score 0–100 · tier</span></header>
+                <header><h2 id="rk-title">Ranking</h2><span class="label" data-rk-count>Score 0–100 · tier</span></header>
                 <ol class="rank" data-ranking></ol>
                 <p class="note" data-points></p>
               </section>
@@ -164,9 +165,10 @@
       </div>
       <div class="card panel co-panel">
         <div class="filters" role="group" aria-label="Filter companies by market" data-company-filters></div>
-        <div class="table-scroll" tabindex="0" aria-label="Companies">
+        <div class="table-wrap">
           <table class="table companies" data-companies></table>
         </div>
+        <div class="more-row" data-companies-more></div>
       </div>
     </section>
 
@@ -180,9 +182,10 @@
       </div>
       <div class="card panel co-panel">
         <div class="filters" role="group" aria-label="Filter repos by real use" data-repo-filters></div>
-        <div class="table-scroll" tabindex="0" aria-label="Open-source repos">
+        <div class="table-wrap">
           <table class="table repos" data-repos></table>
         </div>
+        <div class="more-row" data-repos-more></div>
         <p class="note repo-note">Stars measure attention. Installs measure use. So we sort repos by npm, PyPI and Packagist installs a month and Docker Hub pulls, not by stars. <a href="https://github.com/rasabaq/ai-agent-observatory/blob/main/docs/methodology.md#open-source-what-is-really-used" class="nowrap" target="_blank" rel="noopener noreferrer">How we tier repos</a></p>
       </div>
     </section>
@@ -224,6 +227,7 @@
   <footer class="wrap foot foot-site">
     <p>AI Agent Observatory · Availability changes fast. A cell says what was true on <span data-asof></span>.</p>
     <p data-foot-count></p>
+    <p class="foot-links"><a href="https://github.com/rasabaq/ai-agent-observatory" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/ai-agent-observatory/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="https://github.com/rasabaq/ai-agent-observatory/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
   </footer>
 
   <dialog class="detail" data-detail aria-labelledby="detail-title">

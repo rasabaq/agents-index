@@ -175,8 +175,13 @@ select, option { color-scheme: dark; }
 .foot p { flex: 1; margin: 0; padding-top: 18px; border-top: 1px solid var(--line); }
 .error { margin-top: 32px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
 
+/* phones and small tablets: the section links fold into a menu */
+.nav-menu { display: none; margin-left: auto; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
 @media (max-width: 900px) {
+  .nav-menu { display: inline-flex; align-items: center; }
   .nav nav { display: none; }
+  .nav.open nav { display: grid; position: absolute; top: 100%; left: 0; right: 0; padding: 8px 16px 14px; border-bottom: 1px solid var(--line); background: var(--page); }
+  .nav.open nav a { padding: 12px 8px; }
 }
 @media (max-width: 520px) {
   .wrap { padding-inline: 16px; }
