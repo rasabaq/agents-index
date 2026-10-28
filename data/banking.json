@@ -3,7 +3,7 @@
   "capabilities": [
     {
       "id": "banking.open-finance-access",
-      "name": "Open banking account and payment access",
+      "name": "Let an agent see your accounts and start payments through your bank",
       "question": "Can an AI agent read your bank accounts and start payments through regulated open banking APIs?",
       "countries": {
         "US": {
@@ -31,7 +31,8 @@
               "date": "2026-10",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "no-rule"
         },
         "GB": {
           "status": "live",
@@ -146,7 +147,8 @@
               "date": "2026-08-04",
               "type": "news"
             }
-          ]
+          ],
+          "gapReason": "no-rule"
         },
         "CL": {
           "status": "announced",
@@ -173,7 +175,8 @@
               "date": "2025-11-12",
               "type": "regulation"
             }
-          ]
+          ],
+          "gapReason": "no-rule"
         },
         "CO": {
           "status": "limited",
@@ -200,7 +203,8 @@
               "date": "2024-03-07",
               "type": "report"
             }
-          ]
+          ],
+          "gapReason": "no-rule"
         },
         "IN": {
           "status": "live",
@@ -233,7 +237,7 @@
     },
     {
       "id": "banking.bank-agent-actions",
-      "name": "Bank AI assistant moves money",
+      "name": "Ask your bank's assistant to send money or pay bills",
       "question": "Can a bank's own AI assistant send money or pay bills for you by chat or voice?",
       "countries": {
         "US": {
@@ -344,7 +348,8 @@
               "type": "company"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "not-launched"
         },
         "BR": {
           "status": "live",
@@ -433,7 +438,8 @@
               "type": "company"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "pilot-only"
         },
         "IN": {
           "status": "limited",
@@ -468,7 +474,8 @@
               "type": "news"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "pilot-only"
         }
       }
     }
