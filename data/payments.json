@@ -3,7 +3,7 @@
   "capabilities": [
     {
       "id": "payments.card-agent-token",
-      "name": "Card network agent credential",
+      "name": "Pay by card through an agent",
       "question": "Can an AI agent pay a merchant with a card network's agent token (Visa, Mastercard, Amex)?",
       "countries": {
         "US": {
@@ -66,7 +66,8 @@
               "date": "2026-07",
               "type": "news"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "DE": {
           "status": "limited",
@@ -79,7 +80,8 @@
               "date": "2026-05-13",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "BR": {
           "status": "limited",
@@ -99,7 +101,8 @@
               "date": "2026-03",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "MX": {
           "status": "limited",
@@ -119,7 +122,8 @@
               "date": "2026-03",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "CL": {
           "status": "limited",
@@ -139,7 +143,8 @@
               "date": "2026-03",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "CO": {
           "status": "limited",
@@ -166,7 +171,8 @@
               "date": "2026-04-29",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "IN": {
           "status": "limited",
@@ -179,13 +185,14 @@
               "date": "2026-02",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         }
       }
     },
     {
       "id": "payments.instant-rail-agent",
-      "name": "Agent pays over instant rail",
+      "name": "Pay by instant bank transfer (Pix, UPI)",
       "question": "Can an AI agent send a payment for you over the country's instant-payment rail?",
       "countries": {
         "US": {
@@ -199,7 +206,8 @@
               "date": "2026-04-08",
               "type": "regulation"
             }
-          ]
+          ],
+          "gapReason": "rail-closed"
         },
         "GB": {
           "status": "none",
@@ -226,7 +234,8 @@
               "date": "2026-07",
               "type": "report"
             }
-          ]
+          ],
+          "gapReason": "rail-closed"
         },
         "DE": {
           "status": "none",
@@ -239,7 +248,8 @@
               "date": "2026-08-11",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "rail-closed"
         },
         "BR": {
           "status": "live",
@@ -294,7 +304,8 @@
               "type": "news"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "assist-only"
         },
         "CL": {
           "status": "limited",
@@ -315,7 +326,8 @@
               "type": "news"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "assist-only"
         },
         "CO": {
           "status": "limited",
@@ -336,7 +348,8 @@
               "type": "report"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "pilot-only"
         },
         "IN": {
           "status": "limited",
@@ -356,13 +369,14 @@
               "date": "2026-09-10",
               "type": "news"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         }
       }
     },
     {
       "id": "payments.wallet-agent",
-      "name": "Wallet lets agent pay",
+      "name": "Pay from a wallet or fintech app through an agent",
       "question": "Can a wallet or fintech app let an AI agent pay for you?",
       "countries": {
         "US": {
@@ -403,7 +417,8 @@
               "date": "2026-10",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "DE": {
           "status": "limited",
@@ -416,7 +431,8 @@
               "date": "2026-10",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         },
         "BR": {
           "status": "live",
@@ -483,7 +499,8 @@
               "type": "news"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "not-launched"
         },
         "IN": {
           "status": "limited",
@@ -510,7 +527,8 @@
               "date": "2026-09",
               "type": "news"
             }
-          ]
+          ],
+          "gapReason": "pilot-only"
         }
       }
     }
