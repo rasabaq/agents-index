@@ -27,6 +27,7 @@ The rules:
 - Every Live, Limited or Announced cell needs at least one source with a URL.
 - Primary sources come first: the company, the regulator, or a paper. Use news only when nothing primary exists.
 - When sources are thin, indirect or disagree, add `"confidence": "low"`. When they disagree, use the lower status and say why in the note.
+- On a cell that is not live, you can add `"gapReason"` with the main reason: one of the ids in `gapReasons` in `data/meta.json`, such as `"pilot-only"`.
 - Never invent a URL.
 
 If you cannot edit the file, open a [data correction issue](https://github.com/rasabaq/ai-agent-observatory/issues/new?template=data-correction.yml) with the source, and we will make the change.

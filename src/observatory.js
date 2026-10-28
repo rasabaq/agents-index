@@ -42,6 +42,8 @@ export function validate(meta, categories) {
   const codes = new Set(meta.countries.map((c) => c.code));
   const categoryIds = new Set(meta.categories.map((c) => c.id));
   const capIds = new Set();
+  const gapReasons = new Set((meta.gapReasons ?? []).map((r) => r.id));
+  for (const r of meta.gapReasons ?? []) if (!r.id || !r.label) errors.push(`meta: every gap reason needs an id and a label`);
 
   for (const id of categoryIds) {
     if (!categories.some((c) => c.category === id)) errors.push(`category "${id}" has no data file`);
@@ -67,6 +69,11 @@ export function validate(meta, categories) {
         if (!STATUSES[cell.status]) errors.push(`${where}/${code}: bad status "${cell.status}"`);
         if (!cell.note) errors.push(`${where}/${code}: needs a note`);
         if (cell.confidence !== undefined && cell.confidence !== 'low') errors.push(`${where}/${code}: confidence can only be "low"`);
+        // Why a cell is not live yet: one of the ids in meta.gapReasons, never on a live cell.
+        if (cell.gapReason !== undefined) {
+          if (!gapReasons.has(cell.gapReason)) errors.push(`${where}/${code}: unknown gapReason "${cell.gapReason}"`);
+          if (cell.status === 'live') errors.push(`${where}/${code}: a live cell has no gapReason`);
+        }
         if (cell.status !== 'none' && !cell.evidence?.length) errors.push(`${where}/${code}: "${cell.status}" needs evidence`);
         for (const ev of cell.evidence ?? []) checkEvidence(ev, `${where}/${code}`, errors);
       }
