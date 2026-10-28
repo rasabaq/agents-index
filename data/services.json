@@ -83,6 +83,7 @@
         },
         "BR": {
           "status": "none",
+          "gapReason": "rail-closed",
           "note": "Google AI Mode table booking has not launched in Brazil, and ChatGPT's OpenTable, Resy and Yelp reservations have little or no Brazilian coverage; no iFood or local booking agent was found.",
           "evidence": [
             {
@@ -110,6 +111,7 @@
         },
         "CL": {
           "status": "none",
+          "gapReason": "rail-closed",
           "note": "No agent booking was found: Google AI Mode booking has not launched in Chile and OpenTable, the global ChatGPT partner, has little Chilean coverage.",
           "evidence": [
             {
@@ -123,6 +125,7 @@
         },
         "CO": {
           "status": "none",
+          "gapReason": "rail-closed",
           "note": "No agent booking was found: Google AI Mode booking has not launched in Colombia and OpenTable, the global ChatGPT partner, has little Colombian coverage.",
           "evidence": [
             {
@@ -460,6 +463,7 @@
         },
         "BR": {
           "status": "limited",
+          "gapReason": "assist-only",
           "note": "iFood's Ailo agent takes food orders by chat in WhatsApp, open to the general public as a test since October 2025, and hands off a confirmed cart with a link to the iFood app to pay; the only iFood app found in ChatGPT is a merchant tool (Fala Delivery), not consumer ordering, and the Uber Eats ChatGPT app is US-only.",
           "evidence": [
             {
@@ -473,18 +477,21 @@
         },
         "MX": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No agent ordering was found for Mexico: Uber's help center says the Uber Eats app in ChatGPT shows results only for users in the US, Alexa+ food ordering is US-only, Rappi's WhatsApp assistant (Adri) was announced, mainly for Colombia, with no Mexico launch found, and DiDi Food's DiMi agent (August 2026) only serves restaurants, not shoppers. Searched in October 2026: Rappi, DiDi Food, Uber Eats; kept at low confidence because no company page states the absence.",
           "evidence": [],
           "confidence": "low"
         },
         "CL": {
           "status": "none",
+          "gapReason": "not-launched",
           "note": "No agent ordering was found for Chile: Uber's help center says the Uber Eats app in ChatGPT shows results only for users in the US, Rappi's WhatsApp assistant (Adri) was announced, mainly for Colombia, with no Chile launch found, PedidosYa's only AI feature found is a 2023 dish recommender in its own app (Santiago only), and no DiDi ordering agent was found. Searched in October 2026: Rappi, PedidosYa, Uber Eats, DiDi; kept at low confidence because no company page states the absence.",
           "evidence": [],
           "confidence": "low"
         },
         "CO": {
           "status": "announced",
+          "gapReason": "not-launched",
           "note": "Rappi announced in 2025 a WhatsApp AI assistant for ordering in natural language and voice-note ordering in Colombia, but no launch was confirmed; the Uber and Uber Eats apps in ChatGPT are US-only.",
           "evidence": [
             {
