@@ -243,11 +243,14 @@ const list = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', '
 const both = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
 
 // The one-sentence verdict at the top of a country: up to two things agents can do (categories at 50 or more),
-// up to two they cannot yet (below 50), and the most common gap reason, when the cells name one.
-export function verdict(name, byCategory, reason) {
+// up to two they cannot yet (below 50), and why. reasonFor(categoryIds) returns the most common gap reason label
+// among those categories' cells, or nothing, so the "why" always belongs to the gaps the sentence names.
+export function verdict(name, byCategory, reasonFor = () => null) {
   const ids = Object.keys(byCategory);
   const can = ids.filter((id) => byCategory[id] >= 50).sort((a, b) => byCategory[b] - byCategory[a]).slice(0, 2).map((id) => words(id).can);
-  const cannot = ids.filter((id) => byCategory[id] < 50).sort((a, b) => byCategory[a] - byCategory[b]).slice(0, 2).map((id) => words(id).can);
+  const cannotIds = ids.filter((id) => byCategory[id] < 50).sort((a, b) => byCategory[a] - byCategory[b]).slice(0, 2);
+  const cannot = cannotIds.map((id) => words(id).can);
+  const reason = cannotIds.length ? reasonFor(cannotIds) : null;
   const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
   const why = reason ? `, mostly because: ${reason[0].toLowerCase()}${reason.slice(1)}` : '';
   if (!cannot.length) return `${where}, AI agents can ${both(can)} today, and every area works at least in part.`;

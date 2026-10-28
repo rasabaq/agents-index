@@ -56,11 +56,12 @@ const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : 
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', low confidence' : ''}`;
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
 const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
-// Gap reasons: the label for an id, and a country's most common one. Cells may not have one yet.
+// Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
+// Cells may not have one yet.
 const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
-function mainReason(mine) {
+function mainReason(mine, catIds) {
   const n = {};
-  for (const { cell } of mine) if (cell.status !== 'live' && gapLabel(cell.gapReason)) n[cell.gapReason] = (n[cell.gapReason] ?? 0) + 1;
+  for (const { cap, cell } of mine) if (catIds.includes(cap.category) && cell.status !== 'live' && gapLabel(cell.gapReason)) n[cell.gapReason] = (n[cell.gapReason] ?? 0) + 1;
   const top = Object.keys(n).sort((a, b) => n[b] - n[a])[0];
   return top && gapLabel(top);
 }
@@ -118,7 +119,7 @@ function renderCountry() {
     <div>
       <p class="label">Your country · ${ranking.length} countries tracked so far</p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
-      <p class="cn-lede cn-verdict">${esc(verdict(r.name, r.byCategory, mainReason(mine)))}</p>
+      <p class="cn-lede cn-verdict">${esc(verdict(r.name, r.byCategory, (ids) => mainReason(mine, ids)))}</p>
     </div>
     <div class="cn-r">
       <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>
