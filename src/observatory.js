@@ -226,3 +226,42 @@ export function summarize(name, byCategory) {
   if (byCategory[best] < 50) return `${where}, agents are still early. The best category, ${words(best).short.toLowerCase()}, scores ${byCategory[best]}.`;
   return `${where}, an agent can ${words(best).can}. It cannot ${words(weak).can} yet.`;
 }
+
+// The country a visitor starts on: the #country= hash, else the region of their browser language (es-CL → CL),
+// else the United States.
+export function startCountry(codes, hash, languages = []) {
+  const fromHash = hash.match(/^#country=(\w\w)$/)?.[1];
+  if (codes.includes(fromHash)) return fromHash;
+  for (const lang of languages) {
+    const region = lang.match(/-([A-Za-z]{2})\b/)?.[1]?.toUpperCase();
+    if (codes.includes(region)) return region;
+  }
+  return codes.includes('US') ? 'US' : codes[0];
+}
+
+const list = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} or ${xs.at(-1)}`);
+const both = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+
+// The one-sentence verdict at the top of a country: up to two things agents can do (categories at 50 or more),
+// up to two they cannot yet (below 50), and the most common gap reason, when the cells name one.
+export function verdict(name, byCategory, reason) {
+  const ids = Object.keys(byCategory);
+  const can = ids.filter((id) => byCategory[id] >= 50).sort((a, b) => byCategory[b] - byCategory[a]).slice(0, 2).map((id) => words(id).can);
+  const cannot = ids.filter((id) => byCategory[id] < 50).sort((a, b) => byCategory[a] - byCategory[b]).slice(0, 2).map((id) => words(id).can);
+  const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
+  const why = reason ? `, mostly because: ${reason[0].toLowerCase()}${reason.slice(1)}` : '';
+  if (!cannot.length) return `${where}, AI agents can ${both(can)} today, and every area works at least in part.`;
+  if (!can.length) return `${where}, AI agents are still early: they cannot yet ${list(cannot)}${why}.`;
+  return `${where}, AI agents can ${both(can)} today, but cannot yet ${list(cannot)}${why}.`;
+}
+
+// Companies that could close a gap: in the same category file, they enable this capability and work in a country
+// of the same region, but not in this one. They must already work in two or more countries, so a national agency or
+// a one-country bank next door is not offered as a fix. `region` maps a country code to its region.
+export function couldClose(companies, capId, code, region) {
+  return (companies ?? [])
+    .filter((co) => (co.capabilities ?? []).includes(capId) && co.markets.length > 1 && !co.markets.includes(code))
+    .map((co) => ({ ...co, near: co.markets.filter((m) => m !== code && region[m] === region[code]) }))
+    .filter((co) => co.near.length)
+    .sort((a, b) => b.near.length - a.near.length || a.name.localeCompare(b.name));
+}

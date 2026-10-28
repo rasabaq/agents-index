@@ -1,5 +1,5 @@
 // The tier list and the numbers band. Loads the same data as app.js and draws two sections of its own.
-import { TIERS, tierOf, scoreCountries } from './src/observatory.js';
+import { TIERS, tierOf, scoreCountries, startCountry } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -26,8 +26,7 @@ const tile = (r, sel) => `
   </a></li>`;
 
 function renderTiers(ranking) {
-  const hash = location.hash.match(/^#country=(\w\w)$/)?.[1];
-  const sel = ranking.some((r) => r.code === hash) ? hash : ranking[0].code;
+  const sel = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language]);
   $('[data-tiers-title]').textContent = `${word(TIERS.length)} tiers, ${word(ranking.length).toLowerCase()} countries.`;
   $('[data-cuts]').innerHTML = TIERS.map((t, i) => `<span class="tier-${t.letter.toLowerCase()}"><b>${t.letter}</b>${range(t, i)}</span>`).join('');
   $('[data-tiers]').innerHTML = TIERS.map((t, i) => {

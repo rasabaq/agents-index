@@ -2,7 +2,7 @@
 // the pixel wordmark, and the data parts (flag tape, ask box, chips pinned to the planet).
 // It loads the data itself so it does not depend on app.js. Its country links carry data-go-country, which app.js
 // handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
-import { STATUSES, scoreCountries, mergeCompanies } from './src/observatory.js';
+import { STATUSES, scoreCountries, mergeCompanies, startCountry } from './src/observatory.js';
 
 const hero = document.querySelector('[data-hero]');
 const $ = (sel) => hero.querySelector(sel);
@@ -423,8 +423,7 @@ try {
   ranking = scoreCountries(meta, categories);
   commerce = categories.find((c) => c.category === 'commerce');
   companies = mergeCompanies(categories);
-  const fromHash = location.hash.match(/^#country=(\w\w)$/)?.[1];
-  focus = ranking.some((r) => r.code === fromHash) ? fromHash : ranking[0].code;
+  focus = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language]);
   renderCountries();
   renderTabs();
   renderCompanies();

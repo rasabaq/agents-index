@@ -1,4 +1,4 @@
-import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, summarize, extremes, shortName } from './src/observatory.js';
+import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, startCountry, verdict, couldClose } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -11,7 +11,7 @@ const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
 
 const state = { market: 'all', use: 'all', country: null };
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
-let meta, categories, ranking, byCode, capIndex, companies, repos, cells;
+let meta, categories, ranking, byCode, capIndex, companies, repos, cells, region;
 
 function init() {
   ranking = scoreCountries(meta, categories);
@@ -20,8 +20,9 @@ function init() {
   // Every cell with its capability and country, in category order.
   cells = Object.values(capIndex).flatMap((cap) => meta.countries.map((c) => ({ cap, code: c.code, cell: cap.countries[c.code] })));
   companies = mergeCompanies(categories);
+  region = Object.fromEntries(meta.countries.map((c) => [c.code, c.region]));
   repos = rankRepos(categories);
-  state.country = hashCountry() ?? ranking[0].code;
+  state.country = startCountry(meta.countries.map((c) => c.code), location.hash, navigator.languages ?? [navigator.language]);
 
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   $('[data-asof-iso]').textContent = meta.asOf;
@@ -53,9 +54,16 @@ const chip = (status, low) => `<span class="chip s-${status}${low ? ' q' : ''}">
 // A small status capsule for the matrix: the fill carries the order, a dashed ring means low confidence.
 const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : ''}" aria-hidden="true"></i>`;
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', low confidence' : ''}`;
-const ordinal = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : { 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] ?? 'th');
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
 const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
+// Gap reasons: the label for an id, and a country's most common one. Cells may not have one yet.
+const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
+function mainReason(mine) {
+  const n = {};
+  for (const { cell } of mine) if (cell.status !== 'live' && gapLabel(cell.gapReason)) n[cell.gapReason] = (n[cell.gapReason] ?? 0) + 1;
+  const top = Object.keys(n).sort((a, b) => n[b] - n[a])[0];
+  return top && gapLabel(top);
+}
 // A small logo before a company or repo name. The name sits right next to it, so the image has empty alt text.
 // No logo, or one that fails to load, becomes a monogram (see wireLogos).
 const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
@@ -108,24 +116,40 @@ function renderCountry() {
 
   $('[data-country]').innerHTML = `
     <div>
-      <p class="label">Country · rank ${r.rank} of ${ranking.length}${ties.length ? `, tied with ${ties.map((t) => `${flag(t.code)}${t.code}`).join(', ')}` : ''}</p>
+      <p class="label">Your country · ${ranking.length} countries tracked so far</p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
-      <p class="cn-lede">${esc(summarize(r.name, r.byCategory))}</p>
+      <p class="cn-lede cn-verdict">${esc(verdict(r.name, r.byCategory, mainReason(mine)))}</p>
     </div>
     <div class="cn-r">
+      <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>
       <button type="button" class="btn btn-sm" data-go-country="${other.code}">Compare with ${flag(other.code)}${other.code}</button>
       <button type="button" class="btn btn-sm" data-sources>${nSources} sources</button>
     </div>`;
 
-  const parts = Object.keys(STATUSES).map((k) => [k, r.counts[k]]);
+  // Score in context: this country next to the best one and the average, then the two plain lists.
+  const best = ranking[0];
+  const avg = Math.round(ranking.reduce((s, x) => s + x.score, 0) / ranking.length);
+  const bar = (label, v, on) => `<li${on ? ' class="on"' : ''}><span>${label}</span><span class="bars"><b style="width:${v}%"></b></span><span class="rk-v">${v}</span></li>`;
+  const works = mine.filter((x) => x.cell.status === 'live');
+  const notYet = mine.filter((x) => x.cell.status !== 'live').sort((a, b) => STATUSES[b.cell.status].points - STATUSES[a.cell.status].points);
+  const item = ({ cap, cell }, extra = '') => `<li><button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
+    ${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(cap.name)}${extra}</span></button></li>`;
+  const why = ({ cap, cell }) => {
+    const reason = gapLabel(cell.gapReason);
+    const cos = couldClose(categories.find((c) => c.category === cap.category).companies, cap.id, r.code, region).slice(0, 3);
+    return `${reason ? `<small>${esc(reason)}</small>` : ''}${cos.length ? `<small class="mc-co">Could close it: ${cos.map((co) => `${esc(co.name)} (already in ${co.near.map((m) => `${flag(m)}${m}`).join(' ')})`).join(', ')}</small>` : ''}`;
+  };
   $('[data-kpis]').innerHTML = `
-    <div class="card kpi"><p class="label">Score</p><p class="kpi-v">${r.score}<small>/ 100</small></p>
-      <span class="meter"><b style="width:${r.score}%"></b></span><span class="badge badge-s">Tier ${tierOf(r.score)} · ${ordinal(r.rank)}${ties.length ? ' tied' : ''}</span></div>
-    <div class="card kpi"><p class="label">Live now</p><p class="kpi-v">${r.counts.live}<small>of ${total}</small></p>
-      <span class="stack" role="img" aria-label="${parts.map(([k, n]) => `${n} ${STATUSES[k].label.toLowerCase()}`).join(', ')}">${parts.filter(([, n]) => n).map(([k, n]) => `<i class="k-${k}" style="flex:${n}"></i>`).join('')}</span>
-      <span class="stack-k" aria-hidden="true">${parts.map(([k, n], j) => `<b>${n}</b> ${STATUSES[k].label.toLowerCase()}${j === 1 ? '<br>' : j < 3 ? ' · ' : ''}`).join('')}</span></div>
-    <div class="card kpi"><p class="label">Low confidence</p><p class="kpi-v">${low}<small>cell${low === 1 ? '' : 's'}</small></p><span class="chip s-limited q">Dashed = thin evidence</span></div>
-    <div class="card kpi"><p class="label">Sources</p><p class="kpi-v">${nSources}</p><span class="badge">Every cell cited</span></div>`;
+    <div class="card kpi mc-score">
+      <p class="label">Score</p>
+      <p class="kpi-v">${r.score}<small>/ 100 · rank ${r.rank} of ${ranking.length}${ties.length ? ', tied' : ''}</small></p>
+      <ul class="mc-bars">${bar(`${flag(r.code)}${r.code}`, r.score, true)}${best.code === r.code ? '' : bar(`Best: ${flag(best.code)}${best.code}`, best.score)}${bar(`Average of ${ranking.length}`, avg)}</ul>
+      <p class="mc-note">The share of agent abilities that work today. Data as of ${fmtDate(meta.asOf)}. ${low ? `A dashed ring marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
+    </div>
+    <section class="card kpi mc-list" aria-labelledby="mc-works"><h3 id="mc-works" class="label">Works today · ${works.length} of ${total}</h3>
+      ${works.length ? `<ul>${works.map((x) => item(x)).join('')}</ul>` : '<p class="mc-note">Nothing is generally available yet.</p>'}</section>
+    <section class="card kpi mc-list" aria-labelledby="mc-not"><h3 id="mc-not" class="label">Not yet · ${notYet.length} of ${total}</h3>
+      ${notYet.length ? `<ul>${notYet.map((x) => item(x, why(x))).join('')}</ul>` : '<p class="mc-note">Everything we track works here.</p>'}</section>`;
 
   const { weak } = extremes(r.byCategory);
   $('[data-cats-title]').innerHTML = `${flag(r.code)}${esc(r.name)} by category`;
@@ -224,12 +248,14 @@ function openSources(code) {
 function selectCountry(code, scroll) {
   if (!byCode[code]) return;
   const refocus = $('[data-country]').contains(document.activeElement);
+  const fromPicker = document.activeElement?.matches('[data-pick-country]');
   state.country = code;
   history.replaceState(null, '', `#country=${code}`);
   // Every country picker on the page (hero, console, tier list) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
-  if (refocus) $('#cn-title').focus({ preventScroll: true });
+  if (fromPicker) $('[data-pick-country]').focus({ preventScroll: true });
+  else if (refocus) $('#cn-title').focus({ preventScroll: true });
   document.dispatchEvent(new CustomEvent('countrychange', { detail: code }));
   if (scroll) $('#country').scrollIntoView({ behavior: scrollBehavior() });
 }
@@ -330,6 +356,7 @@ function wire() {
     selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
   });
   addEventListener('hashchange', () => hashCountry() && selectCountry(hashCountry(), true));
+  $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
 
   // Cells in the matrix and the feed open their details; the sources button lists the country's sources.
   $('[data-term]').addEventListener('click', (e) => {
