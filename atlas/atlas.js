@@ -72,6 +72,12 @@ function render(ctx) {
   const views = (window.ATLAS_VIEWS ?? []).slice().sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
   const nav = $('[data-atlas-nav]');
   nav.innerHTML = views.map((v, i) => `<a href="#v-${v.id}"><span>${num(i)}</span>${esc(v.title)}</a>`).join('');
+  // When more tabs hide past the right edge, fade that edge so the strip reads as scrollable.
+  const more = () => nav.classList.toggle('more', nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1);
+  nav.addEventListener('scroll', more, { passive: true });
+  addEventListener('resize', more);
+  document.fonts?.ready.then(more);
+  more();
   const host = $('[data-atlas-views]');
   views.forEach((v, i) => {
     host.insertAdjacentHTML('beforeend', `

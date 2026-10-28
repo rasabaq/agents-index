@@ -178,15 +178,18 @@ export const TIERS = [
 export const tierOf = (score) => TIERS.find((t) => score >= t.min).letter;
 
 // The same company often appears in several category files; merge it by name. Most markets first.
+// `markets` is the union; `marketsBy` keeps each category's own markets, since a company can be live for one
+// capability in a country and not for another.
 export function mergeCompanies(categories) {
   const map = new Map();
   for (const cat of categories) {
     for (const co of cat.companies ?? []) {
       const key = co.name.toLowerCase();
       const prev = map.get(key);
-      if (!prev) map.set(key, { ...co, markets: [...new Set(co.markets)], categories: [cat.category], roles: [co.role] });
+      if (!prev) map.set(key, { ...co, markets: [...new Set(co.markets)], categories: [cat.category], roles: [co.role], marketsBy: { [cat.category]: [...new Set(co.markets)] } });
       else {
         prev.markets = [...new Set([...prev.markets, ...co.markets])];
+        prev.marketsBy[cat.category] = [...new Set([...(prev.marketsBy[cat.category] ?? []), ...co.markets])];
         if (!prev.categories.includes(cat.category)) prev.categories.push(cat.category);
         if (!prev.roles.includes(co.role)) prev.roles.push(co.role);
       }

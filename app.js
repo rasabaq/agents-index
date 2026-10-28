@@ -40,6 +40,7 @@ function init() {
   renderRepos();
   renderCounts();
   renderCountry();
+  showSideChip();
   wire();
   wireTooltip();
   wireLogos();
@@ -88,6 +89,14 @@ function renderStats() {
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}, tier ${tierOf(r.score)}"`;
 
 // Left of the console: every country with its tier letter and score. Selecting one fills the rest.
+// On phones the country list is a strip that scrolls sideways; keep the selected country in it, centred.
+function showSideChip() {
+  const side = $('.term-side'), b = side.querySelector('[aria-current="true"]');
+  if (!b || side.scrollWidth <= side.clientWidth) return;
+  const s = side.getBoundingClientRect(), r = b.getBoundingClientRect();
+  side.scrollLeft += r.left - s.left - (s.width - r.width) / 2;
+}
+
 function renderSide() {
   $('[data-clist]').innerHTML = ranking.map((r) => `
     <li><button type="button" class="tier-${tierOf(r.score).toLowerCase()}" data-go-country="${r.code}" ${pick(r)}>
@@ -101,6 +110,7 @@ function renderRanking() {
       <span class="rk-n">${i && ranking[i - 1].rank === r.rank ? '=' : ''}${r.rank}</span>${flag(r.code)}<span class="rk-c">${r.code}</span>
       <span class="rk-t">${tierOf(r.score)}</span><span class="bars"><b style="width:${r.score}%"></b></span><span class="rk-v">${r.score}</span>
     </button></li>`).join('');
+  $('[data-rk-count]').textContent = `${ranking.length} countries tracked so far`;
   $('[data-points]').textContent = Object.values(STATUSES).map((s) => `${s.label} ${s.points}`).join(' · ');
 }
 
@@ -260,6 +270,7 @@ function selectCountry(code, scroll) {
   // Every country picker on the page (hero, console, tier list) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
+  showSideChip();
   if (fromPicker) $('[data-pick-country]').focus({ preventScroll: true });
   else if (refocus) $('#cn-title').focus({ preventScroll: true });
   document.dispatchEvent(new CustomEvent('countrychange', { detail: code }));
@@ -286,10 +297,10 @@ function renderCompanies() {
     <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
     <tbody>${rows.map((c) => `
       <tr>
-        <th scope="row"><a class="co-name" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a><span class="co-cats">${c.categories.map((id) => `<span>${esc(shortName(id))}</span>`).join('')}</span></th>
+        <th scope="row"><a class="co-name" href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a><span class="co-cats">${c.categories.map((id) => `<span>${esc(shortName(id))}</span>`).join('')}</span></th>
         <td class="nowrap">${flag(c.hq)}${esc(c.hq)}</td>
         <td><p class="co-roles" title="${esc(c.roles.join(' '))}">${esc(c.roles.join(' '))}</p></td>
-        <td class="markets"><span class="sr-only">${c.markets.map((m) => byCode[m]?.name ?? m).join(', ')}</span>${ranking.map((r) => `<i class="${c.markets.includes(r.code) ? 'on' : ''}" title="${esc(r.name)}" aria-hidden="true">${r.code}</i>`).join('')}</td>
+        <td class="markets">${c.categories.map((id) => `<span class="mk-row">${c.categories.length > 1 ? `<span class="mk-cat">${esc(shortName(id))}</span>` : ''}<span class="sr-only">${esc(shortName(id))}: ${c.marketsBy[id].map((m) => byCode[m]?.name ?? m).join(', ')}</span>${ranking.map((r) => `<i class="${c.marketsBy[id].includes(r.code) ? 'on' : ''}" title="${esc(r.name)}" aria-hidden="true">${r.code}</i>`).join('')}</span>`).join('')}</td>
       </tr>`).join('')}
     </tbody>`;
 }
@@ -363,6 +374,13 @@ function wire() {
   });
   addEventListener('hashchange', () => hashCountry() && selectCountry(hashCountry(), true));
   $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
+
+  // Phones: the Menu button opens the section links; picking one closes it.
+  const nav = $('.nav'), menu = $('[data-nav-menu]');
+  const setMenu = (open) => { nav.classList.toggle('open', open); menu.setAttribute('aria-expanded', open); };
+  menu.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  nav.querySelector('nav').addEventListener('click', (e) => e.target.closest('a') && setMenu(false));
+  addEventListener('keydown', (e) => e.key === 'Escape' && nav.classList.contains('open') && (setMenu(false), menu.focus()));
 
   // Cells in the matrix and the feed open their details; the sources button lists the country's sources.
   $('[data-term]').addEventListener('click', (e) => {

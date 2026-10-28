@@ -56,7 +56,7 @@
 .band-h { display: grid; justify-items: center; text-align: center; margin-bottom: 48px; }
 .band-h h2 { font: 600 clamp(30px, 4.4vw, 52px)/1 var(--font); letter-spacing: -0.055em; text-wrap: balance; }
 .tape { display: inline-block; line-height: 0.98; padding: 0.01em 0.16em 0.1em 0.07em; margin-left: -0.07em; background: #000; color: var(--magenta); }
-.nums { --dot: 24px; position: relative; display: flex; justify-content: center; align-items: flex-start; gap: 20px; max-width: 1112px; margin: 0 auto; }
+.nums { --dot: 24px; position: relative; display: flex; justify-content: center; align-items: flex-start; gap: 56px; max-width: 1112px; margin: 0 auto; }
 .nums.stacked { display: grid; justify-content: center; gap: 40px; }
 .nums.stacked .sep { display: none; }
 .nums-cv { position: absolute; left: 0; top: 0; display: block; image-rendering: pixelated; }
@@ -73,7 +73,8 @@
 .fig figcaption b { font-weight: 500; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); }
 .fig figcaption b::before { content: ''; display: inline-block; width: 8px; height: 8px; margin: 0 8px 1px 0; background: var(--magenta); }
 /* a lit dot between the numerals: one dot minus its gap */
-.sep { flex: none; width: calc(var(--dot) - 4px); height: calc(var(--dot) - 4px); margin-top: calc(3 * var(--dot)); background: var(--magenta); }
+/* no dots between the numerals: they read as one long number with decimal points */
+.sep { display: none; flex: none; width: calc(var(--dot) - 4px); height: calc(var(--dot) - 4px); margin-top: calc(3 * var(--dot)); background: var(--magenta); }
 
 @media (max-width: 720px) {
   .tier-row { grid-template-columns: 64px minmax(0, 1fr); }
