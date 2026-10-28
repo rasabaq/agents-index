@@ -390,12 +390,15 @@ function wire() {
     if (!e.target.closest('button')) return;
     state.allCompanies = !state.allCompanies;
     renderCompanies();
+    // The render replaced the button; keep keyboard focus on it.
+    $('[data-companies-more] button')?.focus({ preventScroll: true });
     if (!state.allCompanies) $('#companies').scrollIntoView({ behavior: scrollBehavior() });
   });
   $('[data-repos-more]').addEventListener('click', (e) => {
     if (!e.target.closest('button')) return;
     state.allRepos = !state.allRepos;
     renderRepos();
+    $('[data-repos-more] button')?.focus({ preventScroll: true });
     if (!state.allRepos) $('#opensource').scrollIntoView({ behavior: scrollBehavior() });
   });
   $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
