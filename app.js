@@ -1,4 +1,4 @@
-import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, startCountry, verdict, couldClose } from './src/observatory.js';
+import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, startCountry, guessCountry, verdict, couldClose } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -22,7 +22,10 @@ function init() {
   companies = mergeCompanies(categories);
   region = Object.fromEntries(meta.countries.map((c) => [c.code, c.region]));
   repos = rankRepos(categories);
-  state.country = startCountry(meta.countries.map((c) => c.code), location.hash, navigator.languages ?? [navigator.language]);
+  const codes = meta.countries.map((c) => c.code);
+  state.country = startCountry(codes, location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
+  // The visitor's own country, when time zone or language tells us; the head says "Your country" only for it.
+  state.own = guessCountry(codes, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
 
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   $('[data-asof-iso]').textContent = meta.asOf;
@@ -59,6 +62,8 @@ const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== 
 // Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
 // Cells may not have one yet.
 const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
+// Live cells per category, for the verdict: a category with one live cell is something agents "can" do.
+const liveBy = (mine) => Object.fromEntries(meta.categories.map((c) => [c.id, mine.filter((x) => x.cap.category === c.id && x.cell.status === 'live').length]));
 function mainReason(mine, catIds) {
   const n = {};
   for (const { cap, cell } of mine) if (catIds.includes(cap.category) && cell.status !== 'live' && gapLabel(cell.gapReason)) n[cell.gapReason] = (n[cell.gapReason] ?? 0) + 1;
@@ -117,9 +122,9 @@ function renderCountry() {
 
   $('[data-country]').innerHTML = `
     <div>
-      <p class="label">Your country · ${ranking.length} countries tracked so far</p>
+      <p class="label">${r.code === state.own ? 'Your country' : 'Country'} · ${ranking.length} countries tracked so far</p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
-      <p class="cn-lede cn-verdict">${esc(verdict(r.name, r.byCategory, (ids) => mainReason(mine, ids)))}</p>
+      <p class="cn-lede cn-verdict">${esc(verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
     </div>
     <div class="cn-r">
       <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>

@@ -227,35 +227,55 @@ export function summarize(name, byCategory) {
   return `${where}, an agent can ${words(best).can}. It cannot ${words(weak).can} yet.`;
 }
 
-// The country a visitor starts on: the #country= hash, else the region of their browser language (es-CL → CL),
-// else the United States.
-export function startCountry(codes, hash, languages = []) {
-  const fromHash = hash.match(/^#country=(\w\w)$/)?.[1];
-  if (codes.includes(fromHash)) return fromHash;
+// Time zones of the tracked countries, so a visitor in Santiago with an English browser still starts on Chile.
+// The US is left out on purpose: it is the default anyway.
+const ZONES = {
+  CL: /^(America\/(Santiago|Punta_Arenas)|Pacific\/Easter)$/,
+  CO: /^America\/Bogota$/,
+  MX: /^America\/(Mexico_City|Cancun|Merida|Monterrey|Matamoros|Chihuahua|Ciudad_Juarez|Ojinaga|Mazatlan|Bahia_Banderas|Hermosillo|Tijuana)$/,
+  BR: /^America\/(Sao_Paulo|Bahia|Fortaleza|Recife|Maceio|Belem|Araguaina|Santarem|Manaus|Cuiaba|Campo_Grande|Porto_Velho|Boa_Vista|Rio_Branco|Eirunepe|Noronha)$/,
+  IN: /^Asia\/(Kolkata|Calcutta)$/,
+  GB: /^Europe\/London$/,
+  DE: /^Europe\/(Berlin|Busingen)$/,
+};
+
+// The visitor's own country, if we can tell: their time zone first, then the region of their browser languages
+// (es-CL → CL). null when neither names a tracked country.
+export function guessCountry(codes, languages = [], timeZone = '') {
+  const byZone = Object.keys(ZONES).find((code) => ZONES[code].test(timeZone));
+  if (codes.includes(byZone)) return byZone;
   for (const lang of languages) {
     const region = lang.match(/-([A-Za-z]{2})\b/)?.[1]?.toUpperCase();
     if (codes.includes(region)) return region;
   }
-  return codes.includes('US') ? 'US' : codes[0];
+  return null;
 }
 
-const list = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} or ${xs.at(-1)}`);
-const both = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+// The country a visitor starts on: the #country= hash, else their own country, else the United States.
+export function startCountry(codes, hash, languages = [], timeZone = '') {
+  const fromHash = hash.match(/^#country=(\w\w)$/)?.[1];
+  if (codes.includes(fromHash)) return fromHash;
+  return guessCountry(codes, languages, timeZone) ?? (codes.includes('US') ? 'US' : codes[0]);
+}
 
-// The one-sentence verdict at the top of a country: up to two things agents can do (categories at 50 or more),
-// up to two they cannot yet (below 50), and why. reasonFor(categoryIds) returns the most common gap reason label
-// among those categories' cells, or nothing, so the "why" always belongs to the gaps the sentence names.
-export function verdict(name, byCategory, reasonFor = () => null) {
+// "a, b or c"; a comma before the last word when a part already has an "and" or "or" in it, so it still reads.
+const join = (xs, word) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')}${xs.some((x) => / (and|or) /.test(x)) ? ',' : ''} ${word} ${xs.at(-1)}`);
+
+// The verdict at the top of a country. It agrees with the Works today and Not yet lists: "can" names up to two
+// categories with at least one live cell (highest score first), "cannot yet" up to two with none (lowest first).
+// liveBy maps a category id to its number of live cells. reasonFor(categoryIds) returns the most common gap reason
+// label among those categories' cells, or nothing, so the reason always belongs to the gaps the sentence names.
+export function verdict(name, byCategory, liveBy, reasonFor = () => null) {
   const ids = Object.keys(byCategory);
-  const can = ids.filter((id) => byCategory[id] >= 50).sort((a, b) => byCategory[b] - byCategory[a]).slice(0, 2).map((id) => words(id).can);
-  const cannotIds = ids.filter((id) => byCategory[id] < 50).sort((a, b) => byCategory[a] - byCategory[b]).slice(0, 2);
+  const can = ids.filter((id) => liveBy[id] > 0).sort((a, b) => byCategory[b] - byCategory[a]).slice(0, 2).map((id) => words(id).can);
+  const cannotIds = ids.filter((id) => !liveBy[id]).sort((a, b) => byCategory[a] - byCategory[b]).slice(0, 2);
   const cannot = cannotIds.map((id) => words(id).can);
   const reason = cannotIds.length ? reasonFor(cannotIds) : null;
   const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
-  const why = reason ? `, mostly because: ${reason[0].toLowerCase()}${reason.slice(1)}` : '';
-  if (!cannot.length) return `${where}, AI agents can ${both(can)} today, and every area works at least in part.`;
-  if (!can.length) return `${where}, AI agents are still early: they cannot yet ${list(cannot)}${why}.`;
-  return `${where}, AI agents can ${both(can)} today, but cannot yet ${list(cannot)}${why}.`;
+  const why = reason ? ` Main reason: ${reason}.` : '';
+  if (!cannot.length) return `${where}, AI agents can ${join(can, 'and')} today, and something works in every area, though not all of it yet.`;
+  if (!can.length) return `${where}, nothing we track works for AI agents yet: they cannot ${join(cannot, 'or')}.${why}`;
+  return `${where}, AI agents can ${join(can, 'and')} today, but cannot yet ${join(cannot, 'or')}.${why}`;
 }
 
 // Companies that could close a gap: in the same category file, they enable this capability and work in a country

@@ -1,23 +1,27 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { startCountry, verdict, couldClose } from '../src/observatory.js';
+import { startCountry, guessCountry, verdict, couldClose } from '../src/observatory.js';
 
-test('the start country comes from the hash, then the browser language, then the US', () => {
+test('the start country comes from the hash, then the time zone, then the browser language, then the US', () => {
   const codes = ['US', 'CL', 'MX'];
-  assert.equal(startCountry(codes, '#country=MX', ['es-CL']), 'MX');
+  assert.equal(startCountry(codes, '#country=MX', ['es-CL'], 'America/Santiago'), 'MX');
   assert.equal(startCountry(codes, '#country=ZZ', ['es-CL']), 'CL');
+  assert.equal(startCountry(codes, '', ['en-US', 'en-CL'], 'America/Santiago'), 'CL');
   assert.equal(startCountry(codes, '', ['en', 'es-cl']), 'CL');
-  assert.equal(startCountry(codes, '', ['de-DE', 'es']), 'US');
-  assert.equal(startCountry(codes, '', []), 'US');
+  assert.equal(startCountry(codes, '', ['de-DE', 'es'], 'Europe/Berlin'), 'US');
+  assert.equal(guessCountry(codes, ['de-DE'], 'Europe/Berlin'), null);
+  assert.equal(guessCountry(codes, [], 'America/Monterrey'), 'MX');
 });
 
-test('the verdict says what agents can do, what they cannot yet, and why', () => {
-  const scores = { commerce: 67, payments: 33, banking: 17, services: 83 };
-  assert.equal(verdict('Chile', scores, (ids) => (ids.join() === 'banking,payments' ? 'No rule in force yet' : null)),
-    'In Chile, AI agents can book travel and local services and shop for you today, but cannot yet move money through your bank or pay, mostly because: no rule in force yet.');
-  assert.equal(verdict('Chile', scores), 'In Chile, AI agents can book travel and local services and shop for you today, but cannot yet move money through your bank or pay.');
-  assert.equal(verdict('United States', { commerce: 90, payments: 60 }), 'In the United States, AI agents can shop for you and pay today, and every area works at least in part.');
-  assert.equal(verdict('Peru', { commerce: 10 }, () => 'Pilot only'), 'In Peru, AI agents are still early: they cannot yet shop for you, mostly because: pilot only.');
+test('the verdict agrees with the lists: "can" has a live cell, "cannot yet" has none', () => {
+  const scores = { commerce: 17, payments: 67, services: 33, banking: 0 };
+  const live = { commerce: 0, payments: 2, services: 1, banking: 0 };
+  assert.equal(verdict('Chile', scores, live, (ids) => (ids.join() === 'banking,commerce' ? 'No rule in force yet' : null)),
+    'In Chile, AI agents can pay, and book travel and local services today, but cannot yet move money through your bank or shop for you. Main reason: No rule in force yet.');
+  assert.equal(verdict('Chile', scores, live), 'In Chile, AI agents can pay, and book travel and local services today, but cannot yet move money through your bank or shop for you.');
+  assert.equal(verdict('Mexico', { messaging: 90, government: 60 }, { messaging: 2, government: 1 }),
+    'In Mexico, AI agents can buy and get support in chat, and prove who you are to apps today, and something works in every area, though not all of it yet.');
+  assert.equal(verdict('Peru', { commerce: 10 }, { commerce: 0 }, () => 'Pilot only'), 'In Peru, nothing we track works for AI agents yet: they cannot shop for you. Main reason: Pilot only.');
 });
 
 test('a company could close a gap if it works next door, not here', () => {

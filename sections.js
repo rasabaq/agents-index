@@ -26,7 +26,7 @@ const tile = (r, sel) => `
   </a></li>`;
 
 function renderTiers(ranking) {
-  const sel = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language]);
+  const sel = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
   $('[data-tiers-title]').textContent = `${word(TIERS.length)} tiers, ${word(ranking.length).toLowerCase()} countries.`;
   $('[data-cuts]').innerHTML = TIERS.map((t, i) => `<span class="tier-${t.letter.toLowerCase()}"><b>${t.letter}</b>${range(t, i)}</span>`).join('');
   $('[data-tiers]').innerHTML = TIERS.map((t, i) => {

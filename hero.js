@@ -423,7 +423,7 @@ try {
   ranking = scoreCountries(meta, categories);
   commerce = categories.find((c) => c.category === 'commerce');
   companies = mergeCompanies(categories);
-  focus = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language]);
+  focus = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
   renderCountries();
   renderTabs();
   renderCompanies();
