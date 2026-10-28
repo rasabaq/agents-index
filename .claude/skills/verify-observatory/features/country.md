@@ -49,7 +49,7 @@ Preconditions:
 
 Steps:
 
-- **Default.** Run `node $H open /`. The harness pins the time zone to UTC and keeps the browser language, which is `en-US` in headless Chrome, so `#cn-title` reads United States. The label (`node $H eval "document.querySelector('#country .label').innerText"`) starts with "Country", because no country was guessed.
+- **Default.** Run `node $H open / --lang en`. The harness pins the time zone to UTC, and `en` names no region, so nothing is guessed: `#cn-title` reads United States, and the label (`node $H eval "document.querySelector('#country .label').innerText"`) starts with "Country". A plain `node $H open /` also opens the United States, but labels it "Your country", because headless Chrome reports `en-US`.
 - **Time zone.** Run `node $H open / --tz America/Santiago`. `#cn-title` reads Chile, and the label starts with "Your country".
 - **Language.** Run `node $H open / --lang es-CL`. `#cn-title` reads Chile.
 - **Hash wins.** Run `node $H open '/#country=MX' --lang es-CL --tz America/Santiago`.

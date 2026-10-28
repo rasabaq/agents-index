@@ -261,8 +261,8 @@ export function startCountry(codes, hash, languages = [], timeZone = '') {
   return guessCountry(codes, languages, timeZone) ?? (codes.includes('US') ? 'US' : codes[0]);
 }
 
-// "a, b or c"; a comma before the last word when a part already has an "and" or "or" in it, so it still reads.
-const join = (xs, word) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')}${xs.some((x) => / (and|or) /.test(x)) ? ',' : ''} ${word} ${xs.at(-1)}`);
+// "a, b or c"; a comma before the last word only when an earlier part has its own "and" or "or", so it still reads.
+const join = (xs, word) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')}${xs.slice(0, -1).some((x) => / (and|or) /.test(x)) ? ',' : ''} ${word} ${xs.at(-1)}`);
 
 // The verdict at the top of a country. It agrees with the Works today and Not yet lists: "can" names up to two
 // categories with at least one live cell (highest score first), "cannot yet" up to two with none (lowest first).
@@ -276,7 +276,7 @@ export function verdict(name, byCategory, liveBy, reasonFor = () => null) {
   const reason = cannotIds.length ? reasonFor(cannotIds) : null;
   const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
   const why = reason ? ` Main reason: ${reason}.` : '';
-  if (!cannot.length) return `${where}, AI agents can ${join(can, 'and')} today, and something works in every area, though not all of it yet.`;
+  if (!cannot.length) return `${where}, AI agents can ${join(can, 'and')} today. Something works in every area, though not all of it yet.`;
   if (!can.length) return `${where}, nothing we track works for AI agents yet: they cannot ${join(cannot, 'or')}.${why}`;
   return `${where}, AI agents can ${join(can, 'and')} today, but cannot yet ${join(cannot, 'or')}.${why}`;
 }
