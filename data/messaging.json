@@ -220,6 +220,7 @@
       "countries": {
         "US": {
           "status": "limited",
+          "gapReason": "not-launched",
           "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. WhatsApp payments are not launched in the US.",
           "evidence": [
             {
@@ -247,6 +248,7 @@
         },
         "GB": {
           "status": "limited",
+          "gapReason": "not-launched",
           "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. WhatsApp payments are not launched in the UK.",
           "evidence": [
             {
@@ -274,6 +276,7 @@
         },
         "DE": {
           "status": "limited",
+          "gapReason": "not-launched",
           "note": "Only a niche channel: Telegram bot payments through Stripe let businesses take card payments inside the chat. WhatsApp payments are not offered in Germany.",
           "evidence": [
             {
@@ -314,6 +317,7 @@
         },
         "MX": {
           "status": "limited",
+          "gapReason": "pilot-only",
           "note": "Only a niche channel: Telegram bot payments through Stripe work for Mexican businesses. WhatsApp payments in Mexico are only tested, with no official launch date.",
           "evidence": [
             {
@@ -341,6 +345,7 @@
         },
         "CL": {
           "status": "none",
+          "gapReason": "rail-closed",
           "note": "No mainstream way to pay inside a chat was found: WhatsApp payments are not offered in Chile, and Stripe, the main Telegram payment provider, does not sign up businesses there.",
           "evidence": [
             {
@@ -361,6 +366,7 @@
         },
         "CO": {
           "status": "none",
+          "gapReason": "rail-closed",
           "note": "No mainstream way to pay inside a chat was found: WhatsApp payments are not offered in Colombia, and Stripe, the main Telegram payment provider, does not sign up businesses there.",
           "evidence": [
             {
