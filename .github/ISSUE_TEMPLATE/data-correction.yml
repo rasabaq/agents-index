@@ -1,0 +1,52 @@
+name: Data correction
+description: A status on the site is wrong or out of date.
+title: "Correction: "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks. A correction needs a source we can check. Primary sources (the company, the regulator, a paper) come first.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      placeholder: Chile (CL)
+    validations:
+      required: true
+  - type: input
+    id: capability
+    attributes:
+      label: Capability
+      description: The capability name or id, as on the site.
+      placeholder: commerce.in-chat-checkout
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: Current status
+      placeholder: Not yet
+  - type: dropdown
+    id: proposed
+    attributes:
+      label: Proposed status
+      options:
+        - Live
+        - Limited
+        - Announced
+        - Not yet
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: A page that shows the proposed status. Required for Live, Limited or Announced.
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: What the source says, and anything we should know, such as a waitlist or a pilot.
