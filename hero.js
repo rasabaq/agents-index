@@ -408,8 +408,9 @@ function wire() {
       await navigator.clipboard.writeText(link);
       btn.textContent = 'Copied';
     } catch {
-      // No clipboard access (http, old browser): open the link, so it can be copied from the address bar.
-      location.hash = `country=${code}`;
+      // No clipboard access (http, old browser): put the link in the address bar to copy from there.
+      // replaceState, not location.hash, so the page does not jump to the console.
+      history.replaceState(null, '', `#country=${code}`);
       btn.textContent = 'In the address bar';
     }
     setTimeout(() => (btn.textContent = 'Copy link'), 1600);
