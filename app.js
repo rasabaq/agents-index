@@ -9,7 +9,9 @@ const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
   return r.json();
 });
 
-const state = { market: 'all', use: 'all', country: null };
+const state = { market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false };
+// Long tables show this many rows until Show all is pressed.
+const FIRST_ROWS = 10;
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 let meta, categories, ranking, byCode, capIndex, companies, repos, cells, region;
 
@@ -290,9 +292,16 @@ function renderCompanyFilters() {
   };
 }
 
+// A "Show all N" / "Show fewer" button under a long table. Returns the rows to draw.
+function firstRows(rows, all, el, what) {
+  el.innerHTML = rows.length > FIRST_ROWS ? `<button type="button" class="pill" aria-expanded="${all}">${all ? 'Show fewer' : `Show all ${rows.length} ${what}`}</button>` : '';
+  return all ? rows : rows.slice(0, FIRST_ROWS);
+}
+
 function renderCompanies() {
-  const rows = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
-  $('[data-companies-label]').textContent = `Companies · ${rows.length} of ${companies.length}`;
+  const matching = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
+  const rows = firstRows(matching, state.allCompanies, $('[data-companies-more]'), 'companies');
+  $('[data-companies-label]').textContent = `Companies · ${matching.length} of ${companies.length}`;
   $('[data-companies]').innerHTML = `
     <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
     <tbody>${rows.map((c) => `
@@ -324,8 +333,9 @@ const count = (n, label) => `<td class="num" data-label="${label}">${n == null ?
 
 // Open-source repos, most used first: the tier comes from installs, never from stars.
 function renderRepos() {
-  const rows = repos.filter((r) => state.use === 'all' || r.use === state.use);
-  $('[data-repos-label]').textContent = `Open source · ${rows.length} of ${repos.length}`;
+  const matching = repos.filter((r) => state.use === 'all' || r.use === state.use);
+  const rows = firstRows(matching, state.allRepos, $('[data-repos-more]'), 'repos');
+  $('[data-repos-label]').textContent = `Open source · ${matching.length} of ${repos.length}`;
   $('[data-repos]').innerHTML = `
     <thead><tr><th scope="col">Repo</th><th scope="col">What it lets agents do</th><th scope="col">Real use</th><th scope="col" class="num">Installs a month</th><th scope="col" class="num">Docker pulls</th><th scope="col" class="num">Stars</th><th scope="col" class="num">Last commit</th></tr></thead>
     <tbody>${rows.map((r) => `
@@ -361,7 +371,9 @@ function renderMethod() {
 function renderCounts() {
   const text = `${cells.length} cells · ${sourcesOf(cells)} sources`;
   $('[data-term-count]').textContent = text;
-  $('[data-foot-count]').textContent = `${text} · ${companies.length} companies · ${repos.length}\u00a0open\u2011source repos`;
+  // Each item carries its leading separator and never breaks inside, so a wrapped line never ends with "·".
+  const parts = [`${cells.length} cells`, `${sourcesOf(cells)} sources`, `${companies.length} companies`, `${repos.length} open-source repos`];
+  $('[data-foot-count]').innerHTML = parts.map((p, i) => `<span class="nowrap">${i ? '· ' : ''}${esc(p)}</span>`).join(' ');
 }
 
 function wire() {
@@ -373,6 +385,19 @@ function wire() {
     selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
   });
   addEventListener('hashchange', () => hashCountry() && selectCountry(hashCountry(), true));
+  // Show all / Show fewer under the Companies and Open source tables. Fewer scrolls back to the table's top.
+  $('[data-companies-more]').addEventListener('click', (e) => {
+    if (!e.target.closest('button')) return;
+    state.allCompanies = !state.allCompanies;
+    renderCompanies();
+    if (!state.allCompanies) $('#companies').scrollIntoView({ behavior: scrollBehavior() });
+  });
+  $('[data-repos-more]').addEventListener('click', (e) => {
+    if (!e.target.closest('button')) return;
+    state.allRepos = !state.allRepos;
+    renderRepos();
+    if (!state.allRepos) $('#opensource').scrollIntoView({ behavior: scrollBehavior() });
+  });
   $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
 
   // Phones: the Menu button opens the section links; picking one closes it.

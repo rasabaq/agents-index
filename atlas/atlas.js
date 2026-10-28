@@ -72,8 +72,11 @@ function render(ctx) {
   const views = (window.ATLAS_VIEWS ?? []).slice().sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
   const nav = $('[data-atlas-nav]');
   nav.innerHTML = views.map((v, i) => `<a href="#v-${v.id}"><span>${num(i)}</span>${esc(v.title)}</a>`).join('');
-  // When more tabs hide past the right edge, fade that edge so the strip reads as scrollable.
-  const more = () => nav.classList.toggle('more', nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1);
+  // When more tabs hide past an edge, fade that edge so the strip reads as scrollable.
+  const more = () => {
+    nav.classList.toggle('more', nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1);
+    nav.classList.toggle('more-l', nav.scrollLeft > 1);
+  };
   nav.addEventListener('scroll', more, { passive: true });
   addEventListener('resize', more);
   document.fonts?.ready.then(more);
@@ -105,6 +108,13 @@ function render(ctx) {
     if (a && (a.offsetLeft < nav.scrollLeft || a.offsetLeft + a.offsetWidth > nav.scrollLeft + nav.clientWidth)) nav.scrollTo({ left: a.offsetLeft - 16 });
   }), { rootMargin: '-45% 0px -54% 0px' });
   host.querySelectorAll('.view').forEach((s) => io.observe(s));
+  // Above the first view (the hero), no tab is current; the strip goes back to its start.
+  const first = host.querySelector('.view');
+  addEventListener('scroll', () => {
+    if (!first || first.getBoundingClientRect().top < innerHeight * 0.45 || !nav.querySelector('[aria-current]')) return;
+    tabs.forEach((a) => a.removeAttribute('aria-current'));
+    nav.scrollTo({ left: 0 });
+  }, { passive: true });
 }
 
 addEventListener('scroll', () => ($('[data-atlas-tip]').hidden = true), { passive: true });
