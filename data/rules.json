@@ -1,0 +1,503 @@
+{
+  "category": "rules",
+  "capabilities": [
+    {
+      "id": "rules.ai-law",
+      "name": "A law that covers AI agents is in force",
+      "question": "Is there a law in force in this country that applies to AI systems acting for users?",
+      "countries": {
+        "US": {
+          "status": "limited",
+          "note": "There is no federal AI law. Texas's Responsible AI Governance Act has applied since 1 January 2026, other states have their own AI rules, and a December 2025 executive order pushes to override state laws. These rules cover specific harms and uses, not agents acting for you.",
+          "gapReason": "no-rule",
+          "evidence": [
+            {
+              "title": "HB 149, Texas Responsible Artificial Intelligence Governance Act (bill history)",
+              "publisher": "Texas Legislature",
+              "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149",
+              "date": "2025-06",
+              "type": "regulation"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "note": "The UK has no AI law. Regulators apply existing law, such as data protection, and a cross-party committee report in September 2026 asked for a dedicated AI Bill. The Data (Use and Access) Act 2025 covers automated decisions about people. A comprehensive AI Bill is not expected before late 2027.",
+          "gapReason": "no-rule",
+          "evidence": [
+            {
+              "title": "Data (Use and Access) Act 2025",
+              "publisher": "legislation.gov.uk",
+              "url": "https://www.legislation.gov.uk/ukpga/2025/18/contents",
+              "date": "2025-06",
+              "type": "regulation"
+            },
+            {
+              "title": "AI judgment day on the horizon while UK lawmakers play catch-up",
+              "publisher": "Lewis Silkin",
+              "url": "https://www.lewissilkin.com/insights/2026/09/14/ai-judgment-day-on-the-horizon-while-uk-lawmakers-play-catch-up",
+              "date": "2026-09-14",
+              "type": "news"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "The EU AI Act is in force in Germany. Its transparency duties for AI systems apply since 2 August 2026, and the Digital Omnibus (Regulation 2026/1744, in force 27 July 2026) only delays the high-risk rules to December 2027 and August 2028. It does not name shopping agents, but it covers AI systems that act for users.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "European Union",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "date": "2024-07",
+              "type": "regulation"
+            },
+            {
+              "title": "AI Act: regulatory framework",
+              "publisher": "European Commission",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "date": "2026",
+              "type": "regulation"
+            },
+            {
+              "title": "EU Digital Omnibus on AI enters into force",
+              "publisher": "Hunton Andrews Kurth",
+              "url": "https://www.hunton.com/privacy-and-cybersecurity-law-blog/eu-digital-omnibus-on-ai-enters-into-force",
+              "date": "2026-07",
+              "type": "news"
+            }
+          ]
+        },
+        "IN": {
+          "status": "limited",
+          "note": "India chose voluntary guidelines over an AI law. The India AI Governance Guidelines (November 2025) are soft law that builds on existing laws, and officials say no AI law is planned. Nothing binds an AI agent directly.",
+          "gapReason": "no-rule",
+          "evidence": [
+            {
+              "title": "MeitY unveils India AI Governance Guidelines",
+              "publisher": "PIB, Ministry of Electronics and IT",
+              "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2186639&reg=3&lang=2",
+              "date": "2025-11",
+              "type": "regulation"
+            },
+            {
+              "title": "India AI Governance Guidelines: Enabling Safe and Trusted AI Innovation",
+              "publisher": "MeitY (PIB)",
+              "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc2025115685601.pdf",
+              "date": "2025-11",
+              "type": "regulation"
+            }
+          ]
+        },
+        "BR": {
+          "status": "announced",
+          "note": "The Senate passed the AI framework bill (PL 2338/2023) in December 2024 and the Chamber of Deputies has kept it in a special committee, with votes promised for 2026. We found no sign that it has passed the Chamber, so it is not law. General laws such as the data protection law (LGPD) still apply. We could not check the Chamber's latest step.",
+          "gapReason": "no-rule",
+          "confidence": "low",
+          "evidence": [
+            {
+              "title": "Marco da Inteligência Artificial é aprovado em Plenário e vai à Câmara",
+              "publisher": "Senado Federal",
+              "url": "https://www12.senado.leg.br/noticias/videos/2024/12/marco-da-inteligencia-artificial-e-aprovado-em-plenario-e-vai-a-camara",
+              "date": "2024-12",
+              "type": "regulation"
+            },
+            {
+              "title": "PL de inteligência artificial fica para fevereiro de 2026",
+              "publisher": "Teletime",
+              "url": "https://teletime.com.br/16/12/2025/pl-de-inteligencia-artificial-fica-para-fevereiro-de-2026/",
+              "date": "2025-12-16",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "none",
+          "note": "Mexico has no AI law. In October 2026 the Chamber of Deputies registered a proposal to give Congress the power to legislate on AI, and many AI bills (85 filed since 2023, most pending) sit in committees. We found no government bill scheduled for a vote, and no binding AI guidance.",
+          "gapReason": "no-rule",
+          "confidence": "low",
+          "evidence": [
+            {
+              "title": "Gaceta Parlamentaria, 7 October 2026 (constitutional reform proposal on AI)",
+              "publisher": "Cámara de Diputados",
+              "url": "https://gaceta.diputados.gob.mx/Gaceta/66/2026/oct/20261007-VII.html",
+              "date": "2026-10-07",
+              "type": "regulation"
+            }
+          ]
+        },
+        "CL": {
+          "status": "announced",
+          "note": "The AI bill (boletín 16821-19) passed the Chamber of Deputies in October 2025 and is in its second step in the Senate. It sorts AI systems by risk and gives oversight to the data protection agency. It is not law yet.",
+          "gapReason": "no-rule",
+          "evidence": [
+            {
+              "title": "Proyecto de ley que regula los sistemas de inteligencia artificial (boletín 16821-19)",
+              "publisher": "Cámara de Diputadas y Diputados",
+              "url": "https://www.camara.cl/legislacion/proyectosdeley/tramitacion.aspx?prmID=17429",
+              "date": "2025-10",
+              "type": "regulation"
+            },
+            {
+              "title": "Ley de Inteligencia Artificial: últimas novedades en su tramitación",
+              "publisher": "AZ Abogados",
+              "url": "https://www.az.cl/ley-de-inteligencia-artificial-ultimas-novedades-en-su-tramitacion/",
+              "date": "2025",
+              "type": "news"
+            }
+          ]
+        },
+        "CO": {
+          "status": "announced",
+          "note": "The government filed an AI bill in 2025 (Proyecto de Ley 043/2025 Senado, 324/2025 Cámara) and another bill was filed in July 2026. Both are still in Congress and we found no vote or signature. Colombia has no AI law in force.",
+          "gapReason": "no-rule",
+          "confidence": "low",
+          "evidence": [
+            {
+              "title": "Colombia elige una inteligencia artificial centrada en la vida, los derechos y el interés público con radicación del proyecto de ley de IA",
+              "publisher": "MinTIC",
+              "url": "https://mintic.gov.co/portal/inicio/Sala-de-prensa/Noticias/401055:Colombia-elige-una-inteligencia-artificial-centrada-en-la-vida-los-derechos-y-el-interes-publico-con-radicacion-del-proyecto-de-ley-de-IA",
+              "date": "2025-05",
+              "type": "regulation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rules.agent-purchase-protection",
+      "name": "You can get your money back when an agent buys the wrong thing",
+      "question": "Do consumer or payment rules, or a regulator statement, clearly cover purchases or payments an AI agent made for you?",
+      "countries": {
+        "US": {
+          "status": "limited",
+          "note": "US rules refund unauthorised card and bank-account payments and billing errors, and card networks handle disputes, but they were written for human buyers. Authorisation is defined as the consumer's permission, so an agent's mistake is a grey area. American Express added purchase protection for agent buys in April 2026, as a company product, not a rule.",
+          "gapReason": "no-rule",
+          "evidence": [
+            {
+              "title": "Electronic Fund Transfers, Regulation E, section 1005.6 (liability of consumer)",
+              "publisher": "eCFR (CFPB)",
+              "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1005/section-1005.6",
+              "date": "2026",
+              "type": "regulation"
+            },
+            {
+              "title": "American Express debuts agentic commerce experiences (ACE) developer kit",
+              "publisher": "American Express",
+              "url": "https://www.americanexpress.com/en-us/newsroom/articles/innovation/american-express-debuts-agentic-commerce-experiences--ace--devel.html",
+              "date": "2026-04",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "note": "The Payment Services Regulations 2017 oblige banks to refund unauthorised payments, and section 75 of the Consumer Credit Act makes card lenders liable for faulty goods. Neither says what happens when software buys for you. HM Treasury's July 2026 consultation asks whether consent and liability rules for agent payments need changing; its answer is still open.",
+          "gapReason": "no-rule",
+          "evidence": [
+            {
+              "title": "Payment Services Regulations 2017, regulation 76 (refunds for unauthorised payments)",
+              "publisher": "legislation.gov.uk",
+              "url": "https://www.legislation.gov.uk/uksi/2017/752/regulation/76",
+              "date": "2017",
+              "type": "regulation"
+            },
+            {
+              "title": "Consumer Credit Act 1974, section 75",
+              "publisher": "legislation.gov.uk",
+              "url": "https://www.legislation.gov.uk/ukpga/1974/39/section/75",
+              "date": "1974",
+              "type": "regulation"
+            },
+            {
+              "title": "Modernising Payment Services Regulation (consultation)",
+              "publisher": "HM Treasury",
+              "url": "https://www.gov.uk/government/consultations/modernising-payment-services-regulation",
+              "date": "2026-07-14",
+              "type": "regulation"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "note": "German law (BGB section 675u) makes the bank refund payments you did not authorise, and section 355 gives a 14-day right to withdraw from online purchases, whoever placed the order. Neither rule mentions agents. The EU payment rules update (PSD3 and the payment services regulation) still assumes a human starts the payment.",
+          "gapReason": "no-rule",
+          "evidence": [
+            {
+              "title": "BGB § 675u (Haftung des Zahlungsdienstleisters für nicht autorisierte Zahlungsvorgänge)",
+              "publisher": "Bundesministerium der Justiz",
+              "url": "https://www.gesetze-im-internet.de/bgb/__675u.html",
+              "date": "2026",
+              "type": "regulation"
+            },
+            {
+              "title": "BGB § 355 (Widerrufsrecht bei Verbraucherverträgen)",
+              "publisher": "Bundesministerium der Justiz",
+              "url": "https://www.gesetze-im-internet.de/bgb/__355.html",
+              "date": "2026",
+              "type": "regulation"
+            }
+          ]
+        },
+        "IN": {
+          "status": "limited",
+          "note": "The Reserve Bank of India's 2017 circular limits your loss on unauthorised electronic payments and orders banks to credit the money within 10 working days. The E-Commerce Rules 2020 require platforms to answer complaints within a month. Neither names agents, and an order an agent places for you may count as authorised.",
+          "gapReason": "no-rule",
+          "confidence": "low",
+          "evidence": [
+            {
+              "title": "Customer Protection: Limiting Liability of Customers in Unauthorised Electronic Banking Transactions",
+              "publisher": "Reserve Bank of India",
+              "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+              "date": "2017-07-06",
+              "type": "regulation"
+            },
+            {
+              "title": "Consumer Protection (E-Commerce) Rules, 2020",
+              "publisher": "Department of Consumer Affairs",
+              "url": "https://consumeraffairs.nic.in/theconsumerprotection/consumer-protection-e-commerce-rules-2020",
+              "date": "2020-07",
+              "type": "regulation"
+            }
+          ]
+        },
+        "BR": {
+          "status": "limited",
+          "note": "Brazil's consumer code gives seven days to withdraw from a distance purchase, and the central bank's Pix refund scheme (MED) returns money after fraud or a bank error. The central bank says MED does not cover a purchase that went wrong, such as the wrong item, and no rule names agents.",
+          "gapReason": "no-rule",
+          "confidence": "low",
+          "evidence": [
+            {
+              "title": "Guia de implementação dos procedimentos de devolução no Pix (MED)",
+              "publisher": "Banco Central do Brasil",
+              "url": "https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Guia_MED.pdf",
+              "date": "2025",
+              "type": "regulation"
+            },
+            {
+              "title": "Lei 8.078/1990, Código de Defesa do Consumidor",
+              "publisher": "Presidência da República",
+              "url": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm",
+              "date": "1990-09",
+              "type": "regulation"
+            }
+          ]
+        },
+        "MX": {
+          "status": "limited",
+          "note": "Mexico's banking regulator Condusef says a bank must credit a charge you do not recognise within about 48 hours while it investigates for up to 45 days, and for online buys the bank must prove it used online authentication. The consumer protection law (LFPC) covers online sales. None of it names agents, and an agent's order is one you asked for.",
+          "gapReason": "no-rule",
+          "confidence": "low",
+          "evidence": [
+            {
+              "title": "Cargos no reconocidos",
+              "publisher": "Condusef",
+              "url": "https://www.condusef.gob.mx/?idc=1731&idcat=3&p=contenido",
+              "date": "2026",
+              "type": "regulation"
+            },
+            {
+              "title": "Garantía y compras en línea",
+              "publisher": "Profeco",
+              "url": "https://www.gob.mx/profeco/es/articulos/garantia-y-compras-en-linea?idiom=es/1000",
+              "date": "2026",
+              "type": "regulation"
+            }
+          ]
+        },
+        "CL": {
+          "status": "limited",
+          "note": "Chile's consumer law (Ley 19.496) gives a right to withdraw from online purchases, and Ley 20.009 limits what you lose when a card or transfer is used fraudulently. Neither names agents. We could not open the law texts to check the details.",
+          "gapReason": "no-rule",
+          "confidence": "low",
+          "evidence": [
+            {
+              "title": "Ley 19.496, normas sobre protección de los derechos de los consumidores",
+              "publisher": "Biblioteca del Congreso Nacional",
+              "url": "https://www.bcn.cl/leychile/navegar?idNorma=61438",
+              "date": "2026",
+              "type": "regulation"
+            },
+            {
+              "title": "Ley 20.009, limita la responsabilidad de los usuarios de tarjetas de pago y transacciones electrónicas",
+              "publisher": "Biblioteca del Congreso Nacional",
+              "url": "https://www.bcn.cl/leychile/navegar?idNorma=1001910",
+              "date": "2026",
+              "type": "regulation"
+            }
+          ]
+        },
+        "CO": {
+          "status": "limited",
+          "note": "Article 51 of Colombia's consumer statute (Ley 1480) lets you ask for a payment reversal on online purchases that were fraudulent, not requested by you, not delivered or not as ordered, if you complain within five business days. It is the closest rule to this question anywhere in the eight countries, but it does not name agents.",
+          "gapReason": "no-rule",
+          "evidence": [
+            {
+              "title": "Ley 1480 de 2011, Estatuto del Consumidor, artículo 51 (reversión del pago)",
+              "publisher": "Alcaldía de Bogotá (Régimen Legal)",
+              "url": "https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=44306",
+              "date": "2011-10",
+              "type": "regulation"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "Ministry of Electronics and IT (MeitY)",
+      "hq": "IN",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2186639&reg=3&lang=2",
+      "homepage": "https://www.meity.gov.in/",
+      "icon": "https://www.meity.gov.in/favicon.svg",
+      "role": "Wrote the India AI Governance Guidelines, a voluntary framework.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "rules.ai-law"
+      ]
+    },
+    {
+      "name": "Senado Federal (Brazil)",
+      "hq": "BR",
+      "url": "https://www12.senado.leg.br/noticias/videos/2024/12/marco-da-inteligencia-artificial-e-aprovado-em-plenario-e-vai-a-camara",
+      "homepage": "https://www.senado.leg.br/",
+      "icon": "https://www12.senado.leg.br/hpsenado/++plone++senado_hpsenado/favicon/apple-touch-icon.png",
+      "role": "Passed the AI framework bill (PL 2338/2023); the Chamber of Deputies decides next.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "rules.ai-law"
+      ]
+    },
+    {
+      "name": "Cámara de Diputadas y Diputados (Chile)",
+      "hq": "CL",
+      "url": "https://www.camara.cl/legislacion/proyectosdeley/tramitacion.aspx?prmID=17429",
+      "homepage": "https://www.camara.cl/",
+      "icon": null,
+      "role": "Passed the AI bill in October 2025; the Senate decides next.",
+      "markets": [
+        "CL"
+      ],
+      "capabilities": [
+        "rules.ai-law"
+      ]
+    },
+    {
+      "name": "MinTIC (Colombia)",
+      "hq": "CO",
+      "url": "https://mintic.gov.co/portal/inicio/Sala-de-prensa/Noticias/401055:Colombia-elige-una-inteligencia-artificial-centrada-en-la-vida-los-derechos-y-el-interes-publico-con-radicacion-del-proyecto-de-ley-de-IA",
+      "homepage": "https://www.mintic.gov.co/",
+      "icon": null,
+      "role": "Co-filed the government AI bill that Congress is still debating.",
+      "markets": [
+        "CO"
+      ],
+      "capabilities": [
+        "rules.ai-law"
+      ]
+    },
+    {
+      "name": "HM Treasury",
+      "hq": "GB",
+      "url": "https://www.gov.uk/government/consultations/modernising-payment-services-regulation",
+      "homepage": "https://www.gov.uk/government/organisations/hm-treasury",
+      "icon": "https://www.gov.uk/assets/collections/govuk-icon-180-d45a306f0549414cfa5085f16e4a3816a77558b139e5bc226f23162d1d0decb0.png",
+      "role": "Consulted in July 2026 on whether payment rules on consent and liability fit AI agents.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "rules.agent-purchase-protection"
+      ]
+    },
+    {
+      "name": "Consumer Financial Protection Bureau (CFPB)",
+      "hq": "US",
+      "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1005/section-1005.6",
+      "homepage": "https://www.consumerfinance.gov/",
+      "icon": "https://www.consumerfinance.gov/favicon.ico",
+      "role": "Regulation E sets who bears the loss on unauthorised electronic payments.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "rules.agent-purchase-protection"
+      ]
+    },
+    {
+      "name": "American Express",
+      "hq": "US",
+      "url": "https://www.americanexpress.com/en-us/newsroom/articles/innovation/american-express-debuts-agentic-commerce-experiences--ace--devel.html",
+      "homepage": "https://www.americanexpress.com/",
+      "icon": "https://www.americanexpress.com/favicon.ico",
+      "role": "Offers purchase protection for agent-made buys on its cards, as a company product.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "rules.agent-purchase-protection"
+      ]
+    },
+    {
+      "name": "Reserve Bank of India (RBI)",
+      "hq": "IN",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+      "homepage": "https://www.rbi.org.in/",
+      "icon": null,
+      "role": "Limits customer loss on unauthorised electronic payments and sets refund deadlines for banks.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "rules.agent-purchase-protection"
+      ]
+    },
+    {
+      "name": "Banco Central do Brasil",
+      "hq": "BR",
+      "url": "https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Guia_MED.pdf",
+      "homepage": "https://www.bcb.gov.br/",
+      "icon": "https://www.bcb.gov.br/favicon.ico",
+      "role": "Runs the Pix refund scheme (MED) for fraud and bank errors.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "rules.agent-purchase-protection"
+      ]
+    },
+    {
+      "name": "Condusef (Mexico)",
+      "hq": "MX",
+      "url": "https://www.condusef.gob.mx/?idc=1731&idcat=3&p=contenido",
+      "homepage": "https://www.condusef.gob.mx/",
+      "icon": null,
+      "role": "Sets how banks must handle charges a customer does not recognise.",
+      "markets": [
+        "MX"
+      ],
+      "capabilities": [
+        "rules.agent-purchase-protection"
+      ]
+    },
+    {
+      "name": "Superintendencia de Industria y Comercio (Colombia)",
+      "hq": "CO",
+      "url": "https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=44306",
+      "homepage": "https://www.sic.gov.co/",
+      "icon": null,
+      "role": "Enforces the consumer statute, including payment reversal on online purchases.",
+      "markets": [
+        "CO"
+      ],
+      "capabilities": [
+        "rules.agent-purchase-protection"
+      ]
+    }
+  ]
+}
