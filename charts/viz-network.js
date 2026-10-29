@@ -18,7 +18,7 @@
 .v-network .v-network-legend span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 .v-network .v-network-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
 .v-network .v-network-legend .country { width: 12px; height: 12px; box-sizing: border-box; background: var(--surface); border: 1.5px solid var(--ink-2); }
-.v-network .v-network-legend b { font-weight: 400; font-variant-numeric: tabular-nums; color: var(--muted); }
+.v-network .v-network-legend b { display: inline-block; min-width: 3ch; font-weight: 400; font-variant-numeric: tabular-nums; color: var(--muted); }
 .v-network svg { display: block; overflow: visible; }
 .v-network .lk { stroke: var(--line-strong); stroke-width: 1; fill: none; }
 .v-network .co { stroke: var(--surface); stroke-width: 1.5; }
