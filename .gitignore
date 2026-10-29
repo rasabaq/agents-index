@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 .verify-runs/
 TODO.md
+.claude/worktrees/
+.claude/settings.local.json
