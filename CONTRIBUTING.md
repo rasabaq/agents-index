@@ -2,6 +2,8 @@
 
 Thanks for helping. The most useful thing you can do is fix a data cell that is wrong or out of date.
 
+Everyone here follows our [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Run it
 
 You need Node 20 or later. There is no build step and nothing to install.

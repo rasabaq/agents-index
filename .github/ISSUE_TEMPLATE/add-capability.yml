@@ -1,0 +1,29 @@
+name: Add or change a capability
+description: Propose a new thing to track, or change how we word or define one.
+title: "Capability: "
+labels: ["new-capability"]
+body:
+  - type: markdown
+    attributes:
+      value: A capability is one concrete action, asked as a yes-or-no question, such as "Can an AI agent buy from a merchant without leaving the chat?"
+  - type: input
+    id: question
+    attributes:
+      label: Question
+      description: The yes-or-no question. For a change, give the capability id from the site, then the new wording.
+      placeholder: Can an AI agent renew your car insurance for you?
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      description: The category it belongs to, as on the site.
+      placeholder: Banking & open finance
+  - type: textarea
+    id: why
+    attributes:
+      label: Why track it
+      description: Who it matters to, and in which countries it already works or is close. Add source URLs.
+    validations:
+      required: true
