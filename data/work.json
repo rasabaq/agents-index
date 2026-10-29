@@ -1,0 +1,454 @@
+{
+  "category": "work",
+  "capabilities": [
+    {
+      "id": "work.job-apply",
+      "name": "Find jobs and apply for you",
+      "question": "Can an AI agent find jobs that fit you and send the applications for you?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "LoopCV and JobCopilot fill in and send applications for you every day on LinkedIn, Indeed, Glassdoor and company career pages. The job boards' own AI stops before the last step: the Indeed and ZipRecruiter apps in ChatGPT send you to their sites to apply, and LinkedIn's Premium Apply Assistant pre-fills forms that you approve.",
+          "evidence": [
+            {
+              "title": "AI Job Search Tool (auto-apply on LinkedIn, Indeed and Glassdoor)",
+              "publisher": "LoopCV",
+              "url": "https://www.loopcv.pro/ai-job-search-tool",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "JobCopilot: auto-apply to jobs on company career pages",
+              "publisher": "JobCopilot",
+              "url": "https://jobcopilot.com/",
+              "type": "company"
+            },
+            {
+              "title": "About the Indeed app on ChatGPT (you apply on Indeed)",
+              "publisher": "Indeed",
+              "url": "https://www.indeed.com/help/job-seekers/articles/43197872743565-about-the-indeed-app-on-chatgpt",
+              "type": "company"
+            },
+            {
+              "title": "ZipRecruiter launches ChatGPT app for AI-powered job discovery",
+              "publisher": "ZipRecruiter",
+              "url": "https://www.ziprecruiter.com/blog/chatgpt-app/",
+              "date": "2026-03-19",
+              "type": "company"
+            },
+            {
+              "title": "LinkedIn automates the job application process for Premium users",
+              "publisher": "Social Media Today",
+              "url": "https://www.socialmediatoday.com/news/linkedin-automates-job-application-process-for-premium-users/823719/",
+              "date": "2026-06-24",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Unconfirmed for the UK: LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, but neither names the countries it covers. Indeed's Career Scout reached the UK in July 2026; it pre-fills applications that you send yourself.",
+          "evidence": [
+            {
+              "title": "AI Job Search Tool (auto-apply on LinkedIn, Indeed and Glassdoor)",
+              "publisher": "LoopCV",
+              "url": "https://www.loopcv.pro/ai-job-search-tool",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "JobCopilot: auto-apply to jobs on company career pages",
+              "publisher": "JobCopilot",
+              "url": "https://jobcopilot.com/",
+              "type": "company"
+            },
+            {
+              "title": "Indeed launches Career Scout to support workers seeking career change",
+              "publisher": "Workplace Journal",
+              "url": "https://workplacejournal.co.uk/2026/07/indeed-launches-career-scout-to-support-workers-seeking-career-change/",
+              "date": "2026-07",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "DE": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Unconfirmed for Germany: LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, but neither names the countries it covers or a German board such as StepStone. We did not find a German job board with its own agent that applies for you.",
+          "evidence": [
+            {
+              "title": "AI Job Search Tool (auto-apply on LinkedIn, Indeed and Glassdoor)",
+              "publisher": "LoopCV",
+              "url": "https://www.loopcv.pro/ai-job-search-tool",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "JobCopilot: auto-apply to jobs on company career pages",
+              "publisher": "JobCopilot",
+              "url": "https://jobcopilot.com/",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Unconfirmed for India: LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, but neither names the countries it covers. Naukri launched an AI resume maker in November 2025, but we did not find a Naukri agent that applies for you.",
+          "evidence": [
+            {
+              "title": "AI Job Search Tool (auto-apply on LinkedIn, Indeed and Glassdoor)",
+              "publisher": "LoopCV",
+              "url": "https://www.loopcv.pro/ai-job-search-tool",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "JobCopilot: auto-apply to jobs on company career pages",
+              "publisher": "JobCopilot",
+              "url": "https://jobcopilot.com/",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "BR": {
+          "status": "live",
+          "note": "Catho's Autoenvio, part of the paid Catho Profissional plan, sends your CV every morning to jobs that match your profile closely and take direct applications, with no click per job.",
+          "evidence": [
+            {
+              "title": "Autoenvio de currículo: confira mais essa novidade da Catho",
+              "publisher": "Catho",
+              "url": "https://www.catho.com.br/carreira-sucesso/autoenvio-de-curriculo-catho/",
+              "date": "2025-08-01",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Mexico, but it names no list of countries, so coverage in Mexico is unconfirmed. We did not find a Mexican job board, such as OCC Mundial, with its own agent that applies for you.",
+          "evidence": [
+            {
+              "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
+              "publisher": "LoopCV",
+              "url": "https://blog.loopcv.pro/es/postular-ofertas-automaticamente/",
+              "date": "2026-07-04",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CL": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Chile, but it names no list of countries, so coverage in Chile is unconfirmed. We did not find a Chilean job board, such as Laborum, with its own agent that applies for you.",
+          "evidence": [
+            {
+              "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
+              "publisher": "LoopCV",
+              "url": "https://blog.loopcv.pro/es/postular-ofertas-automaticamente/",
+              "date": "2026-07-04",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Colombia, but it names no list of countries, so coverage in Colombia is unconfirmed. We did not find a Colombian job board, such as elempleo, with its own agent that applies for you.",
+          "evidence": [
+            {
+              "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
+              "publisher": "LoopCV",
+              "url": "https://blog.loopcv.pro/es/postular-ofertas-automaticamente/",
+              "date": "2026-07-04",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        }
+      }
+    },
+    {
+      "id": "work.hr-payroll",
+      "name": "Run payroll and HR paperwork for a small business",
+      "question": "Can an AI agent run payroll or finish an HR task, such as filing a form, for a small business?",
+      "countries": {
+        "US": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Gusto's agents run payroll after the owner confirms a preview, but only for some customers: Cofounder (launched June 2026) is in invite-only early access, and running payroll from the Gusto app in ChatGPT is open to select customers. Intuit announced a QuickBooks Payroll Agent in July 2025, but we found no general release.",
+          "evidence": [
+            {
+              "title": "Introducing Gusto Cofounder: AI that knows your business and gets to work",
+              "publisher": "Gusto",
+              "url": "https://gusto.com/company-news/cofounder",
+              "date": "2026-06",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with Gusto Cofounder (early access)",
+              "publisher": "Gusto",
+              "url": "https://support.gusto.com/article/178034282147072/getting-started-with-gusto-cofounder",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Gusto launches payroll inside ChatGPT",
+              "publisher": "CPA Practice Advisor",
+              "url": "https://www.cpapracticeadvisor.com/2026/01/23/gusto-launches-payroll-inside-chatgpt/176791/",
+              "date": "2026-01-23",
+              "type": "news"
+            },
+            {
+              "title": "Intuit introduces ground-breaking virtual team of AI agents to fuel growth for businesses",
+              "publisher": "Intuit",
+              "url": "https://investors.intuit.com/news-events/press-releases/detail/1258/intuit-introduces-ground-breaking-virtual-team-of-ai-agents-to-fuel-growth-for-businesses",
+              "date": "2025-07",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Deel's AI Workforce, built for more than 150 countries, flags payroll errors before payout and handles managers' time-off requests, but no agent runs payroll or files a form. We found no UK payroll provider whose agent runs payroll.",
+          "evidence": [
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-19",
+              "type": "company"
+            },
+            {
+              "title": "The Big Deel 2026: everything we announced",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/big-deel-recap-2026/",
+              "date": "2026",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "DE": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Personio's AI Assistant has answered HR questions for all employees since October 2025, and Deel's AI Workforce flags payroll errors and handles time-off requests, but no agent runs payroll or files a form.",
+          "evidence": [
+            {
+              "title": "HUG 2025 feature updates (AI Assistant for all employees)",
+              "publisher": "Personio",
+              "url": "https://www.personio.com/about-personio/press/hug-2025-feature-updates/",
+              "date": "2025-10-16",
+              "type": "company"
+            },
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IN": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Kredily's Kai (shipped August 2026) works out the month's payroll, payslips and bank file, but it stops before payout and statutory filing, which stay with the owner; Kredily does not say whether Kai is open to all customers.",
+          "evidence": [
+            {
+              "title": "Best AI payroll software in India (Kai payroll agent)",
+              "publisher": "Kredily",
+              "url": "https://kredily.com/best-ai-payroll-software-india/",
+              "date": "2026-08-22",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "BR": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Deel's AI Workforce flags payroll errors and handles time-off requests, but no agent runs payroll or sends eSocial events. LG lugar de gente plans payroll-checking agents in its 2026 roadmap, with no date.",
+          "evidence": [
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-19",
+              "type": "company"
+            },
+            {
+              "title": "Roadmap Nuvem 2026",
+              "publisher": "LG lugar de gente",
+              "url": "https://page.lg.com.br/lps/wp-content/uploads/2026/01/Roadmap-Nuvem-2026.pdf",
+              "date": "2026-01",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "MX": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Deel's AI Workforce flags payroll errors and handles time-off requests, but no agent runs payroll or files with IMSS or SAT. We found no payroll agent from Runa or Alegra.",
+          "evidence": [
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CL": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Deel's AI Workforce flags payroll errors and handles time-off requests, but no agent runs payroll. We found no payroll agent from Buk or Talana.",
+          "evidence": [
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Aleluya says its AI agent checks payroll before you pay, and Deel's AI Workforce flags payroll errors and handles time-off requests, but no agent runs payroll or sends the electronic payroll to DIAN.",
+          "evidence": [
+            {
+              "title": "Comparativo de software de nómina, Colombia 2026",
+              "publisher": "Aleluya",
+              "url": "https://aleluya.com/compara-nomina",
+              "date": "2026",
+              "type": "company"
+            },
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "LoopCV",
+      "hq": "GR",
+      "url": "https://www.loopcv.pro/ai-job-search-tool",
+      "homepage": "https://www.loopcv.pro/",
+      "icon": "https://www.loopcv.pro/apple-touch-icon.png",
+      "role": "Finds jobs and sends applications for you each day on LinkedIn, Indeed, Computrabajo and other boards.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "IN",
+        "MX",
+        "CL",
+        "CO"
+      ],
+      "capabilities": [
+        "work.job-apply"
+      ]
+    },
+    {
+      "name": "Catho",
+      "hq": "BR",
+      "url": "https://www.catho.com.br/carreira-sucesso/autoenvio-de-curriculo-catho/",
+      "homepage": "https://www.catho.com.br/",
+      "icon": "https://www.catho.com.br/c/img/logos/favicon.ico",
+      "role": "Autoenvio sends a paying member's CV to matching jobs every morning.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "work.job-apply"
+      ]
+    },
+    {
+      "name": "Indeed",
+      "hq": "US",
+      "url": "https://www.indeed.com/help/job-seekers/articles/43197872743565-about-the-indeed-app-on-chatgpt",
+      "homepage": "https://www.indeed.com/",
+      "icon": "https://cl.indeed.com/apple-touch-icon-precomposed.png",
+      "role": "Its ChatGPT app and Career Scout agent find jobs and pre-fill applications, but you send them on Indeed.",
+      "markets": [
+        "US",
+        "GB"
+      ],
+      "capabilities": [
+        "work.job-apply"
+      ]
+    },
+    {
+      "name": "Gusto",
+      "hq": "US",
+      "url": "https://gusto.com/company-news/cofounder",
+      "homepage": "https://gusto.com/",
+      "icon": "https://gusto.com/favicon.ico",
+      "role": "Cofounder and the Gusto app in ChatGPT run payroll after the owner confirms, for early-access customers.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "work.hr-payroll"
+      ]
+    },
+    {
+      "name": "Deel",
+      "hq": "US",
+      "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+      "homepage": "https://www.deel.com/",
+      "icon": "https://www.deel.com/apple-icon.png?d2b410d8d6714d15",
+      "role": "AI Workforce agents flag payroll errors and handle time-off requests in more than 150 countries.",
+      "markets": [
+        "US",
+        "GB",
+        "DE",
+        "IN",
+        "BR",
+        "MX",
+        "CL",
+        "CO"
+      ],
+      "capabilities": [
+        "work.hr-payroll"
+      ]
+    },
+    {
+      "name": "Kredily",
+      "hq": "IN",
+      "url": "https://kredily.com/best-ai-payroll-software-india/",
+      "homepage": "https://kredily.com/",
+      "icon": "https://kredily.com/wp-content/themes/kredily-liquidglass/assets/img/brand/favicon/favicon-192.png?ver=1785309503",
+      "role": "Kai works out the month's payroll and bank file, and the owner approves payout and filing.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "work.hr-payroll"
+      ]
+    }
+  ]
+}
