@@ -76,7 +76,7 @@
         },
         "DE": {
           "status": "live",
-          "note": "ChatGPT, Claude and Gemini can each be signed up for in Germany: all three publish Germany on their supported-countries pages. Alexa+ is also here, but only in Early Access by invitation. Copilot was not checked.",
+          "note": "ChatGPT, Claude and Gemini can each be signed up for in Germany: all three publish Germany on their supported-countries pages. Alexa+ has been in free Early Access in German since May 2026: you get it with a new Echo, or sign up for an invitation. Copilot was not checked.",
           "evidence": [
             {
               "title": "ChatGPT Supported Countries",
@@ -103,6 +103,13 @@
               "title": "Alexa+ international launch",
               "publisher": "Amazon",
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ startet in Deutschland",
+              "publisher": "About Amazon Deutschland",
+              "url": "https://www.aboutamazon.de/news/amazon-devices-und-services/alexa-plus-deutschland-start",
               "date": "2026-10",
               "type": "company"
             }
@@ -219,7 +226,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "ChatGPT, Claude and Gemini can each be signed up for in Chile: all three publish Chile on their supported-countries pages. Alexa+ is not offered here. Copilot was not checked.",
+          "note": "ChatGPT, Claude and Gemini can each be signed up for in Chile: all three publish Chile on their supported-countries pages. Alexa+ is not offered here: Chile is not on Amazon's list of Alexa+ countries. Copilot was not checked.",
           "evidence": [
             {
               "title": "ChatGPT Supported Countries",
@@ -253,7 +260,7 @@
         },
         "CO": {
           "status": "live",
-          "note": "ChatGPT, Claude and Gemini can each be signed up for in Colombia: all three publish Colombia on their supported-countries pages. Alexa+ is not offered here. Copilot was not checked.",
+          "note": "ChatGPT, Claude and Gemini can each be signed up for in Colombia: all three publish Colombia on their supported-countries pages. Alexa+ is not offered here: Colombia is not on Amazon's list of Alexa+ countries. Copilot was not checked.",
           "evidence": [
             {
               "title": "ChatGPT Supported Countries",
@@ -294,7 +301,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "English is the first language of every agent feature: Alexa+ is open to all in the US, Claude in Chrome and ChatGPT's cloud browser work in English, and Google's Chrome auto browse launched here.",
+          "note": "English is the main language. Alexa+ is open to all in the US, Claude in Chrome is generally available on paid Claude plans, and Google's Chrome auto browse launched here. The Gemini mobile app lists English, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app.",
           "evidence": [
             {
               "title": "Alexa+ is now available to everyone in the US, free with Prime",
@@ -316,12 +323,26 @@
               "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
               "date": "2026-01-28",
               "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "GB": {
           "status": "live",
-          "note": "English is the main language here and the agent features run in it: Alexa+ launched in the UK in March 2026 (Early Access), Claude in Chrome works in the UK, and Gemini's connected apps list English (UK).",
+          "note": "English is the main language. Alexa+ has been in free Early Access in the UK since March 2026, and Claude in Chrome is generally available on paid Claude plans. The Gemini mobile app lists English, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app.",
           "evidence": [
             {
               "title": "Introducing Alexa+ in the UK",
@@ -343,18 +364,24 @@
               "url": "https://support.google.com/gemini/answer/14579026?hl=en",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "DE": {
           "status": "live",
-          "confidence": "low",
-          "note": "German is a supported language of the Gemini app and of Alexa+, which has run in German Early Access since May 2026, and Claude is tested in German. No vendor page lists agent features by language, so this rests on those product-level language lists.",
+          "note": "German is the main language. Alexa+ has been in free Early Access in German since May 2026: you get it with a new Echo, or sign up for an invitation. It books restaurants and orders gifts. The Gemini mobile app lists German, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app.",
           "evidence": [
             {
-              "title": "Gemini mobile app availability (supported languages)",
-              "publisher": "Google Gemini Help",
-              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "title": "Alexa+ startet in Deutschland",
+              "publisher": "About Amazon Deutschland",
+              "url": "https://www.aboutamazon.de/news/amazon-devices-und-services/alexa-plus-deutschland-start",
               "date": "2026-10",
               "type": "company"
             },
@@ -366,19 +393,24 @@
               "type": "company"
             },
             {
-              "title": "Multilingual support",
-              "publisher": "Anthropic",
-              "url": "https://docs.claude.com/en/docs/build-with-claude/multilingual-support",
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
               "date": "2026-10",
               "type": "company"
             }
           ]
         },
         "IN": {
-          "status": "limited",
-          "gapReason": "not-launched",
-          "confidence": "low",
-          "note": "Hindi works: Alexa+ launched in India in September 2026 in English, Hindi and Hinglish, and the Gemini app lists Hindi. We found no agent feature documented in a second major Indian language: Chrome auto browse in India is English only, and Amazon says more Indian languages for Alexa+ are coming soon.",
+          "status": "live",
+          "note": "Hindi is the most spoken language. Alexa+ has run in English, Hindi and Hinglish since September 2026 (free Early Access). The Gemini mobile app lists Hindi, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app. Chrome auto browse in India is English only.",
           "evidence": [
             {
               "title": "Alexa+ launches in India",
@@ -388,24 +420,31 @@
               "type": "company"
             },
             {
-              "title": "Bringing Gemini in Chrome with auto browse to India",
-              "publisher": "Google",
-              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
-              "date": "2026-10-07",
-              "type": "company"
-            },
-            {
               "title": "Gemini mobile app availability (supported languages)",
               "publisher": "Google Gemini Help",
               "url": "https://support.google.com/gemini/answer/14579026?hl=en",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "BR": {
           "status": "live",
-          "note": "Alexa+ launched in Portuguese in Brazil on 18 June 2026 (free Early Access) and does tasks, not just chat; the Gemini app also lists Portuguese and Claude is tested in Brazilian Portuguese.",
+          "note": "Portuguese is the main language. Alexa+ launched in Portuguese in Brazil on 18 June 2026 (free Early Access) and does tasks, not just chat. The Gemini mobile app lists Portuguese, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app.",
           "evidence": [
             {
               "title": "Alexa+ chega ao Brasil",
@@ -422,9 +461,9 @@
               "type": "company"
             },
             {
-              "title": "Multilingual support",
-              "publisher": "Anthropic",
-              "url": "https://docs.claude.com/en/docs/build-with-claude/multilingual-support",
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
               "date": "2026-10",
               "type": "company"
             }
@@ -432,13 +471,20 @@
         },
         "MX": {
           "status": "live",
-          "note": "Alexa+ launched first in Mexican Spanish in January 2026 (Early Access), with task features such as booking reservations and buying; the Gemini app also lists Spanish and Claude is tested in Spanish.",
+          "note": "Spanish is the main language. Alexa+ launched first in Mexican Spanish in January 2026 (free Early Access), with task features such as booking reservations and buying. The Gemini mobile app lists Spanish, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app.",
           "evidence": [
             {
-              "title": "How Alexa+ learned local culture and language (Mexico launch)",
+              "title": "Building a global Alexa+: How Amazon is teaching AI to understand culture, not just language",
               "publisher": "Amazon",
               "url": "https://www.aboutamazon.com/news/devices/amazon-alexa-plus-AI-culture-language",
-              "date": "2026",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
               "type": "company"
             },
             {
@@ -449,9 +495,9 @@
               "type": "company"
             },
             {
-              "title": "Multilingual support",
-              "publisher": "Anthropic",
-              "url": "https://docs.claude.com/en/docs/build-with-claude/multilingual-support",
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
               "date": "2026-10",
               "type": "company"
             }
@@ -459,8 +505,7 @@
         },
         "CL": {
           "status": "live",
-          "confidence": "low",
-          "note": "No Chile-specific Spanish launch found. The Gemini app lists Spanish and its WhatsApp calls and messages feature runs on Android, and Claude is tested in Spanish; Alexa+ is not offered here. No vendor page lists agent features by language, so this is indirect.",
+          "note": "Spanish is the main language. The Gemini mobile app is offered in Chile and lists Spanish, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Gemini mobile app availability (supported languages)",
@@ -470,16 +515,9 @@
               "type": "company"
             },
             {
-              "title": "Make calls and send messages on WhatsApp with the Gemini mobile app on Android",
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
               "publisher": "Google Gemini Help",
-              "url": "https://support.google.com/gemini/answer/15574928?hl=en",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "Multilingual support",
-              "publisher": "Anthropic",
-              "url": "https://docs.claude.com/en/docs/build-with-claude/multilingual-support",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
               "date": "2026-10",
               "type": "company"
             }
@@ -487,8 +525,7 @@
         },
         "CO": {
           "status": "live",
-          "confidence": "low",
-          "note": "No Colombia-specific Spanish launch found. The Gemini app lists Spanish and its WhatsApp calls and messages feature runs on Android, and Claude is tested in Spanish; Alexa+ is not offered here. No vendor page lists agent features by language, so this is indirect.",
+          "note": "Spanish is the main language. The Gemini mobile app is offered in Colombia and lists Spanish, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Gemini mobile app availability (supported languages)",
@@ -498,16 +535,9 @@
               "type": "company"
             },
             {
-              "title": "Make calls and send messages on WhatsApp with the Gemini mobile app on Android",
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
               "publisher": "Google Gemini Help",
-              "url": "https://support.google.com/gemini/answer/15574928?hl=en",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "Multilingual support",
-              "publisher": "Anthropic",
-              "url": "https://docs.claude.com/en/docs/build-with-claude/multilingual-support",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
               "date": "2026-10",
               "type": "company"
             }
@@ -544,7 +574,7 @@
       "url": "https://www.anthropic.com/supported-countries",
       "homepage": "https://www.anthropic.com/",
       "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
-      "role": "Claude is open in all eight countries, and Anthropic tests it in Spanish, Portuguese, German, Hindi and Bengali.",
+      "role": "Claude is open in all eight countries, and Claude in Chrome, its browser agent, is generally available on paid plans.",
       "markets": [
         "US",
         "GB",
@@ -558,7 +588,13 @@
       "capabilities": [
         "access.assistant-available",
         "access.local-language"
-      ]
+      ],
+      "marketsByCapability": {
+        "access.local-language": [
+          "US",
+          "GB"
+        ]
+      }
     },
     {
       "name": "Google",
@@ -566,7 +602,7 @@
       "url": "https://support.google.com/gemini/answer/13575153?hl=en",
       "homepage": "https://www.google.com/",
       "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
-      "role": "The Gemini app is open in all eight countries and lists more than 70 languages, including Spanish, Portuguese, German, Hindi and other Indian languages.",
+      "role": "The Gemini app is open in all eight countries. Its mobile app lists Spanish, Portuguese, German and Hindi among its languages, and its connected apps, such as WhatsApp, Phone and Messages, work in all of them.",
       "markets": [
         "US",
         "GB",
@@ -588,7 +624,7 @@
       "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
       "homepage": "https://www.aboutamazon.com/",
       "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
-      "role": "Alexa+ is open to all in the US and in free Early Access in the UK, Germany, Brazil, Mexico and India, in the local language.",
+      "role": "Alexa+ is open to all in the US, and in free Early Access in the UK, Germany, Brazil, Mexico and India, in the local language.",
       "markets": [
         "US",
         "GB",
