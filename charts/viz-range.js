@@ -32,7 +32,10 @@
 @media (max-width: 520px) {
   .v-range .vr-head { font-size: 17px; }
   .v-range .vr-row, .v-range .vr-axis { grid-template-columns: 56px minmax(0, 1fr) 62px; column-gap: 10px; padding-left: 4px; padding-right: 4px; }
-}`;
+}
+/* the narrowest phones label every 20 points, counted back from 100, so the tick numbers keep apart */
+@media (max-width: 359px) { .v-range .vr-ticks i:nth-last-child(even) { display: none; } }
+@media (pointer: coarse) { .v-range .vr-row { height: 40px; } }`;
 
   const LEVELS = ['none', 'announced', 'limited', 'live'];
 
