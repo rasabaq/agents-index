@@ -97,7 +97,8 @@
       const cap1 = (s) => s[0].toUpperCase() + s.slice(1);
       const caps = Object.fromEntries(ctx.capabilities.map((c) => [c.id, c]));
       const n = ctx.capabilities.length;
-      const state = { a: 'US', b: 'CL', only: false, open: new Set() };
+      // Phones start on "Only differences", so the list is the gaps the summary counts, not every capability.
+      const state = { a: 'US', b: 'CL', only: matchMedia('(max-width: 520px)').matches, open: new Set() };
 
       const opts = ctx.ranking.map((c) => `<option value="${c.code}">${emoji(c.code)} ${esc(c.name)}</option>`).join('');
       el.classList.add('v-compare');
