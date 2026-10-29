@@ -85,11 +85,12 @@ function renderBusiness(r) {
   const row = ({ cap, label, cell, companies: cos }) => {
     // One line on why: the gap reason when the cell has one, else the status in plain words.
     const reason = cell.status === 'live' ? null : gapLabel(cell.gapReason);
-    // A company line under "The company hasn't launched here" would contradict it, so that case shows none.
+    // Companies are listed by their markets for the whole category, not per capability, so a Not yet item or one
+    // whose reason is that the company has not launched here shows no company line: it would read as a contradiction.
     const links = cos.map((co) => `<a href="${esc(co.homepage ?? co.url)}" target="_blank" rel="noopener noreferrer">${esc(co.name)}</a>`).join(', ');
     return `<li>
       <button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(label)}<small>${reason ? `${esc(reason)}.` : bizStatus[cell.status]}</small></span></button>
-      ${cos.length && cell.gapReason !== 'not-launched' ? `<p class="biz-cos">${cell.status === 'live' ? 'Sign up with' : 'Active here'}: ${links}</p>` : ''}</li>`;
+      ${cos.length && cell.status !== 'none' && cell.gapReason !== 'not-launched' ? `<p class="biz-cos">${cell.status === 'live' ? 'Sign up with' : 'Active here'}: ${links}</p>` : ''}</li>`;
   };
   return forBusiness(categories, r.code).map((g) => `
     <section class="card kpi mc-list biz-group" aria-label="${esc(g.title)}"><h3 class="label">${esc(g.title)} · ${g.items.filter((x) => x.cell.status === 'live').length} of ${g.items.length} live</h3>
