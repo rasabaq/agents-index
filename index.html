@@ -20,6 +20,20 @@
   <script type="module" src="app.js"></script>
   <link rel="stylesheet" href="sections.css">
   <script type="module" src="sections.js"></script>
+  <link rel="stylesheet" href="charts/charts.css">
+  <!-- Charts draw after the page above them: d3 and every chart script are deferred, then charts.js mounts them. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script defer src="charts/viz-map.js"></script>
+  <script defer src="charts/viz-periodic.js"></script>
+  <script defer src="charts/viz-compare.js"></script>
+  <script defer src="charts/viz-radar.js"></script>
+  <script defer src="charts/viz-gap.js"></script>
+  <script defer src="charts/viz-range.js"></script>
+  <script defer src="charts/viz-bump.js"></script>
+  <script defer src="charts/viz-flows.js"></script>
+  <script defer src="charts/viz-network.js"></script>
+  <script defer src="charts/viz-timeline.js"></script>
+  <script type="module" src="charts/charts.js"></script>
 </head>
 <body>
   <header class="nav">
@@ -30,14 +44,12 @@
       </a>
       <button type="button" class="nav-menu" aria-expanded="false" aria-controls="site-nav" data-nav-menu>Menu</button>
       <nav id="site-nav" aria-label="Sections">
-        <a href="#ranking">Ranking</a>
-        <a href="#matrix">Matrix</a>
+        <a href="#v-map">Map</a>
         <a href="#country">Countries</a>
+        <a href="#compare">Compare</a>
         <a href="#companies">Companies</a>
         <a href="#opensource">Open source</a>
-        <a href="#tiers">Tiers</a>
         <a href="#method">Method</a>
-        <a href="atlas/">Atlas</a>
       </nav>
     </div>
   </header>
@@ -54,7 +66,6 @@
           <div>
             <h1 id="hero-title"><span>See what AI agents</span> <span>can actually do,</span> <span><span class="hero-tape">country by country.</span></span></h1>
             <p class="hero-sub"><span>Not how much AI a country has, but <b>what agents can do there</b>. Every status cites a source.</span></p>
-            <ol class="hero-flags" aria-label="Ranking, score out of 100" data-hero-flags></ol>
             <div class="hero-ctas">
               <a class="hero-btn hero-btn-1" href="#ranking">Open the ranking <span aria-hidden="true">→</span></a>
               <a class="hero-btn hero-btn-2" href="#method">How we score</a>
@@ -75,6 +86,8 @@
         <ul class="hero-chips" aria-hidden="true" data-hero-chips></ul>
       </div>
     </section>
+
+    <section data-chart="map"></section>
 
     <!-- The data product: one terminal window over the bottom of the hero. A country list on the left,
          the selected country on the right, then the matrix, the ranking, the categories and the newest sources. -->
@@ -137,17 +150,6 @@
       </p>
     </div>
 
-    <section id="tiers" class="wrap sec" data-sections>
-      <div class="sec-h">
-        <div>
-          <p class="label">Tier list · score 0–100</p>
-          <h2><span data-tiers-title>Tiers</span> <span class="dim">Cut every 10 points.</span></h2>
-        </div>
-        <p class="cuts" aria-label="Tier cut-offs" data-cuts></p>
-      </div>
-      <ol class="tier-list" data-tiers></ol>
-    </section>
-
     <section class="band" aria-labelledby="band-title" data-sections>
       <header class="band-h">
         <p class="kicker">The dataset · as of <span data-asof></span></p>
@@ -155,6 +157,22 @@
       </header>
       <div class="nums" data-nums><canvas class="nums-cv" aria-hidden="true"></canvas></div>
     </section>
+
+    <div id="compare" class="wrap sec sec-lead">
+      <div class="sec-h">
+        <div>
+          <p class="label">Compare countries</p>
+          <h2>How the countries compare. <span class="dim">One table first, then every rank.</span></h2>
+        </div>
+        <p class="sec-note">Six charts, from the simplest to the richest.</p>
+      </div>
+    </div>
+    <section data-chart="periodic"></section>
+    <section data-chart="compare"></section>
+    <section data-chart="radar"></section>
+    <section data-chart="gap"></section>
+    <section data-chart="range"></section>
+    <section data-chart="bump"></section>
 
     <section id="companies" class="wrap sec">
       <div class="sec-h">
@@ -171,6 +189,9 @@
         <div class="more-row" data-companies-more></div>
       </div>
     </section>
+
+    <section data-chart="flows"></section>
+    <section data-chart="network"></section>
 
     <section id="opensource" class="wrap sec">
       <div class="sec-h">
@@ -189,6 +210,16 @@
         <p class="note repo-note">Stars measure attention. Installs measure use. So we sort repos by npm, PyPI and Packagist installs a month and Docker Hub pulls, not by stars. <a href="https://github.com/rasabaq/ai-agent-observatory/blob/main/docs/methodology.md#open-source-what-is-really-used" class="nowrap" target="_blank" rel="noopener noreferrer">How we tier repos</a></p>
       </div>
     </section>
+
+    <div id="origins" class="wrap sec sec-lead">
+      <div class="sec-h">
+        <div>
+          <p class="label">Where it comes from</p>
+          <h2>Built on dated sources. <span class="dim">When they appeared, how we score.</span></h2>
+        </div>
+      </div>
+    </div>
+    <section data-chart="timeline"></section>
 
     <section id="method" class="wrap sec">
       <div class="sec-h sec-h-c">
@@ -235,5 +266,6 @@
     <div data-detail-body></div>
   </dialog>
   <div class="tip" role="tooltip" data-tip hidden></div>
+  <div class="tip chart-tip" role="tooltip" data-chart-tip hidden></div>
 </body>
 </html>

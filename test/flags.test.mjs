@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
-// The pages load Noto Color Emoji subset to the flags in the data. A new country or company HQ
+// The page loads Noto Color Emoji subset to the flags in the data. A new country or company HQ
 // must be added to the subset, or its flag falls back to the system emoji font (or none on Windows).
 const read = (p) => readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
 const flag = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
@@ -18,9 +18,7 @@ test('the flag font subset covers every flag in the data', () => {
     }
     for (const r of data.repos ?? []) if (r.origin) codes.add(r.origin);
   }
-  for (const page of ['index.html', 'atlas/index.html']) {
-    const text = decodeURIComponent(read(page).match(/family=Noto\+Color\+Emoji&text=([^&"]+)/)[1]);
-    const missing = [...codes].filter((c) => !text.includes(flag(c)));
-    assert.deepEqual(missing, [], `${page} flag subset is missing ${missing.join(', ')}`);
-  }
+  const text = decodeURIComponent(read('index.html').match(/family=Noto\+Color\+Emoji&text=([^&"]+)/)[1]);
+  const missing = [...codes].filter((c) => !text.includes(flag(c)));
+  assert.deepEqual(missing, [], `index.html flag subset is missing ${missing.join(', ')}`);
 });

@@ -1,5 +1,5 @@
-// Agent Atlas view: a periodic table of agent capabilities. One tile per capability, grouped by category.
-(window.ATLAS_VIEWS ??= []).push({
+// Home page chart: a periodic table of agent capabilities. One tile per capability, grouped by category.
+(window.CHARTS ??= []).push({
   id: 'periodic',
   title: 'Periodic table',
   blurb: 'Which agent capabilities are everywhere, and which are rare? Each tile is one capability; the big number counts the countries where it is live, and the squares show every country in ranking order. Click a tile for notes and sources.',
@@ -126,7 +126,7 @@
 
     el.innerHTML = `<div class="v-periodic">
       <p class="pt-sum">${summary}</p>
-      <div class="atlas-legend pt-legend">
+      <div class="chart-legend pt-legend">
         ${ORDER.map((s) => `<span><i class="smark ${s}"></i>${esc(STATUSES[s].label)}</span>`).join('')}
         <span><span class="low"></span>Low confidence: sources are thin</span>
         <span>Squares follow the country ranking, best first</span>

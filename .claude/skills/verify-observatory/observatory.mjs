@@ -158,7 +158,6 @@ const commands = {
       check('site answers with the observatory', html.includes('<title>AI Agent Observatory'), s.url);
       const meta = await (await fetch(`${s.url}/data/meta.json`)).json();
       check('data loads', Array.isArray(meta.countries) && meta.countries.length > 0, `asOf ${meta.asOf}, ${meta.countries.length} countries`);
-      check('atlas answers', (await fetch(`${s.url}/atlas/`)).ok, `${s.url}/atlas/`);
     } catch (e) { check('site answers with the observatory', false, e.message); }
     const rev = execFileSync('git', ['-C', REPO, 'rev-parse', '--short', 'HEAD'], { encoding: 'utf8' }).trim();
     check('serving the checked-out build', rev === s.rev, `started at ${s.rev}, HEAD now ${rev}`);
@@ -191,7 +190,7 @@ const commands = {
     url.searchParams.set('verify', Date.now().toString(36));
     await c.send('Page.navigate', { url: url.href });
     await done;
-    await waitFor(c, flags.wait ?? (url.pathname.startsWith('/atlas') ? '[data-atlas-views] .view' : '#cn-title'));
+    await waitFor(c, flags.wait ?? '#cn-title');
     await sleep(Number(flags.settle ?? 800));
     const info = await c.evaluate(`({ url: location.href, title: document.title, width: innerWidth, height: innerHeight, scheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', languages: navigator.languages, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone })`);
     log(s, { cmd: 'open', path, ...info });

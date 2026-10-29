@@ -1,4 +1,4 @@
-// Agent Atlas view: head-to-head comparison of two countries, one split row per capability.
+// Home page chart: head-to-head comparison of two countries, one split row per capability.
 (() => {
   const CSS = `
 .v-compare { container-type: inline-size; }
@@ -79,7 +79,7 @@
 
   const pts = (n) => `${n} ${n === 1 ? 'pt' : 'pts'}`;
 
-  (window.ATLAS_VIEWS ??= []).push({
+  (window.CHARTS ??= []).push({
     id: 'compare',
     title: 'Head to head',
     blurb: 'What can an agent do in one country that it cannot do in another? Pick two countries; each row shows both statuses, and the bar points to the country that is ahead and grows with the gap.',
@@ -219,6 +219,18 @@
       list.addEventListener('pointerleave', () => ctx.tip.hide());
 
       draw();
+
+      // The console's "Compare with" button sends a 'compare' event with [a, b] to this chart's slot (see app.js).
+      // Cancelling it tells the console the chart took the pair. Focus goes to the first select, so keyboard users land in the chart.
+      el.closest('[data-chart]').addEventListener('compare', (e) => {
+        const [a, b] = e.detail;
+        if (!name[a] || !name[b] || a === b) return;
+        e.preventDefault();
+        Object.assign(state, { a, b });
+        draw();
+        e.currentTarget.scrollIntoView();
+        $('[data-side="a"]').focus({ preventScroll: true });
+      });
     },
   });
 })();

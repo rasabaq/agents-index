@@ -1,4 +1,4 @@
-// Agent Atlas view "bump": a bump chart of each country's rank in every category, plus overall.
+// Home page chart "bump": a bump chart of each country's rank in every category, plus overall.
 (() => {
   const GAP = 22; // spacing between tied dots along the category axis
   const R = 9.5; // muted dot radius
@@ -18,7 +18,7 @@
 .v-bump .bump-hint { margin: 0; font: 400 11.5px/1.4 var(--mono); color: var(--muted); }
 .v-bump svg { display: block; width: 100%; overflow: visible; }
 .v-bump .grid { stroke: var(--grid); stroke-width: 1; }
-.v-bump .sep { stroke: var(--line-strong); stroke-width: 1; }
+.v-bump .bump-sep { stroke: var(--line-strong); stroke-width: 1; }
 .v-bump .tick { fill: var(--muted); font: 500 11px var(--mono); }
 .v-bump .head { fill: var(--ink-2); font-size: 12px; font-weight: 600; }
 .v-bump .head.all { fill: var(--ink); }
@@ -26,11 +26,11 @@
 .v-bump .c { cursor: pointer; }
 .v-bump .c .ln { fill: none; stroke: var(--line-strong); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
 .v-bump .c .hit { fill: none; stroke: transparent; stroke-width: 16; }
-.v-bump .c .dot { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
+.v-bump .c .bump-dot { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
 .v-bump .c .sc { fill: var(--muted); font-size: 10px; font-weight: 600; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
 .v-bump .c .sc.s3 { font-size: 9px; letter-spacing: -0.2px; }
 .v-bump .c.on .ln { stroke: var(--hl); stroke-width: 2.5; }
-.v-bump .c.on .dot { fill: var(--hl); stroke: var(--surface); stroke-width: 2; }
+.v-bump .c.on .bump-dot { fill: var(--hl); stroke: var(--surface); stroke-width: 2; }
 .v-bump .c.on .sc { fill: var(--surface); font-size: 10.5px; }
 .v-bump .c.on .sc.s3 { font-size: 9.5px; }
 @media (max-width: 520px) { .v-bump .bump-chip { gap: 5px; padding: 0 8px; } .v-bump .bump-chips { gap: 5px; } }
@@ -67,7 +67,7 @@
     return cols;
   }
 
-  (window.ATLAS_VIEWS ??= []).push({
+  (window.CHARTS ??= []).push({
     id: 'bump',
     title: 'Who leads where',
     blurb: (ctx) => `Who leads in which category? Each line follows one country’s rank (1 is best) across the ${ctx.meta.categories.length} categories and overall, and each dot holds the score out of 100.`,
@@ -216,7 +216,7 @@
           });
         {
           const [x1, y1] = pt(last.u0, H ? lay.top - 22 : 0), [x2, y2] = pt(last.u0, H ? lay.H - 4 : W);
-          svg.append('line').attr('class', 'sep').attr('x1', x1).attr('y1', y1).attr('x2', x2).attr('y2', y2);
+          svg.append('line').attr('class', 'bump-sep').attr('x1', x1).attr('y1', y1).attr('x2', x2).attr('y2', y2);
         }
         svg.append('g').selectAll('text').data(ranks).join('text').attr('class', 'tick')
           .attr('x', (r) => (H ? 0 : v(r))).attr('y', (r) => (H ? v(r) : 12))
@@ -251,7 +251,7 @@
           sel.append('path').attr('class', 'hit').attr('d', d);
           sel.append('path').attr('class', 'ln').attr('d', d);
           const dg = sel.selectAll('g').data(g.dots).join('g').attr('transform', (x) => `translate(${x.xy})`);
-          dg.append('circle').attr('class', 'dot').attr('r', R);
+          dg.append('circle').attr('class', 'bump-dot').attr('r', R);
           dg.append('text').attr('class', (x) => `sc${x.p.score >= 100 ? ' s3' : ''}`).text((x) => x.p.score);
         });
         groups
@@ -328,7 +328,7 @@
         groups.each(function (g) {
           const c = color(g.r.code);
           const sel = d3.select(this).classed('on', !!c).style('--hl', c);
-          sel.selectAll('.dot').attr('r', c ? RH : R);
+          sel.selectAll('.bump-dot').attr('r', c ? RH : R);
         });
         // Draw order: muted lines, then pinned, then the hovered one on top.
         const z = (code) => (code === hover ? 2 : isPinned(code) ? 1 : 0);

@@ -1,14 +1,14 @@
 ---
 name: verify-observatory
-description: Drive the AI Agent Observatory site (the home page console and /atlas/) in a real headless Chrome and capture proof (screenshots at 1440px and 400px, page state, page errors). Use it to verify a UI change, review a site PR, or check that a feature still works, before you call a change done.
+description: Drive the AI Agent Observatory site (the home page: hero, console and charts) in a real headless Chrome and capture proof (screenshots at 1440px and 400px, page state, page errors). Use it to verify a UI change, review a site PR, or check that a feature still works, before you call a change done.
 ---
 
 # Verify the AI Agent Observatory
 
 The product is a static web site, with no build step and no backend. Its surfaces:
 
-- `/` is the home page: the hero, the console (country view, matrix, ranking, sources feed), tiers, Companies, Open source and Method.
-- `/atlas/` holds ten data views.
+- `/` is the home page: the hero, the console (country view, matrix, ranking, sources feed), the numbers band, Companies, Open source and Method.
+- The ten charts (world map, periodic table and the rest) draw on the same page, below and between those sections.
 - `npm test` and `npm run validate` check the data and the scoring. They do not check the UI.
 
 The helper `observatory.mjs` (next to this file) does five things:
@@ -61,7 +61,6 @@ It checks:
 - The server, Chrome and holder processes of this run are alive.
 - `/` is the observatory (its `<title>`).
 - `data/meta.json` loads and has countries.
-- `/atlas/` answers.
 - `HEAD` is still the revision that `up` served.
 - The Chrome DevTools endpoint answers.
 
@@ -82,17 +81,17 @@ How `open` works:
 - It sets the whole view each time. Anything you leave out returns to the default: 1440 × 900, dark scheme, the browser's own language.
 - `--width 400` gives a 400 × 860 phone viewport.
 - It adds a `?verify=` query, so `#country=XX` always triggers a fresh load.
-- By default it waits for `#cn-title` on `/` and for `[data-atlas-views] .view` on `/atlas/`.
+- By default it waits for `#cn-title`. The charts draw after it, so pass `--wait '#v-timeline svg'` when you check them.
 
 Stable handles in this repo (use these, not coordinates):
 
-- **Country pickers:** `[data-go-country="CL"]`. These are in the hero chips, the console list `[data-clist]`, the ranking `[data-ranking]` and the tier tiles `[data-tiers]`. The URL hash is `#country=CL`.
+- **Country pickers:** `[data-go-country="CL"]`. These are in the hero chips, the console list `[data-clist]` and the ranking `[data-ranking]`. The URL hash is `#country=CL`.
 - **Country view:** `[data-country]`, the heading `#cn-title`, and the four numbers `[data-kpis]`.
 - **Matrix cells:** `#matrix button[data-cap="<capability id>"][data-code="<country>"]`. Their `aria-label` reads `<capability> in <country>: <status>`.
 - **Cell detail:** `dialog[data-detail]`, the title `#detail-title`, the status `.detail-status`, the sources `.sources a`, and the correction link `.suggest a`.
 - **Sources of a country:** the button `[data-sources]` in the country view.
 - **Companies:** the filters `[data-company-filters] [data-market="MX"]`, the table `[data-companies]`, and the count `[data-companies-label]`.
-- **Atlas:** the tabs `[data-atlas-nav] a[href="#v-<id>"]`. The views are `#v-<id>`, with ids `map periodic radar bump range compare gap flows network timeline`. A view that failed to draw shows `.view-error`.
+- **Charts:** each chart is `#v-<id>`, with ids `map periodic radar bump range compare gap flows network timeline`. A view that failed to draw shows `.view-error`.
 
 Each feature has a recipe in [`features/`](features/README.md). Read [`features/README.md`](features/README.md) before a run.
 

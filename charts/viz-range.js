@@ -1,4 +1,4 @@
-// Agent Atlas view "range": each country's score drawn as a range, not a point. A low-confidence cell may be
+// Home page chart "range": each country's score drawn as a range, not a point. A low-confidence cell may be
 // one status step off, so the band runs from every such cell one step lower to every such cell one step higher.
 (() => {
   const CSS = `
@@ -49,7 +49,7 @@
     return Object.fromEntries(ctx.scoreCountries(ctx.meta, categories).map((r) => [r.code, r.score]));
   }
 
-  (window.ATLAS_VIEWS ??= []).push({
+  (window.CHARTS ??= []).push({
     id: 'range',
     title: 'Score ranges',
     blurb: 'How firm is each score? A low-confidence cell may be one status step off, so each score is drawn as a range: from every such cell one step lower to every such cell one step higher. The dot is the published score.',
@@ -86,7 +86,7 @@
           ? `<b>${shaky.size} of ${rows.length}</b> countries could swap places with a neighbour if their low-confidence cells are one step off. ${esc(the(widest.code)).replace(/^./, (c) => c.toUpperCase())} has the widest range: <b>${widest.lo}–${widest.hi}</b>.`
           : 'Every rank holds, even if each low-confidence cell is one step off.'}</p>
         <p class="vr-sub" aria-live="polite"></p>
-        <div class="atlas-legend vr-legend">
+        <div class="chart-legend vr-legend">
           <span class="vr-key"><span class="vr-dot"></span>Published score</span>
           <span class="vr-key"><span class="vr-band"></span>Range</span>
           <span class="vr-key"><span class="vr-band sh"></span>Overlaps a neighbour, so the rank could swap</span>
