@@ -58,7 +58,7 @@ Steps:
 ## Gotchas
 
 - There is no inner scroll box any more: the table scrolls with the page, and its header sticks below the nav. Rows past the first 10 are not in the DOM until "Show all" is pressed.
-- Logos load from third-party sites. A slow or blocked logo becomes a monogram on its own. Do not report a monogram as broken.
+- Company logos are stored in `logos/`; only repo avatars load from GitHub. A missing logo (`icon: null`) or a slow avatar becomes a monogram on its own. Do not report a monogram as broken.
 - The filter goes by a company's markets in any category, so a company can match MX through one category only. Its Live in rows then show MX lit in that category and not in the others.
 - The scroll loop above is a reader's scroll to load lazy images, not a state change. It does not replace driving a feature.
 - Open source (`#opensource`) works the same way, with `[data-repos-more]` and "Show all N repos".
