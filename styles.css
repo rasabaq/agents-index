@@ -168,6 +168,8 @@ select, option { color-scheme: dark; }
 .detail { width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 64px); padding: 28px; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--surface); color: var(--ink); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 40px 90px -20px rgba(0, 0, 0, 0.9), 0 0 60px -20px rgba(255, 46, 136, 0.25); }
 .detail::backdrop { background: rgba(3, 3, 8, 0.6); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
 .detail h3 { font-size: 22px; line-height: 1.25; letter-spacing: -0.035em; padding-right: 32px; }
+/* the kicker is the first line, so it also keeps clear of the × */
+.detail .kicker { padding-right: 32px; }
 .detail h4 { margin: 24px 0 10px; font: 500 10.5px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
 .detail p { color: var(--ink-2); }
 .detail .muted { color: var(--muted); }
@@ -201,7 +203,9 @@ select, option { color-scheme: dark; }
 .hero-ctas noscript:has(> *) { display: contents; }
 
 /* phones and small tablets: the section links fold into a menu; the button keeps one width for Menu and Close */
-.nav-menu { display: none; justify-content: center; min-width: 66px; margin-left: auto; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+.nav-menu { display: none; justify-content: center; min-width: 66px; margin-left: auto; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; position: relative; }
+/* a 40px tall tap area around the 32px button (the header has room for it) */
+.nav-menu::after { content: ''; position: absolute; inset: -5px 0; }
 @media (max-width: 900px) {
   .nav-menu { display: inline-flex; align-items: center; }
   .nav nav { display: none; }

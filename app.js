@@ -137,7 +137,8 @@ function renderRanking() {
       <span class="rk-t">${tierOf(r.score)}</span><span class="bars"><b style="width:${r.score}%"></b></span><span class="rk-v">${r.score}</span>
     </button></li>`).join('');
   $('[data-rk-count]').textContent = `${ranking.length} countries tracked so far`;
-  $('[data-points]').textContent = Object.values(STATUSES).map((s) => `${s.label} ${s.points}`).join(' · ');
+  // Each status and its points stay on one line ("Not yet 0" never splits).
+  $('[data-points]').innerHTML = Object.values(STATUSES).map((s) => `<span class="nowrap">${esc(s.label)} ${s.points}</span>`).join(' · ');
 }
 
 function renderLegend() {
@@ -158,7 +159,7 @@ function renderCountry() {
 
   $('[data-country]').innerHTML = `
     <div>
-      <p class="label">${r.code === state.own ? 'Your country' : 'Country'} · ${ranking.length} countries tracked so far</p>
+      <p class="label">${r.code === state.own ? 'Your country' : 'Country'} · <span class="nowrap">${ranking.length} countries tracked so far</span></p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
       <p class="cn-lede cn-verdict">${esc(state.view === 'business' ? businessVerdict(r) : verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
       <div class="cn-view" role="group" aria-label="Show the country for">${[['people', 'For people'], ['business', 'For businesses']].map(([v, l]) => `<button type="button" class="pill" data-view="${v}" aria-pressed="${state.view === v}">${l}</button>`).join('')}</div>
@@ -300,7 +301,7 @@ function correctionUrl(cap, code, cell) {
 
 const sourceList = (ev) => `<ol class="sources">${ev.map((e) => `
   <li><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title)}</a>
-    <span class="src-meta"><span class="tag">${esc(e.type)}</span>${esc(e.publisher ?? '')}${e.date ? ` · ${esc(e.date)}` : ''}${e.caps ? ` · ${esc(e.caps.join(', '))}` : ''}</span></li>`).join('')}</ol>`;
+    <span class="src-meta"><span class="tag">${esc(e.type)}</span>${esc(e.publisher ?? '')}${e.date ? ` · <span class="nowrap">${esc(e.date)}</span>` : ''}${e.caps ? ` · ${esc(e.caps.join(', '))}` : ''}</span></li>`).join('')}</ol>`;
 
 function showDetail(html) {
   $('[data-detail-body]').innerHTML = html;
@@ -313,7 +314,7 @@ function openDetail(capId, code) {
   const cell = cap.countries[code];
   const ev = cell.evidence ?? [];
   showDetail(`
-    <p class="kicker">${esc(catName(cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
+    <p class="kicker">${esc(catName(cap.category))} · <span class="nowrap">${flag(code)}${esc(byCode[code].name)}</span></p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
     <p class="detail-status">${chip(cell.status, cell.confidence)}${cell.confidence ? '<span class="low-note">Low confidence. Sources are thin or indirect, so treat this cell as a lead to check.</span>' : ''}</p>
     ${cell.status !== 'live' && gapLabel(cell.gapReason) ? `<p class="muted">Why not live: ${esc(gapLabel(cell.gapReason).toLowerCase())}.</p>` : ''}
@@ -531,8 +532,13 @@ function wire() {
   // Tabs are real links. Scrolling here instead keeps #country=XX in the address bar.
   // Focus moves to the panel's heading, so the next Tab starts from the panel, not from the tabs.
   const tabs = [...document.querySelectorAll('[data-tabs] a')];
-  const go = (a) => {
+  // On phones the tabs scroll sideways, so the marked tab is also brought to the middle of the strip.
+  const mark = (a) => {
     tabs.forEach((t) => (t === a ? t.setAttribute('aria-current', 'location') : t.removeAttribute('aria-current')));
+    a.parentElement.scrollTo({ left: a.offsetLeft - (a.parentElement.clientWidth - a.offsetWidth) / 2, behavior: scrollBehavior() });
+  };
+  const go = (a) => {
+    mark(a);
     const h = $(a.hash).querySelector('h2');
     h.tabIndex = -1;
     h.focus({ preventScroll: true });
@@ -544,6 +550,15 @@ function wire() {
     e.preventDefault();
     go(a);
   };
+  // The tab follows the scroll: it marks the panel that last crossed a line 15% down the screen. The cards under the
+  // country head count as the country. When two panels cross at once (side by side on wide screens), a marked tab
+  // that is one of them stays, so the scroll after a tab click does not move the mark.
+  const tabOf = (el) => tabs.find((t) => t.hash === `#${el.id || 'country'}`);
+  const seen = new IntersectionObserver((entries) => {
+    const hit = entries.filter((x) => x.isIntersecting).map((x) => tabOf(x.target));
+    if (hit.length && !hit.some((t) => t.hasAttribute('aria-current'))) mark(hit.at(-1));
+  }, { rootMargin: '-15% 0px -84% 0px' });
+  [...tabs.map((t) => $(t.hash)), $('[data-kpis]')].forEach((el) => seen.observe(el));
 
   // Keys 1 to 6 follow the tabs, J and K step through the ranking. Typing in a field or an open dialog wins.
   // They work only while focus is in the console or on nothing in particular (the page, a heading), never on a
