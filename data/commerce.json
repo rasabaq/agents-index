@@ -579,7 +579,7 @@
         },
         "BR": {
           "status": "limited",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "Only Brazilian Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US (ChatGPT, Copilot) or the US, Canada and Australia (Google); Stripe Agentic Commerce Suite does not list Brazil.",
           "evidence": [
             {
@@ -607,7 +607,7 @@
         },
         "MX": {
           "status": "limited",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "Only Mexican Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; Stripe Agentic Commerce Suite does not list Mexico.",
           "evidence": [
             {
@@ -628,7 +628,7 @@
         },
         "CL": {
           "status": "limited",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "Only Chilean Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; no local agentic commerce rail was found.",
           "evidence": [
             {
@@ -642,7 +642,7 @@
         },
         "CO": {
           "status": "limited",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "Only Colombian Shopify stores can sell through Agentic Storefronts, and only to shoppers in the US, Canada or Australia; no local agentic commerce rail was found.",
           "evidence": [
             {
