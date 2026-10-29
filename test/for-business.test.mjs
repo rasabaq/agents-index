@@ -34,7 +34,7 @@ test('marketsByCapability narrows a company to fewer markets for one capability'
   const data = [{ category: 'messaging', capabilities: [
     { id: 'messaging.business-ai-agent', name: 'Chat agent', question: 'q?', countries: { BR: cell('none'), US: cell('none') } },
     { id: 'messaging.pay-in-chat', name: 'Pay in chat', question: 'q?', countries: { BR: cell('none'), US: cell('none') } },
-  ], companies: [{ name: 'Meta', role: 'r', url: 'https://meta.com', homepage: 'https://meta.com', icon: null, markets: ['BR', 'US'],
+  ], companies: [{ name: 'Meta', role: 'r', url: 'https://meta.com', homepage: 'https://meta.com', icon: null, hq: 'US', markets: ['BR', 'US'],
     capabilities: ['messaging.business-ai-agent', 'messaging.pay-in-chat'], marketsByCapability: { 'messaging.pay-in-chat': ['BR'] } }] }];
   const co = data[0].companies[0];
   assert.deepEqual(marketsFor(co, 'messaging.pay-in-chat'), ['BR']);
