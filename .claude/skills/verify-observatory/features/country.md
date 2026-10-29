@@ -30,7 +30,7 @@ Each Not yet item shows its status, its gap reason when it has one, and companie
 - `country-pick-console` selects a country from the console list `[data-clist]` without scrolling.
 - `country-pick-ranking` and `country-pick-tiers` select a country from the ranking and from the tier tiles.
 - `country-keys` steps through the ranking with `j` (next) and `k` (previous).
-- `country-compare` jumps to the neighbouring country with the "Compare with" button.
+- `country-compare` is the "Compare with XX" button (`[data-compare="US BR"]`, this country and its neighbour in the ranking). It does not change the console country or the hash: it scrolls to the Head to head chart `#v-compare` with that pair picked (see charts.md). If that chart did not draw, it switches the console to the neighbour instead.
 - `country-sources` opens the list of every source behind the country (see matrix-detail.md).
 
 ## How to get to it (user POV)
@@ -88,7 +88,7 @@ Steps:
 ## Gotchas
 
 - The start country depends on the time zone. The harness pins it to UTC unless `--tz` is given. Without that, a run on a machine in Santiago opens Chile.
-- Pickers inside the console (the select, the list, the ranking, Compare) do not scroll the page. Pickers outside it (the hero, the tiers, a hash change) scroll to `#country`.
+- Pickers inside the console (the select, the list, the ranking) do not scroll the page. Compare is not a picker: it scrolls to `#v-compare`. Pickers outside it (the hero, the tiers, a hash change) scroll to `#country`.
 - The hero has two copies of each country chip: the tape, and planet chips with `tabindex="-1"`. `.hero [data-go-country=…]` matches the first (the tape), which is the one a visitor sees first.
 - `j` and `k` do nothing while the cell detail dialog is open or a field has focus.
 - The verdict, the reasons and "Could close it" come from the data, so they change when the data changes. Assert their shape (the country name, "can", "Main reason:", "already in"), not exact words.
