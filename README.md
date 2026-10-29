@@ -1,8 +1,39 @@
 # AI Agent Observatory
 
+[![Live site](https://img.shields.io/badge/live-agentindex.art-ff2d87)](https://agentindex.art)
+[![CI](https://github.com/rasabaq/agents-index/actions/workflows/ci.yml/badge.svg)](https://github.com/rasabaq/agents-index/actions/workflows/ci.yml)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey)](data/LICENSE)
+
 Not how much AI a country has, but **what AI agents can actually do there**.
 
+[![The AI Agent Observatory home page](docs/images/hero.png)](https://agentindex.art)
+
 In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile, can it? This observatory tracks concrete agent capabilities country by country. Every status cites a source, and the countries are ranked by what agents can do for ordinary people and businesses.
+
+**[Open the observatory at agentindex.art →](https://agentindex.art)**
+
+## A quick tour
+
+| | |
+| --- | --- |
+| [![World map with each tracked country and its score](docs/images/map.png)](https://agentindex.art/#v-map) | [![Country view for the United States: score, what works today and what does not yet](docs/images/console.png)](https://agentindex.art/#country=US) |
+| **World map.** Where agents can act today. A brighter country has a higher score. | **Country view.** What works today, what does not yet, and why. Every cell links to its sources. |
+
+[![Periodic table of agent capabilities, one tile per capability](docs/images/periodic.png)](https://agentindex.art)
+
+**Periodic table.** Each tile is one capability. The big number counts the countries where it is live.
+
+## How it works
+
+```mermaid
+flowchart LR
+  A["data/*.json<br/>status + sources"] --> B["src/observatory.js<br/>scoring + validation"]
+  B --> C["agentindex.art<br/>map, console, charts"]
+  B --> D["npm test / validate<br/>CI on every PR"]
+```
+
+Each country gets a status for every capability: Live, Limited, Announced or Not yet. The score is the share of capabilities that work today. See [docs/methodology.md](docs/methodology.md) for the details.
 
 ## Run it
 
