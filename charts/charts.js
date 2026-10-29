@@ -18,8 +18,8 @@ function buildContext({ meta, categories }) {
   const map = new Map();
   for (const cat of categories) {
     for (const co of cat.companies ?? []) {
-      const prev = map.get(co.name);
-      if (!prev) map.set(co.name, { name: co.name, hq: co.hq, url: co.url, roles: [co.role], markets: [...new Set(co.markets)], categories: [cat.category], capabilities: [...(co.capabilities ?? [])] });
+      const prev = map.get(co.name.toLowerCase());
+      if (!prev) map.set(co.name.toLowerCase(), { name: co.name, hq: co.hq, url: co.url, roles: [co.role], markets: [...new Set(co.markets)], categories: [cat.category], capabilities: [...(co.capabilities ?? [])] });
       else {
         prev.markets = [...new Set([...prev.markets, ...co.markets])];
         if (!prev.categories.includes(cat.category)) prev.categories.push(cat.category);

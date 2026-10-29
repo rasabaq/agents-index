@@ -225,9 +225,10 @@
           gs.selectAll('rect.hit').data(mine).join('rect').attr('class', 'hit')
             .attr('x', (x) => (x.c + pad) * k).attr('y', (x) => x.r * k).attr('width', k).attr('height', k);
           gs.append('g').selectAll('rect').data(mine).join('rect').attr('class', 'px').call(px);
-          if (!wide) return;
+          if (!wide || !mine.length) return;
 
-          const [lc, lr, anchor] = LABELS[d.code];
+          // A country without a set label spot gets its name just right of its dots.
+          const [lc, lr, anchor] = LABELS[d.code] ?? [d3.max(mine, (x) => x.c) + 2, d3.mean(mine, (x) => x.r), 'start'];
           const lx = (lc + pad) * k, ly = lr * k;
           const text = gs.append('text').attr('class', 'v-map-label').attr('x', lx).attr('y', ly).attr('text-anchor', anchor);
           text.append('tspan').attr('class', 'name').text(`${emoji(d.code)} ${d.name}`);
