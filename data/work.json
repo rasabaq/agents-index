@@ -46,8 +46,9 @@
           ]
         },
         "GB": {
-          "status": "live",
-          "note": "LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, which serve the UK, but neither names the countries it covers. Indeed's Career Scout reached the UK in July 2026; it pre-fills applications that you send yourself.",
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Unconfirmed for the UK: LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, but neither names the countries it covers. Indeed's Career Scout reached the UK in July 2026; it pre-fills applications that you send yourself.",
           "evidence": [
             {
               "title": "AI Job Search Tool (auto-apply on LinkedIn, Indeed and Glassdoor)",
@@ -73,8 +74,9 @@
           "confidence": "low"
         },
         "DE": {
-          "status": "live",
-          "note": "LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, which serve Germany, but neither names the countries it covers or a German board such as StepStone. We did not find a German job board with its own agent that applies for you.",
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Unconfirmed for Germany: LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, but neither names the countries it covers or a German board such as StepStone. We did not find a German job board with its own agent that applies for you.",
           "evidence": [
             {
               "title": "AI Job Search Tool (auto-apply on LinkedIn, Indeed and Glassdoor)",
@@ -93,8 +95,9 @@
           "confidence": "low"
         },
         "IN": {
-          "status": "live",
-          "note": "LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, which serve India, but neither names the countries it covers. Naukri launched an AI resume maker in November 2025, but we did not find a Naukri agent that applies for you.",
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Unconfirmed for India: LoopCV and JobCopilot send applications for you on LinkedIn, Indeed and company career pages, but neither names the countries it covers. Naukri launched an AI resume maker in November 2025, but we did not find a Naukri agent that applies for you.",
           "evidence": [
             {
               "title": "AI Job Search Tool (auto-apply on LinkedIn, Indeed and Glassdoor)",
@@ -126,8 +129,9 @@
           ]
         },
         "MX": {
-          "status": "live",
-          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Mexico, and on LinkedIn and Indeed, but it names no list of countries. We did not find a Mexican job board, such as OCC Mundial, with its own agent that applies for you.",
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Mexico, but it names no list of countries, so coverage in Mexico is unconfirmed. We did not find a Mexican job board, such as OCC Mundial, with its own agent that applies for you.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -140,8 +144,9 @@
           "confidence": "low"
         },
         "CL": {
-          "status": "live",
-          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Chile, and on LinkedIn and Indeed, but it names no list of countries. We did not find a Chilean job board, such as Laborum, with its own agent that applies for you.",
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Chile, but it names no list of countries, so coverage in Chile is unconfirmed. We did not find a Chilean job board, such as Laborum, with its own agent that applies for you.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -154,8 +159,9 @@
           "confidence": "low"
         },
         "CO": {
-          "status": "live",
-          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Colombia, and on LinkedIn and Indeed, but it names no list of countries. We did not find a Colombian job board, such as elempleo, with its own agent that applies for you.",
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "LoopCV says it sends applications for you on Computrabajo, which runs job sites in Colombia, but it names no list of countries, so coverage in Colombia is unconfirmed. We did not find a Colombian job board, such as elempleo, with its own agent that applies for you.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
