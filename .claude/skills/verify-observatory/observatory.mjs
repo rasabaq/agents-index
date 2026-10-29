@@ -107,7 +107,7 @@ async function applyView(s) {
   die('The emulation holder did not apply the view. Run doctor.');
 }
 const frames = (c) => c.evaluate('new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => r(true))))');
-async function waitFor(c, css, ms = 10000) {
+async function waitFor(c, css, ms = 30000) {
   for (const end = Date.now() + ms; Date.now() < end; await sleep(100)) {
     if (await c.evaluate(`!!document.querySelector(${JSON.stringify(css)})`)) return true;
   }
