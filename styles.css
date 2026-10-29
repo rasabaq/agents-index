@@ -106,9 +106,9 @@ select, option { color-scheme: dark; }
 }
 .nav-inner { display: flex; align-items: center; gap: 24px; height: 60px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15.5px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
-.brand svg { width: 18px; height: 18px; }
-.brand-ring { fill: var(--magenta); }
-.brand-core { fill: var(--page); }
+.brand svg { width: 22px; height: 22px; fill: var(--ink); }
+.brand-edge { fill: var(--magenta); }
+.brand-bar { fill: var(--sunrise); }
 .nav nav { display: flex; gap: 2px; margin-left: auto; }
 .nav nav a { padding: 7px 10px; border-radius: 8px; color: var(--ink-2); text-decoration: none; font: 500 11.5px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
 .nav nav a:hover { background: var(--surface-2); color: var(--ink); }
