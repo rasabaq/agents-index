@@ -374,6 +374,8 @@ function light(code) {
     li.classList.toggle('is-full', s >= 100);
     li.setAttribute('aria-label', `${shortName(li.dataset.cat)}: ${s >= 100 ? 'works' : s > 0 ? 'works partly' : 'does not work yet'}`);
   }
+  // The caption names the country the icons describe; it also labels the icon list.
+  $('[data-hero-in]').innerHTML = `What agents can do in ${flag(r.code)}<strong>${esc(r.name)}</strong>`;
   $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} work fully`;
 }
 
