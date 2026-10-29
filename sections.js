@@ -1,9 +1,7 @@
-// The numbers band ("Counted cell by cell"). Loads the same data as app.js and draws its own section.
+// The numbers band ("Counted cell by cell"). Shares the data with app.js (src/load.js) and draws its own section.
+import { data } from './src/load.js';
+
 const $ = (sel) => document.querySelector(sel);
-const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
-  if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
-  return r.json();
-});
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- numbers band: a magenta dither field shown only inside 5x7 dot-matrix numerals ---------- */
@@ -221,13 +219,9 @@ function startBand() {
   }).observe(nums);
 }
 
-try {
-  const meta = await getJson('meta');
-  const categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
-  renderBand(meta, categories);
+// If the data fails, load.js tells the reader and hides this band.
+const loaded = await data.catch(() => null);
+if (loaded) {
+  renderBand(loaded.meta, loaded.categories);
   startBand();
-} catch (err) {
-  // app.js already tells the reader the data did not load; hide the empty band.
-  document.querySelectorAll('[data-sections]').forEach((el) => (el.hidden = true));
-  console.error(err);
 }

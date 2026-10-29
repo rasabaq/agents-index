@@ -55,6 +55,7 @@ The world map:
 ## Gotchas
 
 - Charts draw from the data after the page above them. A chart that throws shows `.view-error` instead of breaking the page, so always check that count.
+- Charts draw lazily: the map (and a `#v-<id>` link's chart, with every chart above it) draws at once, a chart within one screen of the viewport draws next, and the rest draw one at a time while the browser is idle. So `--wait '#v-timeline svg'` still means all ten have drawn. A slot not drawn yet has its window and title but an empty `.view-frame`.
 - d3 loads from cdnjs. Offline, every d3 chart shows `.view-error`.
 - The charts have their own tooltip `[data-chart-tip]`, hidden on scroll. Shots taken right after a hover may include it.
 - Each chart scopes its CSS under `.v-<id>`. Class names inside a chart must not reuse an unscoped home page class (`.dot`, `.card`, `.badge`, `.note`, `.band`, `.sep`), or the home rule leaks in.
