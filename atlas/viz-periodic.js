@@ -6,7 +6,7 @@
   render(el, ctx) {
     const { esc, flag, STATUSES } = ctx;
     const ORDER = ['live', 'limited', 'announced', 'none'];
-    // Hand-picked element-style symbols; unknown ids fall back to two letters of the name.
+    // Element-style symbols. A few are hand-picked; any other capability gets one from its id (see symbolOf).
     const SYMBOLS = {
       'commerce.in-chat-checkout': 'Ck', 'commerce.marketplace-agent': 'Mp', 'commerce.merchant-protocol': 'Mc',
       'payments.card-agent-token': 'Cd', 'payments.instant-rail-agent': 'Ir', 'payments.wallet-agent': 'Wa',
@@ -16,7 +16,14 @@
       'messaging.business-ai-agent': 'Bz', 'messaging.pay-in-chat': 'Pc',
       'government.digital-id-api': 'Id', 'government.ai-public-services': 'Gv',
     };
-    const symbol = (cap) => SYMBOLS[cap.id] ?? cap.name[0].toUpperCase() + (cap.name.slice(1).match(/[bcdfghjklmnpqrstvwxz]/i)?.[0] ?? '').toLowerCase();
+    // From the id after the dot: the first letters of its first two words ("health.book-doctor" → "Bd"),
+    // or the first letter and next consonant of a one-word id ("access.broadband" → "Br").
+    const symbolOf = (id) => {
+      const [a = '', b = ''] = id.split('.').pop().split('-');
+      const two = b ? b[0] : a.slice(1).match(/[bcdfghjklmnpqrstvwxz]/i)?.[0] ?? a[1] ?? '';
+      return a[0].toUpperCase() + two.toLowerCase();
+    };
+    const symbol = (cap) => SYMBOLS[cap.id] ?? symbolOf(cap.id);
     const countries = ctx.ranking; // squares follow the ranking, best first
     const cell = (cap, code) => cap.countries[code] ?? { status: 'none', note: '', evidence: [] };
     const live = (cap) => countries.filter((c) => cell(cap, c.code).status === 'live').length;

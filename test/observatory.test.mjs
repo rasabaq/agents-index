@@ -1,6 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreCountries, validate, summarize, mergeCompanies } from '../src/observatory.js';
+import { scoreCountries, validate, summarize, mergeCompanies, useCategoryWords, shortName } from '../src/observatory.js';
+import { readFileSync } from 'node:fs';
+// Sentences use the category words from data/meta.json, as the site does.
+useCategoryWords(JSON.parse(readFileSync(new URL('../data/meta.json', import.meta.url), 'utf8')).categories);
 
 test('summary line names the best and the weakest category', () => {
   assert.equal(summarize('Chile', { commerce: 17, payments: 67, services: 33, autonomy: 67 }), 'In Chile, an agent can pay. It cannot shop for you yet.');
@@ -71,10 +74,10 @@ test('validate catches the mistakes that break trust', () => {
   assert.match(errors, /unknown market "ZZ"/);
 });
 
-test('every category needs words for the sentences: built in, or short and can in meta.json', async () => {
-  const { useCategoryWords, shortName } = await import('../src/observatory.js');
+test('every category needs short and can in meta.json, even the first seven', () => {
   const v = (cat) => validate({ countries: [], categories: [cat] }, [{ category: cat.id, capabilities: [{ id: `${cat.id}.a`, name: 'a', question: 'q?', countries: {} }] }]).join('\n');
-  assert.equal(v({ id: 'commerce' }), '');
+  assert.match(v({ id: 'commerce' }), /needs "short" and "can"/);
+  assert.match(v({ id: 'health', short: 'Health', can: ' ' }), /needs "short" and "can"/);
   assert.match(v({ id: 'health' }), /needs "short" and "can"/);
   assert.equal(v({ id: 'care', short: 'Care', can: 'book a doctor for you' }), '');
   useCategoryWords([{ id: 'care', short: 'Care', can: 'book a doctor for you' }]);

@@ -48,7 +48,9 @@ export function validate(meta, categories) {
   for (const c of meta.categories) {
     if (!categories.some((cat) => cat.category === c.id)) errors.push(`category "${c.id}" has no data file`);
     // The site writes sentences from these words ("agents can <can>"), so every category needs them.
-    if (!(c.short && c.can) && !CATEGORY_WORDS[c.id]) errors.push(`category "${c.id}" needs "short" and "can" in meta.json, for example "short": "Health", "can": "book a doctor for you"`);
+    if (typeof c.short !== 'string' || !c.short.trim() || typeof c.can !== 'string' || !c.can.trim()) {
+      errors.push(`category "${c.id}" needs "short" and "can" in meta.json, for example "short": "Health", "can": "book care for you"`);
+    }
   }
 
   for (const cat of categories) {
@@ -200,18 +202,11 @@ export function mergeCompanies(categories) {
   return [...map.values()].sort((a, b) => b.markets.length - a.markets.length || a.name.localeCompare(b.name));
 }
 
-// Plain words per category: a short name, and what an agent does there ("an agent can ...").
-export const CATEGORY_WORDS = {
-  commerce: { short: 'Shopping', can: 'shop for you' },
-  payments: { short: 'Payments', can: 'pay' },
-  services: { short: 'Travel', can: 'book travel and local services' },
-  autonomy: { short: 'General agents', can: 'use websites and apps for you' },
-  banking: { short: 'Banking', can: 'move money through your bank' },
-  messaging: { short: 'Chat', can: 'buy and get support in chat' },
-  government: { short: 'Government', can: 'prove who you are to apps' },
-};
+// Plain words per category, from data/meta.json: "short" (a one- or two-word label) and "can" (what an agent does
+// there: "AI agents can <can>"). Load them with useCategoryWords(meta.categories) before writing sentences.
+// Validation requires both on every category, so a new category never shows placeholder text.
+export const CATEGORY_WORDS = {};
 const words = (id) => CATEGORY_WORDS[id] ?? { short: id, can: `use ${id}` };
-// A new category can bring its own words in data/meta.json ("short" and "can"), so adding one needs no code change.
 export function useCategoryWords(metaCategories) {
   for (const c of metaCategories) if (c.short && c.can) CATEGORY_WORDS[c.id] = { short: c.short, can: c.can };
 }

@@ -1,6 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { startCountry, guessCountry, verdict, couldClose } from '../src/observatory.js';
+import { startCountry, guessCountry, verdict, couldClose, useCategoryWords } from '../src/observatory.js';
+import { readFileSync } from 'node:fs';
+// Sentences use the category words from data/meta.json, as the site does.
+useCategoryWords(JSON.parse(readFileSync(new URL('../data/meta.json', import.meta.url), 'utf8')).categories);
 
 test('the start country comes from the hash, then the time zone, then the browser language, then the US', () => {
   const codes = ['US', 'CL', 'MX'];

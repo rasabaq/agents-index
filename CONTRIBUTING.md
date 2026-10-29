@@ -34,7 +34,17 @@ If you cannot edit the file, open a [data correction issue](https://github.com/r
 
 ## Add a category
 
-Add it to `categories` in `data/meta.json` with its `id`, `name` and `blurb`, plus two words the site uses in its sentences: `short` (for example `"Health"`) and `can`, which completes "AI agents can …" (for example `"book care for you"`). Then add `data/<id>.json`. `npm run validate` says when one is missing.
+No code change is needed. Add an entry to `categories` in `data/meta.json`, then add `data/<id>.json`. Every category needs all five fields:
+
+| Field | What it is | Example |
+| --- | --- | --- |
+| `id` | The file name and the prefix of its capability ids | `"health"` |
+| `name` | The full name, shown in headings | `"Health & care"` |
+| `blurb` | One line on what it covers | `"Agents that book care and handle health admin."` |
+| `short` | One or two words, for labels such as the matrix rows and the radar on phones | `"Health"` |
+| `can` | The words that complete "AI agents can …" in the country verdict | `"book care for you"` |
+
+`npm run validate` fails when `short` or `can` is missing. In the Atlas, each capability's periodic-table symbol comes from its id ("health.book-doctor" → "Bd"), and the category takes the next colour.
 
 ## Pull requests
 

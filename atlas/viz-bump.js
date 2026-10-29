@@ -70,7 +70,7 @@
   (window.ATLAS_VIEWS ??= []).push({
     id: 'bump',
     title: 'Who leads where',
-    blurb: 'Who leads in which category? Each line follows one country’s rank (1 is best) across the categories and overall, and each dot holds the score out of 100.',
+    blurb: (ctx) => `Who leads in which category? Each line follows one country’s rank (1 is best) across the ${ctx.meta.categories.length} categories and overall, and each dot holds the score out of 100.`,
     render(el, ctx) {
       if (!document.getElementById('v-bump-style')) {
         const s = document.createElement('style');

@@ -1,8 +1,6 @@
 // Agent Atlas view: country fingerprints. One radar per country (one spoke per category, 0–100),
 // plus a large compare radar that overlays two countries.
 (() => {
-  // Short spoke labels for narrow screens. Other categories use their "short" word from meta.json, then the full name.
-  const SHORT = { commerce: 'Shopping', payments: 'Payments', services: 'Travel', autonomy: 'General agents', banking: 'Banking', messaging: 'Chat', government: 'Government' };
   const RINGS = [25, 50, 75, 100];
 
   // Splits a long category name into two lines for the wide compare chart.
@@ -147,7 +145,7 @@
         if (!W) return;
         const [a, b] = pair, va = vals(a), vb = vals(b);
         // On phones a two-word short label stacks, so a side spoke ("General agents") does not shrink the chart.
-        const labels = cats.map((c) => (W >= 480 ? lines(c.name) : (SHORT[c.id] ?? c.short ?? c.name).split(' ')));
+        const labels = cats.map((c) => (W >= 480 ? lines(c.name) : (c.short ?? c.name).split(' ')));
         // Measure label widths, then pick the largest radius that keeps every label inside W.
         big.innerHTML = labels.map((ls) => `<text class="axis">${ls.map((l) => `<tspan x="0">${esc(l)}</tspan>`).join('')}</text>`).join('');
         const widths = [...big.querySelectorAll('text')].map((t) => t.getBBox().width);
