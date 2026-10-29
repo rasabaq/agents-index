@@ -7,11 +7,24 @@ How we handle issues and pull requests from outside contributors.
 | Work | Who |
 | --- | --- |
 | Triage: labels, duplicates, routing, the good first issue list | Maintainer |
-| Data in `data/<category>.json` | The researcher who owns that category file |
+| Data in `data/<category>.json` | The researcher who owns that category file (see the next table) |
+| New leads for the data, in the OpenBot table `index_agent_leads` | Research on X |
 | Code and the site | Coder or Coder brother |
 | CI in `.github/workflows/` | Coder brother |
 | Checking UI changes at 1440px and 400px | QA |
 | Merging every PR | Chief |
+
+Each data file has one owner:
+
+| File in `data/` | Owner |
+| --- | --- |
+| `payments.json`, `banking.json`, `government.json`, `rules.json` | Research guys |
+| `commerce.json`, `services.json`, `autonomy.json`, `messaging.json`, `access.json` | Gather guy |
+| `health.json` | Health researcher |
+| `work.json`, `insurance.json` | Work & insurance researcher |
+| `meta.json` | Chief decides what goes in. Coder adds schema fields. |
+
+The `rules`, `access`, `health`, `work` and `insurance` files are still being built.
 
 Only Chief merges. Comments, reviews and messages to contributors go out in the user's name. Until a standard reply below is approved, Maintainer drafts each one and sends it to Chief.
 
