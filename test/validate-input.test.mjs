@@ -55,3 +55,11 @@ test('the same link in two forms is flagged', () => {
     assert.match(withUrls('https://example.com/a', b), /is the same link as "https:\/\/example\.com\/a"; use one form/);
   }
 });
+
+test('a status that is only an inherited object key is rejected', () => {
+  for (const status of ['constructor', 'toString', '__proto__']) {
+    const d = data();
+    d[0].capabilities[0].countries.AA.status = status;
+    assert.match(check(meta, d), new RegExp(`bad status "${status}"`));
+  }
+});
