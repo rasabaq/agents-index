@@ -1,8 +1,9 @@
 // The hero: a planet at sunrise whose air dissolves into magenta pixels (WebGL, with a 2D fallback),
 // the pixel wordmark, and the data parts (twelve pixel icons lit by the country's scores, country pins standing on the planet).
-// It loads the data itself so it does not depend on app.js. Its country links carry data-go-country, which app.js
+// It reads the shared data (src/load.js) and does not depend on app.js. Its country links carry data-go-country, which app.js
 // handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
 import { scoreCountries, shortName, useCategoryWords, startCountry } from './src/observatory.js';
+import { data } from './src/load.js';
 
 const hero = document.querySelector('[data-hero]');
 const $ = (sel) => hero.querySelector(sel);
@@ -377,13 +378,8 @@ function light(code) {
   $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} work fully`;
 }
 
-const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
-  if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
-  return r.json();
-});
 try {
-  const meta = await getJson('meta');
-  const categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
+  const { meta, categories } = await data;
   useCategoryWords(meta.categories);
   ranking = scoreCountries(meta, categories);
   focus = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
@@ -399,5 +395,5 @@ try {
   });
   $('[data-hero-icons]').hidden = false;
 } catch {
-  // app.js shows the load error; the hero keeps its sky and wordmark.
+  // load.js shows the load error in the hero; the hero keeps its sky and wordmark.
 }

@@ -1,13 +1,10 @@
 import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
+import { data } from './src/load.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 const fmtMonth = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
-  if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
-  return r.json();
-});
 
 const state = { view: 'people', market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false };
 // Long tables show this many rows until Show all is pressed.
@@ -526,10 +523,9 @@ function wireLogos() {
 }
 
 // Start last: the helpers above are consts and must exist before init runs.
-try {
-  meta = await getJson('meta');
-  categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
+// If the data fails, load.js tells the reader and hides the console.
+const loaded = await data.catch(() => null);
+if (loaded) {
+  ({ meta, categories } = loaded);
   init();
-} catch (err) {
-  $('main').insertAdjacentHTML('afterbegin', `<p class="wrap error">Could not load the data (${esc(err.message)}). Serve the folder over HTTP, for example with <code>npm start</code>.</p>`);
 }
