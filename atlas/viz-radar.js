@@ -1,4 +1,4 @@
-// Agent Atlas view: country fingerprints. One radar per country (7 category spokes, 0–100),
+// Agent Atlas view: country fingerprints. One radar per country (one spoke per category, 0–100),
 // plus a large compare radar that overlays two countries.
 (() => {
   // Short spoke labels for narrow screens. Unknown ids fall back to the full name.

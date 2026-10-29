@@ -32,6 +32,10 @@ The rules:
 
 If you cannot edit the file, open a [data correction issue](https://github.com/rasabaq/ai-agent-observatory/issues/new?template=data-correction.yml) with the source, and we will make the change.
 
+## Add a category
+
+Add it to `categories` in `data/meta.json` with its `id`, `name` and `blurb`, plus two words the site uses in its sentences: `short` (for example `"Health"`) and `can`, which completes "AI agents can …" (for example `"book care for you"`). Then add `data/<id>.json`. `npm run validate` says when one is missing.
+
 ## Pull requests
 
 - One change per pull request: one data fix, or one feature.

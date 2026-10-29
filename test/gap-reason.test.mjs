@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validate } from '../src/observatory.js';
 
-const meta = { countries: [{ code: 'AA', name: 'Alpha' }], categories: [{ id: 'pay' }], gapReasons: [{ id: 'pilot-only', label: 'Pilot only' }] };
+const meta = { countries: [{ code: 'AA', name: 'Alpha' }], categories: [{ id: 'pay', short: 'Pay', can: 'pay' }], gapReasons: [{ id: 'pilot-only', label: 'Pilot only' }] };
 const ev = [{ title: 'Launch post', url: 'https://example.com/a', type: 'company' }];
 const check = (cell, m = meta) => validate(m, [{ category: 'pay', capabilities: [{ id: 'pay.a', name: 'a', question: 'q?', countries: { AA: { note: 'n', evidence: ev, ...cell } } }] }]).join('\n');
 

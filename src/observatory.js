@@ -45,8 +45,10 @@ export function validate(meta, categories) {
   const gapReasons = new Set((meta.gapReasons ?? []).map((r) => r.id));
   for (const r of meta.gapReasons ?? []) if (!r.id || !r.label) errors.push(`meta: every gap reason needs an id and a label`);
 
-  for (const id of categoryIds) {
-    if (!categories.some((c) => c.category === id)) errors.push(`category "${id}" has no data file`);
+  for (const c of meta.categories) {
+    if (!categories.some((cat) => cat.category === c.id)) errors.push(`category "${c.id}" has no data file`);
+    // The site writes sentences from these words ("agents can <can>"), so every category needs them.
+    if (!(c.short && c.can) && !CATEGORY_WORDS[c.id]) errors.push(`category "${c.id}" needs "short" and "can" in meta.json, for example "short": "Health", "can": "book a doctor for you"`);
   }
 
   for (const cat of categories) {
@@ -209,6 +211,10 @@ export const CATEGORY_WORDS = {
   government: { short: 'Government', can: 'prove who you are to apps' },
 };
 const words = (id) => CATEGORY_WORDS[id] ?? { short: id, can: `use ${id}` };
+// A new category can bring its own words in data/meta.json ("short" and "can"), so adding one needs no code change.
+export function useCategoryWords(metaCategories) {
+  for (const c of metaCategories) if (c.short && c.can) CATEGORY_WORDS[c.id] = { short: c.short, can: c.can };
+}
 export const shortName = (id) => words(id).short;
 
 // A country's strongest and weakest category. On a tie the first in category order wins.

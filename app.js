@@ -1,4 +1,4 @@
-import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, startCountry, guessCountry, verdict, couldClose } from './src/observatory.js';
+import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -16,6 +16,7 @@ const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').mat
 let meta, categories, ranking, byCode, capIndex, companies, repos, cells, region;
 
 function init() {
+  useCategoryWords(meta.categories);
   ranking = scoreCountries(meta, categories);
   byCode = Object.fromEntries(ranking.map((r) => [r.code, r]));
   capIndex = Object.fromEntries(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { ...cap, category: cat.category }])));
