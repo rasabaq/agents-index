@@ -1,0 +1,46 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { forBusiness, BUSINESS_GROUPS } from '../src/observatory.js';
+
+const cell = (status) => ({ status, note: 'n' });
+const categories = [
+  { category: 'commerce', capabilities: [
+    { id: 'commerce.merchant-protocol', name: 'Merchants sell', countries: { MX: cell('limited'), US: cell('live') } },
+    { id: 'commerce.other', name: 'Not for business', countries: { MX: cell('live') } },
+  ], companies: [
+    { name: 'Shopify', markets: ['US', 'MX'], capabilities: ['commerce.merchant-protocol'] },
+    { name: 'Stripe', markets: ['US'], capabilities: ['commerce.merchant-protocol'] },
+    { name: 'Shopify', markets: ['MX'], capabilities: ['commerce.merchant-protocol'] },
+  ] },
+  { category: 'messaging', capabilities: [
+    { id: 'messaging.business-ai-agent', name: 'Chat agent', countries: { MX: cell('live') } },
+  ], companies: [{ name: 'Meta', markets: ['MX'], capabilities: ['messaging.business-ai-agent'] }] },
+];
+
+test('for businesses: only the business capabilities, grouped, with the companies that work in this country', () => {
+  const groups = forBusiness(categories, 'MX');
+  assert.deepEqual(groups.map((g) => [g.title, g.items.map((x) => x.cap.id)]), [
+    ['Sell through AI agents', ['commerce.merchant-protocol']],
+    ['Sell in chat apps', ['messaging.business-ai-agent']],
+  ]);
+  assert.deepEqual(groups[0].items[0].companies.map((c) => c.name), ['Shopify']);
+  assert.equal(groups[0].items[0].cell.status, 'limited');
+  assert.equal(groups[0].items[0].label, 'AI agents can buy from your online store');
+  assert.deepEqual(forBusiness(categories, 'US')[0].items[0].companies.map((c) => c.name), ['Shopify', 'Stripe']);
+});
+
+test('the business set is the eight capabilities from the brief', () => {
+  assert.equal(BUSINESS_GROUPS.flatMap((g) => g.items).length, 8);
+  assert.ok(BUSINESS_GROUPS.every((g) => g.items.every((x) => x.label)));
+});
+
+test('the link holds the country and the view; old #country= links still work', async () => {
+  const { readHash, writeHash, startCountry } = await import('../src/observatory.js');
+  assert.deepEqual(readHash('#country=MX&view=business'), { country: 'MX', view: 'business' });
+  assert.deepEqual(readHash('#country=MX'), { country: 'MX', view: 'people' });
+  assert.deepEqual(readHash('#view=business'), { country: null, view: 'business' });
+  assert.deepEqual(readHash('#country=mx&view=nope'), { country: null, view: 'people' });
+  assert.equal(writeHash('MX', 'business'), '#country=MX&view=business');
+  assert.equal(writeHash('MX', 'people'), '#country=MX');
+  assert.equal(startCountry(['US', 'MX'], '#country=MX&view=business'), 'MX');
+});

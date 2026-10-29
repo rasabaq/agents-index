@@ -255,9 +255,17 @@ export function guessCountry(codes, languages = [], timeZone = '') {
   return null;
 }
 
+// The page's link state: #country=MX, optionally &view=business. Old #country=MX links read as the people view.
+export function readHash(hash) {
+  const p = new URLSearchParams(hash.replace(/^#/, ''));
+  const country = /^[A-Z]{2}$/.test(p.get('country') ?? '') ? p.get('country') : null;
+  return { country, view: p.get('view') === 'business' ? 'business' : 'people' };
+}
+export const writeHash = (country, view) => `#country=${country}${view === 'business' ? '&view=business' : ''}`;
+
 // The country a visitor starts on: the #country= hash, else their own country, else the United States.
 export function startCountry(codes, hash, languages = [], timeZone = '') {
-  const fromHash = hash.match(/^#country=(\w\w)$/)?.[1];
+  const fromHash = readHash(hash).country;
   if (codes.includes(fromHash)) return fromHash;
   return guessCountry(codes, languages, timeZone) ?? (codes.includes('US') ? 'US' : codes[0]);
 }
@@ -291,4 +299,40 @@ export function couldClose(companies, capId, code, region) {
     .map((co) => ({ ...co, near: co.markets.filter((m) => m !== code && region[m] === region[code]) }))
     .filter((co) => co.near.length)
     .sort((a, b) => b.near.length - a.near.length || a.name.localeCompare(b.name));
+}
+
+// "For businesses": the capabilities a business needs to sell through AI agents and get paid, in display groups,
+// each with a label from the seller's side. This is the one place the set lives.
+export const BUSINESS_GROUPS = [
+  { title: 'Sell through AI agents', items: [
+    { id: 'commerce.merchant-protocol', label: 'AI agents can buy from your online store' },
+    { id: 'commerce.in-chat-checkout', label: 'Customers buy from you inside an AI assistant' },
+    { id: 'commerce.marketplace-agent', label: 'Marketplace agents buy your products for shoppers' },
+  ] },
+  { title: 'Sell in chat apps', items: [
+    { id: 'messaging.business-ai-agent', label: 'Run an AI agent that sells and supports in chat' },
+    { id: 'messaging.pay-in-chat', label: 'Take payment inside a chat' },
+  ] },
+  { title: 'Get paid by agents', items: [
+    { id: 'payments.card-agent-token', label: 'Get paid by card when an agent buys' },
+    { id: 'payments.instant-rail-agent', label: 'Get paid by instant bank transfer (Pix, UPI)' },
+    { id: 'payments.wallet-agent', label: 'Get paid from a wallet or fintech app' },
+  ] },
+];
+
+// For one country: each business capability with its cell and the companies that work there for it, merged by
+// name (one company can appear in several category files). Capabilities missing from the data are skipped.
+export function forBusiness(categories, code) {
+  const caps = new Map(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { cap, cat }])));
+  return BUSINESS_GROUPS.map((g) => ({
+    title: g.title,
+    items: g.items.filter(({ id }) => caps.has(id)).map(({ id, label }) => {
+      const { cap, cat } = caps.get(id);
+      const byName = new Map();
+      for (const co of cat.companies ?? []) {
+        if ((co.capabilities ?? []).includes(id) && co.markets.includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
+      }
+      return { cap, label, cell: cap.countries[code], companies: [...byName.values()].sort((a, b) => a.name.localeCompare(b.name)) };
+    }),
+  })).filter((g) => g.items.length);
 }

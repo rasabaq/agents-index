@@ -25,6 +25,7 @@ Each Not yet item shows its status, its gap reason when it has one, and companie
   - "Main reason: …" is the most common `gapReason` label among the cells of the categories it names. It is left out when none of them has one.
 - `country-score` is the card `.mc-score`: "N / 100 · rank R of 8", with bars for this country, the best country (hidden when this country is the best) and the average of 8, plus the data date.
 - `country-lists` are `#mc-works` ("Works today · L of 18") and `#mc-not` ("Not yet · M of 18"). Their items are `.mc-list button[data-cap][data-code]`, and each one opens the cell detail (see matrix-detail.md). A Not yet item can show its gap reason label and a `small.mc-co` line, "Could close it: Company (already in XX YY)".
+- `country-business` is the "For people" / "For businesses" toggle (`[data-view]`, `aria-pressed`) under the verdict. "For businesses" swaps the verdict for a business one and the cards for three `.biz-group` cards: Sell through AI agents, Sell in chat apps, and Get paid by agents. These cover the eight capabilities in `BUSINESS_GROUPS` (`src/observatory.js`). Each item has a seller-side label, one line on why (the gap reason when the cell has one, else its status in plain words), and a `.biz-cos` line. That line reads "Sign up with: …" when the cell is live and "Active here: …" otherwise. It is left out on Not yet items and when the gap reason is `not-launched`, with links to each company's homepage. The view lives in the link: `#country=MX&view=business`, so a business link can be shared. An old `#country=MX` link opens For people.
 - `country-pick-hero` selects a country from the hero chips and scrolls to the console.
 - `country-pick-console` selects a country from the console list `[data-clist]` without scrolling.
 - `country-pick-ranking` and `country-pick-tiers` select a country from the ranking and from the tier tiles.
@@ -63,6 +64,14 @@ Steps:
 - **Lists.**
   - Run `node $H eval "[document.querySelector('#mc-works').innerText, document.querySelector('#mc-not').innerText, document.querySelectorAll('.mc-list button[data-cap]').length]"`. The two counts add up to 18, and so does the number of buttons.
   - Run `node $H click '#mc-not + ul button'`. `node $H eval "document.querySelector('[data-detail]').open"` prints `true`. Then `node $H press Escape`.
+- **For businesses.**
+  - Run `node $H open '/#country=MX'`, then `node $H click '[data-view="business"]'`.
+  - `node $H eval "[document.querySelector('.cn-verdict').innerText, [...document.querySelectorAll('.biz-group h3')].map(h => h.innerText), [...document.querySelectorAll('.biz-cos')].map(p => p.innerText)]"` shows a verdict with "of the 8 ways", three group titles with "of N live", and lines that start with "Sign up with" or "Active here".
+  - `node $H eval "document.activeElement.dataset.view"` prints `business`.
+  - `node $H click '.biz-group button[data-cap]'` opens the cell detail. Then `node $H press Escape`.
+  - Take `node $H shot business-1440-mx --at '#country'`.
+  - `node $H eval 'location.hash'` prints `#country=MX&view=business`. `node $H open '/#country=CL&view=business'` opens Chile on For businesses.
+  - Picking another country keeps the business view. `node $H click '[data-view="people"]'` brings back `#mc-works`.
 - **Hero chip.** Run `node $H open /`, then `node $H click '.hero [data-go-country="MX"]'`.
   - `location.hash` is `#country=MX`, and `#cn-title` reads Mexico.
   - The console has scrolled into view: `node $H eval "Math.round(document.querySelector('#country').getBoundingClientRect().top)"` is under 300.
@@ -70,6 +79,7 @@ Steps:
 - **Console list.** Run `node $H click '[data-clist] [data-go-country="BR"]'`. `#cn-title` reads Brazil, and the hash is `#country=BR`.
 - **Keys.** Run `node $H press j`. The country moves to the next one in the ranking (for example BR → IN). `node $H press k` moves it back.
 - **Phone.**
+  - For businesses at 400px stacks the three cards in one column: `node $H open '/#country=MX' --width 400`, `node $H click '[data-view="business"]'`, `node $H shot business-400-mx --at '#country' --offset 120`.
   - Run `node $H open '/#country=CL' --width 400`, then `node $H shot country-400-cl --at '#country' --offset 120`.
   - The score card, Works today and Not yet stack in one column.
   - `node $H eval 'document.documentElement.scrollWidth'` prints `400`.

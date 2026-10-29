@@ -1,4 +1,4 @@
-import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose } from './src/observatory.js';
+import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -9,7 +9,7 @@ const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
   return r.json();
 });
 
-const state = { market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false };
+const state = { view: 'people', market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false };
 // Long tables show this many rows until Show all is pressed.
 const FIRST_ROWS = 10;
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
@@ -26,6 +26,7 @@ function init() {
   region = Object.fromEntries(meta.countries.map((c) => [c.code, c.region]));
   repos = rankRepos(categories);
   const codes = meta.countries.map((c) => c.code);
+  state.view = readHash(location.hash).view;
   state.country = startCountry(codes, location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
   // The visitor's own country, when time zone or language tells us; the head says "Your country" only for it.
   state.own = guessCountry(codes, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
@@ -50,7 +51,7 @@ function init() {
 }
 
 const hashCountry = () => {
-  const code = location.hash.match(/^#country=(\w\w)$/)?.[1];
+  const code = readHash(location.hash).country;
   return byCode[code] ? code : null;
 };
 const catName = (id) => meta.categories.find((c) => c.id === id).name;
@@ -66,6 +67,36 @@ const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== 
 // Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
 // Cells may not have one yet.
 const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
+// "For businesses": can a business sell through AI agents here, and who does it sign up with?
+const bizStatus = {
+  live: 'Works here today.',
+  limited: 'Only a pilot, beta or a few businesses so far.',
+  announced: 'Announced here, not usable yet.',
+  none: 'Not available here yet.',
+};
+function businessVerdict(r) {
+  const items = forBusiness(categories, r.code).flatMap((g) => g.items);
+  const live = items.filter((x) => x.cell.status === 'live');
+  const where = `${/^United /.test(r.name) ? 'the ' : ''}${r.name}`;
+  if (!live.length) return `In ${where}, a business cannot yet sell through AI agents: none of the ${items.length} ways we track works here today.`;
+  return `In ${where}, ${live.length === items.length ? 'every one' : `${live.length}`} of the ${items.length} ways we track for a business to sell through AI agents and get paid ${live.length === 1 ? 'works' : 'work'} today.`;
+}
+function renderBusiness(r) {
+  const row = ({ cap, label, cell, companies: cos }) => {
+    // One line on why: the gap reason when the cell has one, else the status in plain words.
+    const reason = cell.status === 'live' ? null : gapLabel(cell.gapReason);
+    // Companies are listed by their markets for the whole category, not per capability, so a Not yet item or one
+    // whose reason is that the company has not launched here shows no company line: it would read as a contradiction.
+    const links = cos.map((co) => `<a href="${esc(co.homepage ?? co.url)}" target="_blank" rel="noopener noreferrer">${esc(co.name)}</a>`).join(', ');
+    return `<li>
+      <button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(label)}<small>${reason ? `${esc(reason)}.` : bizStatus[cell.status]}</small></span></button>
+      ${cos.length && cell.status !== 'none' && cell.gapReason !== 'not-launched' ? `<p class="biz-cos">${cell.status === 'live' ? 'Sign up with' : 'Active here'}: ${links}</p>` : ''}</li>`;
+  };
+  return forBusiness(categories, r.code).map((g) => `
+    <section class="card kpi mc-list biz-group" aria-label="${esc(g.title)}"><h3 class="label">${esc(g.title)} · ${g.items.filter((x) => x.cell.status === 'live').length} of ${g.items.length} live</h3>
+      <ul>${g.items.map(row).join('')}</ul></section>`).join('');
+}
+
 // Live cells per category, for the verdict: a category with one live cell is something agents "can" do.
 const liveBy = (mine) => Object.fromEntries(meta.categories.map((c) => [c.id, mine.filter((x) => x.cap.category === c.id && x.cell.status === 'live').length]));
 function mainReason(mine, catIds) {
@@ -137,7 +168,8 @@ function renderCountry() {
     <div>
       <p class="label">${r.code === state.own ? 'Your country' : 'Country'} · ${ranking.length} countries tracked so far</p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
-      <p class="cn-lede cn-verdict">${esc(verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
+      <p class="cn-lede cn-verdict">${esc(state.view === 'business' ? businessVerdict(r) : verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
+      <div class="cn-view" role="group" aria-label="Show the country for">${[['people', 'For people'], ['business', 'For businesses']].map(([v, l]) => `<button type="button" class="pill" data-view="${v}" aria-pressed="${state.view === v}">${l}</button>`).join('')}</div>
     </div>
     <div class="cn-r">
       <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>
@@ -158,6 +190,10 @@ function renderCountry() {
     const cos = couldClose(categories.find((c) => c.category === cap.category).companies, cap.id, r.code, region).slice(0, 3);
     return `${reason ? `<small>${esc(reason)}</small>` : ''}${cos.length ? `<small class="mc-co">Could close it: ${cos.map((co) => `${esc(co.name)} (already in ${co.near.map((m) => `${flag(m)}${m}`).join(' ')})`).join(', ')}</small>` : ''}`;
   };
+  if (state.view === 'business') {
+    $('[data-kpis]').innerHTML = renderBusiness(r);
+    return renderCountryRest(r);
+  }
   $('[data-kpis]').innerHTML = `
     <div class="card kpi mc-score">
       <p class="label">Score</p>
@@ -170,6 +206,11 @@ function renderCountry() {
     <section class="card kpi mc-list" aria-labelledby="mc-not"><h3 id="mc-not" class="label">Not yet · ${notYet.length} of ${total}</h3>
       ${notYet.length ? `<ul>${notYet.map((x) => item(x, why(x))).join('')}</ul>` : '<p class="mc-note">Everything we track works here.</p>'}</section>`;
 
+  renderCountryRest(r);
+}
+
+// Everything below the head and the cards: the same for people and for businesses.
+function renderCountryRest(r) {
   const { weak } = extremes(r.byCategory);
   $('[data-cats-title]').innerHTML = `${flag(r.code)}${esc(r.name)} by category`;
   $('[data-cats]').innerHTML = meta.categories.map((c) => `
@@ -269,7 +310,7 @@ function selectCountry(code, scroll) {
   const refocus = $('[data-country]').contains(document.activeElement);
   const fromPicker = document.activeElement?.matches('[data-pick-country]');
   state.country = code;
-  history.replaceState(null, '', `#country=${code}`);
+  history.replaceState(null, '', writeHash(code, state.view));
   // Every country picker on the page (hero, console, tier list) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
@@ -385,7 +426,11 @@ function wire() {
     e.preventDefault();
     selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
   });
-  addEventListener('hashchange', () => hashCountry() && selectCountry(hashCountry(), true));
+  addEventListener('hashchange', () => {
+    if (!hashCountry()) return;
+    state.view = readHash(location.hash).view;
+    selectCountry(hashCountry(), true);
+  });
   // Show all / Show fewer under the Companies and Open source tables. Fewer scrolls back to the table's top.
   $('[data-companies-more]').addEventListener('click', (e) => {
     if (!e.target.closest('button')) return;
@@ -401,6 +446,15 @@ function wire() {
     renderRepos();
     $('[data-repos-more] button')?.focus({ preventScroll: true });
     if (!state.allRepos) $('#opensource').scrollIntoView({ behavior: scrollBehavior() });
+  });
+  // For people / For businesses switches the cards under the country head.
+  $('[data-country]').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-view]');
+    if (!b || b.dataset.view === state.view) return;
+    state.view = b.dataset.view;
+    history.replaceState(null, '', writeHash(state.country, state.view));
+    renderCountry();
+    $(`[data-view="${state.view}"]`).focus({ preventScroll: true });
   });
   $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
 
