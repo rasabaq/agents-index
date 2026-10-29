@@ -88,7 +88,7 @@ function renderBusiness(r) {
     // company line: it could name companies that do not offer this capability here.
     const links = cos.map((co) => `<a href="${esc(co.homepage ?? co.url)}" target="_blank" rel="noopener noreferrer">${esc(co.name)}</a>`).join(', ');
     return `<li>
-      <button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(label)}<small>${reason ? `${esc(reason)}.` : bizStatus[cell.status]}</small></span></button>
+      <button type="button" data-cap="${esc(cap.id)}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(label)}<small>${reason ? `${esc(reason)}.` : bizStatus[cell.status]}</small></span></button>
       ${cos.length && cell.status !== 'none' ? `<p class="biz-cos">${cell.status === 'live' ? 'Sign up with' : 'Active here'}: ${links}</p>` : ''}</li>`;
   };
   return forBusiness(categories, r.code).map((g) => `
@@ -172,7 +172,7 @@ function renderCountry() {
   const bar = (label, v, on) => `<li${on ? ' class="on"' : ''}><span>${label}</span><span class="bars"><b style="width:${v}%"></b></span><span class="rk-v">${v}</span></li>`;
   const works = mine.filter((x) => x.cell.status === 'live');
   const notYet = mine.filter((x) => x.cell.status !== 'live').sort((a, b) => STATUSES[b.cell.status].points - STATUSES[a.cell.status].points);
-  const item = ({ cap, cell }, extra = '') => `<li><button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
+  const item = ({ cap, cell }, extra = '') => `<li><button type="button" data-cap="${esc(cap.id)}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
     ${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(cap.name)}${extra}</span></button></li>`;
   const why = ({ cap, cell }) => {
     const reason = gapLabel(cell.gapReason);
@@ -222,7 +222,7 @@ function renderMatrix() {
   $('[data-matrix]').innerHTML = head + categories.map((cat) => `
     <div class="mx-row mx-cat" role="row"><span role="rowheader" title="${esc(catName(cat.category))}">${esc(shortName(cat.category))}</span>${cols.map((c) => `<span role="cell"${sel(c)}></span>`).join('')}</div>
     ${cat.capabilities.map((cap) => `
-      <div class="mx-row" role="row"><span class="mx-cap" role="rowheader">${esc(cap.name)}</span>${cols.map((c) => `<span role="cell"${sel(c)}><button type="button" data-cap="${cap.id}" data-code="${c}" aria-label="${esc(cellLabel(cap, c, cap.countries[c]))}">${dot(cap.countries[c])}</button></span>`).join('')}</div>`).join('')}`).join('');
+      <div class="mx-row" role="row"><span class="mx-cap" role="rowheader">${esc(cap.name)}</span>${cols.map((c) => `<span role="cell"${sel(c)}><button type="button" data-cap="${esc(cap.id)}" data-code="${c}" aria-label="${esc(cellLabel(cap, c, cap.countries[c]))}">${dot(cap.countries[c])}</button></span>`).join('')}</div>`).join('')}`).join('');
   $('[data-mx-count]').textContent = `${Object.keys(capIndex).length} capabilities`;
 }
 
@@ -233,7 +233,7 @@ function renderFeed() {
     .slice(0, 6);
   $('[data-feed-count]').textContent = `${items.length} entries`;
   $('[data-feed]').innerHTML = items.map(({ cap, code, cell, e }) => `
-    <li><button type="button" data-cap="${cap.id}" data-code="${code}" aria-label="${esc(`${e.date}, ${cellLabel(cap, code, cell)}, via ${e.publisher ?? e.type}`)}">
+    <li><button type="button" data-cap="${esc(cap.id)}" data-code="${code}" aria-label="${esc(`${e.date}, ${cellLabel(cap, code, cell)}, via ${e.publisher ?? e.type}`)}">
       <time datetime="${e.date}">${e.date.length === 10 ? e.date.slice(5) : e.date}</time>
       <span class="fd-c">${flag(code)}${code}</span>
       <span class="fd-t">${esc(cap.name)}<small>via ${esc(e.publisher ?? e.type)}</small></span>

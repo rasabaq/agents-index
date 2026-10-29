@@ -5,7 +5,14 @@ import { validate, scoreCountries } from '../src/observatory.js';
 const read = async (name) => JSON.parse(await readFile(new URL(`../data/${name}.json`, import.meta.url), 'utf8'));
 
 const meta = await read('meta');
-const categories = await Promise.all(meta.categories.map((c) => read(c.id).catch(() => ({ category: c.id, capabilities: [] }))));
+// A missing file is reported by validate below ("has no data file"); any other error (bad JSON) stops here with its message.
+const categories = await Promise.all(meta.categories.map((c) => read(c.id).catch((err) => {
+  if (err.code !== 'ENOENT') {
+    console.error(`data/${c.id}.json: ${err.message}`);
+    process.exit(1);
+  }
+  return null;
+}))).then((list) => list.filter(Boolean));
 const errors = validate(meta, categories);
 
 if (errors.length) {
