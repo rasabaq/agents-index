@@ -46,7 +46,9 @@ The data comes through two lenses, and every cell is checked against both.
 Rules:
 
 - Every Live, Limited or Announced cell must cite at least one source with a URL. `npm run validate` enforces this.
-- Every source has a `date`, written `"YYYY-MM-DD"` or `"YYYY-MM"`, and no later than the `asOf` date in `data/meta.json`. `npm run validate` enforces this too.
+- Every source has a `date`, written `"YYYY-MM-DD"` or `"YYYY-MM"`, that is a real calendar date no later than the `asOf` date in `data/meta.json`. `npm run validate` enforces this too.
+- One article is cited under one URL. Two source URLs that differ only by `http`/`https`, `www.` or a trailing slash fail the check.
+- Ids are plain text: category ids use lowercase letters and dashes, capability ids are `<category>.` then lowercase letters, digits and dashes, and country codes are two capital letters. Every company has an `hq` country code and a `markets` list.
 - Primary sources come first: company, regulator and paper. News is used only when nothing primary exists.
 - When the sources disagree or are unclear, the cell takes the lower status and the note says why.
 - A cell whose sources are thin or indirect carries `"confidence": "low"`. The site marks it with a `?`. Treat it as a lead to check, not a finding. Its score still counts.

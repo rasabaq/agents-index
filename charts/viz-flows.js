@@ -103,7 +103,7 @@
       function nodeTip(n) {
         const rows = n.links.slice().sort((a, b) => b.names.length - a.names.length)
           .map((l) => { const c = n.side ? l.src : l.dst; return `${c === ELSE ? 'Elsewhere' : `${flag(c)}${esc(nameOf(c))}`} · ${l.names.length}`; });
-        if (n.side) return `<strong>${orgs(n.value)}</strong>work in ${flag(n.code)}${esc(nameOf(n.code))}, by HQ:<br>${rows.join('<br>')}`;
+        if (n.side) return `<strong>${orgs(n.value)}</strong>${n.value === 1 ? 'works' : 'work'} in ${flag(n.code)}${esc(nameOf(n.code))}, by HQ:<br>${rows.join('<br>')}`;
         const cos = new Set(n.links.flatMap((l) => l.names)).size;
         const head = n.code === ELSE
           ? `Elsewhere: ${[...n.other].sort((a, b) => b[1] - a[1] || nameOf(a[0]).localeCompare(nameOf(b[0]))).map(([c, k]) => `${esc(nameOf(c))} (${k})`).join(', ')}`

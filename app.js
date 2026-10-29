@@ -452,7 +452,7 @@ function renderCounts() {
   const text = `${cells.length} cells · ${sourcesOf(cells)} sources`;
   $('[data-term-count]').textContent = text;
   // Each item carries its leading separator and never breaks inside, so a wrapped line never ends with "·".
-  const parts = [`${cells.length} cells`, `${sourcesOf(cells)} sources`, `${companies.length} companies`, `${repos.length} open-source repos`];
+  const parts = [`${cells.length} cells`, `${sourcesOf(cells)} sources`, `${companies.length} companies and public bodies`, `${repos.length} open-source repos`];
   $('[data-foot-count]').innerHTML = parts.map((p, i) => `<span class="nowrap">${i ? '· ' : ''}${esc(p)}</span>`).join(' ');
 }
 

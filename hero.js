@@ -374,11 +374,11 @@ function light(code) {
     const s = r.byCategory[li.dataset.cat], on = Math.round((s * 16) / 100);
     li.querySelectorAll('rect').forEach((c) => c.classList.toggle('on', +c.dataset.b < on));
     li.classList.toggle('is-full', s >= 100);
-    li.setAttribute('aria-label', `${shortName(li.dataset.cat)}: ${s >= 100 ? 'works' : s > 0 ? 'works partly' : 'does not work yet'}`);
+    li.setAttribute('aria-label', `${shortName(li.dataset.cat)}: ${s >= 100 ? 'all live' : s > 0 ? 'partly' : 'none yet'}`);
   }
   // The caption names the country the icons describe; it also labels the icon list.
   $('[data-hero-in]').innerHTML = `What agents can do in ${flag(r.code)}<strong>${esc(r.name)}</strong>`;
-  $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} work fully`;
+  $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} categories all live`;
 }
 
 try {
