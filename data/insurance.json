@@ -383,7 +383,7 @@
       "hq": "US",
       "url": "https://www.lemonade.com/renters/explained/lemonade-renters-and-homeowners-faq/",
       "homepage": "https://www.lemonade.com/",
-      "icon": null,
+      "icon": "logos/lemonade.png",
       "role": "Its AI bots sell policies in a chat (Maya) and take and pay claims (Jim).",
       "markets": [
         "US",
@@ -414,7 +414,7 @@
       "hq": "US",
       "url": "https://www.experianplc.com/newsroom/press-releases/2026/experian-launches-insurance-marketplace-app-on-chatgpt",
       "homepage": "https://www.experian.com/",
-      "icon": "https://www.experian.com/favicon-192x192.png",
+      "icon": "logos/experian.png",
       "role": "Its ChatGPT app compares estimated car insurance rates; you finish on its site.",
       "markets": [
         "US"
@@ -428,7 +428,7 @@
       "hq": "US",
       "url": "https://www.prnewswire.com/news-releases/liberty-mutual-insurance-launches-first-of-its-kind-carrier-backed-conversational-ai-quoting-app-in-chatgpt-for-auto-insurance-302784774.html",
       "homepage": "https://www.libertymutual.com/",
-      "icon": null,
+      "icon": "logos/liberty-mutual.png",
       "role": "Its ChatGPT app quotes car insurance; you buy on its site.",
       "markets": [
         "US"
@@ -442,7 +442,7 @@
       "hq": "GB",
       "url": "https://www.moneysupermarket.com/news/new-moneysupermarket-chatgpt-app/",
       "homepage": "https://www.moneysupermarket.com/",
-      "icon": "https://www.moneysupermarket.com/favicon.ico",
+      "icon": "logos/moneysupermarket.png",
       "role": "Its ChatGPT app estimates car insurance prices and fetches fresh car, home and pet quotes for existing customers; you buy on its site.",
       "markets": [
         "GB"
@@ -456,7 +456,7 @@
       "hq": "GB",
       "url": "https://press.gocompare.com/news/go-compare-launches-chatgpt-app-to-help-consumers-find-a-great-deal-on-their-insurance",
       "homepage": "https://www.gocompare.com/",
-      "icon": "https://www.gocompare.com/favicon.ico",
+      "icon": "logos/go-compare.png",
       "role": "Its ChatGPT app compares car, van and home insurance quotes; you buy on its site.",
       "markets": [
         "GB"
@@ -470,7 +470,7 @@
       "hq": "IN",
       "url": "https://www.policyx.com/pixie/",
       "homepage": "https://www.policyx.com/",
-      "icon": "https://cdn.policyx.com/images/new-faviconpx.ico",
+      "icon": "logos/policyx.png",
       "role": "Its Pixie chatbot quotes and compares plans from more than 50 insurers; you finish the purchase outside the chat.",
       "markets": [
         "IN"
@@ -484,7 +484,7 @@
       "hq": "IN",
       "url": "https://www.outlookbusiness.com/personal-finance/insurance/know-how-to-get-your-instant-motor-claim-settlement-via-whatsapp",
       "homepage": "https://www.hdfcergo.com/",
-      "icon": "https://www.hdfcergo.com/assets/images/apple-icon-57x57.png",
+      "icon": "logos/hdfc-ergo.png",
       "role": "Its WhatsApp chatbot registers motor claims and sends a link for an AI photo inspection and claim form; minor claims are paid to your bank.",
       "markets": [
         "IN"
@@ -498,7 +498,7 @@
       "hq": "BR",
       "url": "https://revistaapolice.com.br/2025/01/hubsegs-comercializa-seguros-100-pelo-whatsapp/",
       "homepage": "https://hubsegs.com.br/",
-      "icon": "https://hubsegs.com.br/wp-content/uploads/2022/04/cropped-favicon-180x180.png",
+      "icon": "logos/hubsegs.png",
       "role": "Insurance advisory firm for brokers; its WhatsApp AI agent quotes and issues policies, mainly for brokers and their clients.",
       "markets": [
         "BR"
@@ -512,7 +512,7 @@
       "hq": "BR",
       "url": "https://revistaapolice.com.br/2026/10/porto-automatiza-70-dos-sinistros-de-roubo-e-furto/",
       "homepage": "https://www.portoseguro.com.br/",
-      "icon": "https://portoseguro.com.br/etc.clientlibs/porto/clientlibs/clientlib-theme/resources/favicon.ico",
+      "icon": "logos/porto.png",
       "role": "Its AI agent on WhatsApp opens and completes car theft claims.",
       "markets": [
         "BR"
@@ -526,7 +526,7 @@
       "hq": "ES",
       "url": "https://tiinside.com.br/29/09/2025/mapfre-implementa-primeira-jornada-de-sinistro-100-resolutiva-por-ia-no-whatsapp/",
       "homepage": "https://www.mapfre.com.br/",
-      "icon": "https://www.mapfre.com.br/media/favicon.png",
+      "icon": "logos/mapfre.png",
       "role": "In Brazil, its AI agent on WhatsApp opens and moves car claims.",
       "markets": [
         "BR"
@@ -540,7 +540,7 @@
       "hq": "BR",
       "url": "https://economicnewsbrasil.com.br/2026/08/18/sinistro-auto-ezze-seguros-ia/",
       "homepage": "https://ezzeseguros.com.br/",
-      "icon": "https://ezzeseguros.com.br/wp-content/uploads/2026/02/cropped-favicon1-180x180.png",
+      "icon": "logos/ezze-seguros.png",
       "role": "Its AI chat assistant opens car claims in minutes.",
       "markets": [
         "BR"
@@ -568,7 +568,7 @@
       "hq": "CL",
       "url": "https://chocale.cl/2025/05/lider-bci-habilita-contratacion-de-seguros-por-whatsapp/",
       "homepage": "https://www.liderbci.cl/",
-      "icon": "https://cdn3.bci.cl/uploads/01b5c305-4e71-4420-88dd-98000379a08a/original/Logo_app.svg",
+      "icon": "logos/lider-bci.png",
       "role": "Sells insurance, starting with SOAP, on WhatsApp with conversational AI, from quote to policy.",
       "markets": [
         "CL"
@@ -582,7 +582,7 @@
       "hq": "FR",
       "url": "https://lanotaeconomica.com.co/movidas-empresarial/aseguradora-utiliza-la-ia-para-la-evaluacion-y-pagos-de-polizas/",
       "homepage": "https://www.bnpparibascardif.com/",
-      "icon": "https://www.bnpparibascardif.com/wp-content/uploads/sites/28/2025/02/BNPP_Emb_Q.png?w=180",
+      "icon": "logos/bnp-paribas-cardif.png",
       "role": "In Colombia, its AI handles claims on WhatsApp from documents to payment.",
       "markets": [
         "CO"

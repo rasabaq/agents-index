@@ -770,7 +770,7 @@
       "hq": "US",
       "url": "https://developers.openai.com/commerce",
       "homepage": "https://openai.com/",
-      "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "icon": "logos/openai.png",
       "role": "Co-created the Agentic Commerce Protocol and lets ChatGPT buy from merchants, now mainly through merchant apps, plus a UPI pilot in India.",
       "markets": [
         "US",
@@ -786,7 +786,7 @@
       "hq": "US",
       "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
       "homepage": "https://www.google.com/",
-      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "icon": "logos/google.png",
       "role": "Runs agentic checkout and Universal Cart in AI Mode and Gemini on its open Universal Commerce Protocol for US shoppers, has announced UCP checkout for the UK, and is testing Flipkart checkout in India.",
       "markets": [
         "US",
@@ -809,7 +809,7 @@
       "hq": "US",
       "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft",
       "homepage": "https://www.microsoft.com/",
-      "icon": "https://www.microsoft.com/favicon.ico?v2",
+      "icon": "logos/microsoft.png",
       "role": "Copilot Checkout lets US shoppers buy from PayPal, Stripe and Shopify merchants inside Copilot.",
       "markets": [
         "US"
@@ -823,7 +823,7 @@
       "hq": "US",
       "url": "https://newsroom.paypal-corp.com/2025-11-PayPal-and-Perplexity-Launch-Instant-Buy",
       "homepage": "https://www.perplexity.ai/",
-      "icon": "https://www.perplexity.ai/favicon.svg",
+      "icon": "logos/perplexity.png",
       "role": "Instant Buy lets US users pay merchants with PayPal inside Perplexity answers.",
       "markets": [
         "US"
@@ -837,7 +837,7 @@
       "hq": "US",
       "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
       "homepage": "https://www.aboutamazon.com/",
-      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "icon": "logos/amazon.png",
       "role": "Alexa+ and Alexa for Shopping (with Rufus) order, auto-buy and use Buy for Me on other sites for customers; outside the US Alexa+ is in early access.",
       "markets": [
         "US",
@@ -857,7 +857,7 @@
       "hq": "US",
       "url": "https://corporate.walmart.com/news/2025/06/06/walmart-the-future-of-shopping-is-agentic-meet-sparky",
       "homepage": "https://corporate.walmart.com/",
-      "icon": "https://corporate.walmart.com/content/dam/corporate/site-images/WMT-Spark-New-SparkYellow-RGB.svg",
+      "icon": "logos/walmart.png",
       "role": "Sparky, Walmart's shopping agent, automatically reorders repeat items for US customers; in Mexico, Walmart México's Sparky only gives product advice.",
       "markets": [
         "US",
@@ -872,7 +872,7 @@
       "hq": "IN",
       "url": "https://startuptalky.com/news/flipkart-brings-ai-agents/",
       "homepage": "https://super.money/",
-      "icon": "https://super.money/favicon.ico",
+      "icon": "logos/flipkart-super-money.png",
       "role": "Flipkart's payments app super.money is rolling out agents that shop on Flipkart for users, and Flipkart is Google's checkout test partner in Gemini.",
       "markets": [
         "IN"
@@ -887,7 +887,7 @@
       "hq": "IN",
       "url": "https://razorpay.com/newsroom/razorpay-npci-and-openai-come-together-to-launch-agentic-payments-ushering-in-ai-driven-commerce-at-national-scale/",
       "homepage": "https://razorpay.com/",
-      "icon": null,
+      "icon": "logos/razorpay.png",
       "role": "Agentic Payments lets Indian merchants take UPI payments from ChatGPT and Claude in a pilot.",
       "markets": [
         "IN"
@@ -902,7 +902,7 @@
       "hq": "IN",
       "url": "https://www.business-standard.com/companies/news/razorpay-npci-and-openai-launch-agentic-payments-on-chatgpt-125100900601_1.html",
       "homepage": "https://www.npci.org.in/",
-      "icon": null,
+      "icon": "logos/npci.png",
       "role": "Runs UPI, whose Reserve Pay and UPI Circle features let AI agents pay without a PIN prompt each time, in pilot.",
       "markets": [
         "IN"
@@ -917,7 +917,7 @@
       "hq": "US",
       "url": "https://razorpay.com/newsroom/razorpay-npci-launch-agentic-payments-on-claude-powering-zomato-swiggy-zepto-at-the-india-ai-impact-summit/",
       "homepage": "https://www.anthropic.com/",
-      "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+      "icon": "logos/anthropic.png",
       "role": "Claude can order from Zomato, Swiggy and Zepto with UPI in an Indian pilot, and Indian merchants can take Claude payments through Razorpay.",
       "markets": [
         "IN"
@@ -932,7 +932,7 @@
       "hq": "US",
       "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
       "homepage": "https://stripe.com/",
-      "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+      "icon": "logos/stripe.png",
       "role": "Agentic Commerce Suite and Shared Payment Tokens let merchants list products for agents and accept agent payments.",
       "markets": [
         "US",
@@ -948,7 +948,7 @@
       "hq": "CA",
       "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
       "homepage": "https://www.shopify.com/",
-      "icon": "https://cdn.shopify.com/b/shopify-brochure2-assets/c97c60ca19c64a8b5378d9f9e971f7bd.png",
+      "icon": "logos/shopify.png",
       "role": "Agentic Storefronts puts store catalogs into ChatGPT, Google AI Mode and Gemini, Copilot and Meta; stores can be in any country, but each channel limits who can buy, and Meta's direct checkout shows only to shoppers in the US, Canada, Mexico, Brazil, Japan and Singapore.",
       "markets": [
         "US",
@@ -969,7 +969,7 @@
       "hq": "US",
       "url": "https://paypal.ai/",
       "homepage": "https://www.paypal.com/",
-      "icon": "https://www.paypalobjects.com/marketing/web/icons/monogram/pp64.png",
+      "icon": "logos/paypal.png",
       "role": "Agent Ready and Store Sync let PayPal merchants be found and paid in Copilot, Perplexity and Google AI checkout.",
       "markets": [
         "US"
@@ -984,7 +984,7 @@
       "hq": "US",
       "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta",
       "homepage": "https://about.meta.com/",
-      "icon": null,
+      "icon": "logos/meta.png",
       "role": "Its Muse agent lets shoppers in the US and Canada buy from Shopify stores without leaving Meta.",
       "markets": [
         "US"
@@ -998,7 +998,7 @@
       "hq": "AR",
       "url": "https://www.iproup.com/finanzas/68836-mercado-libre-plan-secreto-mago-ia-manejar-plata-compras-inteligencia-artificial",
       "homepage": "https://www.mercadolibre.com/",
-      "icon": "https://http2.mlstatic.com/ui/navigation/5.6.1/mercadolibre/60x60-precomposed.png",
+      "icon": "logos/mercado-libre.png",
       "role": "Its Mercado Pago assistant, Mago, makes payments and transfers but does not shop on the marketplace; a Mercado Libre buying agent was reported as planned in June 2026 and has not launched.",
       "markets": [],
       "capabilities": [
@@ -1010,7 +1010,7 @@
       "hq": "BR",
       "url": "https://www.magazineluiza.com.br/lp/whatsapp-da-lu",
       "homepage": "https://www.magazineluiza.com.br/",
-      "icon": "https://www.magazineluiza.com.br/favicon.ico",
+      "icon": "logos/magazine-luiza-magalu.png",
       "role": "Its AI assistant Lu sells inside WhatsApp, from product search to Pix or card payment and order tracking.",
       "markets": [
         "BR"
@@ -1025,7 +1025,7 @@
       "hq": "CO",
       "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
       "homepage": "https://www.rappi.com/",
-      "icon": "https://www.rappi.cl/pwa-icons/192x192.png",
+      "icon": "logos/rappi.png",
       "role": "Announced a WhatsApp AI assistant in Colombia that takes orders in plain language and by voice note; it has not launched yet.",
       "markets": [
         "CO"
@@ -1229,6 +1229,7 @@
     },
     {
       "repo": "ONDC-Official/ONDC-Protocol-Specs",
+      "icon": "logos/ondc.png",
       "name": "ONDC Protocol Specs",
       "role": "API specification of India's Open Network for Digital Commerce, which lets any buyer app search and order from sellers on any other app.",
       "capabilities": [

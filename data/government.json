@@ -505,7 +505,7 @@
       "hq": "IN",
       "url": "https://uidai.gov.in",
       "homepage": "https://www.uidai.gov.in/",
-      "icon": "https://www.uidai.gov.in/favicon.ico",
+      "icon": "logos/uidai.png",
       "role": "Runs Aadhaar authentication and eKYC so approved apps can verify a person, and the Udai chatbot for Aadhaar tasks.",
       "markets": [
         "IN"
@@ -520,7 +520,7 @@
       "hq": "IN",
       "url": "https://www.digilocker.gov.in",
       "homepage": "https://www.digilocker.gov.in/",
-      "icon": "https://cdn.digilocker.gov.in/digilocker-landing-page/assets/img/meta/apple-touch-icon.png",
+      "icon": "logos/national-e-governance-division-digilocker.png",
       "role": "Runs DigiLocker and Meri Pehchaan so registered firms can fetch a user's government documents with consent.",
       "markets": [
         "IN"
@@ -534,7 +534,7 @@
       "hq": "IN",
       "url": "https://bhashini.gov.in",
       "homepage": "https://bhashini.gov.in/",
-      "icon": "https://bhashini.gov.in/favicon.ico",
+      "icon": "logos/digital-india-bhashini-division.png",
       "role": "Provides translation and speech models that let government assistants such as Kisan e-Mitra work in Indian languages.",
       "markets": [
         "IN"
@@ -548,7 +548,7 @@
       "hq": "IN",
       "url": "https://www.wadhwaniai.org",
       "homepage": "https://www.wadhwaniai.org/",
-      "icon": "https://www.wadhwaniai.org/wp-content/uploads/2025/09/cropped-Group-4-270x270-1.jpg",
+      "icon": "logos/wadhwani-ai.png",
       "role": "Built the LLM upgrade of Kisan e-Mitra that answers farmer questions and handles grievances.",
       "markets": [
         "IN"
@@ -562,7 +562,7 @@
       "hq": "GB",
       "url": "https://www.gov.uk/government/organisations/government-digital-service",
       "homepage": "https://www.gov.uk/",
-      "icon": "https://www.gov.uk/assets/frontend/govuk-icon-180-d45a306f0549414cfa5085f16e4a3816a77558b139e5bc226f23162d1d0decb0.png",
+      "icon": "logos/government-digital-service-gds.png",
       "role": "Runs GOV.UK One Login, GOV.UK Wallet and GOV.UK Chat in the GOV.UK app.",
       "markets": [
         "GB"
@@ -577,7 +577,7 @@
       "hq": "US",
       "url": "https://www.anthropic.com/news/gov-UK-partnership",
       "homepage": "https://www.anthropic.com/",
-      "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+      "icon": "logos/anthropic.png",
       "role": "Supplies the Claude model behind GOV.UK Chat, according to Civil Service World, and is helping build a GOV.UK assistant pilot for jobseekers.",
       "markets": [
         "GB"
@@ -591,7 +591,7 @@
       "hq": "BR",
       "url": "https://www.serpro.gov.br",
       "homepage": "https://www.serpro.gov.br/",
-      "icon": "https://www.serpro.gov.br/favicon.ico",
+      "icon": "logos/serpro.png",
       "role": "Sells the Datavalid API that lets private apps check faces and personal data against official Brazilian records.",
       "markets": [
         "BR"
@@ -605,7 +605,7 @@
       "hq": "BR",
       "url": "https://www.gov.br/gestao/pt-br",
       "homepage": "https://www.gov.br/",
-      "icon": "https://www.gov.br/++theme++padrao_govbr/favicons/apple-touch-icon.png",
+      "icon": "logos/secretaria-de-governo-digital-mgi.png",
       "role": "Runs the gov.br login and builds Chat GOV.BR through the government AI center.",
       "markets": [
         "BR"
@@ -620,7 +620,7 @@
       "hq": "MX",
       "url": "https://www.gob.mx/atdt",
       "homepage": "https://www.gob.mx/",
-      "icon": null,
+      "icon": "logos/agencia-de-transformacion-digital-y-telecomunicaciones-atdt.png",
       "role": "Runs Llave MX and the Ventanilla 24/7 AI agent on gob.mx.",
       "markets": [
         "MX"
@@ -635,7 +635,7 @@
       "hq": "MX",
       "url": "https://www.ine.mx",
       "homepage": "https://www.ine.mx/",
-      "icon": "https://www.ine.mx/wp-content/uploads/2026/09/cropped-faviconI_NE_2026-180x180.png",
+      "icon": "logos/instituto-nacional-electoral-ine.png",
       "role": "Runs the voter-credential data and face verification service that banks use to confirm identity.",
       "markets": [
         "MX"
@@ -649,7 +649,7 @@
       "hq": "CL",
       "url": "https://digital.gob.cl",
       "homepage": "https://digital.gob.cl/",
-      "icon": "https://cms-dgd-prod.s3-us-west-2.amazonaws.com/static/favicon/apple-icon-57x57.png",
+      "icon": "logos/secretaria-de-gobierno-digital-ministerio-de-hacienda.png",
       "role": "Runs ClaveÚnica and approves which private bodies may use it.",
       "markets": [
         "CL"
@@ -663,7 +663,7 @@
       "hq": "CL",
       "url": "https://www.chileatiende.gob.cl",
       "homepage": "https://www.chileatiende.gob.cl/",
-      "icon": "https://www.chileatiende.gob.cl/images/favicon.ico",
+      "icon": "logos/chileatiende-instituto-de-prevision-social.png",
       "role": "Runs the generative AI assistant that guides people on state trámites.",
       "markets": [
         "CL"
@@ -677,7 +677,7 @@
       "hq": "CO",
       "url": "https://www.registraduria.gov.co",
       "homepage": "https://www.registraduria.gov.co/",
-      "icon": "https://www.registraduria.gov.co/IMG/favicon.png",
+      "icon": "logos/registraduria-nacional-del-estado-civil.png",
       "role": "Issues the Cédula Digital and lets certified operators check identities against its biometric database.",
       "markets": [
         "CO"
@@ -691,7 +691,7 @@
       "hq": "CO",
       "url": "https://www.certicamara.com",
       "homepage": "https://www.certicamara.com/",
-      "icon": "https://web.certicamara.com/sites/default/files/Favicon.gif",
+      "icon": "logos/certicamara.png",
       "role": "Certified biometric operator that connects private firms to Registraduría identity checks.",
       "markets": [
         "CO"
@@ -705,7 +705,7 @@
       "hq": "CO",
       "url": "https://mintic.gov.co",
       "homepage": "https://mintic.gov.co/",
-      "icon": "https://mintic.gov.co/favicon.ico",
+      "icon": "logos/mintic.png",
       "role": "Runs the GOV.CO portal and its Robi assistant, plus the public-sector AI chatbot program.",
       "markets": [
         "CO"
@@ -719,7 +719,7 @@
       "hq": "DE",
       "url": "https://www.bundesdruckerei.de",
       "homepage": "https://www.bundesdruckerei.de/",
-      "icon": "https://www.bundesdruckerei.de/themes/custom/bdr_bootstrap5/assets/img/touch-icons/group/group_desktopicon_120px.png",
+      "icon": "logos/bundesdruckerei-d-trust.png",
       "role": "Provides authorization certificates and eID services so companies can accept the German Online-Ausweis.",
       "markets": [
         "DE"
@@ -733,7 +733,7 @@
       "hq": "DE",
       "url": "https://www.governikus.de",
       "homepage": "https://www.governikus.de/",
-      "icon": "https://www.governikus.de/wp-content/uploads/2026/08/cropped-Governikus_Profil_Avatar-01-180x180.png",
+      "icon": "logos/governikus.png",
       "role": "Runs eID services and the AusweisIDent identification service that plug the Online-Ausweis into private apps.",
       "markets": [
         "DE"
@@ -747,7 +747,7 @@
       "hq": "US",
       "url": "https://login.gov",
       "homepage": "https://login.gov/",
-      "icon": "https://login.gov/apple-touch-icon.png",
+      "icon": "logos/gsa-login-gov.png",
       "role": "Runs Login.gov sign-in and identity proofing for US government services, now accepting mobile driver's licenses.",
       "markets": [
         "US"
@@ -761,7 +761,7 @@
       "hq": "US",
       "url": "https://developers.google.com/wallet/identity/verify",
       "homepage": "https://www.google.com/",
-      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "icon": "logos/google.png",
       "role": "Lets businesses verify state-issued digital IDs and age from Google Wallet through the Digital Credentials API.",
       "markets": [
         "US"
@@ -775,7 +775,7 @@
       "hq": "US",
       "url": "https://www.irs.gov",
       "homepage": "https://www.irs.gov/",
-      "icon": "https://www.irs.gov/themes/custom/pup_base/favicon.ico",
+      "icon": "logos/internal-revenue-service-irs.png",
       "role": "Runs AI voice and chat bots that answer tax questions and set up payment plans.",
       "markets": [
         "US"

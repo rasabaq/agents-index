@@ -354,7 +354,7 @@
       "hq": "US",
       "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-services-gemini-august-2026/",
       "homepage": "https://www.google.com/",
-      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "icon": "logos/google.png",
       "role": "Gemini's Zocdoc connected app finds real open slots and books doctor visits in the US.",
       "markets": [
         "US"
@@ -368,7 +368,7 @@
       "hq": "US",
       "url": "https://hlth.com/insights/news/zocdoc-and-google-bring-real-time-healthcare-appointment-booking-to-gemini",
       "homepage": "https://www.zocdoc.com/",
-      "icon": "https://www.zocdoc.com/favicon.ico",
+      "icon": "logos/zocdoc.png",
       "role": "Doctor booking platform whose real-time slots can be booked inside Google Gemini.",
       "markets": [
         "US"
@@ -382,7 +382,7 @@
       "hq": "GB",
       "url": "https://nhsaccelerator.com/insights/24-7-gp-appointment-booking-is-now-live-in-the-nhs-app-for-more-than-one-million-patients/",
       "homepage": "https://www.rapidhealth.ai/",
-      "icon": "https://cdn.prod.website-files.com/684aec07b9e280670221bbcf/684aec07b9e280670221bc61_App%20Icon.png",
+      "icon": "logos/rapid-health.png",
       "role": "Makes Smart Triage, an AI tool in the NHS App that offers GP slots you then book, at the practices that use it.",
       "markets": [
         "GB"
@@ -396,7 +396,7 @@
       "hq": "FR",
       "url": "https://www.zwp-online.info/zwpnews/dental-news/branchenmeldungen/doctolib-fuhrt-ki-basierten-telefonassistenten-ein",
       "homepage": "https://www.doctolib.de/",
-      "icon": "https://www.doctolib.de/favicon.ico",
+      "icon": "logos/doctolib.png",
       "role": "Booking platform whose AI phone assistant books callers into the calendars of practices that pay for it.",
       "markets": [
         "DE"
@@ -410,7 +410,7 @@
       "hq": "US",
       "url": "https://www.aboutamazon.com/news/retail/amazon-health-ai-agent-one-medical",
       "homepage": "https://www.aboutamazon.com/",
-      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "icon": "logos/amazon.png",
       "role": "Its Health AI sends prescription renewal requests to One Medical providers, filled at Amazon Pharmacy or another pharmacy.",
       "markets": [
         "US"
@@ -424,7 +424,7 @@
       "hq": "US",
       "url": "https://www.marketplace.org/story/2026/06/03/utah-is-experimenting-with-a-new-role-for-ai-renewing-prescriptions",
       "homepage": "https://www.doctronic.ai/",
-      "icon": "https://www.doctronic.ai/apple-touch-icon.png",
+      "icon": "logos/doctronic.png",
       "role": "Its AI renews some chronic-condition prescriptions on its own in a one-year Utah state pilot.",
       "markets": [
         "US"
@@ -438,7 +438,7 @@
       "hq": "US",
       "url": "https://www.uhc.com/news-articles/newsroom/avery-announcement",
       "homepage": "https://www.uhc.com/",
-      "icon": "https://www.uhc.com/etc/designs/uhcfoundation/resources/favicon.ico",
+      "icon": "logos/unitedhealthcare.png",
       "role": "Runs Avery, an AI assistant that answers eligible members' questions about their own benefits, coverage and claims.",
       "markets": [
         "US"
@@ -452,7 +452,7 @@
       "hq": "IN",
       "url": "https://cxotoday.com/press-release/icici-lombard-and-skit-ai-partner-to-launch-a-first-of-its-kind-ai-powered-digital-voice-agent-to-assist-customers-in-tracking-their-claim-status/",
       "homepage": "https://www.icicilombard.com/",
-      "icon": "https://www.icicilombard.com/favicon.ico",
+      "icon": "logos/icici-lombard.png",
       "role": "Insurer that launched an AI voice agent for health claim status in 2022; no current source confirms it still does this.",
       "markets": [
         "IN"

@@ -1,8 +1,15 @@
-// Usage: node scripts/refresh-sites.mjs [category ...] — reads each company's homepage and stores the URL of its
-// icon in the data: apple-touch-icon first, then the largest icon link, then /favicon.ico. The URL must load as an
-// image. When nothing loads (or the site blocks scripts) it stores null and the page shows a monogram instead.
-import { readFile, writeFile } from 'node:fs/promises';
-import { pathToFileURL } from 'node:url';
+// Usage: node scripts/refresh-sites.mjs [category ...] — saves each company's logo as logos/<name>.png and stores that
+// path in its `icon`, so the page loads no image from the company's site. It reads the homepage and tries the
+// apple-touch-icon, then the largest icon link, then /favicon.ico, and shrinks the first image that loads to a 64px
+// PNG with macOS `sips`. A logo already in logos/ is kept: delete the file to fetch it again, or save a better one
+// there by hand (from the brand's own site or press kit). When nothing loads it stores null and the page shows a monogram.
+import { execFile } from 'node:child_process';
+import { existsSync } from 'node:fs';
+import { readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { promisify } from 'node:util';
 import { get } from './http.mjs';
 
 // Many sites refuse requests that do not look like a browser.
@@ -36,32 +43,50 @@ export function iconCandidates(html, base) {
   return [...new Set(urls)].filter((u) => u?.startsWith('https://'));
 }
 
-// Ask the way a browser asks for an <img> from another site, so hotlink rules answer as they would on the page.
+// Ask the way a browser asks for an <img>, since some sites only answer that.
 const AS_IMAGE = { ...BROWSER, accept: 'image/*', 'sec-fetch-dest': 'image', 'sec-fetch-mode': 'no-cors', 'sec-fetch-site': 'cross-site' };
 
-// The first candidate that answers with an image another site may show.
-async function firstImage(urls) {
+// The file name for a company's logo: "Itaú Unibanco" -> "itau-unibanco".
+export const slug = (name) => name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+// Download url and write it to `out` as a PNG at most 64px wide and high. Throws when it is not an image.
+async function save(url, out) {
+  const res = await get(url, AS_IMAGE);
+  const type = res.headers.get('content-type') ?? '';
+  const body = Buffer.from(await res.arrayBuffer());
+  if (!body.length || !(type.startsWith('image/') || (type.includes('octet-stream') && /\.ico(\?|$)/.test(url)))) throw new Error(`not an image: ${url}`);
+  // sips reads an SVG only when the file name says so.
+  const tmp = join(tmpdir(), `logo-${process.pid}-${Math.random().toString(36).slice(2)}${type.includes('svg') ? '.svg' : ''}`);
+  await writeFile(tmp, body);
+  try {
+    await promisify(execFile)('sips', ['-s', 'format', 'png', '-Z', '64', tmp, '--out', out]);
+  } catch (err) {
+    // No sips (Linux): keep a small PNG as it is.
+    if (err.code !== 'ENOENT' || type !== 'image/png' || body.length > 50000) throw err;
+    await writeFile(out, body);
+  } finally {
+    await rm(tmp, { force: true });
+  }
+}
+
+// Save the first candidate that is an image; return whether one was saved.
+async function saveFirst(urls, out) {
   for (const url of urls) {
     try {
-      const res = await get(url, AS_IMAGE);
-      const type = res.headers.get('content-type') ?? '';
-      const body = await res.arrayBuffer();
-      // Cross-Origin-Resource-Policy same-origin or same-site makes browsers block the image on our page.
-      if (/same-(origin|site)/i.test(res.headers.get('cross-origin-resource-policy') ?? '')) continue;
-      if (body.byteLength && (type.startsWith('image/') || (type.includes('octet-stream') && /\.ico(\?|$)/.test(url)))) return url;
+      await save(url, out);
+      return true;
     } catch {}
   }
-  return null;
+  return false;
 }
 
 // When the homepage refuses scripts, /favicon.ico is often still served.
-async function icon(homepage) {
+async function icon(homepage, out) {
   try {
     const res = await get(homepage, BROWSER);
-    return await firstImage(iconCandidates(await res.text(), res.url));
+    return await saveFirst(iconCandidates(await res.text(), res.url), out);
   } catch (err) {
-    const ico = await firstImage([new URL('/favicon.ico', homepage).href]);
-    if (ico) return ico;
+    if (await saveFirst([new URL('/favicon.ico', homepage).href], out)) return true;
     throw err;
   }
 }
@@ -73,22 +98,23 @@ async function main() {
   const file = (id) => new URL(`../data/${id}.json`, import.meta.url);
   const meta = JSON.parse(await readFile(file('meta'), 'utf8'));
   const ids = process.argv.slice(2).length ? process.argv.slice(2) : meta.categories.map((c) => c.id);
-  const cache = new Map(); // homepage -> Promise of an icon URL, so a company listed in several files is read once
+  const cache = new Map(); // logo path -> Promise of the icon, so a company listed in several files is read once
   const problems = [];
-  const lookup = (homepage) => {
-    if (!cache.has(homepage)) {
-      cache.set(homepage, icon(homepage).catch((err) => {
+  const lookup = ({ name, homepage }) => {
+    const path = `logos/${slug(name)}.png`, out = fileURLToPath(new URL(`../${path}`, import.meta.url));
+    if (!cache.has(path)) {
+      cache.set(path, existsSync(out) ? Promise.resolve(path) : icon(homepage, out).then((ok) => (ok ? path : null), (err) => {
         problems.push(`${homepage}: ${err.message}`);
         return null;
       }));
     }
-    return cache.get(homepage);
+    return cache.get(path);
   };
   for (const id of ids) {
     const data = JSON.parse(await readFile(file(id), 'utf8'));
     const queue = [...(data.companies ?? []).keys()];
     await Promise.all(Array.from({ length: 6 }, async () => {
-      for (let i; (i = queue.shift()) !== undefined; ) data.companies[i] = after(data.companies[i], 'homepage', { icon: await lookup(data.companies[i].homepage) });
+      for (let i; (i = queue.shift()) !== undefined; ) data.companies[i] = after(data.companies[i], 'homepage', { icon: await lookup(data.companies[i]) });
     }));
     await writeFile(file(id), `${JSON.stringify(data, null, 2)}\n`);
     const n = data.companies?.length ?? 0;
