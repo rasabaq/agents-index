@@ -33,7 +33,7 @@ The rules:
 - On a cell that is not live, you can add `"gapReason"` with the main reason: one of the ids in `gapReasons` in `data/meta.json`, such as `"no-rule"`. Use `"pilot-only"` and `"assist-only"` only on a `limited` cell.
 - Never invent a URL.
 
-If you cannot edit the file, open a [data correction issue](https://github.com/rasabaq/ai-agent-observatory/issues/new?template=data-correction.yml) with the source, and we will make the change.
+If you cannot edit the file, open a [data correction issue](https://github.com/rasabaq/agents-index/issues/new?template=data-correction.yml) with the source, and we will make the change.
 
 ## Add a category
 

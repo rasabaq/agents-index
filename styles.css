@@ -112,6 +112,9 @@ select, option { color-scheme: dark; }
 .nav nav { display: flex; gap: 2px; margin-left: auto; }
 .nav nav a { padding: 7px 10px; border-radius: 8px; color: var(--ink-2); text-decoration: none; font: 500 11.5px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
 .nav nav a:hover { background: var(--surface-2); color: var(--ink); }
+.nav-gh { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; margin-left: -12px; border-radius: 8px; color: var(--ink-2); }
+.nav-gh:hover { background: var(--surface-2); color: var(--ink); }
+.nav-gh svg { width: 18px; height: 18px; }
 
 /* hero */
 .hero { padding-top: 96px; padding-bottom: 48px; }
