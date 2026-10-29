@@ -122,7 +122,7 @@
         ${early ? `${early} source${early > 1 ? 's' : ''} older than 2016 ${early > 1 ? 'sit' : 'sits'} in the “before 2016” column.` : ''}
         ${yearOnly ? `${yearOnly} source${yearOnly > 1 ? 's give' : ' gives'} only a year: ${yearOnly > 1 ? 'they sit' : 'it sits'} mid-year and ${yearOnly > 1 ? 'are' : 'is'} left out of the quarter bars.` : ''}
         ${multi ? `${multi} source${multi > 1 ? 's' : ''} support${multi > 1 ? '' : 's'} two categories and ${multi > 1 ? 'appear' : 'appears'} in both lanes.` : ''}
-        The last quarter runs only to ${parse(ctx.meta.asOf).label}. Click a dot to open its source; with a keyboard, Tab into the chart and move between dots with the arrow keys.</p>`;
+        The last quarter runs only to ${parse(ctx.meta.asOf).label}. Pick a dot to open its source; with a keyboard, Tab into the chart and move between dots with the arrow keys.</p>`;
     const wrap = el.querySelector('.scroll');
 
     el.querySelectorAll('[data-c]').forEach((b) => b.addEventListener('click', () => {
@@ -190,7 +190,8 @@
       const maxQ = d3.max(bars, (q) => q.all);
       const stripTop = phone ? 22 : 18, stripH = 52;
       const yq = d3.scaleLinear().domain([0, maxQ]).range([0, stripH]);
-      const annTop = stripTop + stripH + 8, annH = 26;
+      const base = stripTop + stripH;
+      const annTop = base + 22, annH = 26; // the dates under the bars, then the key moment badges
 
       // Lanes.
       let y = annTop + annH;
@@ -223,8 +224,10 @@
       const g = svg.append('g');
       for (const [d, t, anchor = 'middle'] of ticks) {
         g.append('line').attr('class', 'grid').attr('x1', x(d)).attr('x2', x(d)).attr('y1', annTop + annH).attr('y2', lanesBottom + 4);
-        g.append('text').attr('class', `tick${/^\d/.test(t) ? ' year' : ''}`).attr('x', x(d)).attr('y', lanesBottom + 18)
-          .attr('text-anchor', anchor).text(t);
+        // the dates show under the bar strip and again under the lanes, so a tall chart has them at both ends
+        for (const ty of [base + 14, lanesBottom + 18]) {
+          g.append('text').attr('class', `tick${/^\d/.test(t) ? ' year' : ''}`).attr('x', x(d)).attr('y', ty).attr('text-anchor', anchor).text(t);
+        }
       }
       // "Before 2016" column.
       g.append('line').attr('class', 'lane-rule').attr('x1', labelW + binW + 6).attr('x2', labelW + binW + 6).attr('y1', stripTop).attr('y2', lanesBottom);
@@ -240,7 +243,6 @@
         const r = Math.min(4, w / 2, h);
         return `M${x},${base}V${base - h + r}Q${x},${base - h} ${x + r},${base - h}H${x + w - r}Q${x + w},${base - h} ${x + w},${base - h + r}V${base}Z`;
       };
-      const base = stripTop + stripH;
       for (const q of bars) {
         const slot = q.xb - q.xa;
         const w = Math.max(1, Math.min(20, slot - (slot > 6 ? 3 : 1)));
@@ -311,17 +313,21 @@
         }
         if (d) ctx.tip.show(e, tipHtml(d.s)); else ctx.tip.hide();
       };
-      svg.on('pointermove', (e) => {
+      // The dot within 14px of the pointer. The click looks it up again: a finger tap sends no pointermove.
+      const nearest = (e) => {
         const [mx, my] = d3.pointer(e);
-        if (my < annTop + annH) return setHot(null);
-        const d = dots[delaunay.find(mx, my)];
-        setHot(d && Math.hypot(d.x - mx, d.cy - my) < 14 ? d : null, e);
+        const d = my < annTop + annH ? null : dots[delaunay.find(mx, my)];
+        return d && Math.hypot(d.x - mx, d.cy - my) < 14 ? d : null;
+      };
+      svg.on('pointermove', (e) => {
+        setHot(nearest(e), e);
         svg.style('cursor', hot ? 'pointer' : null);
       }).on('pointerleave', () => setHot(null))
         .on('click', (e) => {
           if (e.detail === 0) return; // keyboard Enter on a focused link opens it natively
           e.preventDefault();
-          if (hot) window.open(hot.s.url, '_blank', 'noopener,noreferrer');
+          const d = nearest(e);
+          if (d) window.open(d.s.url, '_blank', 'noopener,noreferrer');
         });
 
       wrap.replaceChildren(svg.node());
