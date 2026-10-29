@@ -75,13 +75,11 @@ function edgeFade(el) {
   more();
 }
 
-const num = (i) => String(i + 1).padStart(2, '0');
 const slug = (title) => title.toLowerCase().replace(/\W+/g, '-');
 
 function render(ctx) {
   const views = Object.fromEntries((window.CHARTS ?? []).map((v) => [v.id, v]));
-  const slots = [...document.querySelectorAll('[data-chart]')];
-  slots.forEach((slot, i) => {
+  document.querySelectorAll('[data-chart]').forEach((slot) => {
     const v = views[slot.dataset.chart];
     if (!v) return console.error(`chart ${slot.dataset.chart} is not registered`);
     slot.id = `v-${v.id}`;
@@ -89,7 +87,7 @@ function render(ctx) {
     slot.setAttribute('aria-labelledby', `v-${v.id}-h`);
     slot.innerHTML = `
       <div class="view-win">
-        <div class="view-bar" aria-hidden="true"><span class="view-app"><i></i>${num(i)} / ${String(slots.length).padStart(2, '0')}</span><span class="view-path">charts/<b>${slug(v.title)}</b></span><span class="view-fill"></span></div>
+        <div class="view-bar" aria-hidden="true"><span class="view-app"><i></i>Chart</span><span class="view-path">charts/<b>${slug(v.title)}</b></span><span class="view-fill"></span></div>
         <div class="view-head"><h2 id="v-${v.id}-h">${esc(v.title)}</h2><p>${esc(typeof v.blurb === 'function' ? v.blurb(ctx) : v.blurb)}</p></div>
         <div class="view-frame" data-view="${v.id}"></div>
       </div>`;

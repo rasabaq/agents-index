@@ -1,45 +1,10 @@
-// The tier list and the numbers band. Loads the same data as app.js and draws two sections of its own.
-import { TIERS, tierOf, scoreCountries, startCountry } from './src/observatory.js';
-
+// The numbers band ("Counted cell by cell"). Loads the same data as app.js and draws its own section.
 const $ = (sel) => document.querySelector(sel);
-const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
   if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
   return r.json();
 });
-const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
-const WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
-const word = (n) => WORDS[n] ?? String(n);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* ---------- tier list ---------- */
-
-const range = (t, i) => (i === 0 ? `≥ ${t.min}` : t.min === 0 ? `< ${TIERS[i - 1].min}` : `${t.min}–${TIERS[i - 1].min - 1}`);
-
-// A tile is a country picker like the others on the page: app.js selects it and marks it (aria-current).
-const tile = (r, sel) => `
-  <li><a class="tile" href="#country=${esc(r.code)}" data-go-country="${esc(r.code)}" aria-current="${r.code === sel}" aria-label="${esc(r.name)}, score ${r.score}">
-    <span class="tile-id"><span class="tile-flag" aria-hidden="true">${emoji(r.code)}</span><b>${esc(r.code)}</b></span>
-    <span class="tile-v">${r.score}</span>
-    <span class="tile-n">${esc(r.name)}</span>
-    <span class="tile-bar" aria-hidden="true"><b style="--w:${r.score}%"></b></span>
-  </a></li>`;
-
-function renderTiers(ranking) {
-  const sel = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
-  $('[data-tiers-title]').textContent = `${word(TIERS.length)} tiers, ${word(ranking.length).toLowerCase()} countries.`;
-  $('[data-cuts]').innerHTML = TIERS.map((t, i) => `<span class="tier-${t.letter.toLowerCase()}"><b>${t.letter}</b>${range(t, i)}</span>`).join('');
-  $('[data-tiers]').innerHTML = TIERS.map((t, i) => {
-    const rows = ranking.filter((r) => tierOf(r.score) === t.letter);
-    const tied = new Set(rows.map((r) => r.score)).size < rows.length;
-    return `
-      <li class="tier-row tier-${t.letter.toLowerCase()}">
-        <p class="tier-l"><b><span class="sr-only">Tier </span>${t.letter}</b><span>${range(t, i)}</span></p>
-        <ul class="tier-r">${rows.length ? rows.map((r) => tile(r, sel)).join('') : '<li class="tile-0">No country yet</li>'}</ul>
-        <p class="tier-k">${rows.length} ${rows.length === 1 ? 'country' : 'countries'}${tied ? ' · tied' : ''}</p>
-      </li>`;
-  }).join('');
-}
 
 /* ---------- numbers band: a magenta dither field shown only inside 5x7 dot-matrix numerals ---------- */
 
@@ -259,11 +224,10 @@ function startBand() {
 try {
   const meta = await getJson('meta');
   const categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
-  renderTiers(scoreCountries(meta, categories));
   renderBand(meta, categories);
   startBand();
 } catch (err) {
-  // app.js already tells the reader the data did not load; hide the empty shells.
+  // app.js already tells the reader the data did not load; hide the empty band.
   document.querySelectorAll('[data-sections]').forEach((el) => (el.hidden = true));
   console.error(err);
 }

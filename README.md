@@ -25,8 +25,12 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `docs/methodology.md` | How the data is collected and scored |
-| `index.html`, `app.js`, `hero.js`, `sections.js` | The site: the hero, then a console (country list, status matrix, ranking, categories, newest sources), tiers, companies and method |
-| `styles.css`, `console.css`, `hero.css`, `sections.css` | Shared tokens (also used by the charts), then the home page parts |
+| `index.html` | The page, top to bottom: the hero, the world map, the console (country view, status matrix, ranking, categories, newest sources), the numbers band, the Compare countries charts, Companies (with the flows and network charts), Open source, the timeline and Method |
+| `app.js`, `hero.js`, `sections.js` | The console, the hero, and the numbers band |
+| `charts/charts.js`, `charts/viz-*.js` | The ten charts: `charts.js` loads the data once and draws each chart into its `<section data-chart="<id>">` slot in `index.html` |
+| `styles.css`, `console.css`, `hero.css`, `sections.css`, `charts/charts.css` | Shared tokens, then the home page parts and the chart windows |
+| `scripts/` | Data checks and refresh scripts run by `npm` |
+| `test/` | Node tests for scoring, validation and the data |
 
 ## Update the data
 
