@@ -42,7 +42,7 @@
 .v-compare .vc-fill { position: absolute; top: 0; bottom: 0; background: var(--accent); }
 .v-compare .vc-fill.l { right: 50%; border-radius: 4px 0 0 4px; }
 .v-compare .vc-fill.r { left: 50%; border-radius: 0 4px 4px 0; background: var(--sunrise); }
-.v-compare .vc-verdict { font: 400 11px/1.3 var(--mono); color: var(--muted); white-space: nowrap; }
+.v-compare .vc-verdict { font: 400 11px/1.3 var(--mono); color: var(--muted); text-wrap: balance; }
 .v-compare .vc-verdict b { font-weight: 500; color: var(--ink); }
 .v-compare .vc-chev { position: absolute; right: 10px; top: 50%; width: 14px; height: 14px; margin-top: -7px; fill: none; stroke: var(--muted); stroke-width: 1.8; transition: transform 0.15s ease; }
 .v-compare .vc-row[aria-expanded='true'] .vc-chev { transform: rotate(180deg); }
@@ -77,7 +77,7 @@
   .v-compare .vc-detail { grid-template-columns: 1fr; padding: 4px 4px 18px; }
 }`;
 
-  const pts = (n) => `${n} ${n === 1 ? 'pt' : 'pts'}`;
+  const pts = (n) => `${n}\u00a0${n === 1 ? 'pt' : 'pts'}`;
 
   (window.CHARTS ??= []).push({
     id: 'compare',
@@ -99,7 +99,7 @@
       const n = ctx.capabilities.length;
       const state = { a: 'US', b: 'CL', only: false, open: new Set() };
 
-      const opts = ctx.meta.countries.map((c) => `<option value="${c.code}">${emoji(c.code)} ${esc(c.name)}</option>`).join('');
+      const opts = ctx.ranking.map((c) => `<option value="${c.code}">${emoji(c.code)} ${esc(c.name)}</option>`).join('');
       el.classList.add('v-compare');
       el.innerHTML = `
         <div class="vc-controls">
@@ -158,7 +158,7 @@
             </div>
             ${rows.map(({ cap, d }) => {
               const g = Math.abs(d);
-              const verdict = d > 0 ? `← <b>${a}</b> ahead by ${pts(g)}` : d < 0 ? `<b>${b}</b> ahead by ${pts(g)} →` : 'Same in both';
+              const verdict = d > 0 ? `←\u00a0<b>${a}</b> ahead by ${pts(g)}` : d < 0 ? `<b>${b}</b> ahead by ${pts(g)}\u00a0→` : 'Same in both';
               const open = state.open.has(cap.id);
               const did = `vc-d-${cap.id.replace(/\W/g, '-')}`;
               return `<div class="vc-item">
@@ -183,7 +183,7 @@
         const la = ctx.byCode[a].counts.live, lb = ctx.byCode[b].counts.live;
         $('.vc-head').textContent = `In ${the(a)} an AI agent can do ${la} of ${n} things today. In ${the(b)} it can do ${lb}. `
           + (gaps ? `Here ${gaps === 1 ? 'is the 1 gap' : `are the ${gaps} gaps`}.` : 'There are no gaps.');
-        $('.vc-sub').textContent = `“Today” means live for ordinary people. ${cap1(the(a))} is ahead on ${ahead}, ${the(b)} is ahead on ${behind}, and they are level on ${n - gaps}.`;
+        $('.vc-sub').textContent = `“Today” means live for ordinary people or businesses. ${cap1(the(a))} is ahead on ${ahead}, ${the(b)} is ahead on ${behind}, and they are level on ${n - gaps}.`;
       }
 
       el.querySelectorAll('select').forEach((sel) => sel.addEventListener('change', () => {
