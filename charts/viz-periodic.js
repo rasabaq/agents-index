@@ -2,7 +2,7 @@
 (window.CHARTS ??= []).push({
   id: 'periodic',
   title: 'Periodic table',
-  blurb: 'Which agent capabilities are everywhere, and which are rare? Each tile is one capability; the big number counts the countries where it is live, and the squares show every country in ranking order. Click a tile for notes and sources.',
+  blurb: 'Which agent capabilities are everywhere, and which are rare? Each tile is one capability; the big number counts the countries where it is live, and the marks show every country in ranking order. Click a tile for notes and sources.',
   render(el, ctx) {
     const { esc, flag, STATUSES } = ctx;
     const ORDER = ['live', 'limited', 'announced', 'none'];
@@ -24,7 +24,7 @@
       return a[0].toUpperCase() + two.toLowerCase();
     };
     const symbol = (cap) => SYMBOLS[cap.id] ?? symbolOf(cap.id);
-    const countries = ctx.ranking; // squares follow the ranking, best first
+    const countries = ctx.ranking; // marks follow the ranking, best first
     const cell = (cap, code) => cap.countries[code] ?? { status: 'none', note: '', evidence: [] };
     const live = (cap) => countries.filter((c) => cell(cap, c.code).status === 'live').length;
     const points = (cap) => countries.reduce((s, c) => s + STATUSES[cell(cap, c.code).status].points, 0);
@@ -40,20 +40,23 @@
 .v-periodic .pt-legend { margin-bottom: 24px; align-items: center; }
 .v-periodic .pt-legend > span { display: inline-flex; align-items: center; gap: 8px; }
 .v-periodic .pt-legend .low { margin: 0; }
-.v-periodic .pt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 28px 12px; align-items: start; }
-.v-periodic .pt-head { margin: 0 0 10px; padding-top: 10px; border-top: 2px solid var(--line); font: 500 10.5px/1.3 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
-.v-periodic .pt-tiles { display: grid; gap: 8px; }
-.v-periodic .pt-tile { container-type: inline-size; display: block; width: 100%; padding: 12px 12px 8px; border: 1px solid var(--line); border-radius: 10px; background: rgba(3, 3, 8, 0.55); text-align: left; cursor: pointer; transition: border-color 0.12s ease, box-shadow 0.12s ease; }
+.v-periodic .pt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); column-gap: 12px; margin-top: -28px; }
+/* each category spans one row for its head and one per tile (--span), on rows shared across the grid,
+   so tiles side by side keep the same height and their status marks line up */
+.v-periodic .pt-grid > section { display: grid; grid-row: span var(--span); grid-template-rows: subgrid; }
+.v-periodic .pt-head { margin: 28px 0 2px; padding-top: 10px; border-top: 2px solid var(--line); font: 500 10.5px/1.3 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+.v-periodic .pt-tiles { display: contents; }
+.v-periodic .pt-tile { container-type: inline-size; display: flex; flex-direction: column; width: 100%; margin-top: 8px; padding: 12px 12px 8px; border: 1px solid var(--line); border-radius: 10px; background: rgba(3, 3, 8, 0.55); text-align: left; cursor: pointer; transition: border-color 0.12s ease, box-shadow 0.12s ease; }
 .v-periodic .pt-tile:hover { border-color: var(--line-strong); }
 .v-periodic .pt-tile[aria-pressed='true'] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-.v-periodic .pt-in { display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'sym num' 'name name' 'sq sq'; gap: 8px; align-items: start; }
+.v-periodic .pt-in { flex: 1; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr auto; grid-template-areas: 'sym num' 'name name' 'sq sq'; gap: 8px; align-items: start; }
 /* the element symbol is the one pixel moment: Jersey 10 in the category color */
 .v-periodic .pt-sym { grid-area: sym; font: 400 34px/0.75 var(--pixel); color: var(--cat); }
 .v-periodic .pt-num { grid-area: num; text-align: right; line-height: 1; }
 .v-periodic .pt-num b { font-size: 28px; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); }
 .v-periodic .pt-num span { display: block; margin-top: 5px; font: 400 10.5px/1 var(--mono); color: var(--muted); }
 .v-periodic .pt-name { grid-area: name; min-height: 2.7em; font-size: 13px; line-height: 1.35; color: var(--ink-2); }
-.v-periodic .pt-sq { grid-area: sq; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 2px; }
+.v-periodic .pt-sq { grid-area: sq; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 2px; }
 /* one column per country: status capsule, then flag over code. Hovering a country lights its column in every tile. */
 .v-periodic .pt-sq > span { display: grid; grid-template-rows: 14px auto; justify-items: center; align-items: center; gap: 5px; padding: 6px 0 5px; border-radius: 6px; }
 .v-periodic .pt-sq em { display: grid; justify-items: center; gap: 4px; font: 500 9.5px/1 var(--mono); font-style: normal; letter-spacing: 0.06em; color: var(--muted); }
@@ -80,7 +83,7 @@
 .v-periodic .pt-ev a { font-weight: 500; }
 .v-periodic .pt-ev span { color: var(--muted); }
 @container (min-width: 300px) {
-  .v-periodic .pt-in { grid-template-columns: 36px minmax(0, 1fr) auto; grid-template-areas: 'sym name num' 'sq sq sq'; gap: 10px 10px; }
+  .v-periodic .pt-in { grid-template-columns: 36px minmax(0, 1fr) auto; grid-template-rows: 1fr auto; grid-template-areas: 'sym name num' 'sq sq sq'; gap: 10px 10px; }
   .v-periodic .pt-sym { font-size: 30px; }
   .v-periodic .pt-name { min-height: 0; padding-top: 2px; font-size: 13.5px; color: var(--ink); }
 }
@@ -108,8 +111,9 @@
     const everywhere = all.filter((c) => c.live === n).length;
     const single = all.filter((c) => c.live === 1);
     const where = [...new Set(single.map((c) => countries.find((k) => cell(c, k.code).status === 'live').code))];
+    const the = (code) => (/^United /.test(ctx.byCode[code].name) ? `the ${ctx.byCode[code].name}` : ctx.byCode[code].name);
     const summary = `<b>${everywhere} of ${all.length}</b> capabilities are live in all ${n} countries. `
-      + (single.length ? `<b>${single.length}</b> ${single.length === 1 ? 'is' : 'are'} live in just one country${where.length === 1 ? `, ${single.length === 1 ? 'the' : 'all in the'} ${esc(ctx.byCode[where[0]].name)}` : ''}.` : '');
+      + (single.length ? `<b>${single.length}</b> ${single.length === 1 ? 'is' : 'are'} live in just one country${where.length === 1 ? `, ${single.length === 1 ? '' : 'all in '}${esc(the(where[0]))}` : ''}.` : '');
 
     const square = (cap, c) => {
       const x = cell(cap, c.code);
@@ -129,9 +133,9 @@
       <div class="chart-legend pt-legend">
         ${ORDER.map((s) => `<span><i class="smark ${s}"></i>${esc(STATUSES[s].label)}</span>`).join('')}
         <span><span class="low"></span>Low confidence: sources are thin</span>
-        <span>Squares follow the country ranking, best first</span>
+        <span>Marks follow the country ranking, best first</span>
       </div>
-      <div class="pt-grid" role="group" aria-label="Periodic table of ${all.length} agent capabilities, grouped by category">
+      <div class="pt-grid" style="--span: ${1 + Math.max(...groups.map((g) => g.caps.length))}" role="group" aria-label="Periodic table of ${all.length} agent capabilities, grouped by category">
         ${groups.map((g) => `<section>
           <h3 class="pt-head" style="border-top-color: ${ctx.catIndex[g.id].color}">${esc(ctx.catName(g.id))}</h3>
           <div class="pt-tiles">${g.caps.map(tile).join('')}</div>
@@ -175,7 +179,7 @@
       }
       panel.innerHTML = detail(byId[open]);
       if (focus) panel.querySelector('h3').focus({ preventScroll: true });
-      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      panel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
     };
 
     root.addEventListener('click', (e) => {
