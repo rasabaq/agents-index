@@ -345,7 +345,7 @@
         },
         "CL": {
           "status": "none",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "No mainstream way to pay inside a chat was found: WhatsApp payments are not offered in Chile, and Stripe, the main Telegram payment provider, does not sign up businesses there.",
           "evidence": [
             {
@@ -366,7 +366,7 @@
         },
         "CO": {
           "status": "none",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "No mainstream way to pay inside a chat was found: WhatsApp payments are not offered in Colombia, and Stripe, the main Telegram payment provider, does not sign up businesses there.",
           "evidence": [
             {

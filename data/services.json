@@ -83,7 +83,7 @@
         },
         "BR": {
           "status": "none",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "Google AI Mode table booking has not launched in Brazil, and ChatGPT's OpenTable, Resy and Yelp reservations have little or no Brazilian coverage; no iFood or local booking agent was found.",
           "evidence": [
             {
@@ -111,7 +111,7 @@
         },
         "CL": {
           "status": "none",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "No agent booking was found: Google AI Mode booking has not launched in Chile and OpenTable, the global ChatGPT partner, has little Chilean coverage.",
           "evidence": [
             {
@@ -125,7 +125,7 @@
         },
         "CO": {
           "status": "none",
-          "gapReason": "rail-closed",
+          "gapReason": "not-launched",
           "note": "No agent booking was found: Google AI Mode booking has not launched in Colombia and OpenTable, the global ChatGPT partner, has little Colombian coverage.",
           "evidence": [
             {
