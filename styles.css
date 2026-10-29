@@ -50,8 +50,18 @@
   --font: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --pixel: 'Jersey 10', 'JetBrains Mono', ui-monospace, monospace;
-  --flag: 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  --flag: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji', sans-serif;
 }
+
+/* Fonts are self-hosted in fonts/ (latin subset, OFL licenses next to them), so no third-party request can hold up the page.
+   Flags: fonts/flags.woff2 is Noto Color Emoji cut down to the flags the data uses (fonts/flags.py builds it).
+   --flag lists Apple Color Emoji first and local() prefers an installed Noto Color Emoji, so Macs, iPhones and Android
+   phones never download it. Windows has no flag emoji, so it downloads the file (about 60 KB).
+   Flags in it: AE AR AT BR CA CL CN CO DE EE ES EU FR GB GR IN MX NL SE US */
+@font-face { font-family: 'Geist'; font-weight: 300 700; font-display: swap; src: url('fonts/geist-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 500; font-display: swap; src: url('fonts/jetbrains-mono-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Jersey 10'; font-weight: 400; font-display: swap; src: url('fonts/jersey-10-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Noto Color Emoji'; font-display: swap; src: local('Noto Color Emoji'), url('fonts/flags.woff2') format('woff2'); unicode-range: U+1F1E6-1F1FF; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; background: var(--page); }
