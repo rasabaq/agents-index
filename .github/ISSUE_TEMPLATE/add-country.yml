@@ -1,0 +1,27 @@
+name: Add a country
+description: Ask us to track a country we don't cover yet.
+title: "Add country: "
+labels: ["new-country"]
+body:
+  - type: markdown
+    attributes:
+      value: A new country needs a status for every capability, so it takes a while. Sources you already know help us start.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      placeholder: Argentina (AR)
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Pages that show what AI agents can or cannot do there, such as a launch post, a regulator page, or a supported-countries list. Primary sources first.
+      placeholder: https://
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Can you help?
+      options:
+        - label: I can research some of the cells and open a pull request.
