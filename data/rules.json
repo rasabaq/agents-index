@@ -389,7 +389,7 @@
       "hq": "IN",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2186639&reg=3&lang=2",
       "homepage": "https://www.meity.gov.in/",
-      "icon": "https://www.meity.gov.in/favicon.svg",
+      "icon": "logos/ministry-of-electronics-and-it-meity.png",
       "role": "Wrote the voluntary India AI Governance Guidelines and the 2026 IT Rules changes that require labels on AI-made media.",
       "markets": [
         "IN"
@@ -403,7 +403,7 @@
       "hq": "BR",
       "url": "https://www12.senado.leg.br/noticias/videos/2024/12/marco-da-inteligencia-artificial-e-aprovado-em-plenario-e-vai-a-camara",
       "homepage": "https://www.senado.leg.br/",
-      "icon": "https://www12.senado.leg.br/hpsenado/++plone++senado_hpsenado/favicon/apple-touch-icon.png",
+      "icon": "logos/senado-federal-brazil.png",
       "role": "Passed the AI framework bill (PL 2338/2023); the Chamber of Deputies is still reviewing it.",
       "markets": [
         "BR"
@@ -431,7 +431,7 @@
       "hq": "CO",
       "url": "https://mintic.gov.co/portal/inicio/Sala-de-prensa/Noticias/401055:Colombia-elige-una-inteligencia-artificial-centrada-en-la-vida-los-derechos-y-el-interes-publico-con-radicacion-del-proyecto-de-ley-de-IA",
       "homepage": "https://mintic.gov.co/",
-      "icon": "https://mintic.gov.co/favicon.ico",
+      "icon": "logos/mintic.png",
       "role": "Co-filed the government's 2025 AI bill, which Congress archived without a first vote.",
       "markets": [
         "CO"
@@ -445,7 +445,7 @@
       "hq": "GB",
       "url": "https://www.gov.uk/government/consultations/modernising-payment-services-regulation",
       "homepage": "https://www.gov.uk/government/organisations/hm-treasury",
-      "icon": "https://www.gov.uk/assets/frontend/govuk-icon-180-d45a306f0549414cfa5085f16e4a3816a77558b139e5bc226f23162d1d0decb0.png",
+      "icon": "logos/hm-treasury.png",
       "role": "Consulted in July 2026 on whether payment rules on consent and liability fit AI agents.",
       "markets": [
         "GB"
@@ -459,7 +459,7 @@
       "hq": "US",
       "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1005/section-1005.6",
       "homepage": "https://www.consumerfinance.gov/",
-      "icon": "https://www.consumerfinance.gov/favicon.ico",
+      "icon": "logos/consumer-financial-protection-bureau.png",
       "role": "Regulation E sets who bears the loss on unauthorized electronic payments.",
       "markets": [
         "US"
@@ -473,7 +473,7 @@
       "hq": "US",
       "url": "https://www.americanexpress.com/en-us/newsroom/articles/innovation/american-express-debuts-agentic-commerce-experiences--ace--devel.html",
       "homepage": "https://www.americanexpress.com/",
-      "icon": "https://www.americanexpress.com/favicon.ico",
+      "icon": "logos/american-express.png",
       "role": "Offers protection for purchases made by registered AI agents on its cards, as a company product.",
       "markets": [
         "US"
@@ -487,7 +487,7 @@
       "hq": "IN",
       "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
       "homepage": "https://www.rbi.org.in/",
-      "icon": null,
+      "icon": "logos/reserve-bank-of-india-rbi.png",
       "role": "Limits customer loss on unauthorized electronic payments and sets refund deadlines for banks.",
       "markets": [
         "IN"
@@ -501,7 +501,7 @@
       "hq": "BR",
       "url": "https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Guia_MED.pdf",
       "homepage": "https://www.bcb.gov.br/",
-      "icon": "https://www.bcb.gov.br/favicon.ico",
+      "icon": "logos/banco-central-do-brasil.png",
       "role": "Runs the Pix refund scheme (MED) for fraud and bank errors.",
       "markets": [
         "BR"
@@ -543,7 +543,7 @@
       "hq": "US",
       "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149",
       "homepage": "https://capitol.texas.gov/",
-      "icon": "https://capitol.texas.gov/images/capitol_57.png",
+      "icon": "logos/texas-legislature.png",
       "role": "Passed the Texas Responsible AI Governance Act, which has applied since 1 January 2026.",
       "markets": [
         "US"
@@ -557,7 +557,7 @@
       "hq": "GB",
       "url": "https://committees.parliament.uk/publications/54971/documents/304882/default/",
       "homepage": "https://committees.parliament.uk/committee/93/human-rights-joint-committee/",
-      "icon": "https://committees.parliament.uk/dist/favicon.ico",
+      "icon": "logos/joint-committee-on-human-rights-uk-parliament.png",
       "role": "Asked the government in September 2026 for a dedicated AI Bill.",
       "markets": [
         "GB"
@@ -571,7 +571,7 @@
       "hq": "EU",
       "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
       "homepage": "https://commission.europa.eu/",
-      "icon": "https://commission.europa.eu/themes/contrib/oe_theme/images/favicons/ec/favicon.png",
+      "icon": "logos/european-commission.png",
       "role": "Oversees the EU AI Act, which is in force in Germany.",
       "markets": [
         "DE"

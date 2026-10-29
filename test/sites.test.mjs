@@ -1,17 +1,18 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validate } from '../src/observatory.js';
-import { iconCandidates } from '../scripts/refresh-sites.mjs';
+import { iconCandidates, slug } from '../scripts/refresh-sites.mjs';
 
 const company = (over) => ({ name: 'Co', role: 'r', url: 'https://example.com/news', homepage: 'https://co.example/', icon: null, markets: [], capabilities: [], ...over });
 const check = (co) => validate({ countries: [], categories: [{ id: 'a', short: 'A', can: 'do a' }] }, [{ category: 'a', capabilities: [{ id: 'a.x', name: 'x', question: 'q?', countries: {} }], companies: [co] }]).join('\n');
 
 test('validate checks company homepages and icons', () => {
   assert.equal(check(company()), '');
-  assert.equal(check(company({ icon: 'https://co.example/icon.png' })), '');
+  assert.equal(check(company({ icon: 'logos/co.png' })), '');
   assert.match(check(company({ homepage: undefined })), /needs a homepage/);
   assert.match(check(company({ icon: undefined })), /no icon yet; run npm run refresh-sites/);
-  assert.match(check(company({ icon: 'http://co.example/icon.png' })), /icon must be an https URL/);
+  assert.match(check(company({ icon: 'https://co.example/icon.png' })), /icon must be a logos\/<name>.png path/);
+  assert.equal(slug('Itaú Unibanco (Brazil)'), 'itau-unibanco-brazil');
 });
 
 test('icon candidates: apple-touch-icon, then the largest icon, then /favicon.ico; https only', () => {

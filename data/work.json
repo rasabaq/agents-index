@@ -328,7 +328,7 @@
       "hq": "GR",
       "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
       "homepage": "https://www.loopcv.pro/",
-      "icon": "https://www.loopcv.pro/apple-touch-icon.png",
+      "icon": "logos/loopcv.png",
       "role": "Searches more than 30 job boards, including local ones such as Reed, StepStone and Naukri, and sends applications for you by email or web form.",
       "markets": [
         "US",
@@ -348,7 +348,7 @@
       "hq": "BR",
       "url": "https://www.catho.com.br/carreira-sucesso/autoenvio-de-curriculo-catho/",
       "homepage": "https://www.catho.com.br/",
-      "icon": "https://www.catho.com.br/c/img/logos/favicon.ico",
+      "icon": "logos/catho.png",
       "role": "Autoenvio sends a paying member's CV to matching jobs every morning.",
       "markets": [
         "BR"
@@ -362,7 +362,7 @@
       "hq": "US",
       "url": "https://www.indeed.com/help/job-seekers/articles/43197872743565-about-the-indeed-app-on-chatgpt",
       "homepage": "https://www.indeed.com/",
-      "icon": "https://www.indeed.com/apple-touch-icon-precomposed.png",
+      "icon": "logos/indeed.png",
       "role": "Its ChatGPT app and Career Scout agent find jobs and pre-fill applications, but you send them on Indeed.",
       "markets": [
         "US",
@@ -377,7 +377,7 @@
       "hq": "US",
       "url": "https://gusto.com/company-news/cofounder",
       "homepage": "https://gusto.com/",
-      "icon": "https://gusto.com/favicon.ico",
+      "icon": "logos/gusto.png",
       "role": "Cofounder and the Gusto app in ChatGPT run payroll after the owner confirms, for early-access customers.",
       "markets": [
         "US"
@@ -391,7 +391,7 @@
       "hq": "IN",
       "url": "https://kredily.com/best-ai-payroll-software-india/",
       "homepage": "https://kredily.com/",
-      "icon": "https://kredily.com/wp-content/themes/kredily-liquidglass/assets/img/brand/favicon/favicon-192.png?ver=1785309503",
+      "icon": "logos/kredily.png",
       "role": "Kai works out the month's payroll and bank file, and the owner approves payout and filing.",
       "markets": [
         "IN"
@@ -405,7 +405,7 @@
       "hq": "US",
       "url": "https://quickbooks.intuit.com/r/news/intuit-unveils-quickbooks-workforce/",
       "homepage": "https://www.intuit.com/",
-      "icon": "https://www.intuit.com/oidam/intuit/ic/en_us/images/01-g/Intuit_FavIcon_180x180.png",
+      "icon": "logos/intuit.png",
       "role": "The Payroll Agent in QuickBooks Workforce collects time data and runs payroll for the owner, rolling out to eligible US customers.",
       "markets": [
         "US"

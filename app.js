@@ -107,7 +107,7 @@ function mainReason(mine, catIds) {
 // A small logo before a company or repo name. The name sits right next to it, so the image has empty alt text.
 // No logo, or one that fails to load, becomes a monogram (see wireLogos).
 const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
-const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-name="${esc(name)}">` : monogram(name));
+const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-name="${esc(name)}">` : monogram(name));
 
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}, tier ${tierOf(r.score)}"`;
 
@@ -371,7 +371,7 @@ function renderRepos() {
     <thead><tr><th scope="col">Repo</th><th scope="col">What it lets agents do</th><th scope="col">Real use</th><th scope="col" class="num">Installs a month</th><th scope="col" class="num">Docker pulls</th><th scope="col" class="num">Stars</th><th scope="col" class="num">Last commit</th></tr></thead>
     <tbody>${rows.map((r) => `
       <tr>
-        <th scope="row"><a class="co-name" href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener noreferrer">${logo(`https://github.com/${r.repo.split('/')[0]}.png?size=64`, r.name)}<span>${r.origin ? flag(r.origin) : ''}${esc(r.name)}</span></a><span class="co-cats"><span>${r.repo.split('/').map((x) => `<span class="nowrap">${esc(x)}</span>`).join('/<wbr>')}</span><span>${esc(shortName(r.category))}</span></span></th>
+        <th scope="row"><a class="co-name" href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener noreferrer">${logo(r.icon === undefined ? `https://github.com/${r.repo.split('/')[0]}.png?size=64` : r.icon, r.name)}<span>${r.origin ? flag(r.origin) : ''}${esc(r.name)}</span></a><span class="co-cats"><span>${r.repo.split('/').map((x) => `<span class="nowrap">${esc(x)}</span>`).join('/<wbr>')}</span><span>${esc(shortName(r.category))}</span></span></th>
         <td><p class="co-roles">${esc(r.role)}</p></td>
         <td><span class="chip u-${r.use}" title="${esc(REPO_USE[r.use].hint)}">${REPO_USE[r.use].label}</span></td>
         ${count(r.usage.downloadsMonth, 'Installs')}${count(r.usage.dockerPulls, 'Pulls')}${count(r.usage.stars, 'Stars')}
