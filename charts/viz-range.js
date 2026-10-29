@@ -73,7 +73,10 @@
       rows.slice(1).forEach((b, i) => {
         if (b.hi >= rows[i].lo) shaky.add(rows[i].code).add(b.code);
       });
-      const widest = rows.reduce((w, r) => (r.hi - r.lo > w.hi - w.lo ? r : w));
+      // Every country tied for the widest band, so a tie never hides a country.
+      const maxSpan = Math.max(...rows.map((r) => r.hi - r.lo));
+      const widest = rows.filter((r) => r.hi - r.lo === maxSpan);
+      const listOf = (xs) => new Intl.ListFormat('en', { type: 'conjunction' }).format(xs);
       let focus = rows.some((r) => r.code === 'CL') ? 'CL' : rows[0].code;
 
       const min = Math.floor(Math.min(...rows.map((r) => r.lo)) / 10) * 10;
@@ -83,17 +86,17 @@
       el.classList.add('v-range');
       el.innerHTML = `
         <p class="vr-head">${shaky.size
-          ? `<b>${shaky.size} of ${rows.length}</b> countries could swap places with a neighbour if their low-confidence cells are one step off. ${esc(the(widest.code)).replace(/^./, (c) => c.toUpperCase())} has the widest range: <b>${widest.lo}–${widest.hi}</b>.`
+          ? `<b>${shaky.size} of ${rows.length}</b> countries could swap places with a neighbor if their low-confidence cells are one step off. ${esc(listOf(widest.map((r) => the(r.code)))).replace(/^./, (c) => c.toUpperCase())} ${widest.length === 1 ? 'has' : 'tie for'} the widest range: ${listOf([...new Set(widest.map((r) => `<b>${r.lo}–${r.hi}</b>`))])}.`
           : 'Every rank holds, even if each low-confidence cell is one step off.'}</p>
         <p class="vr-sub" aria-live="polite"></p>
         <div class="chart-legend vr-legend">
           <span class="vr-key"><span class="vr-dot"></span>Published score</span>
           <span class="vr-key"><span class="vr-band"></span>Range</span>
-          <span class="vr-key"><span class="vr-band sh"></span>Overlaps a neighbour, so the rank could swap</span>
+          <span class="vr-key"><span class="vr-band sh"></span>Overlaps a neighbor, so the rank could swap</span>
         </div>
         <ol class="vr-list" style="--step:${(10 / (100 - min)) * 100}%" aria-label="Score range by country">
           ${rows.map((r) => `<li><button type="button" class="vr-row" data-code="${r.code}" aria-pressed="false"
-            aria-label="${esc(`${r.name}: published ${r.score}, range ${r.lo} to ${r.hi}${shaky.has(r.code) ? ', overlaps a neighbour' : ''}`)}">
+            aria-label="${esc(`${r.name}: published ${r.score}, range ${r.lo} to ${r.hi}${shaky.has(r.code) ? ', overlaps a neighbor' : ''}`)}">
             <span class="vr-c">${flag(r.code)}${r.code}</span>
             <span class="vr-track">${r.hi > r.lo ? `<span class="vr-band${shaky.has(r.code) ? ' sh' : ''}" style="left:${x(r.lo)}%;width:${x(r.hi) - x(r.lo)}%"></span>` : ''}<span class="vr-dot" style="left:${x(r.score)}%"></span></span>
             <span class="vr-v${shaky.has(r.code) ? ' sh' : ''}">${r.hi > r.lo ? `${r.lo}–${r.hi}` : `${r.score} firm`}</span>
@@ -121,7 +124,7 @@
         if (!b) return ctx.tip.hide();
         const r = rows.find((q) => q.code === b.dataset.code);
         const cells = r.lows.map((cap) => `<br>${S[cap.countries[r.code].status].label}: ${esc(cap.name)}`).join('');
-        ctx.tip.show(e, `<strong>${flag(r.code)}${esc(r.name)} · ${r.score}</strong>Range ${r.lo}–${r.hi}${shaky.has(r.code) ? ', overlaps a neighbour' : ''}.${cells ? `<br>Low-confidence cells:${cells}` : ''}`);
+        ctx.tip.show(e, `<strong>${flag(r.code)}${esc(r.name)} · ${r.score}</strong>Range ${r.lo}–${r.hi}${shaky.has(r.code) ? ', overlaps a neighbor' : ''}.${cells ? `<br>Low-confidence cells:${cells}` : ''}`);
       });
       list.addEventListener('pointerleave', () => ctx.tip.hide());
       draw();

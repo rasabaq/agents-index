@@ -6,7 +6,7 @@
 .v-gap .vg-head b { font-weight: 500; color: var(--sunrise); }
 .v-gap .vg-legend { margin: 18px 0 10px; padding-top: 16px; border-top: 1px solid var(--line); }
 .v-gap .vg-key { display: inline-flex; align-items: center; gap: 8px; }
-.v-gap .vg-body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.v-gap .vg-body { display: grid; gap: 28px; }
 .v-gap .vg-list { margin: 0; padding: 0; list-style: none; }
 .v-gap .vg-row, .v-gap .vg-axis { display: grid; grid-template-columns: 64px minmax(0, 1fr) 40px; align-items: center; column-gap: 14px; }
 .v-gap .vg-row { width: 100%; height: 30px; padding: 0 8px; border: 0; border-radius: 7px; background: none; text-align: left; cursor: pointer; }
@@ -35,9 +35,11 @@
 .v-gap .vg-gain { font: 500 12px/1 var(--mono); color: var(--sunrise); white-space: nowrap; }
 .v-gap .vg-none { color: var(--muted); }
 .v-gap .vg-note { margin: 12px 0 0; font: 400 11px/1.5 var(--mono); color: var(--muted); }
-@media (max-width: 900px) { .v-gap .vg-body { grid-template-columns: minmax(0, 1fr); } }
-/* with many countries the list is long; the gap list stays in view beside it */
-@media (min-width: 901px) { .v-gap .vg-side { position: sticky; top: 124px; } }
+/* the gap list sits under the chart; on wide screens it splits into two columns so it stays short */
+@media (min-width: 901px) {
+  .v-gap .vg-gaps { columns: 2; column-gap: 32px; }
+  .v-gap .vg-gaps li { break-inside: avoid; }
+}
 @media (max-width: 520px) {
   .v-gap .vg-head { font-size: 17px; }
   .v-gap .vg-row, .v-gap .vg-axis { grid-template-columns: 56px minmax(0, 1fr) 34px; column-gap: 10px; padding-left: 4px; padding-right: 4px; }

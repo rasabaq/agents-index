@@ -1,6 +1,6 @@
 // Home page chart "bump": a bump chart of each country's rank in every category, plus overall.
 (() => {
-  const GAP = 22; // spacing between tied dots along the category axis
+  const GAP = 25; // spacing between tied dots along the category axis: two highlighted dots (2 × RH) still keep 3px apart
   const R = 9.5; // muted dot radius
   const RH = 11; // highlighted dot radius
   const MAX_PINS = 3;
@@ -22,7 +22,6 @@
 .v-bump .tick { fill: var(--muted); font: 500 11px var(--mono); }
 .v-bump .head { fill: var(--ink-2); font-size: 12px; font-weight: 600; }
 .v-bump .head.all { fill: var(--ink); }
-.v-bump .halo { paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
 .v-bump .c { cursor: pointer; }
 .v-bump .c .ln { fill: none; stroke: var(--line-strong); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
 .v-bump .c .hit { fill: none; stroke: transparent; stroke-width: 16; }
@@ -138,11 +137,13 @@
         measure.font = `${font} ${ctx.css('--font') || 'system-ui'}`;
         return measure.measureText(s).width;
       }
+      // Breaks at spaces and after hyphens ("General-" / "purpose").
       function wrap(text, maxW) {
         const lines = [];
-        for (const w of text.split(' ')) {
+        const join = (a, b) => (a.endsWith('-') ? a + b : `${a} ${b}`);
+        for (const w of text.split(/(?<=-)| /)) {
           const cur = lines[lines.length - 1];
-          if (cur && textWidth(`${cur} ${w}`) <= maxW) lines[lines.length - 1] = `${cur} ${w}`;
+          if (cur && textWidth(join(cur, w)) <= maxW) lines[lines.length - 1] = join(cur, w);
           else lines.push(w);
         }
         return lines;
@@ -162,7 +163,7 @@
       // Wide frames draw u across (classic bump chart); narrow frames rotate so categories run down the page.
       function layout(W) {
         const L = 24 + maxLineWidth(first) + 6, LEAD = 16, RG = 6 + maxLineWidth(last) + 4;
-        // Tied dots shrink their spacing from 22px to 20px before the chart gives up and rotates.
+        // Tied dots shrink their spacing by up to 2px before the chart gives up and rotates.
         for (const gap of [GAP, GAP - 1, GAP - 2]) {
           const needs = cols.map((c) => Math.max(80, c.k * gap + 18));
           const hNeed = L + LEAD + d3.sum(needs) + LEAD + RG;
@@ -175,18 +176,23 @@
           const ROW = 44;
           return { mode: 'h', gap, W, H: top + (N - 1) * ROW + 18, uStart: L, uEnd: u + LEAD, uLo: cols[0].u0, uHi: u, top, lines, v: (rank) => top + (rank - 1) * ROW };
         }
-        const step = (W - 8) / N;
+        // Rotated: category names get their own gutter on the left, wrapped on phones so the ranks keep room.
+        const nameW = Math.min(d3.max(cols, (c) => textWidth(c.name)), Math.max(70, W / 5));
+        const G = nameW + 14;
+        const step = (W - G - 4) / N;
+        // When flag and code do not fit between two ranks, the end labels show the code alone.
+        const compact = step < d3.max(rows, (r) => textWidth(labText(r.code), LAB_FONT)) + 6;
+        const names = cols.map((c) => wrap(c.name, nameW));
         const uStart = 40 + (first.k - 1) * 16;
         let cur = uStart + 14;
-        for (const c of cols) {
-          const half = ((c.k - 1) * GAP) / 2 + RH;
+        cols.forEach((c, j) => {
+          const half = Math.max(((c.k - 1) * GAP) / 2 + RH, (names[j].length * 15) / 2);
           c.u0 = cur;
-          c.nameY = cur + 12;
-          c.u = cur + 24 + half;
-          cur = c.u + half + 8;
-        }
-        const uEnd = cur + 12;
-        return { mode: 'v', gap: GAP, W, H: uEnd + 12 + (last.k - 1) * 16 + 14, uStart, uEnd, uLo: uStart + 14, uHi: cur, v: (rank) => 4 + (rank - 0.5) * step };
+          c.u = cur + 16 + half;
+          cur = c.u + half + 16;
+        });
+        const uEnd = cur + 4;
+        return { mode: 'v', gap: GAP, W, H: uEnd + 12 + (last.k - 1) * 16 + 14, uStart, uEnd, uLo: uStart + 14, uHi: cur, names, compact, v: (rank) => G + (rank - 0.5) * step };
       }
 
       let lay, groups, labels, lastW = 0;
@@ -223,38 +229,38 @@
           .attr('text-anchor', H ? 'start' : 'middle').attr('dominant-baseline', 'central')
           .text((r) => `#${r}`);
 
-        // Category names. On the rotated layout they sit above the lines, on a surface halo.
+        // Category names: above the columns, or in the left gutter beside each row on the rotated layout.
         const heads = svg.append('g').style('pointer-events', 'none');
         cols.forEach((c, j) => {
-          const t = heads.append('text').attr('class', `head${c.id === 'overall' ? ' all' : ''}${H ? '' : ' halo'}`);
+          const t = heads.append('text').attr('class', `head${c.id === 'overall' ? ' all' : ''}`);
           if (H) {
             const ls = lay.lines[j];
             t.attr('text-anchor', 'middle');
             ls.forEach((s, i) => t.append('tspan').attr('x', c.u).attr('y', lay.top - 26 - (ls.length - 1 - i) * 16).text(s));
-          } else t.attr('x', 0).attr('y', c.nameY).text(c.name);
+          } else {
+            const ls = lay.names[j];
+            t.attr('dominant-baseline', 'central');
+            ls.forEach((s, i) => t.append('tspan').attr('x', 0).attr('y', c.u + (i - (ls.length - 1) / 2) * 15).text(s));
+          }
         });
 
-        // One group per country: the path (from start label, through every column, to end label) and its dots.
+        // One group per country in two layers: every line (from start label, through every column, to end label)
+        // sits under every dot, so a highlighted line never runs through another country's score.
         const ofs = (p) => (p.i - (p.k - 1) / 2) * lay.gap;
         const geo = rows.map((r) => {
           const a = first.at[r.code], b = last.at[r.code];
           const start = pt(uStart, v(a.rank));
           const end = pt(uEnd, v(b.rank));
           const dots = cols.map((c) => ({ c, p: c.at[r.code], xy: pt(c.u + ofs(c.at[r.code]), v(c.at[r.code].rank)) }));
-          return { r, start, end, dots };
+          return { r, dots, d: line([start, ...dots.map((x) => x.xy), end]) };
         });
-        const layer = svg.append('g');
-        groups = layer.selectAll('g').data(geo).join('g').attr('class', 'c');
-        groups.each(function (g) {
-          const sel = d3.select(this);
-          const d = line([g.start, ...g.dots.map((x) => x.xy), g.end]);
-          sel.append('path').attr('class', 'hit').attr('d', d);
-          sel.append('path').attr('class', 'ln').attr('d', d);
-          const dg = sel.selectAll('g').data(g.dots).join('g').attr('transform', (x) => `translate(${x.xy})`);
-          dg.append('circle').attr('class', 'bump-dot').attr('r', R);
-          dg.append('text').attr('class', (x) => `sc${x.p.score >= 100 ? ' s3' : ''}`).text((x) => x.p.score);
-        });
-        groups
+        groups = [svg.append('g'), svg.append('g')].map((layer) => layer.selectAll('g').data(geo).join('g').attr('class', 'c'));
+        groups[0].append('path').attr('class', 'hit').attr('d', (g) => g.d);
+        groups[0].append('path').attr('class', 'ln').attr('d', (g) => g.d);
+        const dg = groups[1].selectAll('g').data((g) => g.dots).join('g').attr('transform', (x) => `translate(${x.xy})`);
+        dg.append('circle').attr('class', 'bump-dot').attr('r', R);
+        dg.append('text').attr('class', (x) => `sc${x.p.score >= 100 ? ' s3' : ''}`).text((x) => x.p.score);
+        for (const gs of groups) gs
           .on('pointerenter', (e, g) => setHover(g.r.code))
           .on('pointerleave', () => { setHover(null); ctx.tip.hide(); })
           .on('pointermove', (e, g) => {
@@ -264,8 +270,6 @@
             ctx.tip.show(e, tipHtml(g.r.code, near.c));
           })
           .on('click', (e, g) => toggle(g.r.code));
-
-        if (!H) heads.raise();
 
         // End labels (flag and code) in their own layer, so raising a line never moves a focused label.
         const labData = [], seps = [];
@@ -295,7 +299,7 @@
         labels.each(function (d) {
           const sel = d3.select(this);
           const ring = sel.append('rect').attr('class', 'ring').attr('rx', 6);
-          sel.append('text').attr('x', d.x).attr('y', d.y).attr('text-anchor', d.anchor).text(H ? labText(d.code) : `${ctx.emoji(d.code)}\u2009${d.code}`);
+          sel.append('text').attr('x', d.x).attr('y', d.y).attr('text-anchor', d.anchor).text(H ? labText(d.code) : lay.compact ? d.code : `${ctx.emoji(d.code)}\u2009${d.code}`);
           const bb = this.getBBox();
           ring.attr('x', bb.x - 4).attr('y', bb.y - 2).attr('width', bb.width + 8).attr('height', bb.height + 4);
         });
@@ -325,14 +329,15 @@
         chips.attr('aria-pressed', (r) => isPinned(r.code))
           .select('.bump-key').style('border-top-color', (r) => (isPinned(r.code) ? color(r.code) : null));
         if (!groups) return;
-        groups.each(function (g) {
-          const c = color(g.r.code);
-          const sel = d3.select(this).classed('on', !!c).style('--hl', c);
-          sel.selectAll('.bump-dot').attr('r', c ? RH : R);
-        });
-        // Draw order: muted lines, then pinned, then the hovered one on top.
+        // Draw order in each layer: muted, then pinned, then the hovered one on top.
         const z = (code) => (code === hover ? 2 : isPinned(code) ? 1 : 0);
-        groups.sort((a, b) => z(a.r.code) - z(b.r.code));
+        for (const gs of groups) {
+          gs.each(function (g) {
+            const c = color(g.r.code);
+            d3.select(this).classed('on', !!c).style('--hl', c).selectAll('.bump-dot').attr('r', c ? RH : R);
+          });
+          gs.sort((a, b) => z(a.r.code) - z(b.r.code));
+        }
         labels.classed('on', (d) => !!color(d.code))
           .attr('aria-pressed', (d) => (d.end ? null : isPinned(d.code)));
       }
