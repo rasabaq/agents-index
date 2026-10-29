@@ -1,4 +1,4 @@
-# AI Agent Observatory
+# Agent Index
 
 [![Live site](https://img.shields.io/badge/live-agentindex.art-ff2d87)](https://agentindex.art)
 [![CI](https://github.com/rasabaq/agents-index/actions/workflows/ci.yml/badge.svg)](https://github.com/rasabaq/agents-index/actions/workflows/ci.yml)
@@ -7,11 +7,11 @@
 
 Not how much AI a country has, but **what AI agents can actually do there**.
 
-[![The AI Agent Observatory home page](docs/images/hero.png)](https://agentindex.art)
+[![The Agent Index home page](docs/images/hero.png)](https://agentindex.art)
 
-In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile, can it? This observatory tracks concrete agent capabilities country by country. Every status cites a source, and the countries are ranked by what agents can do for ordinary people and businesses.
+In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile, can it? This index tracks concrete agent capabilities country by country. Every status cites a source, and the countries are ranked by what agents can do for ordinary people and businesses.
 
-**[Open the observatory at agentindex.art →](https://agentindex.art)**
+**[Open the Agent Index at agentindex.art →](https://agentindex.art)**
 
 ## A quick tour
 
@@ -80,4 +80,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). To report a wrong status, open a [data c
 ## License
 
 - Code: [MIT](LICENSE).
-- Data in `data/`: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (see [data/LICENSE](data/LICENSE)). You may reuse it with credit to the AI Agent Observatory.
+- Data in `data/`: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (see [data/LICENSE](data/LICENSE)). You may reuse it with credit to the Agent Index.

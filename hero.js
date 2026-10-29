@@ -237,16 +237,17 @@ function drawSky(t) {
 
 /* ---------- wordmark: Jersey 10 rasterised to a cell grid, filled with a drifting magenta-to-sunrise dither ---------- */
 const WM = ['#E0287E', '#FF2E88', '#FF6F7D', '#FFB672', '#FFE6C8'];
-const LINES = ['AGENT', 'OBSERVATORY'];
 const wdpr = Math.min(devicePixelRatio || 1, 2);
 const wg = wm.getContext('2d');
 let lit = null, cols = 0, rows = 0, cell = 0, gapD = 0;
 function buildMask() {
   const avail = wm.clientWidth;
   if (!avail || !wg) return false;
+  // One line on wide screens; stacked on phones, where one line would be too short to read as a hero.
+  const LINES = avail < 640 ? ['AGENT', 'INDEX'] : ['AGENT INDEX'];
   const t = document.createElement('canvas').getContext('2d');
   t.font = '28px "Jersey 10", monospace';
-  const base = t.measureText('OBSERVATORY');
+  const base = t.measureText('AGENT INDEX');
   const bw = base.actualBoundingBoxLeft + base.actualBoundingBoxRight;
   // Whole-number font scale keeps every glyph pixel the same size.
   const k = Math.max(1, Math.round(avail / (bw * 4.5)));
@@ -254,7 +255,7 @@ function buildMask() {
   t.font = `${28 * k}px "Jersey 10", monospace`;
   const ms = LINES.map((s) => t.measureText(s));
   cols = Math.ceil(Math.max(...ms.map((m) => m.actualBoundingBoxLeft + m.actualBoundingBoxRight))) + 1;
-  rows = capH * 2 + lead;
+  rows = capH * LINES.length + lead * (LINES.length - 1);
   const mk = document.createElement('canvas');
   mk.width = cols; mk.height = rows;
   const mc = mk.getContext('2d');

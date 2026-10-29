@@ -393,7 +393,7 @@ function renderMethod() {
   $('[data-crop-pairs]').innerHTML = Object.entries(STATUSES).map(([k, s]) => `${dot({ status: k })}${dot({ status: k, confidence: 'low' })}<span>${s.label} · ${s.points}</span>`).join('');
   const r = byCode[state.country];
   $('[data-crop-term]').innerHTML = `
-    <p><span class="ps">$</span> observatory score ${r.code}</p>
+    <p><span class="ps">$</span> agentindex score ${r.code}</p>
     <p>&nbsp;&nbsp;category = mean(points) × 100</p>
     <p>&nbsp;&nbsp;country&nbsp;&nbsp;= mean(categories)</p>
     <p>${flag(r.code)}<b>${r.score}</b> · tier ${tierOf(r.score)} · rank ${r.rank} of ${ranking.length}</p>`;
