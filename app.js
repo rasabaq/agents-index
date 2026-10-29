@@ -33,7 +33,6 @@ function init() {
 
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   $('[data-asof-iso]').textContent = meta.asOf;
-  renderStats();
   renderSide();
   renderRanking();
   renderLegend();
@@ -109,16 +108,6 @@ function mainReason(mine, catIds) {
 // No logo, or one that fails to load, becomes a monogram (see wireLogos).
 const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
 const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-name="${esc(name)}">` : monogram(name));
-
-function renderStats() {
-  const items = [
-    [meta.countries.length, 'countries'],
-    [Object.keys(capIndex).length, 'capabilities'],
-    [sourcesOf(cells), 'sources'],
-    [companies.length, 'companies tracked'],
-  ];
-  $('[data-stats]').innerHTML = items.map(([n, l]) => `<div><dt>${l}</dt><dd>${n}</dd></div>`).join('');
-}
 
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}, tier ${tierOf(r.score)}"`;
 
@@ -311,7 +300,7 @@ function selectCountry(code, scroll) {
   const fromPicker = document.activeElement?.matches('[data-pick-country]');
   state.country = code;
   history.replaceState(null, '', writeHash(code, state.view));
-  // Every country picker on the page (hero chips, world map, console) marks the same country.
+  // Every country picker on the page (hero pins, world map, console) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
   showSideChip();
@@ -419,12 +408,12 @@ function renderCounts() {
 }
 
 function wire() {
-  // Any country picker selects; pickers outside the console also bring the console into view.
+  // Any country picker selects; pickers outside the console and the hero also bring the console into view.
   document.addEventListener('click', (e) => {
     const el = e.target.closest('[data-go-country]');
     if (!el || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
-    selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
+    selectCountry(el.dataset.goCountry, !el.closest('[data-term], [data-hero]'));
   });
   // Compare with: the Head to head chart takes the pair and scrolls into view (viz-compare.js cancels the event).
   // If that chart did not draw, nothing cancels it, so the console switches to the other country instead.
