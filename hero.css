@@ -39,7 +39,7 @@
 .hero-icons li { position: relative; width: 72px; height: 72px; outline: none; }
 .hero-icons svg { display: block; width: 72px; height: 72px; overflow: visible; shape-rendering: crispEdges; }
 .hero-icons li.is-full svg { filter: drop-shadow(0 0 9px color-mix(in srgb, var(--sunrise) 45%, transparent)); }
-.hero-icons rect { fill: color-mix(in srgb, var(--s-announced) 62%, #000); transition: fill 0.22s; }
+.hero-icons rect { fill: var(--s-announced); transition: fill 0.22s; }
 .hero-icons rect.on.t0 { fill: var(--tier-s); }
 .hero-icons rect.on.t1 { fill: var(--sunrise); }
 .hero-icons rect.on.t2 { fill: var(--ink); }
@@ -53,7 +53,7 @@
 .hero-key i:first-child { margin-left: 0; }
 .hero-key .k-on { background: var(--tier-s); }
 .hero-key .k-part { background: conic-gradient(var(--tier-s) 25%, transparent 0 50%, var(--tier-s) 0 75%, transparent 0) 0 0/5px 5px; outline: 1px solid color-mix(in srgb, var(--tier-s) 30%, transparent); outline-offset: -1px; }
-.hero-key .k-off { background: color-mix(in srgb, var(--s-announced) 62%, #000); }
+.hero-key .k-off { background: var(--s-announced); }
 @media (prefers-reduced-motion: reduce) {
   .hero-icons :is(rect, b) { transition: none; }
 }

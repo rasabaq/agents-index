@@ -360,9 +360,10 @@ const cellsOf = (rows) => rows.flatMap((line, y) => [...line].map((ch, x) => {
   return `<rect x="${x * 6}" y="${y * 6}" width="5" height="5" class="t${n < 0.55 ? 0 : n < 0.85 ? 1 : 2}" data-b="${BAYER[(y & 3) * 4 + (x & 3)]}"${delay}/>`;
 })).join('');
 
+// tabindex -1: a tap still shows the icon's name, but the icons do nothing, so they stay out of the Tab order.
 function renderIcons(categories) {
   $('[data-hero-ic]').innerHTML = categories.filter((c) => ICONS[c.id]).map((c) => `
-    <li tabindex="0" role="img" data-cat="${c.id}"><svg viewBox="0 0 72 72" aria-hidden="true">${cellsOf(ICONS[c.id])}</svg><b aria-hidden="true">${esc(shortName(c.id))}</b></li>`).join('');
+    <li tabindex="-1" role="img" data-cat="${c.id}"><svg viewBox="0 0 72 72" aria-hidden="true">${cellsOf(ICONS[c.id])}</svg><b aria-hidden="true">${esc(shortName(c.id))}</b></li>`).join('');
 }
 
 // Light each icon by the country's category score: a cell is on when its threshold is under score * 16 / 100, so 50 is a checkerboard.
