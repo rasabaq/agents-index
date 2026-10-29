@@ -30,7 +30,7 @@
   (window.CHARTS ??= []).push({
     id: 'flows',
     title: 'Flows',
-    blurb: 'Whose companies power the agents in each country? Each ribbon runs from the country where a company is headquartered (left) to a market where its agent capability works (right), and its width is the number of companies.',
+    blurb: 'Whose companies and public bodies power the agents in each country? Each ribbon runs from the country where one is headquartered (left) to a market where its agent capability works (right), and its width is how many there are.',
     render(el, ctx) {
       if (!document.getElementById('v-flows-style')) {
         const s = document.createElement('style');
@@ -52,9 +52,9 @@
         <div class="chart-controls" role="group" aria-label="Filter by category">${chips.map(([id, n]) =>
           `<button type="button" class="pill" data-cat="${id}" aria-pressed="${id === 'all'}">${esc(n)}</button>`).join('')}</div>
         <div class="chart-legend fl-legend">
-          <span><i class="sw" style="background: var(--accent)"></i>Company from another country</span>
+          <span><i class="sw" style="background: var(--accent)"></i>From another country</span>
           <span><i class="sw fl-home"></i>Home-grown</span>
-          <span class="fl-key">Ribbon width is the number of companies</span>
+          <span class="fl-key">Ribbon width: companies and public bodies</span>
         </div>
         <div class="fl-chart"></div>
         <p class="fl-note"></p>`;
@@ -65,7 +65,7 @@
         cat = b.dataset.cat;
         // On phones the pills scroll sideways: bring the chosen one clear of the edge fades.
         const s = b.parentElement, r = b.getBoundingClientRect(), n = s.getBoundingClientRect();
-        s.scrollBy({ left: r.left - n.left - (n.width - r.width) / 2, behavior: 'smooth' });
+        s.scrollBy({ left: r.left - n.left - (n.width - r.width) / 2, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         el.querySelectorAll('[data-cat]').forEach((x) => x.setAttribute('aria-pressed', x === b));
         draw();
       }));
@@ -74,7 +74,7 @@
       function data() {
         const list = cat === 'all' ? ctx.companies : (ctx.categories.find((c) => c.category === cat)?.companies ?? []);
         const links = new Map();
-        const other = new Map(); // HQ outside the 8 -> number of companies
+        const other = new Map(); // HQ outside the tracked countries -> number of companies
         for (const co of list) {
           const ms = [...new Set(co.markets)].filter((m) => tracked.has(m));
           if (!ms.length) continue;
@@ -92,6 +92,7 @@
 
       const sum = (ls) => d3.sum(ls, (l) => l.names.length);
       const plural = (n, w) => `${n} ${n === 1 ? w : w.replace(/y$/, 'ie') + 's'}`;
+      const orgs = (n) => `${n} ${n === 1 ? 'company or public body' : 'companies and public bodies'}`;
 
       // SVG text: the flag is plain text here; the view CSS gives SVG text the flag font.
       function label(code, narrow) {
@@ -102,12 +103,12 @@
       function nodeTip(n) {
         const rows = n.links.slice().sort((a, b) => b.names.length - a.names.length)
           .map((l) => { const c = n.side ? l.src : l.dst; return `${c === ELSE ? 'Elsewhere' : `${flag(c)}${esc(nameOf(c))}`} · ${l.names.length}`; });
-        if (n.side) return `<strong>${plural(n.value, 'company')}</strong>work in ${flag(n.code)}${esc(nameOf(n.code))}, by HQ:<br>${rows.join('<br>')}`;
+        if (n.side) return `<strong>${orgs(n.value)}</strong>work in ${flag(n.code)}${esc(nameOf(n.code))}, by HQ:<br>${rows.join('<br>')}`;
         const cos = new Set(n.links.flatMap((l) => l.names)).size;
         const head = n.code === ELSE
           ? `Elsewhere: ${[...n.other].sort((a, b) => b[1] - a[1] || nameOf(a[0]).localeCompare(nameOf(b[0]))).map(([c, k]) => `${esc(nameOf(c))} (${k})`).join(', ')}`
           : `${flag(n.code)}${esc(nameOf(n.code))}`;
-        return `<strong>${plural(n.value, 'company-market link')}</strong>${plural(cos, 'company')} headquartered in ${head}<br>${rows.join('<br>')}`;
+        return `<strong>${plural(n.value, 'market link')}</strong>${orgs(cos)} headquartered in ${head}<br>${rows.join('<br>')}`;
       }
 
       function ribbonTip(l) {
@@ -115,7 +116,7 @@
         const shown = l.names.slice(0, 12).map(esc).join(', ');
         const more = l.names.length > 12 ? `, +${l.names.length - 12} more` : '';
         const home = l.src === l.dst ? ' (home-grown)' : '';
-        return `<strong>${plural(l.names.length, 'company')}</strong>${from} → ${flag(l.dst)}${esc(nameOf(l.dst))}${home}<br>${shown}${more}`;
+        return `<strong>${orgs(l.names.length)}</strong>${from} → ${flag(l.dst)}${esc(nameOf(l.dst))}${home}<br>${shown}${more}`;
       }
 
       function draw() {
@@ -126,7 +127,7 @@
         chart.innerHTML = '';
         const total = sum(links);
         if (!total) {
-          chart.innerHTML = '<p class="muted">No companies in this category work in the eight tracked countries.</p>';
+          chart.innerHTML = `<p class="muted">No companies or public bodies in this category work in the ${markets.length} tracked countries.</p>`;
           note.textContent = '';
           return;
         }
@@ -163,13 +164,13 @@
           .attr('class', narrow ? 'narrow' : null)
           .attr('viewBox', `0 0 ${W} ${top + H + 4}`)
           .attr('height', top + H + 4)
-          .attr('role', 'img')
-          .attr('aria-label', `Flow diagram of ${total} company-market links, from company headquarters on the left to the eight markets on the right.`);
+          .attr('role', 'group')
+          .attr('aria-label', `Flow diagram of ${total} links between a company or public body and a market, from headquarters on the left to the ${markets.length} markets on the right.`);
 
         // Labels first, so their measured widths set the node positions.
         const nodes = svg.append('g').selectAll('g').data([...left, ...right]).join('g')
-          .attr('class', 'fl-node').attr('tabindex', 0)
-          .attr('aria-label', (n) => `${n.code === ELSE ? 'Elsewhere' : nameOf(n.code)}: ${n.side ? plural(n.value, 'company') : plural(n.value, 'company-market link')}`);
+          .attr('class', 'fl-node').attr('tabindex', 0).attr('role', 'img')
+          .attr('aria-label', (n) => `${n.code === ELSE ? 'Elsewhere' : nameOf(n.code)}: ${n.side ? orgs(n.value) : plural(n.value, 'market link')}`);
         const hit = nodes.append('rect').attr('class', 'fl-hit').attr('rx', 6);
         nodes.append('rect').attr('class', 'fl-bar').attr('rx', 2);
         const text = nodes.append('text').attr('dy', '0.35em');
@@ -189,7 +190,7 @@
           .attr('y', (n) => Math.min(n.y0, (n.y0 + n.y1) / 2 - 11) - 2)
           .attr('height', (n) => Math.max(n.y1 - n.y0, 22) + 4);
 
-        svg.append('text').attr('class', 'fl-head').attr('x', 0).attr('y', 12).text(narrow ? 'Company HQ' : 'Where the company is headquartered');
+        svg.append('text').attr('class', 'fl-head').attr('x', 0).attr('y', 12).text(narrow ? 'Headquarters' : 'Where it is headquartered');
         svg.append('text').attr('class', 'fl-head').attr('x', W).attr('y', 12).attr('text-anchor', 'end').text(narrow ? 'Market' : 'Where its agents work');
 
         // Ribbons: filled bands between the two node edges; home-grown drawn last so it sits on top.
@@ -218,7 +219,7 @@
         // The one computed sentence: the US share of links.
         const us = sum(links.filter((l) => l.src === 'US'));
         const scope = cat === 'all' ? '' : ` in ${ctx.catName(cat)}`;
-        note.innerHTML = `<b>${us}</b> of <b>${total}</b> company-market links${esc(scope)} (<b>${Math.round((us / total) * 100)}%</b>) come from companies headquartered in the United States.`;
+        note.innerHTML = `<b>${us}</b> of <b>${total}</b> market links${esc(scope)} (<b>${Math.round((us / total) * 100)}%</b>) come from companies and public bodies headquartered in the United States.`;
       }
 
       let lastW = 0;
