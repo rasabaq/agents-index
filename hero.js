@@ -1,5 +1,5 @@
 // The hero: a planet at sunrise whose air dissolves into magenta pixels (WebGL, with a 2D fallback),
-// the pixel wordmark, and the data parts (flag tape, ask box, chips pinned to the planet).
+// the pixel wordmark, and the data parts (ask box, chips pinned to the planet).
 // It loads the data itself so it does not depend on app.js. Its country links carry data-go-country, which app.js
 // handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
 import { STATUSES, scoreCountries, mergeCompanies, startCountry, readHash, writeHash } from './src/observatory.js';
@@ -330,7 +330,7 @@ new ResizeObserver(() => {
 document.fonts?.load('28px "Jersey 10"').then(heroAll, () => {});
 document.fonts?.ready.then(heroAll);
 
-/* ---------- data: flag tape, chips and the ask box ---------- */
+/* ---------- data: chips and the ask box ---------- */
 let ranking, commerce, companies, focus;
 
 // "Can my agent shop in X?" answered from the shopping category.
@@ -344,9 +344,6 @@ function answer(code) {
 }
 
 function renderCountries() {
-  const label = (r) => `${esc(r.name)}, rank ${r.rank}, score ${r.score}`;
-  $('[data-hero-flags]').innerHTML = ranking.map((r) => `
-    <li><a href="#country=${r.code}" data-go-country="${r.code}" aria-label="${label(r)}" aria-current="${r.code === focus}">${flag(r.code)}<span>${r.code}</span><b>${r.score}</b></a></li>`).join('');
   row.innerHTML = ranking.map((r) => `
     <li><a href="#country=${r.code}" data-go-country="${r.code}" tabindex="-1" aria-current="${r.code === focus}">${flag(r.code)}<span class="hero-chip-c">${r.code}</span><span class="hero-chip-v">${r.score}</span><i class="hero-stem"></i></a></li>`).join('');
 }

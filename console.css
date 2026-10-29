@@ -193,16 +193,16 @@
 /* No keyboard on most touch screens, so only the counts stay. */
 @media (hover: none) and (pointer: coarse) { .term-keys span:not(.label) { display: none; } }
 
-/* ---------- section heads (tiers, companies, method) ---------- */
-.sec { padding-top: 112px; }
+/* ---------- section heads (compare, companies, open source, method) ---------- */
+/* a link to a section lands with its label 40px under the 60px nav, not after the empty top padding (scroll-padding-top is 72px) */
+.sec { padding-top: 112px; scroll-margin-top: -84px; }
 .sec-h { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px 40px; margin-bottom: 28px; }
 .sec-h h2 { max-width: 24ch; margin-top: 12px; font: 560 clamp(28px, 3.6vw, 44px)/1.05 var(--font); letter-spacing: -0.045em; text-wrap: balance; }
 .dim { color: var(--ink-2); }
+/* the dim second line always starts its own line, so a short first line never pulls it up */
+.sec-h h2 .dim { display: block; }
 .sec-h-c { display: grid; justify-content: center; justify-items: center; gap: 0; margin-bottom: 40px; text-align: center; }
 .sec-h-c h2 { max-width: 22ch; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -0.04em; }
-.cuts { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; font: 500 11px/1 var(--mono); }
-.cuts span { display: inline-flex; align-items: center; gap: 7px; height: 26px; padding: 0 9px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-2); white-space: nowrap; }
-.cuts b { display: grid; place-items: center; align-self: stretch; width: 24px; background: var(--c); color: var(--page); font: 400 17px/1 var(--pixel); }
 
 /* ---------- companies and open source: a filter and a table that scrolls inside its panel ---------- */
 .co-panel { padding: 16px; }
@@ -310,7 +310,7 @@
   .feed button { grid-template-columns: 38px 48px minmax(0, 1fr); row-gap: 6px; align-items: start; }
   .feed .chip { grid-column: 3; justify-self: start; }
   .feed time, .fd-c { padding-top: 2px; }
-  .sec { padding-top: 72px; }
+  .sec { padding-top: 72px; scroll-margin-top: -44px; }
   .crop-in { left: 16px; }
   .crop-in:has(.crow) { right: 16px; }
   .foot-site { flex-direction: column; }

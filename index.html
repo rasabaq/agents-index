@@ -44,14 +44,12 @@
       </a>
       <button type="button" class="nav-menu" aria-expanded="false" aria-controls="site-nav" data-nav-menu>Menu</button>
       <nav id="site-nav" aria-label="Sections">
-        <a href="#ranking">Ranking</a>
-        <a href="#matrix">Matrix</a>
+        <a href="#v-map">Map</a>
         <a href="#country">Countries</a>
+        <a href="#compare">Compare</a>
         <a href="#companies">Companies</a>
         <a href="#opensource">Open source</a>
-        <a href="#tiers">Tiers</a>
         <a href="#method">Method</a>
-        <a href="atlas/">Atlas</a>
       </nav>
     </div>
   </header>
@@ -68,7 +66,6 @@
           <div>
             <h1 id="hero-title"><span>See what AI agents</span> <span>can actually do,</span> <span><span class="hero-tape">country by country.</span></span></h1>
             <p class="hero-sub"><span>Not how much AI a country has, but <b>what agents can do there</b>. Every status cites a source.</span></p>
-            <ol class="hero-flags" aria-label="Ranking, score out of 100" data-hero-flags></ol>
             <div class="hero-ctas">
               <a class="hero-btn hero-btn-1" href="#ranking">Open the ranking <span aria-hidden="true">→</span></a>
               <a class="hero-btn hero-btn-2" href="#method">How we score</a>
@@ -153,17 +150,6 @@
       </p>
     </div>
 
-    <section id="tiers" class="wrap sec" data-sections>
-      <div class="sec-h">
-        <div>
-          <p class="label">Tier list · score 0–100</p>
-          <h2><span data-tiers-title>Tiers</span> <span class="dim">Cut every 10 points.</span></h2>
-        </div>
-        <p class="cuts" aria-label="Tier cut-offs" data-cuts></p>
-      </div>
-      <ol class="tier-list" data-tiers></ol>
-    </section>
-
     <section class="band" aria-labelledby="band-title" data-sections>
       <header class="band-h">
         <p class="kicker">The dataset · as of <span data-asof></span></p>
@@ -172,6 +158,15 @@
       <div class="nums" data-nums><canvas class="nums-cv" aria-hidden="true"></canvas></div>
     </section>
 
+    <div id="compare" class="wrap sec sec-lead">
+      <div class="sec-h">
+        <div>
+          <p class="label">Compare countries</p>
+          <h2>How the countries compare. <span class="dim">One table first, then every rank.</span></h2>
+        </div>
+        <p class="sec-note">Six charts, from the simplest to the richest.</p>
+      </div>
+    </div>
     <section data-chart="periodic"></section>
     <section data-chart="compare"></section>
     <section data-chart="radar"></section>
@@ -216,6 +211,14 @@
       </div>
     </section>
 
+    <div id="origins" class="wrap sec sec-lead">
+      <div class="sec-h">
+        <div>
+          <p class="label">Where it comes from</p>
+          <h2>Built on dated sources. <span class="dim">When they appeared, how we score.</span></h2>
+        </div>
+      </div>
+    </div>
     <section data-chart="timeline"></section>
 
     <section id="method" class="wrap sec">
