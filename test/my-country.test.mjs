@@ -23,7 +23,7 @@ test('the verdict agrees with the lists: "can" has a live cell, "cannot yet" has
     'In Chile, AI agents can pay and book travel and local services today, but cannot yet move money through your bank or shop for you. Main reason: No rule in force yet.');
   assert.equal(verdict('Chile', scores, live), 'In Chile, AI agents can pay and book travel and local services today, but cannot yet move money through your bank or shop for you.');
   assert.equal(verdict('Mexico', { messaging: 90, government: 60 }, { messaging: 2, government: 1 }),
-    'In Mexico, AI agents can buy and get support in chat, and prove who you are to apps today. Something works in every area, though not all of it yet.');
+    'In Mexico, AI agents can buy and get support in chat, and use your digital ID and public services today. Something works in every area, though not all of it yet.');
   assert.equal(verdict('Peru', { commerce: 10 }, { commerce: 0 }, () => 'Pilot only'), 'In Peru, nothing we track works for AI agents yet: they cannot shop for you. Main reason: Pilot only.');
 });
 

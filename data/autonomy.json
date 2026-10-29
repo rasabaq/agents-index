@@ -12,7 +12,7 @@
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
               "date": "2026-10",
               "type": "company"
@@ -56,11 +56,11 @@
         },
         "GB": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome and Perplexity Comet work in the UK; Gemini in Chrome now reaches the UK on desktop, but its auto browse agent is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work in the UK; Gemini in Chrome now reaches the UK on desktop, but its auto browse agent is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
               "date": "2026-10",
               "type": "company"
@@ -101,14 +101,14 @@
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
               "date": "2026-10",
               "type": "company"
             },
             {
               "title": "ChatGPT Supported Countries",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
               "date": "2026-10",
               "type": "company"
@@ -149,7 +149,7 @@
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
               "date": "2026-10",
               "type": "company"
@@ -190,7 +190,7 @@
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
               "date": "2026-10",
               "type": "company"
@@ -231,7 +231,7 @@
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
               "date": "2026-10",
               "type": "company"
@@ -272,7 +272,7 @@
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
               "date": "2026-10",
               "type": "company"
@@ -313,7 +313,7 @@
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
               "date": "2026-10",
               "type": "company"
@@ -357,7 +357,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Google Search AI Mode can phone local businesses for prices and availability for signed-in adults in English (evolved from the 'Ask for Me' Labs test).",
+          "note": "Google Search AI Mode's \"Check for me\" phones local businesses for prices and availability for signed-in adults in English; it grew out of the US \"Let Google Call\" shopping feature.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -367,7 +367,7 @@
               "type": "company"
             },
             {
-              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
@@ -378,7 +378,7 @@
         "GB": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -388,7 +388,7 @@
               "type": "company"
             },
             {
-              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
@@ -399,7 +399,7 @@
         "DE": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -409,7 +409,7 @@
               "type": "company"
             },
             {
-              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
@@ -420,7 +420,7 @@
         "BR": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -430,7 +430,7 @@
               "type": "company"
             },
             {
-              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
@@ -441,7 +441,7 @@
         "MX": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -451,7 +451,7 @@
               "type": "company"
             },
             {
-              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
@@ -462,7 +462,7 @@
         "CL": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -472,7 +472,7 @@
               "type": "company"
             },
             {
-              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
@@ -483,7 +483,7 @@
         "CO": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -493,7 +493,7 @@
               "type": "company"
             },
             {
-              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
@@ -504,7 +504,7 @@
         "IN": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google's AI calling in Search (Let Google Call) rolled out only in the US, in English, and Meta and startup calling agents are US tests.",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -514,7 +514,7 @@
               "type": "company"
             },
             {
-              "title": "New agentic shopping features in Search and Gemini, including Let Google Call",
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
@@ -531,7 +531,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Gemini connected apps (calls, messages, WhatsApp, Calendar, Instacart, OpenTable), Alexa+ (free with Prime) and Gemini Spark act across apps; Apple's Siri AI app actions are in English beta; OpenAI's dots, always-on agents with their own cloud computer that work across connected apps, are rolling out to Pro and Business Premium users in markets outside the EEA, Switzerland and the UK.",
+          "note": "Gemini connected apps (calls, messages, WhatsApp, Calendar, Instacart, OpenTable), Alexa+ (free with Prime) and Gemini Spark act across apps; Apple's Siri AI app actions are in beta; OpenAI's dots, always-on agents with their own cloud computer that work across connected apps, are rolling out to Pro users outside the EEA, Switzerland and the UK, and to Business Premium workspaces.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -577,7 +577,7 @@
             },
             {
               "title": "Getting started with your dot",
-              "publisher": "OpenAI Help Center",
+              "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
               "date": "2026-10",
               "type": "company"
@@ -586,7 +586,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "Gemini connected apps send messages, make calls and add calendar events; Alexa+ is in free Early Access and Siri AI is in English beta; Gemini Spark excludes the UK.",
+          "note": "Gemini connected apps send messages, make calls and add calendar events; Alexa+ is in free Early Access and Siri AI is in beta; Gemini Spark excludes the UK, and OpenAI's dots are not offered to Pro users in the UK.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -622,12 +622,19 @@
               "url": "https://support.google.com/gemini/answer/17171264",
               "date": "2026-07-17",
               "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "DE": {
           "status": "live",
-          "note": "Gemini connected apps work in German on Android; Alexa+ is in invite-based Early Access since May 2026; Apple's Siri AI and Gemini Spark are not available in the EU.",
+          "note": "Gemini connected apps work in German on Android; Alexa+ has been in Early Access since May 2026; Apple's Siri AI and Gemini Spark are not available in the EU, and OpenAI's dots are not offered to Pro users in the EEA.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -644,10 +651,10 @@
               "type": "company"
             },
             {
-              "title": "Alexa+ launches in India: Amazon's next-gen AI assistant expands internationally",
+              "title": "25 Dinge, die Du mit Alexa+ ausprobieren kannst",
               "publisher": "Amazon",
-              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
-              "date": "2026-09",
+              "url": "https://www.aboutamazon.de/news/amazon-devices-und-services/alexa-plus-funktionen-ausprobieren",
+              "date": "2026-10",
               "type": "company"
             },
             {
@@ -663,12 +670,19 @@
               "url": "https://support.google.com/gemini/answer/17171264",
               "date": "2026-07-17",
               "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "BR": {
           "status": "live",
-          "note": "Gemini connected apps work in Portuguese on Android and some partner apps launched in Brazil; Alexa+ is reported in Early Access; Siri AI Portuguese beta was due in October 2026.",
+          "note": "Gemini connected apps work in Portuguese on Android and some partner apps launched in Brazil; Alexa+ has been in Early Access since June 2026; Siri AI is in beta in English and, since October 2026, Portuguese; OpenAI's dots, always-on agents that work across connected apps, are rolling out to Pro users here.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -697,12 +711,33 @@
               "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
               "date": "2026-09-14",
               "type": "company"
+            },
+            {
+              "title": "Siri AI is available in more languages starting today",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+              "date": "2026-10-26",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "MX": {
           "status": "live",
-          "note": "Gemini connected apps work in Spanish on Android; Alexa+ launched in Spanish in Early Access in January 2026; Siri AI Spanish beta was due in October 2026.",
+          "note": "Gemini connected apps work in Spanish on Android; Alexa+ launched in Spanish in Early Access in January 2026; Siri AI is in beta in English and, since October 2026, Spanish; OpenAI's dots, always-on agents that work across connected apps, are rolling out to Pro users here.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -719,10 +754,10 @@
               "type": "company"
             },
             {
-              "title": "How Alexa+ learned local culture and language (Mexico launch)",
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
-              "url": "https://www.aboutamazon.com/news/devices/amazon-alexa-plus-AI-culture-language",
-              "date": "2026",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
               "type": "company"
             },
             {
@@ -730,13 +765,27 @@
               "publisher": "Apple",
               "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
               "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI is available in more languages starting today",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+              "date": "2026-10-26",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
               "type": "company"
             }
           ]
         },
         "CL": {
           "status": "live",
-          "note": "Gemini connected apps work in Spanish on Android and can make calls, send texts and WhatsApp messages and add calendar events; Alexa+ is not offered here; Siri AI is a beta in English, with Spanish due in October 2026.",
+          "note": "Gemini connected apps work in Spanish on Android and can make calls, send texts and WhatsApp messages and add calendar events; Alexa+ is not on Amazon's list of Alexa+ countries; Siri AI is in beta in English and, since October 2026, Spanish; OpenAI's dots, always-on agents that work across connected apps, are rolling out to Pro users here.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -774,17 +823,31 @@
               "type": "company"
             },
             {
-              "title": "Alexa+ launches in India: Amazon's next-gen AI assistant expands internationally",
+              "title": "Siri AI is available in more languages starting today",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+              "date": "2026-10-26",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
               "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
-              "date": "2026-09",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
               "type": "company"
             }
           ]
         },
         "CO": {
           "status": "live",
-          "note": "Gemini connected apps work in Spanish on Android and can make calls, send texts and WhatsApp messages and add calendar events; Alexa+ is not offered here; Siri AI is a beta in English, with Spanish due in October 2026.",
+          "note": "Gemini connected apps work in Spanish on Android and can make calls, send texts and WhatsApp messages and add calendar events; Alexa+ is not on Amazon's list of Alexa+ countries; Siri AI is in beta in English and, since October 2026, Spanish; OpenAI's dots, always-on agents that work across connected apps, are rolling out to Pro users here.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -822,17 +885,31 @@
               "type": "company"
             },
             {
-              "title": "Alexa+ launches in India: Amazon's next-gen AI assistant expands internationally",
+              "title": "Siri AI is available in more languages starting today",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+              "date": "2026-10-26",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
               "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
-              "date": "2026-09",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
               "type": "company"
             }
           ]
         },
         "IN": {
           "status": "live",
-          "note": "Gemini connected apps work in Hindi and English on Android; Alexa+ is in Early Access in Hindi and English since September 2026, with Swiggy, MakeMyTrip and EazyDiner links coming soon.",
+          "note": "Gemini connected apps work in Hindi and English on Android; Alexa+ is in Early Access in Hindi and English since September 2026, with Swiggy, MakeMyTrip and EazyDiner links coming soon; Siri AI is in beta in English; OpenAI's dots, always-on agents that work across connected apps, are rolling out to Pro users here.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -857,9 +934,23 @@
             },
             {
               "title": "Alexa+ launches in India",
-              "publisher": "Amazon",
+              "publisher": "Amazon India",
               "url": "https://www.aboutamazon.in/news/devices-and-alexa/alexa-plus-launch-india",
               "date": "2026-09-16",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+              "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
               "type": "company"
             }
           ]
@@ -874,7 +965,7 @@
       "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
       "homepage": "https://openai.com/",
       "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
-      "role": "ChatGPT Work's cloud browser opens sites, clicks and fills forms for paid users; it replaced ChatGPT agent in August 2026.",
+      "role": "ChatGPT Work's cloud browser opens sites, clicks and fills forms for paid users, and dots, always-on agents, act across connected apps for Pro users outside the EEA, Switzerland and the UK.",
       "markets": [
         "US",
         "GB",
@@ -886,8 +977,19 @@
         "IN"
       ],
       "capabilities": [
-        "autonomy.browser-agent"
-      ]
+        "autonomy.browser-agent",
+        "autonomy.personal-assistant-actions"
+      ],
+      "marketsByCapability": {
+        "autonomy.personal-assistant-actions": [
+          "US",
+          "BR",
+          "MX",
+          "CL",
+          "CO",
+          "IN"
+        ]
+      }
     },
     {
       "name": "Anthropic",
@@ -952,7 +1054,16 @@
         "autonomy.browser-agent",
         "autonomy.calls-for-you",
         "autonomy.personal-assistant-actions"
-      ]
+      ],
+      "marketsByCapability": {
+        "autonomy.browser-agent": [
+          "US",
+          "IN"
+        ],
+        "autonomy.calls-for-you": [
+          "US"
+        ]
+      }
     },
     {
       "name": "Amazon",
@@ -979,7 +1090,7 @@
       "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
       "homepage": "https://www.apple.com/",
       "icon": "https://www.apple.com/favicon.ico",
-      "role": "Siri AI uses personal context and App Intents to act in apps like Messages and WhatsApp, in beta and outside the EU.",
+      "role": "Siri AI uses personal context to take actions in apps; it is in beta and not available in the EU.",
       "markets": [
         "US",
         "GB",

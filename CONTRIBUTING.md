@@ -27,9 +27,10 @@ Each cell is one country and one capability, in a category file in `data/`. To c
 The rules:
 
 - Every Live, Limited or Announced cell needs at least one source with a URL.
+- Every source needs a `date`, as `"YYYY-MM-DD"` or `"YYYY-MM"`, that is not later than `asOf` in `data/meta.json`.
 - Primary sources come first: the company, the regulator, or a paper. Use news only when nothing primary exists.
 - When sources are thin, indirect or disagree, add `"confidence": "low"`. When they disagree, use the lower status and say why in the note.
-- On a cell that is not live, you can add `"gapReason"` with the main reason: one of the ids in `gapReasons` in `data/meta.json`, such as `"pilot-only"`.
+- On a cell that is not live, you can add `"gapReason"` with the main reason: one of the ids in `gapReasons` in `data/meta.json`, such as `"no-rule"`. Use `"pilot-only"` and `"assist-only"` only on a `limited` cell.
 - Never invent a URL.
 
 If you cannot edit the file, open a [data correction issue](https://github.com/rasabaq/ai-agent-observatory/issues/new?template=data-correction.yml) with the source, and we will make the change.

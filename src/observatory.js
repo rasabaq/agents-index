@@ -77,9 +77,11 @@ export function validate(meta, categories) {
         if (cell.gapReason !== undefined) {
           if (!gapReasons.has(cell.gapReason)) errors.push(`${where}/${code}: unknown gapReason "${cell.gapReason}"`);
           if (cell.status === 'live') errors.push(`${where}/${code}: a live cell has no gapReason`);
+          // A pilot, or help that leaves you the last step, is partial availability: only a Limited cell.
+          else if (LIMITED_ONLY.includes(cell.gapReason) && cell.status !== 'limited') errors.push(`${where}/${code}: gapReason "${cell.gapReason}" goes only on a limited cell`);
         }
         if (cell.status !== 'none' && !cell.evidence?.length) errors.push(`${where}/${code}: "${cell.status}" needs evidence`);
-        for (const ev of cell.evidence ?? []) checkEvidence(ev, `${where}/${code}`, errors);
+        for (const ev of cell.evidence ?? []) checkEvidence(ev, `${where}/${code}`, meta.asOf, errors);
       }
       for (const code of Object.keys(cap.countries ?? {})) {
         if (!codes.has(code)) errors.push(`${where}: unknown country "${code}"`);
@@ -97,6 +99,10 @@ export function validate(meta, categories) {
       else if (co.icon !== null && !/^https:\/\//.test(co.icon)) errors.push(`${where}: icon must be an https URL, or null when the site has none`);
       for (const m of co.markets ?? []) if (!codes.has(m)) errors.push(`${where}: unknown market "${m}"`);
       for (const c of co.capabilities ?? []) if (!capIds.has(c)) errors.push(`${where}: unknown capability "${c}"`);
+      for (const [c, ms] of Object.entries(co.marketsByCapability ?? {})) {
+        if (!(co.capabilities ?? []).includes(c)) errors.push(`${where}: marketsByCapability names "${c}", which is not in its capabilities`);
+        for (const m of ms) if (!codes.has(m) || !(co.markets ?? []).includes(m)) errors.push(`${where}: marketsByCapability "${c}" has "${m}", which is not one of its markets`);
+      }
     }
   }
 
@@ -122,6 +128,7 @@ export function validate(meta, categories) {
 }
 
 const REGISTRIES = ['npm', 'pypi', 'packagist'];
+const LIMITED_ONLY = ['pilot-only', 'assist-only'];
 const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s ?? '');
 
 // How much an open-source repo is really used: counted installs, not stars. Stars measure attention.
@@ -156,11 +163,13 @@ export function rankRepos(categories) {
       || b.usage.stars - a.usage.stars);
 }
 
-function checkEvidence(ev, where, errors) {
+// Dates are "YYYY-MM-DD" or "YYYY-MM", and not after the dataset's asOf. String order is date order here.
+function checkEvidence(ev, where, asOf, errors) {
   if (!ev.title) errors.push(`${where}: evidence needs a title`);
   if (!isUrl(ev.url)) errors.push(`${where}: bad evidence url "${ev.url}"`);
   if (!EVIDENCE_TYPES.includes(ev.type)) errors.push(`${where}: bad evidence type "${ev.type}"`);
-  if (ev.date && !/^\d{4}(-\d{2}){0,2}$/.test(ev.date)) errors.push(`${where}: bad date "${ev.date}"`);
+  if (!/^\d{4}-\d{2}(-\d{2})?$/.test(ev.date ?? '')) errors.push(`${where}: evidence date must be "YYYY-MM-DD" or "YYYY-MM", not "${ev.date ?? ''}"`);
+  else if (asOf && ev.date > asOf) errors.push(`${where}: evidence date "${ev.date}" is after asOf "${asOf}"`);
 }
 
 function isUrl(s) {
@@ -290,13 +299,17 @@ export function verdict(name, byCategory, liveBy, reasonFor = () => null) {
   return `${where}, AI agents can ${join(can, 'and')} today, but cannot yet ${join(cannot, 'or')}.${why}`;
 }
 
+// The markets where a company works for one capability: `marketsByCapability` narrows its category-wide `markets`
+// when one capability works in fewer countries (WhatsApp payments only in Brazil and India, say).
+export const marketsFor = (co, capId) => co.marketsByCapability?.[capId] ?? co.markets;
+
 // Companies that could close a gap: in the same category file, they enable this capability and work in a country
 // of the same region, but not in this one. They must already work in two or more countries, so a national agency or
 // a one-country bank next door is not offered as a fix. `region` maps a country code to its region.
 export function couldClose(companies, capId, code, region) {
   return (companies ?? [])
-    .filter((co) => (co.capabilities ?? []).includes(capId) && co.markets.length > 1 && !co.markets.includes(code))
-    .map((co) => ({ ...co, near: co.markets.filter((m) => m !== code && region[m] === region[code]) }))
+    .filter((co) => (co.capabilities ?? []).includes(capId) && marketsFor(co, capId).length > 1 && !marketsFor(co, capId).includes(code))
+    .map((co) => ({ ...co, near: marketsFor(co, capId).filter((m) => m !== code && region[m] === region[code]) }))
     .filter((co) => co.near.length)
     .sort((a, b) => b.near.length - a.near.length || a.name.localeCompare(b.name));
 }
@@ -330,7 +343,7 @@ export function forBusiness(categories, code) {
       const { cap, cat } = caps.get(id);
       const byName = new Map();
       for (const co of cat.companies ?? []) {
-        if ((co.capabilities ?? []).includes(id) && co.markets.includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
+        if ((co.capabilities ?? []).includes(id) && marketsFor(co, id).includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
       }
       return { cap, label, cell: cap.countries[code], companies: [...byName.values()].sort((a, b) => a.name.localeCompare(b.name)) };
     }),

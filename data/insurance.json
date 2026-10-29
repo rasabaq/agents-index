@@ -8,42 +8,56 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Lemonade's AI bot Maya quotes and sells renters and home policies in its app in about 90 seconds. The Insurify, Experian and Liberty Mutual apps in ChatGPT give car insurance quotes, but you finish buying on their sites or the insurer's.",
+          "note": "Lemonade's AI bot Maya quotes and sells renters and home policies in a chat in its app. The Insurify, Experian and Liberty Mutual apps in ChatGPT give car insurance quotes, but you finish buying on their sites or the insurer's.",
           "evidence": [
             {
-              "title": "The secret behind Lemonade's instant insurance",
+              "title": "The Ultimate Lemonade Renters & Homeowners FAQ",
               "publisher": "Lemonade",
-              "url": "https://www.lemonade.com/blog/secret-behind-lemonades-instant-insurance/",
+              "url": "https://www.lemonade.com/renters/explained/lemonade-renters-and-homeowners-faq/",
+              "date": "2026-10",
               "type": "company"
             },
             {
               "title": "Insurify expands ChatGPT plugin with real-time personalized quotes and in-chat shopping",
               "publisher": "Insurify",
               "url": "https://insurify.com/press/news/insurify-expands-chatgpt-plugin/",
-              "date": "2026",
+              "date": "2026-08-19",
               "type": "company"
             },
             {
               "title": "Experian launches insurance marketplace app on ChatGPT",
               "publisher": "Experian",
               "url": "https://www.experianplc.com/newsroom/press-releases/2026/experian-launches-insurance-marketplace-app-on-chatgpt",
-              "date": "2026-02",
+              "date": "2026-02-12",
               "type": "company"
             },
             {
               "title": "Liberty Mutual launches carrier-backed conversational AI quoting app in ChatGPT for auto insurance",
-              "publisher": "Liberty Mutual",
+              "publisher": "Liberty Mutual (PR Newswire)",
               "url": "https://www.prnewswire.com/news-releases/liberty-mutual-insurance-launches-first-of-its-kind-carrier-backed-conversational-ai-quoting-app-in-chatgpt-for-auto-insurance-302784774.html",
-              "date": "2026-05",
+              "date": "2026-05-28",
               "type": "company"
             }
           ]
         },
         "GB": {
-          "status": "limited",
-          "gapReason": "assist-only",
-          "note": "The MoneySuperMarket and Go.Compare apps in ChatGPT re-run car and home quotes, but you buy on their sites. Lemonade sells contents and home cover in its UK app, but we found no UK page saying its AI bot Maya runs the sign-up there.",
+          "status": "live",
+          "note": "Lemonade's AI bot Maya asks you a few questions in a chat and sells contents and home cover in its UK app. The MoneySuperMarket and Go.Compare apps in ChatGPT give car and home quotes, but you buy on their sites.",
           "evidence": [
+            {
+              "title": "What is an insurance quote?",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/uk/home-insurance/explained/insurance-quote/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Home insurance starting at £4",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/uk",
+              "date": "2026-10",
+              "type": "company"
+            },
             {
               "title": "New MoneySuperMarket ChatGPT app",
               "publisher": "MoneySuperMarket",
@@ -52,31 +66,30 @@
               "type": "company"
             },
             {
-              "title": "Go.Compare launches ChatGPT app for insurance comparison",
-              "publisher": "Coverager",
-              "url": "https://coverager.com/go-compare-launches-chatgpt-app-for-insurance-comparison/",
-              "date": "2026",
-              "type": "news"
-            },
-            {
-              "title": "Lemonade launches in the UK",
-              "publisher": "FF News",
-              "url": "https://ffnews.com/newsarticle/lemonade-launches-in-the-uk",
-              "date": "2022-10",
-              "type": "news"
+              "title": "Go.Compare launches ChatGPT app to help consumers find a great deal on their insurance",
+              "publisher": "Go.Compare",
+              "url": "https://press.gocompare.com/news/go-compare-launches-chatgpt-app-to-help-consumers-find-a-great-deal-on-their-insurance",
+              "date": "2026-05-14",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "DE": {
           "status": "limited",
-          "gapReason": "not-launched",
-          "note": "Unconfirmed: Lemonade sells contents and personal liability cover in its German app, but we found no page we could open that says its AI bot Maya runs the sign-up there; its German site blocks scripts, and a 2019 report says only that you buy in the app or on the website.",
+          "note": "Lemonade sells contents and personal liability cover in its German app and website, but no German page we found says its AI bot Maya runs the sign-up there.",
           "evidence": [
+            {
+              "title": "Hausrat & Privathaftpflichtversicherung FAQ",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/de/faq",
+              "date": "2026-10",
+              "type": "company"
+            },
             {
               "title": "Lemonade: Hausrat und Privathaftpflicht schnell per App abschließen",
               "publisher": "appgefahren",
               "url": "https://www.appgefahren.de/lemonade-hausrat-und-privathaftpflicht-schnell-per-app-abschliessen-269254.html",
+              "date": "2020-01-20",
               "type": "news"
             },
             {
@@ -96,10 +109,17 @@
           "evidence": [
             {
               "title": "PolicyX launches Pixie, India's first AI insurance chatbot",
-              "publisher": "RCN India",
+              "publisher": "PolicyX (RCN India)",
               "url": "https://rcnindia.blogspot.com/2025/12/policyx-launches-pixie-indias-first-ai.html",
               "date": "2025-12-19",
-              "type": "news"
+              "type": "company"
+            },
+            {
+              "title": "PiXie, your AI insurance assistant",
+              "publisher": "PolicyX",
+              "url": "https://www.policyx.com/pixie/",
+              "date": "2026-10",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -132,9 +152,10 @@
           "evidence": [
             {
               "title": "Aseguradoras necesitan atender WhatsApp",
-              "publisher": "Crónica",
+              "publisher": "Blip (Crónica)",
               "url": "https://www.cronica.com.mx/negocios/aseguradoras-necesitan-atender-whatsapp.html",
-              "type": "news"
+              "date": "2024-06-06",
+              "type": "company"
             }
           ]
         },
@@ -153,15 +174,15 @@
           "confidence": "low"
         },
         "CO": {
-          "status": "limited",
-          "gapReason": "assist-only",
-          "note": "The digital agency Seguro Canguro uses AI to check car policy requests and then registers the sale and sends the policy on WhatsApp, but the AI checks documents rather than selling to you in a chat.",
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no AI that sells a policy in a chat in Colombia. The digital agency Seguro Canguro uses AI only to check car policy documents before it sends the policy.",
           "evidence": [
             {
               "title": "La inteligencia artificial reduce a minutos la revisión de pólizas en Colombia: así funciona",
               "publisher": "Noticias RCN",
               "url": "https://www.noticiasrcn.com/economia/la-inteligencia-artificial-reduce-a-minutos-la-revision-de-polizas-en-colombia-1057862",
-              "date": "2026",
+              "date": "2026-09-04",
               "type": "news"
             }
           ],
@@ -179,23 +200,46 @@
           "note": "Lemonade's AI Jim takes renters, home, car and pet claims in a chat in its app, pays some instantly and passes the rest to a person.",
           "evidence": [
             {
-              "title": "Reporting your car's damage using the Lemonade app",
+              "title": "How Lemonade's tech-powered claims work",
               "publisher": "Lemonade",
-              "url": "https://www.lemonade.com/car/explained/taking-pictures-for-car-insurance/",
+              "url": "https://www.lemonade.com/claims",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "The Ultimate Lemonade Renters & Homeowners FAQ",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/renters/explained/lemonade-renters-and-homeowners-faq/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "How to file a car insurance claim",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/car/explained/how-to-file-a-car-insurance-claim/",
+              "date": "2026-10",
               "type": "company"
             },
             {
               "title": "How to file a pet insurance claim",
               "publisher": "Lemonade",
               "url": "https://www.lemonade.com/pet/insurance-guide/how-to-file-a-pet-insurance-claim/",
+              "date": "2026-10",
               "type": "company"
             }
           ]
         },
         "GB": {
           "status": "live",
-          "note": "Lemonade's AI Jim assessed and paid a London customer's bike theft claim in the app in two seconds (June 2023); we found no newer UK page on the claim flow.",
+          "note": "In Lemonade's UK app you tell AI Jim about your claim in a chat; it approves and pays simple claims at once and passes the rest to a person.",
           "evidence": [
+            {
+              "title": "Making an insurance claim",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/uk/home-insurance/explained/making-an-insurance-claim/",
+              "date": "2026-10",
+              "type": "company"
+            },
             {
               "title": "New UK record? Lemonade pays claim in two seconds",
               "publisher": "Claims Magazine",
@@ -203,8 +247,7 @@
               "date": "2023-06-20",
               "type": "news"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "DE": {
           "status": "live",
@@ -214,6 +257,7 @@
               "title": "So meldest du einen Schaden bei Lemonade",
               "publisher": "Lemonade",
               "url": "https://www.lemonade.com/de/hausrat/einfach-erklaert/so-meldest-du-einen-schaden-bei-lemonade/",
+              "date": "2026-10",
               "type": "company"
             }
           ]
@@ -224,8 +268,9 @@
           "evidence": [
             {
               "title": "Know how to get your instant motor claim settlement via WhatsApp",
-              "publisher": "Outlook Money",
-              "url": "https://business.outlookindia.com/personal-finance/insurance/know-how-to-get-your-instant-motor-claim-settlement-via-whatsapp",
+              "publisher": "Outlook Business",
+              "url": "https://www.outlookbusiness.com/personal-finance/insurance/know-how-to-get-your-instant-motor-claim-settlement-via-whatsapp",
+              "date": "2024-05-29",
               "type": "news"
             }
           ],
@@ -233,7 +278,7 @@
         },
         "BR": {
           "status": "live",
-          "note": "Porto's conversational AI agent on WhatsApp lets policyholders across Brazil open and finish a car theft claim, and it handles 70% of those claims (October 2026); Mapfre and EZZE also take claims through AI on WhatsApp.",
+          "note": "Porto's conversational AI agent on WhatsApp lets policyholders across Brazil open and finish a car theft claim, and it handles 70% of those claims (October 2026). Mapfre's AI agent on WhatsApp and EZZE's AI chat assistant also open car claims.",
           "evidence": [
             {
               "title": "Porto automatiza 70% dos sinistros de roubo e furto",
@@ -248,19 +293,27 @@
               "url": "https://economicnewsbrasil.com.br/2026/08/18/sinistro-auto-ezze-seguros-ia/",
               "date": "2026-08-18",
               "type": "news"
+            },
+            {
+              "title": "MAPFRE implementa primeira jornada de sinistro 100% resolutiva por IA no WhatsApp",
+              "publisher": "TI Inside",
+              "url": "https://tiinside.com.br/29/09/2025/mapfre-implementa-primeira-jornada-de-sinistro-100-resolutiva-por-ia-no-whatsapp/",
+              "date": "2025-09-29",
+              "type": "news"
             }
           ]
         },
         "MX": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Quálitas's Quali-bot on WhatsApp answers claim questions and sends you to Ajuste Express to send photos, but we found no AI that files or moves the claim; the source is written by the bot's vendor.",
+          "note": "Quálitas's Quali-bot on WhatsApp answers claim questions, collects documents and sends you to Ajuste Express to send photos, but we found no AI that files or moves the claim. The only source is written by Blip, the bot's maker.",
           "evidence": [
             {
               "title": "Aseguradoras necesitan atender WhatsApp",
-              "publisher": "Crónica",
+              "publisher": "Blip (Crónica)",
               "url": "https://www.cronica.com.mx/negocios/aseguradoras-necesitan-atender-whatsapp.html",
-              "type": "news"
+              "date": "2024-06-06",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -273,12 +326,13 @@
         },
         "CO": {
           "status": "live",
-          "note": "BNP Paribas Cardif Colombia handles claims entirely on WhatsApp: its AI reads and checks the documents you send and decides whether the claim stays automated or goes to an advisor, and nine of ten claims are paid fully online.",
+          "note": "BNP Paribas Cardif Colombia handles claims on WhatsApp: its AI reads and checks the documents you send and decides whether the claim stays automated or goes to an advisor (May 2023).",
           "evidence": [
             {
               "title": "Aseguradora utiliza la IA para la evaluación y pagos de pólizas",
               "publisher": "La Nota Económica",
               "url": "https://lanotaeconomica.com.co/movidas-empresarial/aseguradora-utiliza-la-ia-para-la-evaluacion-y-pagos-de-polizas/",
+              "date": "2023-05-05",
               "type": "news"
             }
           ],
@@ -291,7 +345,7 @@
     {
       "name": "Lemonade",
       "hq": "US",
-      "url": "https://www.lemonade.com/blog/secret-behind-lemonades-instant-insurance/",
+      "url": "https://www.lemonade.com/renters/explained/lemonade-renters-and-homeowners-faq/",
       "homepage": "https://www.lemonade.com/",
       "icon": null,
       "role": "Its AI bots sell policies in a chat (Maya) and take and pay claims (Jim).",
@@ -320,12 +374,54 @@
       ]
     },
     {
+      "name": "Experian",
+      "hq": "US",
+      "url": "https://www.experianplc.com/newsroom/press-releases/2026/experian-launches-insurance-marketplace-app-on-chatgpt",
+      "homepage": "https://www.experian.com/",
+      "icon": "https://www.experian.com/favicon-192x192.png",
+      "role": "Its ChatGPT app compares estimated car insurance rates; you finish on its site.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "Liberty Mutual",
+      "hq": "US",
+      "url": "https://www.prnewswire.com/news-releases/liberty-mutual-insurance-launches-first-of-its-kind-carrier-backed-conversational-ai-quoting-app-in-chatgpt-for-auto-insurance-302784774.html",
+      "homepage": "https://www.libertymutual.com/",
+      "icon": null,
+      "role": "Its ChatGPT app quotes car insurance; you buy on its site.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
       "name": "MoneySuperMarket",
       "hq": "GB",
       "url": "https://www.moneysupermarket.com/news/new-moneysupermarket-chatgpt-app/",
       "homepage": "https://www.moneysupermarket.com/",
       "icon": "https://www.moneysupermarket.com/favicon.ico",
-      "role": "Its ChatGPT app re-runs car, home and pet insurance quotes; you buy on its site.",
+      "role": "Its ChatGPT app estimates car insurance prices and fetches fresh car, home and pet quotes for existing customers; you buy on its site.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "Go.Compare",
+      "hq": "GB",
+      "url": "https://press.gocompare.com/news/go-compare-launches-chatgpt-app-to-help-consumers-find-a-great-deal-on-their-insurance",
+      "homepage": "https://www.gocompare.com/",
+      "icon": "https://www.gocompare.com/favicon.ico",
+      "role": "Its ChatGPT app compares car, van and home insurance quotes; you buy on its site.",
       "markets": [
         "GB"
       ],
@@ -336,7 +432,7 @@
     {
       "name": "PolicyX",
       "hq": "IN",
-      "url": "https://rcnindia.blogspot.com/2025/12/policyx-launches-pixie-indias-first-ai.html",
+      "url": "https://www.policyx.com/pixie/",
       "homepage": "https://www.policyx.com/",
       "icon": "https://cdn.policyx.com/images/new-faviconpx.ico",
       "role": "Its Pixie chatbot quotes and compares plans from more than 50 insurers.",
@@ -350,7 +446,7 @@
     {
       "name": "HDFC ERGO",
       "hq": "IN",
-      "url": "https://business.outlookindia.com/personal-finance/insurance/know-how-to-get-your-instant-motor-claim-settlement-via-whatsapp",
+      "url": "https://www.outlookbusiness.com/personal-finance/insurance/know-how-to-get-your-instant-motor-claim-settlement-via-whatsapp",
       "homepage": "https://www.hdfcergo.com/",
       "icon": "https://www.hdfcergo.com/assets/images/apple-icon-57x57.png",
       "role": "Its WhatsApp chatbot registers motor claims and settles minor ones after an AI photo inspection.",
@@ -382,6 +478,34 @@
       "homepage": "https://www.portoseguro.com.br/",
       "icon": "https://portoseguro.com.br/etc.clientlibs/porto/clientlibs/clientlib-theme/resources/favicon.ico",
       "role": "Its AI agent on WhatsApp opens and completes car theft claims.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "insurance.file-claim"
+      ]
+    },
+    {
+      "name": "Mapfre",
+      "hq": "ES",
+      "url": "https://tiinside.com.br/29/09/2025/mapfre-implementa-primeira-jornada-de-sinistro-100-resolutiva-por-ia-no-whatsapp/",
+      "homepage": "https://www.mapfre.com.br/",
+      "icon": "https://www.mapfre.com.br/media/favicon.png",
+      "role": "In Brazil, its AI agent on WhatsApp opens and moves car claims.",
+      "markets": [
+        "BR"
+      ],
+      "capabilities": [
+        "insurance.file-claim"
+      ]
+    },
+    {
+      "name": "EZZE Seguros",
+      "hq": "BR",
+      "url": "https://economicnewsbrasil.com.br/2026/08/18/sinistro-auto-ezze-seguros-ia/",
+      "homepage": "https://ezzeseguros.com.br/",
+      "icon": "https://ezzeseguros.com.br/wp-content/uploads/2026/02/cropped-favicon1-180x180.png",
+      "role": "Its AI chat assistant opens car claims in minutes.",
       "markets": [
         "BR"
       ],

@@ -25,7 +25,9 @@ await Promise.all(Array.from({ length: 16 }, async () => {
   }
 }));
 
-const dead = results.filter((r) => r.status === 404 || r.status === 410);
+// These sites answer 404 to every script request, even for pages that work in a browser, so a 404 there proves nothing.
+const FAKE_404 = new Set(['help.uber.com']);
+const dead = results.filter((r) => (r.status === 404 || r.status === 410) && !FAKE_404.has(new URL(r.url).host));
 const unsure = results.filter((r) => typeof r.status !== 'number' || (r.status >= 400 && !dead.includes(r)));
 for (const r of unsure) console.log(`?    ${r.status} ${r.url}`);
 for (const r of dead) console.log(`DEAD ${r.status} ${r.url}`);

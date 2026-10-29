@@ -7,8 +7,8 @@
       "question": "Can an AI agent read your bank accounts and start payments through regulated open banking APIs?",
       "countries": {
         "US": {
-          "status": "limited",
-          "note": "The CFPB Section 1033 rule exists, but a court stayed its compliance dates in October 2025 and the CFPB is rewriting it, so access runs on voluntary bank APIs and aggregators like Plaid, not a mandated regime.",
+          "status": "announced",
+          "note": "The CFPB finalised its Section 1033 data rights rule, but a court stayed its compliance dates in October 2025 and the CFPB is reworking it, so there is no regulated access yet. Aggregators like Plaid connect apps to banks outside a mandated regime.",
           "evidence": [
             {
               "title": "Personal financial data rights",
@@ -21,11 +21,11 @@
               "title": "Section 1033",
               "publisher": "Open Banking Tracker",
               "url": "https://openbankingtracker.com/regulation/usa-1033",
-              "date": "2026",
+              "date": "2026-10",
               "type": "report"
             },
             {
-              "title": "Plaid",
+              "title": "Plaid: Enabling all companies to build fintech solutions",
               "publisher": "Plaid",
               "url": "https://plaid.com/",
               "date": "2026-10",
@@ -36,7 +36,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "The CMA9 open banking mandate gives licensed apps account data and payment initiation, and the UK Payments Initiative launched its commercial Variable Recurring Payments scheme in June 2026, starting with a first wave of lower-risk sectors only.",
+          "note": "The CMA9 open banking mandate gives licensed apps account data and payment initiation, and platforms such as TrueLayer and Plaid connect apps to it. The UK Payments Initiative launched its commercial Variable Recurring Payments scheme in June 2026, starting with a first wave of lower-risk sectors only.",
           "evidence": [
             {
               "title": "Commercial VRP & UKPI",
@@ -58,13 +58,34 @@
               "url": "https://www.regulationtomorrow.com/2026/06/uk-payments-initiative-uk-banks-and-fintechs-launch-new-payment-scheme/",
               "date": "2026-06",
               "type": "news"
+            },
+            {
+              "title": "TrueLayer - Europe's leading open banking platform",
+              "publisher": "TrueLayer",
+              "url": "https://truelayer.com/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Plaid: Enabling all companies to build fintech solutions",
+              "publisher": "Plaid",
+              "url": "https://plaid.com/",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "DE": {
           "status": "live",
-          "note": "EU PSD2, applied in Germany through the ZAG and licensed by BaFin, makes banks give account information and payment initiation providers API access, though there is no standard for recurring variable payments yet.",
+          "note": "EU PSD2, applied in Germany through the ZAG, makes banks give licensed account information and payment initiation providers API access. BaFin licenses these providers, and platforms such as Tink and TrueLayer serve German banks. There is no standard for recurring variable payments yet.",
           "evidence": [
+            {
+              "title": "Geschäfte der Zahlungsinstitute, E-Geld-Institute & Kontoinformationsdienste",
+              "publisher": "BaFin",
+              "url": "https://www.bafin.de/DE/unternehmen-maerkte/erlaubnis-registrierung/zahlungsdienste-zahlungsinstitute/zahlungsdienste-zahlungsinstitute_node.html",
+              "date": "2026-10",
+              "type": "regulation"
+            },
             {
               "title": "Revised rules for payment services in the EU (PSD2 summary)",
               "publisher": "EUR-Lex",
@@ -85,12 +106,26 @@
               "url": "https://www.buhl.de/presse/buhl-erhaelt-bafin-erlaubnis-fuer-kontoinformationsdienste-kid-und-zahlungsausloesedienste-zad",
               "date": "2019-06",
               "type": "company"
+            },
+            {
+              "title": "Tink I Europäische Open-Banking-Plattform",
+              "publisher": "Tink",
+              "url": "https://tink.com/de/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "TrueLayer - Europe's leading open banking platform",
+              "publisher": "TrueLayer",
+              "url": "https://truelayer.com/",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "BR": {
           "status": "live",
-          "note": "Open Finance Brasil, run by the Banco Central, is mandatory for large institutions and lets licensed payment initiators (ITPs) start Pix, Pix Automatico and no-redirect (JSR) payments, and IN BCB 746 removes the fixed R$500 cap on JSR payments from 1 October 2026.",
+          "note": "Open Finance Brasil, run by the Banco Central, is mandatory for large institutions and lets licensed payment initiators (ITPs) start Pix, Pix Automático and no-redirect (JSR) payments, and IN BCB 746 removes the fixed R$500 cap on JSR payments from 1 October 2026. Connectors such as Belvo and Pluggy plug apps into it.",
           "evidence": [
             {
               "title": "Open Finance",
@@ -112,12 +147,19 @@
               "url": "https://thepaypers.com/online-payments/belvo-rolls-out-pix-automatico--1274088",
               "date": "2025-06",
               "type": "news"
+            },
+            {
+              "title": "Pluggy · Infraestrutura de Open Finance para o Brasil",
+              "publisher": "Pluggy",
+              "url": "https://pluggy.ai/",
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "MX": {
           "status": "announced",
-          "note": "Article 76 of the 2018 Fintech Law mandates open APIs, but only open-data (and credit bureau) rules exist; the CNBV and Banxico have still not issued the transactional-data rules, so there is no regulated access to your accounts, and aggregators like Belvo work outside a mandated regime.",
+          "note": "Article 76 of the 2018 Fintech Law mandates open APIs, but only open-data (and credit bureau) rules exist; the CNBV and Banxico have still not issued the rules for account and transaction data, so there is no regulated access yet. Aggregators like Belvo connect apps to banks outside a mandated regime.",
           "evidence": [
             {
               "title": "Ley para Regular las Instituciones de Tecnología Financiera (Article 76)",
@@ -127,18 +169,18 @@
               "type": "regulation"
             },
             {
-              "title": "Se desinfla el open finance en México: de una ley pionera a una realidad operativa",
+              "title": "Open Finance en México: entre la regulación y la implementación",
               "publisher": "LatamFintech",
               "url": "https://www.latamfintech.co/articles/se-desinfla-el-open-finance-en-mexico-de-una-ley-pionera-a-una-realidad-operativa",
-              "date": "2026",
+              "date": "2026-06-26",
               "type": "news"
             },
             {
-              "title": "Open Finance Tracker: México",
+              "title": "Banca abierta en Mexico | Regulaciones y Estado",
               "publisher": "Fiskil",
               "url": "https://www.fiskil.com/es/open-finance-tracker/mexico",
-              "date": "2026",
-              "type": "report"
+              "date": "2026-10",
+              "type": "company"
             },
             {
               "title": "Actualidad en la normatividad fintech en México",
@@ -146,13 +188,20 @@
               "url": "https://www.asuntoslegales.com.co/consultorio/actualidad-en-la-normatividad-fintech-en-mexico-3021973",
               "date": "2026-08-04",
               "type": "news"
+            },
+            {
+              "title": "Belvo | The leading open finance data and payments platform in Latin America",
+              "publisher": "Belvo",
+              "url": "https://belvo.com/",
+              "date": "2026-10",
+              "type": "company"
             }
           ],
           "gapReason": "no-rule"
         },
         "CL": {
           "status": "announced",
-          "note": "Ley Fintec 21.521 created the CMF Sistema de Finanzas Abiertas (NCG 514, technical standards in NCG 569 of June 2026), but the CMF pushed its start from July 2026 to July 2027, so it is not live yet.",
+          "note": "Ley Fintec 21.521 created the CMF Sistema de Finanzas Abiertas (NCG 514, technical standards in NCG 569 of June 2026), but the CMF pushed its start from July 2026 to July 2027, so it is not live yet. Until then, firms like Fintoc connect bank accounts and start transfers outside a regulated regime.",
           "evidence": [
             {
               "title": "CMF modifica la normativa que regula el Sistema de Finanzas Abiertas e incorpora anexo técnico",
@@ -174,6 +223,13 @@
               "url": "https://www.cmfchile.cl/portal/prensa/615/w3-article-100482.html",
               "date": "2025-11-12",
               "type": "regulation"
+            },
+            {
+              "title": "Welcome (Fintoc developer docs)",
+              "publisher": "Fintoc",
+              "url": "https://docs.fintoc.com/",
+              "date": "2026-10",
+              "type": "company"
             }
           ],
           "gapReason": "no-rule"
@@ -208,13 +264,13 @@
         },
         "IN": {
           "status": "live",
-          "note": "The RBI Account Aggregator framework lets apps read your accounts with consent (over 500 million consents by September 2026), and third-party UPI apps can start payments for you.",
+          "note": "The RBI Account Aggregator framework, with Sahamati as its industry body, lets apps read your accounts with consent (over 500 million consents by September 2026). NPCI's UPI lets third-party apps start payments for you, and Setu offers APIs for both.",
           "evidence": [
             {
-              "title": "Sahamati ecosystem map",
+              "title": "Ecosystem Map",
               "publisher": "Sahamati",
               "url": "https://sahamati.org.in/sahamati-ecosystem-map/",
-              "date": "2026",
+              "date": "2025-10-08",
               "type": "report"
             },
             {
@@ -228,6 +284,13 @@
               "title": "UPI product overview",
               "publisher": "National Payments Corporation of India",
               "url": "https://www.npci.org.in/what-we-do/upi/product-overview",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Setu — UPI Payments, KYC & Credit Infrastructure APIs",
+              "publisher": "Setu",
+              "url": "https://setu.co/",
               "date": "2026-10",
               "type": "company"
             }
@@ -330,7 +393,7 @@
               "title": "Sicherheitshinweise Beraterchat",
               "publisher": "Kreissparkasse Saarpfalz",
               "url": "https://www.ksk-saarpfalz.de/content/dam/myif/ksk-saarpfalz/work/dokumente/pdf/allgemein/Sicherheitshinweise_Beraterchat.pdf",
-              "date": "2024",
+              "date": "2024-03",
               "type": "company"
             },
             {
@@ -353,13 +416,13 @@
         },
         "BR": {
           "status": "live",
-          "note": "Nubank's AI sends Pix from a text, photo or voice message in the app and on WhatsApp (WhatsApp capped at R$800 per transfer), and Itaú (ia.i) and Bradesco also offer AI Pix by chat or voice.",
+          "note": "Nubank's AI sends Pix from a text, photo or voice message in the app and on WhatsApp (WhatsApp capped at R$800 per transfer). Bradesco's BIA makes Pix transfers and pays bills by voice or text in its app and by text on WhatsApp, and Itaú's ia.i also does transactions by chat.",
           "evidence": [
             {
-              "title": "Pix com inteligência artificial agora no app e WhatsApp do Nu",
+              "title": "Pix com Inteligência Artificial agora no App e WhatsApp do Nu",
               "publisher": "Nubank",
               "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
-              "date": "2025",
+              "date": "2024-12-10",
               "type": "company"
             },
             {
@@ -393,14 +456,14 @@
               "title": "Cuatro funcionalidades de Blue para facilitar la vida de los clientes",
               "publisher": "BBVA",
               "url": "https://www.bbva.com/es/mx/innovacion/cuatro-funcionalidades-de-blue-para-facilitar-la-vida-de-los-clientes/",
-              "date": "2024",
+              "date": "2019-12-03",
               "type": "company"
             }
           ]
         },
         "CL": {
-          "status": "live",
-          "note": "Itaú Chile launched voice and text transfers to third parties in its app in June 2026, where an AI agent fills in the transfer and the user confirms with Itaú Pass. News reports do not say whether all customers have it, and we found no Itaú page that confirms the rollout. In October 2026 we found no similar feature at BancoEstado, Banco de Chile, BCI or Santander Chile.",
+          "status": "limited",
+          "note": "Itaú Chile launched voice and text transfers to third parties in its app in June 2026, where an AI agent fills in the transfer and the user confirms with Itaú Pass. We count it as limited because only news reports describe it and no Itaú page confirms that all customers have it. In October 2026 we found no similar feature at BancoEstado, Banco de Chile, BCI or Santander Chile.",
           "evidence": [
             {
               "title": "Itaú Chile lanza Transferencias por Voz y da un paso hacia la banca conversacional",
@@ -408,13 +471,20 @@
               "url": "https://portalinnova.cl/itau-chile-lanza-transferencias-por-voz-y-da-un-paso-hacia-la-banca-conversacional/",
               "date": "2026-06-25",
               "type": "news"
+            },
+            {
+              "title": "Itaú lanza funcionalidad para hacer transferencias usando la voz en su app",
+              "publisher": "Chócale",
+              "url": "https://chocale.cl/2026/06/itau-funcionalidad-transferencias-electronicas-por-voz-en-su-app/",
+              "date": "2026-06-11",
+              "type": "news"
             }
           ],
           "confidence": "low"
         },
         "CO": {
           "status": "limited",
-          "note": "Davivienda's DaviPlata wallet let users who signed up with a QR code move money by voice or AI chat in a first phase from June 2024, but we could not confirm it is open to all users today. The payments app Tpaga (not a bank) launched a WhatsApp AI agent in July 2026 that pays bills and sends Bre-B transfers. Bancolombia's Tabot only answers questions, and we found no assistant that moves money at Nequi.",
+          "note": "Davivienda's DaviPlata wallet let users who signed up with a QR code move money by voice or AI chat in a first phase from June 2024, but we could not confirm it is open to all users today. The payments app Tpaga (not a bank) launched a WhatsApp AI agent in July 2026 that pays utility bills and sends Bre-B transfers. Bancolombia's Tabot only answers questions, and we found no assistant that moves money at Nequi.",
           "evidence": [
             {
               "title": "En DaviPlata ahora podrá manejar su dinero con la voz",
@@ -424,7 +494,7 @@
               "type": "company"
             },
             {
-              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
+              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE (the article covers bill payments and Bre-B transfers)",
               "publisher": "La República",
               "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
               "date": "2026-07-08",
@@ -434,7 +504,7 @@
               "title": "Tabot asistente virtual",
               "publisher": "Bancolombia",
               "url": "https://www.bancolombia.com/personas/productos-servicios/canales-servicio/movil/tabot-asistente-virtual/",
-              "date": "2026",
+              "date": "2026-10",
               "type": "company"
             }
           ],
@@ -443,7 +513,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "Indian Bank's AI-TARA voice assistant (unveiled September 2026) does fund transfers and IMPS in 10 languages, according to news reports, but the bank's own investor deck only calls it a voice AI relationship manager and does not say all customers have it. NPCI's Hello! UPI voice payments roll out in phases, and Axis Bank's new branch kiosk (September 2026) has an AI assistant that fills in forms for services like utility bill payments. SBI's YONO Ji assistant answers questions for YONO Business users, and we found no assistant that moves money at HDFC or ICICI.",
+          "note": "News reports say Indian Bank's AI-TARA voice assistant (unveiled September 2026) does fund transfers and IMPS in 10 languages, but the bank's own investor deck only calls it a voice AI relationship manager and does not say all customers have it. NPCI's Hello! UPI voice payments roll out in phases, and Axis Bank's new branch kiosk (September 2026) has an AI assistant that fills in forms for services like utility bill payments. SBI's YONO Ji assistant answers questions for YONO Business users, and we found no assistant that moves money at HDFC or ICICI.",
           "evidence": [
             {
               "title": "Indian Bank debuts AI-TARA voice banking in 10 languages at Global Fintech Fest 2026",
@@ -456,7 +526,7 @@
               "title": "Performance Analysis Q2/H1 FY27",
               "publisher": "Indian Bank",
               "url": "https://indianbank.bank.in/documents/d/guest/presentation-september-2026",
-              "date": "2026-09",
+              "date": "2026-10-15",
               "type": "company"
             },
             {
@@ -519,7 +589,6 @@
       "icon": "https://tink.com/favicon.ico",
       "role": "Single API for PSD2 account data and payment initiation across European banks.",
       "markets": [
-        "GB",
         "DE"
       ],
       "capabilities": [
@@ -558,10 +627,10 @@
     {
       "name": "Fintoc",
       "hq": "CL",
-      "url": "https://fintoc.com/",
+      "url": "https://docs.fintoc.com/",
       "homepage": "https://fintoc.com/",
       "icon": "https://www.fintoc.com/apple-icon.png?e6c5fcc567fc49c9",
-      "role": "Payment APIs for bank transfers and recurring billing ahead of Chile's open finance regime.",
+      "role": "Connects bank accounts and starts bank transfer payments in Chile, ahead of its open finance regime.",
       "markets": [
         "CL"
       ],
@@ -660,7 +729,7 @@
       "url": "https://www.consumerfinance.gov/compliance/compliance-resources/other-applicable-requirements/personal-financial-data-rights/",
       "homepage": "https://www.consumerfinance.gov/",
       "icon": "https://www.consumerfinance.gov/favicon.ico",
-      "role": "Regulator behind the stayed Section 1033 data rights rule now being rewritten.",
+      "role": "Regulator behind the stayed Section 1033 data rights rule, which it is now reworking.",
       "markets": [
         "US"
       ],
@@ -687,7 +756,7 @@
       "hq": "BR",
       "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
       "homepage": "https://nubank.com.br/",
-      "icon": "https://nubank.com.br/favicon.ico",
+      "icon": "https://www.datocms-assets.com/120597/1741817368-favicon.ico?auto=format&h=192&w=192",
       "role": "Its AI sends Pix from text, photo or voice in the app and on WhatsApp.",
       "markets": [
         "BR"
@@ -706,6 +775,20 @@
       "markets": [
         "BR",
         "CL"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Bradesco",
+      "hq": "BR",
+      "url": "https://banco.bradesco/bia/",
+      "homepage": "https://banco.bradesco/",
+      "icon": "https://banco.bradesco/favicon.ico",
+      "role": "Its BIA assistant makes Pix transfers and pays bills by voice or text in the app, and by text on WhatsApp.",
+      "markets": [
+        "BR"
       ],
       "capabilities": [
         "banking.bank-agent-actions"
@@ -771,7 +854,7 @@
       "name": "Indian Bank",
       "hq": "IN",
       "url": "https://www.analyticsinsight.net/news/indian-bank-debuts-ai-tara-voice-banking-in-10-languages-at-global-fintech-fest-2026",
-      "homepage": "https://indianbank.in/",
+      "homepage": "https://indianbank.bank.in/",
       "icon": null,
       "role": "Its AI-TARA voice assistant does fund transfers and IMPS in 10 languages.",
       "markets": [
