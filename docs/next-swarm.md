@@ -4,7 +4,7 @@ Run this file with `/swarm @docs/next-swarm.md`. Each slice below is written so 
 
 ## Repo facts
 
-- **What it is.** A static site at `/Users/ramons/dev/repositories/ai-agent-observatory` that shows what AI agents can actually do in each country. There is no build step and no dependencies.
+- **What it is.** A static site at `/Users/ramons/dev/repositories/agents-index` that shows what AI agents can actually do in each country. There is no build step and no dependencies.
 - **Commands.**
   - `npm test`: scoring and validation tests.
   - `npm run validate`: must print "Dataset OK".
