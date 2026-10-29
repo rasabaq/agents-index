@@ -117,7 +117,8 @@ function render(ctx) {
   const target = location.hash.startsWith('#v-') && document.getElementById(location.hash.slice(1));
   slots.slice(0, pending.has(target) ? slots.indexOf(target) + 1 : 1).forEach(draw);
   if (target) target.scrollIntoView();
-  const idle = window.requestIdleCallback ?? ((f) => setTimeout(f, 50));
+  // The timeout keeps charts coming on a page that is never idle (a slow phone, or a CI runner without a GPU).
+  const idle = window.requestIdleCallback ? (f) => requestIdleCallback(f, { timeout: 1000 }) : (f) => setTimeout(f, 50);
   const next = () => pending.size && idle(() => { draw(pending.keys().next().value); next(); });
   next();
 }
