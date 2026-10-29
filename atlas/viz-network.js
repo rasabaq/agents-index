@@ -73,6 +73,7 @@
       ${hidden.length ? `<p class="v-network-note">${hidden.map((c) => esc(c.name)).join(', ')} ${hidden.length > 1 ? 'list' : 'lists'} no market in these countries yet, so ${hidden.length > 1 ? 'they are' : 'it is'} not shown.</p>` : ''}`;
     const plot = el.querySelector('.v-network-plot');
 
+    ctx.edgeFade(el.querySelector('.v-network-chips'));
     el.querySelectorAll('.v-network-chip').forEach((b) => b.addEventListener('click', () => {
       filter = b.dataset.cat;
       el.querySelectorAll('.v-network-chip').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
