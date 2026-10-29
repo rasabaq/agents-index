@@ -100,7 +100,7 @@ async function hold(s) {
 }
 async function applyView(s) {
   saveState(s);
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 300; i++) {
     if (existsSync(join(s.dir, 'held.json')) && readFileSync(join(s.dir, 'held.json'), 'utf8') === VIEW(s)) return;
     await sleep(100);
   }
