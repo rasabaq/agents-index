@@ -10,18 +10,10 @@
 .hero > .wrap { position: relative; z-index: 3; }
 
 /* the pixel wordmark */
-.hero-wm-wrap { padding-top: 28px; }
-.hero-top { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 18px; font: 500 11px/1.4 var(--mono); color: var(--muted); }
-.hero-top b { font-weight: 500; color: var(--magenta); }
-.hero-top span:has(> [data-asof]:empty) { display: none; } /* data failed to load */
-/* app.js fills [data-stats] with <div><dt>label</dt><dd>n</dd></div>; show it as one line: "8 countries · 18 capabilities" */
-.hero-stats { display: flex; flex-wrap: wrap; margin: 0; }
-.hero-stats div { display: flex; gap: 0.6ch; white-space: nowrap; }
-.hero-stats dd { order: -1; margin: 0; }
-.hero-stats div + div::before { content: '·'; order: -2; margin: 0 0.4ch 0 0.9ch; }
+.hero-wm-wrap { padding-top: 60px; }
 .hero-wm { display: block; width: 100%; height: 280px; }
 
-/* headline, sub-line, buttons */
+/* headline and button */
 .hero-copy { padding-top: 56px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: 48px; align-items: start; }
 .hero h1 { max-width: none; margin: 0; font: 600 clamp(36px, 5.2cqw, 66px)/0.95 var(--font); letter-spacing: -0.06em; color: var(--ink); text-wrap: initial; }
@@ -30,17 +22,11 @@
 .hero h1 > span:last-child { margin-top: 0.1em; }
 /* black label tape: the one magenta line of the headline */
 .hero h1 .hero-tape { display: inline-block; line-height: 0.98; padding: 0.01em 0.16em 0.1em 0.07em; margin-left: -0.07em; background: #000; color: var(--magenta); }
-.hero-sub { max-width: 54ch; margin: 24px 0 0; font-size: 16px; line-height: 2; }
-.hero-sub span { padding: 5px 10px; background: #000; color: var(--ink-2); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-.hero-sub b { font-weight: 500; color: var(--ink); }
-
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 46px; }
 .hero-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 10px; font: 500 14px/1 var(--font); letter-spacing: -0.005em; white-space: nowrap; text-decoration: none; transition: background-color 0.15s, border-color 0.15s; }
 .hero-btn-1 { background: var(--ink); color: var(--page); box-shadow: 0 8px 30px -8px rgba(255, 46, 136, 0.5); }
 .hero-btn-1:hover { background: #fff; }
 .hero-btn-1 span { opacity: 0.6; }
-.hero-btn-2 { border: 1px solid rgba(255, 255, 255, 0.16); color: var(--ink); background: rgba(10, 9, 16, 0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
-.hero-btn-2:hover { border-color: rgba(255, 255, 255, 0.3); }
 
 /* ask box: a fixed question per country, answered from the shopping category */
 .hero-ask { padding: 6px 16px 16px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 14px; background: var(--glass); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); box-shadow: var(--shadow); }
@@ -99,16 +85,12 @@
 }
 @container (max-width: 720px) {
   .hero { padding-bottom: 300px; }
-  .hero-wm-wrap { padding-top: 20px; }
-  .hero-top { font-size: 10.5px; margin-bottom: 14px; }
-  /* the stats wrap here, so plain gaps read better than dots that could start a line */
-  .hero-stats { gap: 0 14px; }
-  .hero-stats div + div::before { display: none; }
+  .hero-wm-wrap { padding-top: 32px; }
   .hero-tabs button { padding: 11px 3px 12px; letter-spacing: 0.04em; }
   .hero-tabs .flag { width: 1.2em; margin-right: 3px; }
   .hero-copy { padding-top: 36px; }
   .hero h1 { font-size: clamp(32px, 10.4cqw, 60px); }
-  .hero-sub { font-size: 15px; }
+  .hero-ctas { margin-top: 36px; }
   .hero-ask { padding: 4px 12px 14px; }
   .hero-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 40px; }
   .hero-chips a { display: flex; flex-direction: column; justify-content: center; gap: 4px; height: 70px; padding: 0; }

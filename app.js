@@ -33,7 +33,6 @@ function init() {
 
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   $('[data-asof-iso]').textContent = meta.asOf;
-  renderStats();
   renderSide();
   renderRanking();
   renderLegend();
@@ -109,16 +108,6 @@ function mainReason(mine, catIds) {
 // No logo, or one that fails to load, becomes a monogram (see wireLogos).
 const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
 const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-name="${esc(name)}">` : monogram(name));
-
-function renderStats() {
-  const items = [
-    [meta.countries.length, 'countries'],
-    [Object.keys(capIndex).length, 'capabilities'],
-    [sourcesOf(cells), 'sources'],
-    [companies.length, 'companies tracked'],
-  ];
-  $('[data-stats]').innerHTML = items.map(([n, l]) => `<div><dt>${l}</dt><dd>${n}</dd></div>`).join('');
-}
 
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}, tier ${tierOf(r.score)}"`;
 
