@@ -36,7 +36,7 @@ Each feature file starts with an H1 title and one paragraph describing what the 
 
 ## Features
 
-- [Country view and picker](./country.md) covers choosing a country (hero chips, world map, console list, ranking, `#country=` hash, J/K keys) and what the country view shows. **About to change:** PR #53 "My country view" replaces it.
+- [Country view and picker](./country.md) covers choosing a country (hero pins, world map, console list, ranking, `#country=` hash, J/K keys) and what the country view shows. **About to change:** PR #53 "My country view" replaces it.
 - [Capability matrix and cell detail](./matrix-detail.md) covers the matrix, the cell detail dialog, its sources, the "Suggest a correction" link and the country sources list.
 - [Ranking](./ranking.md) covers the console ranking and the score legend.
 - [Companies table](./companies.md) covers the market filters, the rows, the logos and the scroll box.

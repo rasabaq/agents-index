@@ -26,7 +26,7 @@ Each Not yet item shows its status, its gap reason when it has one, and companie
 - `country-score` is the card `.mc-score`: "N / 100 · rank R of 8", with bars for this country, the best country (hidden when this country is the best) and the average of 8, plus the data date.
 - `country-lists` are `#mc-works` ("Works today · L of 18") and `#mc-not` ("Not yet · M of 18"). Their items are `.mc-list button[data-cap][data-code]`, and each one opens the cell detail (see matrix-detail.md). A Not yet item can show its gap reason label and a `small.mc-co` line, "Could close it: Company (already in XX YY)".
 - `country-business` is the "For people" / "For businesses" toggle (`[data-view]`, `aria-pressed`) under the verdict. "For businesses" swaps the verdict for a business one and the cards for three `.biz-group` cards: Sell through AI agents, Sell in chat apps, and Get paid by agents. These cover the eight capabilities in `BUSINESS_GROUPS` (`src/observatory.js`). Each item has a seller-side label, one line on why (the gap reason when the cell has one, else its status in plain words), and a `.biz-cos` line. That line reads "Sign up with: …" when the cell is live and "Active here: …" otherwise. It is left out on Not yet items, with links to each company's homepage. The view lives in the link: `#country=MX&view=business`, so a business link can be shared. An old `#country=MX` link opens For people.
-- `country-pick-hero` selects a country from the hero chips and scrolls to the console.
+- `country-pick-hero` selects a country from the pins on the hero's planet, without scrolling. The sun moves behind the selected pin.
 - `country-pick-console` selects a country from the console list `[data-clist]` without scrolling.
 - `country-pick-ranking` selects a country from the ranking.
 - `country-keys` steps through the ranking with `j` (next) and `k` (previous).
@@ -37,7 +37,7 @@ Each Not yet item shows its status, its gap reason when it has one, and companie
 
 - Open `/`. The page starts on your country, guessed from your time zone or browser language.
 - Pick a country in the select under the country name.
-- Click a country chip in the hero (`US 85 … CL 50`).
+- Click a country pin on the hero's planet (score, flag, a pole as tall as the score).
 - Click a country in the console's left list (a strip at 400px), or in the Ranking panel.
 - Open a shared link such as `/#country=CL`, or edit the hash in the address bar.
 - Press `j` or `k` while no field or dialog has focus.
@@ -72,10 +72,10 @@ Steps:
   - Take `node $H shot business-1440-mx --at '#country'`.
   - `node $H eval 'location.hash'` prints `#country=MX&view=business`. `node $H open '/#country=CL&view=business'` opens Chile on For businesses.
   - Picking another country keeps the business view. `node $H click '[data-view="people"]'` brings back `#mc-works`.
-- **Hero chip.** Run `node $H open /`, then `node $H click '.hero [data-go-country="MX"]'`.
+- **Hero pin.** Run `node $H open /`, then `node $H click '.hero [data-go-country="MX"]'`.
   - `location.hash` is `#country=MX`, and `#cn-title` reads Mexico.
-  - The console has scrolled into view: `node $H eval "Math.round(document.querySelector('#country').getBoundingClientRect().top)"` is under 300.
-  - Take `node $H shot country-1440-mx --at '#country'`.
+  - The page did not scroll: `node $H eval "Math.round(document.querySelector('.hero-pins').getBoundingClientRect().top)"` is still in the viewport.
+  - Take `node $H shot hero-1440-mx` (the MX pin is lit and the sun sits behind it), then `node $H shot country-1440-mx --at '#country'`.
 - **Console list.** Run `node $H click '[data-clist] [data-go-country="BR"]'`. `#cn-title` reads Brazil, and the hash is `#country=BR`.
 - **Keys.** Run `node $H press j`. The country moves to the next one in the ranking (for example BR → IN). `node $H press k` moves it back.
 - **Phone.**
@@ -88,8 +88,8 @@ Steps:
 ## Gotchas
 
 - The start country depends on the time zone. The harness pins it to UTC unless `--tz` is given. Without that, a run on a machine in Santiago opens Chile.
-- Pickers inside the console (the select, the list, the ranking) do not scroll the page. Compare is not a picker: it scrolls to `#v-compare`. Pickers outside it (the hero chips, the world map, a hash change) scroll to `#country`.
-- The hero has one row of country chips, over the planet. They have `tabindex="-1"` and `aria-hidden`, because the world map and the console list are the keyboard and screen reader paths; `click` still reaches them.
+- Pickers inside the console (the select, the list, the ranking) and the hero pins do not scroll the page. Compare is not a picker: it scrolls to `#v-compare`. Other pickers (the world map, a hash change) scroll to `#country`.
+- The hero pins are links in a list (`[data-hero-pins]`), named like "United States, rank 1, score 84", and reachable with Tab.
 - `j` and `k` do nothing while the cell detail dialog is open or a field has focus.
 - The verdict, the reasons and "Could close it" come from the data, so they change when the data changes. Assert their shape (the country name, "can", "Main reason:", "already in"), not exact words.
 - "Could close it" only names companies that already work in two or more countries, in the same region as this one. The US and India have no same-region neighbour among the 8, so they never show it.

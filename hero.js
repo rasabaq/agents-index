@@ -1,5 +1,5 @@
 // The hero: a planet at sunrise whose air dissolves into magenta pixels (WebGL, with a 2D fallback),
-// the pixel wordmark, and the data parts (ask box, chips pinned to the planet).
+// the pixel wordmark, and the data parts (ask box, country pins standing on the planet).
 // It loads the data itself so it does not depend on app.js. Its country links carry data-go-country, which app.js
 // handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
 import { STATUSES, scoreCountries, mergeCompanies, startCountry, readHash, writeHash } from './src/observatory.js';
@@ -19,29 +19,25 @@ const hex = (h) => { const n = parseInt(h.slice(1), 16); return [n >> 16, (n >> 
 
 let cv = $('.hero-sky');
 const wm = $('.hero-wm');
-const row = $('[data-hero-chips]');
+const row = $('[data-hero-pins]');
 let G = {}; // hero geometry in CSS px, y down
 
-/* ---------- geometry: the planet sits under the chips; a pin hangs from each chip to the surface ---------- */
+/* ---------- geometry: the planet's top touches the bottom of the pin row; each pin stands on its edge ---------- */
 function geom() {
   const W = hero.clientWidth, H = hero.clientHeight, hb = hero.getBoundingClientRect(), rb = row.getBoundingClientRect();
-  const narrow = W < 720, peak = rb.bottom - hb.top + (narrow ? 64 : 70);
-  const R = Math.max(W * 1.25, 460), Cx = W * 0.5, Cy = peak + R;
-  const chips = [...row.querySelectorAll('a')];
-  // Pins only when the chips sit in one row.
-  const one = !narrow && chips.length > 0 && new Set(chips.map((c) => c.offsetTop)).size === 1;
-  const on = row.querySelector('[aria-current="true"]');
-  let sx = W * (narrow ? 0.8 : 0.71);
-  if (one && on) { const b = on.getBoundingClientRect(); sx = b.left + b.width / 2 - hb.left; }
-  const sy = Cy - Math.sqrt(R * R - (sx - Cx) ** 2) + 4;
-  G = { W, H, R, Cx, Cy, sx, sy };
-  for (const c of chips) {
-    const s = c.querySelector('.hero-stem'), b = c.getBoundingClientRect();
-    const x = b.left + b.width / 2 - hb.left;
-    const h = Math.round(Cy - Math.sqrt(Math.max(0, R * R - (x - Cx) ** 2)) - (b.bottom - hb.top) + 12);
-    s.style.display = one && h > 10 ? 'block' : 'none';
-    s.style.height = `${h}px`;
-  }
+  const R = Math.max(W * 1.25, 460), Cx = W * 0.5, Cy = rb.bottom - hb.top + R;
+  const edge = (x) => Cy - Math.sqrt(Math.max(0, R * R - (x - Cx) ** 2));
+  const pins = [...row.querySelectorAll('a')];
+  // Evenly spaced and centred on the planet's top, in slots up to 136px wide. The sun rises behind the selected pin.
+  const step = Math.min(136, rb.width / pins.length);
+  let sx = W * (W < 720 ? 0.8 : 0.71);
+  pins.forEach((p, i) => {
+    const x = Cx + (i - (pins.length - 1) / 2) * step;
+    p.style.left = `${x - (rb.left - hb.left)}px`;
+    p.style.top = `${edge(x) - (rb.top - hb.top)}px`;
+    if (p.getAttribute('aria-current') === 'true') sx = x;
+  });
+  G = { W, H, R, Cx, Cy, sx, sy: edge(sx) + 4 };
 }
 
 /* ---------- sky: render the smooth scene, then dither the cells a mask picks (top, edges, air above the limb) ---------- */
@@ -330,7 +326,7 @@ new ResizeObserver(() => {
 document.fonts?.load('28px "Jersey 10"').then(heroAll, () => {});
 document.fonts?.ready.then(heroAll);
 
-/* ---------- data: chips and the ask box ---------- */
+/* ---------- data: pins and the ask box ---------- */
 let ranking, commerce, companies, focus;
 
 // "Can my agent shop in X?" answered from the shopping category.
@@ -345,7 +341,11 @@ function answer(code) {
 
 function renderCountries() {
   row.innerHTML = ranking.map((r) => `
-    <li><a href="#country=${r.code}" data-go-country="${r.code}" tabindex="-1" aria-current="${r.code === focus}">${flag(r.code)}<span class="hero-chip-c">${r.code}</span><span class="hero-chip-v">${r.score}</span><i class="hero-stem"></i></a></li>`).join('');
+    <li><a href="#country=${r.code}" data-go-country="${r.code}" aria-current="${r.code === focus}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}" style="--s: ${r.score}">
+      <span class="hero-pin-n">${r.score}</span><span class="hero-pin-f">${flag(r.code)}</span><i class="hero-pin-p"></i><i class="hero-pin-b"></i></a></li>`).join('');
+  // Stand the new pins on the planet.
+  size();
+  drawSky(gl ? now() : T0);
 }
 
 // The companies with the most live markets, under the ask box.
@@ -389,7 +389,7 @@ function wire() {
     b.focus();
     ask(b.dataset.ask);
   });
-  // app.js already marked the new country (aria-current); move the sun over its chip and ask about it.
+  // app.js already marked the new country (aria-current); move the sun behind its pin and ask about it.
   document.addEventListener('countrychange', (e) => {
     focus = e.detail;
     size();
