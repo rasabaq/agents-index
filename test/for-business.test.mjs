@@ -59,7 +59,8 @@ test('the link holds the country and the view; old #country= links still work', 
   assert.deepEqual(readHash('#country=MX&view=business'), { country: 'MX', view: 'business' });
   assert.deepEqual(readHash('#country=MX'), { country: 'MX', view: 'people' });
   assert.deepEqual(readHash('#view=business'), { country: null, view: 'business' });
-  assert.deepEqual(readHash('#country=mx&view=nope'), { country: null, view: 'people' });
+  assert.deepEqual(readHash('#country=mx&view=nope'), { country: 'MX', view: 'people' });
+  assert.deepEqual(readHash('#country=mex'), { country: null, view: 'people' });
   assert.equal(writeHash('MX', 'business'), '#country=MX&view=business');
   assert.equal(writeHash('MX', 'people'), '#country=MX');
   assert.equal(startCountry(['US', 'MX'], '#country=MX&view=business'), 'MX');
