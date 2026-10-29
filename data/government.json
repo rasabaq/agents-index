@@ -43,7 +43,7 @@
         },
         "GB": {
           "status": "announced",
-          "note": "GOV.UK One Login serves central government only, and GOV.UK Wallet holds just the veteran card. Since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving license in a GOV.UK Wallet sandbox, but it is not a production service, so the cell is announced. Private firms can use certified DVS providers (46 providers and 64 services on the statutory register in July 2026). The new government cancelled the national digital ID scheme in July 2026.",
+          "note": "GOV.UK One Login serves central government only, and GOV.UK Wallet holds just the veteran card. Since 1 September 2026 certified digital verification services (DVS) can check a \"test driving licence\", in GOV.UK's words, in a GOV.UK Wallet sandbox, but it is not a production service, so the cell is announced. Private firms can use certified DVS providers (46 providers and 64 services on the statutory register in July 2026). The new government canceled the national digital ID scheme in July 2026.",
           "gapReason": "not-launched",
           "evidence": [
             {
@@ -304,7 +304,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "The IRS voice bot lets taxpayers who prove who they are set up and manage payment plans and make payments (deployed in June 2022; the Treasury inspector general's June 2026 report describes it but tested only chat); IRS web chatbots use set answers, not generative AI, and most state chatbots only answer questions.",
+          "note": "The IRS voice bot lets taxpayers who prove who they are set up and change payment plans inside the call (live since June 2022). The Treasury inspector general's June 2026 report checked only the IRS chat tools, not the voice bot. IRS web chatbots use set answers, not generative AI, and most state chatbots only answer questions.",
           "evidence": [
             {
               "title": "Using voice and chat bots to improve the collection taxpayer experience",
@@ -338,7 +338,7 @@
         },
         "GB": {
           "status": "limited",
-          "note": "GOV.UK Chat in the GOV.UK app answers questions from GOV.UK guidance but does not complete tasks; an agent pilot for 16 to 24 year olds is testing next steps, and agentic features are planned from March 2027.",
+          "note": "GOV.UK Chat in the GOV.UK app answers questions from GOV.UK guidance but does not complete tasks. A first AI assistant pilot helped 16 to 24 year olds explore their career options and next steps. The roadmap's March 2027 item uses \"agentic loops to provide better answers\", not an agent that does tasks for you.",
           "evidence": [
             {
               "title": "GOV.UK app - Roadmap for modern digital government",
@@ -977,7 +977,7 @@
     {
       "repo": "egovernments/Digit-Core",
       "name": "DIGIT",
-      "role": "Platform behind Indian state and city services such as complaints, property tax and licences; its APIs let software file and track a service request.",
+      "role": "Platform behind Indian state and city services such as complaints, property tax and licenses; its APIs let software file and track a service request.",
       "capabilities": [
         "government.ai-public-services"
       ],
@@ -1021,7 +1021,7 @@
     {
       "repo": "credebl/platform",
       "name": "CREDEBL",
-      "role": "Decentralised identity platform that issues and verifies verifiable credentials through open-standard wallets and agents. A Digital Public Good.",
+      "role": "Decentralized identity platform that issues and verifies verifiable credentials through open-standard wallets and agents. A Digital Public Good.",
       "capabilities": [
         "government.digital-id-api"
       ],
