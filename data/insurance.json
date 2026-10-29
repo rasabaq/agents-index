@@ -125,8 +125,8 @@
           "confidence": "low"
         },
         "BR": {
-          "status": "live",
-          "note": "HUBSEGS sells insurance entirely on WhatsApp with generative AI, from quote to a digital policy in the chat, in under three minutes, for brokers and their clients.",
+          "status": "limited",
+          "note": "HUBSEGS, an insurance advisory firm with more than 5,000 brokers, runs a generative AI agent on WhatsApp that quotes and issues a digital policy in under three minutes. The sources name no car, home or travel product and do not show a consumer buying directly: the tool mainly serves brokers, and its 2025 deal with Akad lets brokers issue liability cover for doctors on WhatsApp.",
           "evidence": [
             {
               "title": "HUBSEGS comercializa seguros 100% pelo WhatsApp",
@@ -140,6 +140,13 @@
               "publisher": "Baguete",
               "url": "https://www.baguete.com.br/noticias/hubsegs-vende-seguros-pelo-whatsapp-com-genai",
               "date": "2025-01",
+              "type": "news"
+            },
+            {
+              "title": "Akad passa a emitir apólices de seguros pelo Whatsapp",
+              "publisher": "Legismap",
+              "url": "https://legismap.com.br/conteudos/artigos-e-noticias/akad-passa-a-emitir-apolices-de-seguros-pelo-whatsapp",
+              "date": "2025-04-29",
               "type": "news"
             }
           ],
@@ -161,7 +168,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "Líder Bci sells insurance on WhatsApp with conversational AI, from quote to payment and policy issue in two to three minutes, starting with the SOAP mandatory car insurance (May 2025).",
+          "note": "Líder Bci sells SOAP, Chile's mandatory car accident insurance, on WhatsApp with conversational AI, from quote to payment and policy issue in two to three minutes (May 2025). Simpletech, which built the flow, says 46% of people who start it buy inside the WhatsApp channel.",
           "evidence": [
             {
               "title": "Líder Bci habilita contratación de seguros por WhatsApp",
@@ -169,6 +176,13 @@
               "url": "https://chocale.cl/2025/05/lider-bci-habilita-contratacion-de-seguros-por-whatsapp/",
               "date": "2025-05-29",
               "type": "news"
+            },
+            {
+              "title": "Lider Bci (case study: SOAP insurance sold on WhatsApp)",
+              "publisher": "Simpletech",
+              "url": "https://www.simpletech.uy/en/?p=14050",
+              "date": "2026-10",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -263,8 +277,8 @@
           ]
         },
         "IN": {
-          "status": "live",
-          "note": "HDFC ERGO's WhatsApp chatbot registers motor claims, runs an AI photo inspection and settles minor damage claims up to Rs 20,000 straight to your bank account.",
+          "status": "limited",
+          "note": "HDFC ERGO's WhatsApp chatbot registers motor claims, then sends you a link to upload photos for an AI inspection and fill in a digital claim form; once you accept the offer, minor damage up to Rs 20,000 is paid to your bank account (June 2024). No newer source was found.",
           "evidence": [
             {
               "title": "Know how to get your instant motor claim settlement via WhatsApp",
@@ -272,9 +286,17 @@
               "url": "https://www.outlookbusiness.com/personal-finance/insurance/know-how-to-get-your-instant-motor-claim-settlement-via-whatsapp",
               "date": "2024-05-29",
               "type": "news"
+            },
+            {
+              "title": "HDFC ERGO launches seamless Motor Claim Settlement process on WhatsApp",
+              "publisher": "Bizz Buzz",
+              "url": "https://www.bizzbuzz.news/insurance/hdfc-ergo-launches-seamless-motor-claim-settlement-process-on-whatsapp-1320806",
+              "date": "2024-06-11",
+              "type": "news"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "assist-only"
         },
         "BR": {
           "status": "live",
@@ -326,13 +348,27 @@
         },
         "CO": {
           "status": "live",
-          "note": "BNP Paribas Cardif Colombia handles claims on WhatsApp: its AI reads and checks the documents you send and decides whether the claim stays automated or goes to an advisor (May 2023).",
+          "note": "BNP Paribas Cardif Colombia handles claims on WhatsApp for fraud and theft, life, critical illness, personal accident, unemployment and disability cover: its AI reads and checks the documents you send, nine in ten claims are paid fully online, and the rest go to an advisor (May 2023). In December 2024 it said a claim now takes about a minute. No newer source was found.",
           "evidence": [
             {
               "title": "Aseguradora utiliza la IA para la evaluación y pagos de pólizas",
               "publisher": "La Nota Económica",
               "url": "https://lanotaeconomica.com.co/movidas-empresarial/aseguradora-utiliza-la-ia-para-la-evaluacion-y-pagos-de-polizas/",
               "date": "2023-05-05",
+              "type": "news"
+            },
+            {
+              "title": "Cardif implementa inteligencia artificial para pago de seguros",
+              "publisher": "Valora Analitik",
+              "url": "https://www.valoraanalitik.com/cardif-implementa-inteligencia-artificial-para-pago-de-seguros/",
+              "date": "2023-05-19",
+              "type": "news"
+            },
+            {
+              "title": "Cardif Colombia será galardonada como la “mejor aseguradora que se transforma”",
+              "publisher": "La República",
+              "url": "https://www.larepublica.co/finanzas/cardiff-colombia-sera-galardonada-como-la-mejor-aseguradora-que-se-transforma-4010516",
+              "date": "2024-12-02",
               "type": "news"
             }
           ],
@@ -435,7 +471,7 @@
       "url": "https://www.policyx.com/pixie/",
       "homepage": "https://www.policyx.com/",
       "icon": "https://cdn.policyx.com/images/new-faviconpx.ico",
-      "role": "Its Pixie chatbot quotes and compares plans from more than 50 insurers.",
+      "role": "Its Pixie chatbot quotes and compares plans from more than 50 insurers; you finish the purchase outside the chat.",
       "markets": [
         "IN"
       ],
@@ -449,7 +485,7 @@
       "url": "https://www.outlookbusiness.com/personal-finance/insurance/know-how-to-get-your-instant-motor-claim-settlement-via-whatsapp",
       "homepage": "https://www.hdfcergo.com/",
       "icon": "https://www.hdfcergo.com/assets/images/apple-icon-57x57.png",
-      "role": "Its WhatsApp chatbot registers motor claims and settles minor ones after an AI photo inspection.",
+      "role": "Its WhatsApp chatbot registers motor claims and sends a link for an AI photo inspection and claim form; minor claims are paid to your bank.",
       "markets": [
         "IN"
       ],
@@ -463,7 +499,7 @@
       "url": "https://revistaapolice.com.br/2025/01/hubsegs-comercializa-seguros-100-pelo-whatsapp/",
       "homepage": "https://hubsegs.com.br/",
       "icon": "https://hubsegs.com.br/wp-content/uploads/2022/04/cropped-favicon-180x180.png",
-      "role": "Sells insurance on WhatsApp with generative AI, from quote to policy.",
+      "role": "Insurance advisory firm for brokers; its WhatsApp AI agent quotes and issues policies, mainly for brokers and their clients.",
       "markets": [
         "BR"
       ],

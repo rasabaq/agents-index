@@ -225,7 +225,7 @@
         },
         "GB": {
           "status": "limited",
-          "note": "The Payment Services Regulations 2017 oblige banks to refund unauthorized payments, and section 75 of the Consumer Credit Act makes card lenders liable for faulty goods. Neither says what happens when software buys for you. HM Treasury's July 2026 consultation asks whether consent and liability rules for agent payments need changing; its answer is still open.",
+          "note": "The Payment Services Regulations 2017 oblige banks to refund unauthorized payments, and section 75 of the Consumer Credit Act makes card lenders liable for faulty goods. Neither says what happens when software buys for you. HM Treasury's consultation on whether consent and liability rules for agent payments need changing closed on 6 October 2026, and the outcome is pending.",
           "gapReason": "no-rule",
           "evidence": [
             {

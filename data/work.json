@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "LoopCV searches US boards such as Dice and USAJobs, plus LinkedIn and Indeed, and sends applications for you by email or web form. The job boards' own AI stops before the last step: the Indeed and ZipRecruiter apps in ChatGPT send you to their sites to apply, and LinkedIn's Premium Apply Assistant pre-fills forms that you approve.",
+          "note": "LoopCV searches US boards such as Dice and USAJobs, plus LinkedIn and Indeed, and sends applications for you on its own by email or through the web forms it supports. Easy Apply jobs on LinkedIn, Indeed and Dice go through its browser extension instead. The job boards' own AI stops before the last step: the Indeed and ZipRecruiter apps in ChatGPT send you to their sites to apply, and LinkedIn's Premium Apply Assistant pre-fills forms that you approve.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -42,7 +42,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "LoopCV searches UK boards such as Reed and CV-Library, plus LinkedIn and Indeed, and sends applications for you by email or web form. Indeed's Career Scout reached the UK in July 2026; it pre-fills applications that you send yourself.",
+          "note": "LoopCV searches UK boards such as Reed and CV-Library, plus LinkedIn and Indeed, and sends applications for you on its own by email or through the web forms it supports. Easy Apply jobs on LinkedIn, Indeed and Reed go through its browser extension instead. Indeed's Career Scout reached the UK in July 2026; it pre-fills applications that you send yourself.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -62,7 +62,7 @@
         },
         "DE": {
           "status": "live",
-          "note": "LoopCV searches German boards such as StepStone and Xing, plus LinkedIn and Indeed, and sends applications for you by email or web form. We did not find a German job board with its own agent that applies for you.",
+          "note": "LoopCV searches German boards such as StepStone and Xing, plus LinkedIn and Indeed, and sends applications for you on its own by email or through the web forms it supports. Easy Apply jobs on LinkedIn, Indeed and StepStone go through its browser extension instead. We did not find a German job board with its own agent that applies for you.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -75,7 +75,7 @@
         },
         "IN": {
           "status": "live",
-          "note": "LoopCV searches Indian boards such as Naukri and Instahyre, plus LinkedIn and Indeed, and sends applications for you by email or web form. We did not find a Naukri agent of its own that applies for you.",
+          "note": "LoopCV searches Indian boards such as Naukri and Instahyre, plus LinkedIn and Indeed, and sends applications for you on its own by email or through the web forms it supports. Easy Apply jobs on LinkedIn and Indeed go through its browser extension instead. We did not find a Naukri agent of its own that applies for you.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -233,7 +233,7 @@
         "IN": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Kredily's Kai (shipped August 2026) works out the month's payroll, payslips and bank file, but it stops before payout and statutory filing, which stay with the owner; Kredily does not say whether Kai is open to all customers.",
+          "note": "Kredily's Kai (shipped August 2026) works out the month's payroll, payslips and bank file, but it stops before payout and statutory filing, which stay with the owner. Kai comes with the Professional plan and above (from ₹1,749 a month), not the Free Forever plan.",
           "evidence": [
             {
               "title": "Best AI payroll software in India (Kai payroll agent)",
@@ -329,15 +329,12 @@
       "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
       "homepage": "https://www.loopcv.pro/",
       "icon": "https://www.loopcv.pro/apple-touch-icon.png",
-      "role": "Searches more than 30 job boards, including local ones such as Reed, StepStone and Naukri, and sends applications for you by email or web form.",
+      "role": "Searches job boards, including local ones such as Reed, StepStone and Naukri, and sends applications for you by email or supported web forms; Easy Apply jobs on LinkedIn, Indeed, StepStone and Reed go through its browser extension.",
       "markets": [
         "US",
         "GB",
         "DE",
-        "IN",
-        "MX",
-        "CL",
-        "CO"
+        "IN"
       ],
       "capabilities": [
         "work.job-apply"
