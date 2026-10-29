@@ -159,7 +159,7 @@ function renderCountry() {
     </div>
     <div class="cn-r">
       <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>
-      <button type="button" class="btn btn-sm" data-compare="${r.code} ${other.code}">Compare with ${flag(other.code)}${other.code}</button>
+      <button type="button" class="btn btn-sm" data-compare="${r.code} ${other.code}">Compare with ${flag(other.code)}${other.code}<span class="sr-only">, ${esc(other.name)}</span></button>
       <button type="button" class="btn btn-sm" data-sources>${nSources} sources</button>
     </div>`;
 
@@ -200,7 +200,7 @@ function renderCountryRest(r) {
   const { weak } = extremes(r.byCategory);
   $('[data-cats-title]').innerHTML = `${flag(r.code)}${esc(r.name)} by category`;
   $('[data-cats]').innerHTML = meta.categories.map((c) => `
-    <li title="${esc(c.blurb)}"><span class="cat-n">${esc(c.name)}</span><span class="bars"><b style="width:${r.byCategory[c.id]}%"></b></span><span class="rk-v">${r.byCategory[c.id]}</span></li>`).join('');
+    <li><span class="cat-n">${esc(c.name)}</span><span class="bars"><b style="width:${r.byCategory[c.id]}%"></b></span><span class="rk-v">${r.byCategory[c.id]}</span><small>${esc(c.blurb)}</small></li>`).join('');
   $('[data-cats-note]').textContent = r.byCategory[weak] < 50
     ? `${shortName(weak)} is the gap: ${r.byCategory[weak]} of 100.`
     : `No gap below 50. The lowest is ${shortName(weak).toLowerCase()}, at ${r.byCategory[weak]}.`;
@@ -212,15 +212,40 @@ function renderCountryRest(r) {
 }
 
 // All capabilities in rows, grouped by category; one column per country, the selected one in sunrise.
+// The matrix is one tab stop (a grid with a roving tabindex): arrows, Home and End move between cells,
+// Enter or Space opens one. mxAt is the cell that holds the tab stop; until one is used, the selected country's first.
+let mxAt;
 function renderMatrix() {
+  const mx = $('[data-matrix]');
+  const had = mx.contains(document.activeElement);
+  const at = mxAt ?? { cap: categories[0].capabilities[0].id, code: state.country };
   const cols = meta.countries.map((c) => c.code);
   const sel = (code) => (code === state.country ? ' class="sel"' : '');
   const head = `<div class="mx-row mx-head" role="row"><span role="columnheader">Capability</span>${cols.map((c) => `<span role="columnheader"${sel(c)}>${flag(c)}${c}</span>`).join('')}</div>`;
-  $('[data-matrix]').innerHTML = head + categories.map((cat) => `
-    <div class="mx-row mx-cat" role="row"><span role="rowheader" title="${esc(catName(cat.category))}">${esc(shortName(cat.category))}</span>${cols.map((c) => `<span role="cell"${sel(c)}></span>`).join('')}</div>
+  mx.innerHTML = head + categories.map((cat) => `
+    <div class="mx-row mx-cat" role="row"><span role="rowheader">${esc(catName(cat.category))}</span>${cols.map((c) => `<span role="gridcell"${sel(c)}></span>`).join('')}</div>
     ${cat.capabilities.map((cap) => `
-      <div class="mx-row" role="row"><span class="mx-cap" role="rowheader">${esc(cap.name)}</span>${cols.map((c) => `<span role="cell"${sel(c)}><button type="button" data-cap="${esc(cap.id)}" data-code="${c}" aria-label="${esc(cellLabel(cap, c, cap.countries[c]))}">${dot(cap.countries[c])}</button></span>`).join('')}</div>`).join('')}`).join('');
+      <div class="mx-row" role="row"><span class="mx-cap" role="rowheader">${esc(cap.name)}</span>${cols.map((c) => `<span role="gridcell"${sel(c)}><button type="button" tabindex="${cap.id === at.cap && c === at.code ? 0 : -1}" data-cap="${esc(cap.id)}" data-code="${c}" aria-label="${esc(cellLabel(cap, c, cap.countries[c]))}">${dot(cap.countries[c])}</button></span>`).join('')}</div>`).join('')}`).join('');
+  if (had) mx.querySelector('[tabindex="0"]').focus({ preventScroll: true });
   $('[data-mx-count]').textContent = `${Object.keys(capIndex).length} capabilities`;
+  const rove = (b) => {
+    mx.querySelector('[tabindex="0"]').tabIndex = -1;
+    b.tabIndex = 0;
+    mxAt = { cap: b.dataset.cap, code: b.dataset.code };
+  };
+  mx.onclick = (e) => e.target.closest('[data-cap]') && rove(e.target.closest('[data-cap]'));
+  mx.onkeydown = (e) => {
+    const b = e.target.closest('[data-cap]');
+    if (!b) return;
+    const rows = [...mx.querySelectorAll('[role="row"]')].map((r) => [...r.querySelectorAll('[data-cap]')]).filter((r) => r.length);
+    const y = rows.findIndex((r) => r.includes(b)), x = rows[y].indexOf(b), w = rows[y].length - 1, last = rows.length - 1;
+    const to = { ArrowLeft: [x - 1, y], ArrowRight: [x + 1, y], ArrowUp: [x, y - 1], ArrowDown: [x, y + 1], Home: [0, e.ctrlKey ? 0 : y], End: [w, e.ctrlKey ? last : y] }[e.key];
+    if (!to) return;
+    e.preventDefault();
+    const next = rows[Math.min(Math.max(to[1], 0), last)][Math.min(Math.max(to[0], 0), w)];
+    rove(next);
+    next.focus();
+  };
 }
 
 // The six newest sources across all cells, one row each. A source that backs several cells lists their countries
@@ -381,6 +406,9 @@ function renderRepos() {
   const matching = repos.filter((r) => state.use === 'all' || r.use === state.use);
   const rows = firstRows(matching, state.allRepos, $('[data-repos-more]'), 'repos');
   $('[data-repos-label]').textContent = `Open source · ${matching.length} of ${repos.length}`;
+  // The filter's meaning, in words, so it is not only in a mouse tooltip.
+  $('[data-repo-hint]').hidden = state.use === 'all';
+  $('[data-repo-hint]').textContent = state.use === 'all' ? '' : `${REPO_USE[state.use].label}: ${REPO_USE[state.use].hint}`;
   $('[data-repos]').innerHTML = `
     <thead><tr><th scope="col">Repo</th><th scope="col">What it lets agents do</th><th scope="col">Real use</th><th scope="col" class="num">Installs a month</th><th scope="col" class="num">Docker pulls</th><th scope="col" class="num">Stars</th><th scope="col" class="num">Last commit</th></tr></thead>
     <tbody>${rows.map((r) => `
@@ -486,9 +514,13 @@ function wire() {
   });
 
   // Tabs are real links. Scrolling here instead keeps #country=XX in the address bar.
+  // Focus moves to the panel's heading, so the next Tab starts from the panel, not from the tabs.
   const tabs = [...document.querySelectorAll('[data-tabs] a')];
   const go = (a) => {
     tabs.forEach((t) => (t === a ? t.setAttribute('aria-current', 'location') : t.removeAttribute('aria-current')));
+    const h = $(a.hash).querySelector('h2');
+    h.tabIndex = -1;
+    h.focus({ preventScroll: true });
     $(a.hash).scrollIntoView({ behavior: scrollBehavior() });
   };
   $('[data-tabs]').onclick = (e) => {
@@ -499,9 +531,12 @@ function wire() {
   };
 
   // Keys 1 to 6 follow the tabs, J and K step through the ranking. Typing in a field or an open dialog wins.
+  // They work only while focus is in the console or on nothing in particular (the page, a heading), never on a
+  // control elsewhere, such as a Companies filter.
   addEventListener('keydown', (e) => {
     if (e.ctrlKey || e.metaKey || e.altKey || $('[data-detail]').open) return;
     if (e.target.closest?.('input, select, textarea, [contenteditable]')) return;
+    if (e.target.tabIndex >= 0 && !e.target.closest?.('[data-term]')) return;
     const key = e.key.toLowerCase();
     if (tabs[e.key - 1]) go(tabs[e.key - 1]);
     else if (key === 'j' || key === 'k') {
@@ -511,12 +546,13 @@ function wire() {
   });
 }
 
+// The cell's note shows on hover and on keyboard focus; Escape or moving away hides it.
 function wireTooltip() {
   const tip = $('[data-tip]');
   const mx = $('[data-matrix]');
-  mx.addEventListener('pointerover', (e) => {
+  const show = (e) => {
     const b = e.target.closest('[data-cap]');
-    if (!b || e.pointerType === 'touch') return;
+    if (!b || e.pointerType === 'touch' || (e.type === 'focusin' && !b.matches(':focus-visible'))) return;
     const cap = capIndex[b.dataset.cap];
     const cell = cap.countries[b.dataset.code];
     tip.innerHTML = `<strong>${flag(b.dataset.code)}${esc(byCode[b.dataset.code].name)} · ${STATUSES[cell.status].label}${cell.confidence ? ' · low confidence' : ''}</strong>${esc(cell.note)}`;
@@ -525,10 +561,14 @@ function wireTooltip() {
     const w = tip.offsetWidth;
     tip.style.left = `${Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8)}px`;
     tip.style.top = `${r.top - tip.offsetHeight - 8 < 8 ? r.bottom + 8 : r.top - tip.offsetHeight - 8}px`;
-  });
+  };
+  mx.addEventListener('pointerover', show);
+  mx.addEventListener('focusin', show);
   mx.addEventListener('pointerout', (e) => {
     if (!e.relatedTarget?.closest?.('[data-cap]')) tip.hidden = true;
   });
+  mx.addEventListener('focusout', () => (tip.hidden = true));
+  mx.addEventListener('keydown', (e) => e.key === 'Escape' && (tip.hidden = true));
   addEventListener('scroll', () => (tip.hidden = true), { passive: true });
 }
 

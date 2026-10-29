@@ -43,6 +43,7 @@
   <script type="module" src="charts/charts.js"></script>
 </head>
 <body>
+  <a class="skip" href="#country">Skip to the console</a>
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="AI Agent Observatory, home">
@@ -123,7 +124,7 @@
             <section id="matrix" class="card panel panel-mx" aria-labelledby="mx-title">
               <header><h2 id="mx-title">Status matrix</h2><span class="label" data-mx-count></span></header>
               <p class="mx-legend" data-legend></p>
-              <div class="mx" role="table" aria-labelledby="mx-title" data-matrix></div>
+              <div class="mx" role="grid" aria-labelledby="mx-title" data-matrix></div>
             </section>
             <div class="panels-r">
               <section id="ranking" class="card panel" aria-labelledby="rk-title">
@@ -179,7 +180,7 @@
     <section id="companies" class="wrap sec">
       <div class="sec-h">
         <div>
-          <p class="label" data-companies-label>Companies and public bodies</p>
+          <p class="label" role="status" data-companies-label>Companies and public bodies</p>
           <h2>Who makes it possible. <span class="dim">Where they are based, and where they work.</span></h2>
         </div>
       </div>
@@ -198,13 +199,14 @@
     <section id="opensource" class="wrap sec">
       <div class="sec-h">
         <div>
-          <p class="label" data-repos-label>Open source</p>
+          <p class="label" role="status" data-repos-label>Open source</p>
           <h2>What agents are built on. <span class="dim">Really used, or only starred.</span></h2>
         </div>
         <p class="sec-note">Free projects anyone can build an agent on, without asking a company.</p>
       </div>
       <div class="card panel co-panel">
         <div class="filters" role="group" aria-label="Filter repos by real use" data-repo-filters></div>
+        <p class="note repo-hint" data-repo-hint hidden></p>
         <div class="table-wrap">
           <table class="table repos" data-repos></table>
         </div>
