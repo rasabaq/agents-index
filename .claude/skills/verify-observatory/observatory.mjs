@@ -4,7 +4,7 @@
 // WebSocket built in. Run `node observatory.mjs help` for the commands; SKILL.md explains the workflow.
 import { spawn, execFileSync } from 'node:child_process';
 import { createServer } from 'node:net';
-import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync, rmSync, readdirSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync, rmSync, readdirSync, openSync } from 'node:fs';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -126,11 +126,11 @@ const commands = {
     const chrome = spawn(findChrome(), ['--headless=new', '--remote-debugging-port=0', `--user-data-dir=${join(dir, 'profile')}`, '--window-size=1440,900',
       '--hide-scrollbars', '--no-first-run', '--no-default-browser-check', '--disable-extensions',
       // CI Linux runners block the user namespaces Chrome's sandbox needs; the page is our own localhost site.
-      ...(process.env.CI ? ['--no-sandbox'] : []), 'about:blank'], { detached: true, stdio: ['ignore', 'ignore', 'ignore'] });
+      ...(process.env.CI ? ['--no-sandbox'] : []), 'about:blank'], { detached: true, stdio: ['ignore', 'ignore', openSync(join(dir, 'chrome.log'), 'w')] });
     server.unref(); chrome.unref();
     const portFile = join(dir, 'profile', 'DevToolsActivePort');
-    for (let i = 0; i < 100 && !existsSync(portFile); i++) await sleep(100);
-    if (!existsSync(portFile)) die('Chrome did not start (no DevToolsActivePort).');
+    for (let i = 0; i < 300 && !existsSync(portFile); i++) await sleep(100);
+    if (!existsSync(portFile)) die(`Chrome did not start (no DevToolsActivePort). Its log:\n${readFileSync(join(dir, 'chrome.log'), 'utf8').slice(-2000)}`);
     const cdpPort = Number(readFileSync(portFile, 'utf8').split('\n')[0]);
     const url = `http://127.0.0.1:${port}`;
     for (let i = 0; i < 50; i++) { try { if ((await fetch(`${url}/`)).ok) break; } catch { /* not yet */ } await sleep(100); }
