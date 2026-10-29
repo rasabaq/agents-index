@@ -40,6 +40,10 @@
   .v-gap .vg-gaps { columns: 2; column-gap: 32px; }
   .v-gap .vg-gaps li { break-inside: avoid; }
 }
+/* touch: rows at least 40px tall, so each country is easy to tap */
+@media (max-width: 520px), (pointer: coarse) {
+  .v-gap .vg-row { height: 40px; }
+}
 @media (max-width: 520px) {
   .v-gap .vg-head { font-size: 17px; }
   .v-gap .vg-row, .v-gap .vg-axis { grid-template-columns: 56px minmax(0, 1fr) 34px; column-gap: 10px; padding-left: 4px; padding-right: 4px; }
@@ -106,7 +110,7 @@
         const cell = (cap) => cap.countries[focus];
         el.querySelector('.vg-side').innerHTML = `
           <h3>${flag(focus)}${esc(r.name)}</h3>
-          <p>${r.score} today, ${r.potential} if all ${r.pending} pending ${r.pending === 1 ? 'cell' : 'cells'} went live. Click a country to switch.</p>
+          <p>${r.score} today, ${r.potential} if all ${r.pending} pending ${r.pending === 1 ? 'cell' : 'cells'} went live. Pick a country to switch.</p>
           <ul class="vg-gaps">${gaps.length ? gaps.map(({ cap, g }) => `<li>
             <span class="chip s-${cell(cap).status}">${S[cell(cap).status].label}${cell(cap).confidence === 'low' ? '<span class="low" title="Low confidence">?</span>' : ''}</span>
             <span>${esc(cap.name)}</span><span class="vg-gain">+${g.toFixed(1)}</span></li>`).join('')

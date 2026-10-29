@@ -67,6 +67,7 @@
 .v-radar .rd-card .sw { position: absolute; top: 13px; right: 12px; }
 .v-radar .cap { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 13.5px; line-height: 1.35; }
 .v-radar .name { min-width: 0; font-weight: 500; }
+.v-radar .nm-code { display: none; }
 .v-radar .score { font-weight: 600; font-variant-numeric: tabular-nums; }
 .v-radar-tip-row { display: flex; align-items: center; gap: 6px; }
 .v-radar-tip-row b { min-width: 22px; font-variant-numeric: tabular-nums; }
@@ -80,7 +81,11 @@
   .v-radar .vs { display: none; }
   .v-radar .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .v-radar .rd-card { padding: 12px 10px 10px; }
-}`;
+  /* two cards per row: a long name (over 10 letters, like "United Kingdom") shows its code, so every card keeps one line and the rows line up */
+  .v-radar .nm-full { display: none; }
+  .v-radar .nm-code { display: inline; }
+}
+@media (max-width: 360px) { .v-radar .cap { font-size: 12.5px; } }`;
 
   (window.CHARTS ??= []).push({
     id: 'radar',
@@ -126,7 +131,7 @@
           <button type="button" class="rd-card" data-code="${r.code}" aria-label="${esc(`${r.name}, rank ${r.rank}, score ${r.score}. ${cats.map((c) => `${c.name} ${r.byCategory[c.id]}`).join(', ')}. Select to compare.`)}">
             <span class="rank">${r.rank}</span><span class="sw" aria-hidden="true"></span>
             <svg viewBox="-104 -104 208 208" aria-hidden="true">${base(96)}<polygon class="shape" points="${poly(vals(r.code), 96)}"/>${dots(vals(r.code), 96, '', 6)}${wedges(104)}</svg>
-            <span class="cap"><span class="name">${flagName(r.code)}</span><span class="score">${r.score}</span></span>
+            <span class="cap"><span class="name">${flag(r.code)}${r.name.length > 10 ? `<span class="nm-full">${esc(r.name)}</span><span class="nm-code">${r.code}</span>` : esc(r.name)}</span><span class="score">${r.score}</span></span>
           </button>`).join('')}
         </div>
       </div>`;
@@ -194,6 +199,7 @@
           const k = pair.indexOf(card.dataset.code);
           card.querySelector('.sw').className = k < 0 ? 'sw' : `sw c${k + 1}`;
           if (k < 0) delete card.dataset.k; else card.dataset.k = k + 1;
+          card.setAttribute('aria-pressed', k >= 0);
         });
         drawCompare();
       };
@@ -239,7 +245,8 @@
         const card = e.target.closest('.rd-card');
         if (!card) return;
         setPair(1, card.dataset.code);
-        el.querySelector('section').scrollIntoView({ block: 'nearest' });
+        // 'start', not 'nearest': on phones this section is taller than the screen and 'nearest' put its top behind the sticky header.
+        el.querySelector('section').scrollIntoView({ block: 'start' });
       });
       // Keyboard focus shows the same values as hover, all spokes at once.
       grid.addEventListener('focusin', (e) => {
