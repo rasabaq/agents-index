@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this data, please cite it as below."
+type: dataset
+title: "AI Agent Observatory"
+abstract: "What AI agents can actually do in each country: shop, pay, book, bank and more. Every status is backed by a source."
+authors:
+  - given-names: "Ramon"
+    family-names: "Sanchez"
+  - name: "AI Agent Observatory contributors"
+url: "https://agentindex.art/"
+repository-code: "https://github.com/rasabaq/ai-agent-observatory"
+license: CC-BY-4.0
+date-released: "2026-10-29"
