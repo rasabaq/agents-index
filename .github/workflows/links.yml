@@ -1,4 +1,4 @@
-# Weekly dead-link check. A 404 or 410 fails the run; 403s, timeouts and other
+# Weekly dead-link check. A 404 or 410, a domain that no longer exists or a bad certificate fails the run; 403s, timeouts and other
 # "could not be confirmed" links are listed in the log but pass.
 name: Links
 
@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: '0 9 * * 1' # Mondays 09:00 UTC
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   links:

@@ -6,13 +6,42 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm test
+      - run: npm run validate
+
+  # Loads the site in headless Chrome at 1440 and 400 px. Fails on page errors, a chart that failed to draw,
+  # or sideways scroll. The helper needs Node 22+.
+  smoke:
+    runs-on: ubuntu-latest
+    env:
+      H: .claude/skills/verify-observatory/observatory.mjs
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm test
-      - run: npm run validate
+      - run: node $H up
+      - run: |
+          for w in 1440 400; do
+            node $H open / --width $w --wait '#v-timeline svg'
+            node $H errors
+            node $H eval '(() => { if (document.querySelector(".view-error")) throw new Error("a chart shows .view-error");
+              if (document.documentElement.scrollWidth > innerWidth) throw new Error(`sideways scroll: ${document.documentElement.scrollWidth} > ${innerWidth}`);
+              return "ok" })()'
+          done
+      - if: always()
+        run: node $H down
