@@ -100,7 +100,7 @@
           ]
         },
         "MX": {
-          "status": "announced",
+          "status": "limited",
           "gapReason": "not-launched",
           "confidence": "low",
           "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Mexico, among the boards it searches, but LoopCV does not list Mexico as a market or say it applies here. We did not find a local job board, such as OCC Mundial, with its own agent that applies for you.",
@@ -115,7 +115,7 @@
           ]
         },
         "CL": {
-          "status": "announced",
+          "status": "limited",
           "gapReason": "not-launched",
           "confidence": "low",
           "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Chile, among the boards it searches, but LoopCV does not list Chile as a market or say it applies here. We did not find a local job board, such as Laborum, with its own agent that applies for you.",
@@ -130,7 +130,7 @@
           ]
         },
         "CO": {
-          "status": "announced",
+          "status": "limited",
           "gapReason": "not-launched",
           "confidence": "low",
           "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Colombia, among the boards it searches, but LoopCV does not list Colombia as a market or say it applies here. We did not find a local job board, such as elempleo, with its own agent that applies for you.",

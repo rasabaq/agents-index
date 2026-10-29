@@ -75,9 +75,8 @@
           ]
         },
         "DE": {
-          "status": "announced",
-          "gapReason": "not-launched",
-          "note": "Lemonade sells contents and personal liability cover in its German app and website, but no German page we found says its AI bot Maya runs the sign-up, so we score it lower.",
+          "status": "limited",
+          "note": "Lemonade sells contents and personal liability cover in its German app and website, but no German page we found says its AI bot Maya runs the sign-up there.",
           "evidence": [
             {
               "title": "Hausrat & Privathaftpflichtversicherung FAQ",
