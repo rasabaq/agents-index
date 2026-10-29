@@ -2,6 +2,8 @@
 
 Not how much AI a country has, but **what AI agents can actually do there**.
 
+Live site: https://agentindex.art/
+
 In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile, can it? This observatory tracks concrete agent capabilities country by country. Every status cites a source, and the countries are ranked by what agents can do for ordinary people and businesses.
 
 ## Run it
@@ -15,13 +17,13 @@ npm run refresh-repos  # measures the open-source repos: stars, installs, last c
 npm run refresh-sites  # reads each company homepage for its logo
 ```
 
-The site has no build step and no dependencies. Node 20 or later runs the checks.
+The site has no build step and no npm dependencies. Node 20 or later runs the checks. `npm start` uses Python 3 to serve the files; any static file server works too.
 
 ## Layout
 
 | Path | What it holds |
 | --- | --- |
-| `data/meta.json` | Countries, categories and the `asOf` date |
+| `data/meta.json` | Countries, categories, gap reasons and the `asOf` date |
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `docs/methodology.md` | How the data is collected and scored |
