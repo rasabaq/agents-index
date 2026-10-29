@@ -84,7 +84,7 @@
         },
         "DE": {
           "status": "limited",
-          "gapReason": "not-launched",
+          "gapReason": "pilot-only",
           "note": "Only Alexa+ is available, in early access since May 2026, and Amazon does not list its shopping features by country; Google agentic checkout leaves Europe out (US and Australia only).",
           "evidence": [
             {
@@ -146,7 +146,7 @@
         },
         "MX": {
           "status": "limited",
-          "gapReason": "not-launched",
+          "gapReason": "pilot-only",
           "note": "Only Alexa+ is available, in early access since January 2026, and it can order and pay for you (for example food orders). Gemini lists Mexico for shopping, but its Buy button needs Google Pay agentic checkout, which is US and Australia only; no ChatGPT, Copilot or Perplexity checkout is offered, and no Mercado Libre or Walmart México checkout inside a chat was found. Liverpool has only announced groundwork (November 2025, with commercetools) to let shoppers buy in ChatGPT \"where supported\"; no live launch was found.",
           "evidence": [
             {
@@ -322,7 +322,7 @@
         },
         "GB": {
           "status": "limited",
-          "gapReason": "not-launched",
+          "gapReason": "pilot-only",
           "note": "Only Amazon's Alexa+ in early access can order from Amazon for you; Rufus works in the UK, but its Auto Buy and Buy for Me are documented only in the US.",
           "evidence": [
             {
@@ -343,7 +343,7 @@
         },
         "DE": {
           "status": "limited",
-          "gapReason": "not-launched",
+          "gapReason": "pilot-only",
           "note": "Only Amazon's Alexa+ in early access (since May 2026); Rufus is live in Germany, but its Auto Buy is documented only in the US.",
           "evidence": [
             {
