@@ -1,5 +1,5 @@
 /* Orbit Signal tokens. The site is dark only. This block is the shared contract:
-   every page (site and Atlas) styles itself with these names, so change values here, not in components.
+   every part of the page (home and charts) styles itself with these names, so change values here, not in components.
 
    Surfaces   --page (space black), --surface (opaque panel), --surface-2 (raised, hover, tracks),
               --glass (see-through panel) with --blur (its backdrop filter)
@@ -171,7 +171,7 @@ select, option { color-scheme: dark; }
 .detail .suggest a:hover { color: var(--ink-2); }
 .tag { display: inline-block; margin-right: 6px; padding: 1px 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-2); font: 500 10px/1.4 var(--mono); text-transform: uppercase; letter-spacing: 0.08em; }
 
-/* select (Atlas pickers) */
+/* select (chart pickers) */
 .select select { appearance: none; height: 38px; padding: 0 36px 0 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%237e8192' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center; color: var(--ink); font: inherit; font-weight: 500; cursor: pointer; }
 .select select:hover { border-color: var(--line-strong); }
 

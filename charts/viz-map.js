@@ -1,4 +1,4 @@
-// Agent Atlas view "map": a pixel world map. Each tracked country's square dots are tinted by its overall score;
+// Home page chart "map": a pixel world map. Each tracked country's square dots are tinted by its overall score;
 // the hovered or focused country lights up in sunrise.
 (() => {
   // Land on a Natural Earth grid (139 x 65 cells, Antarctica cropped), rasterized from world-atlas 2.0.2 (110m).
@@ -87,7 +87,7 @@
     .v-map-legend .scale { display: inline-flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
     /* the ramp is cut into 4px cells, like the map */
     .v-map-legend .ramp { width: clamp(56px, 16vw, 120px); height: 8px; background: linear-gradient(90deg, var(--page) 1px, transparent 1px) 0 0 / 4px 4px, linear-gradient(var(--page) 1px, transparent 1px) 0 0 / 4px 4px, linear-gradient(90deg in oklab, var(--surface-2), var(--s-live)); }
-    .v-map-legend .dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; background: var(--line-strong); opacity: .7; vertical-align: 0; }
+    .v-map-legend .v-map-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; background: var(--line-strong); opacity: .7; vertical-align: 0; }
     .v-map svg { display: block; width: 100%; height: auto; overflow: visible; }
     .v-map .land { fill: var(--line-strong); opacity: .7; }
     .v-map .country { cursor: pointer; outline: none; transition: opacity .15s; }
@@ -118,7 +118,7 @@
     .v-map-tip span:nth-child(even) { text-align: right; font-weight: 600; }
   `;
 
-  (window.ATLAS_VIEWS ??= []).push({
+  (window.CHARTS ??= []).push({
     id: 'map',
     title: 'World map',
     blurb: 'Shows where in the world agents can act today: each dot is a patch of land, and a brighter dot means a higher overall score out of 100.',
@@ -148,9 +148,9 @@
       };
 
       el.innerHTML = `<div class="v-map">
-        <div class="atlas-legend v-map-legend">
+        <div class="chart-legend v-map-legend">
           <span class="scale">Overall score <span>0</span><span class="ramp" aria-hidden="true"></span><span>100</span></span>
-          <span><span class="dot" aria-hidden="true"></span>Not tracked</span>
+          <span><span class="v-map-dot" aria-hidden="true"></span>Not tracked</span>
         </div>
         <svg role="img" aria-label="${esc(`Dot map of the world. Tracked countries by overall score: ${ranking.map((d) => `${d.name} ${d.score}`).join(', ')}.`)}"></svg>
         <ol class="v-map-list" aria-label="Countries by score"></ol>

@@ -1,4 +1,4 @@
-// Agent Atlas view "flows": a hand-drawn two-column Sankey from company HQ country to the market where its agent capability works.
+// Home page chart "flows": a hand-drawn two-column Sankey from company HQ country to the market where its agent capability works.
 (() => {
   const CSS = `
 .v-flows .fl-legend { margin-bottom: 12px; }
@@ -27,7 +27,7 @@
 .v-flows .fl-note b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
 `;
 
-  (window.ATLAS_VIEWS ??= []).push({
+  (window.CHARTS ??= []).push({
     id: 'flows',
     title: 'Flows',
     blurb: 'Whose companies power the agents in each country? Each ribbon runs from the country where a company is headquartered (left) to a market where its agent capability works (right), and its width is the number of companies.',
@@ -49,16 +49,16 @@
       el.classList.add('v-flows');
       const chips = [['all', 'All'], ...ctx.meta.categories.map((c) => [c.id, c.name])];
       el.innerHTML = `
-        <div class="atlas-controls" role="group" aria-label="Filter by category">${chips.map(([id, n]) =>
+        <div class="chart-controls" role="group" aria-label="Filter by category">${chips.map(([id, n]) =>
           `<button type="button" class="pill" data-cat="${id}" aria-pressed="${id === 'all'}">${esc(n)}</button>`).join('')}</div>
-        <div class="atlas-legend fl-legend">
+        <div class="chart-legend fl-legend">
           <span><i class="sw" style="background: var(--accent)"></i>Company from another country</span>
           <span><i class="sw fl-home"></i>Home-grown</span>
           <span class="fl-key">Ribbon width is the number of companies</span>
         </div>
         <div class="fl-chart"></div>
         <p class="fl-note"></p>`;
-      ctx.edgeFade(el.querySelector('.atlas-controls'));
+      ctx.edgeFade(el.querySelector('.chart-controls'));
       const chart = el.querySelector('.fl-chart');
       const note = el.querySelector('.fl-note');
       el.querySelectorAll('[data-cat]').forEach((b) => b.addEventListener('click', () => {

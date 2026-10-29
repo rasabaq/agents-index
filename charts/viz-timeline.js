@@ -1,5 +1,5 @@
-// Agent Atlas view: a timeline of every cited source, one swim lane per category.
-(window.ATLAS_VIEWS ??= []).push({
+// Home page chart: a timeline of every cited source, one swim lane per category.
+(window.CHARTS ??= []).push({
   id: 'timeline',
   title: 'Timeline',
   blurb: 'How fast did agent capabilities arrive? Each dot is one cited source, placed at its date in the lane of the category it supports; the bars on top count sources per quarter.',
@@ -70,31 +70,31 @@
 .v-timeline svg { display: block; overflow: visible; }
 .v-timeline svg text { font-size: 12px; }
 .v-timeline .lane-name { fill: var(--ink-2); font-size: 13px; }
-.v-timeline .lane-count, .v-timeline .tick, .v-timeline .note { fill: var(--muted); font-variant-numeric: tabular-nums; }
-.v-timeline svg text.tick, .v-timeline svg text.lane-count, .v-timeline svg text.note { font: 400 11px var(--mono); }
+.v-timeline .lane-count, .v-timeline .tick, .v-timeline .tm-note { fill: var(--muted); font-variant-numeric: tabular-nums; }
+.v-timeline svg text.tick, .v-timeline svg text.lane-count, .v-timeline svg text.tm-note { font: 400 11px var(--mono); }
 .v-timeline svg text.tick.year { fill: var(--ink-2); font-weight: 500; }
 .v-timeline .grid { stroke: var(--grid); stroke-width: 1; }
 .v-timeline .lane-rule { stroke: var(--line); stroke-width: 1; }
-.v-timeline .band { fill: var(--surface-2); }
+.v-timeline .tm-band { fill: var(--surface-2); }
 .v-timeline .bar { fill: var(--accent); }
 .v-timeline .bar.pick { fill: var(--sunrise); }
 .v-timeline .bar-all { fill: var(--line-strong); }
 .v-timeline .qhit { fill: transparent; }
 .v-timeline .qhit:hover + .bar, .v-timeline .bar.hot { opacity: .75; }
 .v-timeline .bar-label { fill: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
-.v-timeline .dot { stroke-width: 1.5; transition: opacity .15s; }
-.v-timeline .dot.filled { fill: var(--ink-2); stroke: var(--surface); }
-.v-timeline .dot.hollow { fill: var(--surface); stroke: var(--ink-2); }
-.v-timeline .dot.dim { opacity: .14; }
-.v-timeline .dot.filled.pick { fill: var(--sunrise); }
-.v-timeline .dot.hollow.pick { stroke: var(--sunrise); }
-.v-timeline .dot.hot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; }
+.v-timeline .tm-dot { stroke-width: 1.5; transition: opacity .15s; }
+.v-timeline .tm-dot.filled { fill: var(--ink-2); stroke: var(--surface); }
+.v-timeline .tm-dot.hollow { fill: var(--surface); stroke: var(--ink-2); }
+.v-timeline .tm-dot.dim { opacity: .14; }
+.v-timeline .tm-dot.filled.pick { fill: var(--sunrise); }
+.v-timeline .tm-dot.hollow.pick { stroke: var(--sunrise); }
+.v-timeline .tm-dot.hot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; }
 .v-timeline a { outline: none; cursor: pointer; }
-.v-timeline a:focus-visible .dot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; }
+.v-timeline a:focus-visible .tm-dot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; }
 .v-timeline .ring { fill: none; stroke: var(--ink); stroke-width: 1.5; }
 .v-timeline .leader { stroke: var(--line-strong); stroke-width: 1; }
 /* key moments are numbered like function keys: magenta caps */
-.v-timeline .badge { fill: var(--magenta); }
+.v-timeline .tm-badge { fill: var(--magenta); }
 .v-timeline svg text.badge-n { fill: var(--page); font: 500 11px var(--mono); }
 .v-timeline .moments { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 6px; font-size: 13px; color: var(--ink-2); }
 .v-timeline .moments li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: baseline; }
@@ -214,7 +214,7 @@
         .attr('aria-label', `Timeline of ${sources.length} cited sources from before 2016 to ${parse(ctx.meta.asOf).label}, in ${cats.length} category lanes, with a bar strip counting sources per quarter.`);
 
       // Compressed band and gridlines.
-      svg.append('rect').attr('class', 'band').attr('x', x0).attr('y', stripTop).attr('width', xb - x0).attr('height', lanesBottom - stripTop);
+      svg.append('rect').attr('class', 'tm-band').attr('x', x0).attr('y', stripTop).attr('width', xb - x0).attr('height', lanesBottom - stripTop);
       const ticks = phone
         ? [[START, '2016', 'start'], [BREAK, '2025'], [new Date(Date.UTC(2025, 6, 1)), 'Jul'], [new Date(Date.UTC(2026, 0, 1)), '2026'], [new Date(Date.UTC(2026, 6, 1)), 'Jul']]
         : [...[2016, 2020].map((yy) => [new Date(Date.UTC(yy, 0, 1)), String(yy), yy === 2016 ? 'start' : 'middle']),
@@ -229,7 +229,7 @@
       g.append('line').attr('class', 'lane-rule').attr('x1', labelW + binW + 6).attr('x2', labelW + binW + 6).attr('y1', stripTop).attr('y2', lanesBottom);
       g.append('text').attr('class', 'tick year').attr('x', binX).attr('y', lanesBottom + 18).attr('text-anchor', 'middle').text('Before');
       g.append('text').attr('class', 'tick year').attr('x', binX).attr('y', lanesBottom + 33).attr('text-anchor', 'middle').text('2016');
-      if (!phone) g.append('text').attr('class', 'note').attr('x', (x0 + xb) / 2).attr('y', lanesBottom + 33).attr('text-anchor', 'middle').text('2016–2024, compressed');
+      if (!phone) g.append('text').attr('class', 'tm-note').attr('x', (x0 + xb) / 2).attr('y', lanesBottom + 33).attr('text-anchor', 'middle').text('2016–2024, compressed');
 
       // Bar strip.
       const strip = svg.append('g');
@@ -272,7 +272,7 @@
         const bx = d.x, by = annTop + annH / 2;
         svg.append('line').attr('class', 'leader').attr('x1', bx).attr('x2', bx).attr('y1', by + 8).attr('y2', d.cy - R - 4);
         svg.append('circle').attr('class', 'ring').attr('cx', d.x).attr('cy', d.cy).attr('r', R + 3.5);
-        svg.append('rect').attr('class', 'badge').attr('x', bx - 8).attr('y', by - 8).attr('width', 16).attr('height', 16).attr('rx', 3);
+        svg.append('rect').attr('class', 'tm-badge').attr('x', bx - 8).attr('y', by - 8).attr('width', 16).attr('height', 16).attr('rx', 3);
         svg.append('text').attr('class', 'badge-n').attr('x', bx).attr('y', by + 4).attr('text-anchor', 'middle').text(d.s.moment);
       }
 
@@ -283,7 +283,7 @@
         .on('focus', function (e, d) { ctx.tip.show(atRect(this), tipHtml(d.s)); })
         .on('blur', () => ctx.tip.hide());
       links.append('circle').attr('cx', (d) => d.x).attr('cy', (d) => d.cy).attr('r', R)
-        .attr('class', (d) => `dot ${FILLED.has(d.s.type) ? 'filled' : 'hollow'}${match(d.s) ? (country === 'ALL' ? '' : ' pick') : ' dim'}`);
+        .attr('class', (d) => `tm-dot ${FILLED.has(d.s.type) ? 'filled' : 'hollow'}${match(d.s) ? (country === 'ALL' ? '' : ' pick') : ' dim'}`);
 
       const delaunay = d3.Delaunay.from(dots, (d) => d.x, (d) => d.cy);
       let hot = null;

@@ -1,4 +1,4 @@
-// Agent Atlas view "gap": how far each country is from its next score. A dumbbell runs from today's score to the
+// Home page chart "gap": how far each country is from its next score. A dumbbell runs from today's score to the
 // score if every limited and announced cell went live; the gap list ranks one country's pending cells by score gain.
 (() => {
   const CSS = `
@@ -46,7 +46,7 @@
 
   const PENDING = ['limited', 'announced'];
 
-  (window.ATLAS_VIEWS ??= []).push({
+  (window.CHARTS ??= []).push({
     id: 'gap',
     title: 'One step away',
     blurb: 'How far is each country from its next jump? Each line runs from today’s score to the score if every limited and announced cell went live. Pick a country to see which of its pending cells would lift the score most.',
@@ -76,7 +76,7 @@
       el.classList.add('v-gap');
       el.innerHTML = `
         <p class="vg-head">${esc(the(best.code)).replace(/^./, (c) => c.toUpperCase())} could gain the most: <b>+${best.potential - best.score}</b> points if its ${best.pending} limited and announced cells went live.</p>
-        <div class="atlas-legend vg-legend">
+        <div class="chart-legend vg-legend">
           <span class="vg-key"><span class="vg-now"></span>Score today</span>
           <span class="vg-key"><span class="vg-then"></span>If every pending cell went live</span>
         </div>

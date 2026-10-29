@@ -26,7 +26,7 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `docs/methodology.md` | How the data is collected and scored |
 | `index.html`, `app.js`, `hero.js`, `sections.js` | The site: the hero, then a console (country list, status matrix, ranking, categories, newest sources), tiers, companies and method |
-| `styles.css`, `console.css`, `hero.css`, `sections.css` | Shared tokens (also used by the Atlas), then the home page parts |
+| `styles.css`, `console.css`, `hero.css`, `sections.css` | Shared tokens (also used by the charts), then the home page parts |
 
 ## Update the data
 

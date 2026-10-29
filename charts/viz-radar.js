@@ -1,4 +1,4 @@
-// Agent Atlas view: country fingerprints. One radar per country (one spoke per category, 0–100),
+// Home page chart: country fingerprints. One radar per country (one spoke per category, 0–100),
 // plus a large compare radar that overlays two countries.
 (() => {
   const RINGS = [25, 50, 75, 100];
@@ -28,10 +28,10 @@
 .v-radar .shape { fill: var(--accent); fill-opacity: 0.12; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .v-radar .shape.s1 { fill: var(--c1); stroke: var(--c1); }
 .v-radar .shape.s2 { fill: var(--c2); stroke: var(--c2); }
-.v-radar .dot { display: none; fill: var(--accent); stroke: var(--surface); stroke-width: 2; vector-effect: non-scaling-stroke; }
-.v-radar .dot.s1 { fill: var(--c1); }
-.v-radar .dot.s2 { fill: var(--c2); }
-.v-radar .dot.on, .v-radar .dot.keep { display: inline; }
+.v-radar .rd-dot { display: none; fill: var(--accent); stroke: var(--surface); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.v-radar .rd-dot.s1 { fill: var(--c1); }
+.v-radar .rd-dot.s2 { fill: var(--c2); }
+.v-radar .rd-dot.on, .v-radar .rd-dot.keep { display: inline; }
 .v-radar .hit { fill: transparent; }
 .v-radar svg text.axis { fill: var(--ink-2); font-size: 13px; }
 .v-radar svg text.tick { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
@@ -50,21 +50,21 @@
 .v-radar .head { margin: 28px 0 14px; padding-top: 24px; border-top: 1px solid var(--line); }
 .v-radar .head p { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
 .v-radar .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.v-radar .card { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(3, 3, 8, 0.55); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
-.v-radar .card:hover { border-color: var(--line-strong); }
+.v-radar .rd-card { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(3, 3, 8, 0.55); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.v-radar .rd-card:hover { border-color: var(--line-strong); }
 /* mini shapes stay grey; the two countries in the compare chart take its colors */
-.v-radar .card .shape { fill: var(--ink-2); fill-opacity: 0.08; stroke: var(--ink-2); stroke-width: 1.5; }
-.v-radar .card .dot { fill: var(--ink-2); }
-.v-radar .card[data-k='1'] { border-color: color-mix(in srgb, var(--c1) 45%, var(--line)); }
-.v-radar .card[data-k='2'] { border-color: color-mix(in srgb, var(--c2) 45%, var(--line)); box-shadow: 0 0 26px -10px rgba(255, 160, 80, 0.45); }
-.v-radar .card[data-k='1'] .shape, .v-radar .card[data-k='1'] .dot { fill: var(--c1); stroke: var(--c1); }
-.v-radar .card[data-k='2'] .shape, .v-radar .card[data-k='2'] .dot { fill: var(--c2); stroke: var(--c2); }
-.v-radar .card[data-k] .shape { fill-opacity: 0.12; }
-.v-radar .card[data-k] .dot { stroke: var(--surface); }
-.v-radar .card:focus-visible { border-radius: 12px; }
-.v-radar .card svg { display: block; width: 100%; height: auto; overflow: visible; }
+.v-radar .rd-card .shape { fill: var(--ink-2); fill-opacity: 0.08; stroke: var(--ink-2); stroke-width: 1.5; }
+.v-radar .rd-card .rd-dot { fill: var(--ink-2); }
+.v-radar .rd-card[data-k='1'] { border-color: color-mix(in srgb, var(--c1) 45%, var(--line)); }
+.v-radar .rd-card[data-k='2'] { border-color: color-mix(in srgb, var(--c2) 45%, var(--line)); box-shadow: 0 0 26px -10px rgba(255, 160, 80, 0.45); }
+.v-radar .rd-card[data-k='1'] .shape, .v-radar .rd-card[data-k='1'] .rd-dot { fill: var(--c1); stroke: var(--c1); }
+.v-radar .rd-card[data-k='2'] .shape, .v-radar .rd-card[data-k='2'] .rd-dot { fill: var(--c2); stroke: var(--c2); }
+.v-radar .rd-card[data-k] .shape { fill-opacity: 0.12; }
+.v-radar .rd-card[data-k] .rd-dot { stroke: var(--surface); }
+.v-radar .rd-card:focus-visible { border-radius: 12px; }
+.v-radar .rd-card svg { display: block; width: 100%; height: auto; overflow: visible; }
 .v-radar .rank { position: absolute; top: 12px; left: 12px; font: 500 11px/1 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-.v-radar .card .sw { position: absolute; top: 13px; right: 12px; }
+.v-radar .rd-card .sw { position: absolute; top: 13px; right: 12px; }
 .v-radar .cap { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 13.5px; line-height: 1.35; }
 .v-radar .name { min-width: 0; font-weight: 500; }
 .v-radar .score { font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -79,10 +79,10 @@
   .v-radar .pick .select, .v-radar .pick select { flex: 1; width: 100%; }
   .v-radar .vs { display: none; }
   .v-radar .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .v-radar .card { padding: 12px 10px 10px; }
+  .v-radar .rd-card { padding: 12px 10px 10px; }
 }`;
 
-  (window.ATLAS_VIEWS ??= []).push({
+  (window.CHARTS ??= []).push({
     id: 'radar',
     title: 'Country fingerprints',
     blurb: 'What shape is each country’s agent readiness? Each spoke is one category, scored from 0 at the centre to 100 at the edge, so a big, round shape means agents can do a lot across the board.',
@@ -105,7 +105,7 @@
       const base = (r) =>
         RINGS.map((v) => `<polygon class="ring" points="${poly(Array(N).fill(v), r)}"/>`).join('') +
         cats.map((c, i) => { const [x, y] = xy(i, r); return `<line class="spoke" data-i="${i}" x2="${f(x)}" y2="${f(y)}"/>`; }).join('');
-      const dots = (vs, r, cls, size = 4.5) => vs.map((v, i) => { const [x, y] = xy(i, (r * v) / 100); return `<circle class="dot ${cls}" data-i="${i}" cx="${f(x)}" cy="${f(y)}" r="${size}"/>`; }).join('');
+      const dots = (vs, r, cls, size = 4.5) => vs.map((v, i) => { const [x, y] = xy(i, (r * v) / 100); return `<circle class="rd-dot ${cls}" data-i="${i}" cx="${f(x)}" cy="${f(y)}" r="${size}"/>`; }).join('');
       const arc = d3.arc();
       const wedges = (r) => cats.map((c, i) => `<path class="hit" data-i="${i}" d="${arc({ innerRadius: 0, outerRadius: r, startAngle: i * STEP - STEP / 2, endAngle: i * STEP + STEP / 2 })}"/>`).join('');
       const liveOf = (code, id) => `${live[code][id]} of ${total[id]} capabilities live`;
@@ -123,7 +123,7 @@
         </section>
         <div class="head"><h3>All ${ranking.length} countries, by rank</h3><p>Same spokes as the chart above, clockwise from Shopping at the top. Rings mark 25, 50, 75 and 100. Select a country to compare it.</p></div>
         <div class="grid">${ranking.map((r) => `
-          <button type="button" class="card" data-code="${r.code}" aria-label="${esc(`${r.name}, rank ${r.rank}, score ${r.score}. ${cats.map((c) => `${c.name} ${r.byCategory[c.id]}`).join(', ')}. Select to compare.`)}">
+          <button type="button" class="rd-card" data-code="${r.code}" aria-label="${esc(`${r.name}, rank ${r.rank}, score ${r.score}. ${cats.map((c) => `${c.name} ${r.byCategory[c.id]}`).join(', ')}. Select to compare.`)}">
             <span class="rank">${r.rank}</span><span class="sw" aria-hidden="true"></span>
             <svg viewBox="-104 -104 208 208" aria-hidden="true">${base(96)}<polygon class="shape" points="${poly(vals(r.code), 96)}"/>${dots(vals(r.code), 96, '', 6)}${wedges(104)}</svg>
             <span class="cap"><span class="name">${flagName(r.code)}</span><span class="score">${r.score}</span></span>
@@ -174,7 +174,7 @@
         big.innerHTML = `<g>${base(r)}${ticks}
           <polygon class="shape s2" points="${poly(vb, r)}"/><polygon class="shape s1" points="${poly(va, r)}"/>
           ${dots(vb, r, 's2')}${dots(va, r, 's1')}${axis}${direct.map((d) => d.html).join('')}${wedges(r + OFF)}</g>`;
-        direct.forEach((d) => big.querySelector(`.dot.${d.cls}[data-i="${d.i}"]`).classList.add('keep'));
+        direct.forEach((d) => big.querySelector(`.rd-dot.${d.cls}[data-i="${d.i}"]`).classList.add('keep'));
         const bb = big.firstElementChild.getBBox();
         big.setAttribute('width', W);
         big.setAttribute('height', Math.ceil(bb.height + 8));
@@ -189,7 +189,7 @@
 
       const update = () => {
         selects.forEach((s, k) => (s.value = pair[k]));
-        grid.querySelectorAll('.card').forEach((card) => {
+        grid.querySelectorAll('.rd-card').forEach((card) => {
           const k = pair.indexOf(card.dataset.code);
           card.querySelector('.sw').className = k < 0 ? 'sw' : `sw c${k + 1}`;
           if (k < 0) delete card.dataset.k; else card.dataset.k = k + 1;
@@ -227,7 +227,7 @@
       tbl.addEventListener('pointerleave', () => mark(null));
 
       grid.addEventListener('pointermove', (e) => {
-        const hit = e.target.closest('.hit'), card = e.target.closest('.card');
+        const hit = e.target.closest('.hit'), card = e.target.closest('.rd-card');
         if (!hit || !card) { mark(null); tip.hide(); return; }
         const i = +hit.dataset.i, code = card.dataset.code, c = cats[i];
         mark(card, i);
@@ -235,14 +235,14 @@
       });
       grid.addEventListener('pointerleave', () => { mark(null); tip.hide(); });
       grid.addEventListener('click', (e) => {
-        const card = e.target.closest('.card');
+        const card = e.target.closest('.rd-card');
         if (!card) return;
         setPair(1, card.dataset.code);
         el.querySelector('section').scrollIntoView({ block: 'nearest' });
       });
       // Keyboard focus shows the same values as hover, all spokes at once.
       grid.addEventListener('focusin', (e) => {
-        const card = e.target.closest('.card');
+        const card = e.target.closest('.rd-card');
         if (!card?.matches(':focus-visible')) return;
         const code = card.dataset.code, box = card.getBoundingClientRect();
         tip.show({ clientX: box.left + box.width / 2, clientY: box.top },

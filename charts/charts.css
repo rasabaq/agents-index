@@ -1,0 +1,66 @@
+/* The home page charts. Builds on ../styles.css tokens; adds the categorical series, the chart windows
+   and the small status marks the charts share. Each chart scopes its own rules under .v-<id>. */
+:root {
+  /* categorical slots in fixed order, tuned for the dark page; category i uses --c{i+1}.
+     The first two are the brand colors; the rest stay apart in hue so adjacent categories never blur together. */
+  --c1: var(--magenta); --c2: var(--sunrise); --c3: #5bc0eb; --c4: #a78bfa; --c5: #6ee7b7; --c6: #e8e26b; --c7: #ff6b4a; --c8: #2dd4bf; --c9: #93a5ff; --c10: #d4a373; --c11: #f0abfc; --c12: #84cc16; --c13: var(--ink-2);
+  --grid: var(--line);
+  --sun-tint: rgba(255, 182, 114, 0.1);
+  --sun-glow: drop-shadow(0 0 5px rgba(255, 170, 90, 0.55));
+}
+
+/* A strip that scrolls sideways fades whichever edge hides more of it (ctx.edgeFade in charts.js). */
+.fade-x { --fl: #000; --fr: #000; }
+.fade-x.more { --fr: transparent; }
+.fade-x.more-l { --fl: transparent; }
+.fade-x:is(.more, .more-l) { -webkit-mask-image: linear-gradient(90deg, var(--fl), #000 56px, #000 calc(100% - 56px), var(--fr)); mask-image: linear-gradient(90deg, var(--fl), #000 56px, #000 calc(100% - 56px), var(--fr)); }
+
+/* each chart is a glass window: a title bar (inverted number chip, mono path), the head, then the chart itself */
+.view { padding-top: 32px; }
+.view-win { background: var(--glass); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.view-bar { display: flex; align-items: center; gap: 12px; height: 36px; padding-right: 14px; border-bottom: 1px solid var(--line); font: 400 11px/1 var(--mono); color: var(--muted); white-space: nowrap; }
+.view-app { align-self: stretch; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-radius: 15px 0 0 0; background: var(--ink); color: var(--page); font-weight: 500; font-size: 10.5px; letter-spacing: 0.1em; }
+.view-app i { width: 7px; height: 7px; background: var(--magenta); }
+.view-path { overflow: hidden; text-overflow: ellipsis; }
+.view-path b { font-weight: 500; color: var(--ink); }
+.view-fill { flex: 1; min-width: 12px; height: 1px; background: repeating-linear-gradient(90deg, var(--line-strong) 0 3px, transparent 3px 6px); }
+.view-head { padding: 26px 24px 0; }
+.view-head h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 560; letter-spacing: -0.045em; }
+.view-head p { margin: 8px 0 0; max-width: 72ch; color: var(--ink-2); }
+.view-frame { position: relative; min-width: 0; padding: 24px; }
+.view-error { color: var(--muted); }
+/* SVG text falls back to the flag font, so flags drawn inside charts match the ones in HTML */
+.view svg text { fill: var(--ink-2); font-family: var(--font), var(--flag); }
+.view select { font-family: var(--font), var(--flag); }
+
+/* shared bits charts may use */
+.chart-tip { max-width: 320px; }
+.chart-tip .flag { margin-right: 3px; }
+.chart-controls { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.chart-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font: 400 11.5px/1.4 var(--mono); color: var(--ink-2); }
+.chart-legend .sw { display: inline-block; width: 10px; height: 10px; margin-right: 7px; border-radius: 2px; vertical-align: -1px; }
+
+/* small status marks (capsules): fill carries the order, never hue. Live solid, Limited half filled,
+   Announced outline, Not yet a faint dash. .q (low confidence) adds a dashed ring, or breaks the dash. */
+.smark { display: inline-block; flex: none; width: 18px; height: 9px; border: 1.5px solid var(--s-live); border-radius: 99px; background: var(--s-live); vertical-align: middle; }
+.smark.limited { border-color: var(--s-limited); background: linear-gradient(90deg, var(--s-limited) 50%, transparent 0); }
+.smark.announced { border-color: var(--s-limited); background: none; opacity: 0.85; }
+.smark.none { width: 10px; height: 2px; border: 0; border-radius: 2px; background: var(--s-none-ink); opacity: 0.85; }
+.smark.q { outline: 1px dashed var(--ink-2); outline-offset: 2px; }
+.smark.none.q { outline: 0; width: 14px; background: repeating-linear-gradient(90deg, var(--s-none-ink) 0 3px, transparent 3px 5px); }
+
+/* The map opens the data: it takes the console's old place over the hero's planet, and the console follows it. */
+.hero + [data-chart='map'] { position: relative; z-index: 4; margin-top: -270px; padding-top: 0; }
+[data-chart='map'] + .term { margin-top: 32px; }
+@media (max-width: 760px) {
+  .hero + [data-chart='map'] { margin-top: -200px; }
+}
+
+@media (max-width: 520px) {
+  /* a long row of filter pills scrolls sideways instead of wrapping into many rows */
+  .chart-controls { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-left: -16px; margin-right: -16px; padding: 2px 16px; }
+  .chart-controls > * { flex: none; white-space: nowrap; }
+  .view { padding-top: 20px; }
+  .view-head { padding: 20px 16px 0; }
+  .view-frame { padding: 16px; }
+}

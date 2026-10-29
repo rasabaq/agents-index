@@ -1,5 +1,5 @@
-// Agent Atlas view: company-country network. Companies link to every market they work in.
-(window.ATLAS_VIEWS ??= []).push({
+// Home page chart: company-country network. Companies link to every market they work in.
+(window.CHARTS ??= []).push({
   id: 'network',
   title: 'Company network',
   blurb: 'Which companies connect which countries? Each small dot is a company, linked to every country it works in; global players sit in the middle, local ones cluster around their country.',
@@ -161,13 +161,13 @@
         lblG.selectAll('.lbl').classed('on', (d) => nb.has(d));
         nodeSel.classed('hot', (d) => d === n);
         ctx.tip.show(e, tipHtml(n));
-        document.querySelector('[data-atlas-tip]').classList.add('v-network-tip');
+        document.querySelector('[data-chart-tip]').classList.add('v-network-tip');
       }
       function clear() {
         svg.classed('hl', false);
         nodeSel.classed('hot', false);
         ctx.tip.hide();
-        document.querySelector('[data-atlas-tip]').classList.remove('v-network-tip');
+        document.querySelector('[data-chart-tip]').classList.remove('v-network-tip');
       }
       const visible = (n) => n.kind === 'country' || filter === 'all' || n.co.categories.includes(filter);
       let current = null;
