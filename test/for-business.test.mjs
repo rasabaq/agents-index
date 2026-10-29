@@ -31,3 +31,14 @@ test('for businesses: only the business capabilities, grouped, with the companie
 test('the business set is the eight capabilities from the brief', () => {
   assert.equal(BUSINESS_GROUPS.flatMap((g) => g.ids).length, 8);
 });
+
+test('the link holds the country and the view; old #country= links still work', async () => {
+  const { readHash, writeHash, startCountry } = await import('../src/observatory.js');
+  assert.deepEqual(readHash('#country=MX&view=business'), { country: 'MX', view: 'business' });
+  assert.deepEqual(readHash('#country=MX'), { country: 'MX', view: 'people' });
+  assert.deepEqual(readHash('#view=business'), { country: null, view: 'business' });
+  assert.deepEqual(readHash('#country=mx&view=nope'), { country: null, view: 'people' });
+  assert.equal(writeHash('MX', 'business'), '#country=MX&view=business');
+  assert.equal(writeHash('MX', 'people'), '#country=MX');
+  assert.equal(startCountry(['US', 'MX'], '#country=MX&view=business'), 'MX');
+});

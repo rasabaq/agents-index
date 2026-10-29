@@ -1,4 +1,4 @@
-import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness } from './src/observatory.js';
+import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -26,6 +26,7 @@ function init() {
   region = Object.fromEntries(meta.countries.map((c) => [c.code, c.region]));
   repos = rankRepos(categories);
   const codes = meta.countries.map((c) => c.code);
+  state.view = readHash(location.hash).view;
   state.country = startCountry(codes, location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
   // The visitor's own country, when time zone or language tells us; the head says "Your country" only for it.
   state.own = guessCountry(codes, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
@@ -50,7 +51,7 @@ function init() {
 }
 
 const hashCountry = () => {
-  const code = location.hash.match(/^#country=(\w\w)$/)?.[1];
+  const code = readHash(location.hash).country;
   return byCode[code] ? code : null;
 };
 const catName = (id) => meta.categories.find((c) => c.id === id).name;
@@ -306,7 +307,7 @@ function selectCountry(code, scroll) {
   const refocus = $('[data-country]').contains(document.activeElement);
   const fromPicker = document.activeElement?.matches('[data-pick-country]');
   state.country = code;
-  history.replaceState(null, '', `#country=${code}`);
+  history.replaceState(null, '', writeHash(code, state.view));
   // Every country picker on the page (hero, console, tier list) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
@@ -422,7 +423,11 @@ function wire() {
     e.preventDefault();
     selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
   });
-  addEventListener('hashchange', () => hashCountry() && selectCountry(hashCountry(), true));
+  addEventListener('hashchange', () => {
+    if (!hashCountry()) return;
+    state.view = readHash(location.hash).view;
+    selectCountry(hashCountry(), true);
+  });
   // Show all / Show fewer under the Companies and Open source tables. Fewer scrolls back to the table's top.
   $('[data-companies-more]').addEventListener('click', (e) => {
     if (!e.target.closest('button')) return;
@@ -444,6 +449,7 @@ function wire() {
     const b = e.target.closest('[data-view]');
     if (!b || b.dataset.view === state.view) return;
     state.view = b.dataset.view;
+    history.replaceState(null, '', writeHash(state.country, state.view));
     renderCountry();
     $(`[data-view="${state.view}"]`).focus({ preventScroll: true });
   });
