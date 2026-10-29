@@ -40,16 +40,10 @@
           ]
         },
         "GB": {
-          "status": "live",
-          "note": "Lemonade has sold contents and home cover in its UK app since October 2022, but we found no UK page saying its AI bot Maya runs the sign-up there. The MoneySuperMarket and Go.Compare apps in ChatGPT re-run car and home quotes, but you buy on their sites.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "The MoneySuperMarket and Go.Compare apps in ChatGPT re-run car and home quotes, but you buy on their sites. Lemonade sells contents and home cover in its UK app, but we found no UK page saying its AI bot Maya runs the sign-up there.",
           "evidence": [
-            {
-              "title": "Lemonade launches in the UK",
-              "publisher": "FF News",
-              "url": "https://ffnews.com/newsarticle/lemonade-launches-in-the-uk",
-              "date": "2022-10",
-              "type": "news"
-            },
             {
               "title": "New MoneySuperMarket ChatGPT app",
               "publisher": "MoneySuperMarket",
@@ -63,18 +57,33 @@
               "url": "https://coverager.com/go-compare-launches-chatgpt-app-for-insurance-comparison/",
               "date": "2026",
               "type": "news"
+            },
+            {
+              "title": "Lemonade launches in the UK",
+              "publisher": "FF News",
+              "url": "https://ffnews.com/newsarticle/lemonade-launches-in-the-uk",
+              "date": "2022-10",
+              "type": "news"
             }
           ],
           "confidence": "low"
         },
         "DE": {
-          "status": "live",
-          "note": "Lemonade sells contents and personal liability cover in Germany through its app in a few minutes, but we found no German page saying its AI bot Maya runs the sign-up there.",
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Unconfirmed: Lemonade sells contents and personal liability cover in its German app, but we found no page we could open that says its AI bot Maya runs the sign-up there; its German site blocks scripts, and a 2019 report says only that you buy in the app or on the website.",
           "evidence": [
             {
               "title": "Lemonade: Hausrat und Privathaftpflicht schnell per App abschließen",
               "publisher": "appgefahren",
               "url": "https://www.appgefahren.de/lemonade-hausrat-und-privathaftpflicht-schnell-per-app-abschliessen-269254.html",
+              "type": "news"
+            },
+            {
+              "title": "Insurtech Lemonade: KI und Anti-Fraud-Checks",
+              "publisher": "IT Finanzmagazin",
+              "url": "https://www.it-finanzmagazin.de/insurtech-lemonade-ai-ki-anti-fraud-checks-99386/",
+              "date": "2019-12-30",
               "type": "news"
             }
           ],
@@ -185,13 +194,13 @@
         },
         "GB": {
           "status": "live",
-          "note": "Lemonade takes claims in its UK app, and its AI Jim handles claims in the US and Germany, but we found no UK page naming Jim.",
+          "note": "Lemonade's AI Jim assessed and paid a London customer's bike theft claim in the app in two seconds (June 2023); we found no newer UK page on the claim flow.",
           "evidence": [
             {
-              "title": "Lemonade launches in the UK",
-              "publisher": "FF News",
-              "url": "https://ffnews.com/newsarticle/lemonade-launches-in-the-uk",
-              "date": "2022-10",
+              "title": "New UK record? Lemonade pays claim in two seconds",
+              "publisher": "Claims Magazine",
+              "url": "https://claimsmag.co.uk/?p=21730",
+              "date": "2023-06-20",
               "type": "news"
             }
           ],
