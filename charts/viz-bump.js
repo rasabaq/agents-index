@@ -86,7 +86,7 @@
       let hover = null;
 
       el.innerHTML = `<div class="bump-top"><div class="bump-chips" role="group" aria-label="Pin countries"></div>
-        <p class="bump-hint">Click a line or a country to pin it (up to ${MAX_PINS}).</p></div><div class="bump-chart"></div>`;
+        <p class="bump-hint">Pick a line or a country to pin it (up to ${MAX_PINS}).</p></div><div class="bump-chart"></div>`;
       const chart = el.querySelector('.bump-chart');
 
       const freeSlot = () => [0, 1, 2].find((s) => !pins.some((p) => p.slot === s));

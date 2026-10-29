@@ -180,7 +180,7 @@
       <div class="pt-dh">
         <span class="pt-dsym" style="--cat: ${ctx.catIndex[cap.category].color}" aria-hidden="true">${esc(cap.sym)}</span>
         <div>
-          <span class="pt-cat">${esc(ctx.catName(cap.category))} · live in ${cap.live} of ${n} countries</span>
+          <span class="pt-cat">${esc(ctx.catName(cap.category))} · <span class="nowrap">live in ${cap.live} of ${n} countries</span></span>
           <h3 tabindex="-1">${esc(cap.name)}</h3>
           <p>${esc(cap.question)}</p>
         </div>

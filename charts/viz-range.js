@@ -113,8 +113,8 @@
         list.querySelectorAll('.vr-row').forEach((b) => b.setAttribute('aria-pressed', b.dataset.code === focus));
         const r = rows.find((q) => q.code === focus);
         el.querySelector('.vr-sub').innerHTML = r.lows.length
-          ? `${flag(r.code)}${esc(r.name)}: published ${r.score}, range ${r.lo}–${r.hi}, from ${r.lows.length} low-confidence ${r.lows.length === 1 ? 'cell' : 'cells'}. Click a country to see its range.`
-          : `${flag(r.code)}${esc(r.name)}: ${r.score}, with no low-confidence cells, so the score is firm. Click a country to see its range.`;
+          ? `${flag(r.code)}${esc(r.name)}: published ${r.score}, range ${r.lo}–${r.hi}, from ${r.lows.length} low-confidence ${r.lows.length === 1 ? 'cell' : 'cells'}. Pick a country to see its range.`
+          : `${flag(r.code)}${esc(r.name)}: ${r.score}, with no low-confidence cells, so the score is firm. Pick a country to see its range.`;
       }
       list.addEventListener('click', (e) => {
         const b = e.target.closest('.vr-row');
