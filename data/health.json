@@ -8,13 +8,20 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Since August 2026 Zocdoc is a connected app in Google Gemini: you say what care you need, see real open slots, and book an in-person or video visit, with the last step on Zocdoc's screen.",
+          "note": "Since August 2026 Zocdoc is a connected app in Google Gemini for US users aged 18 and over: you say what care you need, see real open slots, and book an in-person or video visit without leaving Gemini.",
           "evidence": [
             {
-              "title": "New connected apps are coming to Gemini (book a doctor's appointment with Zocdoc)",
+              "title": "Now you can connect even more of your favorite apps and services to Gemini (book a doctor's appointment with Zocdoc)",
               "publisher": "Google",
               "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-services-gemini-august-2026/",
               "date": "2026-08-12",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
               "type": "company"
             },
             {
@@ -28,8 +35,8 @@
         },
         "GB": {
           "status": "limited",
-          "gapReason": "pilot-only",
-          "note": "Rapid Health's AI Smart Triage inside the NHS App asks about your symptoms and books a GP slot straight away, but only at the practices that use it (about 200 practices and networks, over 1 million patients), not across the NHS.",
+          "gapReason": "not-launched",
+          "note": "Rapid Health's Smart Triage inside the NHS App asks about your symptoms and books a GP slot straight away, but only at the practices that use it (over 1 million patients in April 2026), not across the NHS.",
           "evidence": [
             {
               "title": "24/7 GP appointment booking is now live in the NHS App for more than one million patients",
@@ -39,16 +46,17 @@
               "type": "report"
             },
             {
-              "title": "How do I use the NHS app? (the NHS App sends you to Smart Triage to book)",
-              "publisher": "GP at Hand (NHS)",
+              "title": "FAQs (book your appointment through Smart Triage)",
+              "publisher": "GP at Hand",
               "url": "https://www.gpathand.nhs.uk/ufaq",
-              "type": "regulation"
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "DE": {
           "status": "limited",
-          "gapReason": "pilot-only",
+          "gapReason": "not-launched",
           "confidence": "low",
           "note": "Doctolib's AI phone assistant takes patient calls at any hour and books straight into the practice calendar, but only at practices that pay for it, with no public count; Doctolib has no patient-side booking agent, and no AI booking was found on the public 116117 service.",
           "evidence": [
@@ -70,15 +78,8 @@
         "BR": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "Doctoralia's Noa Booking agent was still in development in May 2025 with no launch found since, and the SUS WhatsApp pilot only confirms or moves visits, with no AI named.",
+          "note": "No AI agent that books a doctor was found: no Doctoralia booking agent has launched here, and the SUS WhatsApp pilot only confirms or moves visits, with no AI named.",
           "evidence": [
-            {
-              "title": "Doctoralia optimiza la gestión sanitaria con Noa, su asistente impulsado por la IA de Microsoft",
-              "publisher": "Microsoft News Centre Spain",
-              "url": "https://news.microsoft.com/es-es/2025/05/19/doctoralia-optimiza-la-gestion-sanitaria-con-noa-su-asistente-impulsado-por-la-ia-de-microsoft/",
-              "date": "2025-05-19",
-              "type": "company"
-            },
             {
               "title": "SUS ganha marcação de consultas pelo WhatsApp; como vai funcionar e quando começa?",
               "publisher": "Canaltech",
@@ -91,7 +92,7 @@
         "MX": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "IMSS appointments go through the IMSS Digital app, the website or the phone; its first AI assistant is planned for doctors, not patients, and Doctoralia's Noa Booking agent has not launched here.",
+          "note": "IMSS appointments go through the IMSS Digital app, the website or the phone, and its first AI assistant is planned for doctors, not patients. No Doctoralia booking agent was found here.",
           "evidence": [
             {
               "title": "El IMSS planea aplicar inteligencia artificial en su expediente clínico electrónico",
@@ -106,31 +107,13 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "No AI agent that books a doctor was found at FONASA, Hospital Digital or Doctoralia (searched October 2026; thin Spanish-language search).",
-          "evidence": [
-            {
-              "title": "Doctoralia optimiza la gestión sanitaria con Noa, su asistente impulsado por la IA de Microsoft",
-              "publisher": "Microsoft News Centre Spain",
-              "url": "https://news.microsoft.com/es-es/2025/05/19/doctoralia-optimiza-la-gestion-sanitaria-con-noa-su-asistente-impulsado-por-la-ia-de-microsoft/",
-              "date": "2025-05-19",
-              "type": "company"
-            }
-          ]
+          "note": "No AI agent that books a doctor was found at FONASA, Hospital Digital or Doctoralia (searched October 2026)."
         },
         "CO": {
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "No AI agent that books a doctor was found at the EPS insurers or Doctoralia; EPS Sanitas's WhatsApp assistant books visits, but no source says it is AI (searched October 2026).",
-          "evidence": [
-            {
-              "title": "Doctoralia optimiza la gestión sanitaria con Noa, su asistente impulsado por la IA de Microsoft",
-              "publisher": "Microsoft News Centre Spain",
-              "url": "https://news.microsoft.com/es-es/2025/05/19/doctoralia-optimiza-la-gestion-sanitaria-con-noa-su-asistente-impulsado-por-la-ia-de-microsoft/",
-              "date": "2025-05-19",
-              "type": "company"
-            }
-          ]
+          "note": "No AI agent that books a doctor was found at the EPS insurers or Doctoralia; EPS Sanitas's WhatsApp assistant books visits, but no source says it is AI (searched October 2026)."
         }
       }
     },
@@ -168,7 +151,8 @@
               "title": "Prescriptions in the NHS App",
               "publisher": "NHS",
               "url": "https://www.nhs.uk/nhs-app/nhs-app-help-and-support/prescriptions-in-the-nhs-app/",
-              "type": "regulation"
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
@@ -181,13 +165,14 @@
               "title": "E-Rezept",
               "publisher": "gematik",
               "url": "https://www.gematik.de/anwendungen/e-rezept",
-              "type": "regulation"
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
         "IN": {
           "status": "none",
-          "gapReason": "assist-only",
+          "gapReason": "not-launched",
           "confidence": "low",
           "note": "PharmEasy's AI voice agent calls past buyers to remind them to reorder and sends a WhatsApp link, but you finish the order yourself; no AI ordering was found at Apollo 24|7, Tata 1mg or Netmeds.",
           "evidence": [
@@ -278,7 +263,7 @@
         },
         "DE": {
           "status": "none",
-          "gapReason": "assist-only",
+          "gapReason": "not-launched",
           "note": "Barmer's chatbot answers general questions and AOK Plus uses AI voice agents to route calls, but none looks up your own cover or files a claim; the TK app lists no AI assistant.",
           "evidence": [
             {
@@ -291,9 +276,9 @@
           ]
         },
         "IN": {
-          "status": "live",
+          "status": "limited",
           "confidence": "low",
-          "note": "ICICI Lombard's AI voice agent tells customers the status of their own health claims (launched 2022), and in August 2026 the insurer said bots and a WhatsApp chatbot handle about 70% of inbound calls; no recent source names claim status, and no other insurer was confirmed.",
+          "note": "ICICI Lombard launched an AI voice agent in 2022 that tells customers the status of their own health claims, and in August 2026 it said bots and a WhatsApp chatbot answer about 70% of inbound calls, but no recent source says they still give claim status. No other insurer was confirmed.",
           "evidence": [
             {
               "title": "ICICI Lombard and Skit.ai partner to launch an AI-powered digital voice agent to track claim status",
@@ -313,9 +298,9 @@
         },
         "BR": {
           "status": "none",
-          "gapReason": "assist-only",
+          "gapReason": "not-launched",
           "confidence": "low",
-          "note": "SulAmérica's virtual assistant answers common questions, including about refunds, but no source says it checks or files your own; no AI assistant was found for SUS.",
+          "note": "A 2018 report says SulAmérica's virtual assistant answers common questions, including about refunds, but no recent source says it checks your own cover or claim; no AI assistant was found for SUS.",
           "evidence": [
             {
               "title": "SulAmérica adota Inteligência Artificial e reduz em 90% tempo médio de atendimento",
