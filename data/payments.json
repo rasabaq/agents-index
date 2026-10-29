@@ -318,11 +318,11 @@
               "type": "news"
             },
             {
-              "title": "Mercado Pago se conecta al SPEI",
-              "publisher": "Expansión",
-              "url": "https://expansion.mx/economia/2024/03/12/mercado-pago-spei",
-              "date": "2024-03-12",
-              "type": "news"
+              "title": "Listado de instituciones (participants in SPEI payment receipts; lists Mercado Pago W)",
+              "publisher": "Banco de México",
+              "url": "https://www.banxico.org.mx/cep-scl/listaInstituciones.do",
+              "date": "2026-10",
+              "type": "report"
             }
           ],
           "confidence": "low"
@@ -353,7 +353,7 @@
           "note": "Tpaga launched a WhatsApp AI agent in July 2026 that sends money over Bre-B from text or voice notes. It stays limited because only the press covers it and Tpaga has not said how many users can use it.",
           "evidence": [
             {
-              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
+              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE (the article covers bill payments and Bre-B transfers)",
               "publisher": "La República",
               "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
               "date": "2026-07-08",
@@ -480,8 +480,8 @@
           ]
         },
         "MX": {
-          "status": "live",
-          "note": "Mercado Pago says Mago is available in Mexico, Argentina, Brazil and Chile; it makes payments and transfers for users after they confirm. Only the press covers the Mexico launch.",
+          "status": "limited",
+          "note": "Press reports say Mercado Pago's Mago assistant is available in Mexico, Argentina, Brazil and Chile and makes payments and transfers that the user confirms. We found no Mercado Pago page that confirms Mago in Mexico, so it stays limited.",
           "evidence": [
             {
               "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
@@ -501,8 +501,8 @@
           "confidence": "low"
         },
         "CL": {
-          "status": "live",
-          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Only the press covers the Chile launch.",
+          "status": "limited",
+          "note": "Press reports say Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. We found no Mercado Pago page that confirms Mago in Chile, so it stays limited.",
           "evidence": [
             {
               "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
@@ -533,7 +533,7 @@
               "type": "news"
             },
             {
-              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
+              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE (the article covers bill payments and Bre-B transfers)",
               "publisher": "La República",
               "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
               "date": "2026-07-08",
