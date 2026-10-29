@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { forBusiness, BUSINESS_GROUPS } from '../src/observatory.js';
+import { forBusiness, BUSINESS_GROUPS, marketsFor, validate } from '../src/observatory.js';
 
 const cell = (status) => ({ status, note: 'n' });
 const categories = [
@@ -27,6 +27,26 @@ test('for businesses: only the business capabilities, grouped, with the companie
   assert.equal(groups[0].items[0].cell.status, 'limited');
   assert.equal(groups[0].items[0].label, 'AI agents can buy from your online store');
   assert.deepEqual(forBusiness(categories, 'US')[0].items[0].companies.map((c) => c.name), ['Shopify', 'Stripe']);
+});
+
+test('marketsByCapability narrows a company to fewer markets for one capability', () => {
+  const meta = { countries: [{ code: 'BR' }, { code: 'US' }], categories: [{ id: 'messaging', short: 'Chat', can: 'chat' }] };
+  const data = [{ category: 'messaging', capabilities: [
+    { id: 'messaging.business-ai-agent', name: 'Chat agent', question: 'q?', countries: { BR: cell('none'), US: cell('none') } },
+    { id: 'messaging.pay-in-chat', name: 'Pay in chat', question: 'q?', countries: { BR: cell('none'), US: cell('none') } },
+  ], companies: [{ name: 'Meta', role: 'r', url: 'https://meta.com', homepage: 'https://meta.com', icon: null, markets: ['BR', 'US'],
+    capabilities: ['messaging.business-ai-agent', 'messaging.pay-in-chat'], marketsByCapability: { 'messaging.pay-in-chat': ['BR'] } }] }];
+  const co = data[0].companies[0];
+  assert.deepEqual(marketsFor(co, 'messaging.pay-in-chat'), ['BR']);
+  assert.deepEqual(marketsFor(co, 'messaging.business-ai-agent'), ['BR', 'US']);
+  const names = (code) => forBusiness(data, code)[0].items.map((x) => [x.cap.id, x.companies.map((c) => c.name)]);
+  assert.deepEqual(names('US'), [['messaging.business-ai-agent', ['Meta']], ['messaging.pay-in-chat', []]]);
+  assert.deepEqual(names('BR'), [['messaging.business-ai-agent', ['Meta']], ['messaging.pay-in-chat', ['Meta']]]);
+  assert.deepEqual(validate(meta, data), []);
+  co.marketsByCapability = { 'messaging.pay-in-chat': ['BR', 'DE'], 'messaging.other': ['BR'] };
+  const errors = validate(meta, data).join('\n');
+  assert.match(errors, /marketsByCapability names "messaging.other", which is not in its capabilities/);
+  assert.match(errors, /marketsByCapability "messaging.pay-in-chat" has "DE", which is not one of its markets/);
 });
 
 test('the business set is the eight capabilities from the brief', () => {

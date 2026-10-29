@@ -15,6 +15,11 @@ A capability is one concrete action, phrased as a yes-or-no question. For exampl
 | Banking & open finance | Regulated account access and payment initiation, and bank AI that moves money |
 | Chat & messaging | Business AI agents in chat apps, and paying inside a chat |
 | Government & identity | Digital ID that apps can plug into, and government AI assistants |
+| Access to the assistants | Whether you can sign up for the big AI assistants, and use their agent features in your own language |
+| Rules for agents | A law in force that covers AI agents, and getting your money back when an agent buys the wrong thing |
+| Health | Booking a doctor, renewing a prescription, and checking your health cover or a claim |
+| Work & jobs | Finding and applying for jobs, and running payroll and HR paperwork for a small business |
+| Insurance | Buying a car, home or travel policy, and filing a claim |
 
 ## Status levels
 
@@ -34,15 +39,16 @@ A cell takes the best status across all products. If any product is live in a co
 The data comes through two lenses, and every cell is checked against both.
 
 1. **Research lens.** Reports, papers and regulation, such as central-bank pages, open-finance rules, digital-ID laws, and surveys from the World Bank, the BIS and the OECD.
-2. **Company lens.** What the companies that build agent capabilities actually ship, and where. Sources are help-center "supported countries" pages, launch posts and developer docs. Each company is recorded with its HQ and the markets where its agent capability works. This shows *who* makes each capability possible in each country, including local players such as Mercado Pago, Nubank and NPCI.
+2. **Company lens.** What the companies that build agent capabilities actually ship, and where. Sources are help-center "supported countries" pages, launch posts and developer docs. Each company is recorded with its HQ and the markets where its agent capability works. When one of its capabilities works in fewer markets than the rest, `"marketsByCapability"` narrows it, for example `{ "messaging.pay-in-chat": ["BR", "IN"] }`. Each key must be one of the company's `capabilities`, and each code one of its `markets`. The For businesses view uses it, so a company is listed only where that capability works. This shows *who* makes each capability possible in each country, including local players such as Mercado Pago, Nubank and NPCI.
 
 Rules:
 
 - Every Live, Limited or Announced cell must cite at least one source with a URL. `npm run validate` enforces this.
+- Every source has a `date`, written `"YYYY-MM-DD"` or `"YYYY-MM"`, and no later than the `asOf` date in `data/meta.json`. `npm run validate` enforces this too.
 - Primary sources come first: company, regulator and paper. News is used only when nothing primary exists.
 - When the sources disagree or are unclear, the cell takes the lower status and the note says why.
 - A cell whose sources are thin or indirect carries `"confidence": "low"`. The site marks it with a `?`. Treat it as a lead to check, not a finding. Its score still counts.
-- A cell that is not live may carry one `"gapReason"`: the main reason agents cannot do it yet. It is one of five ids, and their labels live in `data/meta.json`: `no-rule` (no rule in force yet), `rail-closed` (the rail exists, but agents can't use it), `not-launched` (not fully launched here yet), `pilot-only` (pilot only) and `assist-only` (it helps, but you do the last step). It does not change the score.
+- A cell that is not live may carry one `"gapReason"`: the main reason agents cannot do it yet. It is one of five ids, and their labels live in `data/meta.json`: `no-rule` (no rule in force yet), `rail-closed` (the rail exists, but agents can't use it), `not-launched` (not fully launched here yet), `pilot-only` (pilot only) and `assist-only` (it helps, but you do the last step). `pilot-only` and `assist-only` describe partial availability, so they go only on a Limited cell; a Not yet cell never uses them. It does not change the score.
 
 ## Score and ranking
 

@@ -74,6 +74,21 @@ test('validate catches the mistakes that break trust', () => {
   assert.match(errors, /unknown market "ZZ"/);
 });
 
+test('evidence dates are YYYY-MM-DD or YYYY-MM, and not after asOf', () => {
+  const withDate = (date) => {
+    const data = structuredClone(categories);
+    data[0].capabilities[0].countries.AA.evidence = [{ ...ev[0], date }];
+    return validate({ ...meta, asOf: '2026-10-28' }, data).join('\n');
+  };
+  assert.equal(withDate('2026-10-28'), '');
+  assert.equal(withDate('2026-10'), '');
+  assert.match(withDate('2026'), /evidence date must be "YYYY-MM-DD" or "YYYY-MM", not "2026"/);
+  assert.match(withDate(undefined), /evidence date must be/);
+  assert.match(withDate('2026-1-5'), /evidence date must be/);
+  assert.match(withDate('2026-10-29'), /evidence date "2026-10-29" is after asOf "2026-10-28"/);
+  assert.match(withDate('2026-11'), /is after asOf/);
+});
+
 test('every category needs short and can in meta.json, even the first seven', () => {
   const v = (cat) => validate({ countries: [], categories: [cat] }, [{ category: cat.id, capabilities: [{ id: `${cat.id}.a`, name: 'a', question: 'q?', countries: {} }] }]).join('\n');
   assert.match(v({ id: 'commerce' }), /needs "short" and "can"/);
