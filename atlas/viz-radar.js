@@ -251,11 +251,11 @@
       grid.addEventListener('focusout', () => tip.hide());
 
       let lastW = 0;
-      new ResizeObserver(() => {
+      new ResizeObserver(() => requestAnimationFrame(() => {
         if (el.clientWidth === lastW) return;
         lastW = el.clientWidth;
         drawCompare();
-      }).observe(el);
+      })).observe(el);
       document.fonts?.ready.then(drawCompare);
       update();
     },

@@ -76,6 +76,9 @@
     ctx.edgeFade(el.querySelector('.v-network-chips'));
     el.querySelectorAll('.v-network-chip').forEach((b) => b.addEventListener('click', () => {
       filter = b.dataset.cat;
+      // On phones the pills scroll sideways: bring the chosen one clear of the edge fades.
+      const s = b.parentElement, r = b.getBoundingClientRect(), n = s.getBoundingClientRect();
+      s.scrollBy({ left: r.left - n.left - (n.width - r.width) / 2, behavior: 'smooth' });
       el.querySelectorAll('.v-network-chip').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
       applyFilter();
     }));

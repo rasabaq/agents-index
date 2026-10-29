@@ -86,6 +86,9 @@ html { scroll-padding-top: 116px; }
   .atlas-asof { display: none; }
   .atlas-home { margin-left: auto; }
   .atlas-flags li { padding: 7px 8px 8px 6px; }
+  /* a long row of filter pills scrolls sideways instead of wrapping into many rows */
+  .atlas-controls { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-left: -16px; margin-right: -16px; padding: 2px 16px; }
+  .atlas-controls > * { flex: none; white-space: nowrap; }
   .view { padding-top: 20px; }
   .view-head { padding: 20px 16px 0; }
   .view-frame { padding: 16px; }
