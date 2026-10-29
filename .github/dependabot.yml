@@ -1,0 +1,7 @@
+# The workflows pin actions to commit SHAs, so a moved tag cannot change what runs. Dependabot opens a PR when a new release ships.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
