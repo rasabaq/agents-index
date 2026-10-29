@@ -1,6 +1,6 @@
 # Methodology
 
-Most AI indexes measure inputs, such as compute, talent, papers or strategy documents. This observatory measures one output instead: **what an AI agent can actually do for an ordinary person or business in a country today.**
+Most AI indexes measure inputs, such as compute, talent, papers or strategy documents. Agent Index measures one output instead: **what an AI agent can actually do for an ordinary person or business in a country today.**
 
 ## Unit of measure: a capability
 

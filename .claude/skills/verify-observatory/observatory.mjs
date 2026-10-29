@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Drives the AI Agent Observatory site for verification: a static server on a free port and a headless Chrome
+// Drives the Agent Index site for verification: a static server on a free port and a headless Chrome
 // on a throwaway profile, controlled over the Chrome DevTools Protocol. No npm dependencies: Node 22+ has fetch and
 // WebSocket built in. Run `node observatory.mjs help` for the commands; SKILL.md explains the workflow.
 import { spawn, execFileSync } from 'node:child_process';
@@ -155,7 +155,7 @@ const commands = {
     check('emulation holder (ours)', alive(s.holderPid), `pid ${s.holderPid}, view ${VIEW(s)}`);
     try {
       const html = await (await fetch(`${s.url}/`)).text();
-      check('site answers with the observatory', html.includes('<title>AI Agent Observatory'), s.url);
+      check('site answers with the observatory', html.includes('<title>Agent Index'), s.url);
       const meta = await (await fetch(`${s.url}/data/meta.json`)).json();
       check('data loads', Array.isArray(meta.countries) && meta.countries.length > 0, `asOf ${meta.asOf}, ${meta.countries.length} countries`);
     } catch (e) { check('site answers with the observatory', false, e.message); }

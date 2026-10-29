@@ -1,9 +1,9 @@
 ---
 name: verify-observatory
-description: Drive the AI Agent Observatory site (the home page: hero, console and charts) in a real headless Chrome and capture proof (screenshots at 1440px and 400px, page state, page errors). Use it to verify a UI change, review a site PR, or check that a feature still works, before you call a change done.
+description: Drive the Agent Index site (the home page: hero, console and charts) in a real headless Chrome and capture proof (screenshots at 1440px and 400px, page state, page errors). Use it to verify a UI change, review a site PR, or check that a feature still works, before you call a change done.
 ---
 
-# Verify the AI Agent Observatory
+# Verify Agent Index
 
 The product is a static web site, with no build step and no backend. Its surfaces:
 
@@ -59,7 +59,7 @@ node $H doctor
 
 It checks:
 - The server, Chrome and holder processes of this run are alive.
-- `/` is the observatory (its `<title>`).
+- `/` is Agent Index (its `<title>`).
 - `data/meta.json` loads and has countries.
 - `HEAD` is still the revision that `up` served.
 - The Chrome DevTools endpoint answers.
