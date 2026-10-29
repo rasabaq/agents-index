@@ -167,8 +167,8 @@
           ]
         },
         "CL": {
-          "status": "live",
-          "note": "Líder Bci sells SOAP, Chile's mandatory car accident insurance, on WhatsApp with conversational AI, from quote to payment and policy issue in two to three minutes (May 2025). Simpletech, which built the flow, says 46% of people who start it buy inside the WhatsApp channel.",
+          "status": "limited",
+          "note": "Líder Bci sells SOAP, Chile's mandatory car accident insurance, on WhatsApp with conversational AI, from quote to policy issue in two to three minutes (May 2025). Simpletech, which built the flow, says 46% of people who start it buy inside the WhatsApp channel. No source shows whether you pay inside the chat or on a payment page, so this stays Limited until one does.",
           "evidence": [
             {
               "title": "Líder Bci habilita contratación de seguros por WhatsApp",

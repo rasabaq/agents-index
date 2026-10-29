@@ -310,6 +310,7 @@ function openDetail(capId, code) {
     <p class="kicker">${esc(catName(cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
     <p class="detail-status">${chip(cell.status, cell.confidence)}${cell.confidence ? '<span class="low-note">Low confidence. Sources are thin or indirect, so treat this cell as a lead to check.</span>' : ''}</p>
+    ${cell.status !== 'live' && gapLabel(cell.gapReason) ? `<p class="muted">Why not live: ${esc(gapLabel(cell.gapReason).toLowerCase())}.</p>` : ''}
     <p>${esc(cell.note)}</p>
     <h4>${ev.length ? `Sources (${ev.length})` : 'Sources'}</h4>
     ${ev.length ? sourceList(ev) : '<p class="muted">No availability found. Nothing to cite yet.</p>'}

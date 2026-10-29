@@ -4,7 +4,7 @@
     {
       "id": "services.restaurant-booking",
       "name": "Book a restaurant table",
-      "question": "Can an AI agent find an open table and book it, or hand you off to finish the booking?",
+      "question": "Can an AI agent find an open table and book it for you?",
       "countries": {
         "US": {
           "status": "live",
@@ -191,7 +191,7 @@
     {
       "id": "services.travel-booking",
       "name": "Find and book travel or hotels",
-      "question": "Can an AI agent find a hotel or trip and book it, or hand you off to finish the booking?",
+      "question": "Can an AI agent find a hotel or trip and book it for you?",
       "countries": {
         "US": {
           "status": "live",
