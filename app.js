@@ -300,7 +300,7 @@ function selectCountry(code, scroll) {
   const fromPicker = document.activeElement?.matches('[data-pick-country]');
   state.country = code;
   history.replaceState(null, '', writeHash(code, state.view));
-  // Every country picker on the page (hero chips, world map, console) marks the same country.
+  // Every country picker on the page (hero pins, world map, console) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
   showSideChip();
@@ -408,12 +408,12 @@ function renderCounts() {
 }
 
 function wire() {
-  // Any country picker selects; pickers outside the console also bring the console into view.
+  // Any country picker selects; pickers outside the console and the hero also bring the console into view.
   document.addEventListener('click', (e) => {
     const el = e.target.closest('[data-go-country]');
     if (!el || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
-    selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
+    selectCountry(el.dataset.goCountry, !el.closest('[data-term], [data-hero]'));
   });
   // Compare with: the Head to head chart takes the pair and scrolls into view (viz-compare.js cancels the event).
   // If that chart did not draw, nothing cancels it, so the console switches to the other country instead.

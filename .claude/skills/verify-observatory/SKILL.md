@@ -85,7 +85,7 @@ How `open` works:
 
 Stable handles in this repo (use these, not coordinates):
 
-- **Country pickers:** `[data-go-country="CL"]`. These are in the hero chips, the console list `[data-clist]` and the ranking `[data-ranking]`. The URL hash is `#country=CL`.
+- **Country pickers:** `[data-go-country="CL"]`. These are in the hero pins, the console list `[data-clist]` and the ranking `[data-ranking]`. The URL hash is `#country=CL`.
 - **Country view:** `[data-country]`, the heading `#cn-title`, and the four numbers `[data-kpis]`.
 - **Matrix cells:** `#matrix button[data-cap="<capability id>"][data-code="<country>"]`. Their `aria-label` reads `<capability> in <country>: <status>`.
 - **Cell detail:** `dialog[data-detail]`, the title `#detail-title`, the status `.detail-status`, the sources `.sources a`, and the correction link `.suggest a`.
