@@ -2,7 +2,7 @@
 // the pixel wordmark, and the data parts (flag tape, ask box, chips pinned to the planet).
 // It loads the data itself so it does not depend on app.js. Its country links carry data-go-country, which app.js
 // handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
-import { STATUSES, scoreCountries, mergeCompanies, startCountry } from './src/observatory.js';
+import { STATUSES, scoreCountries, mergeCompanies, startCountry, readHash, writeHash } from './src/observatory.js';
 
 const hero = document.querySelector('[data-hero]');
 const $ = (sel) => hero.querySelector(sel);
@@ -403,14 +403,16 @@ function wire() {
   $('[data-hero-copy]').addEventListener('click', async (e) => {
     const btn = e.currentTarget;
     const code = hero.querySelector('[data-ask][aria-selected="true"]')?.dataset.ask ?? focus;
-    const link = `${location.origin}${location.pathname}#country=${code}`;
+    // The link keeps the view the console shows (For people or For businesses).
+    const hash = writeHash(code, readHash(location.hash).view);
+    const link = `${location.origin}${location.pathname}${hash}`;
     try {
       await navigator.clipboard.writeText(link);
       btn.textContent = 'Copied';
     } catch {
       // No clipboard access (http, old browser): put the link in the address bar to copy from there.
       // replaceState, not location.hash, so the page does not jump to the console.
-      history.replaceState(null, '', `#country=${code}`);
+      history.replaceState(null, '', hash);
       btn.textContent = 'In the address bar';
     }
     setTimeout(() => (btn.textContent = 'Copy link'), 1600);

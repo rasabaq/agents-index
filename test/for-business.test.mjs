@@ -25,11 +25,13 @@ test('for businesses: only the business capabilities, grouped, with the companie
   ]);
   assert.deepEqual(groups[0].items[0].companies.map((c) => c.name), ['Shopify']);
   assert.equal(groups[0].items[0].cell.status, 'limited');
+  assert.equal(groups[0].items[0].label, 'AI agents can buy from your online store');
   assert.deepEqual(forBusiness(categories, 'US')[0].items[0].companies.map((c) => c.name), ['Shopify', 'Stripe']);
 });
 
 test('the business set is the eight capabilities from the brief', () => {
-  assert.equal(BUSINESS_GROUPS.flatMap((g) => g.ids).length, 8);
+  assert.equal(BUSINESS_GROUPS.flatMap((g) => g.items).length, 8);
+  assert.ok(BUSINESS_GROUPS.every((g) => g.items.every((x) => x.label)));
 });
 
 test('the link holds the country and the view; old #country= links still work', async () => {
