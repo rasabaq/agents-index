@@ -292,3 +292,28 @@ export function couldClose(companies, capId, code, region) {
     .filter((co) => co.near.length)
     .sort((a, b) => b.near.length - a.near.length || a.name.localeCompare(b.name));
 }
+
+// "For businesses": the capabilities a business needs to sell through AI agents and get paid, in display groups.
+// This is the one place the set lives.
+export const BUSINESS_GROUPS = [
+  { title: 'Sell through AI agents', ids: ['commerce.merchant-protocol', 'commerce.in-chat-checkout', 'commerce.marketplace-agent'] },
+  { title: 'Sell in chat apps', ids: ['messaging.business-ai-agent', 'messaging.pay-in-chat'] },
+  { title: 'Get paid when an agent buys', ids: ['payments.card-agent-token', 'payments.instant-rail-agent', 'payments.wallet-agent'] },
+];
+
+// For one country: each business capability with its cell and the companies that work there for it, merged by
+// name (one company can appear in several category files). Capabilities missing from the data are skipped.
+export function forBusiness(categories, code) {
+  const caps = new Map(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { cap, cat }])));
+  return BUSINESS_GROUPS.map((g) => ({
+    title: g.title,
+    items: g.ids.filter((id) => caps.has(id)).map((id) => {
+      const { cap, cat } = caps.get(id);
+      const byName = new Map();
+      for (const co of cat.companies ?? []) {
+        if ((co.capabilities ?? []).includes(id) && co.markets.includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
+      }
+      return { cap, cell: cap.countries[code], companies: [...byName.values()].sort((a, b) => a.name.localeCompare(b.name)) };
+    }),
+  })).filter((g) => g.items.length);
+}
