@@ -42,6 +42,7 @@
   .v-network .v-network-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px; }
   .v-network .v-network-chip { white-space: nowrap; flex: none; }
 }
+@media (pointer: coarse) { .v-network .v-network-chip { height: 40px; } }
 .v-network .v-network-note { margin: 12px 0 0; font-size: 12.5px; color: var(--muted); }
 .v-network-tip .flags { font-variant-numeric: tabular-nums; }
 .v-network-tip .role { display: block; margin-top: 6px; opacity: .85; }
@@ -175,7 +176,10 @@
       }
       const visible = (n) => n.kind === 'country' || filter === 'all' || n.co.categories.includes(filter);
       let current = null;
-      svg.on('pointermove', (e) => {
+      // The nearest visible node within reach answers the pointer, so a 6px dot still takes a finger-sized tap.
+      // A touch has no hover: a tap (its click comes after the browser's own focus and blur) shows the node until
+      // the next tap or scroll, not until the finger lifts.
+      svg.on('pointermove click', (e) => {
         const [px, py] = d3.pointer(e);
         let best = null, bestD = Infinity;
         for (const n of nodes) {
@@ -183,10 +187,14 @@
           const d = Math.hypot(n.x - px, n.y - py) - n.r;
           if (d < bestD) { bestD = d; best = n; }
         }
-        if (bestD > 10) best = null;
-        if (best !== current) { current = best; best ? focusOn(best, e) : clear(); }
+        if (bestD > (e.pointerType === 'touch' ? 18 : 10)) best = null;
+        if (best !== current || e.type === 'click') { current = best; best ? focusOn(best, e) : clear(); }
         else if (best) ctx.tip.show(e, tipHtml(best));
-      }).on('pointerleave', () => { current = null; clear(); });
+      }).on('pointerleave pointercancel', (e) => {
+        if (e.type === 'pointerleave' && e.pointerType === 'touch') return;
+        current = null;
+        clear();
+      });
       nodeSel.on('focus', function (e, n) {
         const b = this.getBoundingClientRect();
         focusOn(n, { clientX: b.left + b.width / 2, clientY: b.top });
@@ -229,7 +237,9 @@
         const cut = sorted[7]?.mk.length ?? 0;
         const top = sorted.filter((n, i) => n.group === 'global' || i < 8 || (n.mk.length === cut && n.mk.length > 1 && i < 10));
         const boxes = [];
-        const overlaps = (a, b) => a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
+        // Labels keep M px apart, so their text and halo never touch.
+        const M = 4;
+        const overlaps = (a, b) => a.x < b.x + b.w + M && b.x < a.x + a.w + M && a.y < b.y + b.h + M && b.y < a.y + a.h + M;
         const hitsNode = (bx, n) => {
           const cx = Math.max(bx.x, Math.min(n.x, bx.x + bx.w)), cy = Math.max(bx.y, Math.min(n.y, bx.y + bx.h));
           return Math.hypot(n.x - cx, n.y - cy) < n.r + 3;

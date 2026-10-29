@@ -25,6 +25,7 @@
 .v-flows .fl-node:focus-visible .fl-hit { stroke: var(--sunrise); stroke-width: 1.5; }
 .v-flows .fl-note { margin: 16px 0 0; color: var(--ink-2); font-size: 14px; }
 .v-flows .fl-note b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+@media (pointer: coarse) { .v-flows .pill { height: 40px; } }
 `;
 
   (window.CHARTS ??= []).push({
