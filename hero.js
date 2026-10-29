@@ -1,8 +1,8 @@
 // The hero: a planet at sunrise whose air dissolves into magenta pixels (WebGL, with a 2D fallback),
-// the pixel wordmark, and the data parts (ask box, chips pinned to the planet).
+// the pixel wordmark, and the data parts (twelve pixel icons lit by the country's scores, chips pinned to the planet).
 // It loads the data itself so it does not depend on app.js. Its country links carry data-go-country, which app.js
 // handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
-import { STATUSES, scoreCountries, mergeCompanies, startCountry, readHash, writeHash } from './src/observatory.js';
+import { scoreCountries, shortName, useCategoryWords, startCountry } from './src/observatory.js';
 
 const hero = document.querySelector('[data-hero]');
 const $ = (sel) => hero.querySelector(sel);
@@ -330,90 +330,51 @@ new ResizeObserver(() => {
 document.fonts?.load('28px "Jersey 10"').then(heroAll, () => {});
 document.fonts?.ready.then(heroAll);
 
-/* ---------- data: chips and the ask box ---------- */
-let ranking, commerce, companies, focus;
-
-// "Can my agent shop in X?" answered from the shopping category.
-function answer(code) {
-  const cells = commerce.capabilities.map((cap) => cap.countries[code]);
-  const live = cells.filter((c) => c.status === 'live').length;
-  const sources = cells.reduce((n, c) => n + (c.evidence?.length ?? 0), 0);
-  const best = Object.keys(STATUSES).find((s) => cells.some((c) => c.status === s));
-  const [word, status] = live === cells.length ? ['Yes', 'live'] : live ? ['Partly', 'limited'] : [STATUSES[best].label, best];
-  return { word, status, text: `${live} of ${cells.length} shopping capabilities live · ${sources} source${sources === 1 ? '' : 's'}` };
-}
+/* ---------- data: chips and the twelve pixel icons ---------- */
+// 12x12 pixel icons, '#' = cell, one per category id.
+const ICONS = {
+  commerce: ['............', '###.........', '..#.........', '..#########.', '..#########.', '...#######..', '...#######..', '...#........', '...########.', '............', '...##...##..', '...##...##..'],
+  payments: ['....####....', '..########..', '.#####.####.', '.###.....##.', '####.#######', '####.#######', '#####....###', '########.###', '########.###', '.##.....###.', '..###.####..', '....####....'],
+  services: ['.....##.....', '.....##.....', '.....##.....', '....####....', '..########..', '############', '##..####..##', '.....##.....', '.....##.....', '....####....', '...######...', '............'],
+  autonomy: ['.....##.....', '.....##.....', '.##########.', '.#........#.', '##.##..##.##', '##.##..##.##', '.#........#.', '.#..####..#.', '.#........#.', '.##########.', '..##....##..', '..##....##..'],
+  banking: ['.....##.....', '...######...', '.##########.', '############', '............', '.##..##..##.', '.##..##..##.', '.##..##..##.', '.##..##..##.', '............', '############', '############'],
+  messaging: ['............', '.##########.', '############', '############', '#..##..##..#', '#..##..##..#', '############', '############', '.##########.', '..###.......', '..##........', '..#.........'],
+  government: ['............', '............', '############', '#..........#', '#.###......#', '#.###.####.#', '#.###......#', '#.###.###..#', '#..........#', '############', '............', '............'],
+  access: ['.........#..', '........###.', '....#....#..', '....#.......', '...###......', '..#####.....', '#########...', '..#####.....', '...###......', '....#.......', '....#.......', '............'],
+  rules: ['.....##.....', '############', '.#...##...#.', '.#...##...#.', '#.#..##..#.#', '#.#..##..#.#', '###..##..###', '.....##.....', '.....##.....', '...######...', '..########..', '............'],
+  health: ['............', '.###....###.', '#####..#####', '############', '############', '############', '.##########.', '..########..', '...######...', '....####....', '.....##.....', '............'],
+  work: ['............', '....####....', '....#..#....', '############', '############', '############', '#####..#####', '############', '############', '############', '############', '............'],
+  insurance: ['............', '.##########.', '.##########.', '.##########.', '.#######.##.', '.##.###.###.', '.###.#.####.', '..###.####..', '...######...', '....####....', '.....##.....', '............'],
+};
+let ranking, focus;
 
 function renderCountries() {
   row.innerHTML = ranking.map((r) => `
     <li><a href="#country=${r.code}" data-go-country="${r.code}" tabindex="-1" aria-current="${r.code === focus}">${flag(r.code)}<span class="hero-chip-c">${r.code}</span><span class="hero-chip-v">${r.score}</span><i class="hero-stem"></i></a></li>`).join('');
 }
 
-// The companies with the most live markets, under the ask box.
-function renderCompanies() {
-  const top = companies.slice(0, 10);
-  $('[data-hero-cos-label]').textContent = `Tracked · ${top.length} of ${companies.length} companies`;
-  $('[data-hero-cos]').innerHTML = top.map((c) => `<li><a href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a></li>`).join('');
+// A 5px cell on a 6px step per '#'. Each cell keeps its dither threshold and a wordmark-like colour (t0 to t2).
+const cellsOf = (rows) => rows.flatMap((line, y) => [...line].map((ch, x) => {
+  if (ch !== '#') return '';
+  const n = Math.random(), delay = reduce ? '' : ` style="transition-delay:${Math.round(n * 320)}ms"`;
+  return `<rect x="${x * 6}" y="${y * 6}" width="5" height="5" class="t${n < 0.55 ? 0 : n < 0.85 ? 1 : 2}" data-b="${BAYER[(y & 3) * 4 + (x & 3)]}"${delay}/>`;
+})).join('');
+
+function renderIcons(categories) {
+  $('[data-hero-ic]').innerHTML = categories.filter((c) => ICONS[c.id]).map((c) => `
+    <li tabindex="0" role="img" data-cat="${c.id}"><svg viewBox="0 0 72 72" aria-hidden="true">${cellsOf(ICONS[c.id])}</svg><b aria-hidden="true">${esc(shortName(c.id))}</b></li>`).join('');
 }
 
-function renderTabs() {
-  $('[data-hero-tabs]').innerHTML = ranking.map((r) => `
-    <button type="button" role="tab" id="hero-tab-${r.code}" aria-controls="hero-ask-panel" aria-selected="false" tabindex="-1" data-ask="${r.code}" aria-label="${esc(r.name)}">${flag(r.code)}${r.code}</button>`).join('');
-}
-
-function ask(code) {
-  const r = ranking.find((x) => x.code === code);
-  const a = answer(code);
-  hero.querySelectorAll('[data-ask]').forEach((b) => {
-    const on = b.dataset.ask === code;
-    b.setAttribute('aria-selected', on);
-    b.tabIndex = on ? 0 : -1;
-  });
-  $('[data-hero-panel]').setAttribute('aria-labelledby', `hero-tab-${code}`);
-  $('[data-hero-q]').textContent = `Can my agent shop in ${r.name}?`;
-  $('[data-hero-ans]').innerHTML = `<span class="hero-ret" aria-hidden="true">↳</span><span class="hero-st s-${a.status}">${a.word}</span><span>${a.text}</span><a href="#matrix">See the cells</a>`;
-}
-
-function wire() {
-  const tabs = $('[data-hero-tabs]');
-  tabs.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-ask]');
-    if (b) ask(b.dataset.ask);
-  });
-  // Arrow keys move between tabs, as in any tab list.
-  tabs.addEventListener('keydown', (e) => {
-    const all = [...tabs.querySelectorAll('[data-ask]')], i = all.indexOf(document.activeElement);
-    const j = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: all.length - 1 }[e.key];
-    if (i < 0 || j === undefined) return;
-    e.preventDefault();
-    const b = all[(j + all.length) % all.length];
-    b.focus();
-    ask(b.dataset.ask);
-  });
-  // app.js already marked the new country (aria-current); move the sun over its chip and ask about it.
-  document.addEventListener('countrychange', (e) => {
-    focus = e.detail;
-    size();
-    drawSky(gl ? now() : T0);
-    ask(focus);
-  });
-  // Copies a link that opens the page on the asked-about country, to share.
-  $('[data-hero-copy]').addEventListener('click', async (e) => {
-    const btn = e.currentTarget;
-    const code = hero.querySelector('[data-ask][aria-selected="true"]')?.dataset.ask ?? focus;
-    // The link keeps the view the console shows (For people or For businesses).
-    const hash = writeHash(code, readHash(location.hash).view);
-    const link = `${location.origin}${location.pathname}${hash}`;
-    try {
-      await navigator.clipboard.writeText(link);
-      btn.textContent = 'Copied';
-    } catch {
-      // No clipboard access (http, old browser): put the link in the address bar to copy from there.
-      // replaceState, not location.hash, so the page does not jump to the console.
-      history.replaceState(null, '', hash);
-      btn.textContent = 'In the address bar';
-    }
-    setTimeout(() => (btn.textContent = 'Copy link'), 1600);
-  });
+// Light each icon by the country's category score: a cell is on when its threshold is under score * 16 / 100, so 50 is a checkerboard.
+function light(code) {
+  const r = ranking.find((x) => x.code === code), icons = [...hero.querySelectorAll('[data-cat]')];
+  for (const li of icons) {
+    const s = r.byCategory[li.dataset.cat], on = Math.round((s * 16) / 100);
+    li.querySelectorAll('rect').forEach((c) => c.classList.toggle('on', +c.dataset.b < on));
+    li.classList.toggle('is-full', s >= 100);
+    li.setAttribute('aria-label', `${shortName(li.dataset.cat)}: ${s >= 100 ? 'works' : s > 0 ? 'works partly' : 'does not work yet'}`);
+  }
+  $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} work fully`;
 }
 
 const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
@@ -423,16 +384,20 @@ const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
 try {
   const meta = await getJson('meta');
   const categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
+  useCategoryWords(meta.categories);
   ranking = scoreCountries(meta, categories);
-  commerce = categories.find((c) => c.category === 'commerce');
-  companies = mergeCompanies(categories);
   focus = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
   renderCountries();
-  renderTabs();
-  renderCompanies();
-  ask(focus);
-  wire();
-  $('[data-hero-ask]').hidden = false;
+  renderIcons(meta.categories);
+  light(focus);
+  // app.js already marked the new country (aria-current); move the sun over its chip and light its icons.
+  document.addEventListener('countrychange', (e) => {
+    focus = e.detail;
+    size();
+    drawSky(gl ? now() : T0);
+    light(focus);
+  });
+  $('[data-hero-icons]').hidden = false;
 } catch {
   // app.js shows the load error; the hero keeps its sky and wordmark.
 }

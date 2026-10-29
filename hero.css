@@ -1,4 +1,4 @@
-/* Hero: the planet at sunrise, the pixel wordmark, the headline, the ask box and the eight countries.
+/* Hero: the planet at sunrise, the pixel wordmark, the headline, the twelve pixel icons and the eight countries.
    hero.js draws the two canvases and fills the data parts. Colors come from the tokens in styles.css. */
 .hero { position: relative; isolation: isolate; overflow: hidden; container-type: inline-size; padding: 0 0 470px; }
 .hero-sky { position: absolute; inset: 0 auto auto 0; z-index: 0; display: block; width: 100%; height: 100%; }
@@ -23,7 +23,7 @@
 
 /* headline, sub-line, buttons */
 .hero-copy { padding-top: 56px; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: 48px; align-items: start; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: start; }
 .hero h1 { max-width: none; margin: 0; font: 600 clamp(36px, 5.2cqw, 66px)/0.95 var(--font); letter-spacing: -0.06em; color: var(--ink); text-wrap: initial; }
 .hero h1 > span { display: block; color: inherit; }
 .hero h1 > span + span { margin-top: 0.03em; }
@@ -42,37 +42,32 @@
 .hero-btn-2 { border: 1px solid rgba(255, 255, 255, 0.16); color: var(--ink); background: rgba(10, 9, 16, 0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .hero-btn-2:hover { border-color: rgba(255, 255, 255, 0.3); }
 
-/* ask box: a fixed question per country, answered from the shopping category */
-.hero-ask { padding: 6px 16px 16px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 14px; background: var(--glass); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); box-shadow: var(--shadow); }
-.hero-tabs { display: flex; gap: 2px; margin: 0 -4px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid rgba(255, 255, 255, 0.055); }
-.hero-tabs button { position: relative; flex: none; display: inline-flex; align-items: center; padding: 11px 6px 12px; border: 0; background: none; cursor: pointer; font: 500 11px/1 var(--mono); letter-spacing: 0.1em; color: var(--muted); }
-.hero-tabs button:hover { color: var(--ink-2); }
-.hero-tabs button[aria-selected='true'] { color: var(--ink); }
-.hero-tabs button[aria-selected='true']::after { content: ''; position: absolute; inset: auto 5px -1px; height: 2px; border-radius: 2px; background: var(--sunrise); }
-.hero-tabs button:focus-visible { outline-offset: -2px; }
-.hero-tabs .flag { margin-right: 2px; font-size: 1.1em; }
-.hero-cmd { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; min-height: 44px; margin-top: 14px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 10px; background: rgba(3, 3, 8, 0.62); font: 400 12.5px/1 var(--mono); }
-.hero-ps { display: grid; place-items: center; padding-left: 4px; color: var(--magenta); }
-.hero-q { min-width: 0; margin: 0; padding: 11px 4px; overflow-wrap: anywhere; font: 500 13.5px/1.5 var(--font); color: var(--ink); }
-.hero-copy-btn { margin: 7px 7px 7px 0; padding: 0 10px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 6px; background: none; cursor: pointer; font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
-.hero-copy-btn:hover { color: var(--ink); border-color: rgba(255, 255, 255, 0.2); }
-.hero-ans { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
-.hero-ret { color: var(--muted); }
-.hero-ans a { margin-left: auto; color: var(--accent-ink); font-weight: 500; text-decoration: none; white-space: nowrap; }
-.hero-ans a:hover { text-decoration: underline; }
-/* status pill: order reads by fill (solid, half, outline, dash), never by hue */
-.hero-st { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 9px; border: 1px solid transparent; border-radius: 99px; font: 500 11.5px/1 var(--font); white-space: nowrap; }
-.hero-st.s-live { background: var(--s-live); border-color: var(--s-live); color: var(--s-live-ink); }
-.hero-st.s-limited { border-color: rgba(244, 241, 238, 0.42); background: linear-gradient(90deg, rgba(244, 241, 238, 0.2) 50%, transparent 0); color: var(--ink); }
-.hero-st.s-announced { border-color: rgba(244, 241, 238, 0.32); color: var(--ink-2); }
-.hero-st.s-none { padding-left: 4px; color: var(--muted); }
-.hero-st.s-none::before { content: ''; width: 9px; height: 2px; border-radius: 2px; background: var(--muted); }
-
-/* the companies with the most live markets */
-.hero-cos { display: grid; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.055); }
-.hero-cos ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
-.hero-cos a { font: 500 12.5px/1 var(--font); letter-spacing: -0.01em; color: var(--ink-2); text-decoration: none; }
-.hero-cos a:hover { color: var(--ink); }
+/* twelve pixel icons, one per category, lit by the country's category score (hero.js). 5px cells on a 6px step. */
+.hero-icons:not([hidden]) { display: flex; flex-direction: column; align-self: stretch; gap: 28px; }
+.hero-icons ul { position: relative; isolation: isolate; display: grid; grid-template-columns: repeat(6, 72px); gap: 46px 25px; margin: 0; padding: 0; list-style: none; }
+/* soft dark pool behind the icons so the sky dither does not read as icon pixels */
+.hero-icons ul::before { content: ''; position: absolute; inset: -60px -70px; z-index: -1; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.8) 55%, transparent); }
+.hero-icons li { position: relative; width: 72px; height: 72px; outline: none; }
+.hero-icons svg { display: block; width: 72px; height: 72px; overflow: visible; shape-rendering: crispEdges; }
+.hero-icons li.is-full svg { filter: drop-shadow(0 0 9px color-mix(in srgb, var(--sunrise) 45%, transparent)); }
+.hero-icons rect { fill: color-mix(in srgb, var(--s-announced) 62%, #000); transition: fill 0.22s; }
+.hero-icons rect.on.t0 { fill: var(--tier-s); }
+.hero-icons rect.on.t1 { fill: var(--sunrise); }
+.hero-icons rect.on.t2 { fill: var(--ink); }
+/* the short name on a black tape, on hover, tap or focus */
+.hero-icons b { position: absolute; left: 50%; top: calc(100% + 8px); translate: var(--tx, -50%) 4px; padding: 4px 7px 5px; background: #000; color: var(--ink); font: 500 10.5px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; opacity: 0; transition: opacity 0.15s, translate 0.15s; pointer-events: none; }
+.hero-icons li:is(:hover, :focus) b { opacity: 1; translate: var(--tx, -50%) 0; }
+.hero-icons li:focus-visible { outline: 2px solid var(--sunrise); outline-offset: 6px; }
+/* key: works, partly, not yet. Its bottom lines up with the buttons. */
+.hero-key { display: flex; align-items: center; gap: 6px; align-self: flex-end; height: 40px; margin: auto 0 0; padding: 0 10px; background: #000; color: var(--ink-2); font: 500 10.5px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-key i { width: 10px; height: 10px; margin-left: 8px; }
+.hero-key i:first-child { margin-left: 0; }
+.hero-key .k-on { background: var(--tier-s); }
+.hero-key .k-part { background: conic-gradient(var(--tier-s) 25%, transparent 0 50%, var(--tier-s) 0 75%, transparent 0) 0 0/5px 5px; outline: 1px solid color-mix(in srgb, var(--tier-s) 30%, transparent); outline-offset: -1px; }
+.hero-key .k-off { background: color-mix(in srgb, var(--s-announced) 62%, #000); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-icons :is(rect, b) { transition: none; }
+}
 
 /* the eight countries, pinned to the planet. A mouse shortcut: the console's country list is the accessible one. */
 .hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 64px 0 0; padding: 0; list-style: none; }
@@ -89,9 +84,12 @@
 .hero-stem::after { content: ''; position: absolute; left: -2px; bottom: -2px; width: 5px; height: 5px; border-radius: 50%; background: #ffe1ee; box-shadow: 0 0 6px 2px rgba(255, 46, 136, 0.75), 0 0 16px 4px rgba(255, 46, 136, 0.25); }
 .hero-chips [aria-current='true'] .hero-stem { background: linear-gradient(rgba(255, 182, 114, 0.6), rgba(255, 182, 114, 0.12)); }
 
-@container (max-width: 1100px) {
+/* the icons take about 560px: stack them under the headline before its tape line would wrap */
+@container (max-width: 1200px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
-  .hero-ask { max-width: 560px; }
+  .hero-key { align-self: flex-start; }
+}
+@container (max-width: 1100px) {
   /* keep the eight chips on one row down to about 860px */
   .hero-chips { gap: 6px; }
   .hero-chips a { gap: 6px; padding: 0 10px 0 8px; }
@@ -104,12 +102,14 @@
   /* the stats wrap here, so plain gaps read better than dots that could start a line */
   .hero-stats { gap: 0 14px; }
   .hero-stats div + div::before { display: none; }
-  .hero-tabs button { padding: 11px 3px 12px; letter-spacing: 0.04em; }
-  .hero-tabs .flag { width: 1.2em; margin-right: 3px; }
   .hero-copy { padding-top: 36px; }
   .hero h1 { font-size: clamp(32px, 10.4cqw, 60px); }
   .hero-sub { font-size: 15px; }
-  .hero-ask { padding: 4px 12px 14px; }
+  /* 4 x 3 on phones; the cells stay whole pixels */
+  .hero-icons ul { grid-template-columns: repeat(4, 72px); justify-content: space-between; column-gap: 0; }
+  /* names on the outer columns hang inward, so they stay on screen */
+  .hero-icons li:nth-child(4n + 1) b { --tx: 0; left: 0; }
+  .hero-icons li:nth-child(4n) b { --tx: 0; left: auto; right: 0; }
   .hero-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 40px; }
   .hero-chips a { display: flex; flex-direction: column; justify-content: center; gap: 4px; height: 70px; padding: 0; }
   .hero-chips .flag { font-size: 18px; }
