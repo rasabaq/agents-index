@@ -475,7 +475,7 @@
       "hq": "US",
       "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
       "homepage": "https://about.meta.com/",
-      "icon": null,
+      "icon": "logos/meta.png",
       "role": "Meta Business Agent answers customers, recommends products and closes sales in chat, and WhatsApp's Payments API takes payments in chat in Brazil and India.",
       "markets": [
         "US",
@@ -503,7 +503,7 @@
       "hq": "US",
       "url": "https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/",
       "homepage": "https://www.google.com/",
-      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "icon": "logos/google.png",
       "role": "Business Agent lets shoppers chat with a retailer's AI sales associate inside Google Search.",
       "markets": [
         "US"
@@ -517,7 +517,7 @@
       "hq": "DE",
       "url": "https://360dialog.com",
       "homepage": "https://360dialog.com/",
-      "icon": "https://framerusercontent.com/images/jCsm2IXNOOfEvUqkW8uqby4EsJk.png",
+      "icon": "logos/360dialog.png",
       "role": "WhatsApp Business Solution Provider that deploys Meta Business Agent and the Brazil Payments API for businesses.",
       "markets": [
         "GB",
@@ -541,7 +541,7 @@
       "hq": "BR",
       "url": "https://www.blip.ai",
       "homepage": "https://www.blip.ai/",
-      "icon": "https://www.blip.ai/wp-content/uploads/2023/06/Favicon.svg",
+      "icon": "logos/blip.png",
       "role": "Conversational platform that lets enterprises run AI sales and support agents on WhatsApp and other chat apps.",
       "markets": [
         "BR"
@@ -555,7 +555,7 @@
       "hq": "BR",
       "url": "https://zenvia.com/",
       "homepage": "https://zenvia.com/",
-      "icon": "https://zenvia.com/favicon.png",
+      "icon": "logos/zenvia.png",
       "role": "Customer cloud that runs AI agents to sell and support customers over WhatsApp and other channels.",
       "markets": [
         "BR"
@@ -569,7 +569,7 @@
       "hq": "MX",
       "url": "https://www.yalo.ai/",
       "homepage": "https://www.yalo.ai/",
-      "icon": "https://cdn.prod.website-files.com/6864212f89b49a1b6c4568db/686c375c802b0228dca4c912_256x256.png",
+      "icon": "logos/yalo.png",
       "role": "Sales platform that runs AI agents for consumer brands on WhatsApp across Latin America.",
       "markets": [
         "MX",
@@ -584,7 +584,7 @@
       "hq": "CO",
       "url": "https://treble.ai/",
       "homepage": "https://treble.ai/",
-      "icon": "https://treble.ai/wp-content/uploads/2026/02/Frame-1171275166-300x300.png",
+      "icon": "logos/treble.png",
       "role": "AI platform for WhatsApp that automates sales and support conversations for Latin American companies.",
       "markets": [
         "CO"
@@ -598,7 +598,7 @@
       "hq": "US",
       "url": "https://www.gupshup.ai/",
       "homepage": "https://www.gupshup.ai/",
-      "icon": "https://www.gupshup.ai/apple-icon-57x57.png",
+      "icon": "logos/gupshup.png",
       "role": "Platform for building and running AI agents on WhatsApp and other messaging channels, with a large base in India.",
       "markets": [
         "IN"
@@ -612,7 +612,7 @@
       "hq": "AR",
       "url": "https://guiawabusiness.cliengo.com/que-es-agente-ia-whatsapp",
       "homepage": "https://www.cliengo.com/",
-      "icon": "https://www.cliengo.com/hubfs/cliengo280mano.png",
+      "icon": "logos/cliengo.png",
       "role": "Runs AI agents on the WhatsApp Business API that answer and sell to customers for Latin American companies.",
       "markets": [
         "CL",
@@ -627,7 +627,7 @@
       "hq": "AE",
       "url": "https://core.telegram.org/bots/payments",
       "homepage": "https://telegram.org/",
-      "icon": "https://telegram.org/img/apple-touch-icon.png",
+      "icon": "logos/telegram.png",
       "role": "Bot Payments API lets bots take payments inside the chat through providers such as Stripe, with no Telegram commission.",
       "markets": [
         "US",
@@ -645,7 +645,7 @@
       "hq": "US",
       "url": "https://stripe.com/global",
       "homepage": "https://stripe.com/",
-      "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+      "icon": "logos/stripe.png",
       "role": "Payment provider behind Telegram bot payments for businesses in its supported countries.",
       "markets": [
         "US",
@@ -663,7 +663,7 @@
       "hq": "IN",
       "url": "https://razorpay.com/",
       "homepage": "https://razorpay.com/",
-      "icon": "https://razorpay.com/favicon.ico",
+      "icon": "logos/razorpay.png",
       "role": "One of the payment gateways that let Indian businesses take UPI and card payments inside WhatsApp chats.",
       "markets": [
         "IN"
@@ -677,7 +677,7 @@
       "hq": "NL",
       "url": "https://payu.in",
       "homepage": "https://payu.in/",
-      "icon": "https://payu.in/favicon.ico",
+      "icon": "logos/payu.png",
       "role": "One of the payment gateways that let Indian businesses take payments inside WhatsApp chats.",
       "markets": [
         "IN"

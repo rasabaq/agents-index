@@ -7,6 +7,8 @@ export const STATUSES = {
   none: { points: 0, label: 'Not yet', hint: 'We searched and found no availability.' },
 };
 
+// A company logo lives in this repo (see scripts/refresh-sites.mjs), so the page loads no image from its site.
+const LOGO = /^logos\/[a-z0-9-]+\.png$/;
 const EVIDENCE_TYPES = ['company', 'report', 'paper', 'regulation', 'news'];
 
 const mean = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
@@ -96,7 +98,7 @@ export function validate(meta, categories) {
       if (!isUrl(co.url)) errors.push(`${where}: bad url`);
       if (!isUrl(co.homepage)) errors.push(`${where}: needs a homepage (its own site, used for its logo)`);
       if (co.icon === undefined) errors.push(`${where}: no icon yet; run npm run refresh-sites`);
-      else if (co.icon !== null && !/^https:\/\//.test(co.icon)) errors.push(`${where}: icon must be an https URL, or null when the site has none`);
+      else if (co.icon !== null && !LOGO.test(co.icon)) errors.push(`${where}: icon must be a logos/<name>.png path, or null when the site has none`);
       for (const m of co.markets ?? []) if (!codes.has(m)) errors.push(`${where}: unknown market "${m}"`);
       for (const c of co.capabilities ?? []) if (!capIds.has(c)) errors.push(`${where}: unknown capability "${c}"`);
       for (const [c, ms] of Object.entries(co.marketsByCapability ?? {})) {
@@ -111,6 +113,7 @@ export function validate(meta, categories) {
     for (const r of cat.repos ?? []) {
       const where = `${cat.category}: repo "${r.repo}"`;
       if (!/^[\w.-]+\/[\w.-]+$/.test(r.repo ?? '')) errors.push(`${where}: repo must be "owner/name"`);
+      if (r.icon !== undefined && r.icon !== null && !LOGO.test(r.icon)) errors.push(`${where}: icon must be a logos/<name>.png path, or null for a monogram`);
       if (repoIds.has(r.repo?.toLowerCase())) errors.push(`${where}: listed twice; keep it in one file`);
       repoIds.add(r.repo?.toLowerCase());
       if (!r.name || !r.role) errors.push(`${where}: needs a name and a role`);

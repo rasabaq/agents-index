@@ -639,7 +639,7 @@
       "hq": "US",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "homepage": "https://www.google.com/",
-      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "icon": "logos/google.png",
       "role": "AI Mode finds open restaurant tables across booking partners and lets US users book hotels with Google Pay.",
       "markets": [
         "US",
@@ -661,7 +661,7 @@
       "hq": "US",
       "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
       "homepage": "https://openai.com/",
-      "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "icon": "logos/openai.png",
       "role": "ChatGPT finds restaurant reservations and hosts third-party apps for travel and delivery.",
       "markets": [
         "US",
@@ -694,7 +694,7 @@
       "hq": "US",
       "url": "https://www.opentable.com",
       "homepage": "https://www.opentable.com/",
-      "icon": "https://www.opentable.com/favicon.ico",
+      "icon": "logos/opentable.png",
       "role": "Supplies real-time table inventory and bookings to Google AI Mode, ChatGPT and Alexa+.",
       "markets": [
         "US",
@@ -711,7 +711,7 @@
       "hq": "US",
       "url": "https://www.aboutamazon.de/news/amazon-devices-und-services/alexa-plus-funktionen-ausprobieren",
       "homepage": "https://www.aboutamazon.com/",
-      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "icon": "logos/amazon.png",
       "role": "Alexa+ finds and books restaurant tables through OpenTable in Germany, in Early Access.",
       "markets": [
         "DE"
@@ -725,7 +725,7 @@
       "hq": "US",
       "url": "https://resy.com",
       "homepage": "https://resy.com/",
-      "icon": "https://resy.com/images/favicon.ico?v=5",
+      "icon": "logos/resy.png",
       "role": "Supplies US table availability to Google AI Mode and ChatGPT.",
       "markets": [
         "US"
@@ -739,7 +739,7 @@
       "hq": "US",
       "url": "https://www.exploretock.com",
       "homepage": "https://www.exploretock.com/",
-      "icon": "https://www.exploretock.com/assets/favicon/v5/apple-touch-icon-57x57.png",
+      "icon": "logos/tock.png",
       "role": "Supplies US reservation availability to Google AI Mode.",
       "markets": [
         "US"
@@ -753,7 +753,7 @@
       "hq": "US",
       "url": "https://www.yelp.com",
       "homepage": "https://www.yelp.com/",
-      "icon": "https://www.yelp.com/favicon.ico",
+      "icon": "logos/yelp.png",
       "role": "Lets ChatGPT find and book tables and join waitlists in the US and Canada.",
       "markets": [
         "US"
@@ -767,7 +767,7 @@
       "hq": "FR",
       "url": "https://www.thefork.com",
       "homepage": "https://www.thefork.com/",
-      "icon": "https://www.thefork.com/favicon.ico",
+      "icon": "logos/thefork.png",
       "role": "Supplies UK table bookings to Google AI Mode and runs a TheFork app inside ChatGPT.",
       "markets": [
         "GB"
@@ -781,7 +781,7 @@
       "hq": "US",
       "url": "https://sevenrooms.com",
       "homepage": "https://sevenrooms.com/",
-      "icon": "https://sevenrooms.com/favicon.ico",
+      "icon": "logos/sevenrooms.png",
       "role": "Booking partner for Google AI Mode restaurant reservations in the UK.",
       "markets": [
         "GB"
@@ -795,7 +795,7 @@
       "hq": "GB",
       "url": "https://www.resdiary.com",
       "homepage": "https://www.resdiary.com/",
-      "icon": "https://resdiary.com/hubfs/Icon_%20resdiary_favicon.png",
+      "icon": "logos/resdiary.png",
       "role": "Booking partner for Google AI Mode restaurant reservations in the UK.",
       "markets": [
         "GB"
@@ -809,7 +809,7 @@
       "hq": "IN",
       "url": "https://www.eazydiner.com",
       "homepage": "https://www.eazydiner.com/",
-      "icon": "https://www.eazydiner.com/images/apple-touch-icon.png",
+      "icon": "logos/eazydiner.png",
       "role": "Booking partner for Google AI Mode restaurant reservations in India.",
       "markets": [
         "IN"
@@ -823,7 +823,7 @@
       "hq": "IN",
       "url": "https://mcp.swiggy.com/builders",
       "homepage": "https://www.swiggy.com/",
-      "icon": null,
+      "icon": "logos/swiggy.png",
       "role": "Runs MCP servers so AI assistants can order food and Instamart groceries and book Dineout tables, and is a Google AI Mode booking partner.",
       "markets": [
         "IN"
@@ -838,7 +838,7 @@
       "hq": "IN",
       "url": "https://github.com/Zomato/mcp-server-manifest",
       "homepage": "https://www.zomato.com/",
-      "icon": "https://b.zmtcdn.com/data/o2_assets/31e648cbaa2ca2fb5fbec1e76710f3821785325659.png",
+      "icon": "logos/zomato-eternal.png",
       "role": "Runs an MCP server for AI food ordering and is a Google AI Mode restaurant booking partner.",
       "markets": [
         "IN"
@@ -853,7 +853,7 @@
       "hq": "NL",
       "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
       "homepage": "https://www.booking.com/",
-      "icon": null,
+      "icon": "logos/booking-com.png",
       "role": "Runs a hotel search app inside ChatGPT and is a hotel partner for Google AI Mode checkout.",
       "markets": [
         "US",
@@ -874,7 +874,7 @@
       "hq": "US",
       "url": "https://www.expedia.com/product/expedia-in-chatgpt/",
       "homepage": "https://www.expediagroup.com/",
-      "icon": "https://www.expediagroup.com/favicon.ico",
+      "icon": "logos/expedia-group.png",
       "role": "Runs a travel app inside ChatGPT and is a hotel partner (Expedia, Hotels.com) for Google AI Mode checkout.",
       "markets": [
         "US",
@@ -890,7 +890,7 @@
       "hq": "US",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "homepage": "https://www.marriott.com/",
-      "icon": "https://www.marriott.com/favicon.ico",
+      "icon": "logos/marriott-international.png",
       "role": "Hotel partner whose rooms US users can book inside Google AI Mode.",
       "markets": [
         "US"
@@ -904,7 +904,7 @@
       "hq": "US",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "homepage": "https://www.hilton.com/",
-      "icon": null,
+      "icon": "logos/hilton.png",
       "role": "Hotel partner whose rooms US users can book inside Google AI Mode.",
       "markets": [
         "US"
@@ -918,7 +918,7 @@
       "hq": "CN",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "homepage": "https://www.trip.com/",
-      "icon": "https://www.trip.com/favicon.ico",
+      "icon": "logos/trip-com.png",
       "role": "Booking partner for hotel checkout inside Google AI Mode in the US.",
       "markets": [
         "US"
@@ -932,7 +932,7 @@
       "hq": "GB",
       "url": "https://deeparrival.com/news/eurostar-chatgpt-app-august-2026/",
       "homepage": "https://www.eurostar.com/",
-      "icon": "https://static.eurostar.com/ui/design-system/apple-touch-icon.png",
+      "icon": "logos/eurostar.png",
       "role": "Runs a ChatGPT app that finds trains and fares and hands off to eurostar.com to book.",
       "markets": [
         "GB"
@@ -946,7 +946,7 @@
       "hq": "US",
       "url": "https://www.businesswire.com/news/home/20251217400178/en/DoorDash-Launches-Grocery-Shopping-App-Within-ChatGPT",
       "homepage": "https://www.doordash.com/",
-      "icon": null,
+      "icon": "logos/doordash.png",
       "role": "Runs a ChatGPT app that builds grocery carts from US retailers for checkout.",
       "markets": [
         "US"
@@ -960,7 +960,7 @@
       "hq": "US",
       "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
       "homepage": "https://www.uber.com/",
-      "icon": "https://www.uber.com/favicon.ico",
+      "icon": "logos/uber.png",
       "role": "Runs Uber and Uber Eats apps inside ChatGPT that request rides and find restaurants, then hand off to the Uber apps to pay; US only.",
       "markets": [
         "US"
@@ -974,7 +974,7 @@
       "hq": "BR",
       "url": "https://canaltech.com.br/apps/ifood-lanca-agente-de-ia-que-permite-fazer-pedidos-pelo-whatsapp-veja-como-usar/",
       "homepage": "https://www.ifood.com.br/",
-      "icon": null,
+      "icon": "logos/ifood.png",
       "role": "Runs Ailo, a WhatsApp AI agent that builds a food order by chat and hands off to the iFood app to pay.",
       "markets": [
         "BR"
@@ -988,7 +988,7 @@
       "hq": "CO",
       "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
       "homepage": "https://www.rappi.com/",
-      "icon": "https://www.rappi.cl/pwa-icons/192x192.png",
+      "icon": "logos/rappi.png",
       "role": "Announced a WhatsApp AI assistant and voice-note ordering for Colombia.",
       "markets": [
         "CO"
@@ -1002,7 +1002,7 @@
       "hq": "NL",
       "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
       "homepage": "https://www.justeattakeaway.com/",
-      "icon": "https://s205.q4cdn.com/266311280/files/favicon.ico",
+      "icon": "logos/just-eat-takeaway-com.png",
       "role": "Runs an AI assistant in the Just Eat and Lieferando apps that takes food orders by chat or voice and fills the basket for checkout.",
       "markets": [
         "GB",
