@@ -70,12 +70,12 @@
             <div class="hero-ctas">
               <a class="hero-btn hero-btn-1" href="#ranking">Open the ranking <span aria-hidden="true">→</span></a>
             </div>
-            <!-- Launch signup (teaser only). Kit stores the emails; without JS the form posts and Kit shows its own page. -->
-            <form class="hero-signup" action="https://app.kit.com/forms/KIT_FORM_ID/subscriptions" method="post" data-signup>
+            <!-- Launch signup (teaser only). Loops stores the emails. -->
+            <form class="hero-signup" action="https://app.loops.so/api/newsletter-form/LOOPS_FORM_ID" method="post" data-signup>
               <p class="hero-soon" role="status" data-signup-msg>Coming soon. Get an email when it launches.</p>
               <div class="hero-signup-row">
                 <label class="sr-only" for="signup-email">Email</label>
-                <input id="signup-email" type="email" name="email_address" required autocomplete="email" placeholder="you@example.com">
+                <input id="signup-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
                 <button class="hero-btn hero-btn-1">Notify me <span aria-hidden="true">→</span></button>
               </div>
             </form>

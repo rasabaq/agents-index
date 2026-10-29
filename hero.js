@@ -377,16 +377,16 @@ function light(code) {
   $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} work fully`;
 }
 
-/* ---------- launch signup (teaser only): post to Kit and stay on the page ---------- */
+/* ---------- launch signup (teaser only): post to Loops and stay on the page ---------- */
 const signup = $('[data-signup]');
 signup.addEventListener('submit', async (e) => {
   e.preventDefault();
   const msg = $('[data-signup-msg]'), btn = signup.querySelector('button');
   btn.disabled = true;
   try {
-    const r = await fetch(signup.action, { method: 'POST', body: new FormData(signup), headers: { Accept: 'application/json' } });
-    if (!r.ok || (await r.json()).status !== 'success') throw new Error(r.status);
-    msg.textContent = 'Almost done: check your inbox to confirm.';
+    const r = await fetch(signup.action, { method: 'POST', body: new URLSearchParams(new FormData(signup)) });
+    if (!r.ok || !(await r.json()).success) throw new Error(r.status);
+    msg.textContent = "You're on the list. We'll email you at launch.";
     signup.reset();
   } catch {
     msg.textContent = 'That did not work. Please try again.';
