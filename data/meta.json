@@ -17,7 +17,8 @@
     { "id": "autonomy", "name": "General-purpose agents", "blurb": "Agents that use websites, apps and phones the way a person does.", "short": "General agents", "can": "use websites and apps for you" },
     { "id": "banking", "name": "Banking & open finance", "blurb": "Agents that read accounts and move money through banks.", "short": "Banking", "can": "move money through your bank" },
     { "id": "messaging", "name": "Chat & messaging", "blurb": "Agents that sell, support and take payments inside chat apps.", "short": "Chat", "can": "buy and get support in chat" },
-    { "id": "government", "name": "Government & identity", "blurb": "Agents that prove who you are and handle public services.", "short": "Government", "can": "prove who you are to apps" }
+    { "id": "government", "name": "Government & identity", "blurb": "Agents that prove who you are and handle public services.", "short": "Government", "can": "prove who you are to apps" },
+    { "id": "access", "name": "Access to the assistants", "blurb": "Whether you can sign up for the big AI assistants and use their agent features in your language.", "short": "Access", "can": "work in your own language" }
   ],
   "gapReasons": [
     { "id": "no-rule", "label": "No rule in force yet" },
