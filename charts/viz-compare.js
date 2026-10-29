@@ -219,6 +219,18 @@
       list.addEventListener('pointerleave', () => ctx.tip.hide());
 
       draw();
+
+      // The console's "Compare with" button sends a 'compare' event with [a, b] to this chart's slot (see app.js).
+      // Cancelling it tells the console the chart took the pair. Focus goes to the first select, so keyboard users land in the chart.
+      el.closest('[data-chart]').addEventListener('compare', (e) => {
+        const [a, b] = e.detail;
+        if (!name[a] || !name[b] || a === b) return;
+        e.preventDefault();
+        Object.assign(state, { a, b });
+        draw();
+        e.currentTarget.scrollIntoView();
+        $('[data-side="a"]').focus({ preventScroll: true });
+      });
     },
   });
 })();

@@ -173,7 +173,7 @@ function renderCountry() {
     </div>
     <div class="cn-r">
       <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>
-      <button type="button" class="btn btn-sm" data-go-country="${other.code}">Compare with ${flag(other.code)}${other.code}</button>
+      <button type="button" class="btn btn-sm" data-compare="${r.code} ${other.code}">Compare with ${flag(other.code)}${other.code}</button>
       <button type="button" class="btn btn-sm" data-sources>${nSources} sources</button>
     </div>`;
 
@@ -425,6 +425,16 @@ function wire() {
     if (!el || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
     selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
+  });
+  // Compare with: the Head to head chart takes the pair and scrolls into view (viz-compare.js cancels the event).
+  // If that chart did not draw, nothing cancels it, so the console switches to the other country instead.
+  $('[data-country]').addEventListener('click', (e) => {
+    const el = e.target.closest('[data-compare]');
+    if (!el) return;
+    const pair = el.dataset.compare.split(' ');
+    const chart = document.getElementById('v-compare');
+    const taken = chart && !chart.dispatchEvent(new CustomEvent('compare', { detail: pair, cancelable: true }));
+    if (!taken) selectCountry(pair[1]);
   });
   addEventListener('hashchange', () => {
     if (!hashCountry()) return;
