@@ -263,10 +263,10 @@ function buildMask() {
   const d = mc.getImageData(0, 0, cols, rows).data, out = [];
   for (let i = 0; i < cols * rows; i++) if (d[i * 4 + 3] >= 128) out.push(i);
   lit = new Int32Array(out);
-  cell = avail / cols;
-  wm.style.height = `${Math.round(rows * cell)}px`;
+  // hero.css sizes the box to fit; fitting the cells inside it keeps them square if the two ever disagree.
+  cell = Math.min(avail / cols, wm.clientHeight / rows);
   wm.width = Math.round(avail * wdpr);
-  wm.height = Math.round(rows * cell * wdpr);
+  wm.height = Math.round(wm.clientHeight * wdpr);
   gapD = cell >= 3 ? Math.max(1, Math.round(wdpr)) : wdpr >= 2 ? 1 : 0;
   return true;
 }

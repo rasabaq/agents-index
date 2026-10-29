@@ -14,7 +14,11 @@
 
 /* the pixel wordmark */
 .hero-wm-wrap { padding-top: 60px; }
-.hero-wm { display: block; width: 100%; height: 280px; }
+/* The box is sized here, not in hero.js, so the page does not jump when the script runs. hero.js draws the word in
+   cells of 1/(129k+1) of the width: Jersey 10's OBSERVATORY is 129px wide at 28px, two lines are 35k cells tall, and k
+   is round(width / 580.5), so 1 below an 871px wordmark (a 919px hero) and 2 above. */
+.hero-wm { display: block; width: 100%; aspect-ratio: 130 / 35; }
+@container (min-width: 919px) { .hero-wm { aspect-ratio: 259 / 70; } }
 
 /* headline and button */
 .hero-copy { padding-top: 56px; }
@@ -32,8 +36,10 @@
 .hero-btn-1 span { opacity: 0.6; }
 
 /* twelve pixel icons, one per category, lit by the country's category score (hero.js). 5px cells on a 6px step. */
-.hero-icons:not([hidden]) { display: flex; flex-direction: column; align-self: stretch; gap: 28px; }
-.hero-icons ul { position: relative; isolation: isolate; display: grid; grid-template-columns: repeat(6, 72px); gap: 46px 25px; margin: 0; padding: 0; list-style: none; }
+/* Hidden until the data arrives, but it keeps its space (two rows of icons, three on phones), so the page does not jump. */
+.hero-icons { display: flex; flex-direction: column; align-self: stretch; gap: 28px; }
+.hero-icons[hidden] { visibility: hidden; }
+.hero-icons ul { position: relative; isolation: isolate; display: grid; grid-template-columns: repeat(6, 72px); grid-template-rows: repeat(2, 72px); gap: 46px 25px; margin: 0; padding: 0; list-style: none; }
 /* soft dark pool behind the icons so the sky dither does not read as icon pixels */
 .hero-icons ul::before { content: ''; position: absolute; inset: -60px -70px; z-index: -1; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.8) 55%, transparent); }
 .hero-icons li { position: relative; width: 72px; height: 72px; outline: none; }
@@ -93,7 +99,7 @@
   .hero h1 { font-size: clamp(32px, 10.4cqw, 60px); }
   .hero-ctas { margin-top: 36px; }
   /* 4 x 3 on phones; the cells stay whole pixels */
-  .hero-icons ul { grid-template-columns: repeat(4, 72px); justify-content: space-between; column-gap: 0; }
+  .hero-icons ul { grid-template-columns: repeat(4, 72px); grid-template-rows: repeat(3, 72px); justify-content: space-between; column-gap: 0; }
   /* names on the outer columns hang inward, so they stay on screen */
   .hero-icons li:nth-child(4n + 1) b { --tx: 0; left: 0; }
   .hero-icons li:nth-child(4n) b { --tx: 0; left: auto; right: 0; }
