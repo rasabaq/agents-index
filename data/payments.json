@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Mastercard said it would enable all US cardholders for Agent Pay by late 2025, and Visa says Visa Intelligent Commerce is rolled out across many agents with live transactions; Amex launched its ACE kit and agent purchase protection in April 2026. We found no Mastercard or Visa source saying every US cardholder can use it today, and Mastercard's September 2026 release gives no rollout numbers. In October 2026 we re-checked Mastercard's 2025 and September 2026 releases and Visa's December 2025 and April 2026 releases: Mastercard's CEO said in October 2025 that Citi and U.S. Bank cardholders could use Agent Pay (reported by Digital Commerce 360), and Visa's April 2026 release says live transactions are taking place, but no primary source says the Mastercard rollout to all US cardholders was completed. We keep 'live' on the Citi, U.S. Bank and Visa evidence; 'limited' is the fallback if that is judged too strong.",
+          "note": "Visa says Visa Intelligent Commerce is rolled out across a broad set of US agents with live transactions (April 2026), Amex launched its ACE kit and agent purchase protection in April 2026, and Stripe's shared payment tokens can carry Visa, Mastercard and Amex agent tokens. Mastercard planned to enable all US cardholders for Agent Pay by the 2025 holidays but has not said the rollout is done, and no network gives reach numbers.",
           "evidence": [
             {
               "title": "Mastercard Unveils New Tools and Collaborations to Power Smarter, Safer Agentic Commerce",
@@ -43,6 +43,13 @@
               "publisher": "American Express",
               "url": "https://www.americanexpress.com/en-us/newsroom/articles/innovation/american-express-debuts-agentic-commerce-experiences--ace--devel.html",
               "date": "2026-04-14",
+              "type": "company"
+            },
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
               "type": "company"
             }
           ],
@@ -176,7 +183,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "Mastercard Agent Pay completed India's first fully authenticated agent purchase with Axis Bank and RBL Bank cards in a controlled demo in February 2026.",
+          "note": "Mastercard Agent Pay completed India's first fully authenticated agent purchase in a controlled demo in February 2026, with Axis Bank and RBL Bank cards and the payment aggregators Razorpay, PayU, Juspay and Cashfree.",
           "evidence": [
             {
               "title": "Mastercard demonstrates readiness for a new era of AI-powered payments in India with its first authenticated agentic commerce transaction",
@@ -184,6 +191,13 @@
               "url": "https://www.mastercard.com/news/ap/en-in/newsroom/press-releases/en-in/2026/february/mastercard-demonstrates-readiness-for-a-new-era-of-ai-powered-payments-in-india-with-its-first-authenticated-agentic-commerce-transaction/",
               "date": "2026-02",
               "type": "company"
+            },
+            {
+              "title": "Mastercard brings agentic commerce vision to India",
+              "publisher": "Biometric Update",
+              "url": "https://www.biometricupdate.com/202602/mastercard-brings-agentic-commerce-vision-to-india",
+              "date": "2026-02-18",
+              "type": "news"
             }
           ],
           "gapReason": "pilot-only"
@@ -197,7 +211,7 @@
       "countries": {
         "US": {
           "status": "none",
-          "note": "No agent payments over FedNow or RTP found; the Fed's 2026 FedNow work covers cross-border transfers, not agents.",
+          "note": "No agent payments over FedNow or RTP found; the Fed's April 2026 FedNow proposal is about letting banks use intermediaries, not about agents.",
           "evidence": [
             {
               "title": "Federal Reserve Board invites public comment on proposal that would allow U.S. banks and credit unions to use intermediaries to transfer funds through the FedNow Service",
@@ -211,7 +225,7 @@
         },
         "GB": {
           "status": "none",
-          "note": "No live agent payment over Faster Payments or VRP found; GoCardless's 'first UK agentic bank payment' set up a Direct Debit (not Faster Payments) inside the FCA AI Live Testing programme, TrueLayer is only testing agent-started Pay by Bank payments in the FCA sandbox until the end of 2026, and HM Treasury is still consulting on agent payment rules.",
+          "note": "No live agent payment over Faster Payments or VRP found. GoCardless's \"first agentic account-to-account payment in the UK\" set up a Direct Debit (not Faster Payments) inside the FCA AI Live Testing programme, TrueLayer is only testing agent-started Pay by Bank payments in the FCA sandbox until the end of 2026, and HM Treasury is still consulting on agent payment rules.",
           "evidence": [
             {
               "title": "TrueLayer selected for FCA's Supercharged Sandbox to test agentic payments",
@@ -253,20 +267,27 @@
         },
         "BR": {
           "status": "live",
-          "note": "Nubank's AI assistant sends Pix from text or voice for all app users, Mercado Pago's Mago assistant sends Pix, and Iniciador put a Pix agent-payments MCP into production; the user still confirms each payment.",
+          "note": "Mercado Pago's Mago assistant makes Pix payments, Nubank's AI assistant sends Pix from text or voice in its app and on WhatsApp, and Iniciador put a Pix agent-payments MCP into production in May 2026; the user confirms each payment.",
           "evidence": [
+            {
+              "title": "Mago, seu assistente",
+              "publisher": "Mercado Pago",
+              "url": "https://www.mercadopago.com.br/assistente-pessoal",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Pix por áudio e mensagem: tudo o que você precisa saber",
+              "publisher": "Nubank",
+              "url": "https://blog.nubank.com.br/pix-por-audio-mensagem/",
+              "date": "2025-06-04",
+              "type": "company"
+            },
             {
               "title": "Pix com Inteligência Artificial agora no App e WhatsApp do Nu",
               "publisher": "Nubank",
               "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
-              "date": "2024-12",
-              "type": "company"
-            },
-            {
-              "title": "Assistente de IA do Mercado Pago: como funciona e como usar",
-              "publisher": "Mercado Pago",
-              "url": "https://www.mercadopago.com.br/blog/como-funciona-assistente-ia-mercado-pago",
-              "date": "2026",
+              "date": "2024-12-10",
               "type": "company"
             },
             {
@@ -280,14 +301,14 @@
         },
         "MX": {
           "status": "limited",
-          "note": "Mercado Pago's Mago assistant prepares transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI; we searched Mercado Pago's Mexico blog, help center and developer pages again in October 2026 but found no page that says Mago sends to a CLABE or over SPEI, and the press only says Mago 'does transfers'. Lowered from live because the SPEI link is unproven.",
+          "note": "Mercado Pago's Mago assistant makes transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI, but no source says Mago sends money over SPEI, so it stays limited.",
           "evidence": [
             {
-              "title": "Asistente personal de Mercado Pago: qué es y para qué sirve",
-              "publisher": "Mercado Pago",
-              "url": "https://www.mercadopago.com.mx/blog/asistente-personal-de-mercado-pago",
-              "date": "2026",
-              "type": "company"
+              "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
+              "publisher": "Descubre",
+              "url": "https://www.descubre.vc/noticia/mercado-pago-lanza-mago-su-nuevo-asistente-de-ia-financiera-2026-09-28",
+              "date": "2026-09-28",
+              "type": "news"
             },
             {
               "title": "Mercado Pago activa Mago: cómo funciona su IA por texto y voz",
@@ -304,66 +325,70 @@
               "type": "news"
             }
           ],
-          "confidence": "low",
-          "gapReason": "assist-only"
+          "confidence": "low"
         },
         "CL": {
           "status": "limited",
-          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms; we searched Mercado Pago Chile's site, help center and newsroom in October 2026 but found no official page that says Mago sends money to other banks over TEF, and the Chile rollout reach is not stated. Mercado Pago's September 2026 Chile release says Mago prepares transfers and needs user confirmation, but no page names the TEF rail.",
+          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms, but no source says it sends money to other banks over TEF, so it stays limited.",
           "evidence": [
             {
-              "title": "Mercado Pago lanzó Mago, su asistente con IA para gestionar finanzas y negocios",
-              "publisher": "Chócale",
-              "url": "https://chocale.cl/2026/09/mercado-pago-lanzo-mago-su-asistente-con-ia-para-gestionar-finanzas-y-negocios/",
-              "date": "2026-09",
-              "type": "news"
-            },
-            {
-              "title": "Mago llega a Chile: el asistente personal de Mercado Pago",
+              "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
               "publisher": "G5 Noticias",
               "url": "https://g5noticias.cl/2026/09/11/mago-llega-a-chile-el-asistente-personal-de-mercado-pago-que-simplifica-el-dia-a-dia-de-personas-y-negocios/",
               "date": "2026-09-11",
               "type": "news"
+            },
+            {
+              "title": "Mercado Pago lanzó un asistente con IA para gestionar finanzas y negocios",
+              "publisher": "Chócale",
+              "url": "https://chocale.cl/2026/09/mercado-pago-lanzo-mago-su-asistente-con-ia-para-gestionar-finanzas-y-negocios/",
+              "date": "2026-09-16",
+              "type": "news"
             }
           ],
-          "confidence": "low",
-          "gapReason": "assist-only"
+          "confidence": "low"
         },
         "CO": {
           "status": "limited",
-          "note": "Tpaga launched a WhatsApp AI agent that sends money over Bre-B from text or voice notes; it is one fintech and its rollout scope is not stated. In October 2026 we checked Tpaga's website and Banco de la República's Bre-B page and searched for Nequi, Daviplata, Bancolombia and Mercado Pago agents, but found no primary source for an agent on Bre-B. Banco de la República's Bre-B page shows the rail is live with 245 entities but does not mention AI agents.",
+          "note": "Tpaga launched a WhatsApp AI agent in July 2026 that sends money over Bre-B from text or voice notes. It stays limited because only the press covers it and Tpaga has not said how many users can use it.",
           "evidence": [
             {
-              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar",
+              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
               "publisher": "La República",
               "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
               "date": "2026-07-08",
               "type": "news"
             },
             {
-              "title": "Bre-B: sistema de pagos inmediatos interoperable",
+              "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
+              "publisher": "Descubre",
+              "url": "https://www.descubre.vc/noticia/tpaga-lanza-primer-agente-de-ia-en-colombia-para-pagos-por-whatsapp-2026-07-08",
+              "date": "2026-07-08",
+              "type": "news"
+            },
+            {
+              "title": "Bre-B (pagos inmediatos)",
               "publisher": "Banco de la República",
               "url": "https://www.banrep.gov.co/es/bre-b",
-              "date": "2026",
+              "date": "2026-10-13",
               "type": "report"
             }
           ],
-          "confidence": "low",
-          "gapReason": "pilot-only"
+          "confidence": "low"
         },
         "IN": {
           "status": "limited",
-          "note": "NPCI, Razorpay and OpenAI run a private beta for UPI payments inside ChatGPT using UPI Reserve Pay, and Amazon Pay launched an agentic UPI Smart Wallet at GFF 2026; NPCI's agent protocol has no public go-live date.",
+          "note": "NPCI, Razorpay and OpenAI run a private beta for UPI payments inside ChatGPT using UPI Reserve Pay. MediaNama reports that Amazon Pay launched a consent-based Smart Wallet for agentic UPI payments at GFF 2026, but Amazon Pay has published no details, and NPCI has set no public date for agent payments on UPI.",
           "evidence": [
             {
               "title": "Razorpay, NPCI, and OpenAI Come Together to Launch Agentic Payments, Ushering in AI-Driven Commerce at National Scale",
-              "publisher": "Razorpay",
+              "publisher": "Razorpay Newsroom",
               "url": "https://razorpay.com/newsroom/razorpay-npci-and-openai-come-together-to-launch-agentic-payments-ushering-in-ai-driven-commerce-at-national-scale/",
-              "date": "2025-10",
+              "date": "2025-10-09",
               "type": "company"
             },
             {
-              "title": "NPCI Says AI Shouldn't Approve UPI Payments at GFF 2026",
+              "title": "AI agents can read intent, not approve payments: NPCI chairman at GFF 2026",
               "publisher": "MediaNama",
               "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
               "date": "2026-09-10",
@@ -384,9 +409,9 @@
           "note": "PayPal checkout works inside Perplexity and Microsoft Copilot Checkout, and Stripe's Link Agent Wallet lets agents pay for US customers.",
           "evidence": [
             {
-              "title": "PayPal Launches Agentic Shopping with Perplexity",
+              "title": "PayPal and Perplexity Launch Instant Buy Ahead of Black Friday",
               "publisher": "PayPal",
-              "url": "https://newsroom.paypal-corp.com/2025-11-PayPal-Launches-Agentic-Shopping-with-Perplexity",
+              "url": "https://newsroom.paypal-corp.com/2025-11-PayPal-and-Perplexity-Launch-Instant-Buy",
               "date": "2025-11-25",
               "type": "company"
             },
@@ -400,7 +425,7 @@
             {
               "title": "Link Agent Wallet",
               "publisher": "Stripe",
-              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet.md",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
               "date": "2026-10",
               "type": "company"
             }
@@ -413,7 +438,7 @@
             {
               "title": "Shared payment tokens",
               "publisher": "Stripe",
-              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=seller",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
               "date": "2026-10",
               "type": "company"
             }
@@ -427,7 +452,7 @@
             {
               "title": "Shared payment tokens",
               "publisher": "Stripe",
-              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=seller",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
               "date": "2026-10",
               "type": "company"
             }
@@ -442,28 +467,28 @@
               "title": "Mago, seu assistente",
               "publisher": "Mercado Pago",
               "url": "https://www.mercadopago.com.br/assistente-pessoal",
-              "date": "2026",
+              "date": "2026-10",
               "type": "company"
             },
             {
               "title": "Pix por áudio e mensagem: tudo o que você precisa saber",
               "publisher": "Nubank",
               "url": "https://blog.nubank.com.br/pix-por-audio-mensagem/",
-              "date": "2025",
+              "date": "2025-06-04",
               "type": "company"
             }
           ]
         },
         "MX": {
           "status": "live",
-          "note": "Mercado Pago's Mago agent, launched widely in October 2026, makes payments and transfers for users in Mexico after they confirm.",
+          "note": "Mercado Pago says Mago is available in Mexico, Argentina, Brazil and Chile; it makes payments and transfers for users after they confirm. Only the press covers the Mexico launch.",
           "evidence": [
             {
-              "title": "Asistente personal de Mercado Pago: qué es y para qué sirve",
-              "publisher": "Mercado Pago",
-              "url": "https://www.mercadopago.com.mx/blog/asistente-personal-de-mercado-pago",
-              "date": "2026",
-              "type": "company"
+              "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
+              "publisher": "Descubre",
+              "url": "https://www.descubre.vc/noticia/mercado-pago-lanza-mago-su-nuevo-asistente-de-ia-financiera-2026-09-28",
+              "date": "2026-09-28",
+              "type": "news"
             },
             {
               "title": "Mercado Pago activa Mago: cómo funciona su IA por texto y voz",
@@ -472,59 +497,81 @@
               "date": "2026-10-01",
               "type": "news"
             }
-          ]
+          ],
+          "confidence": "low"
         },
         "CL": {
           "status": "live",
-          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and prepares payments and transfers that the user confirms.",
+          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Only the press covers the Chile launch.",
           "evidence": [
             {
-              "title": "Mercado Pago lanzó Mago, su asistente con IA para gestionar finanzas y negocios",
+              "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
+              "publisher": "G5 Noticias",
+              "url": "https://g5noticias.cl/2026/09/11/mago-llega-a-chile-el-asistente-personal-de-mercado-pago-que-simplifica-el-dia-a-dia-de-personas-y-negocios/",
+              "date": "2026-09-11",
+              "type": "news"
+            },
+            {
+              "title": "Mercado Pago lanzó un asistente con IA para gestionar finanzas y negocios",
               "publisher": "Chócale",
               "url": "https://chocale.cl/2026/09/mercado-pago-lanzo-mago-su-asistente-con-ia-para-gestionar-finanzas-y-negocios/",
-              "date": "2026-09",
-              "type": "news"
-            }
-          ]
-        },
-        "CO": {
-          "status": "limited",
-          "note": "Tpaga's WhatsApp AI agent pays bills and sends money for users, and its rollout scope is not stated. In October 2026 we found no Tpaga page about the agent, no agent that pays for users at Nequi or Daviplata, and no sign that Mercado Pago's Mago has launched in Colombia. Mago's Mercado Pago markets are Argentina, Brazil, Chile and Mexico, not Colombia.",
-          "evidence": [
-            {
-              "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
-              "publisher": "Descubre.vc",
-              "url": "https://www.descubre.vc/noticia/tpaga-lanza-primer-agente-de-ia-en-colombia-para-pagos-por-whatsapp-2026-07-08",
-              "date": "2026-07-08",
+              "date": "2026-09-16",
               "type": "news"
             }
           ],
-          "confidence": "low",
-          "gapReason": "not-launched"
+          "confidence": "low"
+        },
+        "CO": {
+          "status": "limited",
+          "note": "Tpaga's WhatsApp AI agent, launched in July 2026, pays bills and sends money for users. It stays limited because only the press covers it and Tpaga has not said how many users can use it. Mercado Pago's Mago is not offered in Colombia.",
+          "evidence": [
+            {
+              "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
+              "publisher": "Descubre",
+              "url": "https://www.descubre.vc/noticia/tpaga-lanza-primer-agente-de-ia-en-colombia-para-pagos-por-whatsapp-2026-07-08",
+              "date": "2026-07-08",
+              "type": "news"
+            },
+            {
+              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
+              "publisher": "La República",
+              "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
+              "date": "2026-07-08",
+              "type": "news"
+            },
+            {
+              "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
+              "publisher": "Descubre",
+              "url": "https://www.descubre.vc/noticia/mercado-pago-lanza-mago-su-nuevo-asistente-de-ia-financiera-2026-09-28",
+              "date": "2026-09-28",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         },
         "IN": {
           "status": "limited",
-          "note": "Razorpay's Agentic Payments for ChatGPT is a private beta, Amazon Pay's agentic Smart Wallet launched at GFF 2026, and Pine Labs showed an agentic commerce stack; no Paytm or PhonePe agent payments found.",
+          "note": "Razorpay's Agentic Payments for ChatGPT is a private beta. MediaNama reports that Amazon Pay launched a Smart Wallet for agentic UPI payments at GFF 2026, with no details from Amazon Pay, and Pine Labs launched an agentic commerce stack with L&T Finance without saying who can use it. No Paytm or PhonePe agent payments found.",
           "evidence": [
             {
               "title": "Razorpay, NPCI, and OpenAI Come Together to Launch Agentic Payments, Ushering in AI-Driven Commerce at National Scale",
-              "publisher": "Razorpay",
+              "publisher": "Razorpay Newsroom",
               "url": "https://razorpay.com/newsroom/razorpay-npci-and-openai-come-together-to-launch-agentic-payments-ushering-in-ai-driven-commerce-at-national-scale/",
-              "date": "2025-10",
+              "date": "2025-10-09",
               "type": "company"
             },
             {
-              "title": "NPCI Says AI Shouldn't Approve UPI Payments at GFF 2026",
+              "title": "AI agents can read intent, not approve payments: NPCI chairman at GFF 2026",
               "publisher": "MediaNama",
               "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
               "date": "2026-09-10",
               "type": "news"
             },
             {
-              "title": "GFF 2026: Agentic AI Leads India's Fintech Launches",
+              "title": "GFF 2026: Agentic AI Powers India's Fintech Launches",
               "publisher": "StartupFeed",
               "url": "https://startupfeed.in/gff-2026-agentic-ai-fintech-product-launches/",
-              "date": "2026-09",
+              "date": "2026-09-10",
               "type": "news"
             }
           ],
@@ -609,7 +656,7 @@
       "url": "https://docs.stripe.com/agentic-commerce",
       "homepage": "https://stripe.com/",
       "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
-      "role": "Shared payment tokens and Link Agent Wallet let agents pay sellers with a customer's saved payment method.",
+      "role": "Shared payment tokens (which can carry Visa, Mastercard and Amex agent tokens) and Link Agent Wallet let agents pay sellers with a customer's saved payment method.",
       "markets": [
         "US",
         "GB",
@@ -618,7 +665,12 @@
       "capabilities": [
         "payments.wallet-agent",
         "payments.card-agent-token"
-      ]
+      ],
+      "marketsByCapability": {
+        "payments.card-agent-token": [
+          "US"
+        ]
+      }
     },
     {
       "name": "PayPal",
@@ -729,7 +781,7 @@
       "url": "https://razorpay.com/newsroom/razorpay-npci-and-openai-come-together-to-launch-agentic-payments-ushering-in-ai-driven-commerce-at-national-scale/",
       "homepage": "https://razorpay.com/",
       "icon": null,
-      "role": "Runs the Agentic Payments beta that lets ChatGPT pay merchants over UPI, and processed Mastercard's Indian agent pilot.",
+      "role": "Runs the Agentic Payments beta that lets ChatGPT pay merchants over UPI, and was one of the payment aggregators in Mastercard's Indian agent demo.",
       "markets": [
         "IN"
       ],
@@ -745,7 +797,7 @@
       "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
       "homepage": "https://www.amazonpay.in/",
       "icon": "https://www.amazon.in/favicon.ico",
-      "role": "Launched a consent-based Smart Wallet for agentic UPI payments.",
+      "role": "Reported by MediaNama to have launched a consent-based Smart Wallet for agentic UPI payments at GFF 2026; Amazon Pay has published no details.",
       "markets": [
         "IN"
       ],
