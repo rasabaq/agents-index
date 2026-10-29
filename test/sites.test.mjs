@@ -4,7 +4,7 @@ import { validate } from '../src/observatory.js';
 import { iconCandidates } from '../scripts/refresh-sites.mjs';
 
 const company = (over) => ({ name: 'Co', role: 'r', url: 'https://example.com/news', homepage: 'https://co.example/', icon: null, markets: [], capabilities: [], ...over });
-const check = (co) => validate({ countries: [], categories: [{ id: 'a' }] }, [{ category: 'a', capabilities: [{ id: 'a.x', name: 'x', question: 'q?', countries: {} }], companies: [co] }]).join('\n');
+const check = (co) => validate({ countries: [], categories: [{ id: 'a', short: 'A', can: 'do a' }] }, [{ category: 'a', capabilities: [{ id: 'a.x', name: 'x', question: 'q?', countries: {} }], companies: [co] }]).join('\n');
 
 test('validate checks company homepages and icons', () => {
   assert.equal(check(company()), '');

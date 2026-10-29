@@ -1,5 +1,6 @@
 // Agent Atlas shell: loads the data once, builds a shared context, and renders every registered view.
 // A view is a classic script that pushes { id, title, blurb, render(el, ctx) } onto window.ATLAS_VIEWS.
+// blurb may be a function of ctx, so it can count what is in the data.
 import { STATUSES, scoreCountries } from '../src/observatory.js';
 
 const ORDER = ['map', 'periodic', 'radar', 'bump', 'range', 'compare', 'gap', 'flows', 'network', 'timeline'];
@@ -92,7 +93,7 @@ function render(ctx) {
       <section class="view wrap" id="v-${v.id}" aria-labelledby="v-${v.id}-h">
         <div class="view-win">
           <div class="view-bar" aria-hidden="true"><span class="view-app"><i></i>${num(i)} / ${String(views.length).padStart(2, '0')}</span><span class="view-path">atlas/<b>${slug(v.title)}</b></span><span class="view-fill"></span></div>
-          <div class="view-head"><h2 id="v-${v.id}-h">${esc(v.title)}</h2><p>${esc(v.blurb)}</p></div>
+          <div class="view-head"><h2 id="v-${v.id}-h">${esc(v.title)}</h2><p>${esc(typeof v.blurb === 'function' ? v.blurb(ctx) : v.blurb)}</p></div>
           <div class="view-frame" data-view="${v.id}"></div>
         </div>
       </section>`);

@@ -26,7 +26,7 @@ test('repos rank by tier, then installs', () => {
 });
 
 test('validate catches bad repo entries', () => {
-  const meta = { countries: [], categories: [{ id: 'a' }] };
+  const meta = { countries: [], categories: [{ id: 'a', short: 'A', can: 'do a' }] };
   const cats = [{ category: 'a', capabilities: [{ id: 'a.x', name: 'x', question: 'q?', countries: {} }], repos: [
     { repo: 'not-a-repo', name: 'n', role: 'r', capabilities: ['a.nope'], packages: [{ registry: 'cargo', name: 'x' }] },
     { repo: 'o/r', name: 'n', role: 'r', capabilities: ['a.x'], usage: u() },

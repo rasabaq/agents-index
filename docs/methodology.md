@@ -4,7 +4,7 @@ Most AI indexes measure inputs, such as compute, talent, papers or strategy docu
 
 ## Unit of measure: a capability
 
-A capability is one concrete action, phrased as a yes-or-no question. For example: "Can an AI agent buy from a merchant without leaving the chat?" Every capability belongs to one of seven categories:
+A capability is one concrete action, phrased as a yes-or-no question. For example: "Can an AI agent buy from a merchant without leaving the chat?" Every capability belongs to one category. The categories are listed in `data/meta.json`, so their number can grow (see CONTRIBUTING.md, "Add a category"). Today they are:
 
 | Category | What it covers |
 | --- | --- |

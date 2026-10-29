@@ -3,7 +3,7 @@
 :root {
   /* categorical slots in fixed order, tuned for the dark page; category i uses --c{i+1}.
      The first two are the brand colors; the rest stay apart in hue so adjacent categories never blur together. */
-  --c1: var(--magenta); --c2: var(--sunrise); --c3: #5bc0eb; --c4: #a78bfa; --c5: #6ee7b7; --c6: #e8e26b; --c7: #ff6b4a; --c8: var(--ink-2);
+  --c1: var(--magenta); --c2: var(--sunrise); --c3: #5bc0eb; --c4: #a78bfa; --c5: #6ee7b7; --c6: #e8e26b; --c7: #ff6b4a; --c8: #2dd4bf; --c9: #93a5ff; --c10: #d4a373; --c11: #f0abfc; --c12: #84cc16; --c13: var(--ink-2);
   --grid: var(--line);
   --sun-tint: rgba(255, 182, 114, 0.1);
   --sun-glow: drop-shadow(0 0 5px rgba(255, 170, 90, 0.55));

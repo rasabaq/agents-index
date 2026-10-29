@@ -34,6 +34,20 @@ The rules:
 
 If you cannot edit the file, open a [data correction issue](https://github.com/rasabaq/ai-agent-observatory/issues/new?template=data-correction.yml) with the source, and we will make the change.
 
+## Add a category
+
+No code change is needed. Add an entry to `categories` in `data/meta.json`, then add `data/<id>.json`. Every category needs all five fields:
+
+| Field | What it is | Example |
+| --- | --- | --- |
+| `id` | The file name and the prefix of its capability ids | `"health"` |
+| `name` | The full name, shown in headings | `"Health & care"` |
+| `blurb` | One line on what it covers | `"Agents that book care and handle health admin."` |
+| `short` | One or two words, for labels such as the matrix rows and the radar on phones | `"Health"` |
+| `can` | The words that complete "AI agents can …" in the country verdict | `"book care for you"` |
+
+`npm run validate` fails when `short` or `can` is missing. In the Atlas, each capability's periodic-table symbol comes from its id ("health.book-doctor" → "Bd"), and the category takes the next colour.
+
 ## Pull requests
 
 - One change per pull request: one data fix, or one feature.

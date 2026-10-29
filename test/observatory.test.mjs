@@ -1,6 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreCountries, validate, summarize, mergeCompanies } from '../src/observatory.js';
+import { scoreCountries, validate, summarize, mergeCompanies, useCategoryWords, shortName } from '../src/observatory.js';
+import { readFileSync } from 'node:fs';
+// Sentences use the category words from data/meta.json, as the site does.
+useCategoryWords(JSON.parse(readFileSync(new URL('../data/meta.json', import.meta.url), 'utf8')).categories);
 
 test('summary line names the best and the weakest category', () => {
   assert.equal(summarize('Chile', { commerce: 17, payments: 67, services: 33, autonomy: 67 }), 'In Chile, an agent can pay. It cannot shop for you yet.');
@@ -25,7 +28,7 @@ const meta = {
     { code: 'BB', name: 'Beta' },
     { code: 'CC', name: 'Gamma' },
   ],
-  categories: [{ id: 'shop' }, { id: 'pay' }],
+  categories: [{ id: 'shop', short: 'Shop', can: 'shop' }, { id: 'pay', short: 'Pay', can: 'pay' }],
 };
 const cell = (status) => ({ status, note: 'n', evidence: status === 'none' ? [] : ev });
 const cap = (id, statuses) => ({
@@ -69,4 +72,14 @@ test('validate catches the mistakes that break trust', () => {
   assert.match(errors, /shop\.b\/CC: confidence can only be "low"/);
   assert.match(errors, /bad url/);
   assert.match(errors, /unknown market "ZZ"/);
+});
+
+test('every category needs short and can in meta.json, even the first seven', () => {
+  const v = (cat) => validate({ countries: [], categories: [cat] }, [{ category: cat.id, capabilities: [{ id: `${cat.id}.a`, name: 'a', question: 'q?', countries: {} }] }]).join('\n');
+  assert.match(v({ id: 'commerce' }), /needs "short" and "can"/);
+  assert.match(v({ id: 'health', short: 'Health', can: ' ' }), /needs "short" and "can"/);
+  assert.match(v({ id: 'health' }), /needs "short" and "can"/);
+  assert.equal(v({ id: 'care', short: 'Care', can: 'book a doctor for you' }), '');
+  useCategoryWords([{ id: 'care', short: 'Care', can: 'book a doctor for you' }]);
+  assert.equal(shortName('care'), 'Care');
 });
