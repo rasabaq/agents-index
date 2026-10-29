@@ -44,7 +44,7 @@ Every company has a `url` (the source for what it does) and a `homepage` (its ow
 
 ## Contribute
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). To report a wrong status, open a [data correction](https://github.com/rasabaq/ai-agent-observatory/issues/new?template=data-correction.yml), or use "Suggest a correction" on any cell of the site.
+See [CONTRIBUTING.md](CONTRIBUTING.md). To report a wrong status, open a [data correction](https://github.com/rasabaq/agents-index/issues/new?template=data-correction.yml), or use "Suggest a correction" on any cell of the site.
 
 ## License
 

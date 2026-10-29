@@ -106,7 +106,7 @@ Add `.github/workflows/ci.yml`. On every pull request and on pushes to main, run
 
 ### 8. "Suggest a correction" link
 
-In `app.js` `openDetail()`, add a link under the sources. It opens `https://github.com/rasabaq/ai-agent-observatory/issues/new`, with `title` and `body` prefilled with the capability id, the country, the current status and an empty "Correct status and source:" line, all URL-encoded. Style it to match `.sources` in `styles.css`. Check it at 1440px and 400px in light and dark mode, with no console errors. Open a small PR.
+In `app.js` `openDetail()`, add a link under the sources. It opens `https://github.com/rasabaq/agents-index/issues/new`, with `title` and `body` prefilled with the capability id, the country, the current status and an empty "Correct status and source:" line, all URL-encoded. Style it to match `.sources` in `styles.css`. Check it at 1440px and 400px in light and dark mode, with no console errors. Open a small PR.
 
 ## Aggregate and report
 
