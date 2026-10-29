@@ -39,6 +39,7 @@ Preconditions:
 - **Periodic detail.** Run `node $H click '#v-periodic .pt-tile[data-cap="commerce.in-chat-checkout"]'`. Then `node $H eval "document.querySelector('#v-periodic .pt-panel h3')?.innerText"` names the capability, and the tile has `aria-pressed="true"`. Close it with `node $H click '#v-periodic .pt-close'`; the panel shows the hint "Click a tile…" again.
 - **Tab strip.** Run `node $H eval "(() => { const n = document.querySelector('[data-atlas-nav]'); return { overflow: n.scrollWidth > n.clientWidth, cls: n.className }; })()"`. When the tabs overflow, `cls` includes `more`, and the right edge fades in the shot. Scroll the strip (`node $H eval "document.querySelector('[data-atlas-nav]').scrollTo({ left: 80 })"`) and `cls` also includes `more-l`.
 - **Back to top.** After the Tab step, run `node $H eval "scrollTo(0, 0)"`, wait a moment, then `node $H eval "[document.querySelector('[data-atlas-nav] [aria-current]'), document.querySelector('[data-atlas-nav]').scrollLeft]"`. It prints `[null, 0]`.
+- **Network filters at 400.** The category chips under Company network scroll sideways and fade their cut-off edge the same way as the tab strip: `node $H eval "document.querySelector('.v-network-chips').className"` includes `fade-x more` at 400px, and no `more` at 1440px, where they wrap.
 - **Phone.** Run `node $H open /atlas/ --width 400`, then `node $H shot atlas-400-top` and `node $H shot atlas-400-network --at '#v-network'`. Check that `scrollWidth` is 400.
 - **Proof.** Finish with `node $H errors` (exit 0).
 

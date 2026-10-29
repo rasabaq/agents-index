@@ -87,6 +87,7 @@
   .tile-id b { font-size: 32px; }
   .tile-flag { font-size: 24px; }
   .tile-v { font-size: 18px; }
-  .tile-n { grid-column: 1 / -1; font-size: 11.5px; overflow: hidden; text-overflow: ellipsis; }
+  /* line-height above 1 keeps descenders (the y in Germany) inside the clipped box */
+  .tile-n { grid-column: 1 / -1; font-size: 11.5px; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; }
   .band { margin-top: 72px; padding: 56px 16px 52px; }
 }

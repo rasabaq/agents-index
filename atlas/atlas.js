@@ -42,7 +42,7 @@ function buildContext({ meta, categories }) {
   return {
     meta, categories, ranking, byCode, catIndex, capabilities,
     companies: [...map.values()],
-    STATUSES, scoreCountries, esc, emoji,
+    STATUSES, scoreCountries, esc, emoji, edgeFade,
     // A flag for HTML: emoji font, hidden from screen readers (the code or name next to it is the text).
     flag: (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`,
     catName: (id) => catIndex[id].name,
@@ -62,6 +62,19 @@ function buildContext({ meta, categories }) {
   };
 }
 
+// A strip that scrolls sideways fades whichever edge hides more of it (CSS .fade-x, in atlas.css).
+function edgeFade(el) {
+  el.classList.add('fade-x');
+  const more = () => {
+    el.classList.toggle('more', el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+    el.classList.toggle('more-l', el.scrollLeft > 1);
+  };
+  el.addEventListener('scroll', more, { passive: true });
+  addEventListener('resize', more);
+  document.fonts?.ready.then(more);
+  more();
+}
+
 const num = (i) => String(i + 1).padStart(2, '0');
 const slug = (title) => title.toLowerCase().replace(/\W+/g, '-');
 
@@ -72,15 +85,7 @@ function render(ctx) {
   const views = (window.ATLAS_VIEWS ?? []).slice().sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
   const nav = $('[data-atlas-nav]');
   nav.innerHTML = views.map((v, i) => `<a href="#v-${v.id}"><span>${num(i)}</span>${esc(v.title)}</a>`).join('');
-  // When more tabs hide past an edge, fade that edge so the strip reads as scrollable.
-  const more = () => {
-    nav.classList.toggle('more', nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1);
-    nav.classList.toggle('more-l', nav.scrollLeft > 1);
-  };
-  nav.addEventListener('scroll', more, { passive: true });
-  addEventListener('resize', more);
-  document.fonts?.ready.then(more);
-  more();
+  edgeFade(nav);
   const host = $('[data-atlas-views]');
   views.forEach((v, i) => {
     host.insertAdjacentHTML('beforeend', `
