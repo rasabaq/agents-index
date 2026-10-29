@@ -1,6 +1,6 @@
-# AI Agent Observatory verification map
+# Agent Index verification map
 
-This folder is the maintained source for verifying what visitors see and do on the observatory site. Read this index before you drive the site, then use the matching feature file as the recipe.
+This folder is the maintained source for verifying what visitors see and do on the Agent Index site. Read this index before you drive the site, then use the matching feature file as the recipe.
 
 ## Baseline preconditions
 
