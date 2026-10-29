@@ -223,19 +223,36 @@ function renderMatrix() {
   $('[data-mx-count]').textContent = `${Object.keys(capIndex).length} capabilities`;
 }
 
-// The six newest sources across all cells. A source shared by several cells shows once per cell.
+// The six newest sources across all cells, one row each. A source that backs several cells lists their countries
+// together, and opens its first cell. The same link with or without "www." counts as one source.
 function renderFeed() {
-  const items = cells.flatMap((x) => (x.cell.evidence ?? []).filter((e) => e.date).map((e) => ({ ...x, e })))
-    .sort((a, b) => b.e.date.localeCompare(a.e.date))
-    .slice(0, 6);
-  $('[data-feed-count]').textContent = `${items.length} entries`;
-  $('[data-feed]').innerHTML = items.map(({ cap, code, cell, e }) => `
-    <li><button type="button" data-cap="${esc(cap.id)}" data-code="${code}" aria-label="${esc(`${e.date}, ${cellLabel(cap, code, cell)}, via ${e.publisher ?? e.type}`)}">
-      <time datetime="${e.date}">${e.date.length === 10 ? e.date.slice(5) : e.date}</time>
-      <span class="fd-c">${flag(code)}${code}</span>
-      <span class="fd-t">${esc(cap.name)}<small>via ${esc(e.publisher ?? e.type)}</small></span>
-      ${chip(cell.status)}
-    </button></li>`).join('');
+  const bySource = new Map();
+  for (const x of cells) {
+    for (const e of x.cell.evidence ?? []) {
+      if (!e.date) continue;
+      const key = e.url.replace(/^https?:\/\/(www\.)?/, '');
+      if (!bySource.has(key)) bySource.set(key, { e, list: [] });
+      bySource.get(key).list.push(x);
+    }
+  }
+  const items = [...bySource.values()].sort((a, b) => b.e.date.localeCompare(a.e.date)).slice(0, 6);
+  $('[data-feed-count]').textContent = `${items.length} sources`;
+  $('[data-feed]').innerHTML = items.map(({ e, list }) => {
+    const { cap, code } = list[0];
+    const codes = [...new Set(list.map((x) => x.code))];
+    const caps = new Set(list.map((x) => x.cap.id)).size;
+    const statuses = new Set(list.map((x) => x.cell.status));
+    // "Oct 28" over "2026"; a source dated by month only (YYYY-MM) reads "Oct" over "2026".
+    const date = e.date.length === 10 ? fmtDate(e.date) : fmtMonth(`${e.date}-01`);
+    const [day, year] = date.split(/,? (?=\d{4}$)/);
+    const more = caps > 1 ? `+${caps - 1} more ${caps === 2 ? 'capability' : 'capabilities'}` : '';
+    return `
+    <li><button type="button" data-cap="${esc(cap.id)}" data-code="${code}" aria-label="${esc(`${date}: ${cap.name}${more && `, ${more}`}, in ${codes.map((c) => byCode[c].name).join(', ')}, via ${e.publisher ?? e.type}`)}">
+      <time datetime="${e.date}">${day}<span>${year}</span></time>
+      <span class="fd-t">${esc(cap.name)}<small>via ${esc(e.publisher ?? e.type)}${more && ` · ${more}`}</small><span class="fd-c">${codes.length > 1 ? codes.map(flag).join('') : `${flag(code)}${code}`}</span></span>
+      ${statuses.size === 1 ? chip(list[0].cell.status) : ''}
+    </button></li>`;
+  }).join('');
 }
 
 function correctionUrl(cap, code, cell) {

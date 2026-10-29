@@ -60,6 +60,10 @@
 .hero-key .k-on { background: var(--tier-s); }
 .hero-key .k-part { background: conic-gradient(var(--tier-s) 25%, transparent 0 50%, var(--tier-s) 0 75%, transparent 0) 0 0/5px 5px; outline: 1px solid color-mix(in srgb, var(--tier-s) 30%, transparent); outline-offset: -1px; }
 .hero-key .k-off { background: color-mix(in srgb, var(--s-announced) 62%, #000); }
+/* the caption names the selected country (its pin is lit in sunrise too); the key sits beside it */
+.hero-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: auto; }
+.hero-key .flag { width: auto; margin: 0 2px 0 4px; font-size: 14px; }
+.hero-key strong { font-weight: 500; color: var(--sunrise); }
 @media (prefers-reduced-motion: reduce) {
   .hero-icons :is(rect, b) { transition: none; }
 }
@@ -89,6 +93,7 @@
 @container (max-width: 1200px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
   .hero-key { align-self: flex-start; }
+  .hero-foot { justify-content: flex-start; }
 }
 @container (max-width: 1100px) {
   .hero h1 { font-size: clamp(34px, 7.6cqw, 66px); }

@@ -13,7 +13,7 @@ function renderBand(meta, categories) {
   const sources = new Set(cells.flatMap((c) => (c.evidence ?? []).map((e) => e.url))).size;
   const cos = categories.flatMap((c) => c.companies ?? []);
   const figs = [
-    [cells.length, 'Cells', `${caps.length} capabilities × ${meta.countries.length} countries.<br>${cells.filter((c) => c.confidence).length} rest on thin evidence.`],
+    [cells.length, 'Cells', `${caps.length} capabilities × ${meta.countries.length} countries.<br>${cells.filter((c) => c.confidence).length} rest on thin sources.`],
     [sources, 'Sources', 'Unique links behind the statuses.<br>Open any cell to read them.'],
     [new Set(cos.map((c) => c.name.toLowerCase())).size, 'Companies', `Who makes each capability work,<br>based in ${new Set(cos.map((c) => c.hq)).size} countries.`],
   ];
@@ -33,7 +33,8 @@ const GLYPH = {
 };
 const CELL = 4; // CSS px per canvas pixel; every dot is a whole number of cells
 const K = CELL / 560; // field scale
-const RAMP = [[5, 6, 11], [58, 10, 36], [163, 21, 90], [255, 46, 136], [255, 182, 114]]; // space, plum, berry, magenta, sunrise
+// Magenta to sunrise. Every step stays at least 5:1 against the unlit dots, so each digit reads whole.
+const RAMP = [[255, 46, 136], [255, 80, 131], [255, 114, 125], [255, 148, 120], [255, 182, 114]];
 const OFF = [20, 16, 26]; // unlit dots
 const T0 = 12; // the still frame (reduced motion, no WebGL) is this moment
 const FS = `
