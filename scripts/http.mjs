@@ -3,6 +3,7 @@ export async function get(url, headers = {}) {
   for (let i = 0; ; i++) {
     const res = await fetch(url, { headers: { 'user-agent': 'ai-agent-observatory', ...headers }, signal: AbortSignal.timeout(30000) });
     if ((res.status === 429 || res.status >= 500) && i < 4) {
+      await res.body?.cancel();
       await new Promise((r) => setTimeout(r, 2000 * 2 ** i));
       continue;
     }
