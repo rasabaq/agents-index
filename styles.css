@@ -136,11 +136,15 @@ select, option { color-scheme: dark; }
 .chip { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 22px; padding: 0 10px; border-radius: 999px; font: 500 11.5px/1 var(--font); white-space: nowrap; }
 .chip.s-none { background: transparent; padding-left: 4px; }
 .chip.s-none::before { content: ''; flex: none; width: 9px; height: 2px; border-radius: 2px; background: currentColor; opacity: 0.8; }
-/* low confidence: a dashed ring around the mark. Inside a mark the ring replaces the ? (screen readers get the label);
-   on its own, .low draws a small dashed capsule for legends. */
-.chip:has(.low), .chip.q { outline: 1px dashed rgba(244, 241, 238, 0.6); outline-offset: 2px; }
+/* low confidence: a chip ends with a "?", the same mark as the matrix (screen readers get the label).
+   On its own, .low shows that "?" for legends. */
+.chip:has(.low), .chip.q { outline: 0; }
+.chip:has(.low)::after, .chip.q::after { content: '?'; margin-left: -2px; font: 600 11px/1 var(--mono); color: var(--sunrise); }
+/* on the light Live chip, sunrise would vanish (1.5:1), so the ? is dark there */
+.chip.s-live:is(.q, :has(.low))::after { color: var(--page); }
 .chip .low { display: none; }
-.low { display: inline-block; width: 18px; height: 10px; margin: 0 6px 0 0; border: 1px dashed var(--ink-2); border-radius: 999px; color: transparent; font-size: 0; vertical-align: middle; }
+.low { display: inline-block; margin: 0 6px 0 0; font: 600 11px/1 var(--mono); color: var(--sunrise); vertical-align: middle; }
+.low:empty::before { content: '?'; } /* legends that leave the span empty still show the mark */
 .low-note { display: block; margin-top: 12px; font-size: 13px; color: var(--muted); }
 
 /* tooltip */
