@@ -1,13 +1,10 @@
 import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
+import { data } from './src/load.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 const fmtMonth = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
-  if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
-  return r.json();
-});
 
 const state = { view: 'people', market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false };
 // Long tables show this many rows until Show all is pressed.
@@ -47,6 +44,12 @@ function init() {
   wire();
   wireTooltip();
   wireLogos();
+  // A shared link (#country=MX) opens on that country's view. The address bar shows the country we show (cl → CL, xx → US).
+  // A reload or Back keeps the browser's own scroll position.
+  if (location.hash.includes('country=')) {
+    history.replaceState(null, '', writeHash(state.country, state.view));
+    if (performance.getEntriesByType('navigation')[0]?.type === 'navigate') $('#country').scrollIntoView({ behavior: 'instant' });
+  }
 }
 
 const hashCountry = () => {
@@ -88,7 +91,7 @@ function renderBusiness(r) {
     // company line: it could name companies that do not offer this capability here.
     const links = cos.map((co) => `<a href="${esc(co.homepage ?? co.url)}" target="_blank" rel="noopener noreferrer">${esc(co.name)}</a>`).join(', ');
     return `<li>
-      <button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(label)}<small>${reason ? `${esc(reason)}.` : bizStatus[cell.status]}</small></span></button>
+      <button type="button" data-cap="${esc(cap.id)}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(label)}<small>${reason ? `${esc(reason)}.` : bizStatus[cell.status]}</small></span></button>
       ${cos.length && cell.status !== 'none' ? `<p class="biz-cos">${cell.status === 'live' ? 'Sign up with' : 'Active here'}: ${links}</p>` : ''}</li>`;
   };
   return forBusiness(categories, r.code).map((g) => `
@@ -107,7 +110,7 @@ function mainReason(mine, catIds) {
 // A small logo before a company or repo name. The name sits right next to it, so the image has empty alt text.
 // No logo, or one that fails to load, becomes a monogram (see wireLogos).
 const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
-const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-name="${esc(name)}">` : monogram(name));
+const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-name="${esc(name)}">` : monogram(name));
 
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}, tier ${tierOf(r.score)}"`;
 
@@ -162,7 +165,7 @@ function renderCountry() {
     </div>
     <div class="cn-r">
       <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>
-      <button type="button" class="btn btn-sm" data-compare="${r.code} ${other.code}">Compare with ${flag(other.code)}${other.code}</button>
+      <button type="button" class="btn btn-sm" data-compare="${r.code} ${other.code}">Compare with ${flag(other.code)}${other.code}<span class="sr-only">, ${esc(other.name)}</span></button>
       <button type="button" class="btn btn-sm" data-sources>${nSources} sources</button>
     </div>`;
 
@@ -172,7 +175,7 @@ function renderCountry() {
   const bar = (label, v, on) => `<li${on ? ' class="on"' : ''}><span>${label}</span><span class="bars"><b style="width:${v}%"></b></span><span class="rk-v">${v}</span></li>`;
   const works = mine.filter((x) => x.cell.status === 'live');
   const notYet = mine.filter((x) => x.cell.status !== 'live').sort((a, b) => STATUSES[b.cell.status].points - STATUSES[a.cell.status].points);
-  const item = ({ cap, cell }, extra = '') => `<li><button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
+  const item = ({ cap, cell }, extra = '') => `<li><button type="button" data-cap="${esc(cap.id)}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
     ${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(cap.name)}${extra}</span></button></li>`;
   const why = ({ cap, cell }) => {
     const reason = gapLabel(cell.gapReason);
@@ -188,7 +191,7 @@ function renderCountry() {
       <p class="label">Score</p>
       <p class="kpi-v">${r.score}<small>/ 100 · rank ${r.rank} of ${ranking.length}${ties.length ? ', tied' : ''}</small></p>
       <ul class="mc-bars">${bar(`${flag(r.code)}${r.code}`, r.score, true)}${best.code === r.code ? '' : bar(`Best: ${flag(best.code)}${best.code}`, best.score)}${bar(`Average of ${ranking.length}`, avg)}</ul>
-      <p class="mc-note">The share of agent abilities that work today. Data as of ${fmtDate(meta.asOf)}. ${low ? `A ? marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
+      <p class="mc-note">The average of the ${meta.categories.length} category scores. Live counts 1, Limited ½, Announced ¼. Data as of ${fmtDate(meta.asOf)}. ${low ? `A ? marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
     </div>
     <section class="card kpi mc-list" aria-labelledby="mc-works"><h3 id="mc-works" class="label">Works today · ${works.length} of ${total}</h3>
       ${works.length ? `<ul>${works.map((x) => item(x)).join('')}</ul>` : '<p class="mc-note">Nothing is generally available yet.</p>'}</section>
@@ -203,7 +206,7 @@ function renderCountryRest(r) {
   const { weak } = extremes(r.byCategory);
   $('[data-cats-title]').innerHTML = `${flag(r.code)}${esc(r.name)} by category`;
   $('[data-cats]').innerHTML = meta.categories.map((c) => `
-    <li title="${esc(c.blurb)}"><span class="cat-n">${esc(c.name)}</span><span class="bars"><b style="width:${r.byCategory[c.id]}%"></b></span><span class="rk-v">${r.byCategory[c.id]}</span></li>`).join('');
+    <li><span class="cat-n">${esc(c.name)}</span><span class="bars"><b style="width:${r.byCategory[c.id]}%"></b></span><span class="rk-v">${r.byCategory[c.id]}</span><small>${esc(c.blurb)}</small></li>`).join('');
   $('[data-cats-note]').textContent = r.byCategory[weak] < 50
     ? `${shortName(weak)} is the gap: ${r.byCategory[weak]} of 100.`
     : `No gap below 50. The lowest is ${shortName(weak).toLowerCase()}, at ${r.byCategory[weak]}.`;
@@ -215,30 +218,72 @@ function renderCountryRest(r) {
 }
 
 // All capabilities in rows, grouped by category; one column per country, the selected one in sunrise.
+// The matrix is one tab stop (a grid with a roving tabindex): arrows, Home and End move between cells,
+// Enter or Space opens one. mxAt is the cell that holds the tab stop; until one is used, the selected country's first.
+let mxAt;
 function renderMatrix() {
+  const mx = $('[data-matrix]');
+  const had = mx.contains(document.activeElement);
+  const at = mxAt ?? { cap: categories[0].capabilities[0].id, code: state.country };
   const cols = meta.countries.map((c) => c.code);
   const sel = (code) => (code === state.country ? ' class="sel"' : '');
   const head = `<div class="mx-row mx-head" role="row"><span role="columnheader">Capability</span>${cols.map((c) => `<span role="columnheader"${sel(c)}>${flag(c)}${c}</span>`).join('')}</div>`;
-  $('[data-matrix]').innerHTML = head + categories.map((cat) => `
-    <div class="mx-row mx-cat" role="row"><span role="rowheader" title="${esc(catName(cat.category))}">${esc(shortName(cat.category))}</span>${cols.map((c) => `<span role="cell"${sel(c)}></span>`).join('')}</div>
+  mx.innerHTML = head + categories.map((cat) => `
+    <div class="mx-row mx-cat" role="row"><span role="rowheader">${esc(catName(cat.category))}</span>${cols.map((c) => `<span role="gridcell"${sel(c)}></span>`).join('')}</div>
     ${cat.capabilities.map((cap) => `
-      <div class="mx-row" role="row"><span class="mx-cap" role="rowheader">${esc(cap.name)}</span>${cols.map((c) => `<span role="cell"${sel(c)}><button type="button" data-cap="${cap.id}" data-code="${c}" aria-label="${esc(cellLabel(cap, c, cap.countries[c]))}">${dot(cap.countries[c])}</button></span>`).join('')}</div>`).join('')}`).join('');
+      <div class="mx-row" role="row"><span class="mx-cap" role="rowheader">${esc(cap.name)}</span>${cols.map((c) => `<span role="gridcell"${sel(c)}><button type="button" tabindex="${cap.id === at.cap && c === at.code ? 0 : -1}" data-cap="${esc(cap.id)}" data-code="${c}" aria-label="${esc(cellLabel(cap, c, cap.countries[c]))}">${dot(cap.countries[c])}</button></span>`).join('')}</div>`).join('')}`).join('');
+  if (had) mx.querySelector('[tabindex="0"]').focus({ preventScroll: true });
   $('[data-mx-count]').textContent = `${Object.keys(capIndex).length} capabilities`;
+  const rove = (b) => {
+    mx.querySelector('[tabindex="0"]').tabIndex = -1;
+    b.tabIndex = 0;
+    mxAt = { cap: b.dataset.cap, code: b.dataset.code };
+  };
+  mx.onclick = (e) => e.target.closest('[data-cap]') && rove(e.target.closest('[data-cap]'));
+  mx.onkeydown = (e) => {
+    const b = e.target.closest('[data-cap]');
+    if (!b) return;
+    const rows = [...mx.querySelectorAll('[role="row"]')].map((r) => [...r.querySelectorAll('[data-cap]')]).filter((r) => r.length);
+    const y = rows.findIndex((r) => r.includes(b)), x = rows[y].indexOf(b), w = rows[y].length - 1, last = rows.length - 1;
+    const to = { ArrowLeft: [x - 1, y], ArrowRight: [x + 1, y], ArrowUp: [x, y - 1], ArrowDown: [x, y + 1], Home: [0, e.ctrlKey ? 0 : y], End: [w, e.ctrlKey ? last : y] }[e.key];
+    if (!to) return;
+    e.preventDefault();
+    const next = rows[Math.min(Math.max(to[1], 0), last)][Math.min(Math.max(to[0], 0), w)];
+    rove(next);
+    next.focus();
+  };
 }
 
-// The six newest sources across all cells. A source shared by several cells shows once per cell.
+// The six newest sources across all cells, one row each. A source that backs several cells lists their countries
+// together, and opens its first cell. The same link with or without "www." counts as one source.
 function renderFeed() {
-  const items = cells.flatMap((x) => (x.cell.evidence ?? []).filter((e) => e.date).map((e) => ({ ...x, e })))
-    .sort((a, b) => b.e.date.localeCompare(a.e.date))
-    .slice(0, 6);
-  $('[data-feed-count]').textContent = `${items.length} entries`;
-  $('[data-feed]').innerHTML = items.map(({ cap, code, cell, e }) => `
-    <li><button type="button" data-cap="${cap.id}" data-code="${code}" aria-label="${esc(`${e.date}, ${cellLabel(cap, code, cell)}, via ${e.publisher ?? e.type}`)}">
-      <time datetime="${e.date}">${e.date.length === 10 ? e.date.slice(5) : e.date}</time>
-      <span class="fd-c">${flag(code)}${code}</span>
-      <span class="fd-t">${esc(cap.name)}<small>via ${esc(e.publisher ?? e.type)}</small></span>
-      ${chip(cell.status)}
-    </button></li>`).join('');
+  const bySource = new Map();
+  for (const x of cells) {
+    for (const e of x.cell.evidence ?? []) {
+      if (!e.date) continue;
+      const key = e.url.replace(/^https?:\/\/(www\.)?/, '');
+      if (!bySource.has(key)) bySource.set(key, { e, list: [] });
+      bySource.get(key).list.push(x);
+    }
+  }
+  const items = [...bySource.values()].sort((a, b) => b.e.date.localeCompare(a.e.date)).slice(0, 6);
+  $('[data-feed-count]').textContent = `${items.length} sources`;
+  $('[data-feed]').innerHTML = items.map(({ e, list }) => {
+    const { cap, code } = list[0];
+    const codes = [...new Set(list.map((x) => x.code))];
+    const caps = new Set(list.map((x) => x.cap.id)).size;
+    const statuses = new Set(list.map((x) => x.cell.status));
+    // "Oct 28" over "2026"; a source dated by month only (YYYY-MM) reads "Oct" over "2026".
+    const date = e.date.length === 10 ? fmtDate(e.date) : fmtMonth(`${e.date}-01`);
+    const [day, year] = date.split(/,? (?=\d{4}$)/);
+    const more = caps > 1 ? `+${caps - 1} more ${caps === 2 ? 'capability' : 'capabilities'}` : '';
+    return `
+    <li><button type="button" data-cap="${esc(cap.id)}" data-code="${code}" aria-label="${esc(`${date}: ${cap.name}${more && `, ${more}`}, in ${codes.map((c) => byCode[c].name).join(', ')}, via ${e.publisher ?? e.type}`)}">
+      <time datetime="${e.date}">${day}<span>${year}</span></time>
+      <span class="fd-t">${esc(cap.name)}<small>via ${esc(e.publisher ?? e.type)}${more && ` · ${more}`}</small><span class="fd-c">${codes.length > 1 ? codes.map(flag).join('') : `${flag(code)}${code}`}</span></span>
+      ${statuses.size === 1 ? chip(list[0].cell.status) : ''}
+    </button></li>`;
+  }).join('');
 }
 
 function correctionUrl(cap, code, cell) {
@@ -271,6 +316,7 @@ function openDetail(capId, code) {
     <p class="kicker">${esc(catName(cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
     <p class="detail-status">${chip(cell.status, cell.confidence)}${cell.confidence ? '<span class="low-note">Low confidence. Sources are thin or indirect, so treat this cell as a lead to check.</span>' : ''}</p>
+    ${cell.status !== 'live' && gapLabel(cell.gapReason) ? `<p class="muted">Why not live: ${esc(gapLabel(cell.gapReason).toLowerCase())}.</p>` : ''}
     <p>${esc(cell.note)}</p>
     <h4>${ev.length ? `Sources (${ev.length})` : 'Sources'}</h4>
     ${ev.length ? sourceList(ev) : '<p class="muted">No availability found. Nothing to cite yet.</p>'}
@@ -332,9 +378,9 @@ function firstRows(rows, all, el, what) {
 function renderCompanies() {
   const matching = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
   const rows = firstRows(matching, state.allCompanies, $('[data-companies-more]'), 'companies');
-  $('[data-companies-label]').textContent = `Companies · ${matching.length} of ${companies.length}`;
+  $('[data-companies-label]').textContent = `Companies and public bodies · ${matching.length} of ${companies.length}`;
   $('[data-companies]').innerHTML = `
-    <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
+    <thead><tr><th scope="col">Name</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Works in</th></tr></thead>
     <tbody>${rows.map((c) => `
       <tr>
         <th scope="row"><a class="co-name" href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a>${c.categories.length > 1 ? '' : `<span class="co-cats"><span>${esc(shortName(c.categories[0]))}</span></span>`}</th>
@@ -367,11 +413,14 @@ function renderRepos() {
   const matching = repos.filter((r) => state.use === 'all' || r.use === state.use);
   const rows = firstRows(matching, state.allRepos, $('[data-repos-more]'), 'repos');
   $('[data-repos-label]').textContent = `Open source · ${matching.length} of ${repos.length}`;
+  // The filter's meaning, in words, so it is not only in a mouse tooltip.
+  $('[data-repo-hint]').hidden = state.use === 'all';
+  $('[data-repo-hint]').textContent = state.use === 'all' ? '' : `${REPO_USE[state.use].label}: ${REPO_USE[state.use].hint}`;
   $('[data-repos]').innerHTML = `
     <thead><tr><th scope="col">Repo</th><th scope="col">What it lets agents do</th><th scope="col">Real use</th><th scope="col" class="num">Installs a month</th><th scope="col" class="num">Docker pulls</th><th scope="col" class="num">Stars</th><th scope="col" class="num">Last commit</th></tr></thead>
     <tbody>${rows.map((r) => `
       <tr>
-        <th scope="row"><a class="co-name" href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener noreferrer">${logo(`https://github.com/${r.repo.split('/')[0]}.png?size=64`, r.name)}<span>${r.origin ? flag(r.origin) : ''}${esc(r.name)}</span></a><span class="co-cats"><span>${r.repo.split('/').map((x) => `<span class="nowrap">${esc(x)}</span>`).join('/<wbr>')}</span><span>${esc(shortName(r.category))}</span></span></th>
+        <th scope="row"><a class="co-name" href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener noreferrer">${logo(r.icon === undefined ? `https://github.com/${r.repo.split('/')[0]}.png?size=64` : r.icon, r.name)}<span>${r.origin ? flag(r.origin) : ''}${esc(r.name)}</span></a><span class="co-cats"><span>${r.repo.split('/').map((x) => `<span class="nowrap">${esc(x)}</span>`).join('/<wbr>')}</span><span>${esc(shortName(r.category))}</span></span></th>
         <td><p class="co-roles">${esc(r.role)}</p></td>
         <td><span class="chip u-${r.use}" title="${esc(REPO_USE[r.use].hint)}">${REPO_USE[r.use].label}</span></td>
         ${count(r.usage.downloadsMonth, 'Installs')}${count(r.usage.dockerPulls, 'Pulls')}${count(r.usage.stars, 'Stars')}
@@ -403,7 +452,7 @@ function renderCounts() {
   const text = `${cells.length} cells · ${sourcesOf(cells)} sources`;
   $('[data-term-count]').textContent = text;
   // Each item carries its leading separator and never breaks inside, so a wrapped line never ends with "·".
-  const parts = [`${cells.length} cells`, `${sourcesOf(cells)} sources`, `${companies.length} companies`, `${repos.length} open-source repos`];
+  const parts = [`${cells.length} cells`, `${sourcesOf(cells)} sources`, `${companies.length} companies and public bodies`, `${repos.length} open-source repos`];
   $('[data-foot-count]').innerHTML = parts.map((p, i) => `<span class="nowrap">${i ? '· ' : ''}${esc(p)}</span>`).join(' ');
 }
 
@@ -425,8 +474,9 @@ function wire() {
     const taken = chart && !chart.dispatchEvent(new CustomEvent('compare', { detail: pair, cancelable: true }));
     if (!taken) selectCountry(pair[1]);
   });
+  // A section link (#companies, #top) scrolls as usual, then the address bar gets #country=XX back, so a reload keeps the country.
   addEventListener('hashchange', () => {
-    if (!hashCountry()) return;
+    if (!hashCountry()) return history.replaceState(null, '', writeHash(state.country, state.view));
     state.view = readHash(location.hash).view;
     selectCountry(hashCountry(), true);
   });
@@ -457,12 +507,19 @@ function wire() {
   });
   $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
 
-  // Phones: the Menu button opens the section links; picking one closes it.
+  // Phones: the Menu button opens the section links and reads Close while open; picking one or tapping outside closes it.
   const nav = $('.nav'), menu = $('[data-nav-menu]');
-  const setMenu = (open) => { nav.classList.toggle('open', open); menu.setAttribute('aria-expanded', open); };
+  const setMenu = (open) => { nav.classList.toggle('open', open); menu.setAttribute('aria-expanded', open); menu.textContent = open ? 'Close' : 'Menu'; };
   menu.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
   nav.querySelector('nav').addEventListener('click', (e) => e.target.closest('a') && setMenu(false));
   addEventListener('keydown', (e) => e.key === 'Escape' && nav.classList.contains('open') && (setMenu(false), menu.focus()));
+  addEventListener('pointerdown', (e) => nav.classList.contains('open') && !nav.contains(e.target) && setMenu(false));
+
+  // A click on the dimmed backdrop closes the details. closedby="any" does this too, where the browser supports it.
+  $('[data-detail]').addEventListener('click', (e) => {
+    const d = e.currentTarget, r = d.getBoundingClientRect();
+    if (e.target === d && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) d.close();
+  });
 
   // Cells in the matrix and the feed open their details; the sources button lists the country's sources.
   $('[data-term]').addEventListener('click', (e) => {
@@ -472,9 +529,13 @@ function wire() {
   });
 
   // Tabs are real links. Scrolling here instead keeps #country=XX in the address bar.
+  // Focus moves to the panel's heading, so the next Tab starts from the panel, not from the tabs.
   const tabs = [...document.querySelectorAll('[data-tabs] a')];
   const go = (a) => {
     tabs.forEach((t) => (t === a ? t.setAttribute('aria-current', 'location') : t.removeAttribute('aria-current')));
+    const h = $(a.hash).querySelector('h2');
+    h.tabIndex = -1;
+    h.focus({ preventScroll: true });
     $(a.hash).scrollIntoView({ behavior: scrollBehavior() });
   };
   $('[data-tabs]').onclick = (e) => {
@@ -485,9 +546,12 @@ function wire() {
   };
 
   // Keys 1 to 6 follow the tabs, J and K step through the ranking. Typing in a field or an open dialog wins.
+  // They work only while focus is in the console or on nothing in particular (the page, a heading), never on a
+  // control elsewhere, such as a Companies filter.
   addEventListener('keydown', (e) => {
     if (e.ctrlKey || e.metaKey || e.altKey || $('[data-detail]').open) return;
     if (e.target.closest?.('input, select, textarea, [contenteditable]')) return;
+    if (e.target.tabIndex >= 0 && !e.target.closest?.('[data-term]')) return;
     const key = e.key.toLowerCase();
     if (tabs[e.key - 1]) go(tabs[e.key - 1]);
     else if (key === 'j' || key === 'k') {
@@ -497,12 +561,13 @@ function wire() {
   });
 }
 
+// The cell's note shows on hover and on keyboard focus; Escape or moving away hides it.
 function wireTooltip() {
   const tip = $('[data-tip]');
   const mx = $('[data-matrix]');
-  mx.addEventListener('pointerover', (e) => {
+  const show = (e) => {
     const b = e.target.closest('[data-cap]');
-    if (!b || e.pointerType === 'touch') return;
+    if (!b || e.pointerType === 'touch' || (e.type === 'focusin' && !b.matches(':focus-visible'))) return;
     const cap = capIndex[b.dataset.cap];
     const cell = cap.countries[b.dataset.code];
     tip.innerHTML = `<strong>${flag(b.dataset.code)}${esc(byCode[b.dataset.code].name)} · ${STATUSES[cell.status].label}${cell.confidence ? ' · low confidence' : ''}</strong>${esc(cell.note)}`;
@@ -511,10 +576,14 @@ function wireTooltip() {
     const w = tip.offsetWidth;
     tip.style.left = `${Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8)}px`;
     tip.style.top = `${r.top - tip.offsetHeight - 8 < 8 ? r.bottom + 8 : r.top - tip.offsetHeight - 8}px`;
-  });
+  };
+  mx.addEventListener('pointerover', show);
+  mx.addEventListener('focusin', show);
   mx.addEventListener('pointerout', (e) => {
     if (!e.relatedTarget?.closest?.('[data-cap]')) tip.hidden = true;
   });
+  mx.addEventListener('focusout', () => (tip.hidden = true));
+  mx.addEventListener('keydown', (e) => e.key === 'Escape' && (tip.hidden = true));
   addEventListener('scroll', () => (tip.hidden = true), { passive: true });
 }
 
@@ -526,10 +595,9 @@ function wireLogos() {
 }
 
 // Start last: the helpers above are consts and must exist before init runs.
-try {
-  meta = await getJson('meta');
-  categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
+// If the data fails, load.js tells the reader and hides the console.
+const loaded = await data.catch(() => null);
+if (loaded) {
+  ({ meta, categories } = loaded);
   init();
-} catch (err) {
-  $('main').insertAdjacentHTML('afterbegin', `<p class="wrap error">Could not load the data (${esc(err.message)}). Serve the folder over HTTP, for example with <code>npm start</code>.</p>`);
 }

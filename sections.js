@@ -1,9 +1,7 @@
-// The numbers band ("Counted cell by cell"). Loads the same data as app.js and draws its own section.
+// The numbers band ("Counted cell by cell"). Shares the data with app.js (src/load.js) and draws its own section.
+import { data } from './src/load.js';
+
 const $ = (sel) => document.querySelector(sel);
-const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
-  if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
-  return r.json();
-});
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- numbers band: a magenta dither field shown only inside 5x7 dot-matrix numerals ---------- */
@@ -15,7 +13,7 @@ function renderBand(meta, categories) {
   const sources = new Set(cells.flatMap((c) => (c.evidence ?? []).map((e) => e.url))).size;
   const cos = categories.flatMap((c) => c.companies ?? []);
   const figs = [
-    [cells.length, 'Cells', `${caps.length} capabilities × ${meta.countries.length} countries.<br>${cells.filter((c) => c.confidence).length} rest on thin evidence.`],
+    [cells.length, 'Cells', `${caps.length} capabilities × ${meta.countries.length} countries.<br>${cells.filter((c) => c.confidence).length} rest on thin sources.`],
     [sources, 'Sources', 'Unique links behind the statuses.<br>Open any cell to read them.'],
     [new Set(cos.map((c) => c.name.toLowerCase())).size, 'Companies', `Who makes each capability work,<br>based in ${new Set(cos.map((c) => c.hq)).size} countries.`],
   ];
@@ -35,7 +33,8 @@ const GLYPH = {
 };
 const CELL = 4; // CSS px per canvas pixel; every dot is a whole number of cells
 const K = CELL / 560; // field scale
-const RAMP = [[5, 6, 11], [58, 10, 36], [163, 21, 90], [255, 46, 136], [255, 182, 114]]; // space, plum, berry, magenta, sunrise
+// Magenta to sunrise. Every step stays at least 5:1 against the unlit dots, so each digit reads whole.
+const RAMP = [[255, 46, 136], [255, 80, 131], [255, 114, 125], [255, 148, 120], [255, 182, 114]];
 const OFF = [20, 16, 26]; // unlit dots
 const T0 = 12; // the still frame (reduced motion, no WebGL) is this moment
 const FS = `
@@ -221,13 +220,9 @@ function startBand() {
   }).observe(nums);
 }
 
-try {
-  const meta = await getJson('meta');
-  const categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
-  renderBand(meta, categories);
+// If the data fails, load.js tells the reader and hides this band.
+const loaded = await data.catch(() => null);
+if (loaded) {
+  renderBand(loaded.meta, loaded.categories);
   startBand();
-} catch (err) {
-  // app.js already tells the reader the data did not load; hide the empty band.
-  document.querySelectorAll('[data-sections]').forEach((el) => (el.hidden = true));
-  console.error(err);
 }

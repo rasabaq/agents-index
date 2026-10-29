@@ -102,7 +102,7 @@
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
             },
@@ -184,7 +184,7 @@
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
             }
@@ -218,7 +218,7 @@
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
             }
@@ -252,7 +252,7 @@
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
             }
@@ -286,7 +286,7 @@
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
             }
@@ -388,7 +388,7 @@
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
             },
@@ -483,7 +483,7 @@
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
             },
@@ -552,7 +552,7 @@
       "hq": "US",
       "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
       "homepage": "https://openai.com/",
-      "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "icon": "logos/openai.png",
       "role": "Lists all eight countries as supported for ChatGPT, which includes the paid plans with agent features.",
       "markets": [
         "US",
@@ -573,7 +573,7 @@
       "hq": "US",
       "url": "https://www.anthropic.com/supported-countries",
       "homepage": "https://www.anthropic.com/",
-      "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+      "icon": "logos/anthropic.png",
       "role": "Claude is open in all eight countries, and Claude in Chrome, its browser agent, is generally available on paid plans.",
       "markets": [
         "US",
@@ -601,7 +601,7 @@
       "hq": "US",
       "url": "https://support.google.com/gemini/answer/13575153?hl=en",
       "homepage": "https://www.google.com/",
-      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "icon": "logos/google.png",
       "role": "The Gemini app is open in all eight countries. Its mobile app lists Spanish, Portuguese, German and Hindi among its languages, and its connected apps, such as WhatsApp, Phone and Messages, work in all of them.",
       "markets": [
         "US",
@@ -621,9 +621,9 @@
     {
       "name": "Amazon",
       "hq": "US",
-      "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+      "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
       "homepage": "https://www.aboutamazon.com/",
-      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "icon": "logos/amazon.png",
       "role": "Alexa+ is open to all in the US, and in free Early Access in the UK, Germany, Brazil, Mexico and India, in the local language.",
       "markets": [
         "US",

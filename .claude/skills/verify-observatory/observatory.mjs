@@ -4,7 +4,7 @@
 // WebSocket built in. Run `node observatory.mjs help` for the commands; SKILL.md explains the workflow.
 import { spawn, execFileSync } from 'node:child_process';
 import { createServer } from 'node:net';
-import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync, rmSync, readdirSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync, rmSync, readdirSync, openSync } from 'node:fs';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -100,14 +100,14 @@ async function hold(s) {
 }
 async function applyView(s) {
   saveState(s);
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 300; i++) {
     if (existsSync(join(s.dir, 'held.json')) && readFileSync(join(s.dir, 'held.json'), 'utf8') === VIEW(s)) return;
     await sleep(100);
   }
   die('The emulation holder did not apply the view. Run doctor.');
 }
 const frames = (c) => c.evaluate('new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => r(true))))');
-async function waitFor(c, css, ms = 10000) {
+async function waitFor(c, css, ms = 30000) {
   for (const end = Date.now() + ms; Date.now() < end; await sleep(100)) {
     if (await c.evaluate(`!!document.querySelector(${JSON.stringify(css)})`)) return true;
   }
@@ -124,11 +124,13 @@ const commands = {
     // The same server as `npm start`, on a free port and bound to this machine only.
     const server = spawn('python3', ['-m', 'http.server', String(port), '--bind', '127.0.0.1', '--directory', REPO], { detached: true, stdio: ['ignore', 'ignore', 'ignore'] });
     const chrome = spawn(findChrome(), ['--headless=new', '--remote-debugging-port=0', `--user-data-dir=${join(dir, 'profile')}`, '--window-size=1440,900',
-      '--hide-scrollbars', '--no-first-run', '--no-default-browser-check', '--disable-extensions', 'about:blank'], { detached: true, stdio: ['ignore', 'ignore', 'ignore'] });
+      '--hide-scrollbars', '--no-first-run', '--no-default-browser-check', '--disable-extensions',
+      // CI Linux runners block the user namespaces Chrome's sandbox needs; the page is our own localhost site.
+      ...(process.env.CI ? ['--no-sandbox'] : []), 'about:blank'], { detached: true, stdio: ['ignore', 'ignore', openSync(join(dir, 'chrome.log'), 'w')] });
     server.unref(); chrome.unref();
     const portFile = join(dir, 'profile', 'DevToolsActivePort');
-    for (let i = 0; i < 100 && !existsSync(portFile); i++) await sleep(100);
-    if (!existsSync(portFile)) die('Chrome did not start (no DevToolsActivePort).');
+    for (let i = 0; i < 300 && !existsSync(portFile); i++) await sleep(100);
+    if (!existsSync(portFile)) die(`Chrome did not start (no DevToolsActivePort). Its log:\n${readFileSync(join(dir, 'chrome.log'), 'utf8').slice(-2000)}`);
     const cdpPort = Number(readFileSync(portFile, 'utf8').split('\n')[0]);
     const url = `http://127.0.0.1:${port}`;
     for (let i = 0; i < 50; i++) { try { if ((await fetch(`${url}/`)).ok) break; } catch { /* not yet */ } await sleep(100); }
@@ -144,6 +146,8 @@ const commands = {
     await applyView(s);
     log(s, { cmd: 'up', url, rev, chrome: version.Browser });
     console.log(JSON.stringify({ run: id, url, evidence: join(dir, 'evidence'), rev, chrome: version.Browser }, null, 2));
+    // Without VERIFY_RUN, commands act on the newest run, which may belong to someone else's parallel run.
+    console.error(`Pin your commands to this run: export VERIFY_RUN=${id}`);
   },
 
   async doctor() {
@@ -230,7 +234,9 @@ const commands = {
     const key = args[0];
     const codes = { Escape: 27, Enter: 13, Tab: 9, ArrowDown: 40, ArrowUp: 38, ArrowLeft: 37, ArrowRight: 39 };
     const vk = codes[key] ?? key.toUpperCase().charCodeAt(0);
-    await c.send('Input.dispatchKeyEvent', { type: 'keyDown', key, windowsVirtualKeyCode: vk, ...(key.length === 1 ? { text: key } : {}) });
+    // Chrome only fires a button's Enter activation when the key carries its text, '\r'.
+    const text = key === 'Enter' ? '\r' : key.length === 1 ? key : undefined;
+    await c.send('Input.dispatchKeyEvent', { type: 'keyDown', key, windowsVirtualKeyCode: vk, ...(text ? { text } : {}) });
     await c.send('Input.dispatchKeyEvent', { type: 'keyUp', key, windowsVirtualKeyCode: vk });
     await sleep(Number(flags.settle ?? 300));
     log(s, { cmd: 'press', key });

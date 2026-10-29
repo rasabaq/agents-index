@@ -2,6 +2,8 @@
 
 Not how much AI a country has, but **what AI agents can actually do there**.
 
+Live site: https://agentindex.art/
+
 In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile, can it? This observatory tracks concrete agent capabilities country by country. Every status cites a source, and the countries are ranked by what agents can do for ordinary people and businesses.
 
 ## Run it
@@ -15,13 +17,13 @@ npm run refresh-repos  # measures the open-source repos: stars, installs, last c
 npm run refresh-sites  # reads each company homepage for its logo
 ```
 
-The site has no build step and no dependencies. Node 20 or later runs the checks.
+The site has no build step and no npm dependencies. Node 20 or later runs the checks. `npm start` uses Python 3 to serve the files; any static file server works too.
 
 ## Layout
 
 | Path | What it holds |
 | --- | --- |
-| `data/meta.json` | Countries, categories and the `asOf` date |
+| `data/meta.json` | Countries, categories, gap reasons and the `asOf` date |
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `docs/methodology.md` | How the data is collected and scored |
@@ -40,7 +42,7 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 
 To add an open-source repo, add it to `repos[]` in the category file it serves, with `repo` ("owner/name"), `name`, `role`, `capabilities`, and its `packages` (`npm`, `pypi` or `packagist`) and Docker Hub `images` if it ships any. Then run `npm run refresh-repos <category>` to fill its `usage` from GitHub, npm, PyPI, Packagist and Docker Hub.
 
-Every company has a `url` (the source for what it does) and a `homepage` (its own site). Its `markets` cover all its `capabilities`; when one capability works in fewer markets, add `"marketsByCapability": { "<capability id>": ["BR", "IN"] }`. Run `npm run refresh-sites <category>` to store the logo from its homepage in `icon`: the apple-touch-icon, else the largest icon link, else `/favicon.ico`. Sites that block scripts get `null`, and the page shows a monogram. Repo logos are the GitHub owner's avatar, so they need no data.
+Every company has a `url` (the source for what it does) and a `homepage` (its own site). Its `markets` cover all its `capabilities`; when one capability works in fewer markets, add `"marketsByCapability": { "<capability id>": ["BR", "IN"] }`. Run `npm run refresh-sites <category>` to save its logo as `logos/<name>.png` and store that path in `icon`. It takes the apple-touch-icon from the homepage, else the largest icon link, else `/favicon.ico`, and shrinks it to a 64px PNG with macOS `sips`, so the page loads no image from company sites. A logo already in `logos/` is kept: delete the file to fetch it again. When a site blocks scripts, save a logo from the brand's own site or press kit there by hand; otherwise it gets `null` and the page shows a monogram. Repo logos are the GitHub owner's avatar, so they need no data; set a repo's `icon` to a `logos/` path, or `null` for a monogram, when the avatar does not read at small size.
 
 ## Contribute
 

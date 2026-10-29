@@ -318,11 +318,11 @@
               "type": "news"
             },
             {
-              "title": "Mercado Pago se conecta al SPEI",
-              "publisher": "Expansión",
-              "url": "https://expansion.mx/economia/2024/03/12/mercado-pago-spei",
-              "date": "2024-03-12",
-              "type": "news"
+              "title": "Listado de instituciones (participants in SPEI payment receipts; lists Mercado Pago W)",
+              "publisher": "Banco de México",
+              "url": "https://www.banxico.org.mx/cep-scl/listaInstituciones.do",
+              "date": "2026-10",
+              "type": "report"
             }
           ],
           "confidence": "low"
@@ -353,7 +353,7 @@
           "note": "Tpaga launched a WhatsApp AI agent in July 2026 that sends money over Bre-B from text or voice notes. It stays limited because only the press covers it and Tpaga has not said how many users can use it.",
           "evidence": [
             {
-              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
+              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE (the article covers bill payments and Bre-B transfers)",
               "publisher": "La República",
               "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
               "date": "2026-07-08",
@@ -480,8 +480,8 @@
           ]
         },
         "MX": {
-          "status": "live",
-          "note": "Mercado Pago says Mago is available in Mexico, Argentina, Brazil and Chile; it makes payments and transfers for users after they confirm. Only the press covers the Mexico launch.",
+          "status": "limited",
+          "note": "Press reports say Mercado Pago's Mago assistant is available in Mexico, Argentina, Brazil and Chile and makes payments and transfers that the user confirms. We found no Mercado Pago page that confirms Mago in Mexico, so it stays limited.",
           "evidence": [
             {
               "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
@@ -501,8 +501,8 @@
           "confidence": "low"
         },
         "CL": {
-          "status": "live",
-          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Only the press covers the Chile launch.",
+          "status": "limited",
+          "note": "Press reports say Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. We found no Mercado Pago page that confirms Mago in Chile, so it stays limited.",
           "evidence": [
             {
               "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
@@ -533,7 +533,7 @@
               "type": "news"
             },
             {
-              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
+              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE (the article covers bill payments and Bre-B transfers)",
               "publisher": "La República",
               "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
               "date": "2026-07-08",
@@ -586,7 +586,7 @@
       "hq": "US",
       "url": "https://developer.visa.com/capabilities/visa-intelligent-commerce",
       "homepage": "https://www.visa.com/",
-      "icon": "https://www.visa.cl/content/dam/VCOM/Brand/favicon.ico",
+      "icon": "logos/visa.png",
       "role": "Visa Intelligent Commerce gives agents tokenized Visa credentials with passkey checks so they can buy for cardholders.",
       "markets": [
         "US",
@@ -605,7 +605,7 @@
       "hq": "US",
       "url": "https://www.mastercard.com/us/en/news-and-trends/stories/2025/agentic-commerce-momentum.html",
       "homepage": "https://www.mastercard.com/",
-      "icon": null,
+      "icon": "logos/mastercard.png",
       "role": "Mastercard Agent Pay issues agentic tokens so registered agents can pay with a cardholder's Mastercard.",
       "markets": [
         "US",
@@ -625,7 +625,7 @@
       "hq": "US",
       "url": "https://www.americanexpress.com/en-us/company/agentic-commerce/",
       "homepage": "https://www.americanexpress.com/",
-      "icon": "https://www.americanexpress.com/favicon.ico",
+      "icon": "logos/american-express.png",
       "role": "The Amex ACE developer kit lets cardmembers approve agents to buy with their card, with agent purchase protection.",
       "markets": [
         "US"
@@ -639,7 +639,7 @@
       "hq": "ES",
       "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
       "homepage": "https://www.santander.com/",
-      "icon": "https://www.santander.com/content/dam/santander-com/resources/favicon/apple-touch-icon.png",
+      "icon": "logos/banco-santander.png",
       "role": "Issued the cards used in Visa Intelligent Commerce agent pilot purchases in Latin America.",
       "markets": [
         "BR",
@@ -655,7 +655,7 @@
       "hq": "US",
       "url": "https://docs.stripe.com/agentic-commerce",
       "homepage": "https://stripe.com/",
-      "icon": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+      "icon": "logos/stripe.png",
       "role": "Shared payment tokens (which can carry Visa, Mastercard and Amex agent tokens) and Link Agent Wallet let agents pay sellers with a customer's saved payment method.",
       "markets": [
         "US",
@@ -677,7 +677,7 @@
       "hq": "US",
       "url": "https://paypal.ai/",
       "homepage": "https://www.paypal.com/",
-      "icon": "https://www.paypalobjects.com/marketing/web/icons/monogram/pp64.png",
+      "icon": "logos/paypal.png",
       "role": "PayPal agentic commerce services power checkout inside Perplexity and Microsoft Copilot.",
       "markets": [
         "US"
@@ -691,7 +691,7 @@
       "hq": "AR",
       "url": "https://www.mercadopago.com.br/assistente-pessoal",
       "homepage": "https://www.mercadopago.com.br/",
-      "icon": "https://http2.mlstatic.com/frontend-assets/mp-web-navigation/ui-navigation/7.8.2/mercadopago/favicon.svg",
+      "icon": "logos/mercado-pago.png",
       "role": "The Mago AI agent makes payments and transfers (including Pix in Brazil) for users after they confirm.",
       "markets": [
         "BR",
@@ -708,7 +708,7 @@
       "hq": "BR",
       "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
       "homepage": "https://nubank.com.br/",
-      "icon": "https://nubank.com.br/favicon.ico",
+      "icon": "logos/nubank.png",
       "role": "Its AI assistant sends Pix from voice or text in the app and on WhatsApp.",
       "markets": [
         "BR"
@@ -723,7 +723,7 @@
       "hq": "BR",
       "url": "https://iniciador.com.br/en/conteudos/iniciador-anuncia-pagamentos-agenticos-full-stack-ai-toolkit",
       "homepage": "https://iniciador.com.br/",
-      "icon": "https://iniciador.com.br/apple-icon.png?apple-icon.0rxpxrel559y3.png",
+      "icon": "logos/iniciador.png",
       "role": "Its MCP server lets AI agents propose Pix payments that the user approves with biometrics.",
       "markets": [
         "BR"
@@ -737,7 +737,7 @@
       "hq": "BR",
       "url": "https://www.bcb.gov.br/estabilidadefinanceira/pix",
       "homepage": "https://www.bcb.gov.br/",
-      "icon": "https://www.bcb.gov.br/favicon.ico",
+      "icon": "logos/banco-central-do-brasil.png",
       "role": "Runs Pix, the instant rail that Brazilian AI assistants use to send payments.",
       "markets": [
         "BR"
@@ -751,7 +751,7 @@
       "hq": "CO",
       "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
       "homepage": "https://tpaga.co/",
-      "icon": "https://tpaga.co/favicon.ico?favicon.0ng_vlz0rr_rq.ico",
+      "icon": "logos/tpaga.png",
       "role": "Its WhatsApp AI agent pays bills and sends money over Bre-B from text or voice notes.",
       "markets": [
         "CO"
@@ -766,7 +766,7 @@
       "hq": "IN",
       "url": "https://www.npci.org.in/",
       "homepage": "https://www.npci.org.in/",
-      "icon": null,
+      "icon": "logos/npci.png",
       "role": "Runs UPI and its Reserve Pay and Circle features that let users pre-authorise agent payments in the ChatGPT pilot.",
       "markets": [
         "IN"
@@ -780,7 +780,7 @@
       "hq": "IN",
       "url": "https://razorpay.com/newsroom/razorpay-npci-and-openai-come-together-to-launch-agentic-payments-ushering-in-ai-driven-commerce-at-national-scale/",
       "homepage": "https://razorpay.com/",
-      "icon": null,
+      "icon": "logos/razorpay.png",
       "role": "Runs the Agentic Payments beta that lets ChatGPT pay merchants over UPI, and was one of the payment aggregators in Mastercard's Indian agent demo.",
       "markets": [
         "IN"
@@ -796,7 +796,7 @@
       "hq": "IN",
       "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
       "homepage": "https://www.amazonpay.in/",
-      "icon": "https://www.amazon.in/favicon.ico",
+      "icon": "logos/amazon-pay-india.png",
       "role": "Reported by MediaNama to have launched a consent-based Smart Wallet for agentic UPI payments at GFF 2026; Amazon Pay has published no details.",
       "markets": [
         "IN"
@@ -811,7 +811,7 @@
       "hq": "IN",
       "url": "https://startupfeed.in/gff-2026-agentic-ai-fintech-product-launches/",
       "homepage": "https://www.pinelabs.com/",
-      "icon": "https://www.pinelabs.com/favicon.ico",
+      "icon": "logos/pine-labs.png",
       "role": "Its agentic commerce stack lets AI agents complete purchases within user-set limits.",
       "markets": [
         "IN"

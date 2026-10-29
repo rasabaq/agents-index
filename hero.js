@@ -1,8 +1,9 @@
 // The hero: a planet at sunrise whose air dissolves into magenta pixels (WebGL, with a 2D fallback),
 // the pixel wordmark, and the data parts (twelve pixel icons lit by the country's scores, country pins standing on the planet).
-// It loads the data itself so it does not depend on app.js. Its country links carry data-go-country, which app.js
+// It reads the shared data (src/load.js) and does not depend on app.js. Its country links carry data-go-country, which app.js
 // handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
 import { scoreCountries, shortName, useCategoryWords, startCountry } from './src/observatory.js';
+import { data } from './src/load.js';
 
 const hero = document.querySelector('[data-hero]');
 const $ = (sel) => hero.querySelector(sel);
@@ -263,10 +264,10 @@ function buildMask() {
   const d = mc.getImageData(0, 0, cols, rows).data, out = [];
   for (let i = 0; i < cols * rows; i++) if (d[i * 4 + 3] >= 128) out.push(i);
   lit = new Int32Array(out);
-  cell = avail / cols;
-  wm.style.height = `${Math.round(rows * cell)}px`;
+  // hero.css sizes the box to fit; fitting the cells inside it keeps them square if the two ever disagree.
+  cell = Math.min(avail / cols, wm.clientHeight / rows);
   wm.width = Math.round(avail * wdpr);
-  wm.height = Math.round(rows * cell * wdpr);
+  wm.height = Math.round(wm.clientHeight * wdpr);
   gapD = cell >= 3 ? Math.max(1, Math.round(wdpr)) : wdpr >= 2 ? 1 : 0;
   return true;
 }
@@ -360,9 +361,10 @@ const cellsOf = (rows) => rows.flatMap((line, y) => [...line].map((ch, x) => {
   return `<rect x="${x * 6}" y="${y * 6}" width="5" height="5" class="t${n < 0.55 ? 0 : n < 0.85 ? 1 : 2}" data-b="${BAYER[(y & 3) * 4 + (x & 3)]}"${delay}/>`;
 })).join('');
 
+// tabindex -1: a tap still shows the icon's name, but the icons do nothing, so they stay out of the Tab order.
 function renderIcons(categories) {
   $('[data-hero-ic]').innerHTML = categories.filter((c) => ICONS[c.id]).map((c) => `
-    <li tabindex="0" role="img" data-cat="${c.id}"><svg viewBox="0 0 72 72" aria-hidden="true">${cellsOf(ICONS[c.id])}</svg><b aria-hidden="true">${esc(shortName(c.id))}</b></li>`).join('');
+    <li tabindex="-1" role="img" data-cat="${c.id}"><svg viewBox="0 0 72 72" aria-hidden="true">${cellsOf(ICONS[c.id])}</svg><b aria-hidden="true">${esc(shortName(c.id))}</b></li>`).join('');
 }
 
 // Light each icon by the country's category score: a cell is on when its threshold is under score * 16 / 100, so 50 is a checkerboard.
@@ -372,18 +374,15 @@ function light(code) {
     const s = r.byCategory[li.dataset.cat], on = Math.round((s * 16) / 100);
     li.querySelectorAll('rect').forEach((c) => c.classList.toggle('on', +c.dataset.b < on));
     li.classList.toggle('is-full', s >= 100);
-    li.setAttribute('aria-label', `${shortName(li.dataset.cat)}: ${s >= 100 ? 'works' : s > 0 ? 'works partly' : 'does not work yet'}`);
+    li.setAttribute('aria-label', `${shortName(li.dataset.cat)}: ${s >= 100 ? 'all live' : s > 0 ? 'partly' : 'none yet'}`);
   }
-  $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} work fully`;
+  // The caption names the country the icons describe; it also labels the icon list.
+  $('[data-hero-in]').innerHTML = `What agents can do in ${flag(r.code)}<strong>${esc(r.name)}</strong>`;
+  $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} categories all live`;
 }
 
-const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
-  if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
-  return r.json();
-});
 try {
-  const meta = await getJson('meta');
-  const categories = await Promise.all(meta.categories.map((c) => getJson(c.id)));
+  const { meta, categories } = await data;
   useCategoryWords(meta.categories);
   ranking = scoreCountries(meta, categories);
   focus = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
@@ -399,5 +398,5 @@ try {
   });
   $('[data-hero-icons]').hidden = false;
 } catch {
-  // app.js shows the load error; the hero keeps its sky and wordmark.
+  // load.js shows the load error in the hero; the hero keeps its sky and wordmark.
 }

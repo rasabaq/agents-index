@@ -2,10 +2,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
-// The page loads Noto Color Emoji subset to the flags in the data. A new country or company HQ
-// must be added to the subset, or its flag falls back to the system emoji font (or none on Windows).
+// fonts/flags.woff2 is Noto Color Emoji cut down to the flags listed in styles.css. A new country or company HQ
+// must be added to that list (then rebuild with fonts/flags.py), or Windows shows two letters instead of its flag.
 const read = (p) => readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
-const flag = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
 
 test('the flag font subset covers every flag in the data', () => {
   const meta = JSON.parse(read('data/meta.json'));
@@ -18,7 +17,7 @@ test('the flag font subset covers every flag in the data', () => {
     }
     for (const r of data.repos ?? []) if (r.origin) codes.add(r.origin);
   }
-  const text = decodeURIComponent(read('index.html').match(/family=Noto\+Color\+Emoji&text=([^&"]+)/)[1]);
-  const missing = [...codes].filter((c) => !text.includes(flag(c)));
-  assert.deepEqual(missing, [], `index.html flag subset is missing ${missing.join(', ')}`);
+  const inFont = read('styles.css').match(/Flags in it: ([A-Z ]+)/)[1].trim().split(' ');
+  const missing = [...codes].filter((c) => !inFont.includes(c));
+  assert.deepEqual(missing, [], `the flag font (styles.css "Flags in it") is missing ${missing.join(', ')}`);
 });

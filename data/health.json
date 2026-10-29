@@ -35,8 +35,8 @@
         },
         "GB": {
           "status": "limited",
-          "gapReason": "not-launched",
-          "note": "Rapid Health's Smart Triage inside the NHS App asks about your symptoms and books a GP slot straight away, but only at the practices that use it (over 1 million patients in April 2026), not across the NHS.",
+          "gapReason": "assist-only",
+          "note": "Rapid Health's Smart Triage inside the NHS App asks about your symptoms and offers you open GP slots (61 on average); you pick one and book it yourself. It runs only at the practices that use it (over 1 million patients in April 2026), not across the NHS.",
           "evidence": [
             {
               "title": "24/7 GP appointment booking is now live in the NHS App for more than one million patients",
@@ -189,7 +189,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "RD Saúde (Drogasil and Raia) runs AI agents mostly for staff and call centres, and lists a pharmacist agent only as a future idea; no agent that orders prescription medicine was found.",
+          "note": "RD Saúde (Drogasil and Raia) runs AI agents mostly for staff and call centers, and lists a pharmacist agent only as a future idea; no agent that orders prescription medicine was found.",
           "evidence": [
             {
               "title": "RD Saúde e IA agêntica",
@@ -244,7 +244,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "UnitedHealthcare's Avery, in the UHC app and on myuhc.com since March 2026, answers from your own plan: benefits, coverage, claim status, cost estimates and balances.",
+          "note": "UnitedHealthcare's Avery, in the UHC app and on myuhc.com since March 2026, answers from your own plan: benefits, coverage, claim status, cost estimates and balances. It is only for eligible members: about 6.5 million in employer plans and 160,000 in Medicare Advantage at launch, with a goal of 20.5 million by the end of 2026.",
           "evidence": [
             {
               "title": "UnitedHealthcare Introduces AI Companion Empowering People with Simpler Navigation, Personal Experience",
@@ -276,9 +276,9 @@
           ]
         },
         "IN": {
-          "status": "limited",
+          "status": "none",
           "confidence": "low",
-          "note": "ICICI Lombard launched an AI voice agent in 2022 that tells customers the status of their own health claims, and in August 2026 it said bots and a WhatsApp chatbot answer about 70% of inbound calls, but no recent source says they still give claim status. No other insurer was confirmed.",
+          "note": "ICICI Lombard launched an AI voice agent in 2022 that told customers the status of their own health claims. In August 2026 it said bots and a WhatsApp chatbot answer about 70% of inbound calls, but no current source says an AI agent still gives claim status or checks your cover. No other insurer was confirmed.",
           "evidence": [
             {
               "title": "ICICI Lombard and Skit.ai partner to launch an AI-powered digital voice agent to track claim status",
@@ -354,7 +354,7 @@
       "hq": "US",
       "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-services-gemini-august-2026/",
       "homepage": "https://www.google.com/",
-      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "icon": "logos/google.png",
       "role": "Gemini's Zocdoc connected app finds real open slots and books doctor visits in the US.",
       "markets": [
         "US"
@@ -368,7 +368,7 @@
       "hq": "US",
       "url": "https://hlth.com/insights/news/zocdoc-and-google-bring-real-time-healthcare-appointment-booking-to-gemini",
       "homepage": "https://www.zocdoc.com/",
-      "icon": "https://www.zocdoc.com/favicon.ico",
+      "icon": "logos/zocdoc.png",
       "role": "Doctor booking platform whose real-time slots can be booked inside Google Gemini.",
       "markets": [
         "US"
@@ -382,8 +382,8 @@
       "hq": "GB",
       "url": "https://nhsaccelerator.com/insights/24-7-gp-appointment-booking-is-now-live-in-the-nhs-app-for-more-than-one-million-patients/",
       "homepage": "https://www.rapidhealth.ai/",
-      "icon": "https://cdn.prod.website-files.com/684aec07b9e280670221bbcf/684aec07b9e280670221bc61_App%20Icon.png",
-      "role": "Makes Smart Triage, an AI tool in the NHS App that books GP slots at the practices that use it.",
+      "icon": "logos/rapid-health.png",
+      "role": "Makes Smart Triage, an AI tool in the NHS App that offers GP slots you then book, at the practices that use it.",
       "markets": [
         "GB"
       ],
@@ -396,7 +396,7 @@
       "hq": "FR",
       "url": "https://www.zwp-online.info/zwpnews/dental-news/branchenmeldungen/doctolib-fuhrt-ki-basierten-telefonassistenten-ein",
       "homepage": "https://www.doctolib.de/",
-      "icon": "https://www.doctolib.de/favicon.ico",
+      "icon": "logos/doctolib.png",
       "role": "Booking platform whose AI phone assistant books callers into the calendars of practices that pay for it.",
       "markets": [
         "DE"
@@ -410,7 +410,7 @@
       "hq": "US",
       "url": "https://www.aboutamazon.com/news/retail/amazon-health-ai-agent-one-medical",
       "homepage": "https://www.aboutamazon.com/",
-      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "icon": "logos/amazon.png",
       "role": "Its Health AI sends prescription renewal requests to One Medical providers, filled at Amazon Pharmacy or another pharmacy.",
       "markets": [
         "US"
@@ -424,7 +424,7 @@
       "hq": "US",
       "url": "https://www.marketplace.org/story/2026/06/03/utah-is-experimenting-with-a-new-role-for-ai-renewing-prescriptions",
       "homepage": "https://www.doctronic.ai/",
-      "icon": "https://www.doctronic.ai/apple-touch-icon.png",
+      "icon": "logos/doctronic.png",
       "role": "Its AI renews some chronic-condition prescriptions on its own in a one-year Utah state pilot.",
       "markets": [
         "US"
@@ -438,8 +438,8 @@
       "hq": "US",
       "url": "https://www.uhc.com/news-articles/newsroom/avery-announcement",
       "homepage": "https://www.uhc.com/",
-      "icon": "https://www.uhc.com/etc/designs/uhcfoundation/resources/favicon.ico",
-      "role": "Runs Avery, an AI assistant that answers members' questions about their own benefits, coverage and claims.",
+      "icon": "logos/unitedhealthcare.png",
+      "role": "Runs Avery, an AI assistant that answers eligible members' questions about their own benefits, coverage and claims.",
       "markets": [
         "US"
       ],
@@ -452,8 +452,8 @@
       "hq": "IN",
       "url": "https://cxotoday.com/press-release/icici-lombard-and-skit-ai-partner-to-launch-a-first-of-its-kind-ai-powered-digital-voice-agent-to-assist-customers-in-tracking-their-claim-status/",
       "homepage": "https://www.icicilombard.com/",
-      "icon": "https://www.icicilombard.com/favicon.ico",
-      "role": "Insurer whose AI voice agent tells customers the status of their own health claims.",
+      "icon": "logos/icici-lombard.png",
+      "role": "Insurer that launched an AI voice agent for health claim status in 2022; no current source confirms it still does this.",
       "markets": [
         "IN"
       ],

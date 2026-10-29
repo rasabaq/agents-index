@@ -44,14 +44,24 @@
   --tier-a: #ffb672;
   --tier-b: #ff8a6e;
   --tier-c: #ff5a8c;
-  --tier-d: #e0287e;
+  --tier-d: #f04fb0;
   --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 30px 70px -30px rgba(0, 0, 0, 0.85);
   --radius: 14px;
   --font: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --pixel: 'Jersey 10', 'JetBrains Mono', ui-monospace, monospace;
-  --flag: 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  --flag: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji', sans-serif;
 }
+
+/* Fonts are self-hosted in fonts/ (latin subset, OFL licenses next to them), so no third-party request can hold up the page.
+   Flags: fonts/flags.woff2 is Noto Color Emoji cut down to the flags the data uses (fonts/flags.py builds it).
+   --flag lists Apple Color Emoji first and local() prefers an installed Noto Color Emoji, so Macs, iPhones and Android
+   phones never download it. Windows has no flag emoji, so it downloads the file (about 60 KB).
+   Flags in it: AE AR AT BR CA CL CN CO DE EE ES EU FR GB GR IN MX NL SE US */
+@font-face { font-family: 'Geist'; font-weight: 300 700; font-display: swap; src: url('fonts/geist-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 500; font-display: swap; src: url('fonts/jetbrains-mono-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Jersey 10'; font-weight: 400; font-display: swap; src: url('fonts/jersey-10-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Noto Color Emoji'; font-display: swap; src: local('Noto Color Emoji'), url('fonts/flags.woff2') format('woff2'); unicode-range: U+1F1E6-1F1FF; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; background: var(--page); }
@@ -89,6 +99,9 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.2; letter-spacing: -0.03em; font-weig
 .wrap { max-width: 1264px; margin: 0 auto; padding-inline: 24px; }
 .muted { color: var(--muted); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* skip link: hidden above the page until it has keyboard focus */
+.skip { position: fixed; top: 12px; left: 16px; z-index: 40; padding: 10px 14px; border-radius: 8px; background: var(--ink); color: var(--page); font-weight: 500; text-decoration: none; translate: 0 -200%; }
+.skip:focus { translate: none; }
 /* micro label: mono, spaced capitals */
 .label { margin: 0; font: 500 10px/1.2 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
 .label .flag { margin: 0 0.35em 0 0.1em; }
@@ -159,9 +172,12 @@ select, option { color-scheme: dark; }
 .detail p { color: var(--ink-2); }
 .detail .muted { color: var(--muted); }
 .detail-status { margin: 14px 0 0; }
-.close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); color: var(--ink-2); font-size: 20px; line-height: 1; cursor: pointer; }
+/* the × stays in view while a long dialog scrolls: its form sticks to the top of the content, the button sits 16px from the corner */
+.detail form { position: sticky; top: 0; z-index: 1; }
+.close { position: absolute; top: -12px; right: -12px; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); color: var(--ink-2); font-size: 20px; line-height: 1; cursor: pointer; }
 .close:hover { color: var(--ink); border-color: var(--line-strong); }
 .sources { margin: 0; padding-left: 20px; }
+.detail h3 + .sources { margin-top: 20px; }
 .sources li { margin-bottom: 12px; }
 .sources li::marker { font: 500 11px var(--mono); color: var(--muted); }
 .sources a { font-weight: 500; }
@@ -177,10 +193,15 @@ select, option { color-scheme: dark; }
 
 .foot { display: flex; padding-top: 72px; padding-bottom: 48px; font: 400 11.5px/1.6 var(--mono); color: var(--muted); }
 .foot p { flex: 1; margin: 0; padding-top: 18px; border-top: 1px solid var(--line); }
-.error { margin-top: 32px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+/* No data: it failed to load (src/load.js adds .no-data and puts a note in the hero), or JavaScript is off (the <noscript>
+   note in the hero). Keep the hero, its note and the footer links; hide everything drawn from the data, and the links to it. */
+:root:is(.no-data, :has(.hero noscript > *)) :is(main > :not(.hero), .hero-ctas > a, #site-nav, .nav-menu, .foot-asof, [data-foot-count]) { display: none; }
+.load-note { flex-basis: 100%; margin: 0; font-size: 17px; color: var(--ink-2); }
+/* With JavaScript on, a <noscript> holds only text and must stay hidden, so this matches only when it has elements. */
+.hero-ctas noscript:has(> *) { display: contents; }
 
-/* phones and small tablets: the section links fold into a menu */
-.nav-menu { display: none; margin-left: auto; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+/* phones and small tablets: the section links fold into a menu; the button keeps one width for Menu and Close */
+.nav-menu { display: none; justify-content: center; min-width: 66px; margin-left: auto; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
 @media (max-width: 900px) {
   .nav-menu { display: inline-flex; align-items: center; }
   .nav nav { display: none; }

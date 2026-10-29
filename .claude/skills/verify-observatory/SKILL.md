@@ -41,7 +41,7 @@ node $H up
 This prints the run id, the site URL (for example `http://127.0.0.1:56875`), the evidence folder, the git revision being served, and the Chrome version. The site is ready when `up` returns, because it waits for the server to answer.
 
 Each run gets its own server port, its own Chrome profile and its own folder under `.verify-runs/<run-id>/`. Several runs can exist side by side:
-- Commands act on the newest run by default.
+- Commands act on the newest run by default. If other agents may start runs at the same time, run the `export VERIFY_RUN=<run-id>` line that `up` prints, so your commands stay on your run.
 - `VERIFY_RUN=<run-id>` picks another run.
 - `VERIFY_OUT=<dir>` moves `.verify-runs` (for example to a shared folder).
 

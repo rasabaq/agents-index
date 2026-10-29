@@ -34,7 +34,7 @@ test('marketsByCapability narrows a company to fewer markets for one capability'
   const data = [{ category: 'messaging', capabilities: [
     { id: 'messaging.business-ai-agent', name: 'Chat agent', question: 'q?', countries: { BR: cell('none'), US: cell('none') } },
     { id: 'messaging.pay-in-chat', name: 'Pay in chat', question: 'q?', countries: { BR: cell('none'), US: cell('none') } },
-  ], companies: [{ name: 'Meta', role: 'r', url: 'https://meta.com', homepage: 'https://meta.com', icon: null, markets: ['BR', 'US'],
+  ], companies: [{ name: 'Meta', role: 'r', url: 'https://meta.com', homepage: 'https://meta.com', icon: null, hq: 'US', markets: ['BR', 'US'],
     capabilities: ['messaging.business-ai-agent', 'messaging.pay-in-chat'], marketsByCapability: { 'messaging.pay-in-chat': ['BR'] } }] }];
   const co = data[0].companies[0];
   assert.deepEqual(marketsFor(co, 'messaging.pay-in-chat'), ['BR']);
@@ -59,7 +59,8 @@ test('the link holds the country and the view; old #country= links still work', 
   assert.deepEqual(readHash('#country=MX&view=business'), { country: 'MX', view: 'business' });
   assert.deepEqual(readHash('#country=MX'), { country: 'MX', view: 'people' });
   assert.deepEqual(readHash('#view=business'), { country: null, view: 'business' });
-  assert.deepEqual(readHash('#country=mx&view=nope'), { country: null, view: 'people' });
+  assert.deepEqual(readHash('#country=mx&view=nope'), { country: 'MX', view: 'people' });
+  assert.deepEqual(readHash('#country=mex'), { country: null, view: 'people' });
   assert.equal(writeHash('MX', 'business'), '#country=MX&view=business');
   assert.equal(writeHash('MX', 'people'), '#country=MX');
   assert.equal(startCountry(['US', 'MX'], '#country=MX&view=business'), 'MX');

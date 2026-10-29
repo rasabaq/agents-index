@@ -5,14 +5,21 @@
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#05060b">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Agent Observatory</title>
+  <title>AI Agent Observatory: what AI agents can do, country by country</title>
   <meta name="description" content="What AI agents can actually do in each country: shop, pay, book, bank and more. Every status is backed by a source.">
+  <link rel="canonical" href="https://agentindex.art/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Agent Observatory">
+  <meta property="og:title" content="AI Agent Observatory: what AI agents can do, country by country">
+  <meta property="og:description" content="What AI agents can actually do in each country: shop, pay, book, bank and more. Every status is backed by a source.">
+  <meta property="og:url" content="https://agentindex.art/">
+  <meta property="og:image" content="https://agentindex.art/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Agent Observatory in pink pixel letters, with the line: See what AI agents can actually do, country by country.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ff2e88'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%2305060b'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&family=Jersey+10&display=swap" rel="stylesheet">
-  <!-- Flag font, subset to every flag the data uses (tracked countries, company HQs and markets, repo origins). tests check it stays complete. -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=%F0%9F%87%A6%F0%9F%87%AA%F0%9F%87%A6%F0%9F%87%B7%F0%9F%87%A6%F0%9F%87%B9%F0%9F%87%A7%F0%9F%87%B7%F0%9F%87%A8%F0%9F%87%A6%F0%9F%87%A8%F0%9F%87%B1%F0%9F%87%A8%F0%9F%87%B3%F0%9F%87%A8%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%B8%F0%9F%87%AB%F0%9F%87%B7%F0%9F%87%AC%F0%9F%87%A7%F0%9F%87%AE%F0%9F%87%B3%F0%9F%87%B2%F0%9F%87%BD%F0%9F%87%B3%F0%9F%87%B1%F0%9F%87%B8%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8%F0%9F%87%AC%F0%9F%87%B7&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="hero.css">
   <link rel="stylesheet" href="console.css">
@@ -22,7 +29,7 @@
   <script type="module" src="sections.js"></script>
   <link rel="stylesheet" href="charts/charts.css">
   <!-- Charts draw after the page above them: d3 and every chart script are deferred, then charts.js mounts them. -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script defer src="vendor/d3.min.js"></script>
   <script defer src="charts/viz-map.js"></script>
   <script defer src="charts/viz-periodic.js"></script>
   <script defer src="charts/viz-compare.js"></script>
@@ -36,6 +43,7 @@
   <script type="module" src="charts/charts.js"></script>
 </head>
 <body>
+  <a class="skip" href="#country">Skip to the console</a>
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="AI Agent Observatory, home">
@@ -58,7 +66,7 @@
     <section class="hero" aria-labelledby="hero-title" data-hero>
       <canvas class="hero-sky" aria-hidden="true"></canvas>
       <div class="wrap hero-wm-wrap">
-        <canvas class="hero-wm" role="img" aria-label="Agent Observatory"></canvas>
+        <canvas class="hero-wm" role="img" aria-label="AI Agent Observatory"></canvas>
       </div>
       <div class="wrap hero-copy">
         <div class="hero-grid">
@@ -66,11 +74,15 @@
             <h1 id="hero-title"><span>See what AI agents</span> <span>can actually do,</span> <span><span class="hero-tape">country by country.</span></span></h1>
             <div class="hero-ctas">
               <a class="hero-btn hero-btn-1" href="#ranking">Open the ranking <span aria-hidden="true">→</span></a>
+              <noscript><p class="load-note">This page needs JavaScript to draw the data. You can read the same data on GitHub.</p><a class="hero-btn hero-btn-1" href="https://github.com/rasabaq/ai-agent-observatory/tree/main/data">Read the data <span aria-hidden="true">→</span></a></noscript>
             </div>
           </div>
           <div class="hero-icons" data-hero-icons hidden>
-            <ul aria-label="What agents can do there" data-hero-ic></ul>
-            <p class="hero-key" aria-hidden="true"><i class="k-on"></i>works <i class="k-part"></i>partly <i class="k-off"></i>not yet</p>
+            <ul aria-labelledby="hero-in" data-hero-ic></ul>
+            <div class="hero-foot">
+              <p class="hero-key" id="hero-in" data-hero-in></p>
+              <p class="hero-key" aria-hidden="true"><i class="k-on"></i>all live <i class="k-part"></i>partly <i class="k-off"></i>none yet</p>
+            </div>
             <p class="sr-only" aria-live="polite" data-hero-live></p>
           </div>
         </div>
@@ -112,7 +124,7 @@
             <section id="matrix" class="card panel panel-mx" aria-labelledby="mx-title">
               <header><h2 id="mx-title">Status matrix</h2><span class="label" data-mx-count></span></header>
               <p class="mx-legend" data-legend></p>
-              <div class="mx" role="table" aria-labelledby="mx-title" data-matrix></div>
+              <div class="mx" role="grid" aria-labelledby="mx-title" data-matrix></div>
             </section>
             <div class="panels-r">
               <section id="ranking" class="card panel" aria-labelledby="rk-title">
@@ -126,7 +138,7 @@
                 <p class="note" data-cats-note></p>
               </section>
               <section id="evidence" class="card panel" aria-labelledby="ev-title">
-                <header><h2 id="ev-title">Newest evidence</h2><span class="tag" data-feed-count></span></header>
+                <header><h2 id="ev-title">Newest sources</h2><span class="tag" data-feed-count></span></header>
                 <ul class="feed" data-feed></ul>
               </section>
             </div>
@@ -168,12 +180,12 @@
     <section id="companies" class="wrap sec">
       <div class="sec-h">
         <div>
-          <p class="label" data-companies-label>Companies</p>
-          <h2>Who makes it possible. <span class="dim">Based where, live where.</span></h2>
+          <p class="label" role="status" data-companies-label>Companies and public bodies</p>
+          <h2>Who makes it possible. <span class="dim">Where they are based, and where they work.</span></h2>
         </div>
       </div>
       <div class="card panel co-panel">
-        <div class="filters" role="group" aria-label="Filter companies by market" data-company-filters></div>
+        <div class="filters" role="group" aria-label="Filter companies and public bodies by market" data-company-filters></div>
         <div class="table-wrap">
           <table class="table companies" data-companies></table>
         </div>
@@ -187,13 +199,14 @@
     <section id="opensource" class="wrap sec">
       <div class="sec-h">
         <div>
-          <p class="label" data-repos-label>Open source</p>
+          <p class="label" role="status" data-repos-label>Open source</p>
           <h2>What agents are built on. <span class="dim">Really used, or only starred.</span></h2>
         </div>
         <p class="sec-note">Free projects anyone can build an agent on, without asking a company.</p>
       </div>
       <div class="card panel co-panel">
         <div class="filters" role="group" aria-label="Filter repos by real use" data-repo-filters></div>
+        <p class="note repo-hint" data-repo-hint hidden></p>
         <div class="table-wrap">
           <table class="table repos" data-repos></table>
         </div>
@@ -206,7 +219,7 @@
       <div class="sec-h">
         <div>
           <p class="label">Where it comes from</p>
-          <h2>Built on dated sources. <span class="dim">When they appeared, how we score.</span></h2>
+          <h2>Built on dated sources. <span class="dim">When each source appeared.</span></h2>
         </div>
       </div>
     </div>
@@ -239,20 +252,22 @@
           <div class="crop" aria-hidden="true"><div class="crop-in glass cterm" data-crop-term></div></div>
           <div class="fc-tx">
             <h3>Every category weighs the same</h3>
-            <p>A category scores the mean of its cells' points. A country scores the mean of its categories. Live, Limited and Announced cells must cite a source, or the build fails.</p>
+            <p>A category scores the mean of its cells' points. A country scores the mean of its categories. Live, Limited and Announced cells must cite a source, or our data check fails.</p>
           </div>
         </article>
       </div>
+      <p class="note repo-note" style="text-align: center">Cite this: AI Agent Observatory, https://agentindex.art/, data as of <span data-asof></span>. <a href="https://github.com/rasabaq/ai-agent-observatory/blob/main/CITATION.cff" class="nowrap" target="_blank" rel="noopener noreferrer">CITATION.cff</a></p>
     </section>
   </main>
 
   <footer class="wrap foot foot-site">
-    <p>AI Agent Observatory · Availability changes fast. A cell says what was true on <span data-asof></span>.</p>
+    <p>AI Agent Observatory · Availability changes fast.<span class="foot-asof"> A cell says what was true on <span data-asof></span>.</span></p>
     <p data-foot-count></p>
     <p class="foot-links"><a href="https://github.com/rasabaq/ai-agent-observatory" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/ai-agent-observatory/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="https://github.com/rasabaq/ai-agent-observatory/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
+    <p class="foot-note">No tracking and no cookies. The only outside site your browser contacts is GitHub, for the repo avatars in Open source.</p>
   </footer>
 
-  <dialog class="detail" data-detail aria-labelledby="detail-title">
+  <dialog class="detail" data-detail aria-labelledby="detail-title" closedby="any">
     <form method="dialog"><button class="close" aria-label="Close">×</button></form>
     <div data-detail-body></div>
   </dialog>

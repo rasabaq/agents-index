@@ -7,6 +7,8 @@ export const STATUSES = {
   none: { points: 0, label: 'Not yet', hint: 'We searched and found no availability.' },
 };
 
+// A company logo lives in this repo (see scripts/refresh-sites.mjs), so the page loads no image from its site.
+const LOGO = /^logos\/[a-z0-9-]+\.png$/;
 const EVIDENCE_TYPES = ['company', 'report', 'paper', 'regulation', 'news'];
 
 const mean = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
@@ -43,9 +45,13 @@ export function validate(meta, categories) {
   const categoryIds = new Set(meta.categories.map((c) => c.id));
   const capIds = new Set();
   const gapReasons = new Set((meta.gapReasons ?? []).map((r) => r.id));
+  const urls = new Map();
+  // Ids and codes go into HTML attributes, so they may hold only plain characters.
+  for (const c of meta.countries) if (!/^[A-Z]{2}$/.test(c.code)) errors.push(`country "${c.code}": code must be two capital letters`);
   for (const r of meta.gapReasons ?? []) if (!r.id || !r.label) errors.push(`meta: every gap reason needs an id and a label`);
 
   for (const c of meta.categories) {
+    if (!/^[a-z][a-z-]*$/.test(c.id)) errors.push(`category "${c.id}": id must be lowercase letters and dashes`);
     if (!categories.some((cat) => cat.category === c.id)) errors.push(`category "${c.id}" has no data file`);
     // The site writes sentences from these words ("agents can <can>"), so every category needs them.
     if (typeof c.short !== 'string' || !c.short.trim() || typeof c.can !== 'string' || !c.can.trim()) {
@@ -59,7 +65,7 @@ export function validate(meta, categories) {
 
     for (const cap of cat.capabilities ?? []) {
       const where = cap.id ?? `${cat.category}.?`;
-      if (!cap.id?.startsWith(`${cat.category}.`)) errors.push(`${where}: id must start with "${cat.category}."`);
+      if (!cap.id?.startsWith(`${cat.category}.`) || !/^[a-z0-9-]+$/.test(cap.id.slice(cat.category.length + 1))) errors.push(`${where}: id must be "${cat.category}." then lowercase letters, digits and dashes`);
       if (capIds.has(cap.id)) errors.push(`${where}: duplicate id`);
       capIds.add(cap.id);
       if (!cap.name || !cap.question) errors.push(`${where}: needs a name and a question`);
@@ -81,7 +87,7 @@ export function validate(meta, categories) {
           else if (LIMITED_ONLY.includes(cell.gapReason) && cell.status !== 'limited') errors.push(`${where}/${code}: gapReason "${cell.gapReason}" goes only on a limited cell`);
         }
         if (cell.status !== 'none' && !cell.evidence?.length) errors.push(`${where}/${code}: "${cell.status}" needs evidence`);
-        for (const ev of cell.evidence ?? []) checkEvidence(ev, `${where}/${code}`, meta.asOf, errors);
+        for (const ev of cell.evidence ?? []) checkEvidence(ev, `${where}/${code}`, meta.asOf, errors, urls);
       }
       for (const code of Object.keys(cap.countries ?? {})) {
         if (!codes.has(code)) errors.push(`${where}: unknown country "${code}"`);
@@ -96,7 +102,9 @@ export function validate(meta, categories) {
       if (!isUrl(co.url)) errors.push(`${where}: bad url`);
       if (!isUrl(co.homepage)) errors.push(`${where}: needs a homepage (its own site, used for its logo)`);
       if (co.icon === undefined) errors.push(`${where}: no icon yet; run npm run refresh-sites`);
-      else if (co.icon !== null && !/^https:\/\//.test(co.icon)) errors.push(`${where}: icon must be an https URL, or null when the site has none`);
+      else if (co.icon !== null && !LOGO.test(co.icon)) errors.push(`${where}: icon must be a logos/<name>.png path, or null when the site has none`);
+      if (!/^[A-Z]{2}$/.test(co.hq ?? '')) errors.push(`${where}: hq must be a two-letter country code`);
+      if (!Array.isArray(co.markets)) errors.push(`${where}: markets must be a list of country codes`);
       for (const m of co.markets ?? []) if (!codes.has(m)) errors.push(`${where}: unknown market "${m}"`);
       for (const c of co.capabilities ?? []) if (!capIds.has(c)) errors.push(`${where}: unknown capability "${c}"`);
       for (const [c, ms] of Object.entries(co.marketsByCapability ?? {})) {
@@ -111,6 +119,7 @@ export function validate(meta, categories) {
     for (const r of cat.repos ?? []) {
       const where = `${cat.category}: repo "${r.repo}"`;
       if (!/^[\w.-]+\/[\w.-]+$/.test(r.repo ?? '')) errors.push(`${where}: repo must be "owner/name"`);
+      if (r.icon !== undefined && r.icon !== null && !LOGO.test(r.icon)) errors.push(`${where}: icon must be a logos/<name>.png path, or null for a monogram`);
       if (repoIds.has(r.repo?.toLowerCase())) errors.push(`${where}: listed twice; keep it in one file`);
       repoIds.add(r.repo?.toLowerCase());
       if (!r.name || !r.role) errors.push(`${where}: needs a name and a role`);
@@ -129,7 +138,11 @@ export function validate(meta, categories) {
 
 const REGISTRIES = ['npm', 'pypi', 'packagist'];
 const LIMITED_ONLY = ['pilot-only', 'assist-only'];
-const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s ?? '');
+const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s ?? '') && isRealDate(s);
+// A day or month that exists: "2026-02-30" and "2026-13" fail. Date.parse rolls Feb 30 over to Mar 2, so compare back.
+const isRealDate = (s) => !Number.isNaN(Date.parse(s)) && new Date(s).toISOString().startsWith(s);
+// One link per article: ignore http/https, "www." and a trailing slash when comparing evidence URLs.
+const urlKey = (u) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 
 // How much an open-source repo is really used: counted installs, not stars. Stars measure attention.
 // Downloads are per month, from its busiest npm, PyPI or Packagist package. Docker pulls are lifetime, so their bar is higher.
@@ -164,11 +177,16 @@ export function rankRepos(categories) {
 }
 
 // Dates are "YYYY-MM-DD" or "YYYY-MM", and not after the dataset's asOf. String order is date order here.
-function checkEvidence(ev, where, asOf, errors) {
+function checkEvidence(ev, where, asOf, errors, urls) {
   if (!ev.title) errors.push(`${where}: evidence needs a title`);
   if (!isUrl(ev.url)) errors.push(`${where}: bad evidence url "${ev.url}"`);
+  else {
+    const seen = urls.get(urlKey(ev.url));
+    if (seen && seen !== ev.url) errors.push(`${where}: evidence url "${ev.url}" is the same link as "${seen}"; use one form`);
+    else urls.set(urlKey(ev.url), ev.url);
+  }
   if (!EVIDENCE_TYPES.includes(ev.type)) errors.push(`${where}: bad evidence type "${ev.type}"`);
-  if (!/^\d{4}-\d{2}(-\d{2})?$/.test(ev.date ?? '')) errors.push(`${where}: evidence date must be "YYYY-MM-DD" or "YYYY-MM", not "${ev.date ?? ''}"`);
+  if (!/^\d{4}-\d{2}(-\d{2})?$/.test(ev.date ?? '') || !isRealDate(ev.date)) errors.push(`${where}: evidence date must be "YYYY-MM-DD" or "YYYY-MM", not "${ev.date ?? ''}"`);
   else if (asOf && ev.date > asOf) errors.push(`${where}: evidence date "${ev.date}" is after asOf "${asOf}"`);
 }
 
@@ -264,10 +282,11 @@ export function guessCountry(codes, languages = [], timeZone = '') {
   return null;
 }
 
-// The page's link state: #country=MX, optionally &view=business. Old #country=MX links read as the people view.
+// The page's link state: #country=MX, optionally &view=business. Old #country=MX links read as the people view; #country=mx reads as MX.
 export function readHash(hash) {
   const p = new URLSearchParams(hash.replace(/^#/, ''));
-  const country = /^[A-Z]{2}$/.test(p.get('country') ?? '') ? p.get('country') : null;
+  const code = p.get('country')?.toUpperCase() ?? '';
+  const country = /^[A-Z]{2}$/.test(code) ? code : null;
   return { country, view: p.get('view') === 'business' ? 'business' : 'people' };
 }
 export const writeHash = (country, view) => `#country=${country}${view === 'business' ? '&view=business' : ''}`;
@@ -293,7 +312,7 @@ export function verdict(name, byCategory, liveBy, reasonFor = () => null) {
   const cannot = cannotIds.map((id) => words(id).can);
   const reason = cannotIds.length ? reasonFor(cannotIds) : null;
   const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
-  const why = reason ? ` Main reason: ${reason}.` : '';
+  const why = reason ? ` The main reason: ${reason[0].toLowerCase()}${reason.slice(1)}.` : '';
   if (!cannot.length) return `${where}, AI agents can ${join(can, 'and')} today. Something works in every area, though not all of it yet.`;
   if (!can.length) return `${where}, nothing we track works for AI agents yet: they cannot ${join(cannot, 'or')}.${why}`;
   return `${where}, AI agents can ${join(can, 'and')} today, but cannot yet ${join(cannot, 'or')}.${why}`;

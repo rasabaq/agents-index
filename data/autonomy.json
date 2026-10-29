@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans), Perplexity Comet (free) and Google's Chrome auto browse (AI Pro and Ultra) all browse and act on websites.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans), Perplexity Comet (free) and Google's Chrome auto browse (AI Pro and Ultra) all browse and act on websites.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -56,7 +56,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work in the UK; Gemini in Chrome now reaches the UK on desktop, but its auto browse agent is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work in the UK; Gemini in Chrome now reaches the UK on desktop, but its auto browse agent is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -97,7 +97,7 @@
         },
         "DE": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Germany, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Germany, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -145,7 +145,7 @@
         },
         "BR": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Portuguese prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Portuguese prompts; Google's Chrome auto browse is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -186,7 +186,7 @@
         },
         "MX": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -227,7 +227,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -268,7 +268,7 @@
         },
         "CO": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -309,7 +309,7 @@
         },
         "IN": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Hindi and English prompts; Google's Chrome auto browse reached India in October 2026 for AI Pro and Ultra users, in English only.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Hindi and English prompts; Google's Chrome auto browse reached India in October 2026 for AI Pro and Ultra users, in English only.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -369,7 +369,7 @@
             {
               "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
-              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
             }
@@ -390,7 +390,7 @@
             {
               "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
-              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
             }
@@ -411,7 +411,7 @@
             {
               "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
-              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
             }
@@ -432,7 +432,7 @@
             {
               "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
-              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
             }
@@ -453,7 +453,7 @@
             {
               "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
-              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
             }
@@ -474,7 +474,7 @@
             {
               "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
-              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
             }
@@ -495,7 +495,7 @@
             {
               "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
-              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
             }
@@ -516,7 +516,7 @@
             {
               "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
               "publisher": "Google",
-              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "url": "https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
             }
@@ -617,11 +617,11 @@
               "type": "company"
             },
             {
-              "title": "What's new for Gemini Spark",
-              "publisher": "Google Gemini Help",
-              "url": "https://support.google.com/gemini/answer/17171264",
-              "date": "2026-07-17",
-              "type": "company"
+              "title": "Google adds three features to its AI plans, and keeps a fourth for Americans (Spark unavailable in the EEA, Switzerland and the UK)",
+              "publisher": "The Next Web",
+              "url": "https://thenextweb.com/news/gemini-spark-not-in-europe",
+              "date": "2026-09-09",
+              "type": "news"
             },
             {
               "title": "Getting started with your dot",
@@ -665,11 +665,11 @@
               "type": "company"
             },
             {
-              "title": "What's new for Gemini Spark",
-              "publisher": "Google Gemini Help",
-              "url": "https://support.google.com/gemini/answer/17171264",
-              "date": "2026-07-17",
-              "type": "company"
+              "title": "Google adds three features to its AI plans, and keeps a fourth for Americans (Spark unavailable in the EEA, Switzerland and the UK)",
+              "publisher": "The Next Web",
+              "url": "https://thenextweb.com/news/gemini-spark-not-in-europe",
+              "date": "2026-09-09",
+              "type": "news"
             },
             {
               "title": "Getting started with your dot",
@@ -964,7 +964,7 @@
       "hq": "US",
       "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
       "homepage": "https://openai.com/",
-      "icon": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "icon": "logos/openai.png",
       "role": "ChatGPT Work's cloud browser opens sites, clicks and fills forms for paid users, and dots, always-on agents, act across connected apps for Pro users outside the EEA, Switzerland and the UK.",
       "markets": [
         "US",
@@ -996,7 +996,7 @@
       "hq": "US",
       "url": "https://claude.com/blog/claude-in-chrome-generally-available",
       "homepage": "https://www.anthropic.com/",
-      "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+      "icon": "logos/anthropic.png",
       "role": "Claude in Chrome reads pages and clicks, types and fills forms in the user's own browser on paid plans.",
       "markets": [
         "US",
@@ -1017,7 +1017,7 @@
       "hq": "US",
       "url": "https://www.perplexity.ai/comet",
       "homepage": "https://www.perplexity.ai/",
-      "icon": "https://www.perplexity.ai/favicon.svg",
+      "icon": "logos/perplexity.png",
       "role": "Comet is a free AI browser whose assistant acts on web pages for the user.",
       "markets": [
         "US",
@@ -1038,7 +1038,7 @@
       "hq": "US",
       "url": "https://support.google.com/gemini/answer/13695044?hl=en",
       "homepage": "https://www.google.com/",
-      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "icon": "logos/google.png",
       "role": "Gemini connected apps act across Android and Google apps, Chrome auto browse acts on sites (US and India), and AI Mode phones businesses (US).",
       "markets": [
         "US",
@@ -1070,7 +1070,7 @@
       "hq": "US",
       "url": "https://www.aboutamazon.com/news/devices/alexa-plus-available-free-prime-members-us",
       "homepage": "https://www.aboutamazon.com/",
-      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "icon": "logos/amazon.png",
       "role": "Alexa+ orders, books and controls smart homes through voice and partner services.",
       "markets": [
         "US",
@@ -1089,7 +1089,7 @@
       "hq": "US",
       "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
       "homepage": "https://www.apple.com/",
-      "icon": "https://www.apple.com/favicon.ico",
+      "icon": "logos/apple.png",
       "role": "Siri AI uses personal context to take actions in apps; it is in beta and not available in the EU.",
       "markets": [
         "US",

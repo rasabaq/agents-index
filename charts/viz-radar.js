@@ -85,7 +85,7 @@
   (window.CHARTS ??= []).push({
     id: 'radar',
     title: 'Country fingerprints',
-    blurb: 'What shape is each country’s agent readiness? Each spoke is one category, scored from 0 at the centre to 100 at the edge, so a big, round shape means agents can do a lot across the board.',
+    blurb: 'What shape is each country’s agent readiness? Each spoke is one category, scored from 0 at the center to 100 at the edge, so a big, round shape means agents can do a lot across the board.',
     render(el, ctx) {
       if (!document.getElementById('v-radar-style')) document.head.insertAdjacentHTML('beforeend', `<style id="v-radar-style">${STYLE}</style>`);
       const { esc, emoji, flag, ranking, byCode, tip } = ctx;
@@ -121,7 +121,7 @@
           <div class="bar"><h3>Compare</h3>${pick(0)}<span class="vs">vs</span>${pick(1)}</div>
           <div class="body"><div class="plot"><svg class="big" role="img"></svg></div><table class="tbl"></table></div>
         </section>
-        <div class="head"><h3>All ${ranking.length} countries, by rank</h3><p>Same spokes as the chart above, clockwise from Shopping at the top. Rings mark 25, 50, 75 and 100. Select a country to compare it.</p></div>
+        <div class="head"><h3>All ${ranking.length} countries, by rank</h3><p>Same spokes as the chart above, clockwise from ${esc(cats[0].short ?? cats[0].name)} at the top. Rings mark 25, 50, 75 and 100. Select a country to compare it.</p></div>
         <div class="grid">${ranking.map((r) => `
           <button type="button" class="rd-card" data-code="${r.code}" aria-label="${esc(`${r.name}, rank ${r.rank}, score ${r.score}. ${cats.map((c) => `${c.name} ${r.byCategory[c.id]}`).join(', ')}. Select to compare.`)}">
             <span class="rank">${r.rank}</span><span class="sw" aria-hidden="true"></span>
@@ -171,9 +171,10 @@
           const right = Math.abs(s) < 0.3 || (s > 0) === (p[i] <= 70);
           return { i, cls, html: `<text class="dl" x="${f(x + (right ? 9 : -9))}" y="${f(y + 4.5)}" text-anchor="${right ? 'start' : 'end'}">${esc(W >= 480 ? byCode[code].name : code)}</text>` };
         });
-        big.innerHTML = `<g>${base(r)}${ticks}
+        // The ring numbers sit above the shapes, on their dark halo, so a large shape never hides them.
+        big.innerHTML = `<g>${base(r)}
           <polygon class="shape s2" points="${poly(vb, r)}"/><polygon class="shape s1" points="${poly(va, r)}"/>
-          ${dots(vb, r, 's2')}${dots(va, r, 's1')}${axis}${direct.map((d) => d.html).join('')}${wedges(r + OFF)}</g>`;
+          ${ticks}${dots(vb, r, 's2')}${dots(va, r, 's1')}${axis}${direct.map((d) => d.html).join('')}${wedges(r + OFF)}</g>`;
         direct.forEach((d) => big.querySelector(`.rd-dot.${d.cls}[data-i="${d.i}"]`).classList.add('keep'));
         const bb = big.firstElementChild.getBBox();
         big.setAttribute('width', W);

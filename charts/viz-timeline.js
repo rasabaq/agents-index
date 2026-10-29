@@ -8,7 +8,7 @@
     const asOf = new Date(`${ctx.meta.asOf}T00:00:00Z`);
     const START = new Date(Date.UTC(2016, 0, 1));
     const BREAK = new Date(Date.UTC(2025, 0, 1)); // time before this is drawn compressed
-    const TYPE = { company: 'Company', regulation: 'Regulation', news: 'News', report: 'Report' };
+    const TYPE = { company: 'Company', regulation: 'Regulation', news: 'News', report: 'Report', paper: 'Paper' };
     const FILLED = new Set(['company', 'regulation']);
     const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const capName = Object.fromEntries(ctx.capabilities.map((c) => [c.id, c.name]));
@@ -56,6 +56,7 @@
     const early = sources.filter((s) => s.early).length;
     const multi = sources.filter((s) => s.cats.size > 1).length;
     let country = 'ALL';
+    let active = 0; // the one dot in the tab order (roving tabindex); arrow keys move it
 
     if (!document.getElementById('v-timeline-css')) {
       document.head.insertAdjacentHTML('beforeend', `<style id="v-timeline-css">
@@ -90,7 +91,7 @@
 .v-timeline .tm-dot.hollow.pick { stroke: var(--sunrise); }
 .v-timeline .tm-dot.hot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; }
 .v-timeline a { outline: none; cursor: pointer; }
-.v-timeline a:focus-visible .tm-dot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; }
+.v-timeline a:focus-visible .tm-dot { stroke: var(--sunrise); stroke-width: 3; opacity: 1; filter: var(--sun-glow); }
 .v-timeline .ring { fill: none; stroke: var(--ink); stroke-width: 1.5; }
 .v-timeline .leader { stroke: var(--line-strong); stroke-width: 1; }
 /* key moments are numbered like function keys: magenta caps */
@@ -107,21 +108,21 @@
     el.classList.add('v-timeline');
     el.innerHTML = `
       <div class="filters" role="group" aria-label="Highlight sources for one country">
-        ${[['ALL', 'All countries'], ...ctx.meta.countries.map((c) => [c.code, `${flag(c.code)}${c.code}`])]
+        ${[['ALL', 'All countries'], ...ctx.ranking.map((c) => [c.code, `${flag(c.code)}${c.code}`])]
           .map(([code, label]) => `<button type="button" class="pill" data-c="${code}" aria-pressed="${code === 'ALL'}" ${code !== 'ALL' ? `aria-label="${esc(cName[code])}"` : ''}>${label}</button>`).join('')}
       </div>
       <div class="legend">
         <span class="legend-item"><span class="key-dot filled"></span>Company or regulation</span>
-        <span class="legend-item"><span class="key-dot hollow"></span>News or report</span>
-        <span class="legend-item" style="color:var(--muted)">A source dated only by year sits mid-year</span>
+        <span class="legend-item"><span class="key-dot hollow"></span>News, report or paper</span>
+        ${yearOnly ? '<span class="legend-item" style="color:var(--muted)">A source dated only by year sits mid-year</span>' : ''}
       </div>
       <div class="scroll"></div>
       <ol class="moments">${moments.map((s) => `<li><b>${s.moment}</b><span><span class="when">${esc(s.label)}</span> · ${esc(s.title)} <span style="color:var(--muted)">(${esc(s.publisher)})</span></span></li>`).join('')}</ol>
       <p class="tl-note">${sources.length} unique sources from ${citations} citations, one dot per source and lane. Time before 2025 is compressed (shaded) so the recent months have room.
         ${early ? `${early} source${early > 1 ? 's' : ''} older than 2016 ${early > 1 ? 'sit' : 'sits'} in the “before 2016” column.` : ''}
-        ${yearOnly} sources give only a year: they sit mid-year and are left out of the quarter bars.
+        ${yearOnly ? `${yearOnly} source${yearOnly > 1 ? 's give' : ' gives'} only a year: ${yearOnly > 1 ? 'they sit' : 'it sits'} mid-year and ${yearOnly > 1 ? 'are' : 'is'} left out of the quarter bars.` : ''}
         ${multi ? `${multi} source${multi > 1 ? 's' : ''} support${multi > 1 ? '' : 's'} two categories and ${multi > 1 ? 'appear' : 'appears'} in both lanes.` : ''}
-        The last quarter runs only to ${parse(ctx.meta.asOf).label}. Click a dot to open its source.</p>`;
+        The last quarter runs only to ${parse(ctx.meta.asOf).label}. Click a dot to open its source; with a keyboard, Tab into the chart and move between dots with the arrow keys.</p>`;
     const wrap = el.querySelector('.scroll');
 
     el.querySelectorAll('[data-c]').forEach((b) => b.addEventListener('click', () => {
@@ -193,7 +194,7 @@
 
       // Lanes.
       let y = annTop + annH;
-      const lanes = cats.map((c) => {
+      const lanes = cats.map((c, li) => {
         const items = sources.filter((s) => s.cats.has(c.id)).map((s) => ({ s, x: px(s) }));
         dodge(items.filter((d) => d.s.early), D);
         dodge(items.filter((d) => !d.s.early), D);
@@ -201,7 +202,7 @@
         const head = phone ? 20 : 0;
         const h = head + Math.max(32, 2 * ext + D + 10);
         const lane = { c, items, top: y, head, h, mid: y + head + (h - head) / 2 };
-        items.forEach((d) => (d.cy = lane.mid + d.y));
+        items.forEach((d) => { d.cy = lane.mid + d.y; d.lane = li; });
         y += h;
         return lane;
       });
@@ -210,15 +211,15 @@
       const dots = lanes.flatMap((l) => l.items);
 
       const svg = d3.create('svg').attr('width', W).attr('height', H).attr('viewBox', `0 0 ${W} ${H}`)
-        .attr('role', 'img')
-        .attr('aria-label', `Timeline of ${sources.length} cited sources from before 2016 to ${parse(ctx.meta.asOf).label}, in ${cats.length} category lanes, with a bar strip counting sources per quarter.`);
+        .attr('role', 'group')
+        .attr('aria-label', `Timeline of ${sources.length} cited sources from before 2016 to ${parse(ctx.meta.asOf).label}, in ${cats.length} category lanes, with a bar strip counting sources per quarter. Arrow keys move between sources.`);
 
       // Compressed band and gridlines.
       svg.append('rect').attr('class', 'tm-band').attr('x', x0).attr('y', stripTop).attr('width', xb - x0).attr('height', lanesBottom - stripTop);
+      const month = (d) => [d, d.getUTCMonth() ? MON[d.getUTCMonth()] : String(d.getUTCFullYear())];
       const ticks = phone
-        ? [[START, '2016', 'start'], [BREAK, '2025'], [new Date(Date.UTC(2025, 6, 1)), 'Jul'], [new Date(Date.UTC(2026, 0, 1)), '2026'], [new Date(Date.UTC(2026, 6, 1)), 'Jul']]
-        : [...[2016, 2020].map((yy) => [new Date(Date.UTC(yy, 0, 1)), String(yy), yy === 2016 ? 'start' : 'middle']),
-          ...d3.utcMonths(BREAK, asOf, 3).map((d) => [d, d.getUTCMonth() ? MON[d.getUTCMonth()] : String(d.getUTCFullYear())])];
+        ? [[START, '2016', 'start'], ...d3.utcMonths(BREAK, asOf, 6).map(month)]
+        : [...[2016, 2020].map((yy) => [new Date(Date.UTC(yy, 0, 1)), String(yy), yy === 2016 ? 'start' : 'middle']), ...d3.utcMonths(BREAK, asOf, 3).map(month)];
       const g = svg.append('g');
       for (const [d, t, anchor = 'middle'] of ticks) {
         g.append('line').attr('class', 'grid').attr('x1', x(d)).attr('x2', x(d)).attr('y1', annTop + annH).attr('y2', lanesBottom + 4);
@@ -277,11 +278,27 @@
       }
 
       // Dots: links for keyboard and screen readers; the pointer uses a nearest-dot search.
+      // One tab stop: only the active dot is tabbable. Left and Right step through the dots by date, lane by lane;
+      // Up and Down jump to the nearest dot in the lane above or below; Home and End go to the first and last dot.
+      if (!dots[active]) active = 0;
       const links = svg.append('g').selectAll('a').data(dots).join('a')
         .attr('href', (d) => d.s.url).attr('target', '_blank').attr('rel', 'noopener noreferrer')
+        .attr('tabindex', (d, i) => (i === active ? 0 : -1))
         .attr('aria-label', (d) => `${d.s.title}, ${d.s.publisher}, ${d.s.label}`)
         .on('focus', function (e, d) { ctx.tip.show(atRect(this), tipHtml(d.s)); })
-        .on('blur', () => ctx.tip.hide());
+        .on('blur', () => ctx.tip.hide())
+        .on('keydown', (e, d) => {
+          const i = dots.indexOf(d), full = (l) => l.items.length;
+          const near = (l) => (l ? dots.indexOf(d3.least(l.items, (o) => Math.abs(o.x - d.x))) : -1);
+          const to = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: dots.length - 1,
+            ArrowDown: near(lanes.slice(d.lane + 1).find(full)), ArrowUp: near(lanes.slice(0, d.lane).findLast(full)) }[e.key];
+          if (to === undefined) return;
+          e.preventDefault();
+          if (!dots[to]) return;
+          active = to;
+          links.attr('tabindex', (o, j) => (j === active ? 0 : -1));
+          links.nodes()[active].focus();
+        });
       links.append('circle').attr('cx', (d) => d.x).attr('cy', (d) => d.cy).attr('r', R)
         .attr('class', (d) => `tm-dot ${FILLED.has(d.s.type) ? 'filled' : 'hollow'}${match(d.s) ? (country === 'ALL' ? '' : ' pick') : ' dim'}`);
 
