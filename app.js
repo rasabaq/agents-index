@@ -47,6 +47,12 @@ function init() {
   wire();
   wireTooltip();
   wireLogos();
+  // A shared link (#country=MX) opens on that country's view. The address bar shows the country we show (cl → CL, xx → US).
+  // A reload or Back keeps the browser's own scroll position.
+  if (location.hash.includes('country=')) {
+    history.replaceState(null, '', writeHash(state.country, state.view));
+    if (performance.getEntriesByType('navigation')[0]?.type === 'navigate') $('#country').scrollIntoView({ behavior: 'instant' });
+  }
 }
 
 const hashCountry = () => {
@@ -425,8 +431,9 @@ function wire() {
     const taken = chart && !chart.dispatchEvent(new CustomEvent('compare', { detail: pair, cancelable: true }));
     if (!taken) selectCountry(pair[1]);
   });
+  // A section link (#companies, #top) scrolls as usual, then the address bar gets #country=XX back, so a reload keeps the country.
   addEventListener('hashchange', () => {
-    if (!hashCountry()) return;
+    if (!hashCountry()) return history.replaceState(null, '', writeHash(state.country, state.view));
     state.view = readHash(location.hash).view;
     selectCountry(hashCountry(), true);
   });
@@ -457,12 +464,19 @@ function wire() {
   });
   $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
 
-  // Phones: the Menu button opens the section links; picking one closes it.
+  // Phones: the Menu button opens the section links and reads Close while open; picking one or tapping outside closes it.
   const nav = $('.nav'), menu = $('[data-nav-menu]');
-  const setMenu = (open) => { nav.classList.toggle('open', open); menu.setAttribute('aria-expanded', open); };
+  const setMenu = (open) => { nav.classList.toggle('open', open); menu.setAttribute('aria-expanded', open); menu.textContent = open ? 'Close' : 'Menu'; };
   menu.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
   nav.querySelector('nav').addEventListener('click', (e) => e.target.closest('a') && setMenu(false));
   addEventListener('keydown', (e) => e.key === 'Escape' && nav.classList.contains('open') && (setMenu(false), menu.focus()));
+  addEventListener('pointerdown', (e) => nav.classList.contains('open') && !nav.contains(e.target) && setMenu(false));
+
+  // A click on the dimmed backdrop closes the details. closedby="any" does this too, where the browser supports it.
+  $('[data-detail]').addEventListener('click', (e) => {
+    const d = e.currentTarget, r = d.getBoundingClientRect();
+    if (e.target === d && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) d.close();
+  });
 
   // Cells in the matrix and the feed open their details; the sources button lists the country's sources.
   $('[data-term]').addEventListener('click', (e) => {
