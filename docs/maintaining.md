@@ -7,26 +7,15 @@ How we handle issues and pull requests from outside contributors.
 | Work | Who |
 | --- | --- |
 | Triage: labels, duplicates, routing, the good first issue list | Maintainer |
-| Data in `data/<category>.json` | The researcher who owns that category file (see the next table) |
-| New leads for the data, in the OpenBot table `index_agent_leads` | Research on X |
-| Code and the site | Coder or Coder brother |
-| CI in `.github/workflows/` | Coder brother |
-| Checking UI changes at 1440px and 400px | QA |
-| Merging every PR | Chief |
+| Data in `data/<category>.json` | The category owner for that file |
+| New leads for the data | Category owners, and anyone who opens an issue |
+| Code, the site and CI in `.github/workflows/` | Maintainer |
+| Checking UI changes at 1440px and 400px | Reviewer |
+| Merging every PR | Maintainer |
 
-Each data file has one owner:
+Each file in `data/` (one per category, such as `payments.json` or `health.json`) has a category owner. The owner checks the facts in that file. `meta.json` holds the countries, categories and shared lists. The maintainer decides what goes in it.
 
-| File in `data/` | Owner |
-| --- | --- |
-| `payments.json`, `banking.json`, `government.json`, `rules.json` | Research guys |
-| `commerce.json`, `services.json`, `autonomy.json`, `messaging.json`, `access.json` | Gather guy |
-| `health.json` | Health researcher |
-| `work.json`, `insurance.json` | Work & insurance researcher |
-| `meta.json` | Chief decides what goes in. Coder adds schema fields. |
-
-The `rules`, `access`, `health`, `work` and `insurance` files are still being built.
-
-Only Chief merges. Comments, reviews and messages to contributors go out in the user's name. Until a standard reply below is approved, Maintainer drafts each one and sends it to Chief.
+Only the maintainer merges. The maintainer posts comments and reviews, using the standard replies below as a starting point.
 
 ## Labels
 
@@ -52,7 +41,7 @@ Go through new issues and PRs every day.
 
 1. Add the type label. The issue forms add it for you, so check that it is right.
 2. Search for duplicates. Close exact duplicates with a link to the first one.
-3. Route it: data to the researcher who owns the file, code to Coder or Coder brother, UI checks to QA.
+3. Route it: data to the category owner of the file, code to the maintainer, UI checks to a reviewer.
 4. If a data issue has no URL we can check, add `needs-source` and ask for one.
 5. Reply.
 
@@ -60,7 +49,7 @@ We aim to reply to a new issue or PR within 2 working days, and to finish checki
 
 ## Checking a data PR
 
-A data PR is ready for Chief when all of these hold:
+A data PR is ready to merge when all of these hold:
 
 - CI passes: `npm test` and `npm run validate`. Run `npm run check-links` on the branch too, because CI runs it only once a week.
 - It changes one thing, and only data files.
@@ -70,19 +59,17 @@ A data PR is ready for Chief when all of these hold:
 - Thin, indirect or conflicting sources mean `"confidence": "low"`. When sources disagree, the cell takes the lower status and the note says why.
 - Cells that are not live carry a `gapReason` from `data/meta.json` when one fits.
 - The note is plain English and names the products.
-- `asOf` in `data/meta.json` moves to the date of the change.
+- `asOf` in `data/meta.json` moves to the date of the change, and `lastmod` in `sitemap.xml` and `date-released` in `CITATION.cff` move with it.
 
-The researcher who owns the file checks the facts. Maintainer checks the rules above.
+The category owner checks the facts. The maintainer checks the rules above.
 
 ## Standard replies
-
-> **DRAFT.** Nobody has approved these replies yet. Until the user approves them, every reply goes to Chief first.
 
 Replace the parts in angle brackets.
 
 ### Thanks and next step
 
-> Thanks for this. `<Name of crew role>` will look at it next. We aim to reply within 2 working days.
+> Thanks for this. `<Role, such as the category owner>` will look at it next. We aim to reply within 2 working days.
 
 ### Need a primary source
 
