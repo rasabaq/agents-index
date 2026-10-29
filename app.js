@@ -59,7 +59,7 @@ const catName = (id) => meta.categories.find((c) => c.id === id).name;
 const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
 const flag = (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`;
 const chip = (status, low) => `<span class="chip s-${status}${low ? ' q' : ''}">${STATUSES[status].label}</span>`;
-// A small status capsule for the matrix: the fill carries the order, a dashed ring means low confidence.
+// A small status mark for the matrix: a dot, half dot, ring or dash; a "?" after it means low confidence.
 const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : ''}" aria-hidden="true"></i>`;
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', low confidence' : ''}`;
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
@@ -150,7 +150,7 @@ function renderRanking() {
 
 function renderLegend() {
   $('[data-legend]').innerHTML = Object.entries(STATUSES).map(([k, s]) => `<span>${dot({ status: k })}${s.label}</span>`).join('')
-    + `<span>${dot({ status: 'live', confidence: 'low' })}Low confidence</span>`;
+    + `<span>${dot({ status: 'live', confidence: 'low' })}Low confidence (thin sources)</span>`;
 }
 
 // The selected country: its head, the four numbers, its matrix column and its categories.
@@ -199,7 +199,7 @@ function renderCountry() {
       <p class="label">Score</p>
       <p class="kpi-v">${r.score}<small>/ 100 · rank ${r.rank} of ${ranking.length}${ties.length ? ', tied' : ''}</small></p>
       <ul class="mc-bars">${bar(`${flag(r.code)}${r.code}`, r.score, true)}${best.code === r.code ? '' : bar(`Best: ${flag(best.code)}${best.code}`, best.score)}${bar(`Average of ${ranking.length}`, avg)}</ul>
-      <p class="mc-note">The share of agent abilities that work today. Data as of ${fmtDate(meta.asOf)}. ${low ? `A dashed ring marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
+      <p class="mc-note">The share of agent abilities that work today. Data as of ${fmtDate(meta.asOf)}. ${low ? `A ? marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
     </div>
     <section class="card kpi mc-list" aria-labelledby="mc-works"><h3 id="mc-works" class="label">Works today · ${works.length} of ${total}</h3>
       ${works.length ? `<ul>${works.map((x) => item(x)).join('')}</ul>` : '<p class="mc-note">Nothing is generally available yet.</p>'}</section>
@@ -395,7 +395,7 @@ function renderRepos() {
 function renderMethod() {
   const low = cells.filter((x) => x.cell.confidence).length;
   $('[data-method-cells]').textContent = `One matrix, ${cells.length} cells`;
-  $('[data-method-low]').textContent = `${low} cells rest on thin sources. They get a dashed ring, so you see the doubt.`;
+  $('[data-method-low]').textContent = `${low} cells rest on thin sources. They are marked with a ?, so you see the doubt.`;
   // The row with the most different statuses, and the fewest doubts, shows the scale best.
   const fit = (cap) => { const cs = Object.values(cap.countries); return new Set(cs.map((c) => c.status)).size * 10 - cs.filter((c) => c.confidence).length * 5; };
   const cap = Object.values(capIndex).reduce((a, b) => (fit(b) > fit(a) ? b : a));

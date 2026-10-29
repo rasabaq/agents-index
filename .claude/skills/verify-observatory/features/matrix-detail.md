@@ -1,14 +1,14 @@
 # Capability matrix and cell detail
 
-The status matrix shows 18 capabilities in rows, grouped by category, and 8 countries in columns. Each cell is a capsule whose fill and ring show the status (Live, Limited, Announced, Not yet), with a dashed ring when confidence is low. Hovering a cell shows a tooltip. Clicking it opens a dialog with the yes-or-no question, the status, the note, the dated sources and a "Suggest a correction" link to a prefilled GitHub issue form.
+The status matrix shows 18 capabilities in rows, grouped by category, and 8 countries in columns. Each cell shows its status as a mark you can read without the legend: a filled dot (Live), a half-filled dot (Limited), a ring (Announced) or a dash (Not yet). A small sunrise "?" after the mark means low confidence. The legend sits above the matrix (`.mx-legend`). Hovering a cell shows a tooltip. Clicking it opens a dialog with the yes-or-no question, the status, the note, the dated sources and a "Suggest a correction" link to a prefilled GitHub issue form.
 
 ## Sub-features
 
 - `matrix-grid` renders 18 capability rows × 8 country columns, with the selected country's column highlighted.
-- `matrix-legend` explains the capsule shapes under the matrix.
+- `matrix-legend` explains the marks, above the matrix.
 - `matrix-tooltip` shows the country, status and note on hover (mouse only).
 - `cell-detail` opens the dialog for one cell: the kicker (category · country), `#detail-title` (the question), the status chip, the note and the sources.
-- `cell-low-confidence` adds the "Low confidence…" note in the dialog for dashed cells.
+- `cell-low-confidence` adds the "Low confidence…" note in the dialog for cells marked with "?".
 - `cell-correction` links "Suggest a correction" to `issues/new?template=data-correction.yml` with the country, capability and current status filled in.
 - `cell-close` closes the dialog with Escape or the × button.
 - `country-sources` lists every source behind the selected country, from the "N sources" button.
@@ -17,7 +17,7 @@ The status matrix shows 18 capabilities in rows, grouped by category, and 8 coun
 ## How to get to it (user POV)
 
 - Scroll to "Status matrix" in the console, or use the console tab "2 Matrix", or press `2`.
-- Click any cell capsule.
+- Click any cell mark.
 - Click a row in "Newest evidence".
 - Click the "N sources" button in the country view.
 
