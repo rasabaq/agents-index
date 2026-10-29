@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "limited",
-          "note": "There is no national ID; Login.gov serves only government agencies, and state mobile driver's licenses in Google, Samsung and Apple wallets can be checked by businesses, but only about 20 states issue them.",
+          "note": "There is no national ID, so the cell is limited. Login.gov serves only government agencies. Businesses can check state mobile driver's licenses in Google Wallet through the Digital Credentials API, but these are state IDs, not a national one.",
           "evidence": [
             {
               "title": "Login.gov is now accepting mobile driver's licenses",
@@ -21,14 +21,14 @@
               "title": "Accepted ID types: mobile driver's licenses in a digital wallet",
               "publisher": "Login.gov",
               "url": "https://www.login.gov/help/verify-your-identity/accepted-id-type/",
-              "date": "2026",
+              "date": "2026-10",
               "type": "company"
             },
             {
               "title": "Verify with Google Wallet digital IDs",
               "publisher": "Google for Developers",
               "url": "https://developers.google.com/wallet/identity/verify",
-              "date": "2026",
+              "date": "2026-10-23",
               "type": "company"
             },
             {
@@ -43,21 +43,22 @@
         },
         "GB": {
           "status": "announced",
-          "note": "GOV.UK One Login serves central government only and GOV.UK Wallet holds just the veteran card; since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving licence in a GOV.UK Wallet sandbox, but it is not a production service. Private firms can use certified DVS providers (46 providers, 64 services on the statutory register in July 2026), and the national digital ID scheme was dropped in July 2026.",
+          "note": "GOV.UK One Login serves central government only, and GOV.UK Wallet holds just the veteran card. Since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving license in a GOV.UK Wallet sandbox, but it is not a production service, so the cell is announced. Private firms can use certified DVS providers (46 providers and 64 services on the statutory register in July 2026). The new government cancelled the national digital ID scheme in July 2026.",
+          "gapReason": "not-launched",
           "evidence": [
             {
               "title": "How to access the GOV.UK Wallet sandbox",
               "publisher": "GOV.UK (Government Digital Service)",
               "url": "https://www.gov.uk/guidance/how-to-access-the-govuk-wallet-sandbox",
               "date": "2026-09-01",
-              "type": "regulation"
+              "type": "company"
             },
             {
               "title": "Using GOV.UK Wallet in the digital identity sector",
               "publisher": "GOV.UK (Government Digital Service)",
               "url": "https://www.gov.uk/guidance/using-govuk-wallet-in-the-digital-identity-sector",
               "date": "2026-09-01",
-              "type": "regulation"
+              "type": "company"
             },
             {
               "title": "GOV.UK Wallet - Roadmap for modern digital government",
@@ -74,14 +75,13 @@
               "type": "report"
             },
             {
-              "title": "Burnham's move to scrap UK's digital ID plans earns cheers and criticism",
-              "publisher": "Al Jazeera",
-              "url": "https://www.aljazeera.com/amp/news/2026/7/20/burnhams-move-to-scrap-uks-digital-id-plans-earns-cheers-and-criticism",
-              "date": "2026-07-20",
-              "type": "news"
+              "title": "Digital ID in the UK",
+              "publisher": "House of Commons Library",
+              "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10369/",
+              "date": "2026-09-04",
+              "type": "report"
             }
-          ],
-          "gapReason": "pilot-only"
+          ]
         },
         "DE": {
           "status": "live",
@@ -91,22 +91,22 @@
               "title": "Diensteanbieter werden",
               "publisher": "Personalausweisportal (BMI)",
               "url": "https://www.personalausweisportal.de/Webs/PA/DE/wirtschaft/diensteanbieter-werden/diensteanbieter-werden-node.html",
-              "date": "2025",
-              "type": "regulation"
+              "date": "2026-10",
+              "type": "company"
             },
             {
               "title": "eID-Service",
               "publisher": "Personalausweisportal (BMI)",
               "url": "https://www.personalausweisportal.de/Webs/PA/DE/wirtschaft/technik/eID-service/eid-service-node.html",
-              "date": "2025",
-              "type": "regulation"
+              "date": "2026-10",
+              "type": "company"
             },
             {
               "title": "EUDI-Wallet",
               "publisher": "Bundesministerium für Digitales und Staatsmodernisierung (BMDS)",
               "url": "https://bmds.bund.de/themen/digitaler-staat/digitale-identitaeten/eudi-wallet",
-              "date": "2026",
-              "type": "regulation"
+              "date": "2026-10",
+              "type": "company"
             }
           ]
         },
@@ -118,14 +118,14 @@
               "title": "Nova versão do Datavalid amplia modalidades de validação",
               "publisher": "SERPRO",
               "url": "https://www.serpro.gov.br/menu/noticias/noticias-2024/nova-versao-do-datavalid",
-              "date": "2024",
+              "date": "2024-06-11",
               "type": "company"
             },
             {
               "title": "Datavalid API Docs",
               "publisher": "SERPRO",
               "url": "https://apicenter.estaleiro.serpro.gov.br/documentacao/datavalid/en/",
-              "date": "2025",
+              "date": "2026-10",
               "type": "company"
             },
             {
@@ -133,13 +133,13 @@
               "publisher": "Conecta gov.br",
               "url": "https://www.gov.br/conecta/catalogo/apis/brasil-cidadao-login-unico",
               "date": "2020-09",
-              "type": "regulation"
+              "type": "company"
             }
           ]
         },
         "MX": {
           "status": "live",
-          "note": "Banks and firms with a signed agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo; the Llave MX rules require federal platforms to use it for sign-in but set no access for private apps, and the biometric CURP is not yet open to private apps.",
+          "note": "Banks and other firms that sign an agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo. As in Colombia, ordinary firms can get access, so the cell is live. The Llave MX rules require federal platforms to use it for sign-in but set no access for private apps, and the biometric CURP is not yet open to private apps.",
           "evidence": [
             {
               "title": "Acuerdo INE/CG92/2016: Servicio de Verificación de los Datos de la Credencial para Votar",
@@ -152,14 +152,14 @@
               "title": "INE-Check & RENAPO - General Information",
               "publisher": "Veridas",
               "url": "https://docs.veridas.com/digital-onboarding-general-information/cloud/2026.5/third-party-services/INE-Check-and-RENAPO/",
-              "date": "2026",
+              "date": "2026-10",
               "type": "company"
             },
             {
               "title": "Ni con datos biométricos la CURP desplaza al INE",
               "publisher": "Xataka México",
               "url": "https://www.xataka.com.mx/otros-1/mexico-quiere-que-todos-tengan-curp-biometrica-bancos-tramites-solo-manda-credencial-ine",
-              "date": "2026",
+              "date": "2026-04-28",
               "type": "news"
             },
             {
@@ -180,7 +180,7 @@
         },
         "CL": {
           "status": "limited",
-          "note": "ClaveÚnica can be used only by private bodies with a signed agreement, such as pension funds (AFP) and e-signature providers, under terms published in November 2025.",
+          "note": "ClaveÚnica is open only to private bodies that a law or rule expressly allows, such as pension funds (AFP) and e-signature providers, under terms approved in October 2025 (Resolución Exenta 733/2025). Unlike in Mexico and Colombia, an ordinary firm cannot sign up, so the cell is limited.",
           "evidence": [
             {
               "title": "Resolución Exenta 733/2025: aprueba términos y condiciones para la integración y uso de ClaveÚnica",
@@ -201,20 +201,20 @@
               "publisher": "Ministerio de Hacienda",
               "url": "https://www.hacienda.cl/noticias-y-eventos/noticias/gobierno-digital-entrega-recomendaciones-para-un-correcto-uso-de-claveunica",
               "date": "2025-08",
-              "type": "regulation"
+              "type": "company"
             }
           ],
           "gapReason": "rail-closed"
         },
         "CO": {
           "status": "live",
-          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators (fingerprint, and face at level 2), with 2026 tariffs set by Resolución 1500 of 2026, and since 2024 banks can also check a face in real time against Registraduría records with the Cédula Digital PIN, a face match or both; Carpeta Ciudadana stays a public-sector service.",
+          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators (fingerprint, and face at level 2), with 2026 tariffs set by Resolución 1500 of 2026. Banks can also check a face in real time against Registraduría records with the Cédula Digital PIN, a face match or both. Any firm can use a certified operator, so the cell is live. Carpeta Ciudadana stays a public-sector service.",
           "evidence": [
             {
               "title": "Resolución Registraduría 13691 de 2016 (aliados tecnológicos)",
               "publisher": "Registraduría Nacional / Colpensiones normativa",
               "url": "https://normativa.colpensiones.gov.co/colpens/docs/resolucion_registraduria_13691_2016.htm",
-              "date": "2016",
+              "date": "2016-12-26",
               "type": "regulation"
             },
             {
@@ -228,14 +228,14 @@
               "title": "BBVA, primer banco en implementar la verificación biométrica en Colombia",
               "publisher": "BBVA",
               "url": "https://www.bbva.com/es/innovacion/bbva-primer-banco-implementar-la-verificacion-biometrica-colombia/",
-              "date": "2016",
+              "date": "2016-11-15",
               "type": "company"
             },
             {
               "title": "Registraduría Nacional pone a disposición del sector financiero tecnología",
               "publisher": "Registraduría Nacional del Estado Civil",
               "url": "https://www.registraduria.gov.co/Registraduria-Nacional-pone-a-disposicion-del-sector-financiero-tecnologia-de.html",
-              "date": "2024",
+              "date": "2026-10",
               "type": "company"
             },
             {
@@ -255,7 +255,7 @@
               "title": "eKYC Dashboard",
               "publisher": "UIDAI",
               "url": "https://uidai.gov.in/en/aadhaar-dashboard/ekyc",
-              "date": "2026",
+              "date": "2026-10",
               "type": "report"
             },
             {
@@ -270,7 +270,7 @@
               "publisher": "PIB, Ministry of Electronics & IT",
               "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2106755",
               "date": "2025-02",
-              "type": "regulation"
+              "type": "company"
             },
             {
               "title": "The design of digital financial infrastructure: lessons from India (BIS Papers No 106)",
@@ -344,22 +344,29 @@
               "title": "GOV.UK app - Roadmap for modern digital government",
               "publisher": "UK Government (DSIT/GDS)",
               "url": "https://roadmap-for-modern-digital-government.campaign.gov.uk/join-up-services/govuk-app",
-              "date": "2026",
+              "date": "2026-10",
               "type": "report"
             },
             {
               "title": "AI chatbot fully integrated into GOV.UK app",
               "publisher": "Civil Service World",
               "url": "https://www.civilserviceworld.com/news/article/govuk-ai-chatbot-launched",
-              "date": "2026-05",
+              "date": "2026-05-19",
               "type": "news"
+            },
+            {
+              "title": "Anthropic partners with the UK Government to bring AI assistance to GOV.UK services",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/news/gov-UK-partnership",
+              "date": "2026-01-27",
+              "type": "company"
             }
           ],
           "gapReason": "assist-only"
         },
         "DE": {
           "status": "limited",
-          "note": "Only city chatbots such as Stuttgart's AI chatbot (in trial) answer questions, F13 and BärGPT serve civil servants only, and Bremen's KOMPASS application helper is due from late 2026.",
+          "note": "Some cities run chatbots that only answer questions, such as Stuttgart's AI chatbot, in trial since March 2025. Bremen's KOMPASS assistant, which will help people find services and prepare applications, is due step by step from late 2026.",
           "evidence": [
             {
               "title": "Chatbot der Stadt Stuttgart",
@@ -372,7 +379,7 @@
               "title": "KI-Assistent für das Serviceportal Bremen",
               "publisher": "Freie Hansestadt Bremen",
               "url": "https://www.service.bremen.de/ki-assistent-fuer-das-serviceportal-bremen-verwaltungsleistungen-einfacher-finden-und-nutzen-208174",
-              "date": "2026",
+              "date": "2026-10",
               "type": "company"
             }
           ],
@@ -380,20 +387,20 @@
         },
         "BR": {
           "status": "limited",
-          "note": "Chat GOV.BR answers Enem and Sisu questions through WhatsApp notifications and INSS's Helô assistant answers benefit questions; the government says completing transactions by chatbot is the next step.",
+          "note": "Chat GOV.BR, the government's AI chatbot, answers Enem and Sisu questions from links in GOV.BR inbox and WhatsApp messages, and other government chatbots answer questions on vaccines and Farmácia Popular. None of them completes a transaction.",
           "evidence": [
             {
               "title": "Governo do Brasil orienta estudantes sobre resultado do Enem pela Caixa Postal GOV.BR",
               "publisher": "Secom - Governo Federal",
               "url": "https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2026/01/governo-do-brasil-orienta-estudantes-sobre-resultado-do-enem-pela-caixa-postal-gov.br",
-              "date": "2026-01",
+              "date": "2026-01-16",
               "type": "company"
             },
             {
               "title": "Ministério da Gestão e CPQD fazem balanço de primeiras ações de IA do projeto INSPIRE",
               "publisher": "Ministério da Gestão e da Inovação",
               "url": "https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/maio/ministerio-da-gestao-e-cpqd-fazem-balanco-de-primeiras-acoes-de-inteligencia-artificial-do-projeto-inspire",
-              "date": "2026-05",
+              "date": "2026-05-29",
               "type": "report"
             },
             {
@@ -414,14 +421,14 @@
               "title": "Ventanilla 24/7, el canal de contacto del Gobierno de México con la ciudadanía, supera un millón de atenciones",
               "publisher": "Agencia de Transformación Digital y Telecomunicaciones (ATDT)",
               "url": "https://www.gob.mx/atdt/comunicacion/ventanilla-24-7-el-canal-de-contacto-del-gobierno-de-mexico-con-la-ciudadania-supera-un-millon-de-atenciones",
-              "date": "2026",
+              "date": "2026-04-24",
               "type": "company"
             },
             {
               "title": "Agenda 2030: Inteligencia artificial",
               "publisher": "Agencia de Transformación Digital y Telecomunicaciones (ATDT)",
               "url": "https://www.gob.mx/atdt/agendas/2030/inteligencia-artificial",
-              "date": "2026",
+              "date": "2026-10",
               "type": "report"
             }
           ],
@@ -435,8 +442,8 @@
               "title": "Términos y condiciones de uso",
               "publisher": "ChileAtiende",
               "url": "https://www.chileatiende.gob.cl/terminos-y-condiciones",
-              "date": "2026",
-              "type": "regulation"
+              "date": "2026-10",
+              "type": "company"
             }
           ],
           "gapReason": "assist-only"
@@ -478,7 +485,7 @@
               "publisher": "PIB, Ministry of Agriculture & Farmers Welfare",
               "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=1982790",
               "date": "2023-12",
-              "type": "regulation"
+              "type": "company"
             },
             {
               "title": "Empowering millions of Indian farmers with instant AI chatbot support",
@@ -568,10 +575,10 @@
     {
       "name": "Anthropic",
       "hq": "US",
-      "url": "https://www.anthropic.com",
+      "url": "https://www.anthropic.com/news/gov-UK-partnership",
       "homepage": "https://www.anthropic.com/",
       "icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
-      "role": "Supplies the Claude model behind GOV.UK Chat, according to Civil Service World.",
+      "role": "Supplies the Claude model behind GOV.UK Chat, according to Civil Service World, and is helping build a GOV.UK assistant pilot for jobseekers.",
       "markets": [
         "GB"
       ],
@@ -599,7 +606,7 @@
       "url": "https://www.gov.br/gestao/pt-br",
       "homepage": "https://www.gov.br/",
       "icon": "https://www.gov.br/++theme++padrao_govbr/favicons/apple-touch-icon.png",
-      "role": "Runs the gov.br login and builds Chat GOV.BR through the government AI centre.",
+      "role": "Runs the gov.br login and builds Chat GOV.BR through the government AI center.",
       "markets": [
         "BR"
       ],
@@ -611,7 +618,7 @@
     {
       "name": "Agencia de Transformación Digital y Telecomunicaciones (ATDT)",
       "hq": "MX",
-      "url": "https://www.llave.gob.mx/",
+      "url": "https://www.gob.mx/atdt",
       "homepage": "https://www.gob.mx/",
       "icon": null,
       "role": "Runs Llave MX and the Ventanilla 24/7 AI agent on gob.mx.",
@@ -697,8 +704,8 @@
       "name": "MinTIC",
       "hq": "CO",
       "url": "https://mintic.gov.co",
-      "homepage": "https://www.mintic.gov.co/",
-      "icon": "https://www.mintic.gov.co/favicon.ico",
+      "homepage": "https://mintic.gov.co/",
+      "icon": "https://mintic.gov.co/favicon.ico",
       "role": "Runs the GOV.CO portal and its Robi assistant, plus the public-sector AI chatbot program.",
       "markets": [
         "CO"
