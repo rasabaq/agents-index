@@ -311,7 +311,7 @@ function selectCountry(code, scroll) {
   const fromPicker = document.activeElement?.matches('[data-pick-country]');
   state.country = code;
   history.replaceState(null, '', writeHash(code, state.view));
-  // Every country picker on the page (hero, console, tier list) marks the same country.
+  // Every country picker on the page (hero chips, world map, console) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
   showSideChip();

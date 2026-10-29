@@ -1,6 +1,6 @@
 # Charts
 
-The home page shows ten charts, each in a numbered window. They used to live on a separate Atlas page, which is gone. `index.html` places each one with a slot, `<section data-chart="<id>">`, and `charts/charts.js` draws it there and gives the slot the id `v-<id>`.
+The home page shows ten charts, each in a chart window. They used to live on a separate Atlas page, which is gone. `index.html` places each one with a slot, `<section data-chart="<id>">`, and `charts/charts.js` draws it there and gives the slot the id `v-<id>`.
 
 In page order:
 
