@@ -1,1 +1,5 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
+contact_links:
+  - name: How we rate each country
+    url: https://github.com/rasabaq/ai-agent-observatory/blob/main/docs/methodology.md
+    about: Read the methodology before you report a status. It explains the statuses, the sources we accept and how scores work.
