@@ -104,3 +104,16 @@
   .hero-pin-f { width: 38px; height: 30px; }
   .hero-pin-f .flag { font-size: 20px; }
 }
+
+/* Teaser until launch (the prelaunch class, set in index.html): the hero, the map and the signup only. Delete at launch. */
+.hero-signup { display: none; }
+.prelaunch .hero-signup { display: block; margin-top: 40px; }
+.prelaunch main { padding-bottom: 80px; }
+.prelaunch :is(.hero-ctas, #site-nav, .nav-menu, .foot-site), .prelaunch [data-chart='map'] ~ * { display: none !important; }
+.hero-soon { margin: 0 0 14px; color: var(--ink-2); font: 500 12px/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-signup-row { display: flex; gap: 10px; max-width: 440px; }
+.hero-signup input { flex: 1; min-width: 0; height: 40px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 10px; background: #000; color: var(--ink); font: 400 14px/1 var(--font); }
+.hero-signup input::placeholder { color: var(--ink-2); opacity: 0.6; }
+.hero-signup input:focus-visible { outline: 2px solid var(--sunrise); outline-offset: 2px; }
+.hero-signup button { border: 0; cursor: pointer; }
+.hero-signup button:disabled { opacity: 0.6; cursor: default; }

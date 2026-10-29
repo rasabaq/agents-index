@@ -133,7 +133,8 @@
   (window.CHARTS ??= []).push({
     id: 'map',
     title: 'World map',
-    blurb: 'Where agents can act today. A brighter dot means a higher overall score out of 100. Pick a country to open it below.',
+    // The launch teaser (prelaunch, index.html) hides everything below the map. Drop the condition at launch.
+    blurb: 'Where agents can act today. A brighter dot means a higher overall score out of 100.' + (document.documentElement.classList.contains('prelaunch') ? '' : ' Pick a country to open it below.'),
     render(el, ctx) {
       if (!document.getElementById('v-map-style')) {
         document.head.insertAdjacentHTML('beforeend', `<style id="v-map-style">${CSS}</style>`);

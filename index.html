@@ -13,6 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&family=Jersey+10&display=swap" rel="stylesheet">
   <!-- Flag font, subset to every flag the data uses (tracked countries, company HQs and markets, repo origins). tests check it stays complete. -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=%F0%9F%87%A6%F0%9F%87%AA%F0%9F%87%A6%F0%9F%87%B7%F0%9F%87%A6%F0%9F%87%B9%F0%9F%87%A7%F0%9F%87%B7%F0%9F%87%A8%F0%9F%87%A6%F0%9F%87%A8%F0%9F%87%B1%F0%9F%87%A8%F0%9F%87%B3%F0%9F%87%A8%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%B8%F0%9F%87%AB%F0%9F%87%B7%F0%9F%87%AC%F0%9F%87%A7%F0%9F%87%AE%F0%9F%87%B3%F0%9F%87%B2%F0%9F%87%BD%F0%9F%87%B3%F0%9F%87%B1%F0%9F%87%B8%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8%F0%9F%87%AC%F0%9F%87%B7&display=swap" rel="stylesheet">
+  <!-- Teaser until launch: on the live domain (or locally with ?prelaunch) only the hero, the map and the signup show.
+       hero.css hides the rest. Delete this line at launch. -->
+  <script>if (location.hostname === 'agentindex.art' || location.search.includes('prelaunch')) document.documentElement.classList.add('prelaunch');</script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="hero.css">
   <link rel="stylesheet" href="console.css">
@@ -67,6 +70,15 @@
             <div class="hero-ctas">
               <a class="hero-btn hero-btn-1" href="#ranking">Open the ranking <span aria-hidden="true">→</span></a>
             </div>
+            <!-- Launch signup (teaser only). Kit stores the emails; without JS the form posts and Kit shows its own page. -->
+            <form class="hero-signup" action="https://app.kit.com/forms/KIT_FORM_ID/subscriptions" method="post" data-signup>
+              <p class="hero-soon" role="status" data-signup-msg>Coming soon. Get an email when it launches.</p>
+              <div class="hero-signup-row">
+                <label class="sr-only" for="signup-email">Email</label>
+                <input id="signup-email" type="email" name="email_address" required autocomplete="email" placeholder="you@example.com">
+                <button class="hero-btn hero-btn-1">Notify me <span aria-hidden="true">→</span></button>
+              </div>
+            </form>
           </div>
           <div class="hero-icons" data-hero-icons hidden>
             <ul aria-label="What agents can do there" data-hero-ic></ul>

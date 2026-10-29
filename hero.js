@@ -377,6 +377,23 @@ function light(code) {
   $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} work fully`;
 }
 
+/* ---------- launch signup (teaser only): post to Kit and stay on the page ---------- */
+const signup = $('[data-signup]');
+signup.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const msg = $('[data-signup-msg]'), btn = signup.querySelector('button');
+  btn.disabled = true;
+  try {
+    const r = await fetch(signup.action, { method: 'POST', body: new FormData(signup), headers: { Accept: 'application/json' } });
+    if (!r.ok || (await r.json()).status !== 'success') throw new Error(r.status);
+    msg.textContent = 'Almost done: check your inbox to confirm.';
+    signup.reset();
+  } catch {
+    msg.textContent = 'That did not work. Please try again.';
+    btn.disabled = false;
+  }
+});
+
 const getJson = (name) => fetch(`data/${name}.json`).then((r) => {
   if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
   return r.json();
@@ -401,3 +418,4 @@ try {
 } catch {
   // app.js shows the load error; the hero keeps its sky and wordmark.
 }
+
