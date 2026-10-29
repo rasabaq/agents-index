@@ -172,7 +172,9 @@ select, option { color-scheme: dark; }
 .detail p { color: var(--ink-2); }
 .detail .muted { color: var(--muted); }
 .detail-status { margin: 14px 0 0; }
-.close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); color: var(--ink-2); font-size: 20px; line-height: 1; cursor: pointer; }
+/* the × stays in view while a long dialog scrolls: its form sticks to the top of the content, the button sits 16px from the corner */
+.detail form { position: sticky; top: 0; z-index: 1; }
+.close { position: absolute; top: -12px; right: -12px; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); color: var(--ink-2); font-size: 20px; line-height: 1; cursor: pointer; }
 .close:hover { color: var(--ink); border-color: var(--line-strong); }
 .sources { margin: 0; padding-left: 20px; }
 .sources li { margin-bottom: 12px; }
@@ -197,8 +199,8 @@ select, option { color-scheme: dark; }
 /* With JavaScript on, a <noscript> holds only text and must stay hidden, so this matches only when it has elements. */
 .hero-ctas noscript:has(> *) { display: contents; }
 
-/* phones and small tablets: the section links fold into a menu */
-.nav-menu { display: none; margin-left: auto; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+/* phones and small tablets: the section links fold into a menu; the button keeps one width for Menu and Close */
+.nav-menu { display: none; justify-content: center; min-width: 66px; margin-left: auto; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
 @media (max-width: 900px) {
   .nav-menu { display: inline-flex; align-items: center; }
   .nav nav { display: none; }
