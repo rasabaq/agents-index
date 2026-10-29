@@ -250,7 +250,7 @@ function correctionUrl(cap, code, cell) {
     capability: `${cap.name} (${cap.id})`,
     current: STATUSES[cell.status].label,
   });
-  return `https://github.com/rasabaq/ai-agent-observatory/issues/new?${q}`;
+  return `https://github.com/rasabaq/agents-index/issues/new?${q}`;
 }
 
 const sourceList = (ev) => `<ol class="sources">${ev.map((e) => `
