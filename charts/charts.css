@@ -49,11 +49,30 @@
 .smark.q { outline: 1px dashed var(--ink-2); outline-offset: 2px; }
 .smark.none.q { outline: 0; width: 14px; background: repeating-linear-gradient(90deg, var(--s-none-ink) 0 3px, transparent 3px 5px); }
 
-/* The map opens the data: it takes the console's old place over the hero's planet, and the console follows it. */
-.hero + [data-chart='map'] { position: relative; z-index: 4; margin-top: -270px; padding-top: 0; }
+/* The map opens the data: it takes the console's old place over the hero's planet, at the console's width,
+   and the console follows it.
+   Until the map draws, its empty slot reserves the drawn height, so the console never jumps down: the window
+   around the map (borders, bar, head with a 2-line blurb, 3 lines on phones, frame padding, legend rows, the list
+   under the map) plus the dot grid (139 x 65 cells, 3 more columns in the wide layout) at the frame's inner width.
+   These numbers mirror the .view-* rules above and the fixed rows in viz-map.js; change them together. */
+.hero + [data-chart='map'] {
+  position: relative; z-index: 4; margin-top: -270px; padding-top: 0;
+  --map-chrome: 196.5px; --map-win: min(1216px, 100% - 48px); --map-inset: 50px; --map-cols: 142; --map-list: 0px;
+}
+.hero + [data-chart='map']:empty { padding-top: calc(var(--map-chrome) + 1.2 * clamp(24px, 3vw, 32px) + (var(--map-win) - var(--map-inset)) * 65 / var(--map-cols) + var(--map-list)); }
 [data-chart='map'] + .term { margin-top: 32px; }
+@media (max-width: 1089px) {
+  .hero + [data-chart='map'] { --map-chrome: 238.5px; --map-win: calc(100% - 48px); --map-cols: 139; --map-list: 166px; }
+}
 @media (max-width: 760px) {
-  .hero + [data-chart='map'] { margin-top: -200px; }
+  /* the console sits 12px from each edge here, so the map does too */
+  .hero + [data-chart='map'] { margin-top: -200px; padding-inline: 12px; --map-win: calc(100% - 24px); }
+}
+@media (max-width: 600px) {
+  .hero + [data-chart='map'] { --map-list: 334px; }
+}
+@media (max-width: 520px) {
+  .hero + [data-chart='map'] { --map-chrome: 261.75px; --map-inset: 34px; }
 }
 
 @media (max-width: 520px) {

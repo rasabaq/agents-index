@@ -21,6 +21,8 @@ In page order:
 - `charts-periodic-detail` opens a tile's detail in the panel under the periodic table, and closes it with ×.
 - `charts-compare` changes the head-to-head pair with its two selects.
 - `charts-hash` scrolls to a chart when the page opens with `#v-<id>`.
+- `charts-map-pick` picks a country in the console from the world map, by click or by keyboard, and lights the selected country on the map.
+- `charts-map-legend` shows the score scale and the tier cuts (S 80+, A 70+, B 60+, C 50+, D <50) above the map.
 
 ## How to get to it (user POV)
 
@@ -40,6 +42,14 @@ Preconditions:
 - **Network filters at 400.** The category chips under Company network scroll sideways and fade their cut-off edge: `node $H eval "document.querySelector('.v-network-chips').className"` includes `fade-x more` at 400px, and no `more` at 1440px, where they wrap.
 - **Phone.** Run `node $H open / --width 400 --wait '#v-timeline svg'`, then `node $H shot charts-400-map --at '#v-map'` and `node $H shot charts-400-network --at '#v-network'`. Check that `scrollWidth` is 400.
 - **Proof.** Finish with `node $H errors` (exit 0).
+
+The world map:
+
+- **Click to pick.** Run `node $H open '/#country=US' --wait '#v-map [data-go-country="US"][aria-current="true"]'`. Then `node $H click '#v-map svg [data-go-country="CL"] rect.px'`: the page scrolls to the console, `node $H shot map-1440-picked` shows Chile under `#cn-title`, and the `shot` line in `steps.log` ends with `#country=CL`. `node $H shot map-1440-lit --at '#v-map'` shows Chile in sunrise. At 400px the labels move to a list under the map; click `#v-map .v-map-list [data-go-country="CL"]` instead.
+- **Keyboard.** Each country on the map is a focusable button. Click `#v-map .v-map-legend .scale` to set the focus start, press `Tab` (the first country gets a focus ring and its tooltip), then `Enter` or `' '` (Space) selects it, the same as a click.
+- **Stays in sync.** Press `j`, or click a country in `[data-clist]`: the map lights the new country, because app.js sets `aria-current` on every `[data-go-country]`.
+- **Legend.** `#v-map .v-map-legend .tiers` lists the five tier letters with their cuts. It is one row with the scale at 1440px, and its own row at 400px.
+- **No jump.** The empty slot reserves the map's drawn height (charts.css, "The map opens the data"). To check it, serve a copy of `index.html` without the `charts/charts.js` script and compare where the console starts: `node $H shot <name> --at '[data-chart="map"]'` on both pages must put the console bar at the same height.
 
 ## Gotchas
 
