@@ -1,21 +1,13 @@
-// Home page charts: loads the data once, builds a shared context, and draws every registered chart into its slot.
+// Home page charts: reads the shared data (src/load.js), builds a shared context, and draws every registered chart into its slot.
 // A chart is a classic script that pushes { id, title, blurb, render(el, ctx) } onto window.CHARTS.
 // blurb may be a function of ctx, so it can count what is in the data.
 // index.html places the slots (<section data-chart="<id>">), so the page order lives in the HTML.
 import { STATUSES, TIERS, scoreCountries, tierOf } from '../src/observatory.js';
+import { data } from '../src/load.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
-
-async function load() {
-  const get = (name) => fetch(`data/${name}.json`).then((r) => {
-    if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
-    return r.json();
-  });
-  const meta = await get('meta');
-  return { meta, categories: await Promise.all(meta.categories.map((c) => get(c.id))) };
-}
 
 function buildContext({ meta, categories }) {
   const ranking = scoreCountries(meta, categories);
@@ -79,6 +71,7 @@ const slug = (title) => title.toLowerCase().replace(/\W+/g, '-');
 
 function render(ctx) {
   const views = Object.fromEntries((window.CHARTS ?? []).map((v) => [v.id, v]));
+  const pending = new Map(); // slot -> its draw, for charts not drawn yet
   document.querySelectorAll('[data-chart]').forEach((slot) => {
     const v = views[slot.dataset.chart];
     if (!v) return console.error(`chart ${slot.dataset.chart} is not registered`);
@@ -92,21 +85,44 @@ function render(ctx) {
         <div class="view-frame" data-view="${v.id}"></div>
       </div>`;
     const el = slot.querySelector('.view-frame');
-    try {
-      v.render(el, ctx);
-    } catch (err) {
-      console.error(`chart ${v.id}`, err);
-      el.innerHTML = `<p class="view-error">This chart could not be drawn (${esc(err.message)}).</p>`;
-    }
+    pending.set(slot, () => {
+      try {
+        v.render(el, ctx);
+      } catch (err) {
+        console.error(`chart ${v.id}`, err);
+        el.innerHTML = `<p class="view-error">This chart could not be drawn (${esc(err.message)}).</p>`;
+      }
+    });
+    // The console sends 'compare' to the Head to head slot (app.js). A chart not drawn yet draws first, then gets it.
+    slot.addEventListener('compare', (e) => {
+      if (draw(slot) && !slot.dispatchEvent(new CustomEvent('compare', { detail: e.detail, cancelable: true }))) e.preventDefault();
+    });
   });
-  // The charts drew after the first paint, so a link straight to one (#v-map) lands only now.
-  if (location.hash.startsWith('#v-')) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+
+  // Drawing all ten charts at once blocks a phone for most of a second. So each chart draws when it comes
+  // within one screen of the viewport, and the rest draw one at a time while the browser is idle.
+  function draw(slot) {
+    const f = pending.get(slot);
+    if (!f) return false;
+    pending.delete(slot);
+    io.unobserve(slot);
+    f();
+    return true;
+  }
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => e.isIntersecting && draw(e.target)), { rootMargin: '100% 0px' });
+  const slots = [...pending.keys()];
+  slots.forEach((slot) => io.observe(slot));
+  // The map opens the page, so it draws now. A link straight to a chart (#v-timeline) draws it and every chart
+  // above it now, so it lands in the right place, then scrolls to it (the charts drew after the first paint).
+  const target = location.hash.startsWith('#v-') && document.getElementById(location.hash.slice(1));
+  slots.slice(0, pending.has(target) ? slots.indexOf(target) + 1 : 1).forEach(draw);
+  if (target) target.scrollIntoView();
+  const idle = window.requestIdleCallback ?? ((f) => setTimeout(f, 50));
+  const next = () => pending.size && idle(() => { draw(pending.keys().next().value); next(); });
+  next();
 }
 
 addEventListener('scroll', () => ($('[data-chart-tip]').hidden = true), { passive: true });
-try {
-  render(buildContext(await load()));
-} catch (err) {
-  // app.js already tells the reader the data did not load; the empty slots stay empty.
-  console.error('charts', err);
-}
+// If the data fails, load.js tells the reader and hides the empty slots.
+const loaded = await data.catch(() => null);
+if (loaded) render(buildContext(loaded));

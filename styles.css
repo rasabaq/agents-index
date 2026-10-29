@@ -177,7 +177,12 @@ select, option { color-scheme: dark; }
 
 .foot { display: flex; padding-top: 72px; padding-bottom: 48px; font: 400 11.5px/1.6 var(--mono); color: var(--muted); }
 .foot p { flex: 1; margin: 0; padding-top: 18px; border-top: 1px solid var(--line); }
-.error { margin-top: 32px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+/* No data: it failed to load (src/load.js adds .no-data and puts a note in the hero), or JavaScript is off (the <noscript>
+   note in the hero). Keep the hero, its note and the footer links; hide everything drawn from the data, and the links to it. */
+:root:is(.no-data, :has(.hero noscript > *)) :is(main > :not(.hero), .hero-ctas > a, #site-nav, .nav-menu, .foot-asof, [data-foot-count]) { display: none; }
+.load-note { flex-basis: 100%; margin: 0; font-size: 17px; color: var(--ink-2); }
+/* With JavaScript on, a <noscript> holds only text and must stay hidden, so this matches only when it has elements. */
+.hero-ctas noscript:has(> *) { display: contents; }
 
 /* phones and small tablets: the section links fold into a menu */
 .nav-menu { display: none; margin-left: auto; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
