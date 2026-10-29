@@ -337,7 +337,7 @@
           .attr('aria-pressed', (d) => (d.end ? null : isPinned(d.code)));
       }
 
-      new ResizeObserver(draw).observe(el);
+      new ResizeObserver(() => requestAnimationFrame(draw)).observe(el);
       document.fonts?.ready.then(() => { lastW = 0; draw(); });
       draw();
     },

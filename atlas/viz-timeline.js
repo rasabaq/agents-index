@@ -311,6 +311,6 @@
     }
 
     draw();
-    new ResizeObserver(() => { if (wrap.clientWidth !== lastW) draw(); }).observe(el);
+    new ResizeObserver(() => requestAnimationFrame(() => { if (wrap.clientWidth !== lastW) draw(); })).observe(el);
   },
 });

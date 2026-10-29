@@ -58,10 +58,14 @@
         </div>
         <div class="fl-chart"></div>
         <p class="fl-note"></p>`;
+      ctx.edgeFade(el.querySelector('.atlas-controls'));
       const chart = el.querySelector('.fl-chart');
       const note = el.querySelector('.fl-note');
       el.querySelectorAll('[data-cat]').forEach((b) => b.addEventListener('click', () => {
         cat = b.dataset.cat;
+        // On phones the pills scroll sideways: bring the chosen one clear of the edge fades.
+        const s = b.parentElement, r = b.getBoundingClientRect(), n = s.getBoundingClientRect();
+        s.scrollBy({ left: r.left - n.left - (n.width - r.width) / 2, behavior: 'smooth' });
         el.querySelectorAll('[data-cat]').forEach((x) => x.setAttribute('aria-pressed', x === b));
         draw();
       }));
@@ -218,10 +222,10 @@
       }
 
       let lastW = 0;
-      new ResizeObserver(() => {
+      new ResizeObserver(() => requestAnimationFrame(() => {
         const w = chart.clientWidth;
         if (w && w !== lastW) { lastW = w; draw(); }
-      }).observe(el);
+      })).observe(el);
       draw();
       document.fonts?.ready.then(draw); // label widths are measured; remeasure once the web font loads
     },
