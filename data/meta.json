@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-27",
+  "asOf": "2026-10-28",
   "countries": [
     { "code": "US", "name": "United States", "region": "North America" },
     { "code": "GB", "name": "United Kingdom", "region": "Europe" },
@@ -19,7 +19,8 @@
     { "id": "messaging", "name": "Chat & messaging", "blurb": "Agents that sell, support and take payments inside chat apps.", "short": "Chat", "can": "buy and get support in chat" },
     { "id": "government", "name": "Government & identity", "blurb": "Agents that prove who you are and handle public services.", "short": "Government", "can": "prove who you are to apps" },
     { "id": "access", "name": "Access to the assistants", "blurb": "Whether you can sign up for the big AI assistants and use their agent features in your language.", "short": "Access", "can": "work in your own language" },
-    { "id": "rules", "name": "Rules for agents", "blurb": "Laws and consumer rules that cover what AI agents do for you.", "short": "Rules", "can": "work under clear AI and refund rules" }
+    { "id": "rules", "name": "Rules for agents", "blurb": "Laws and consumer rules that cover what AI agents do for you.", "short": "Rules", "can": "work under clear AI and refund rules" },
+    { "id": "health", "name": "Health", "blurb": "Agents that book doctors, renew prescriptions and check your health cover.", "short": "Health", "can": "book doctors and renew prescriptions" }
   ],
   "gapReasons": [
     { "id": "no-rule", "label": "No rule in force yet" },

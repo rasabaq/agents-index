@@ -1,0 +1,481 @@
+{
+  "category": "health",
+  "capabilities": [
+    {
+      "id": "health.book-appointment",
+      "name": "Book a doctor's appointment",
+      "question": "Can an AI agent find a free slot with a doctor and book it for you?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Since August 2026 Zocdoc is a connected app in Google Gemini: you say what care you need, see real open slots, and book an in-person or video visit, with the last step on Zocdoc's screen.",
+          "evidence": [
+            {
+              "title": "New connected apps are coming to Gemini (book a doctor's appointment with Zocdoc)",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-services-gemini-august-2026/",
+              "date": "2026-08-12",
+              "type": "company"
+            },
+            {
+              "title": "Zocdoc and Google Bring Real-Time Healthcare Appointment Booking to Gemini",
+              "publisher": "HLTH",
+              "url": "https://hlth.com/insights/news/zocdoc-and-google-bring-real-time-healthcare-appointment-booking-to-gemini",
+              "date": "2026-08-13",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Rapid Health's AI Smart Triage inside the NHS App asks about your symptoms and books a GP slot straight away, but only at the practices that use it (about 200 practices and networks, over 1 million patients), not across the NHS.",
+          "evidence": [
+            {
+              "title": "24/7 GP appointment booking is now live in the NHS App for more than one million patients",
+              "publisher": "NHS Innovation Accelerator",
+              "url": "https://nhsaccelerator.com/insights/24-7-gp-appointment-booking-is-now-live-in-the-nhs-app-for-more-than-one-million-patients/",
+              "date": "2026-04-15",
+              "type": "report"
+            },
+            {
+              "title": "How do I use the NHS app? (the NHS App sends you to Smart Triage to book)",
+              "publisher": "GP at Hand (NHS)",
+              "url": "https://www.gpathand.nhs.uk/ufaq",
+              "type": "regulation"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "confidence": "low",
+          "note": "Doctolib's AI phone assistant takes patient calls at any hour and books straight into the practice calendar, but only at practices that pay for it, with no public count; Doctolib has no patient-side booking agent, and no AI booking was found on the public 116117 service.",
+          "evidence": [
+            {
+              "title": "Doctolib führt KI-basierten Telefonassistenten ein",
+              "publisher": "ZWP online (Doctolib press text)",
+              "url": "https://www.zwp-online.info/zwpnews/dental-news/branchenmeldungen/doctolib-fuhrt-ki-basierten-telefonassistenten-ein",
+              "date": "2025-05-13",
+              "type": "news"
+            }
+          ]
+        },
+        "IN": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "No AI agent that books a doctor was found: Practo, Apollo 24|7, Tata 1mg and Eka Care book through ordinary apps, and only vendor marketing and an old Apollo Alexa skill turned up (searched October 2026)."
+        },
+        "BR": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Doctoralia's Noa Booking agent was still in development in May 2025 with no launch found since, and the SUS WhatsApp pilot only confirms or moves visits, with no AI named.",
+          "evidence": [
+            {
+              "title": "Doctoralia optimiza la gestión sanitaria con Noa, su asistente impulsado por la IA de Microsoft",
+              "publisher": "Microsoft News Centre Spain",
+              "url": "https://news.microsoft.com/es-es/2025/05/19/doctoralia-optimiza-la-gestion-sanitaria-con-noa-su-asistente-impulsado-por-la-ia-de-microsoft/",
+              "date": "2025-05-19",
+              "type": "company"
+            },
+            {
+              "title": "SUS ganha marcação de consultas pelo WhatsApp; como vai funcionar e quando começa?",
+              "publisher": "Canaltech",
+              "url": "https://canaltech.com.br/apps/sus-ganha-marcacao-de-consultas-pelo-whatsapp-como-vai-funcionar-e-quando-comeca",
+              "date": "2026-09-01",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "IMSS appointments go through the IMSS Digital app, the website or the phone; its first AI assistant is planned for doctors, not patients, and Doctoralia's Noa Booking agent has not launched here.",
+          "evidence": [
+            {
+              "title": "El IMSS planea aplicar inteligencia artificial en su expediente clínico electrónico",
+              "publisher": "El Imparcial",
+              "url": "https://www.elimparcial.com/mexico/2026/06/04/el-imss-planea-aplicar-inteligencia-artificial-en-su-expediente-clinico-electronico-mientras-desarrolla-la-interoperabilidad-total-de-datos-de-salud-con-el-issste-e-imss-bienestar-para-inicios-de-2027/",
+              "date": "2026-06-04",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "No AI agent that books a doctor was found at FONASA, Hospital Digital or Doctoralia (searched October 2026; thin Spanish-language search).",
+          "evidence": [
+            {
+              "title": "Doctoralia optimiza la gestión sanitaria con Noa, su asistente impulsado por la IA de Microsoft",
+              "publisher": "Microsoft News Centre Spain",
+              "url": "https://news.microsoft.com/es-es/2025/05/19/doctoralia-optimiza-la-gestion-sanitaria-con-noa-su-asistente-impulsado-por-la-ia-de-microsoft/",
+              "date": "2025-05-19",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "No AI agent that books a doctor was found at the EPS insurers or Doctoralia; EPS Sanitas's WhatsApp assistant books visits, but no source says it is AI (searched October 2026).",
+          "evidence": [
+            {
+              "title": "Doctoralia optimiza la gestión sanitaria con Noa, su asistente impulsado por la IA de Microsoft",
+              "publisher": "Microsoft News Centre Spain",
+              "url": "https://news.microsoft.com/es-es/2025/05/19/doctoralia-optimiza-la-gestion-sanitaria-con-noa-su-asistente-impulsado-por-la-ia-de-microsoft/",
+              "date": "2025-05-19",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "health.prescription-refill",
+      "name": "Renew or order a prescription",
+      "question": "Can an AI agent renew or order your prescription medicine for you?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Amazon's Health AI, in the One Medical app and since March 2026 on Amazon.com, sends your renewal request to a One Medical provider and the medicine is filled at Amazon Pharmacy or another pharmacy; in a one-year Utah pilot, Doctronic's AI renews some chronic-condition prescriptions on its own.",
+          "evidence": [
+            {
+              "title": "Amazon's Health AI agent (One Medical)",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/amazon-health-ai-agent-one-medical",
+              "date": "2026-03",
+              "type": "company"
+            },
+            {
+              "title": "Utah is experimenting with a new role for AI: renewing prescriptions",
+              "publisher": "Marketplace",
+              "url": "https://www.marketplace.org/story/2026/06/03/utah-is-experimenting-with-a-new-role-for-ai-renewing-prescriptions",
+              "date": "2026-06-03",
+              "type": "news"
+            }
+          ]
+        },
+        "GB": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "You can order repeat prescriptions in the NHS App, but no AI agent can do it for you, and no Boots agent was found.",
+          "evidence": [
+            {
+              "title": "Prescriptions in the NHS App",
+              "publisher": "NHS",
+              "url": "https://www.nhs.uk/nhs-app/nhs-app-help-and-support/prescriptions-in-the-nhs-app/",
+              "type": "regulation"
+            }
+          ]
+        },
+        "DE": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "E-prescriptions (e-Rezept) are redeemed with the health card, the gematik app or a printout, with no route for an agent; no AI ordering was found at DocMorris or Shop Apotheke.",
+          "evidence": [
+            {
+              "title": "E-Rezept",
+              "publisher": "gematik",
+              "url": "https://www.gematik.de/anwendungen/e-rezept",
+              "type": "regulation"
+            }
+          ]
+        },
+        "IN": {
+          "status": "none",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "PharmEasy's AI voice agent calls past buyers to remind them to reorder and sends a WhatsApp link, but you finish the order yourself; no AI ordering was found at Apollo 24|7, Tata 1mg or Netmeds.",
+          "evidence": [
+            {
+              "title": "How PharmEasy Improved Medicine Reorder Conversion with Ringg",
+              "publisher": "Ringg AI",
+              "url": "https://ringg.ai/case-studies/pharmeasy",
+              "date": "2026-05-12",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "RD Saúde (Drogasil and Raia) runs AI agents mostly for staff and call centres, and lists a pharmacist agent only as a future idea; no agent that orders prescription medicine was found.",
+          "evidence": [
+            {
+              "title": "RD Saúde e IA agêntica",
+              "publisher": "Mobile Time",
+              "url": "https://www.mobiletime.com.br/noticias/03/06/2025/rd-saude-ia-agentica/",
+              "date": "2025-06-03",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Farmacias del Ahorro uses Gemini Enterprise mainly for staff work, and nothing was found at Farmacias Guadalajara; no agent that orders prescription medicine was found.",
+          "evidence": [
+            {
+              "title": "Farmacias del Ahorro se sube a la ola de la IA y busca ahorrar 100,000 horas de trabajo al año",
+              "publisher": "El Cronista",
+              "url": "https://www.cronista.com/mexico/finanzas-economia/farmacias-del-ahorro-se-sube-a-la-ola-de-la-ia-y-busca-ahorrar-100000-horas-de-trabajo-al-ano/",
+              "date": "2026-05-11",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "No AI ordering was found at Cruz Verde, Salcobrand or Farmacias Ahumada; Recemed's WhatsApp assistant lets doctors write e-prescriptions, but patients cannot order through it.",
+          "evidence": [
+            {
+              "title": "Recetas médicas electrónicas disponibles por WhatsApp",
+              "publisher": "Radio Agricultura",
+              "url": "https://www.radioagricultura.cl/tendencias/recetas-medicas-electronicas-disponibles-por-whatsapp_20250911/",
+              "date": "2025-09-11",
+              "type": "news"
+            }
+          ]
+        },
+        "CO": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "No AI agent that orders prescription medicine was found at Cruz Verde Colombia or other chains (searched October 2026)."
+        }
+      }
+    },
+    {
+      "id": "health.coverage-check",
+      "name": "Check your health cover or a claim",
+      "question": "Can an AI agent check what your own health plan covers, or the status of your claim, for you?",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "UnitedHealthcare's Avery, in the UHC app and on myuhc.com since March 2026, answers from your own plan: benefits, coverage, claim status, cost estimates and balances.",
+          "evidence": [
+            {
+              "title": "UnitedHealthcare Introduces AI Companion Empowering People with Simpler Navigation, Personal Experience",
+              "publisher": "UnitedHealthcare",
+              "url": "https://www.uhc.com/news-articles/newsroom/avery-announcement",
+              "date": "2026-03-26",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "NHS care is free at the point of use, and no live AI assistant that checks your cover or a claim was found at Bupa, AXA Health or Vitality; their claims run through ordinary app and web forms."
+        },
+        "DE": {
+          "status": "none",
+          "gapReason": "assist-only",
+          "note": "Barmer's chatbot answers general questions and AOK Plus uses AI voice agents to route calls, but none looks up your own cover or files a claim; the TK app lists no AI assistant.",
+          "evidence": [
+            {
+              "title": "AOK Plus: KI-Agenten automatisieren Kundendienst in EU-Cloud",
+              "publisher": "IT Finanzmagazin",
+              "url": "https://www.it-finanzmagazin.de/?p=250621",
+              "date": "2026-09-11",
+              "type": "news"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "confidence": "low",
+          "note": "ICICI Lombard's AI voice agent tells customers the status of their own health claims (launched 2022), and in August 2026 the insurer said bots and a WhatsApp chatbot handle about 70% of inbound calls; no recent source names claim status, and no other insurer was confirmed.",
+          "evidence": [
+            {
+              "title": "ICICI Lombard and Skit.ai partner to launch an AI-powered digital voice agent to track claim status",
+              "publisher": "CXOToday",
+              "url": "https://cxotoday.com/press-release/icici-lombard-and-skit-ai-partner-to-launch-a-first-of-its-kind-ai-powered-digital-voice-agent-to-assist-customers-in-tracking-their-claim-status/",
+              "date": "2022-09-15",
+              "type": "news"
+            },
+            {
+              "title": "How ICICI Lombard is using AI-driven tech to boost efficiencies",
+              "publisher": "Business Today",
+              "url": "https://www.businesstoday.in/latest/corporate/story/how-icici-lombard-is-using-ai-driven-tech-to-boost-efficiencies-546973-2026-08-03",
+              "date": "2026-08-03",
+              "type": "news"
+            }
+          ]
+        },
+        "BR": {
+          "status": "none",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "SulAmérica's virtual assistant answers common questions, including about refunds, but no source says it checks or files your own; no AI assistant was found for SUS.",
+          "evidence": [
+            {
+              "title": "SulAmérica adota Inteligência Artificial e reduz em 90% tempo médio de atendimento",
+              "publisher": "Convergência Digital",
+              "url": "https://convergenciadigital.com.br/especial/cloud/sulamrica-adota-inteligncia-artificial-e-reduz-em-90-tempo-mdio-de-atendimento",
+              "date": "2018-09-04",
+              "type": "news"
+            }
+          ]
+        },
+        "MX": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "IMSS shows your coverage in the IMSS Digital app with no AI, and its planned AI assistant is for doctors; no AI tool was found at GNP or AXA Mexico.",
+          "evidence": [
+            {
+              "title": "El IMSS planea aplicar inteligencia artificial en su expediente clínico electrónico",
+              "publisher": "El Imparcial",
+              "url": "https://www.elimparcial.com/mexico/2026/06/04/el-imss-planea-aplicar-inteligencia-artificial-en-su-expediente-clinico-electronico-mientras-desarrolla-la-interoperabilidad-total-de-datos-de-salud-con-el-issste-e-imss-bienestar-para-inicios-de-2027/",
+              "date": "2026-06-04",
+              "type": "news"
+            }
+          ]
+        },
+        "CL": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "FONASA's Mi Fonasa virtual branch and the Isapres Colmena, Banmédica and Consalud handle refunds and certificates in ordinary apps, with no AI assistant found (searched October 2026)."
+        },
+        "CO": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "Famisanar's WhatsApp assistant Camila handles your own medical authorizations, but no source says it is AI; nothing was found at Sura, Nueva EPS or ADRES.",
+          "evidence": [
+            {
+              "title": "Cómo pedir virtualmente autorizaciones, incapacidades y certificaciones en Famisanar",
+              "publisher": "Publimetro",
+              "url": "https://www.publimetro.co/tecnologia/2023/05/30/como-pedir-virtualmente-autorizaciones-incapacidades-y-certificaciones-en-famisanar/",
+              "date": "2023-05-30",
+              "type": "news"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "companies": [
+    {
+      "name": "Google",
+      "hq": "US",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-services-gemini-august-2026/",
+      "homepage": "https://www.google.com/",
+      "icon": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "role": "Gemini's Zocdoc connected app finds real open slots and books doctor visits in the US.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "health.book-appointment"
+      ]
+    },
+    {
+      "name": "Zocdoc",
+      "hq": "US",
+      "url": "https://hlth.com/insights/news/zocdoc-and-google-bring-real-time-healthcare-appointment-booking-to-gemini",
+      "homepage": "https://www.zocdoc.com/",
+      "icon": "https://www.zocdoc.com/favicon.ico",
+      "role": "Doctor booking platform whose real-time slots can be booked inside Google Gemini.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "health.book-appointment"
+      ]
+    },
+    {
+      "name": "Rapid Health",
+      "hq": "GB",
+      "url": "https://nhsaccelerator.com/insights/24-7-gp-appointment-booking-is-now-live-in-the-nhs-app-for-more-than-one-million-patients/",
+      "homepage": "https://www.rapidhealth.ai/",
+      "icon": "https://cdn.prod.website-files.com/684aec07b9e280670221bbcf/684aec07b9e280670221bc61_App%20Icon.png",
+      "role": "Makes Smart Triage, an AI tool in the NHS App that books GP slots at the practices that use it.",
+      "markets": [
+        "GB"
+      ],
+      "capabilities": [
+        "health.book-appointment"
+      ]
+    },
+    {
+      "name": "Doctolib",
+      "hq": "FR",
+      "url": "https://www.zwp-online.info/zwpnews/dental-news/branchenmeldungen/doctolib-fuhrt-ki-basierten-telefonassistenten-ein",
+      "homepage": "https://www.doctolib.de/",
+      "icon": "https://www.doctolib.de/favicon.ico",
+      "role": "Booking platform whose AI phone assistant books callers into the calendars of practices that pay for it.",
+      "markets": [
+        "DE"
+      ],
+      "capabilities": [
+        "health.book-appointment"
+      ]
+    },
+    {
+      "name": "Amazon",
+      "hq": "US",
+      "url": "https://www.aboutamazon.com/news/retail/amazon-health-ai-agent-one-medical",
+      "homepage": "https://www.aboutamazon.com/",
+      "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
+      "role": "Its Health AI sends prescription renewal requests to One Medical providers, filled at Amazon Pharmacy or another pharmacy.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "health.prescription-refill"
+      ]
+    },
+    {
+      "name": "Doctronic",
+      "hq": "US",
+      "url": "https://www.marketplace.org/story/2026/06/03/utah-is-experimenting-with-a-new-role-for-ai-renewing-prescriptions",
+      "homepage": "https://www.doctronic.ai/",
+      "icon": "https://www.doctronic.ai/apple-touch-icon.png",
+      "role": "Its AI renews some chronic-condition prescriptions on its own in a one-year Utah state pilot.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "health.prescription-refill"
+      ]
+    },
+    {
+      "name": "UnitedHealthcare",
+      "hq": "US",
+      "url": "https://www.uhc.com/news-articles/newsroom/avery-announcement",
+      "homepage": "https://www.uhc.com/",
+      "icon": "https://www.uhc.com/etc/designs/uhcfoundation/resources/favicon.ico",
+      "role": "Runs Avery, an AI assistant that answers members' questions about their own benefits, coverage and claims.",
+      "markets": [
+        "US"
+      ],
+      "capabilities": [
+        "health.coverage-check"
+      ]
+    },
+    {
+      "name": "ICICI Lombard",
+      "hq": "IN",
+      "url": "https://cxotoday.com/press-release/icici-lombard-and-skit-ai-partner-to-launch-a-first-of-its-kind-ai-powered-digital-voice-agent-to-assist-customers-in-tracking-their-claim-status/",
+      "homepage": "https://www.icicilombard.com/",
+      "icon": "https://www.icicilombard.com/favicon.ico",
+      "role": "Insurer whose AI voice agent tells customers the status of their own health claims.",
+      "markets": [
+        "IN"
+      ],
+      "capabilities": [
+        "health.coverage-check"
+      ]
+    }
+  ],
+  "repos": []
+}
