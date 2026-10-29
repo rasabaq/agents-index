@@ -1,7 +1,7 @@
 // Agent Atlas view: country fingerprints. One radar per country (one spoke per category, 0–100),
 // plus a large compare radar that overlays two countries.
 (() => {
-  // Short spoke labels for narrow screens. Unknown ids fall back to the full name.
+  // Short spoke labels for narrow screens. Other categories use their "short" word from meta.json, then the full name.
   const SHORT = { commerce: 'Shopping', payments: 'Payments', services: 'Travel', autonomy: 'General agents', banking: 'Banking', messaging: 'Chat', government: 'Government' };
   const RINGS = [25, 50, 75, 100];
 
@@ -146,7 +146,8 @@
         const W = plot.clientWidth;
         if (!W) return;
         const [a, b] = pair, va = vals(a), vb = vals(b);
-        const labels = cats.map((c) => (W >= 480 ? lines(c.name) : [SHORT[c.id] ?? c.name]));
+        // On phones a two-word short label stacks, so a side spoke ("General agents") does not shrink the chart.
+        const labels = cats.map((c) => (W >= 480 ? lines(c.name) : (SHORT[c.id] ?? c.short ?? c.name).split(' ')));
         // Measure label widths, then pick the largest radius that keeps every label inside W.
         big.innerHTML = labels.map((ls) => `<text class="axis">${ls.map((l) => `<tspan x="0">${esc(l)}</tspan>`).join('')}</text>`).join('');
         const widths = [...big.querySelectorAll('text')].map((t) => t.getBBox().width);
@@ -162,7 +163,7 @@
           return `<text class="${cls}" text-anchor="${anchor}">${ls.map((l, k) => `<tspan x="${f(x)}" y="${f(y0 + k * LH)}">${esc(l)}</tspan>`).join('')}</text>`;
         };
         const axis = labels.map((ls, i) => { const [x, y] = xy(i, r + OFF); return textAt('axis', ls, x, y, Math.sin(i * STEP), -Math.cos(i * STEP)); }).join('');
-        const ticks = RINGS.map((v) => `<text class="tick" x="-8" y="${f((-r * v) / 100 + 14)}" text-anchor="end">${v}</text>`).join('');
+        const ticks = r < 100 ? '' : RINGS.map((v) => `<text class="tick" x="-8" y="${f((-r * v) / 100 + 14)}" text-anchor="end">${v}</text>`).join('');
         // Direct label: each country's name beside its dot, at the spoke where it leads the other the most.
         // It sits outside the shape when there is room, inside when the value is near the edge.
         // Top and bottom spokes put it on the right, away from the ring numbers.
@@ -170,7 +171,7 @@
           const i = d3.maxIndex(p, (v, k) => v - q[k]);
           const s = Math.sin(i * STEP), [x, y] = xy(i, (r * p[i]) / 100);
           const right = Math.abs(s) < 0.3 || (s > 0) === (p[i] <= 70);
-          return { i, cls, html: `<text class="dl" x="${f(x + (right ? 9 : -9))}" y="${f(y + 4.5)}" text-anchor="${right ? 'start' : 'end'}">${esc(byCode[code].name)}</text>` };
+          return { i, cls, html: `<text class="dl" x="${f(x + (right ? 9 : -9))}" y="${f(y + 4.5)}" text-anchor="${right ? 'start' : 'end'}">${esc(W >= 480 ? byCode[code].name : code)}</text>` };
         });
         big.innerHTML = `<g>${base(r)}${ticks}
           <polygon class="shape s2" points="${poly(vb, r)}"/><polygon class="shape s1" points="${poly(va, r)}"/>
