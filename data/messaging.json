@@ -310,7 +310,7 @@
         "DE": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats (in Germany since 2018), which few businesses offer. WhatsApp payments are not offered in Germany.",
+          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. WhatsApp payments are not offered in Germany.",
           "evidence": [
             {
               "title": "Bot Payments API",
@@ -327,13 +327,6 @@
               "type": "company"
             },
             {
-              "title": "Apple Business Chat Expands Beyond United States to 10 Countries and 30 More Brands",
-              "publisher": "MacRumors",
-              "url": "https://www.macrumors.com/2018/10/02/apple-business-chat-expands-to-13-countries/",
-              "date": "2018-10-02",
-              "type": "news"
-            },
-            {
               "title": "Stripe global availability",
               "publisher": "Stripe",
               "url": "https://stripe.com/global",
@@ -343,8 +336,9 @@
           ]
         },
         "BR": {
-          "status": "live",
-          "note": "The WhatsApp Payments API for Brazil lets businesses send an order in chat that the customer pays by Pix code, card, boleto or payment link, although the Pix flow still hands off to the bank app and only works with Brazilian numbers. Telegram bot payments through Stripe also work.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "The WhatsApp Payments API for Brazil lets businesses send an order in the chat, but the customer pays outside WhatsApp: a Pix code opens the bank app and payment links open in the browser, and it only works with Brazilian numbers. Telegram bot payments through Stripe can finish inside the chat, but they are a niche channel.",
           "evidence": [
             {
               "title": "Payments API - Brazil",
@@ -448,7 +442,7 @@
         },
         "IN": {
           "status": "live",
-          "note": "WhatsApp Pay runs on UPI, and the WhatsApp Payments API lets businesses take UPI, card and netbanking payments in chat through BillDesk, Razorpay, PayU or Zaakpay.",
+          "note": "WhatsApp Pay runs on UPI, so customers can pay natively inside WhatsApp, and the WhatsApp Payments API lets businesses take UPI, card and netbanking payments in chat through BillDesk, Razorpay, PayU or Zaakpay.",
           "evidence": [
             {
               "title": "Receive payments via payment gateways on WhatsApp",

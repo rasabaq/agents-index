@@ -513,7 +513,8 @@
         },
         "IN": {
           "status": "limited",
-          "note": "News reports say Indian Bank's AI-TARA voice assistant (unveiled September 2026) does fund transfers and IMPS in 10 languages, but the bank's own investor deck only calls it a voice AI relationship manager and does not say all customers have it. NPCI's Hello! UPI voice payments roll out in phases, and Axis Bank's new branch kiosk (September 2026) has an AI assistant that fills in forms for services like utility bill payments. SBI's YONO Ji assistant answers questions for YONO Business users, and we found no assistant that moves money at HDFC or ICICI.",
+          "gapReason": "pilot-only",
+          "note": "News reports say Indian Bank's AI-TARA voice assistant (unveiled September 2026) does fund transfers and IMPS in 10 languages, but the bank's own investor deck only calls it a voice AI relationship manager and does not say all customers have it. Axis Bank's new branch kiosk (September 2026) has an AI assistant that fills in forms for services like utility bill payments. SBI's YONO Ji assistant answers questions for YONO Business users, and we found no assistant that moves money at HDFC or ICICI.",
           "evidence": [
             {
               "title": "Indian Bank debuts AI-TARA voice banking in 10 languages at Global Fintech Fest 2026",
@@ -535,17 +536,9 @@
               "url": "https://www.axis.bank.in/about-us/press-releases/axis-bank-and-hitachi-payment-services-unveil-ai-powered-solutions-for-smarter-banking-and-merchant-payment-experiences",
               "date": "2026-09-11",
               "type": "company"
-            },
-            {
-              "title": "AI-powered conversational payments to launch on India's UPI",
-              "publisher": "FinTech Futures",
-              "url": "https://www.fintechfutures.com/ai-in-fintech/ai-powered-conversational-payments-to-launch-on-india-s-upi",
-              "date": "2023-09",
-              "type": "news"
             }
           ],
-          "confidence": "low",
-          "gapReason": "pilot-only"
+          "confidence": "low"
         }
       }
     }

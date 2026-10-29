@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Google AI Mode finds real-time slots on OpenTable, Resy and Tock for all US users without Labs, and since August 2026 ChatGPT finds bookable tables through OpenTable, Resy and Yelp on all plans.",
+          "note": "Since August 2026 ChatGPT books tables at Yelp restaurants without leaving the chat, and also finds tables through OpenTable and Resy on all plans. Google AI Mode finds real-time slots on OpenTable, Resy and Tock for all US users and links to the booking page to finish.",
           "evidence": [
             {
               "title": "Explore new ways to plan and book travel with AI in Search",
@@ -23,12 +23,20 @@
               "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
               "date": "2026-08-10",
               "type": "company"
+            },
+            {
+              "title": "ChatGPT can now book restaurant tables and join waitlists through Yelp",
+              "publisher": "iGeeksBlog",
+              "url": "https://www.igeeksblog.com/chatgpt-yelp-restaurant-booking/",
+              "date": "2026-08-11",
+              "type": "news"
             }
           ]
         },
         "GB": {
-          "status": "live",
-          "note": "Google AI Mode books UK tables through TheFork, SevenRooms, ResDiary, OpenTable and others (the final step is on the partner site), and ChatGPT reservations work through OpenTable and the TheFork app.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Google AI Mode finds UK tables through TheFork, SevenRooms, ResDiary, OpenTable and others, but you finish the booking on the partner's site. ChatGPT's OpenTable reservations are listed as global and the TheFork app in ChatGPT is reported in the UK, but no source confirms that a UK booking is completed inside the chat.",
           "evidence": [
             {
               "title": "Booking restaurants in the UK just got easier with AI in Search",
@@ -187,7 +195,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Google AI Mode lets US users book hotels from Booking.com, Expedia, Marriott, Hilton and others with Google Pay via \"Continue on Google\" (rolling out in English since August 2026), and the Booking.com and Expedia apps work inside ChatGPT; flights still hand off to airline sites.",
+          "note": "Google AI Mode books US hotels from Booking.com, Expedia, Marriott, Hilton, Trip.com and others inside Search: you pick \"Continue on Google\" and pay with Google Pay (rolling out in English since August 2026). The Booking.com and Expedia apps in ChatGPT hand off to their own sites to book, and flights still hand off to airline sites.",
           "evidence": [
             {
               "title": "How to book travel with AI Mode in Google Search",
@@ -206,8 +214,9 @@
           ]
         },
         "GB": {
-          "status": "live",
-          "note": "The Booking.com app in ChatGPT is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book, and the Eurostar app in ChatGPT finds trains and hands off to eurostar.com; Google AI Mode hotel booking is still US-only.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026), but it sends you to Booking.com to finish the booking, and the Eurostar app in ChatGPT finds trains and hands off to eurostar.com. Google AI Mode hotel booking, which finishes inside Search, is US-only.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -233,8 +242,9 @@
           ]
         },
         "DE": {
-          "status": "live",
-          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026), but it sends you to Booking.com to finish the booking. Google AI Mode hotel booking, which finishes inside Search, is US-only.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -253,8 +263,9 @@
           ]
         },
         "BR": {
-          "status": "live",
-          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Expedia's ChatGPT app does not list Brazil, the Despegar app in ChatGPT's directory has no country list, LATAM's beta travel agent had not reached Brazil as of September 2025, and Google AI Mode hotel booking is US-only.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026), but it sends you to Booking.com to finish the booking. Expedia also has an app in ChatGPT that hands off to Expedia, but we could not confirm it covers Brazil. The Despegar app in ChatGPT's directory has no country list and sends you to Despegar to pay, LATAM's beta travel agent had not reached Brazil as of September 2025, and Google AI Mode hotel booking is US-only.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -287,8 +298,9 @@
           ]
         },
         "MX": {
-          "status": "live",
-          "note": "The Booking.com and Expedia apps in ChatGPT work outside the EEA, Switzerland and UK and hand off a chosen hotel to the partner to book; Google AI Mode hotel booking is US-only.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026), but it sends you to Booking.com to finish the booking. Expedia also has an app in ChatGPT that hands off to Expedia, but we could not confirm it covers Mexico. Google AI Mode hotel booking, which finishes inside Search, is US-only.",
           "evidence": [
             {
               "title": "Introducing apps in ChatGPT and the new Apps SDK",
@@ -314,8 +326,9 @@
           ]
         },
         "CL": {
-          "status": "live",
-          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; LATAM's beta virtual travel agent in its app has served Chile since April 2025 (planning and quotes, no booking found); the Despegar app in ChatGPT's directory has no country list, and Google AI Mode hotel booking is US-only.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026), but it sends you to Booking.com to finish the booking. LATAM's beta virtual travel agent in its app has served Chile since April 2025 (planning and quotes, no booking found), the Despegar app in ChatGPT's directory has no country list and sends you to Despegar to pay, and Google AI Mode hotel booking is US-only.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -348,8 +361,9 @@
           ]
         },
         "CO": {
-          "status": "live",
-          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; LATAM's beta virtual travel agent in its app has served Colombia since June 2025 (planning and quotes, no booking found); the Despegar app in ChatGPT's directory has no country list, and Google AI Mode hotel booking is US-only.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026), but it sends you to Booking.com to finish the booking. LATAM's beta virtual travel agent in its app has served Colombia since June 2025 (planning and quotes, no booking found), the Despegar app in ChatGPT's directory has no country list and sends you to Despegar to pay, and Google AI Mode hotel booking is US-only.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -382,8 +396,9 @@
           ]
         },
         "IN": {
-          "status": "live",
-          "note": "The Booking.com and Expedia apps in ChatGPT work in India and hand off a chosen hotel to the partner; no MakeMyTrip booking agent was found, and Google AI Mode hotel booking is US-only.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026), but it sends you to Booking.com to finish the booking. Expedia also has an app in ChatGPT that hands off to Expedia, but we could not confirm it covers India. No MakeMyTrip booking agent was found, and Google AI Mode hotel booking is US-only.",
           "evidence": [
             {
               "title": "Introducing apps in ChatGPT and the new Apps SDK",
@@ -417,8 +432,15 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "The DoorDash app in ChatGPT builds grocery carts from US retailers for checkout on DoorDash, and Uber's apps in ChatGPT, shown only to US users, request on-demand rides and find Uber Eats restaurants, then hand off to the Uber apps to pay.",
+          "note": "Alexa+ takes Grubhub and Uber Eats delivery orders in a spoken conversation and places them after showing you the total (on Echo Show 8 and larger, since March 2026). The DoorDash app in ChatGPT builds grocery carts that you check out on DoorDash, and Uber's apps in ChatGPT (US only) plan rides and show Uber Eats menus, then hand off to the Uber apps to order and pay.",
           "evidence": [
+            {
+              "title": "Alexa+ can now order delivery through Grubhub and Uber Eats",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-grubhub-uber-eats-food-delivery",
+              "date": "2026-03",
+              "type": "company"
+            },
             {
               "title": "DoorDash Launches Grocery Shopping App Within ChatGPT",
               "publisher": "DoorDash via Business Wire",
@@ -478,7 +500,7 @@
         },
         "DE": {
           "status": "live",
-          "note": "Lieferando, Just Eat Takeaway.com's German brand, has had an AI chat assistant in its app since April 2025 that takes orders, and the group's voice assistant, which fills the basket for checkout, reached Germany in 2026 after the UK; Wolt's newsroom shows no AI agent, and the Uber Eats app in ChatGPT is US-only.",
+          "note": "Lieferando, Just Eat Takeaway.com's German brand, has had an AI chat assistant in its app since April 2025 that takes orders, and the group's voice assistant, which fills the basket for checkout in the same app, reached Germany in 2026 after the UK. We found no Wolt AI agent, and the Uber Eats app in ChatGPT is US-only.",
           "evidence": [
             {
               "title": "Lieferando vereinfacht Bestellungen mit KI-Assistent",
@@ -492,13 +514,6 @@
               "publisher": "Just Eat Takeaway.com",
               "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
               "date": "2026-08-11",
-              "type": "company"
-            },
-            {
-              "title": "Wolt press room (no AI ordering agent news)",
-              "publisher": "Wolt",
-              "url": "https://press.wolt.com/",
-              "date": "2026-10",
               "type": "company"
             },
             {
@@ -712,12 +727,14 @@
       "url": "https://www.aboutamazon.de/news/amazon-devices-und-services/alexa-plus-funktionen-ausprobieren",
       "homepage": "https://www.aboutamazon.com/",
       "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
-      "role": "Alexa+ finds and books restaurant tables through OpenTable in Germany, in Early Access.",
+      "role": "Alexa+ orders Grubhub and Uber Eats delivery by voice in the US, and finds and books restaurant tables through OpenTable in Germany, in Early Access.",
       "markets": [
+        "US",
         "DE"
       ],
       "capabilities": [
-        "services.restaurant-booking"
+        "services.restaurant-booking",
+        "services.delivery-rides"
       ]
     },
     {
@@ -854,7 +871,7 @@
       "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
       "homepage": "https://www.booking.com/",
       "icon": null,
-      "role": "Runs a hotel search app inside ChatGPT and is a hotel partner for Google AI Mode checkout.",
+      "role": "Runs a hotel and car rental app inside ChatGPT that hands off to Booking.com to book, and is a hotel partner for Google AI Mode checkout in the US.",
       "markets": [
         "US",
         "GB",
@@ -877,9 +894,7 @@
       "icon": "https://www.expediagroup.com/favicon.ico",
       "role": "Runs a travel app inside ChatGPT and is a hotel partner (Expedia, Hotels.com) for Google AI Mode checkout.",
       "markets": [
-        "US",
-        "MX",
-        "IN"
+        "US"
       ],
       "capabilities": [
         "services.travel-booking"
@@ -947,7 +962,7 @@
       "url": "https://www.businesswire.com/news/home/20251217400178/en/DoorDash-Launches-Grocery-Shopping-App-Within-ChatGPT",
       "homepage": "https://www.doordash.com/",
       "icon": null,
-      "role": "Runs a ChatGPT app that builds grocery carts from US retailers for checkout.",
+      "role": "Runs a ChatGPT app that builds grocery carts from US retailers, which you check out on DoorDash.",
       "markets": [
         "US"
       ],
