@@ -2,7 +2,7 @@
 (window.CHARTS ??= []).push({
   id: 'periodic',
   title: 'Periodic table',
-  blurb: 'Which agent capabilities are everywhere, and which are rare? Each tile is one capability; the big number counts the countries where it is live, and the marks show every country in ranking order. Click a tile for notes and sources.',
+  blurb: 'Which agent capabilities are everywhere, and which are rare? Each tile is one capability; the big number counts the countries where it is live, and the marks show every country in ranking order. Pick a tile for notes and sources.',
   render(el, ctx) {
     const { esc, flag, STATUSES } = ctx;
     const ORDER = ['live', 'limited', 'announced', 'none'];
@@ -92,9 +92,25 @@
   .v-periodic .pt-body { grid-column: 1 / -1; }
   .v-periodic .pt-st { justify-items: end; }
 }
+/* phones: one row per tile, like a table. The marks line up in columns under the country codes, which show once
+   per category, above the marks of its first tile. The detail opens right under the tapped tile (see place). */
 @media (max-width: 520px) {
   .v-periodic .pt-dsym { display: none; }
-}`;
+  .v-periodic .pt-grid, .v-periodic .pt-grid > section { display: block; margin-top: 0; }
+  .v-periodic .pt-head { margin: 20px 0 0; }
+  .v-periodic .pt-tile { margin: 0; padding: 8px 4px; border-width: 0 0 1px; border-radius: 0; background: none; }
+  .v-periodic .pt-tile[aria-pressed='true'] { border-radius: 8px; background: var(--surface-2); }
+  .v-periodic .pt-in { grid-template-columns: 32px minmax(0, 1fr) auto; grid-template-rows: auto auto; grid-template-areas: 'sym name num' 'sq sq sq'; gap: 6px 10px; }
+  .v-periodic .pt-sym { font-size: 28px; }
+  .v-periodic .pt-num b { font-size: 22px; }
+  .v-periodic .pt-name { min-height: 0; padding-top: 2px; font-size: 13.5px; color: var(--ink); }
+  .v-periodic .pt-sq > span { grid-template-rows: none; padding: 2px 0; }
+  .v-periodic .pt-sq .smark { width: 24px; height: 12px; border-width: 2px; }
+  .v-periodic .pt-sq .smark.none { width: 14px; height: 3px; }
+  .v-periodic .pt-sq em { order: -1; font-size: 11px; letter-spacing: 0.02em; }
+  .v-periodic .pt-sq em .flag, .v-periodic .pt-tile:not(:first-child) .pt-sq em { display: none; }
+  .v-periodic .pt-grid .pt-panel { margin: 0 0 12px; padding: 16px 0 4px; border-bottom: 1px solid var(--line); }
+}}`;
       document.head.append(style);
     }
 
@@ -128,6 +144,7 @@
           <span class="pt-sq" aria-hidden="true">${countries.map((c) => square(cap, c)).join('')}</span></span>
       </button>`;
 
+    const hint = '<p class="pt-hint">Pick a tile to see every country\'s status, note and sources.</p>';
     el.innerHTML = `<div class="v-periodic">
       <p class="pt-sum">${summary}</p>
       <div class="chart-legend pt-legend">
@@ -141,18 +158,29 @@
           <div class="pt-tiles">${g.caps.map(tile).join('')}</div>
         </section>`).join('')}
       </div>
-      <div class="pt-panel" aria-live="polite"><p class="pt-hint">Click a tile to see every country's status, note and sources.</p></div>
+      <div class="pt-panel" aria-live="polite">${hint}</div>
     </div>`;
 
     const root = el.firstElementChild;
     const panel = root.querySelector('.pt-panel');
     let open = null;
+    const phone = matchMedia('(max-width: 520px)');
+    // On phones the panel goes right after the open tile's row, so the detail opens next to the tile.
+    // Otherwise, and when nothing is open, it sits under the table.
+    const place = () => {
+      const t = open && phone.matches && root.querySelector(`.pt-tile[data-cap="${CSS.escape(open)}"]`);
+      if (!t) return root.append(panel);
+      panel.remove();
+      const top = t.getBoundingClientRect().top;
+      [...t.parentElement.children].filter((x) => x.getBoundingClientRect().top === top).at(-1).after(panel);
+    };
+    phone.addEventListener('change', place);
 
     const detail = (cap) => `
       <div class="pt-dh">
         <span class="pt-dsym" style="--cat: ${ctx.catIndex[cap.category].color}" aria-hidden="true">${esc(cap.sym)}</span>
         <div>
-          <span class="pt-cat">${esc(ctx.catName(cap.category))} · live in ${cap.live} of ${n} countries</span>
+          <span class="pt-cat">${esc(ctx.catName(cap.category))} · <span class="nowrap">live in ${cap.live} of ${n} countries</span></span>
           <h3 tabindex="-1">${esc(cap.name)}</h3>
           <p>${esc(cap.question)}</p>
         </div>
@@ -173,13 +201,12 @@
     const select = (id, focus) => {
       open = open === id ? null : id;
       root.querySelectorAll('.pt-tile').forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.cap === open)));
-      if (!open) {
-        panel.innerHTML = '<p class="pt-hint">Click a tile to see every country\'s status, note and sources.</p>';
-        return;
-      }
-      panel.innerHTML = detail(byId[open]);
+      panel.innerHTML = open ? detail(byId[open]) : hint;
+      place();
+      if (!open) return;
       if (focus) panel.querySelector('h3').focus({ preventScroll: true });
-      panel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+      // on phones only the panel's head needs to come into view: the tile stays on screen just above it
+      (phone.matches ? panel.firstElementChild : panel).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
     };
 
     root.addEventListener('click', (e) => {

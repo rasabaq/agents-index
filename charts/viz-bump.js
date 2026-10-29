@@ -1,7 +1,7 @@
 // Home page chart "bump": a bump chart of each country's rank in every category, plus overall.
 (() => {
   const GAP = 25; // spacing between tied dots along the category axis: two highlighted dots (2 × RH) still keep 3px apart
-  const R = 9.5; // muted dot radius
+  const R = 10; // muted dot radius: holds an 11px "100"
   const RH = 11; // highlighted dot radius
   const MAX_PINS = 3;
   // Pin colors by slot. The first pin (Chile by default) is the focus country, so it gets sunrise.
@@ -26,13 +26,13 @@
 .v-bump .c .ln { fill: none; stroke: var(--line-strong); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
 .v-bump .c .hit { fill: none; stroke: transparent; stroke-width: 16; }
 .v-bump .c .bump-dot { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
-.v-bump .c .sc { fill: var(--muted); font-size: 10px; font-weight: 600; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
-.v-bump .c .sc.s3 { font-size: 9px; letter-spacing: -0.2px; }
+.v-bump .c .sc { fill: var(--muted); font-size: 11px; font-weight: 600; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.v-bump .c .sc.s3 { letter-spacing: -0.6px; }
 .v-bump .c.on .ln { stroke: var(--hl); stroke-width: 2.5; }
 .v-bump .c.on .bump-dot { fill: var(--hl); stroke: var(--surface); stroke-width: 2; }
-.v-bump .c.on .sc { fill: var(--surface); font-size: 10.5px; }
-.v-bump .c.on .sc.s3 { font-size: 9.5px; }
+.v-bump .c.on .sc { fill: var(--surface); }
 @media (max-width: 520px) { .v-bump .bump-chip { gap: 5px; padding: 0 8px; } .v-bump .bump-chips { gap: 5px; } }
+@media (pointer: coarse) { .v-bump .bump-chip { height: 40px; } }
 .v-bump .lab { cursor: pointer; outline: none; }
 .v-bump .lab text { fill: var(--ink-2); font-size: 12.5px; font-weight: 500; dominant-baseline: central; }
 .v-bump svg.rot .lab text { font-size: 11.5px; }
@@ -86,7 +86,7 @@
       let hover = null;
 
       el.innerHTML = `<div class="bump-top"><div class="bump-chips" role="group" aria-label="Pin countries"></div>
-        <p class="bump-hint">Click a line or a country to pin it (up to ${MAX_PINS}).</p></div><div class="bump-chart"></div>`;
+        <p class="bump-hint">Pick a line or a country to pin it (up to ${MAX_PINS}).</p></div><div class="bump-chart"></div>`;
       const chart = el.querySelector('.bump-chart');
 
       const freeSlot = () => [0, 1, 2].find((s) => !pins.some((p) => p.slot === s));
@@ -151,7 +151,7 @@
 
       // End labels: tied countries share their rank row. Desktop puts up to two per line ("🇨🇴 CO · 🇨🇱 CL"),
       // stacking lines around the row; the rotated layout stacks one per line in the rank column.
-      const LAB_FONT = '650 12.5px', SEP = 12, LINE = 15;
+      const LAB_FONT = '650 12.5px', SEP = 12, LINE = 15, STACK = 20; // STACK: one label per line on the rotated layout
       const labText = (code) => `${ctx.emoji(code)} ${code}`;
       const tieGroups = (col) => d3.groups(rows.map((r) => r.code), (c) => col.at[c].rank)
         .map(([rank, codes]) => ({ rank, codes: codes.sort((a, b) => col.at[a].i - col.at[b].i) }));
@@ -174,16 +174,16 @@
           const lines = cols.map((c) => wrap(c.name, c.w - 12));
           const top = d3.max(lines, (l) => l.length) * 16 + 30;
           const ROW = 44;
-          return { mode: 'h', gap, W, H: top + (N - 1) * ROW + 18, uStart: L, uEnd: u + LEAD, uLo: cols[0].u0, uHi: u, top, lines, v: (rank) => top + (rank - 1) * ROW };
+          return { mode: 'h', gap, W, H: top + (N - 1) * ROW + 18, uStart: L, uEnd: u + LEAD, uLo: cols[0].u0, uHi: u, top, lines, rh: RH, v: (rank) => top + (rank - 1) * ROW };
         }
         // Rotated: category names get their own gutter on the left, wrapped on phones so the ranks keep room.
         const nameW = Math.min(d3.max(cols, (c) => textWidth(c.name)), Math.max(70, W / 5));
-        const G = nameW + 14;
-        const step = (W - G - 4) / N;
+        const G = nameW + 8;
+        const step = (W - G - 2) / N;
         // When flag and code do not fit between two ranks, the end labels show the code alone.
         const compact = step < d3.max(rows, (r) => textWidth(labText(r.code), LAB_FONT)) + 6;
         const names = cols.map((c) => wrap(c.name, nameW));
-        const uStart = 40 + (first.k - 1) * 16;
+        const uStart = 40 + (first.k - 1) * STACK;
         let cur = uStart + 14;
         cols.forEach((c, j) => {
           const half = Math.max(((c.k - 1) * GAP) / 2 + RH, (names[j].length * 15) / 2);
@@ -192,7 +192,8 @@
           cur = c.u + half + 16;
         });
         const uEnd = cur + 4;
-        return { mode: 'v', gap: GAP, W, H: uEnd + 12 + (last.k - 1) * 16 + 14, uStart, uEnd, uLo: uStart + 14, uHi: cur, names, compact, v: (rank) => G + (rank - 0.5) * step };
+        // rh: a highlighted dot grows only while it stays inside its rank, so neighbors never cover each other.
+        return { mode: 'v', gap: GAP, W, H: uEnd + 12 + (last.k - 1) * STACK + 14, uStart, uEnd, uLo: uStart + 14, uHi: cur, names, compact, step, rh: Math.max(R, Math.min(RH, step / 2 - 1)), v: (rank) => G + (rank - 0.5) * step };
       }
 
       let lay, groups, labels, lastW = 0;
@@ -277,7 +278,7 @@
           const col = end ? last : first, u = end ? uEnd : uStart;
           for (const g of tieGroups(col)) {
             if (!H) {
-              g.codes.forEach((code, i) => labData.push({ code, end, anchor: 'middle', x: v(g.rank), y: end ? u + 12 + i * 16 : u - 10 - (g.codes.length - 1 - i) * 16 }));
+              g.codes.forEach((code, i) => labData.push({ code, end, anchor: 'middle', x: v(g.rank), y: end ? u + 12 + i * STACK : u - 10 - (g.codes.length - 1 - i) * STACK }));
               continue;
             }
             const ls = chunks(g.codes);
@@ -301,7 +302,9 @@
           const ring = sel.append('rect').attr('class', 'ring').attr('rx', 6);
           sel.append('text').attr('x', d.x).attr('y', d.y).attr('text-anchor', d.anchor).text(H ? labText(d.code) : lay.compact ? d.code : `${ctx.emoji(d.code)}\u2009${d.code}`);
           const bb = this.getBBox();
-          ring.attr('x', bb.x - 4).attr('y', bb.y - 2).attr('width', bb.width + 8).attr('height', bb.height + 4);
+          // The ring is also the hit box: on the rotated layout it stays inside its own rank and line, so neighbors never overlap.
+          const w = H ? bb.width + 8 : Math.min(bb.width + 8, lay.step - 2), h = H ? bb.height + 4 : Math.min(bb.height + 4, STACK - 2);
+          ring.attr('x', bb.x + (bb.width - w) / 2).attr('y', bb.y + (bb.height - h) / 2).attr('width', w).attr('height', h);
         });
         labels
           .attr('tabindex', (d) => (d.end ? null : 0))
@@ -334,7 +337,7 @@
         for (const gs of groups) {
           gs.each(function (g) {
             const c = color(g.r.code);
-            d3.select(this).classed('on', !!c).style('--hl', c).selectAll('.bump-dot').attr('r', c ? RH : R);
+            d3.select(this).classed('on', !!c).style('--hl', c).selectAll('.bump-dot').attr('r', c ? lay.rh : R);
           });
           gs.sort((a, b) => z(a.r.code) - z(b.r.code));
         }
