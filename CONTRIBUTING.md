@@ -6,7 +6,7 @@ Everyone here follows our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Run it
 
-You need Node 20 or later. There is no build step and nothing to install.
+You need Node 20 or later for the checks. `npm start` serves the site with Python 3; any static file server works too. There is no build step and no package to install.
 
 ```sh
 npm start             # serves the site on http://localhost:8080
@@ -37,17 +37,19 @@ If you cannot edit the file, open a [data correction issue](https://github.com/r
 
 ## Add a category
 
-No code change is needed. Add an entry to `categories` in `data/meta.json`, then add `data/<id>.json`. Every category needs all five fields:
+Add an entry to `categories` in `data/meta.json`, then add `data/<id>.json`. Every category needs all five fields:
 
 | Field | What it is | Example |
 | --- | --- | --- |
-| `id` | The file name and the prefix of its capability ids | `"health"` |
-| `name` | The full name, shown in headings | `"Health & care"` |
-| `blurb` | One line on what it covers | `"Agents that book care and handle health admin."` |
-| `short` | One or two words, for labels such as the matrix rows and the radar on phones | `"Health"` |
-| `can` | The words that complete "AI agents can …" in the country verdict | `"book care for you"` |
+| `id` | The file name and the prefix of its capability ids | `"pets"` |
+| `name` | The full name, shown in headings | `"Pets & vets"` |
+| `blurb` | One line on what it covers | `"Agents that book the vet and order pet supplies."` |
+| `short` | One or two words, for labels such as the matrix rows and the radar on phones | `"Pets"` |
+| `can` | The words that complete "AI agents can …" in the country verdict | `"book the vet for you"` |
 
-`npm run validate` fails when `short` or `can` is missing. In the periodic table chart, each capability's periodic-table symbol comes from its id ("health.book-doctor" → "Bd"), and the category takes the next colour.
+`npm run validate` fails when `short` or `can` is missing. In the periodic table chart, each capability's periodic-table symbol comes from its id ("pets.book-vet" → "Bv"), and the category takes the next color.
+
+One code change is needed: add a 12×12 pixel icon for the new id to `ICONS` in `hero.js`. The hero skips a category that has no icon.
 
 ## Pull requests
 

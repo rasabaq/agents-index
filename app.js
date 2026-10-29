@@ -185,7 +185,7 @@ function renderCountry() {
       <p class="label">Score</p>
       <p class="kpi-v">${r.score}<small>/ 100 · rank ${r.rank} of ${ranking.length}${ties.length ? ', tied' : ''}</small></p>
       <ul class="mc-bars">${bar(`${flag(r.code)}${r.code}`, r.score, true)}${best.code === r.code ? '' : bar(`Best: ${flag(best.code)}${best.code}`, best.score)}${bar(`Average of ${ranking.length}`, avg)}</ul>
-      <p class="mc-note">The share of agent abilities that work today. Data as of ${fmtDate(meta.asOf)}. ${low ? `A ? marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
+      <p class="mc-note">The average of the ${meta.categories.length} category scores. Live counts 1, Limited ½, Announced ¼. Data as of ${fmtDate(meta.asOf)}. ${low ? `A ? marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
     </div>
     <section class="card kpi mc-list" aria-labelledby="mc-works"><h3 id="mc-works" class="label">Works today · ${works.length} of ${total}</h3>
       ${works.length ? `<ul>${works.map((x) => item(x)).join('')}</ul>` : '<p class="mc-note">Nothing is generally available yet.</p>'}</section>
@@ -329,9 +329,9 @@ function firstRows(rows, all, el, what) {
 function renderCompanies() {
   const matching = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
   const rows = firstRows(matching, state.allCompanies, $('[data-companies-more]'), 'companies');
-  $('[data-companies-label]').textContent = `Companies · ${matching.length} of ${companies.length}`;
+  $('[data-companies-label]').textContent = `Companies and public bodies · ${matching.length} of ${companies.length}`;
   $('[data-companies]').innerHTML = `
-    <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
+    <thead><tr><th scope="col">Name</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Works in</th></tr></thead>
     <tbody>${rows.map((c) => `
       <tr>
         <th scope="row"><a class="co-name" href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a>${c.categories.length > 1 ? '' : `<span class="co-cats"><span>${esc(shortName(c.categories[0]))}</span></span>`}</th>

@@ -32,6 +32,8 @@ Each country × capability cell gets one status:
 | Announced | 0.25 | Officially announced for that country, but not usable yet |
 | Not yet | 0 | We searched and found no availability |
 
+**Who finishes the task.** Live means the agent finishes the task inside the assistant. A one-tap confirm in the chat is fine. If you have to go to another site or app to accept terms, pay, book or finish, the cell is Limited, with the gap reason "It helps, but you do the last step" (`assist-only`).
+
 A cell takes the best status across all products. If any product is live in a country, the cell is live, and the note names the products.
 
 ## How the data is collected
@@ -57,11 +59,23 @@ category score = mean(status points of its capabilities) × 100
 country score  = mean(category scores)
 ```
 
-Every category weighs the same, so a category with more capabilities does not dominate. Countries with equal scores share a rank. The code is in `src/observatory.js`, and the tests are in `test/`.
+Each category score is rounded to a whole number before the country mean, and the country score is rounded too.
+
+Every category weighs the same, so a category with more capabilities does not dominate. Countries with equal scores share a rank. A country's score also gets a letter tier:
+
+| Tier | Score |
+| --- | --- |
+| S | 80 or more |
+| A | 70 to 79 |
+| B | 60 to 69 |
+| C | 50 to 59 |
+| D | below 50 |
+
+The cut-offs are fixed, so a tier means the same thing in every release. The code is in `src/observatory.js`, and the tests are in `test/`.
 
 ## Open source: what is really used
 
-Companies are one way a capability reaches people. Open-source projects are the other: a bank, a shop or a government team can build an agent on them without asking anyone. Each category file lists the biggest open-source repos behind its capabilities in `repos[]`.
+Companies are one way a capability reaches people. Open-source projects are the other: a bank, a shop or a government team can build an agent on them without asking anyone. Most category files list the biggest open-source repos behind its capabilities in `repos[]`.
 
 Stars measure attention, not use. A repo can trend for a week and never run anywhere. So each repo gets a **real-use tier** from what we can count:
 
@@ -82,5 +96,6 @@ Limits: downloads include CI machines and mirrors, Docker pulls are lifetime and
 
 - Availability changes every week. Each dataset carries an `asOf` date.
 - "Live" means available, not widely used. Adoption of products is not measured; only open-source repos get a real-use tier.
-- Language support is noted, but it is not scored separately.
+- Language is scored once, in Access to the assistants.
+- Categories are not equally deep. Most have only two or three capabilities, so one cell can move a category score a lot. Health, work and insurance have the thinnest sources, about one or two per cell, and the most cells marked low confidence. Rules, access, health, work and insurance list no open-source repos.
 - The list of capabilities is opinionated. Add a capability by adding an entry to a category file in `data/`.
