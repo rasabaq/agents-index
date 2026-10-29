@@ -860,7 +860,8 @@
       "icon": "https://corporate.walmart.com/content/dam/corporate/site-images/WMT-Spark-New-SparkYellow-RGB.svg",
       "role": "Sparky, Walmart's shopping agent, automatically reorders repeat items for US customers; in Mexico, Walmart México's Sparky only gives product advice.",
       "markets": [
-        "US"
+        "US",
+        "MX"
       ],
       "capabilities": [
         "commerce.marketplace-agent"
@@ -948,7 +949,7 @@
       "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
       "homepage": "https://www.shopify.com/",
       "icon": "https://cdn.shopify.com/b/shopify-brochure2-assets/c97c60ca19c64a8b5378d9f9e971f7bd.png",
-      "role": "Agentic Storefronts puts store catalogs into ChatGPT, Google AI Mode and Gemini, Copilot and Meta's Muse; stores can be in any country, but the agents reach mainly shoppers in the US, Canada and Australia.",
+      "role": "Agentic Storefronts puts store catalogs into ChatGPT, Google AI Mode and Gemini, Copilot and Meta; stores can be in any country, but each channel limits who can buy, and Meta's direct checkout shows only to shoppers in the US, Canada, Mexico, Brazil, Japan and Singapore.",
       "markets": [
         "US",
         "GB",

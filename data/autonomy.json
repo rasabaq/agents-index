@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans), Perplexity Comet (free) and Google's Chrome auto browse (AI Pro and Ultra) all browse and act on websites.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans), Perplexity Comet (free) and Google's Chrome auto browse (AI Pro and Ultra) all browse and act on websites.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -56,7 +56,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work in the UK; Gemini in Chrome now reaches the UK on desktop, but its auto browse agent is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work in the UK; Gemini in Chrome now reaches the UK on desktop, but its auto browse agent is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -97,7 +97,7 @@
         },
         "DE": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Germany, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Germany, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -145,7 +145,7 @@
         },
         "BR": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Portuguese prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Portuguese prompts; Google's Chrome auto browse is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -186,7 +186,7 @@
         },
         "MX": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -227,7 +227,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -268,7 +268,7 @@
         },
         "CO": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -309,7 +309,7 @@
         },
         "IN": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Hindi and English prompts; Google's Chrome auto browse reached India in October 2026 for AI Pro and Ultra users, in English only.",
+          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Hindi and English prompts; Google's Chrome auto browse reached India in October 2026 for AI Pro and Ultra users, in English only.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -617,11 +617,11 @@
               "type": "company"
             },
             {
-              "title": "What's new for Gemini Spark",
-              "publisher": "Google Gemini Help",
-              "url": "https://support.google.com/gemini/answer/17171264",
-              "date": "2026-07-17",
-              "type": "company"
+              "title": "Google adds three features to its AI plans, and keeps a fourth for Americans (Spark unavailable in the EEA, Switzerland and the UK)",
+              "publisher": "The Next Web",
+              "url": "https://thenextweb.com/news/gemini-spark-not-in-europe",
+              "date": "2026-09-09",
+              "type": "news"
             },
             {
               "title": "Getting started with your dot",
@@ -665,11 +665,11 @@
               "type": "company"
             },
             {
-              "title": "What's new for Gemini Spark",
-              "publisher": "Google Gemini Help",
-              "url": "https://support.google.com/gemini/answer/17171264",
-              "date": "2026-07-17",
-              "type": "company"
+              "title": "Google adds three features to its AI plans, and keeps a fourth for Americans (Spark unavailable in the EEA, Switzerland and the UK)",
+              "publisher": "The Next Web",
+              "url": "https://thenextweb.com/news/gemini-spark-not-in-europe",
+              "date": "2026-09-09",
+              "type": "news"
             },
             {
               "title": "Getting started with your dot",
