@@ -300,6 +300,54 @@
 .foot-site > p:first-child { min-width: 36ch; }
 .foot-site > p:first-child a { color: var(--ink-2); }
 
+/* ---------- country overview (overview.js): a mosaic of every capability and the fingerprint ---------- */
+/* gap reasons use the chart series colours; each reason also has its own shape */
+.ov [data-r='not-launched'] { --rc: var(--c4); }
+.ov [data-r='pilot-only'] { --rc: var(--c8); }
+.ov [data-r='assist-only'] { --rc: var(--c3); }
+.ov [data-r='no-rule'] { --rc: var(--c6); }
+.ov [data-r='rail-closed'] { --rc: var(--c7); }
+.ov [data-r='unknown'] { --rc: var(--ink-2); }
+.ov-r { flex: none; width: 10px; height: 10px; fill: var(--rc); color: var(--rc); }
+.ov-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.ov h2 { display: block; font: 560 20px/1.25 var(--font); letter-spacing: -0.03em; text-wrap: balance; }
+.ov h2 .flag { width: auto; margin: 0 0.3em 0 0.1em; }
+.ov-sub { max-width: 72ch; margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
+.ov-key { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 14px 0 0; padding: 12px 0; border-block: 1px solid rgba(255, 255, 255, 0.055); font: 400 11px/1.3 var(--mono); color: var(--ink-2); }
+.ov-key > span { display: inline-flex; align-items: center; gap: 7px; }
+.ov-key b { font-weight: 500; color: var(--ink); }
+.ov-key .dot.q { margin-right: 9px; }
+.ov-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(156px, 1fr)); gap: 20px 12px; margin-top: 16px; }
+.ov-cat h3 { display: grid; gap: 4px; margin-bottom: 9px; white-space: nowrap; }
+.ov-cat h3 span:first-child { overflow: hidden; text-overflow: ellipsis; color: var(--magenta); }
+.ov-cat h3 span + span { letter-spacing: 0.08em; text-transform: none; }
+.ov-sqs { display: flex; gap: 6px; }
+/* a square: the status mark top left, the reason shape bottom right; live squares stay calm */
+.ov-sq { --rc: transparent; display: grid; grid-template: 'dot .' 1fr '. r' auto / 1fr auto; width: 44px; height: 44px; padding: 8px 7px 7px 8px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 9px; background: rgba(255, 255, 255, 0.028); cursor: pointer; transition: border-color 0.15s; }
+.ov-sq:hover { border-color: rgba(255, 255, 255, 0.3); }
+.ov-sq .dot { grid-area: dot; }
+.ov-sq .ov-r { grid-area: r; }
+.ov-sq.gap { border-color: color-mix(in srgb, var(--rc) 50%, transparent); background: color-mix(in srgb, var(--rc) 10%, transparent); }
+.ov-sq.gap:hover { border-color: var(--rc); }
+.ov-sq.st-none { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--rc) 12%, transparent) 0 4px, transparent 4px 8px); }
+/* not in an errand: a dashed edge; in the open errand: a sunrise ring */
+.ov-sw { width: 14px; height: 14px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 4px; }
+.ov-noe { border-style: dashed; }
+.ov-open { box-shadow: 0 0 0 1.5px var(--page), 0 0 0 3px var(--sunrise); }
+.ov-sw.ov-open { margin: 0 2px; }
+/* the fingerprint: one calm colour, the score in the middle */
+.fp { display: block; flex: none; width: 96px; height: 96px; overflow: visible; }
+.fp-slot { fill: rgba(255, 255, 255, 0.06); }
+.fp-fill { fill: var(--sunrise); opacity: 0.85; }
+.fp-n { font: 500 58px/1 var(--mono); fill: var(--ink); text-anchor: middle; }
+@media (max-width: 760px) {
+  .ov-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 10px; }
+  .ov-sqs { gap: 5px; }
+  .ov-sq { width: 42px; height: 42px; padding: 7px 6px 6px 7px; }
+  .fp { width: 72px; height: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { .ov-sq { transition: none; } }
+
 /* ---------- smaller screens ---------- */
 @media (max-width: 760px) {
   .cn-verdict { font-size: 15.5px; }
