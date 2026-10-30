@@ -52,9 +52,11 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `docs/methodology.md` | How the data is collected and scored |
-| `index.html` | The page, top to bottom: the hero, the world map, the console (country view, status matrix, ranking, categories, newest sources), Compare countries, Companies (with the flows chart), Open source and Method |
-| `app.js`, `hero.js` | The console and the hero |
-| `charts/charts.js`, `charts/viz-*.js` | The three charts (map, compare, flows): `charts.js` loads the data once and draws each chart into its `<section data-chart="<id>">` slot in `index.html` |
+| `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, themes, then the matrix, closed), Compare two countries, Who builds it and Method |
+| `companies.html` | The companies table, the flows chart and the open-source table |
+| `app.js`, `hero.js`, `lists.js` | The console, the hero, and the companies page tables |
+| `data.js`, `ui.js` | The data, fetched once per page, and the small helpers both pages share |
+| `charts/charts.js`, `charts/viz-*.js` | The three charts (map, compare, flows): `charts.js` draws each chart into its `<section data-chart="<id>">` slot in `index.html` or `companies.html` |
 | `styles.css`, `console.css`, `hero.css`, `charts/charts.css` | Shared tokens, then the home page parts and the chart windows |
 | `scripts/` | Data checks and refresh scripts run by `npm` |
 | `test/` | Node tests for scoring, validation and the data |

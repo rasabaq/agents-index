@@ -7,8 +7,9 @@ description: Drive the Agent Index site (the home page: hero, console and charts
 
 The product is a static web site, with no build step and no backend. Its surfaces:
 
-- `/` is the home page: the hero, the console (country view with its picker, lists and themes, then the closed matrix), Companies, Open source and Method.
-- The three charts (world map, compare and flows) draw on the same page, between those sections.
+- `/` is the home page: the hero, the console (country view with its picker, lists and themes, then the closed matrix), Who builds it and Method.
+- `/companies.html` is the companies page: the Companies table, the flows chart and the Open source table. `#market=CL` opens it filtered to one country.
+- The charts draw into their slots: the world map and compare on `/`, flows on `/companies.html`.
 - `npm test` and `npm run validate` check the data and the scoring. They do not check the UI.
 
 The helper `observatory.mjs` (next to this file) does five things:
@@ -81,7 +82,7 @@ How `open` works:
 - It sets the whole view each time. Anything you leave out returns to the default: 1440 × 900, dark scheme, the browser's own language.
 - `--width 400` gives a 400 × 860 phone viewport.
 - It adds a `?verify=` query, so `#country=XX` always triggers a fresh load.
-- By default it waits for `#cn-title`. The charts draw after it, so pass `--wait '#v-flows svg'` when you check them.
+- By default it waits for `#cn-title`. The charts draw after it, so pass `--wait '#v-compare .vc-group'` when you check them.
 
 Stable handles in this repo (use these, not coordinates):
 
@@ -90,7 +91,8 @@ Stable handles in this repo (use these, not coordinates):
 - **Matrix cells:** open `#matrix summary` first, then `#matrix button[data-cap="<capability id>"][data-code="<country>"]`. Their `aria-label` reads `<capability> in <country>: <status>`.
 - **Cell detail:** `dialog[data-detail]`, the title `#detail-title`, the status `.detail-status`, the sources `.sources a`, and the correction link `.suggest a`.
 - **Sources of a country:** the button `[data-sources]` in the country view.
-- **Companies:** the filters `[data-company-filters] [data-market="MX"]`, the table `[data-companies]`, and the count `[data-companies-label]`.
+- **Who builds it** (home): `[data-who]`, with the bar `.who-bar` and the company links `.who-cos`.
+- **Companies** (`/companies.html`): the filters `[data-company-filters] [data-market="MX"]`, the table `[data-companies]`, and the count `[data-companies-label]`.
 - **Charts:** each chart is `#v-<id>`, with ids `map compare flows`. A view that failed to draw shows `.view-error`.
 
 Each feature has a recipe in [`features/`](features/README.md). Read [`features/README.md`](features/README.md) before a run.

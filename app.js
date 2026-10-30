@@ -1,14 +1,11 @@
-import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, themeScores, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
+import { STATUSES, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, themeScores, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
 import { data } from './data.js';
+import { $, esc, flag, logo, wireLogos, wireNav } from './ui.js';
 
-const $ = (sel) => document.querySelector(sel);
-const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-const fmtMonth = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 
-const state = { view: 'people', market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false, allWorks: false, allNot: false };
-// Long tables show this many rows until Show all is pressed; the country's two lists show fewer.
-const FIRST_ROWS = 10;
+const state = { view: 'people', country: null, allWorks: false, allNot: false };
+// The country's two lists show this many items until Show all is pressed.
 const FIRST_ITEMS = 5;
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 let meta, categories, ranking, byCode, capIndex, companies, repos, cells, region;
@@ -33,13 +30,10 @@ function init() {
   $('[data-asof-iso]').textContent = meta.asOf;
   renderPicker();
   renderLegend();
-  renderCompanyFilters();
-  renderCompanies();
-  renderRepoFilters();
-  renderRepos();
   renderCounts();
   renderCountry();
   wire();
+  wireNav();
   wireTooltip();
   wireLogos();
 }
@@ -49,9 +43,6 @@ const hashCountry = () => {
   return byCode[code] ? code : null;
 };
 const catName = (id) => meta.categories.find((c) => c.id === id).name;
-// Any ISO country code maps to its flag emoji, so company HQs outside the tracked list get one too.
-const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
-const flag = (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`;
 const chip = (status, low) => `<span class="chip s-${status}${low ? ' q' : ''}">${STATUSES[status].label}</span>`;
 // A small status mark for the matrix: a dot, half dot, ring or dash; a "?" after it means low confidence.
 const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : ''}" aria-hidden="true"></i>`;
@@ -100,11 +91,6 @@ function mainReason(mine, catIds) {
   const top = Object.keys(n).sort((a, b) => n[b] - n[a])[0];
   return top && gapLabel(top);
 }
-// A small logo before a company or repo name. The name sits right next to it, so the image has empty alt text.
-// No logo, or one that fails to load, becomes a monogram (see wireLogos).
-const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
-const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-name="${esc(name)}">` : monogram(name));
-
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}"`;
 
 // The country picker: every country with its score, best first. It is the ranking too (the hero's "Open the ranking").
@@ -174,7 +160,34 @@ function renderCountry() {
 // Everything below the country's cards: the same for people and for businesses.
 function renderCountryRest() {
   renderMatrix();
+  renderBuilders();
   renderMethod();
+}
+
+// Who builds it: the companies live in the selected country, split by where they are based, and the best known of them.
+function renderBuilders() {
+  const r = byCode[state.country];
+  const here = companies.filter((c) => c.markets.includes(r.code));
+  const where = `${/^United /.test(r.name) ? 'the ' : ''}${r.name}`;
+  const parts = [
+    ['us', 'Based in the US', here.filter((c) => c.hq === 'US' && r.code !== 'US')],
+    ['home', `Based in ${where}`, here.filter((c) => c.hq === r.code)],
+    ['rest', 'Based elsewhere', here.filter((c) => c.hq !== r.code && c.hq !== 'US')],
+  ].filter(([, , list]) => list.length);
+  const home = here.filter((c) => c.hq === r.code).length;
+  // Companies in the most categories first: they are the ones a visitor is most likely to know.
+  const top = [...here].sort((a, b) => b.categories.length - a.categories.length || a.name.localeCompare(b.name)).slice(0, 6);
+  $('[data-who-title]').innerHTML = `Who makes it work in ${flag(r.code)}${esc(where)}.`;
+  $('[data-who]').innerHTML = here.length ? `
+    <div class="who-l">
+      <p class="who-lede">${here.length} ${here.length === 1 ? 'company makes' : 'companies make'} agents work here. ${home ? `${home} ${home === 1 ? 'is' : 'are'} based in ${esc(where)}.` : `None is based in ${esc(where)} yet.`}</p>
+      <div class="who-bar" role="img" aria-label="${esc(parts.map(([, label, list]) => `${label}: ${list.length}`).join(', '))}">${parts.map(([k, , list]) => `<i class="w-${k}" style="flex:${list.length}">${list.length}</i>`).join('')}</div>
+      <p class="who-key" aria-hidden="true">${parts.map(([k, label]) => `<span class="w-${k}">${esc(label)}</span>`).join('')}</p>
+    </div>
+    <div class="who-r">
+      <ul class="who-cos">${top.map((c) => `<li><a class="co-name" href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a></li>`).join('')}${here.length > top.length ? `<li><a class="who-more" href="companies.html#market=${r.code}">+${here.length - top.length} more</a></li>` : ''}</ul>
+      <p class="who-links"><a href="companies.html">All ${companies.length} companies <span aria-hidden="true">→</span></a><a href="companies.html#opensource">Open-source tools <span aria-hidden="true">→</span></a></p>
+    </div>` : `<p class="mc-note">No company we track makes agents work in ${esc(where)} yet. <a href="companies.html">See all ${companies.length} companies</a>.</p>`;
 }
 
 // All capabilities in rows, grouped by category; one column per country, the selected one in sunrise.
@@ -258,76 +271,6 @@ function selectCountry(code, scroll) {
   if (scroll) $('#country').scrollIntoView({ behavior: scrollBehavior() });
 }
 
-function renderCompanyFilters() {
-  const el = $('[data-company-filters]');
-  const opts = [['all', 'All markets'], ...ranking.map((r) => [r.code, `${flag(r.code)}${esc(r.code)}`])];
-  el.innerHTML = opts.map(([id, html]) => `<button type="button" class="pill" data-market="${id}" aria-pressed="${state.market === id}"${id === 'all' ? '' : ` aria-label="${esc(byCode[id].name)}"`}>${html}</button>`).join('');
-  el.onclick = (e) => {
-    const b = e.target.closest('[data-market]');
-    if (!b) return;
-    state.market = b.dataset.market;
-    el.querySelectorAll('[data-market]').forEach((x) => x.setAttribute('aria-pressed', x === b));
-    renderCompanies();
-  };
-}
-
-// A "Show all N" / "Show fewer" button under a long table. Returns the rows to draw.
-function firstRows(rows, all, el, what) {
-  el.innerHTML = rows.length > FIRST_ROWS ? `<button type="button" class="pill" aria-expanded="${all}">${all ? 'Show fewer' : `Show all ${rows.length} ${what}`}</button>` : '';
-  return all ? rows : rows.slice(0, FIRST_ROWS);
-}
-
-function renderCompanies() {
-  const matching = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
-  const rows = firstRows(matching, state.allCompanies, $('[data-companies-more]'), 'companies');
-  $('[data-companies-label]').textContent = `Companies · ${matching.length} of ${companies.length}`;
-  $('[data-companies]').innerHTML = `
-    <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
-    <tbody>${rows.map((c) => `
-      <tr>
-        <th scope="row"><a class="co-name" href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a>${c.categories.length > 1 ? '' : `<span class="co-cats"><span>${esc(shortName(c.categories[0]))}</span></span>`}</th>
-        <td class="nowrap">${flag(c.hq)}${esc(c.hq)}</td>
-        <td><p class="co-roles" title="${esc(c.roles.join(' '))}">${esc(c.roles.join(' '))}</p></td>
-        <td class="markets">${c.categories.map((id) => `<span class="mk-row">${c.categories.length > 1 ? `<span class="mk-cat">${esc(shortName(id))}</span>` : ''}<span class="sr-only">${esc(shortName(id))}: ${c.marketsBy[id].map((m) => byCode[m]?.name ?? m).join(', ')}</span>${ranking.map((r) => `<i class="${c.marketsBy[id].includes(r.code) ? 'on' : ''}" title="${esc(r.name)}" aria-hidden="true">${r.code}</i>`).join('')}</span>`).join('')}</td>
-      </tr>`).join('')}
-    </tbody>`;
-}
-
-function renderRepoFilters() {
-  const el = $('[data-repo-filters]');
-  const opts = [['all', 'All'], ...Object.keys(REPO_USE).filter((k) => repos.some((r) => r.use === k)).map((k) => [k, REPO_USE[k].label])];
-  el.innerHTML = opts.map(([id, label]) => `<button type="button" class="pill" data-use="${id}" aria-pressed="${state.use === id}"${id === 'all' ? '' : ` title="${esc(REPO_USE[id].hint)}"`}>${esc(label)}</button>`).join('');
-  el.onclick = (e) => {
-    const b = e.target.closest('[data-use]');
-    if (!b) return;
-    state.use = b.dataset.use;
-    el.querySelectorAll('[data-use]').forEach((x) => x.setAttribute('aria-pressed', x === b));
-    renderRepos();
-  };
-}
-
-// Big numbers read compact (8.1M, 240K); an en dash means nothing to count.
-const compact = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
-const count = (n, label) => `<td class="num" data-label="${label}">${n == null ? '–' : compact.format(n)}</td>`;
-
-// Open-source repos, most used first: the tier comes from installs, never from stars.
-function renderRepos() {
-  const matching = repos.filter((r) => state.use === 'all' || r.use === state.use);
-  const rows = firstRows(matching, state.allRepos, $('[data-repos-more]'), 'repos');
-  $('[data-repos-label]').textContent = `Open source · ${matching.length} of ${repos.length}`;
-  $('[data-repos]').innerHTML = `
-    <thead><tr><th scope="col">Repo</th><th scope="col">What it lets agents do</th><th scope="col">Real use</th><th scope="col" class="num">Installs a month</th><th scope="col" class="num">Docker pulls</th><th scope="col" class="num">Stars</th><th scope="col" class="num">Last commit</th></tr></thead>
-    <tbody>${rows.map((r) => `
-      <tr>
-        <th scope="row"><a class="co-name" href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener noreferrer">${logo(`https://github.com/${r.repo.split('/')[0]}.png?size=64`, r.name)}<span>${r.origin ? flag(r.origin) : ''}${esc(r.name)}</span></a><span class="co-cats"><span>${r.repo.split('/').map((x) => `<span class="nowrap">${esc(x)}</span>`).join('/<wbr>')}</span><span>${esc(shortName(r.category))}</span></span></th>
-        <td><p class="co-roles">${esc(r.role)}</p></td>
-        <td><span class="chip u-${r.use}" title="${esc(REPO_USE[r.use].hint)}">${REPO_USE[r.use].label}</span></td>
-        ${count(r.usage.downloadsMonth, 'Installs')}${count(r.usage.dockerPulls, 'Pulls')}${count(r.usage.stars, 'Stars')}
-        <td class="num" data-label="Commit"><time datetime="${r.usage.pushedAt}" title="${r.usage.pushedAt}">${fmtMonth(r.usage.pushedAt)}</time></td>
-      </tr>`).join('')}
-    </tbody>`;
-}
-
 // Method cards: a matrix row, the status pairs and the score formula, drawn from the data.
 function renderMethod() {
   const low = cells.filter((x) => x.cell.confidence).length;
@@ -376,22 +319,6 @@ function wire() {
     state.view = readHash(location.hash).view;
     selectCountry(hashCountry(), true);
   });
-  // Show all / Show fewer under the Companies and Open source tables. Fewer scrolls back to the table's top.
-  $('[data-companies-more]').addEventListener('click', (e) => {
-    if (!e.target.closest('button')) return;
-    state.allCompanies = !state.allCompanies;
-    renderCompanies();
-    // The render replaced the button; keep keyboard focus on it.
-    $('[data-companies-more] button')?.focus({ preventScroll: true });
-    if (!state.allCompanies) $('#companies').scrollIntoView({ behavior: scrollBehavior() });
-  });
-  $('[data-repos-more]').addEventListener('click', (e) => {
-    if (!e.target.closest('button')) return;
-    state.allRepos = !state.allRepos;
-    renderRepos();
-    $('[data-repos-more] button')?.focus({ preventScroll: true });
-    if (!state.allRepos) $('#opensource').scrollIntoView({ behavior: scrollBehavior() });
-  });
   // For people / For businesses switches the cards under the country head.
   $('[data-country]').addEventListener('click', (e) => {
     const b = e.target.closest('[data-view]');
@@ -410,13 +337,6 @@ function wire() {
     renderCountry();
     $(`[data-more="${b.dataset.more}"]`)?.focus({ preventScroll: true });
   });
-
-  // Phones: the Menu button opens the section links; picking one closes it.
-  const nav = $('.nav'), menu = $('[data-nav-menu]');
-  const setMenu = (open) => { nav.classList.toggle('open', open); menu.setAttribute('aria-expanded', open); };
-  menu.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
-  nav.querySelector('nav').addEventListener('click', (e) => e.target.closest('a') && setMenu(false));
-  addEventListener('keydown', (e) => e.key === 'Escape' && nav.classList.contains('open') && (setMenu(false), menu.focus()));
 
   // Cells in the matrix and the lists open their details; the sources button lists the country's sources.
   $('[data-term]').addEventListener('click', (e) => {
@@ -455,13 +375,6 @@ function wireTooltip() {
     if (!e.relatedTarget?.closest?.('[data-cap]')) tip.hidden = true;
   });
   addEventListener('scroll', () => (tip.hidden = true), { passive: true });
-}
-
-// A logo that fails to load (moved, blocked, or not an image) is swapped for the monogram.
-function wireLogos() {
-  document.addEventListener('error', (e) => {
-    if (e.target instanceof HTMLImageElement && e.target.classList.contains('logo')) e.target.outerHTML = monogram(e.target.dataset.name);
-  }, true);
 }
 
 // Start last: the helpers above are consts and must exist before init runs.

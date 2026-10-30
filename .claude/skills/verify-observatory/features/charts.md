@@ -1,16 +1,16 @@
 # Charts
 
-The home page shows three charts, each in a chart window. `index.html` places each one with a slot, `<section data-chart="<id>">`, and `charts/charts.js` draws it there and gives the slot the id `v-<id>`.
+Three charts remain, each in a chart window: the map and compare on the home page, flows on `/companies.html`. Each page places a chart with a slot, `<section data-chart="<id>">`, and `charts/charts.js` draws it there and gives the slot the id `v-<id>`.
 
 In page order:
 
 1. World map (`map`), right under the hero, where it overlaps the planet
 2. Compare two countries (`compare`), after the console. It starts on "Only differences"
-3. Flows (`flows`), after the Companies table
+3. Flows (`flows`), on `/companies.html`, after the Companies table
 
 ## Sub-features
 
-- `charts-render` draws all three charts, with no `.view-error`.
+- `charts-render` draws the two home charts, and flows on the companies page, with no `.view-error`.
 - `charts-compare` changes the head-to-head pair with its two selects.
 - `charts-hash` scrolls to a chart when the page opens with `#v-<id>`.
 - `charts-map-pick` picks a country in the console from the world map, by click or by keyboard, and lights the selected country on the map.
@@ -19,19 +19,19 @@ In page order:
 ## How to get to it (user POV)
 
 - Scroll down the home page.
-- Open `/#v-flows` to land on one chart.
+- Open `/#v-compare` to land on one chart.
 
 ## Driving it with observatory.mjs
 
 Preconditions:
 
 - `node $H doctor` prints `healthy`.
-- The charts draw after the console. Open with `--wait '#v-flows svg'` so they have all drawn.
+- The charts draw after the console. Open with `--wait '#v-compare .vc-group'` (home) or `--wait '#v-flows svg'` (companies page) so they have drawn.
 
-- **Render.** Run `node $H open / --wait '#v-flows svg'`. Then `node $H eval "({ views: document.querySelectorAll('.view').length, errors: document.querySelectorAll('.view-error').length })"` prints `{ views: 3, errors: 0 }`. Take `node $H shot charts-1440-map --at '#v-map'`.
-- **Compare button.** Run `node $H open '/#country=US' --wait '#v-flows svg'`, then `node $H click '[data-compare]'` (it reads "Compare with BR"). `#v-compare` scrolls into view, its two selects read United States and Brazil, the summary line names both, and focus is on the first select. The console heading `#cn-title` still reads United States and the hash is still `#country=US`. Take `node $H shot charts-1440-compare-button` right after the click, and repeat at 400.
-- **Hash.** Run `node $H open '/#v-flows' --wait '#v-flows svg'`, then `node $H eval "Math.round(document.getElementById('v-flows').getBoundingClientRect().top)"` prints a number near the nav height (under 120).
-- **Phone.** Run `node $H open / --width 400 --wait '#v-flows svg'`, then `node $H shot charts-400-map --at '#v-map'`. Check that `scrollWidth` is 400.
+- **Render.** Run `node $H open / --wait '#v-compare .vc-group'`. Then `node $H eval "({ views: document.querySelectorAll('.view').length, errors: document.querySelectorAll('.view-error').length })"` prints `{ views: 2, errors: 0 }`. On `node $H open /companies.html --wait '#v-flows svg'` it prints `{ views: 1, errors: 0 }`. Take `node $H shot charts-1440-map --at '#v-map'`.
+- **Compare button.** Run `node $H open '/#country=US' --wait '#v-compare .vc-group'`, then `node $H click '[data-compare]'` (it reads "Compare with BR"). `#v-compare` scrolls into view, its two selects read United States and Brazil, the summary line names both, and focus is on the first select. The console heading `#cn-title` still reads United States and the hash is still `#country=US`. Take `node $H shot charts-1440-compare-button` right after the click, and repeat at 400.
+- **Hash.** Run `node $H open '/#v-compare' --wait '#v-compare .vc-group'`, then `node $H eval "Math.round(document.getElementById('v-compare').getBoundingClientRect().top)"` prints a number near the nav height (under 120).
+- **Phone.** Run `node $H open / --width 400 --wait '#v-compare .vc-group'`, then `node $H shot charts-400-map --at '#v-map'`. Check that `scrollWidth` is 400.
 - **Proof.** Finish with `node $H errors` (exit 0).
 
 The world map:

@@ -23,7 +23,6 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
   <script defer src="charts/viz-map.js"></script>
   <script defer src="charts/viz-compare.js"></script>
-  <script defer src="charts/viz-flows.js"></script>
   <script type="module" src="charts/charts.js"></script>
 </head>
 <body>
@@ -36,10 +35,9 @@
       <button type="button" class="nav-menu" aria-expanded="false" aria-controls="site-nav" data-nav-menu>Menu</button>
       <nav id="site-nav" aria-label="Sections">
         <a href="#v-map">Map</a>
-        <a href="#country">Countries</a>
+        <a href="#country">Your country</a>
         <a href="#v-compare">Compare</a>
-        <a href="#companies">Companies</a>
-        <a href="#opensource">Open source</a>
+        <a href="#builders">Who builds it</a>
         <a href="#method">Method</a>
       </nav>
       <a class="nav-gh" href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer" aria-label="Contribute on GitHub" title="Contribute on GitHub">
@@ -96,42 +94,16 @@
 
     <section data-chart="compare"></section>
 
-    <section id="companies" class="wrap sec">
+    <!-- Who builds it, for the selected country (app.js). The full tables live on companies.html. -->
+    <section id="builders" class="wrap sec">
       <div class="sec-h">
         <div>
-          <p class="label" data-companies-label>Companies</p>
-          <h2>Who makes it possible. <span class="dim">Based where, live where.</span></h2>
+          <p class="label">Who builds it</p>
+          <h2 data-who-title>Who makes it work.</h2>
         </div>
       </div>
-      <div class="card panel co-panel">
-        <div class="filters" role="group" aria-label="Filter companies by market" data-company-filters></div>
-        <div class="table-wrap">
-          <table class="table companies" data-companies></table>
-        </div>
-        <div class="more-row" data-companies-more></div>
-      </div>
+      <div class="card panel who" data-who></div>
     </section>
-
-    <section data-chart="flows"></section>
-
-    <section id="opensource" class="wrap sec">
-      <div class="sec-h">
-        <div>
-          <p class="label" data-repos-label>Open source</p>
-          <h2>What agents are built on. <span class="dim">Really used, or only starred.</span></h2>
-        </div>
-        <p class="sec-note">Free projects anyone can build an agent on, without asking a company.</p>
-      </div>
-      <div class="card panel co-panel">
-        <div class="filters" role="group" aria-label="Filter repos by real use" data-repo-filters></div>
-        <div class="table-wrap">
-          <table class="table repos" data-repos></table>
-        </div>
-        <div class="more-row" data-repos-more></div>
-        <p class="note repo-note">Stars measure attention. Installs measure use. So we sort repos by npm, PyPI and Packagist installs a month and Docker Hub pulls, not by stars. <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md#open-source-what-is-really-used" class="nowrap" target="_blank" rel="noopener noreferrer">How we tier repos</a></p>
-      </div>
-    </section>
-
 
     <section id="method" class="wrap sec">
       <div class="sec-h sec-h-c">
