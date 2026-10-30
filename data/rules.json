@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "limited",
-          "note": "There is no federal AI law. Texas's Responsible AI Governance Act has applied since 1 January 2026, and other states have their own AI rules. Executive Order 14365 (December 2025) tells federal agencies to challenge state AI laws. These are binding AI rules, but they cover specific harms and uses, not agents acting for you, so the cell is limited.",
+          "note": "There is no federal AI law. Texas's Responsible AI Governance Act has applied since 1 January 2026, and other states have their own AI rules. Executive Order 14365 (December 2025) tells federal agencies to challenge state AI laws. These are binding AI rules, but they cover specific harms and uses, not agents acting for you, so it counts as limited.",
           "gapReason": "no-rule",
           "evidence": [
             {
@@ -29,7 +29,7 @@
         },
         "GB": {
           "status": "none",
-          "note": "The UK has no AI law and no binding AI-specific rules, so the cell is none. Regulators apply general laws, such as the Data (Use and Access) Act 2025 on automated decisions. In September 2026 Parliament's Joint Committee on Human Rights asked the government for a dedicated AI Bill; we found no government bill yet.",
+          "note": "The UK has no AI law and no binding AI-specific rules, so it counts as none. Regulators apply general laws, such as the Data (Use and Access) Act 2025 on automated decisions. In September 2026 Parliament's Joint Committee on Human Rights asked the government for a dedicated AI Bill; we found no government bill yet.",
           "gapReason": "no-rule",
           "evidence": [
             {
@@ -50,7 +50,7 @@
         },
         "DE": {
           "status": "live",
-          "note": "The EU AI Act is in force in Germany, so the cell is live. Its transparency duties for AI systems apply since 2 August 2026. The Digital Omnibus (Regulation 2026/1744, in force 27 July 2026) delays the high-risk rules to December 2027 and August 2028, gives systems already on the market until 2 December 2026 to mark AI-generated content, and adds a new ban on AI built to make non-consensual intimate images or child sexual abuse material. The Act does not name shopping agents, but it covers AI systems that act for users.",
+          "note": "The EU AI Act is in force in Germany, so it counts as live. Its transparency duties for AI systems apply since 2 August 2026. The Digital Omnibus (Regulation 2026/1744, in force 27 July 2026) delays the high-risk rules to December 2027 and August 2028, gives systems already on the market until 2 December 2026 to mark AI-generated content, and adds a new ban on AI built to make non-consensual intimate images or child sexual abuse material. The Act does not name shopping agents, but it covers AI systems that act for users.",
           "evidence": [
             {
               "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
@@ -84,7 +84,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "India has no AI law, and officials say none is planned; the India AI Governance Guidelines (November 2025) are voluntary. But binding IT Rules changes in force since 20 February 2026 make platforms label AI-made audio, images and video. Like the US rules, they cover specific harms, not agents acting for you, so the cell is limited.",
+          "note": "India has no AI law, and officials say none is planned; the India AI Governance Guidelines (November 2025) are voluntary. But binding IT Rules changes in force since 20 February 2026 make platforms label AI-made audio, images and video. Like the US rules, they cover specific harms, not agents acting for you, so it counts as limited.",
           "gapReason": "no-rule",
           "evidence": [
             {
@@ -112,7 +112,7 @@
         },
         "BR": {
           "status": "announced",
-          "note": "The Senate passed the AI framework bill (PL 2338/2023) in December 2024. In October 2026 it was still in a special committee of the Chamber of Deputies, waiting for the rapporteur's report, so it is not law. It passed one chamber, so the cell is announced. General laws such as the data protection law (LGPD) still apply.",
+          "note": "The Senate passed the AI framework bill (PL 2338/2023) in December 2024. In October 2026 it was still in a special committee of the Chamber of Deputies, waiting for the rapporteur's report, so it is not law. It passed one chamber, so it counts as announced. General laws such as the data protection law (LGPD) still apply.",
           "gapReason": "no-rule",
           "evidence": [
             {
@@ -133,7 +133,7 @@
         },
         "MX": {
           "status": "none",
-          "note": "Mexico has no AI law and no binding AI rules. In October 2026 the Chamber of Deputies published a proposal to give Congress the power to legislate on AI, and we found no AI bill that has passed either chamber. As in Colombia, only lawmakers' proposals are pending, so the cell is none.",
+          "note": "Mexico has no AI law and no binding AI rules. In October 2026 the Chamber of Deputies published a proposal to give Congress the power to legislate on AI, and we found no AI bill that has passed either chamber. As in Colombia, only lawmakers' proposals are pending, so it counts as none.",
           "gapReason": "no-rule",
           "confidence": "low",
           "evidence": [
@@ -148,7 +148,7 @@
         },
         "CL": {
           "status": "announced",
-          "note": "The AI bill (boletín 16821-19) passed the Chamber of Deputies in October 2025 and is in its second step in the Senate. It sorts AI systems by risk and gives oversight to the data protection agency. It passed one chamber but is not law yet, so the cell is announced.",
+          "note": "The AI bill (boletín 16821-19) passed the Chamber of Deputies in October 2025 and is in its second step in the Senate. It sorts AI systems by risk and gives oversight to the data protection agency. It passed one chamber but is not law yet, so it counts as announced.",
           "gapReason": "no-rule",
           "evidence": [
             {
@@ -169,7 +169,7 @@
         },
         "CO": {
           "status": "none",
-          "note": "Colombia has no AI law. The government's AI bill (043/2025 Senado, 324/2025 Cámara) was archived because it got no first vote within the session. Lawmakers filed a new AI bill (025/2026 Cámara) in July 2026, and it waits in committee. As in Mexico, only lawmakers' bills are pending, so the cell is none.",
+          "note": "Colombia has no AI law. The government's AI bill (043/2025 Senado, 324/2025 Cámara) was archived because it got no first vote within the session. Lawmakers filed a new AI bill (025/2026 Cámara) in July 2026, and it waits in committee. As in Mexico, only lawmakers' bills are pending, so it counts as none.",
           "gapReason": "no-rule",
           "evidence": [
             {
