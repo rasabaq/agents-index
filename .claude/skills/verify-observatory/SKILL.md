@@ -7,7 +7,7 @@ description: Drive the Agent Index site (the home page: hero, console and charts
 
 The product is a static web site, with no build step and no backend. Its surfaces:
 
-- `/` is the home page: the hero, the console (country view with its picker, lists and themes, then the closed matrix), Who builds it and Method.
+- `/` is the home page: the hero, the console (country view with its picker, lists and themes, then the closed matrix), Who builds it, and the one-line Method (`#method`, counts in `[data-trust-count]`).
 - `/companies.html` is the companies page: the Companies table, the flows chart and the Open source table. `#market=CL` opens it filtered to one country.
 - The charts draw into their slots: the world map and compare on `/`, flows on `/companies.html`.
 - `npm test` and `npm run validate` check the data and the scoring. They do not check the UI.

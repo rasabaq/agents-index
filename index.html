@@ -105,44 +105,15 @@
       <div class="card panel who" data-who></div>
     </section>
 
-    <section id="method" class="wrap sec">
-      <div class="sec-h sec-h-c">
-        <p class="label">Method</p>
-        <h2>Every status cites a source. <span class="dim">Thin evidence looks thin.</span></h2>
-      </div>
-      <div class="fcards">
-        <article class="fc">
-          <div class="crop" aria-hidden="true"><div class="crop-in glass" data-crop-row></div></div>
-          <div class="fc-tx">
-            <h3 data-method-cells>One matrix</h3>
-            <p>Each cell takes the best status across all products, and links to its sources. We read two kinds of source: research and regulation, and what companies actually ship.</p>
-          </div>
-        </article>
-        <article class="fc">
-          <div class="crop" aria-hidden="true"><div class="crop-in glass">
-            <p class="label">Sure · Low confidence</p>
-            <div class="pairs" data-crop-pairs></div>
-          </div></div>
-          <div class="fc-tx">
-            <h3>Doubt is drawn, not hidden</h3>
-            <p><span data-method-low></span> When the sources are unclear, a cell takes the lower status.</p>
-          </div>
-        </article>
-        <article class="fc">
-          <div class="crop" aria-hidden="true"><div class="crop-in glass cterm" data-crop-term></div></div>
-          <div class="fc-tx">
-            <h3>Every category weighs the same</h3>
-            <p>A category scores the mean of its cells' points. A country scores the mean of its categories. Live, Limited and Announced cells must cite a source, or the build fails.</p>
-          </div>
-        </article>
-      </div>
+    <section id="method" class="wrap sec trust">
+      <p class="trust-t">Every answer links to a source. Unsure answers are marked with a <b>?</b></p>
+      <p class="trust-n"><span data-trust-count></span> · <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">How we score</a></p>
     </section>
   </main>
 
   <footer class="wrap foot foot-site">
     <p>Agent Index, made by <a class="nowrap" href="https://ramonsanchez.xyz/" target="_blank" rel="noopener noreferrer">Ramon Sanchez</a>. Availability changes fast. A cell says what was true on <span data-asof></span>.</p>
-    <p data-foot-count></p>
-    <p class="foot-links"><a href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/agents-index/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
+    <p class="foot-links"><a class="foot-ask" href="https://github.com/rasabaq/agents-index/issues/new?template=add-country.yml" target="_blank" rel="noopener noreferrer">Your country is not here? Request it</a><a href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/agents-index/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
   </footer>
 
   <dialog class="detail" data-detail aria-labelledby="detail-title">

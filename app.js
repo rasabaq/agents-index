@@ -1,4 +1,4 @@
-import { STATUSES, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, themeScores, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
+import { STATUSES, scoreCountries, mergeCompanies, extremes, shortName, themeScores, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
 import { data } from './data.js';
 import { $, esc, flag, logo, wireLogos, wireNav } from './ui.js';
 
@@ -8,7 +8,7 @@ const state = { view: 'people', country: null, allWorks: false, allNot: false };
 // The country's two lists show this many items until Show all is pressed.
 const FIRST_ITEMS = 5;
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
-let meta, categories, ranking, byCode, capIndex, companies, repos, cells, region;
+let meta, categories, ranking, byCode, capIndex, companies, cells, region;
 
 function init() {
   useCategoryWords(meta.categories);
@@ -19,7 +19,6 @@ function init() {
   cells = Object.values(capIndex).flatMap((cap) => meta.countries.map((c) => ({ cap, code: c.code, cell: cap.countries[c.code] })));
   companies = mergeCompanies(categories);
   region = Object.fromEntries(meta.countries.map((c) => [c.code, c.region]));
-  repos = rankRepos(categories);
   const codes = meta.countries.map((c) => c.code);
   state.view = readHash(location.hash).view;
   state.country = startCountry(codes, location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
@@ -161,7 +160,6 @@ function renderCountry() {
 function renderCountryRest() {
   renderMatrix();
   renderBuilders();
-  renderMethod();
 }
 
 // Who builds it: the companies live in the selected country, split by where they are based, and the best known of them.
@@ -271,29 +269,8 @@ function selectCountry(code, scroll) {
   if (scroll) $('#country').scrollIntoView({ behavior: scrollBehavior() });
 }
 
-// Method cards: a matrix row, the status pairs and the score formula, drawn from the data.
-function renderMethod() {
-  const low = cells.filter((x) => x.cell.confidence).length;
-  $('[data-method-cells]').textContent = `One matrix, ${cells.length} cells`;
-  $('[data-method-low]').textContent = `${low} cells rest on thin sources. They are marked with a ?, so you see the doubt.`;
-  // The row with the most different statuses, and the fewest doubts, shows the scale best.
-  const fit = (cap) => { const cs = Object.values(cap.countries); return new Set(cs.map((c) => c.status)).size * 10 - cs.filter((c) => c.confidence).length * 5; };
-  const cap = Object.values(capIndex).reduce((a, b) => (fit(b) > fit(a) ? b : a));
-  $('[data-crop-row]').innerHTML = `<p class="crop-t">${esc(cap.name)}</p><div class="crow">${meta.countries.map((c) => `
-    <span${c.code === state.country ? ' class="sel"' : ''}><em>${flag(c.code)}${c.code}</em>${dot(cap.countries[c.code])}</span>`).join('')}</div>`;
-  $('[data-crop-pairs]').innerHTML = Object.entries(STATUSES).map(([k, s]) => `${dot({ status: k })}${dot({ status: k, confidence: 'low' })}<span>${s.label} · ${s.points}</span>`).join('');
-  const r = byCode[state.country];
-  $('[data-crop-term]').innerHTML = `
-    <p><span class="ps">$</span> agentindex score ${r.code}</p>
-    <p>&nbsp;&nbsp;category = mean(points) × 100</p>
-    <p>&nbsp;&nbsp;country&nbsp;&nbsp;= mean(categories)</p>
-    <p>${flag(r.code)}<b>${r.score}</b> · tier ${tierOf(r.score)} · rank ${r.rank} of ${ranking.length}</p>`;
-}
-
 function renderCounts() {
-  // Each item carries its leading separator and never breaks inside, so a wrapped line never ends with "·".
-  const parts = [`${cells.length} cells`, `${sourcesOf(cells)} sources`, `${companies.length} companies`, `${repos.length} open-source repos`];
-  $('[data-foot-count]').innerHTML = parts.map((p, i) => `<span class="nowrap">${i ? '· ' : ''}${esc(p)}</span>`).join(' ');
+  $('[data-trust-count]').textContent = `${cells.length} checks · ${sourcesOf(cells)} sources · ${companies.length} companies`;
 }
 
 function wire() {
