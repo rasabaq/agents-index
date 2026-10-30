@@ -7,7 +7,7 @@ description: Drive the Agent Index site (the home page: hero, console and charts
 
 The product is a static web site, with no build step and no backend. Its surfaces:
 
-- `/` is the home page: the hero, the console (country view, matrix, ranking, sources feed), Companies, Open source and Method.
+- `/` is the home page: the hero, the console (country view with its picker, lists and themes, then the closed matrix), Companies, Open source and Method.
 - The three charts (world map, head to head and flows) draw on the same page, between those sections.
 - `npm test` and `npm run validate` check the data and the scoring. They do not check the UI.
 
@@ -85,9 +85,9 @@ How `open` works:
 
 Stable handles in this repo (use these, not coordinates):
 
-- **Country pickers:** `[data-go-country="CL"]`. These are in the hero pins, the console list `[data-clist]` and the ranking `[data-ranking]`. The URL hash is `#country=CL`.
-- **Country view:** `[data-country]`, the heading `#cn-title`, and the four numbers `[data-kpis]`.
-- **Matrix cells:** `#matrix button[data-cap="<capability id>"][data-code="<country>"]`. Their `aria-label` reads `<capability> in <country>: <status>`.
+- **Country pickers:** `[data-go-country="CL"]`. These are in the hero pins, the world map and the console picker `[data-clist]` (`#ranking`). The URL hash is `#country=CL`.
+- **Country view:** `[data-country]`, the heading `#cn-title`, the score line `.cn-score`, and the cards `[data-kpis]`.
+- **Matrix cells:** open `#matrix summary` first, then `#matrix button[data-cap="<capability id>"][data-code="<country>"]`. Their `aria-label` reads `<capability> in <country>: <status>`.
 - **Cell detail:** `dialog[data-detail]`, the title `#detail-title`, the status `.detail-status`, the sources `.sources a`, and the correction link `.suggest a`.
 - **Sources of a country:** the button `[data-sources]` in the country view.
 - **Companies:** the filters `[data-company-filters] [data-market="MX"]`, the table `[data-companies]`, and the count `[data-companies-label]`.
@@ -133,5 +133,5 @@ Run `down` after a failed attempt too, so no ports or processes are left behind.
 - Headless Chrome cannot make a window narrower than 500px. The 400px view comes from device emulation held by the holder. If `open --width 400` reports another width, run `doctor`.
 - `--lang` changes `navigator.languages` for the next load only. The home page reads the language once, at load.
 - The site animates the hero and some counters. `open` waits 800 ms after the page renders; pass `--settle <ms>` for more.
-- The sticky header and the console tabs cover the top of the viewport. `shot --at` scrolls the element to 70px below the top; pass `--offset <px>` at 400px if the tabs hide it.
+- The sticky header covers the top of the viewport. `shot --at` scrolls the element to 70px below the top; pass `--offset <px>` at 400px if the header hides it.
 - Companies and Open source are scroll boxes inside the page. To see more rows, scroll the box (`.table-scroll`), not the window.

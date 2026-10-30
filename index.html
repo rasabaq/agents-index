@@ -74,65 +74,24 @@
 
     <section data-chart="map"></section>
 
-    <!-- The data product: one terminal window over the bottom of the hero. A country list on the left,
-         the selected country on the right, then the matrix, the ranking, the categories and the newest sources. -->
+    <!-- The data product: one window under the map. The selected country (its head, the country picker, what works,
+         what does not yet and the four themes), then every task in every country, closed until asked for. -->
     <div class="term" data-term>
       <div class="term-bar">
         <span class="term-app"><i aria-hidden="true"></i>Agent Index</span>
-        <span class="term-path">countries / <b data-term-country></b></span>
         <span class="term-fill" aria-hidden="true"></span>
         <span class="term-date"><i aria-hidden="true"></i>Data <span data-asof-iso></span></span>
       </div>
-      <div class="term-tabs">
-        <nav aria-label="Dashboard" data-tabs>
-          <a href="#ranking" aria-keyshortcuts="1"><span>1</span>Ranking</a>
-          <a href="#matrix" aria-keyshortcuts="2"><span>2</span>Matrix</a>
-          <a href="#country" aria-keyshortcuts="3" aria-current="location"><span>3</span>Countries</a>
-          <a href="#companies" aria-keyshortcuts="4"><span>4</span>Companies</a>
-          <a href="#evidence" aria-keyshortcuts="5"><span>5</span>Sources</a>
-          <a href="#opensource" aria-keyshortcuts="6"><span>6</span>Open source</a>
-        </nav>
-        <p class="term-sel" data-term-sel></p>
+      <div class="term-main">
+        <section id="country" class="cn" aria-labelledby="cn-title" data-country></section>
+        <div id="ranking" class="clist" role="group" aria-label="Countries by score" data-clist></div>
+        <div class="kpis" data-kpis></div>
+        <details id="matrix" class="card panel panel-mx">
+          <summary><h2 id="mx-title">Every task in every country</h2><span class="label" data-mx-count></span></summary>
+          <p class="mx-legend" data-legend></p>
+          <div class="mx" role="table" aria-labelledby="mx-title" data-matrix></div>
+        </details>
       </div>
-      <div class="term-body">
-        <aside class="term-side" aria-label="Countries by score">
-          <p class="label">Tier · score</p>
-          <ul class="clist" data-clist></ul>
-        </aside>
-        <div class="term-main">
-          <section id="country" class="cn" aria-labelledby="cn-title" data-country></section>
-          <div class="kpis" data-kpis></div>
-          <div class="panels">
-            <section id="matrix" class="card panel panel-mx" aria-labelledby="mx-title">
-              <header><h2 id="mx-title">Status matrix</h2><span class="label" data-mx-count></span></header>
-              <p class="mx-legend" data-legend></p>
-              <div class="mx" role="table" aria-labelledby="mx-title" data-matrix></div>
-            </section>
-            <div class="panels-r">
-              <section id="ranking" class="card panel" aria-labelledby="rk-title">
-                <header><h2 id="rk-title">Ranking</h2><span class="label" data-rk-count>Score 0–100 · tier</span></header>
-                <ol class="rank" data-ranking></ol>
-                <p class="note" data-points></p>
-              </section>
-              <section class="card panel" aria-labelledby="cat-title">
-                <header><h2 id="cat-title" data-cats-title>By category</h2><span class="label">0–100</span></header>
-                <ul class="cats" data-cats></ul>
-                <p class="note" data-cats-note></p>
-              </section>
-              <section id="evidence" class="card panel" aria-labelledby="ev-title">
-                <header><h2 id="ev-title">Newest evidence</h2><span class="tag" data-feed-count></span></header>
-                <ul class="feed" data-feed></ul>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="term-keys">
-        <span><kbd>1</kbd>–<kbd>6</kbd>jump to a panel</span>
-        <span><kbd>J</kbd><kbd>K</kbd>next or previous country</span>
-        <span><kbd>Esc</kbd>close details</span>
-        <span class="label" data-term-count></span>
-      </p>
     </div>
 
     <section data-chart="compare"></section>

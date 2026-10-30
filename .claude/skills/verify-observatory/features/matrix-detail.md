@@ -1,24 +1,24 @@
 # Capability matrix and cell detail
 
-The status matrix shows 18 capabilities in rows, grouped by category, and 8 countries in columns. Each cell shows its status as a mark you can read without the legend: a filled dot (Live), a half-filled dot (Limited), a ring (Announced) or a dash (Not yet). A small sunrise "?" after the mark means low confidence. The legend sits above the matrix (`.mx-legend`). Hovering a cell shows a tooltip. Clicking it opens a dialog with the yes-or-no question, the status, the note, the dated sources and a "Suggest a correction" link to a prefilled GitHub issue form.
+The matrix, "Every task in every country", is a `<details id="matrix">` that starts closed. Open, it shows 29 capabilities in rows, grouped by category, and 8 countries in columns. Each cell shows its status as a mark you can read without the legend: a filled dot (Live), a half-filled dot (Limited), a ring (Announced) or a dash (Not yet). A small sunrise "?" after the mark means unsure (low confidence). The legend sits above the matrix (`.mx-legend`). Hovering a cell shows a tooltip. Clicking it opens a dialog with the yes-or-no question, the status, the note, the dated sources and a "Suggest a correction" link to a prefilled GitHub issue form.
 
 ## Sub-features
 
-- `matrix-grid` renders 18 capability rows × 8 country columns, with the selected country's column highlighted.
+- `matrix-grid` renders 29 capability rows × 8 country columns, with the selected country's column highlighted.
 - `matrix-legend` explains the marks, above the matrix.
 - `matrix-tooltip` shows the country, status and note on hover (mouse only).
 - `cell-detail` opens the dialog for one cell: the kicker (category · country), `#detail-title` (the question), the status chip, the note and the sources.
-- `cell-low-confidence` adds the "Low confidence…" note in the dialog for cells marked with "?".
+- `cell-low-confidence` adds the "Unsure…" note in the dialog for cells marked with "?".
 - `cell-correction` links "Suggest a correction" to `issues/new?template=data-correction.yml` with the country, capability and current status filled in.
 - `cell-close` closes the dialog with Escape or the × button.
 - `country-sources` lists every source behind the selected country, from the "N sources" button.
-- `feed-detail` opens the same dialog from a "Newest evidence" row `[data-feed] button[data-cap]`.
+- `cell-could-close` adds "Could close the gap: …" (`.detail-close`) to a cell that is not live when companies already live in the same region could bring it.
 
 ## How to get to it (user POV)
 
-- Scroll to "Status matrix" in the console, or use the console tab "2 Matrix", or press `2`.
+- Open "Every task in every country" under the country's cards (`node $H click '#matrix summary'`).
 - Click any cell mark.
-- Click a row in "Newest evidence".
+- Click an item in "Works today" or "Not yet".
 - Click the "N sources" button in the country view.
 
 ## Driving it with observatory.mjs

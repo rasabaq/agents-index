@@ -36,6 +36,12 @@ export function scoreCountries(meta, categories) {
   return rows;
 }
 
+// Themes group the categories for display, so a country shows 4 bars instead of 12. A theme scores the mean of its
+// categories' scores. The country score never uses themes.
+export function themeScores(themes, byCategory) {
+  return themes.map((t) => ({ ...t, score: Math.round(mean(t.categories.map((id) => byCategory[id]))) }));
+}
+
 // Returns a list of human-readable problems. An empty list means the data is valid.
 export function validate(meta, categories) {
   const errors = [];
@@ -51,6 +57,14 @@ export function validate(meta, categories) {
     if (typeof c.short !== 'string' || !c.short.trim() || typeof c.can !== 'string' || !c.can.trim()) {
       errors.push(`category "${c.id}" needs "short" and "can" in meta.json, for example "short": "Health", "can": "book care for you"`);
     }
+  }
+
+  // Every category sits in exactly one theme, so the theme bars cover the whole score.
+  if (meta.themes) {
+    const listed = meta.themes.flatMap((t) => t.categories ?? []);
+    for (const t of meta.themes) if (!t.id || !t.name || !t.categories?.length) errors.push(`meta: every theme needs an id, a name and categories`);
+    for (const id of listed) if (!categoryIds.has(id)) errors.push(`theme: unknown category "${id}"`);
+    for (const id of categoryIds) if (listed.filter((x) => x === id).length !== 1) errors.push(`category "${id}" must be in exactly one theme in meta.json`);
   }
 
   for (const cat of categories) {

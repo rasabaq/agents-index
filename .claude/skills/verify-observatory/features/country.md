@@ -3,12 +3,12 @@
 A visitor lands on their own country and the console shows it. In order, they see:
 
 - its name, with "Your country" above it when the site guessed it;
-- a picker;
+- one line with how many things work today, the score, and the rank;
 - a one-sentence verdict on what AI agents can and cannot do there yet, and the main reason;
-- the score next to the best country and the average;
-- two plain lists, "Works today" and "Not yet".
+- the country picker: every country with its score, best first;
+- two short lists, "Works today" and "Not yet" (5 items each, then "Show all N"), and the four theme bars.
 
-Each Not yet item shows its status, its gap reason when it has one, and companies that could close the gap. Every list item opens the cell detail. Below that, the country's column is highlighted in the matrix and its category bars appear. The choice lives in the URL as `#country=XX`, so a link opens the same country.
+Each Not yet item shows its status, its gap reason when it has one, and a "Seen it work here? Tell us" link. Every list item opens the cell detail, which names companies that could close the gap. Below that, the closed matrix highlights the country's column. The choice lives in the URL as `#country=XX`, so a link opens the same country.
 
 ## Sub-features
 
@@ -18,17 +18,17 @@ Each Not yet item shows its status, its gap reason when it has one, and companie
   3. the browser language region (`es-CL` → CL);
   4. otherwise the US.
 - `country-own` labels the head "Your country" only for the guessed country (from the time zone or the language). For any other country it says "Country".
-- `country-picker` switches the country from the `<select data-pick-country>` under the name, and updates the hash.
+- `country-picker` is `[data-clist]` (`#ranking`): one button per country with flag, code and score, best first. A click switches the country without scrolling and updates the hash.
 - `country-verdict` is the sentence `.cn-verdict`, built from the data:
   - "can …" names up to two categories with at least one live cell;
   - "cannot yet …" names up to two categories with none;
   - "Main reason: …" is the most common `gapReason` label among the cells of the categories it names. It is left out when none of them has one.
-- `country-score` is the card `.mc-score`: "N / 100 · rank R of 8", with bars for this country, the best country (hidden when this country is the best) and the average of 8, plus the data date.
-- `country-lists` are `#mc-works` ("Works today · L of 18") and `#mc-not` ("Not yet · M of 18"). Their items are `.mc-list button[data-cap][data-code]`, and each one opens the cell detail (see matrix-detail.md). A Not yet item can show its gap reason label and a `small.mc-co` line, "Could close it: Company (already in XX YY)".
+- `country-score` is the line `.cn-score`: "L of 29 things work today · score N of 100 · Rth of 8", plus ", tied" and the count of unsure cells when there are any.
+- `country-lists` are `#mc-works` ("Works today · L of 29") and `#mc-not` ("Not yet · M of 29"). Each shows 5 items, then `[data-more]` "Show all N" / "Show fewer". Their items are `.mc-list button[data-cap][data-code]`, and each one opens the cell detail (see matrix-detail.md). A Not yet item can show its gap reason label and an `a.mc-tell` link to the prefilled correction form.
+- `country-themes` is the third card, "By theme · out of 100": four bars from `themes` in `data/meta.json`, each the mean of its categories, and a note naming the weakest category.
 - `country-business` is the "For people" / "For businesses" toggle (`[data-view]`, `aria-pressed`) under the verdict. "For businesses" swaps the verdict for a business one and the cards for three `.biz-group` cards: Sell through AI agents, Sell in chat apps, and Get paid by agents. These cover the eight capabilities in `BUSINESS_GROUPS` (`src/observatory.js`). Each item has a seller-side label, one line on why (the gap reason when the cell has one, else its status in plain words), and a `.biz-cos` line. That line reads "Sign up with: …" when the cell is live and "Active here: …" otherwise. It is left out on Not yet items, with links to each company's homepage. The view lives in the link: `#country=MX&view=business`, so a business link can be shared. An old `#country=MX` link opens For people.
 - `country-pick-hero` selects a country from the pins on the hero's planet, without scrolling. The sun moves behind the selected pin.
-- `country-pick-console` selects a country from the console list `[data-clist]` without scrolling.
-- `country-pick-ranking` selects a country from the ranking.
+- `country-pick-console` selects a country from the picker `[data-clist]` without scrolling.
 - `country-keys` steps through the ranking with `j` (next) and `k` (previous).
 - `country-compare` is the "Compare with XX" button (`[data-compare="US BR"]`, this country and its neighbour in the ranking). It does not change the console country or the hash: it scrolls to the Head to head chart `#v-compare` with that pair picked (see charts.md). If that chart did not draw, it switches the console to the neighbour instead.
 - `country-sources` opens the list of every source behind the country (see matrix-detail.md).
@@ -36,9 +36,8 @@ Each Not yet item shows its status, its gap reason when it has one, and companie
 ## How to get to it (user POV)
 
 - Open `/`. The page starts on your country, guessed from your time zone or browser language.
-- Pick a country in the select under the country name.
+- Pick a country in the row of country buttons under the verdict.
 - Click a country pin on the hero's planet (score, flag, a pole as tall as the score).
-- Click a country in the console's left list (a strip at 400px), or in the Ranking panel.
 - Open a shared link such as `/#country=CL`, or edit the hash in the address bar.
 - Press `j` or `k` while no field or dialog has focus.
 
@@ -56,13 +55,14 @@ Steps:
 - **Hash wins.** Run `node $H open '/#country=MX' --lang es-CL --tz America/Santiago`.
   - `#cn-title` reads Mexico, and the label starts with "Country".
   - `node $H eval "document.querySelector('[data-clist] [aria-current=true]').dataset.goCountry"` prints `MX`.
-- **Picker.** `click` cannot choose a `<select>` option, so set the value and fire `change` the way the browser does: `node $H eval "(() => { const s = document.querySelector('[data-pick-country]'); s.value = 'CO'; s.dispatchEvent(new Event('change', { bubbles: true })); return [location.hash, document.querySelector('#cn-title').innerText]; })()"`. It prints `#country=CO` and Colombia.
+- **Picker.** Run `node $H click '[data-clist] [data-go-country="CO"]'`. `node $H eval "[location.hash, document.querySelector('#cn-title').innerText]"` prints `#country=CO` and Colombia. The buttons list scores that never increase.
 - **Verdict.** Run `node $H eval "document.querySelector('.cn-verdict').innerText"`.
   - It starts with "In <country>, AI agents can" (or "nothing we track works") and ends with a full stop.
   - Every category it says agents "can" do has an item under Works today.
-- **Score.** Run `node $H eval "document.querySelector('.mc-score').innerText"`. It shows "/ 100 · rank", "of 8", "Average of 8" and "Data as of".
+- **Score.** Run `node $H eval "document.querySelector('.cn-score').innerText"`. It shows "of 29 things work today", "score", "of 100" and "of 8".
 - **Lists.**
-  - Run `node $H eval "[document.querySelector('#mc-works').innerText, document.querySelector('#mc-not').innerText, document.querySelectorAll('.mc-list button[data-cap]').length]"`. The two counts add up to 18, and so does the number of buttons.
+  - Run `node $H eval "[document.querySelector('#mc-works').innerText, document.querySelector('#mc-not').innerText, document.querySelectorAll('.mc-list button[data-cap]').length]"`. The two counts add up to 29. At most 10 buttons show.
+  - Run `node $H click '[data-more="not"]'`. The Not yet list shows every item and the button reads "Show fewer".
   - Run `node $H click '#mc-not + ul button'`. `node $H eval "document.querySelector('[data-detail]').open"` prints `true`. Then `node $H press Escape`.
 - **For businesses.**
   - Run `node $H open '/#country=MX'`, then `node $H click '[data-view="business"]'`.
@@ -76,20 +76,19 @@ Steps:
   - `location.hash` is `#country=MX`, and `#cn-title` reads Mexico.
   - The page did not scroll: `node $H eval "Math.round(document.querySelector('.hero-pins').getBoundingClientRect().top)"` is still in the viewport.
   - Take `node $H shot hero-1440-mx` (the MX pin is lit and the sun sits behind it), then `node $H shot country-1440-mx --at '#country'`.
-- **Console list.** Run `node $H click '[data-clist] [data-go-country="BR"]'`. `#cn-title` reads Brazil, and the hash is `#country=BR`.
 - **Keys.** Run `node $H press j`. The country moves to the next one in the ranking (for example BR → IN). `node $H press k` moves it back.
 - **Phone.**
   - For businesses at 400px stacks the three cards in one column: `node $H open '/#country=MX' --width 400`, `node $H click '[data-view="business"]'`, `node $H shot business-400-mx --at '#country' --offset 120`.
   - Run `node $H open '/#country=CL' --width 400`, then `node $H shot country-400-cl --at '#country' --offset 120`.
-  - The score card, Works today and Not yet stack in one column.
+  - Works today, Not yet and the themes stack in one column.
   - `node $H eval 'document.documentElement.scrollWidth'` prints `400`.
 - **Proof.** Finish each page with `node $H errors` (exit 0).
 
 ## Gotchas
 
 - The start country depends on the time zone. The harness pins it to UTC unless `--tz` is given. Without that, a run on a machine in Santiago opens Chile.
-- Pickers inside the console (the select, the list, the ranking) and the hero pins do not scroll the page. Compare is not a picker: it scrolls to `#v-compare`. Other pickers (the world map, a hash change) scroll to `#country`.
+- The picker inside the console and the hero pins do not scroll the page. Compare is not a picker: it scrolls to `#v-compare`. Other pickers (the world map, a hash change) scroll to `#country`.
 - The hero pins are links in a list (`[data-hero-pins]`), named like "United States, rank 1, score 84", and reachable with Tab.
 - `j` and `k` do nothing while the cell detail dialog is open or a field has focus.
-- The verdict, the reasons and "Could close it" come from the data, so they change when the data changes. Assert their shape (the country name, "can", "Main reason:", "already in"), not exact words.
-- "Could close it" only names companies that already work in two or more countries, in the same region as this one. The US and India have no same-region neighbour among the 8, so they never show it.
+- The verdict, the reasons and "Could close the gap" come from the data, so they change when the data changes. Assert their shape (the country name, "can", "Main reason:", "already in"), not exact words.
+- "Could close the gap" (in the cell detail) only names companies that already work in two or more countries, in the same region as this one. The US and India have no same-region neighbour among the 8, so they never show it.

@@ -1,4 +1,4 @@
-import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
+import { STATUSES, REPO_USE, scoreCountries, tierOf, mergeCompanies, rankRepos, extremes, shortName, themeScores, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
 import { data } from './data.js';
 
 const $ = (sel) => document.querySelector(sel);
@@ -6,9 +6,10 @@ const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<
 const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 const fmtMonth = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 
-const state = { view: 'people', market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false };
-// Long tables show this many rows until Show all is pressed.
+const state = { view: 'people', market: 'all', use: 'all', country: null, allCompanies: false, allRepos: false, allWorks: false, allNot: false };
+// Long tables show this many rows until Show all is pressed; the country's two lists show fewer.
 const FIRST_ROWS = 10;
+const FIRST_ITEMS = 5;
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 let meta, categories, ranking, byCode, capIndex, companies, repos, cells, region;
 
@@ -30,17 +31,14 @@ function init() {
 
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   $('[data-asof-iso]').textContent = meta.asOf;
-  renderSide();
-  renderRanking();
+  renderPicker();
   renderLegend();
-  renderFeed();
   renderCompanyFilters();
   renderCompanies();
   renderRepoFilters();
   renderRepos();
   renderCounts();
   renderCountry();
-  showSideChip();
   wire();
   wireTooltip();
   wireLogos();
@@ -60,6 +58,7 @@ const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : 
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', low confidence' : ''}`;
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
 const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
+const ordinal = (n) => `${n}${['th', 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] ?? 'th'}`;
 // Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
 // Cells may not have one yet.
 const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
@@ -106,40 +105,20 @@ function mainReason(mine, catIds) {
 const monogram = (name) => `<span class="logo mono" aria-hidden="true">${esc([...name.trim()][0]?.toUpperCase() ?? '?')}</span>`;
 const logo = (src, name) => (src ? `<img class="logo" src="${esc(src)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-name="${esc(name)}">` : monogram(name));
 
-const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}, tier ${tierOf(r.score)}"`;
+const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}"`;
 
-// Left of the console: every country with its tier letter and score. Selecting one fills the rest.
-// On phones the country list is a strip that scrolls sideways; keep the selected country in it, centred.
-function showSideChip() {
-  const side = $('.term-side'), b = side.querySelector('[aria-current="true"]');
-  if (!b || side.scrollWidth <= side.clientWidth) return;
-  const s = side.getBoundingClientRect(), r = b.getBoundingClientRect();
-  side.scrollLeft += r.left - s.left - (s.width - r.width) / 2;
-}
-
-function renderSide() {
+// The country picker: every country with its score, best first. It is the ranking too (the hero's "Open the ranking").
+function renderPicker() {
   $('[data-clist]').innerHTML = ranking.map((r) => `
-    <li><button type="button" class="tier-${tierOf(r.score).toLowerCase()}" data-go-country="${r.code}" ${pick(r)}>
-      ${flag(r.code)}<span>${r.code}</span><span class="rk-t">${tierOf(r.score)}</span><span class="rk-v">${r.score}</span>
-    </button></li>`).join('');
-}
-
-function renderRanking() {
-  $('[data-ranking]').innerHTML = ranking.map((r, i) => `
-    <li><button type="button" class="tier-${tierOf(r.score).toLowerCase()}" data-go-country="${r.code}" ${pick(r)}>
-      <span class="rk-n">${i && ranking[i - 1].rank === r.rank ? '=' : ''}${r.rank}</span>${flag(r.code)}<span class="rk-c">${r.code}</span>
-      <span class="rk-t">${tierOf(r.score)}</span><span class="bars"><b style="width:${r.score}%"></b></span><span class="rk-v">${r.score}</span>
-    </button></li>`).join('');
-  $('[data-rk-count]').textContent = `${ranking.length} countries tracked so far`;
-  $('[data-points]').textContent = Object.values(STATUSES).map((s) => `${s.label} ${s.points}`).join(' · ');
+    <button type="button" data-go-country="${r.code}" ${pick(r)}>${flag(r.code)}<span>${r.code}</span><span class="rk-v">${r.score}</span></button>`).join('');
 }
 
 function renderLegend() {
   $('[data-legend]').innerHTML = Object.entries(STATUSES).map(([k, s]) => `<span>${dot({ status: k })}${s.label}</span>`).join('')
-    + `<span>${dot({ status: 'live', confidence: 'low' })}Low confidence (thin sources)</span>`;
+    + `<span>${dot({ status: 'live', confidence: 'low' })}Unsure (thin sources)</span>`;
 }
 
-// The selected country: its head, the four numbers, its matrix column and its categories.
+// The selected country: its head, then what works, what does not yet and the four themes.
 function renderCountry() {
   const r = byCode[state.country];
   const mine = cells.filter((x) => x.code === r.code);
@@ -149,64 +128,51 @@ function renderCountry() {
   const nSources = sourcesOf(mine);
   const low = mine.filter((x) => x.cell.confidence).length;
   const total = mine.length;
+  const works = mine.filter((x) => x.cell.status === 'live');
 
   $('[data-country]').innerHTML = `
     <div>
       <p class="label">${r.code === state.own ? 'Your country' : 'Country'} · ${ranking.length} countries tracked so far</p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
+      <p class="cn-score"><b>${works.length} of ${total}</b> things work today · score ${r.score} of 100 · ${ordinal(r.rank)} of ${ranking.length}${ties.length ? ', tied' : ''}${low ? ` · ${low} unsure, marked ?` : ''}</p>
       <p class="cn-lede cn-verdict">${esc(state.view === 'business' ? businessVerdict(r) : verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
       <div class="cn-view" role="group" aria-label="Show the country for">${[['people', 'For people'], ['business', 'For businesses']].map(([v, l]) => `<button type="button" class="pill" data-view="${v}" aria-pressed="${state.view === v}">${l}</button>`).join('')}</div>
     </div>
     <div class="cn-r">
-      <label class="select"><span class="sr-only">Pick your country</span><select data-pick-country>${ranking.map((x) => `<option value="${x.code}"${x.code === r.code ? ' selected' : ''}>${emoji(x.code)} ${esc(x.name)}</option>`).join('')}</select></label>
       <button type="button" class="btn btn-sm" data-compare="${r.code} ${other.code}">Compare with ${flag(other.code)}${other.code}</button>
       <button type="button" class="btn btn-sm" data-sources>${nSources} sources</button>
     </div>`;
 
-  // Score in context: this country next to the best one and the average, then the two plain lists.
-  const best = ranking[0];
-  const avg = Math.round(ranking.reduce((s, x) => s + x.score, 0) / ranking.length);
-  const bar = (label, v, on) => `<li${on ? ' class="on"' : ''}><span>${label}</span><span class="bars"><b style="width:${v}%"></b></span><span class="rk-v">${v}</span></li>`;
-  const works = mine.filter((x) => x.cell.status === 'live');
-  const notYet = mine.filter((x) => x.cell.status !== 'live').sort((a, b) => STATUSES[b.cell.status].points - STATUSES[a.cell.status].points);
-  const item = ({ cap, cell }, extra = '') => `<li><button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
-    ${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(cap.name)}${extra}</span></button></li>`;
-  const why = ({ cap, cell }) => {
-    const reason = gapLabel(cell.gapReason);
-    const cos = couldClose(categories.find((c) => c.category === cap.category).companies, cap.id, r.code, region).slice(0, 3);
-    return `${reason ? `<small>${esc(reason)}</small>` : ''}${cos.length ? `<small class="mc-co">Could close it: ${cos.map((co) => `${esc(co.name)} (already in ${co.near.map((m) => `${flag(m)}${m}`).join(' ')})`).join(', ')}</small>` : ''}`;
-  };
   if (state.view === 'business') {
     $('[data-kpis]').innerHTML = renderBusiness(r);
-    return renderCountryRest(r);
+    return renderCountryRest();
   }
+  const notYet = mine.filter((x) => x.cell.status !== 'live').sort((a, b) => STATUSES[b.cell.status].points - STATUSES[a.cell.status].points);
+  const item = ({ cap, cell }) => {
+    const reason = cell.status === 'live' ? null : gapLabel(cell.gapReason);
+    return `<li><button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
+    ${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(cap.name)}${reason ? `<small>${esc(reason)}</small>` : ''}</span></button>
+    ${cell.status === 'live' ? '' : `<a class="mc-tell" href="${esc(correctionUrl(cap, r.code, cell))}" target="_blank" rel="noopener noreferrer">Seen it work here? Tell us</a>`}</li>`;
+  };
+  // The first few items, then a button for the rest.
+  const list = (rows, all, key) => `<ul>${(all ? rows : rows.slice(0, FIRST_ITEMS)).map(item).join('')}</ul>
+    ${rows.length > FIRST_ITEMS ? `<button type="button" class="pill mc-more" data-more="${key}" aria-expanded="${all}">${all ? 'Show fewer' : `Show all ${rows.length}`}</button>` : ''}`;
+  const { weak } = extremes(r.byCategory);
   $('[data-kpis]').innerHTML = `
-    <div class="card kpi mc-score">
-      <p class="label">Score</p>
-      <p class="kpi-v">${r.score}<small>/ 100 · rank ${r.rank} of ${ranking.length}${ties.length ? ', tied' : ''}</small></p>
-      <ul class="mc-bars">${bar(`${flag(r.code)}${r.code}`, r.score, true)}${best.code === r.code ? '' : bar(`Best: ${flag(best.code)}${best.code}`, best.score)}${bar(`Average of ${ranking.length}`, avg)}</ul>
-      <p class="mc-note">The share of agent abilities that work today. Data as of ${fmtDate(meta.asOf)}. ${low ? `A ? marks ${low} cell${low === 1 ? '' : 's'} with thin sources.` : ''}</p>
-    </div>
     <section class="card kpi mc-list" aria-labelledby="mc-works"><h3 id="mc-works" class="label">Works today · ${works.length} of ${total}</h3>
-      ${works.length ? `<ul>${works.map((x) => item(x)).join('')}</ul>` : '<p class="mc-note">Nothing is generally available yet.</p>'}</section>
+      ${works.length ? list(works, state.allWorks, 'works') : '<p class="mc-note">Nothing is generally available yet.</p>'}</section>
     <section class="card kpi mc-list" aria-labelledby="mc-not"><h3 id="mc-not" class="label">Not yet · ${notYet.length} of ${total}</h3>
-      ${notYet.length ? `<ul>${notYet.map((x) => item(x, why(x))).join('')}</ul>` : '<p class="mc-note">Everything we track works here.</p>'}</section>`;
+      ${notYet.length ? list(notYet, state.allNot, 'not') : '<p class="mc-note">Everything we track works here.</p>'}</section>
+    <section class="card kpi" aria-labelledby="mc-themes"><h3 id="mc-themes" class="label">By theme · out of 100</h3>
+      <ul class="cats">${themeScores(meta.themes, r.byCategory).map((t) => `
+        <li title="${esc(t.categories.map(catName).join(', '))}"><span class="cat-n">${esc(t.name)}</span><span class="bars"><b style="width:${t.score}%"></b></span><span class="rk-v">${t.score}</span></li>`).join('')}</ul>
+      <p class="mc-note">${r.byCategory[weak] < 50 ? `${esc(shortName(weak))} is the gap: ${r.byCategory[weak]} of 100.` : `No gap below 50. The lowest is ${esc(shortName(weak).toLowerCase())}, at ${r.byCategory[weak]}.`}</p></section>`;
 
-  renderCountryRest(r);
+  renderCountryRest();
 }
 
-// Everything below the head and the cards: the same for people and for businesses.
-function renderCountryRest(r) {
-  const { weak } = extremes(r.byCategory);
-  $('[data-cats-title]').innerHTML = `${flag(r.code)}${esc(r.name)} by category`;
-  $('[data-cats]').innerHTML = meta.categories.map((c) => `
-    <li title="${esc(c.blurb)}"><span class="cat-n">${esc(c.name)}</span><span class="bars"><b style="width:${r.byCategory[c.id]}%"></b></span><span class="rk-v">${r.byCategory[c.id]}</span></li>`).join('');
-  $('[data-cats-note]').textContent = r.byCategory[weak] < 50
-    ? `${shortName(weak)} is the gap: ${r.byCategory[weak]} of 100.`
-    : `No gap below 50. The lowest is ${shortName(weak).toLowerCase()}, at ${r.byCategory[weak]}.`;
-
-  $('[data-term-country]').textContent = r.name.toLowerCase();
-  $('[data-term-sel]').innerHTML = `${flag(r.code)}<b>${r.code}</b> · ${r.score} · tier ${tierOf(r.score)}`;
+// Everything below the country's cards: the same for people and for businesses.
+function renderCountryRest() {
   renderMatrix();
   renderMethod();
 }
@@ -220,22 +186,7 @@ function renderMatrix() {
     <div class="mx-row mx-cat" role="row"><span role="rowheader" title="${esc(catName(cat.category))}">${esc(shortName(cat.category))}</span>${cols.map((c) => `<span role="cell"${sel(c)}></span>`).join('')}</div>
     ${cat.capabilities.map((cap) => `
       <div class="mx-row" role="row"><span class="mx-cap" role="rowheader">${esc(cap.name)}</span>${cols.map((c) => `<span role="cell"${sel(c)}><button type="button" data-cap="${cap.id}" data-code="${c}" aria-label="${esc(cellLabel(cap, c, cap.countries[c]))}">${dot(cap.countries[c])}</button></span>`).join('')}</div>`).join('')}`).join('');
-  $('[data-mx-count]').textContent = `${Object.keys(capIndex).length} capabilities`;
-}
-
-// The six newest sources across all cells. A source shared by several cells shows once per cell.
-function renderFeed() {
-  const items = cells.flatMap((x) => (x.cell.evidence ?? []).filter((e) => e.date).map((e) => ({ ...x, e })))
-    .sort((a, b) => b.e.date.localeCompare(a.e.date))
-    .slice(0, 6);
-  $('[data-feed-count]').textContent = `${items.length} entries`;
-  $('[data-feed]').innerHTML = items.map(({ cap, code, cell, e }) => `
-    <li><button type="button" data-cap="${cap.id}" data-code="${code}" aria-label="${esc(`${e.date}, ${cellLabel(cap, code, cell)}, via ${e.publisher ?? e.type}`)}">
-      <time datetime="${e.date}">${e.date.length === 10 ? e.date.slice(5) : e.date}</time>
-      <span class="fd-c">${flag(code)}${code}</span>
-      <span class="fd-t">${esc(cap.name)}<small>via ${esc(e.publisher ?? e.type)}</small></span>
-      ${chip(cell.status)}
-    </button></li>`).join('');
+  $('[data-mx-count]').textContent = `${cells.length} checks`;
 }
 
 function correctionUrl(cap, code, cell) {
@@ -264,11 +215,14 @@ function openDetail(capId, code) {
   const cap = capIndex[capId];
   const cell = cap.countries[code];
   const ev = cell.evidence ?? [];
+  // Companies already live nearby that could bring a missing capability here.
+  const cos = cell.status === 'live' ? [] : couldClose(categories.find((c) => c.category === cap.category).companies, cap.id, code, region).slice(0, 3);
   showDetail(`
     <p class="kicker">${esc(catName(cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
-    <p class="detail-status">${chip(cell.status, cell.confidence)}${cell.confidence ? '<span class="low-note">Low confidence. Sources are thin or indirect, so treat this cell as a lead to check.</span>' : ''}</p>
+    <p class="detail-status">${chip(cell.status, cell.confidence)}${cell.confidence ? '<span class="low-note">Unsure. The sources are thin or indirect, so treat this as a lead to check.</span>' : ''}</p>
     <p>${esc(cell.note)}</p>
+    ${cos.length ? `<p class="detail-close">Could close the gap: ${cos.map((co) => `${esc(co.name)} (already in ${co.near.map((m) => `${flag(m)}${m}`).join(' ')})`).join(', ')}</p>` : ''}
     <h4>${ev.length ? `Sources (${ev.length})` : 'Sources'}</h4>
     ${ev.length ? sourceList(ev) : '<p class="muted">No availability found. Nothing to cite yet.</p>'}
     <p class="suggest"><a href="${esc(correctionUrl(cap, code, cell))}" target="_blank" rel="noopener noreferrer">Suggest a correction</a></p>`);
@@ -294,15 +248,12 @@ function openSources(code) {
 function selectCountry(code, scroll) {
   if (!byCode[code]) return;
   const refocus = $('[data-country]').contains(document.activeElement);
-  const fromPicker = document.activeElement?.matches('[data-pick-country]');
   state.country = code;
   history.replaceState(null, '', writeHash(code, state.view));
   // Every country picker on the page (hero pins, world map, console) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
-  showSideChip();
-  if (fromPicker) $('[data-pick-country]').focus({ preventScroll: true });
-  else if (refocus) $('#cn-title').focus({ preventScroll: true });
+  if (refocus) $('#cn-title').focus({ preventScroll: true });
   document.dispatchEvent(new CustomEvent('countrychange', { detail: code }));
   if (scroll) $('#country').scrollIntoView({ behavior: scrollBehavior() });
 }
@@ -397,8 +348,6 @@ function renderMethod() {
 }
 
 function renderCounts() {
-  const text = `${cells.length} cells · ${sourcesOf(cells)} sources`;
-  $('[data-term-count]').textContent = text;
   // Each item carries its leading separator and never breaks inside, so a wrapped line never ends with "·".
   const parts = [`${cells.length} cells`, `${sourcesOf(cells)} sources`, `${companies.length} companies`, `${repos.length} open-source repos`];
   $('[data-foot-count]').innerHTML = parts.map((p, i) => `<span class="nowrap">${i ? '· ' : ''}${esc(p)}</span>`).join(' ');
@@ -452,7 +401,15 @@ function wire() {
     renderCountry();
     $(`[data-view="${state.view}"]`).focus({ preventScroll: true });
   });
-  $('[data-country]').addEventListener('change', (e) => e.target.matches('[data-pick-country]') && selectCountry(e.target.value));
+  // Show all / Show fewer under the country's two lists.
+  $('[data-kpis]').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-more]');
+    if (!b) return;
+    const key = b.dataset.more === 'works' ? 'allWorks' : 'allNot';
+    state[key] = !state[key];
+    renderCountry();
+    $(`[data-more="${b.dataset.more}"]`)?.focus({ preventScroll: true });
+  });
 
   // Phones: the Menu button opens the section links; picking one closes it.
   const nav = $('.nav'), menu = $('[data-nav-menu]');
@@ -461,36 +418,21 @@ function wire() {
   nav.querySelector('nav').addEventListener('click', (e) => e.target.closest('a') && setMenu(false));
   addEventListener('keydown', (e) => e.key === 'Escape' && nav.classList.contains('open') && (setMenu(false), menu.focus()));
 
-  // Cells in the matrix and the feed open their details; the sources button lists the country's sources.
+  // Cells in the matrix and the lists open their details; the sources button lists the country's sources.
   $('[data-term]').addEventListener('click', (e) => {
     const b = e.target.closest('[data-cap]');
     if (b) openDetail(b.dataset.cap, b.dataset.code);
     if (e.target.closest('[data-sources]')) openSources(state.country);
   });
 
-  // Tabs are real links. Scrolling here instead keeps #country=XX in the address bar.
-  const tabs = [...document.querySelectorAll('[data-tabs] a')];
-  const go = (a) => {
-    tabs.forEach((t) => (t === a ? t.setAttribute('aria-current', 'location') : t.removeAttribute('aria-current')));
-    $(a.hash).scrollIntoView({ behavior: scrollBehavior() });
-  };
-  $('[data-tabs]').onclick = (e) => {
-    const a = e.target.closest('a');
-    if (!a) return;
-    e.preventDefault();
-    go(a);
-  };
-
-  // Keys 1 to 6 follow the tabs, J and K step through the ranking. Typing in a field or an open dialog wins.
+  // J and K step through the ranking. Typing in a field or an open dialog wins.
   addEventListener('keydown', (e) => {
     if (e.ctrlKey || e.metaKey || e.altKey || $('[data-detail]').open) return;
     if (e.target.closest?.('input, select, textarea, [contenteditable]')) return;
     const key = e.key.toLowerCase();
-    if (tabs[e.key - 1]) go(tabs[e.key - 1]);
-    else if (key === 'j' || key === 'k') {
-      const i = ranking.findIndex((r) => r.code === state.country) + (key === 'j' ? 1 : -1);
-      selectCountry(ranking[(i + ranking.length) % ranking.length].code, false);
-    }
+    if (key !== 'j' && key !== 'k') return;
+    const i = ranking.findIndex((r) => r.code === state.country) + (key === 'j' ? 1 : -1);
+    selectCountry(ranking[(i + ranking.length) % ranking.length].code, false);
   });
 }
 
