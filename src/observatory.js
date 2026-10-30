@@ -278,13 +278,15 @@ export function guessCountry(codes, languages = [], timeZone = '') {
   return null;
 }
 
-// The page's link state: #country=MX, optionally &view=business. Old #country=MX links read as the people view.
+// The page's link state: #country=MX, optionally &view=business and &errand=shop (the open errand; none means the
+// first). Old #country=MX links read as the people view.
 export function readHash(hash) {
   const p = new URLSearchParams(hash.replace(/^#/, ''));
   const country = /^[A-Z]{2}$/.test(p.get('country') ?? '') ? p.get('country') : null;
-  return { country, view: p.get('view') === 'business' ? 'business' : 'people' };
+  const errand = /^[a-z-]+$/.test(p.get('errand') ?? '') ? p.get('errand') : null;
+  return { country, view: p.get('view') === 'business' ? 'business' : 'people', errand };
 }
-export const writeHash = (country, view) => `#country=${country}${view === 'business' ? '&view=business' : ''}`;
+export const writeHash = (country, view, errand) => `#country=${country}${view === 'business' ? '&view=business' : ''}${errand ? `&errand=${errand}` : ''}`;
 
 // The country a visitor starts on: the #country= hash, else their own country, else the United States.
 export function startCountry(codes, hash, languages = [], timeZone = '') {
