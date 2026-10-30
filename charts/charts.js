@@ -1,21 +1,13 @@
-// Home page charts: loads the data once, builds a shared context, and draws every registered chart into its slot.
+// Home page charts: waits for the shared data (../data.js), builds a shared context, and draws every registered chart into its slot.
 // A chart is a classic script that pushes { id, title, blurb, render(el, ctx) } onto window.CHARTS.
 // blurb may be a function of ctx, so it can count what is in the data.
 // index.html places the slots (<section data-chart="<id>">), so the page order lives in the HTML.
 import { STATUSES, TIERS, scoreCountries, tierOf } from '../src/observatory.js';
+import { data } from '../data.js';
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
-
-async function load() {
-  const get = (name) => fetch(`data/${name}.json`).then((r) => {
-    if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
-    return r.json();
-  });
-  const meta = await get('meta');
-  return { meta, categories: await Promise.all(meta.categories.map((c) => get(c.id))) };
-}
 
 function buildContext({ meta, categories }) {
   const ranking = scoreCountries(meta, categories);
@@ -105,7 +97,7 @@ function render(ctx) {
 
 addEventListener('scroll', () => ($('[data-chart-tip]').hidden = true), { passive: true });
 try {
-  render(buildContext(await load()));
+  render(buildContext(await data));
 } catch (err) {
   // app.js already tells the reader the data did not load; the empty slots stay empty.
   console.error('charts', err);
