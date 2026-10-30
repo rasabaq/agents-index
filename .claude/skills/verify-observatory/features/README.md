@@ -40,4 +40,4 @@ Each feature file starts with an H1 title and one paragraph describing what the 
 - [Capability matrix and cell detail](./matrix-detail.md) covers the matrix, the cell detail dialog, its sources, the "Suggest a correction" link and the country sources list.
 - [Ranking](./ranking.md) covers the console ranking and the score legend.
 - [Companies table](./companies.md) covers the market filters, the rows, the logos and the scroll box.
-- [Charts](./charts.md) covers the ten home page charts: drawing, the periodic table detail, head to head and `#v-<id>` links.
+- [Charts](./charts.md) covers the three home page charts: drawing, head to head and `#v-<id>` links.

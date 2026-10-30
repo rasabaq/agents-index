@@ -17,8 +17,6 @@
 
 /* each chart is a glass window: a title bar (inverted chip, mono path), the head, then the chart itself */
 .view { padding-top: 32px; }
-/* a group head (.sec-lead in index.html) sits as close to its first chart as a home section head to its panel */
-.sec-lead + .view { padding-top: 0; }
 /* the same glass, edge and corner as the console window (.term), since the map sits right above it */
 .view-win { background: rgba(10, 10, 18, 0.72); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 14px; box-shadow: var(--shadow); }
 .view-bar { display: flex; align-items: center; gap: 12px; height: 36px; padding-right: 14px; border-bottom: 1px solid var(--line); font: 400 11px/1 var(--mono); color: var(--muted); white-space: nowrap; }
