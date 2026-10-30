@@ -1,4 +1,4 @@
-import { STATUSES, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
+import { STATUSES, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, companiesFor, BUSINESS_GROUPS, readHash, writeHash } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS, errandIn, findStep } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { data } from './data.js';
@@ -56,33 +56,12 @@ const ordinal = (n) => `${n}${['th', 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 <
 // Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
 // Cells may not have one yet.
 const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
-// "For businesses": can a business sell through AI agents here, and who does it sign up with?
-const bizStatus = {
-  live: 'Works here today.',
-  limited: 'Only a pilot, beta or a few businesses so far.',
-  announced: 'Announced here, not usable yet.',
-  none: 'Not available here yet.',
-};
+// "For businesses": can a business sell through AI agents here? Counts the ways in BUSINESS_GROUPS.
 function businessVerdict(r) {
-  const items = forBusiness(categories, r.code).flatMap((g) => g.items);
-  const live = items.filter((x) => x.cell.status === 'live');
+  const items = BUSINESS_GROUPS.flatMap((g) => g.items).filter(({ id }) => capIndex[id]).map(({ id }) => capIndex[id].countries[r.code]);
+  const live = items.filter((cell) => cell.status === 'live');
   if (!live.length) return `In ${where(r)}, a business cannot yet sell through AI agents: none of the ${items.length} ways we track works here today.`;
   return `In ${where(r)}, ${live.length === items.length ? 'every one' : `${live.length}`} of the ${items.length} ways we track for a business to sell through AI agents and get paid ${live.length === 1 ? 'works' : 'work'} today.`;
-}
-function renderBusiness(r) {
-  const row = ({ cap, label, cell, companies: cos }) => {
-    // One line on why: the gap reason when the cell has one, else the status in plain words.
-    const reason = cell.status === 'live' ? null : gapLabel(cell.gapReason);
-    // Companies are listed by their markets for the whole category, not per capability, so a Not yet item shows no
-    // company line: it could name companies that do not offer this capability here.
-    const links = cos.map((co) => `<a href="${esc(co.homepage ?? co.url)}" target="_blank" rel="noopener noreferrer">${esc(co.name)}</a>`).join(', ');
-    return `<li>
-      <button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(label)}<small>${reason ? `${esc(reason)}.` : bizStatus[cell.status]}</small></span></button>
-      ${cos.length && cell.status !== 'none' ? `<p class="biz-cos">${cell.status === 'live' ? 'Sign up with' : 'Active here'}: ${links}</p>` : ''}</li>`;
-  };
-  return forBusiness(categories, r.code).map((g) => `
-    <section class="card kpi mc-list biz-group" aria-label="${esc(g.title)}"><h3 class="label">${esc(g.title)} · ${g.items.filter((x) => x.cell.status === 'live').length} of ${g.items.length} live</h3>
-      <ul>${g.items.map(row).join('')}</ul></section>`).join('');
 }
 
 // Live cells per category, for the verdict: a category with one live cell is something agents "can" do.
@@ -106,7 +85,7 @@ function renderLegend() {
     + `<span>${dot({ status: 'live', confidence: 'low' })}Unsure (thin sources)</span>`;
 }
 
-// The selected country: its head, then its errands (or, for businesses, the business cards).
+// The selected country: its head, then its errands, for people or for businesses.
 function renderCountry() {
   const r = byCode[state.country];
   const mine = cells.filter((x) => x.code === r.code);
@@ -132,7 +111,7 @@ function renderCountry() {
       <button type="button" class="btn btn-sm" data-sources>${nSources} sources</button>
     </div>`;
 
-  $('[data-kpis]').innerHTML = state.view === 'business' ? renderBusiness(r) : renderErrands(r);
+  $('[data-kpis]').innerHTML = renderErrands(r);
   renderCountryRest();
 }
 
@@ -276,10 +255,14 @@ function openDetail(capId, code) {
   const cap = capIndex[capId];
   const cell = cap.countries[code];
   const ev = cell.evidence ?? [];
+  const catCos = categories.find((c) => c.category === cap.category).companies;
   // Companies already live nearby that could bring a missing capability here.
-  const cos = cell.status === 'live' ? [] : couldClose(categories.find((c) => c.category === cap.category).companies, cap.id, code, region).slice(0, 3);
+  const cos = cell.status === 'live' ? [] : couldClose(catCos, cap.id, code, region).slice(0, 3);
+  // Who to sign up with. Not on a Not yet cell: a company's markets cover its whole category, so it could name one
+  // that does not offer this capability here.
+  const here = cell.status === 'none' ? [] : companiesFor(catCos, cap.id, code);
   const at = findStep(errandList(), capId);
-  const liveIn = meta.countries.map((c) => c.code).filter((c) => c !== code && cap.countries[c].status === 'live');
+  const liveIn = ranking.map((x) => x.code).filter((c) => c !== code && cap.countries[c].status === 'live');
   showDetail(`
     <p class="kicker">${esc(catName(cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
@@ -288,6 +271,7 @@ function openDetail(capId, code) {
     <div class="d-facts">
       ${at ? `<p>In <b>${esc(at.errand.title)}</b>, step ${at.index + 1}: “${esc(at.errand.labels[capId])}”.</p>` : ''}
       <p>${liveIn.length ? `Live in: ${liveIn.map((c) => `${flag(c)}${c}`).join(' ')}` : 'Not live in any other country yet.'}</p>
+      ${here.length ? `<p>${cell.status === 'live' ? 'Sign up with' : 'Active here'}: ${here.map((co) => `<a href="${esc(co.homepage ?? co.url)}" target="_blank" rel="noopener noreferrer">${esc(co.name)}</a>`).join(', ')}</p>` : ''}
       ${cos.length ? `<p class="detail-close">Could close the gap: ${cos.map((co) => `${esc(co.name)} (already in ${co.near.map((m) => `${flag(m)}${m}`).join(' ')})`).join(', ')}</p>` : ''}
     </div>
     <h4>${ev.length ? `Sources (${ev.length})` : 'Sources'}</h4>

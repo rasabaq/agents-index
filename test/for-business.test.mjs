@@ -1,32 +1,19 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { forBusiness, BUSINESS_GROUPS, marketsFor, validate } from '../src/observatory.js';
+import { companiesFor, BUSINESS_GROUPS, marketsFor, validate } from '../src/observatory.js';
 
 const cell = (status) => ({ status, note: 'n' });
-const categories = [
-  { category: 'commerce', capabilities: [
-    { id: 'commerce.merchant-protocol', name: 'Merchants sell', countries: { MX: cell('limited'), US: cell('live') } },
-    { id: 'commerce.other', name: 'Not for business', countries: { MX: cell('live') } },
-  ], companies: [
+
+test('for businesses: the companies that work in this country for a capability, merged by name, A to Z', () => {
+  const companies = [
     { name: 'Shopify', markets: ['US', 'MX'], capabilities: ['commerce.merchant-protocol'] },
     { name: 'Stripe', markets: ['US'], capabilities: ['commerce.merchant-protocol'] },
     { name: 'Shopify', markets: ['MX'], capabilities: ['commerce.merchant-protocol'] },
-  ] },
-  { category: 'messaging', capabilities: [
-    { id: 'messaging.business-ai-agent', name: 'Chat agent', countries: { MX: cell('live') } },
-  ], companies: [{ name: 'Meta', markets: ['MX'], capabilities: ['messaging.business-ai-agent'] }] },
-];
-
-test('for businesses: only the business capabilities, grouped, with the companies that work in this country', () => {
-  const groups = forBusiness(categories, 'MX');
-  assert.deepEqual(groups.map((g) => [g.title, g.items.map((x) => x.cap.id)]), [
-    ['Sell through AI agents', ['commerce.merchant-protocol']],
-    ['Sell in chat apps', ['messaging.business-ai-agent']],
-  ]);
-  assert.deepEqual(groups[0].items[0].companies.map((c) => c.name), ['Shopify']);
-  assert.equal(groups[0].items[0].cell.status, 'limited');
-  assert.equal(groups[0].items[0].label, 'AI agents can buy from your online store');
-  assert.deepEqual(forBusiness(categories, 'US')[0].items[0].companies.map((c) => c.name), ['Shopify', 'Stripe']);
+    { name: 'Other', markets: ['MX'], capabilities: ['commerce.other'] },
+  ];
+  assert.deepEqual(companiesFor(companies, 'commerce.merchant-protocol', 'MX').map((c) => c.name), ['Shopify']);
+  assert.deepEqual(companiesFor(companies, 'commerce.merchant-protocol', 'US').map((c) => c.name), ['Shopify', 'Stripe']);
+  assert.deepEqual(companiesFor(undefined, 'commerce.merchant-protocol', 'US'), []);
 });
 
 test('marketsByCapability narrows a company to fewer markets for one capability', () => {
@@ -39,7 +26,7 @@ test('marketsByCapability narrows a company to fewer markets for one capability'
   const co = data[0].companies[0];
   assert.deepEqual(marketsFor(co, 'messaging.pay-in-chat'), ['BR']);
   assert.deepEqual(marketsFor(co, 'messaging.business-ai-agent'), ['BR', 'US']);
-  const names = (code) => forBusiness(data, code)[0].items.map((x) => [x.cap.id, x.companies.map((c) => c.name)]);
+  const names = (code) => data[0].capabilities.map((cap) => [cap.id, companiesFor(data[0].companies, cap.id, code).map((c) => c.name)]);
   assert.deepEqual(names('US'), [['messaging.business-ai-agent', ['Meta']], ['messaging.pay-in-chat', []]]);
   assert.deepEqual(names('BR'), [['messaging.business-ai-agent', ['Meta']], ['messaging.pay-in-chat', ['Meta']]]);
   assert.deepEqual(validate(meta, data), []);

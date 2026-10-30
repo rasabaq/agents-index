@@ -51,24 +51,10 @@
 .cn-lede { margin: 10px 0 0; font-size: 14.5px; color: var(--ink-2); }
 .cn-r { display: flex; flex-wrap: wrap; gap: 8px; }
 
-.kpi { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px 16px; }
-.kpi p { margin: 0; }
 .cn-verdict { max-width: 62ch; font-size: 17px; line-height: 1.5; color: var(--ink); text-wrap: pretty; }
 .mc-note { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
-/* the chip column is as wide as the widest chip in that list (subgrid), so short lists have no wide gap */
-.mc-list ul { display: grid; grid-template-columns: max-content minmax(0, 1fr); margin: 0; padding: 0; list-style: none; }
-.mc-list li, .mc-list li > button { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; }
-.mc-list li + li { border-top: 1px solid rgba(255, 255, 255, 0.055); }
-.mc-list li > button { align-items: start; column-gap: 12px; width: calc(100% + 12px); margin: 0 -6px; padding: 8px 6px; border: 0; border-radius: 7px; background: none; color: var(--ink); font: 400 13.5px/1.35 var(--font); text-align: left; cursor: pointer; }
-.mc-list li > button:hover { background: rgba(255, 255, 255, 0.04); }
-.mc-list .chip { justify-self: start; margin-top: -1px; }
-.mc-t small { display: block; margin-top: 3px; font-size: 12px; line-height: 1.4; color: var(--ink-2); }
 /* For people / For businesses */
 .cn-view { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-.kpis:has(.biz-group) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.biz-group li { grid-template-rows: auto auto; }
-.biz-group .biz-cos { grid-column: 2; margin: -2px 0 8px 6px; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
-.biz-group .biz-cos a { color: var(--ink-2); }
 
 /* ---------- errands: a key, the errand cards, the open errand as a chain of steps, then that errand country by
    country (app.js renderErrands). Each step is one capability; its button opens the cell detail. ---------- */
@@ -161,6 +147,7 @@
 .detail .d-facts p { margin: 0; color: var(--ink-2); }
 .d-facts b { font-weight: 500; color: var(--ink); }
 .d-facts .flag { margin: 0 2px 0 0; }
+.d-facts a { color: var(--ink-2); }
 @media (max-width: 1100px) {
   .xc ul { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
@@ -314,11 +301,7 @@
 .foot-site > p:first-child a { color: var(--ink-2); }
 
 /* ---------- smaller screens ---------- */
-@media (max-width: 1100px) {
-  .kpis:has(.biz-group) { grid-template-columns: minmax(0, 1fr); }
-}
 @media (max-width: 760px) {
-  .kpis:has(.biz-group) { grid-template-columns: minmax(0, 1fr); }
   .cn-verdict { font-size: 15.5px; }
   .term { width: calc(100% - 24px); margin-top: -200px; }
   .term-date { display: none; }
