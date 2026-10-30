@@ -18,7 +18,9 @@ test('the flag font subset covers every flag in the data', () => {
     }
     for (const r of data.repos ?? []) if (r.origin) codes.add(r.origin);
   }
-  const text = decodeURIComponent(read('index.html').match(/family=Noto\+Color\+Emoji&text=([^&"]+)/)[1]);
-  const missing = [...codes].filter((c) => !text.includes(flag(c)));
-  assert.deepEqual(missing, [], `index.html flag subset is missing ${missing.join(', ')}`);
+  for (const page of ['index.html', 'companies.html']) {
+    const text = decodeURIComponent(read(page).match(/family=Noto\+Color\+Emoji&text=([^&"]+)/)[1]);
+    const missing = [...codes].filter((c) => !text.includes(flag(c)));
+    assert.deepEqual(missing, [], `${page} flag subset is missing ${missing.join(', ')}`);
+  }
 });

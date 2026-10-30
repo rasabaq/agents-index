@@ -18,11 +18,7 @@ In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile
 | | |
 | --- | --- |
 | [![World map with each tracked country and its score](docs/images/map.png)](https://agentindex.art/#v-map) | [![Country view for the United States: score, what works today and what does not yet](docs/images/console.png)](https://agentindex.art/#country=US) |
-| **World map.** Where agents can act today. A brighter country has a higher score. | **Country view.** What works today, what does not yet, and why. Every cell links to its sources. |
-
-[![Periodic table of agent capabilities, one tile per capability](docs/images/periodic.png)](https://agentindex.art)
-
-**Periodic table.** Each tile is one capability. The big number counts the countries where it is live.
+| **World map.** Where agents can act today. A brighter country has a higher score. | **Country view.** How many things work today, the five that do and the five that do not yet, and four theme scores. Every item links to its sources. |
 
 ## How it works
 
@@ -56,10 +52,12 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `docs/methodology.md` | How the data is collected and scored |
-| `index.html` | The page, top to bottom: the hero, the world map, the console (country view, status matrix, ranking, categories, newest sources), the numbers band, the Compare countries charts, Companies (with the flows and network charts), Open source, the timeline and Method |
-| `app.js`, `hero.js`, `sections.js` | The console, the hero, and the numbers band |
-| `charts/charts.js`, `charts/viz-*.js` | The ten charts: `charts.js` loads the data once and draws each chart into its `<section data-chart="<id>">` slot in `index.html` |
-| `styles.css`, `console.css`, `hero.css`, `sections.css`, `charts/charts.css` | Shared tokens, then the home page parts and the chart windows |
+| `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, themes, then the matrix, closed), Compare two countries, Who builds it, and one line on the method |
+| `companies.html` | The companies table, the flows chart and the open-source table |
+| `app.js`, `hero.js`, `lists.js` | The console, the hero, and the companies page tables |
+| `data.js`, `ui.js` | The data, fetched once per page, and the small helpers both pages share |
+| `charts/charts.js`, `charts/viz-*.js` | The three charts (map, compare, flows): `charts.js` draws each chart into its `<section data-chart="<id>">` slot in `index.html` or `companies.html` |
+| `styles.css`, `console.css`, `hero.css`, `charts/charts.css` | Shared tokens, then the home page parts and the chart windows |
 | `scripts/` | Data checks and refresh scripts run by `npm` |
 | `test/` | Node tests for scoring, validation and the data |
 

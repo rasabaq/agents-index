@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05060b">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Companies and open source · Agent Index</title>
+  <meta name="description" content="The companies that make AI agents work in each country, and the open-source tools agents are built on.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&family=Jersey+10&display=swap" rel="stylesheet">
+  <!-- Flag font, subset to every flag the data uses (tracked countries, company HQs and markets, repo origins). tests check it stays complete. -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=%F0%9F%87%A6%F0%9F%87%AA%F0%9F%87%A6%F0%9F%87%B7%F0%9F%87%A6%F0%9F%87%B9%F0%9F%87%A7%F0%9F%87%B7%F0%9F%87%A8%F0%9F%87%A6%F0%9F%87%A8%F0%9F%87%B1%F0%9F%87%A8%F0%9F%87%B3%F0%9F%87%A8%F0%9F%87%B4%F0%9F%87%A9%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%AA%F0%9F%87%B8%F0%9F%87%AB%F0%9F%87%B7%F0%9F%87%AC%F0%9F%87%A7%F0%9F%87%AE%F0%9F%87%B3%F0%9F%87%B2%F0%9F%87%BD%F0%9F%87%B3%F0%9F%87%B1%F0%9F%87%B8%F0%9F%87%AA%F0%9F%87%BA%F0%9F%87%B8%F0%9F%87%AC%F0%9F%87%B7&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="console.css">
+  <link rel="stylesheet" href="charts/charts.css">
+  <script type="module" src="lists.js"></script>
+  <!-- The flows chart: d3 and the chart script are deferred, then charts.js mounts it. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script defer src="charts/viz-flows.js"></script>
+  <script type="module" src="charts/charts.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Agent Index, home">
+        <svg viewBox="0 -1 9 9" aria-hidden="true"><circle cx="3.5" cy="0.5" r=".42" class="brand-edge"/><circle cx="4.5" cy="0.5" r=".42" class="brand-edge"/><circle cx="5.5" cy="0.5" r=".42" class="brand-edge"/><circle cx="3" cy="1.5" r=".42" class="brand-edge"/><circle cx="4" cy="1.5" r=".42"/><circle cx="5" cy="1.5" r=".42"/><circle cx="6" cy="1.5" r=".42"/><circle cx="2.5" cy="2.5" r=".42" class="brand-edge"/><circle cx="3.5" cy="2.5" r=".42"/><circle cx="5.5" cy="2.5" r=".42"/><circle cx="6.5" cy="2.5" r=".42"/><circle cx="2" cy="3.5" r=".42" class="brand-edge"/><circle cx="3" cy="3.5" r=".42"/><circle cx="6" cy="3.5" r=".42"/><circle cx="7" cy="3.5" r=".42"/><circle cx="1.5" cy="4.5" r=".42" class="brand-edge"/><circle cx="2.5" cy="4.5" r=".42" class="brand-bar"/><circle cx="3.5" cy="4.5" r=".42" class="brand-bar"/><circle cx="4.5" cy="4.5" r=".42" class="brand-bar"/><circle cx="5.5" cy="4.5" r=".42" class="brand-bar"/><circle cx="6.5" cy="4.5" r=".42" class="brand-bar"/><circle cx="7.5" cy="4.5" r=".42" class="brand-bar"/><circle cx="1" cy="5.5" r=".42" class="brand-edge"/><circle cx="2" cy="5.5" r=".42"/><circle cx="7" cy="5.5" r=".42"/><circle cx="8" cy="5.5" r=".42"/><circle cx="0.5" cy="6.5" r=".42" class="brand-edge"/><circle cx="1.5" cy="6.5" r=".42"/><circle cx="7.5" cy="6.5" r=".42"/><circle cx="8.5" cy="6.5" r=".42"/></svg>
+        <span>Agent Index</span>
+      </a>
+      <button type="button" class="nav-menu" aria-expanded="false" aria-controls="site-nav" data-nav-menu>Menu</button>
+      <nav id="site-nav" aria-label="Sections">
+        <a href="./#country">Your country</a>
+        <a href="./#v-compare">Compare</a>
+        <a href="#companies" aria-current="page">Companies</a>
+        <a href="#opensource">Open source</a>
+        <a href="./#method">Method</a>
+      </nav>
+      <a class="nav-gh" href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer" aria-label="Contribute on GitHub" title="Contribute on GitHub">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="companies" class="wrap sec">
+      <div class="sec-h">
+        <div>
+          <p class="label" data-companies-label>Companies</p>
+          <h1>Who makes it possible.</h1>
+        </div>
+        <p class="sec-note"><a href="./">Back to the countries</a></p>
+      </div>
+      <div class="card panel co-panel">
+        <div class="filters" role="group" aria-label="Filter companies by country" data-company-filters></div>
+        <div class="table-wrap">
+          <table class="table companies" data-companies></table>
+        </div>
+        <div class="more-row" data-companies-more></div>
+      </div>
+    </section>
+
+    <section data-chart="flows"></section>
+
+    <section id="opensource" class="wrap sec">
+      <div class="sec-h">
+        <div>
+          <p class="label" data-repos-label>Open source</p>
+          <h2>What agents are built on.</h2>
+        </div>
+        <p class="sec-note">Free projects anyone can build an agent on, without asking a company.</p>
+      </div>
+      <div class="card panel co-panel">
+        <div class="filters" role="group" aria-label="Filter repos by real use" data-repo-filters></div>
+        <div class="table-wrap">
+          <table class="table repos" data-repos></table>
+        </div>
+        <div class="more-row" data-repos-more></div>
+        <p class="note repo-note">Sorted by downloads, not GitHub stars, because downloads show real use. <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md#open-source-what-is-really-used" class="nowrap" target="_blank" rel="noopener noreferrer">How we measure</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot foot-site">
+    <p>Agent Index, made by <a class="nowrap" href="https://ramonsanchez.xyz/" target="_blank" rel="noopener noreferrer">Ramon Sanchez</a>. Availability changes fast. A cell says what was true on <span data-asof></span>.</p>
+    <p class="foot-links"><a class="foot-ask" href="https://github.com/rasabaq/agents-index/issues/new?template=add-country.yml" target="_blank" rel="noopener noreferrer">Your country is not here? Request it</a><a href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/agents-index/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
+  </footer>
+
+  <div class="tip chart-tip" role="tooltip" data-chart-tip hidden></div>
+</body>
+</html>

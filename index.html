@@ -18,21 +18,11 @@
   <link rel="stylesheet" href="console.css">
   <script type="module" src="hero.js"></script>
   <script type="module" src="app.js"></script>
-  <link rel="stylesheet" href="sections.css">
-  <script type="module" src="sections.js"></script>
   <link rel="stylesheet" href="charts/charts.css">
   <!-- Charts draw after the page above them: d3 and every chart script are deferred, then charts.js mounts them. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
   <script defer src="charts/viz-map.js"></script>
-  <script defer src="charts/viz-periodic.js"></script>
   <script defer src="charts/viz-compare.js"></script>
-  <script defer src="charts/viz-radar.js"></script>
-  <script defer src="charts/viz-gap.js"></script>
-  <script defer src="charts/viz-range.js"></script>
-  <script defer src="charts/viz-bump.js"></script>
-  <script defer src="charts/viz-flows.js"></script>
-  <script defer src="charts/viz-network.js"></script>
-  <script defer src="charts/viz-timeline.js"></script>
   <script type="module" src="charts/charts.js"></script>
 </head>
 <body>
@@ -45,10 +35,9 @@
       <button type="button" class="nav-menu" aria-expanded="false" aria-controls="site-nav" data-nav-menu>Menu</button>
       <nav id="site-nav" aria-label="Sections">
         <a href="#v-map">Map</a>
-        <a href="#country">Countries</a>
-        <a href="#compare">Compare</a>
-        <a href="#companies">Companies</a>
-        <a href="#opensource">Open source</a>
+        <a href="#country">Your country</a>
+        <a href="#v-compare">Compare</a>
+        <a href="#builders">Who builds it</a>
         <a href="#method">Method</a>
       </nav>
       <a class="nav-gh" href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer" aria-label="Contribute on GitHub" title="Contribute on GitHub">
@@ -83,176 +72,48 @@
 
     <section data-chart="map"></section>
 
-    <!-- The data product: one terminal window over the bottom of the hero. A country list on the left,
-         the selected country on the right, then the matrix, the ranking, the categories and the newest sources. -->
+    <!-- The data product: one window under the map. The selected country (its head, the country picker, what works,
+         what does not yet and the four themes), then every task in every country, closed until asked for. -->
     <div class="term" data-term>
       <div class="term-bar">
         <span class="term-app"><i aria-hidden="true"></i>Agent Index</span>
-        <span class="term-path">countries / <b data-term-country></b></span>
         <span class="term-fill" aria-hidden="true"></span>
         <span class="term-date"><i aria-hidden="true"></i>Data <span data-asof-iso></span></span>
       </div>
-      <div class="term-tabs">
-        <nav aria-label="Dashboard" data-tabs>
-          <a href="#ranking" aria-keyshortcuts="1"><span>1</span>Ranking</a>
-          <a href="#matrix" aria-keyshortcuts="2"><span>2</span>Matrix</a>
-          <a href="#country" aria-keyshortcuts="3" aria-current="location"><span>3</span>Countries</a>
-          <a href="#companies" aria-keyshortcuts="4"><span>4</span>Companies</a>
-          <a href="#evidence" aria-keyshortcuts="5"><span>5</span>Sources</a>
-          <a href="#opensource" aria-keyshortcuts="6"><span>6</span>Open source</a>
-        </nav>
-        <p class="term-sel" data-term-sel></p>
-      </div>
-      <div class="term-body">
-        <aside class="term-side" aria-label="Countries by score">
-          <p class="label">Tier · score</p>
-          <ul class="clist" data-clist></ul>
-        </aside>
-        <div class="term-main">
-          <section id="country" class="cn" aria-labelledby="cn-title" data-country></section>
-          <div class="kpis" data-kpis></div>
-          <div class="panels">
-            <section id="matrix" class="card panel panel-mx" aria-labelledby="mx-title">
-              <header><h2 id="mx-title">Status matrix</h2><span class="label" data-mx-count></span></header>
-              <p class="mx-legend" data-legend></p>
-              <div class="mx" role="table" aria-labelledby="mx-title" data-matrix></div>
-            </section>
-            <div class="panels-r">
-              <section id="ranking" class="card panel" aria-labelledby="rk-title">
-                <header><h2 id="rk-title">Ranking</h2><span class="label" data-rk-count>Score 0–100 · tier</span></header>
-                <ol class="rank" data-ranking></ol>
-                <p class="note" data-points></p>
-              </section>
-              <section class="card panel" aria-labelledby="cat-title">
-                <header><h2 id="cat-title" data-cats-title>By category</h2><span class="label">0–100</span></header>
-                <ul class="cats" data-cats></ul>
-                <p class="note" data-cats-note></p>
-              </section>
-              <section id="evidence" class="card panel" aria-labelledby="ev-title">
-                <header><h2 id="ev-title">Newest evidence</h2><span class="tag" data-feed-count></span></header>
-                <ul class="feed" data-feed></ul>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="term-keys">
-        <span><kbd>1</kbd>–<kbd>6</kbd>jump to a panel</span>
-        <span><kbd>J</kbd><kbd>K</kbd>next or previous country</span>
-        <span><kbd>Esc</kbd>close details</span>
-        <span class="label" data-term-count></span>
-      </p>
-    </div>
-
-    <section class="band" aria-labelledby="band-title" data-sections>
-      <header class="band-h">
-        <p class="kicker">The dataset · as of <span data-asof></span></p>
-        <h2 id="band-title">Counted <span class="tape">cell by cell.</span></h2>
-      </header>
-      <div class="nums" data-nums><canvas class="nums-cv" aria-hidden="true"></canvas></div>
-    </section>
-
-    <div id="compare" class="wrap sec sec-lead">
-      <div class="sec-h">
-        <div>
-          <p class="label">Compare countries</p>
-          <h2>How the countries compare. <span class="dim">One table first, then every rank.</span></h2>
-        </div>
-        <p class="sec-note">Six charts, from the simplest to the richest.</p>
+      <div class="term-main">
+        <section id="country" class="cn" aria-labelledby="cn-title" data-country></section>
+        <div id="ranking" class="clist" role="group" aria-label="Countries by score" data-clist></div>
+        <div class="kpis" data-kpis></div>
+        <details id="matrix" class="card panel panel-mx">
+          <summary><h2 id="mx-title">Every task in every country</h2><span class="label" data-mx-count></span></summary>
+          <p class="mx-legend" data-legend></p>
+          <div class="mx" role="table" aria-labelledby="mx-title" data-matrix></div>
+        </details>
       </div>
     </div>
-    <section data-chart="periodic"></section>
+
     <section data-chart="compare"></section>
-    <section data-chart="radar"></section>
-    <section data-chart="gap"></section>
-    <section data-chart="range"></section>
-    <section data-chart="bump"></section>
 
-    <section id="companies" class="wrap sec">
+    <!-- Who builds it, for the selected country (app.js). The full tables live on companies.html. -->
+    <section id="builders" class="wrap sec">
       <div class="sec-h">
         <div>
-          <p class="label" data-companies-label>Companies</p>
-          <h2>Who makes it possible. <span class="dim">Based where, live where.</span></h2>
+          <p class="label">Who builds it</p>
+          <h2 data-who-title>Who makes it work.</h2>
         </div>
       </div>
-      <div class="card panel co-panel">
-        <div class="filters" role="group" aria-label="Filter companies by market" data-company-filters></div>
-        <div class="table-wrap">
-          <table class="table companies" data-companies></table>
-        </div>
-        <div class="more-row" data-companies-more></div>
-      </div>
+      <div class="card panel who" data-who></div>
     </section>
 
-    <section data-chart="flows"></section>
-    <section data-chart="network"></section>
-
-    <section id="opensource" class="wrap sec">
-      <div class="sec-h">
-        <div>
-          <p class="label" data-repos-label>Open source</p>
-          <h2>What agents are built on. <span class="dim">Really used, or only starred.</span></h2>
-        </div>
-        <p class="sec-note">Free projects anyone can build an agent on, without asking a company.</p>
-      </div>
-      <div class="card panel co-panel">
-        <div class="filters" role="group" aria-label="Filter repos by real use" data-repo-filters></div>
-        <div class="table-wrap">
-          <table class="table repos" data-repos></table>
-        </div>
-        <div class="more-row" data-repos-more></div>
-        <p class="note repo-note">Stars measure attention. Installs measure use. So we sort repos by npm, PyPI and Packagist installs a month and Docker Hub pulls, not by stars. <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md#open-source-what-is-really-used" class="nowrap" target="_blank" rel="noopener noreferrer">How we tier repos</a></p>
-      </div>
-    </section>
-
-    <div id="origins" class="wrap sec sec-lead">
-      <div class="sec-h">
-        <div>
-          <p class="label">Where it comes from</p>
-          <h2>Built on dated sources. <span class="dim">When they appeared, how we score.</span></h2>
-        </div>
-      </div>
-    </div>
-    <section data-chart="timeline"></section>
-
-    <section id="method" class="wrap sec">
-      <div class="sec-h sec-h-c">
-        <p class="label">Method</p>
-        <h2>Every status cites a source. <span class="dim">Thin evidence looks thin.</span></h2>
-      </div>
-      <div class="fcards">
-        <article class="fc">
-          <div class="crop" aria-hidden="true"><div class="crop-in glass" data-crop-row></div></div>
-          <div class="fc-tx">
-            <h3 data-method-cells>One matrix</h3>
-            <p>Each cell takes the best status across all products, and links to its sources. We read two kinds of source: research and regulation, and what companies actually ship.</p>
-          </div>
-        </article>
-        <article class="fc">
-          <div class="crop" aria-hidden="true"><div class="crop-in glass">
-            <p class="label">Sure · Low confidence</p>
-            <div class="pairs" data-crop-pairs></div>
-          </div></div>
-          <div class="fc-tx">
-            <h3>Doubt is drawn, not hidden</h3>
-            <p><span data-method-low></span> When the sources are unclear, a cell takes the lower status.</p>
-          </div>
-        </article>
-        <article class="fc">
-          <div class="crop" aria-hidden="true"><div class="crop-in glass cterm" data-crop-term></div></div>
-          <div class="fc-tx">
-            <h3>Every category weighs the same</h3>
-            <p>A category scores the mean of its cells' points. A country scores the mean of its categories. Live, Limited and Announced cells must cite a source, or the build fails.</p>
-          </div>
-        </article>
-      </div>
+    <section id="method" class="wrap sec trust">
+      <p class="trust-t">Every answer links to a source. Unsure answers are marked with a <b>?</b></p>
+      <p class="trust-n"><span data-trust-count></span> · <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">How we score</a></p>
     </section>
   </main>
 
   <footer class="wrap foot foot-site">
     <p>Agent Index, made by <a class="nowrap" href="https://ramonsanchez.xyz/" target="_blank" rel="noopener noreferrer">Ramon Sanchez</a>. Availability changes fast. A cell says what was true on <span data-asof></span>.</p>
-    <p data-foot-count></p>
-    <p class="foot-links"><a href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/agents-index/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
+    <p class="foot-links"><a class="foot-ask" href="https://github.com/rasabaq/agents-index/issues/new?template=add-country.yml" target="_blank" rel="noopener noreferrer">Your country is not here? Request it</a><a href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/agents-index/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
   </footer>
 
   <dialog class="detail" data-detail aria-labelledby="detail-title">
