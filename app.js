@@ -1,12 +1,13 @@
-import { STATUSES, scoreCountries, mergeCompanies, extremes, shortName, themeScores, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
+import { STATUSES, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, forBusiness, readHash, writeHash } from './src/observatory.js';
+import { ERRANDS, BUSINESS_ERRANDS, errandIn, findStep } from './src/errands.js';
+import { pix } from './src/icons.js';
 import { data } from './data.js';
 import { $, esc, flag, logo, wireLogos, wireNav } from './ui.js';
 
 const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
-const state = { view: 'people', country: null, allWorks: false, allNot: false };
-// The country's two lists show this many items until Show all is pressed.
-const FIRST_ITEMS = 5;
+// errand: the open errand's id; null opens the view's first one.
+const state = { view: 'people', country: null, errand: null };
 const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 let meta, categories, ranking, byCode, capIndex, companies, cells, region;
 
@@ -21,6 +22,7 @@ function init() {
   region = Object.fromEntries(meta.countries.map((c) => [c.code, c.region]));
   const codes = meta.countries.map((c) => c.code);
   state.view = readHash(location.hash).view;
+  state.errand = pickErrand(readHash(location.hash).errand);
   state.country = startCountry(codes, location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
   // The visitor's own country, when time zone or language tells us; the head says "Your country" only for it.
   state.own = guessCountry(codes, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
@@ -48,6 +50,8 @@ const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : 
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', unsure' : ''}`;
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
 const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
+// "the United States", "Chile": a country's name inside a sentence.
+const where = (r) => `${/^United /.test(r.name) ? 'the ' : ''}${r.name}`;
 const ordinal = (n) => `${n}${['th', 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] ?? 'th'}`;
 // Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
 // Cells may not have one yet.
@@ -62,9 +66,8 @@ const bizStatus = {
 function businessVerdict(r) {
   const items = forBusiness(categories, r.code).flatMap((g) => g.items);
   const live = items.filter((x) => x.cell.status === 'live');
-  const where = `${/^United /.test(r.name) ? 'the ' : ''}${r.name}`;
-  if (!live.length) return `In ${where}, a business cannot yet sell through AI agents: none of the ${items.length} ways we track works here today.`;
-  return `In ${where}, ${live.length === items.length ? 'every one' : `${live.length}`} of the ${items.length} ways we track for a business to sell through AI agents and get paid ${live.length === 1 ? 'works' : 'work'} today.`;
+  if (!live.length) return `In ${where(r)}, a business cannot yet sell through AI agents: none of the ${items.length} ways we track works here today.`;
+  return `In ${where(r)}, ${live.length === items.length ? 'every one' : `${live.length}`} of the ${items.length} ways we track for a business to sell through AI agents and get paid ${live.length === 1 ? 'works' : 'work'} today.`;
 }
 function renderBusiness(r) {
   const row = ({ cap, label, cell, companies: cos }) => {
@@ -103,7 +106,7 @@ function renderLegend() {
     + `<span>${dot({ status: 'live', confidence: 'low' })}Unsure (thin sources)</span>`;
 }
 
-// The selected country: its head, then what works, what does not yet and the four themes.
+// The selected country: its head, then its errands (or, for businesses, the business cards).
 function renderCountry() {
   const r = byCode[state.country];
   const mine = cells.filter((x) => x.code === r.code);
@@ -123,37 +126,84 @@ function renderCountry() {
       <p class="cn-lede cn-verdict">${esc(state.view === 'business' ? businessVerdict(r) : verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
       <div class="cn-view" role="group" aria-label="Show the country for">${[['people', 'For people'], ['business', 'For businesses']].map(([v, l]) => `<button type="button" class="pill" data-view="${v}" aria-pressed="${state.view === v}">${l}</button>`).join('')}</div>
     </div>
+    <span data-fingerprint></span>
     <div class="cn-r">
       <button type="button" class="btn btn-sm" data-compare="${r.code} ${other.code}">Compare with ${flag(other.code)}${other.code}</button>
       <button type="button" class="btn btn-sm" data-sources>${nSources} sources</button>
     </div>`;
 
-  if (state.view === 'business') {
-    $('[data-kpis]').innerHTML = renderBusiness(r);
-    return renderCountryRest();
-  }
-  const notYet = mine.filter((x) => x.cell.status !== 'live').sort((a, b) => STATUSES[b.cell.status].points - STATUSES[a.cell.status].points);
-  const item = ({ cap, cell }) => {
-    const reason = cell.status === 'live' ? null : gapLabel(cell.gapReason);
-    return `<li><button type="button" data-cap="${cap.id}" data-code="${r.code}" aria-label="${esc(cellLabel(cap, r.code, cell))}">
-    ${chip(cell.status, cell.confidence)}<span class="mc-t">${esc(cap.name)}${reason ? `<small>${esc(reason)}</small>` : ''}</span></button>
-    ${cell.status === 'live' ? '' : `<a class="mc-tell" href="${esc(correctionUrl(cap, r.code, cell))}" target="_blank" rel="noopener noreferrer">Seen it work here? Tell us</a>`}</li>`;
-  };
-  // The first few items, then a button for the rest.
-  const list = (rows, all, key) => `<ul>${(all ? rows : rows.slice(0, FIRST_ITEMS)).map(item).join('')}</ul>
-    ${rows.length > FIRST_ITEMS ? `<button type="button" class="pill mc-more" data-more="${key}" aria-expanded="${all}">${all ? 'Show fewer' : `Show all ${rows.length}`}</button>` : ''}`;
-  const { weak } = extremes(r.byCategory);
-  $('[data-kpis]').innerHTML = `
-    <section class="card kpi mc-list" aria-labelledby="mc-works"><h3 id="mc-works" class="label">Works today · ${works.length} of ${total}</h3>
-      ${works.length ? list(works, state.allWorks, 'works') : '<p class="mc-note">Nothing is generally available yet.</p>'}</section>
-    <section class="card kpi mc-list" aria-labelledby="mc-not"><h3 id="mc-not" class="label">Not yet · ${notYet.length} of ${total}</h3>
-      ${notYet.length ? list(notYet, state.allNot, 'not') : '<p class="mc-note">Everything we track works here.</p>'}</section>
-    <section class="card kpi" aria-labelledby="mc-themes"><h3 id="mc-themes" class="label">By theme · out of 100</h3>
-      <ul class="cats">${themeScores(meta.themes, r.byCategory).map((t) => `
-        <li title="${esc(t.categories.map(catName).join(', '))}"><span class="cat-n">${esc(t.name)}</span><span class="bars"><b style="width:${t.score}%"></b></span><span class="rk-v">${t.score}</span></li>`).join('')}</ul>
-      <p class="mc-note">${r.byCategory[weak] < 50 ? `${esc(shortName(weak))} is the gap: ${r.byCategory[weak]} of 100.` : `No gap below 50. The lowest is ${esc(shortName(weak).toLowerCase())}, at ${r.byCategory[weak]}.`}</p></section>`;
-
+  $('[data-kpis]').innerHTML = state.view === 'business' ? renderBusiness(r) : renderErrands(r);
   renderCountryRest();
+}
+
+// "A day with an agent": the view's errands as cards, then the open one as a chain of steps, then that errand in
+// every country. A step the agent does is Live, one it helps with is Limited; you do the rest (src/errands.js).
+const errandList = () => (state.view === 'business' ? BUSINESS_ERRANDS : ERRANDS);
+const pickErrand = (id) => (errandList().some((e) => e.id === id) ? id : null);
+const openErrand = () => errandList().find((e) => e.id === state.errand) ?? errandList()[0];
+const ROLE = { does: 'Agent does it', helps: 'Agent helps, you finish', you: 'You do it' };
+const meter = (run) => `<span class="meter" aria-hidden="true">${run.steps.map((s) => `<i class="s-${s.best.cell.status}"></i>`).join('')}</span>`;
+const countWords = (run) => `${run.does} of ${run.steps.length} steps by the agent${run.helps ? `, ${run.helps} with its help` : ''}, ${run.you} by you`;
+// The agent at the start of every chain wears the site's mark, taken from the nav.
+const AGENT = $('.brand svg').outerHTML;
+const DOWN = '<svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v10M4 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+// One soft line on the open errand: what the agent does alone, where it helps, and what is left to you.
+function headline(run, r) {
+  const { does: a, helps: h, you: y } = run, n = run.steps.length;
+  const p = `In ${esc(where(r))}, `;
+  const rest = y ? ` You do ${y === 1 ? 'the other one' : `the other ${y}`} yourself.` : '';
+  if (a === n) return `${p}an agent can do the <b>whole errand</b>: all ${n} steps.`;
+  if (a + h === 0) return `${p}you still do <b>all ${n} steps</b> yourself. No step works with an agent yet.`;
+  if (!h) return `${p}an agent does <b>${a} of the ${n} steps</b> on its own.${rest}`;
+  if (!a) return `${p}an agent <b>helps with ${h} of the ${n} steps</b>, but you finish ${h === 1 ? 'it' : 'each one'}.${rest}`;
+  return `${p}an agent does <b>${a} of the ${n} steps</b> on its own and <b>helps with ${h} more</b>, which you finish.${rest}`;
+}
+
+function renderErrands(r) {
+  const list = errandList(), open = openErrand();
+  const run = errandIn(open, capIndex, r.code), n = run.steps.length;
+  const cards = list.map((e) => {
+    const t = errandIn(e, capIndex, r.code), m = t.steps.length;
+    return `<li><button type="button" class="card ecard" data-errand="${e.id}" aria-pressed="${e === open}" aria-controls="errand" aria-label="${esc(`${e.title}: ${countWords(t)}`)}">
+      ${pix(e.icon, 36, t.points / m)}<span class="ec-name">${esc(e.title)}</span>${meter(t)}<span class="ec-count">${t.does === m ? `<b>All ${m}</b>` : `<b>${t.does}</b> of ${m}`} by the agent${t.helps ? ` · ${t.helps} with help` : ''}</span></button></li>`;
+  }).join('');
+  // Each way is a button to the cell detail. "You take over here" marks only the first step left to you.
+  const node = (w, i, fork, take) => {
+    const why = w.role === 'does' ? '' : gapLabel(w.cell.gapReason) ?? 'No reason recorded';
+    return `<button type="button" class="ch-node r-${w.role}${take ? ' takeover' : ''}" data-cap="${w.id}" data-code="${r.code}" aria-label="${esc(`Step ${i + 1}: ${w.label}. ${STATUSES[w.cell.status].label}${w.cell.confidence ? ', unsure' : ''}. ${ROLE[w.role]}.${why ? ` ${why}.` : ''}${take ? ' You take over here.' : ''}`)}">
+      ${fork ? '' : `<span class="label">Step ${i + 1}</span>`}<span class="node-name">${esc(w.label)}</span><span class="node-cap">${esc(w.cap.name)}</span>
+      <span class="node-st">${chip(w.cell.status, w.cell.confidence)}<span class="node-role">${ROLE[w.role]}</span></span>${why ? `<span class="node-why">${esc(why)}</span>` : ''}</button>`;
+  };
+  const chain = run.steps.map((s, i) => {
+    const take = i === run.handoff;
+    const body = s.ways.length > 1
+      ? `<div class="ch-fork" role="group" aria-label="Step ${i + 1}: either way works"><p class="label">Step ${i + 1} · Either way</p>
+        ${s.ways.map((w) => node(w, i, true, take)).join('<p class="fork-or" aria-hidden="true">or</p>')}</div>`
+      : node(s.ways[0], i, false, take);
+    return `<li class="ch-link l-${s.role}${take ? ' cut' : ''}" aria-hidden="true"></li><li class="ch-step"><p class="ch-over">${take ? `${DOWN}You take over here` : ''}</p>${body}</li>`;
+  }).join('');
+  // Country by country: most steps done by the agent first, then most help; ties keep the ranking order.
+  const order = ranking.map((x) => ({ x, t: errandIn(open, capIndex, x.code) })).sort((a, b) => b.t.does - a.t.does || b.t.points - a.t.points);
+  const whole = order.filter(({ t }) => t.does === n);
+  return `
+    <p class="ekey"><span>${chip('live')}${ROLE.does}</span><span>${chip('limited')}${ROLE.helps}</span><span>${chip('announced')}${chip('none')}${ROLE.you}</span>
+      <span>${dot({ status: 'live', confidence: 'low' })}Unsure (thin sources)</span><span><i class="brk" aria-hidden="true"></i>You take over here</span></p>
+    <ul class="ecards" aria-label="Errands">${cards}</ul>
+    <section class="card errand" id="errand" aria-labelledby="eh-title">
+      <header class="eh">${pix(open.icon, 48, run.points / n)}<div>
+        <p class="label">${state.view === 'business' ? 'Business errand' : 'Errand'} ${list.indexOf(open) + 1} of ${list.length} · ${flag(r.code)}${esc(r.name)}</p>
+        <h3 id="eh-title" tabindex="-1">${esc(open.title)}</h3>
+        <p class="eh-line">${headline(run, r)}</p></div></header>
+      <ol class="chain" aria-label="Steps of ${esc(open.title)}"><li class="ch-start" aria-hidden="true"><span class="ag">${AGENT}</span><span class="label">Agent</span></li>${chain}</ol>
+      <div class="xc">
+        <div class="xc-h"><p class="label">${esc(open.title)} · country by country</p>
+          <p>${whole.length ? `The whole errand works in ${whole.map(({ x }) => `${flag(x.code)}${x.code}`).join(' ')}.` : 'No country can do the whole errand yet.'}</p></div>
+        <ul>${order.map(({ x, t }) => `<li><button type="button"${t.does === n ? ' class="whole"' : ''} data-go-country="${x.code}" aria-current="${x.code === r.code}" aria-label="${esc(`${x.name}: ${countWords(t)}`)}">
+          <span>${flag(x.code)}${x.code}</span><span class="xc-n">${t.does}/${n}</span>${meter(t)}</button></li>`).join('')}</ul>
+      </div>
+    </section>
+    <div class="ov" data-overview></div>`;
 }
 
 // Everything below the country's cards: the same for people and for businesses.
@@ -166,26 +216,26 @@ function renderCountryRest() {
 function renderBuilders() {
   const r = byCode[state.country];
   const here = companies.filter((c) => c.markets.includes(r.code));
-  const where = `${/^United /.test(r.name) ? 'the ' : ''}${r.name}`;
+  const place = where(r);
   const parts = [
     ['us', 'Based in the US', here.filter((c) => c.hq === 'US' && r.code !== 'US')],
-    ['home', `Based in ${where}`, here.filter((c) => c.hq === r.code)],
+    ['home', `Based in ${place}`, here.filter((c) => c.hq === r.code)],
     ['rest', 'Based elsewhere', here.filter((c) => c.hq !== r.code && c.hq !== 'US')],
   ].filter(([, , list]) => list.length);
   const home = here.filter((c) => c.hq === r.code).length;
   // Companies in the most categories first: they are the ones a visitor is most likely to know.
   const top = [...here].sort((a, b) => b.categories.length - a.categories.length || a.name.localeCompare(b.name)).slice(0, 6);
-  $('[data-who-title]').innerHTML = `Who makes it work in ${flag(r.code)}${esc(where)}.`;
+  $('[data-who-title]').innerHTML = `Who makes it work in ${flag(r.code)}${esc(place)}.`;
   $('[data-who]').innerHTML = here.length ? `
     <div class="who-l">
-      <p class="who-lede">${here.length} ${here.length === 1 ? 'company makes' : 'companies make'} agents work here. ${home ? `${home} ${home === 1 ? 'is' : 'are'} based in ${esc(where)}.` : `None is based in ${esc(where)} yet.`}</p>
+      <p class="who-lede">${here.length} ${here.length === 1 ? 'company makes' : 'companies make'} agents work here. ${home ? `${home} ${home === 1 ? 'is' : 'are'} based in ${esc(place)}.` : `None is based in ${esc(place)} yet.`}</p>
       <div class="who-bar" role="img" aria-label="${esc(parts.map(([, label, list]) => `${label}: ${list.length}`).join(', '))}">${parts.map(([k, , list]) => `<i class="w-${k}" style="flex:${list.length}">${list.length}</i>`).join('')}</div>
       <p class="who-key" aria-hidden="true">${parts.map(([k, label]) => `<span class="w-${k}">${esc(label)}</span>`).join('')}</p>
     </div>
     <div class="who-r">
       <ul class="who-cos">${top.map((c) => `<li><a class="co-name" href="${esc(c.homepage ?? c.url)}" target="_blank" rel="noopener noreferrer">${logo(c.icon, c.name)}<span>${esc(c.name)}</span></a></li>`).join('')}${here.length > top.length ? `<li><a class="who-more" href="companies.html#market=${r.code}">+${here.length - top.length} more</a></li>` : ''}</ul>
       <p class="who-links"><a href="companies.html">All ${companies.length} companies <span aria-hidden="true">→</span></a><a href="companies.html#opensource">Open-source tools <span aria-hidden="true">→</span></a></p>
-    </div>` : `<p class="mc-note">No company we track makes agents work in ${esc(where)} yet. <a href="companies.html">See all ${companies.length} companies</a>.</p>`;
+    </div>` : `<p class="mc-note">No company we track makes agents work in ${esc(place)} yet. <a href="companies.html">See all ${companies.length} companies</a>.</p>`;
 }
 
 // All capabilities in rows, grouped by category; one column per country, the selected one in sunrise.
@@ -228,15 +278,21 @@ function openDetail(capId, code) {
   const ev = cell.evidence ?? [];
   // Companies already live nearby that could bring a missing capability here.
   const cos = cell.status === 'live' ? [] : couldClose(categories.find((c) => c.category === cap.category).companies, cap.id, code, region).slice(0, 3);
+  const at = findStep(errandList(), capId);
+  const liveIn = meta.countries.map((c) => c.code).filter((c) => c !== code && cap.countries[c].status === 'live');
   showDetail(`
     <p class="kicker">${esc(catName(cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
     <p class="detail-status">${chip(cell.status, cell.confidence)}${cell.confidence ? '<span class="low-note">Unsure. The sources are thin or indirect, so treat this as a lead to check.</span>' : ''}</p>
     <p>${esc(cell.note)}</p>
-    ${cos.length ? `<p class="detail-close">Could close the gap: ${cos.map((co) => `${esc(co.name)} (already in ${co.near.map((m) => `${flag(m)}${m}`).join(' ')})`).join(', ')}</p>` : ''}
+    <div class="d-facts">
+      ${at ? `<p>In <b>${esc(at.errand.title)}</b>, step ${at.index + 1}: “${esc(at.errand.labels[capId])}”.</p>` : ''}
+      <p>${liveIn.length ? `Live in: ${liveIn.map((c) => `${flag(c)}${c}`).join(' ')}` : 'Not live in any other country yet.'}</p>
+      ${cos.length ? `<p class="detail-close">Could close the gap: ${cos.map((co) => `${esc(co.name)} (already in ${co.near.map((m) => `${flag(m)}${m}`).join(' ')})`).join(', ')}</p>` : ''}
+    </div>
     <h4>${ev.length ? `Sources (${ev.length})` : 'Sources'}</h4>
     ${ev.length ? sourceList(ev) : '<p class="muted">No availability found. Nothing to cite yet.</p>'}
-    <p class="suggest"><a href="${esc(correctionUrl(cap, code, cell))}" target="_blank" rel="noopener noreferrer">Suggest a correction</a></p>`);
+    <p class="suggest"><a href="${esc(correctionUrl(cap, code, cell))}" target="_blank" rel="noopener noreferrer">${cell.status === 'live' ? 'Suggest a correction' : 'Seen it work here? Tell us'}</a></p>`);
 }
 
 // Every source behind one country's cells, newest first, with the capabilities each one backs.
@@ -258,13 +314,17 @@ function openSources(code) {
 
 function selectCountry(code, scroll) {
   if (!byCode[code]) return;
-  const refocus = $('[data-country]').contains(document.activeElement);
+  const a = document.activeElement;
+  const refocus = $('[data-country]').contains(a);
+  // The errand is rebuilt too: focus goes back to the same card, step or country button.
+  const keep = $('[data-kpis]').contains(a) && (a.dataset.errand ? `[data-errand="${a.dataset.errand}"]` : a.dataset.cap ? `[data-kpis] [data-cap="${a.dataset.cap}"]` : a.dataset.goCountry ? `.xc [data-go-country="${code}"]` : null);
   state.country = code;
-  history.replaceState(null, '', writeHash(code, state.view));
+  history.replaceState(null, '', writeHash(code, state.view, state.errand));
   // Every country picker on the page (hero pins, world map, console) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
   if (refocus) $('#cn-title').focus({ preventScroll: true });
+  if (keep) $(keep)?.focus({ preventScroll: true });
   document.dispatchEvent(new CustomEvent('countrychange', { detail: code }));
   if (scroll) $('#country').scrollIntoView({ behavior: scrollBehavior() });
 }
@@ -294,6 +354,7 @@ function wire() {
   addEventListener('hashchange', () => {
     if (!hashCountry()) return;
     state.view = readHash(location.hash).view;
+    state.errand = pickErrand(readHash(location.hash).errand);
     selectCountry(hashCountry(), true);
   });
   // For people / For businesses switches the cards under the country head.
@@ -301,21 +362,24 @@ function wire() {
     const b = e.target.closest('[data-view]');
     if (!b || b.dataset.view === state.view) return;
     state.view = b.dataset.view;
+    state.errand = null;
     history.replaceState(null, '', writeHash(state.country, state.view));
     renderCountry();
     $(`[data-view="${state.view}"]`).focus({ preventScroll: true });
   });
-  // Show all / Show fewer under the country's two lists.
+  // An errand card opens that errand under the cards, one at a time. On phones the errand is below the fold: go there.
   $('[data-kpis]').addEventListener('click', (e) => {
-    const b = e.target.closest('[data-more]');
+    const b = e.target.closest('[data-errand]');
     if (!b) return;
-    const key = b.dataset.more === 'works' ? 'allWorks' : 'allNot';
-    state[key] = !state[key];
+    state.errand = b.dataset.errand;
+    history.replaceState(null, '', writeHash(state.country, state.view, state.errand));
     renderCountry();
-    $(`[data-more="${b.dataset.more}"]`)?.focus({ preventScroll: true });
+    if (!matchMedia('(max-width: 760px)').matches) return $(`[data-errand="${state.errand}"]`).focus({ preventScroll: true });
+    $('#errand').scrollIntoView({ behavior: scrollBehavior() });
+    $('#eh-title').focus({ preventScroll: true });
   });
 
-  // Cells in the matrix and the lists open their details; the sources button lists the country's sources.
+  // Cells in the matrix and the errand steps open their details; the sources button lists the country's sources.
   $('[data-term]').addEventListener('click', (e) => {
     const b = e.target.closest('[data-cap]');
     if (b) openDetail(b.dataset.cap, b.dataset.code);
