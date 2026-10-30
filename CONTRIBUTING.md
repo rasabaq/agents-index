@@ -47,7 +47,7 @@ No code change is needed. Add an entry to `categories` in `data/meta.json`, then
 | `short` | One or two words, for labels such as the matrix rows and the radar on phones | `"Health"` |
 | `can` | The words that complete "AI agents can …" in the country verdict | `"book care for you"` |
 
-Then add its `id` to one theme in `themes` in `data/meta.json`. Themes group the categories into four bars on the country view. `npm run validate` fails when `short` or `can` is missing, or when a category is in no theme or in two.
+`npm run validate` fails when `short` or `can` is missing. To show the new capabilities in an everyday errand, add their ids to `ERRANDS` in `src/errands.js`; `npm run validate` fails on an unknown or repeated id there.
 
 ## Pull requests
 
