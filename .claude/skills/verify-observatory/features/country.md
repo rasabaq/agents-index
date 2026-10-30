@@ -30,7 +30,7 @@ Each step is one capability. It says whether the agent does it (Live), helps and
   - the open errand `#errand`: its title `#eh-title`, a headline `.eh-line`, and the chain `.chain`. Each step is a `.ch-node[data-cap][data-code]` button; an either/or step is a `.ch-fork` of two or three of them. "You take over here" (`.ch-over`, `.takeover`) marks only the first step left to you, and none when the agent can at least help with every step;
   - "country by country" `.xc`: one button per country (`[data-go-country]`), most steps by the agent first.
   The open errand lives in the link: `#country=CL&errand=car`. No `errand` opens the first one.
-- `country-business` is the "For people" / "For businesses" toggle (`[data-view]`, `aria-pressed`) under the verdict. "For businesses" swaps the verdict for a business one and the cards for three `.biz-group` cards: Sell through AI agents, Sell in chat apps, and Get paid by agents. These cover the eight capabilities in `BUSINESS_GROUPS` (`src/observatory.js`). Each item has a seller-side label, one line on why (the gap reason when the cell has one, else its status in plain words), and a `.biz-cos` line. That line reads "Sign up with: …" when the cell is live and "Active here: …" otherwise. It is left out on Not yet items, with links to each company's homepage. The view lives in the link: `#country=MX&view=business`, so a business link can be shared. An old `#country=MX` link opens For people.
+- `country-business` is the "For people" / "For businesses" toggle (`[data-view]`, `aria-pressed`) under the verdict. "For businesses" swaps the verdict for a business one ("N of the 8 ways we track", from `BUSINESS_GROUPS` in `src/observatory.js`) and the errands for four business errands (`BUSINESS_ERRANDS` in `src/errands.js`): Sell through AI agents, Sell in chat apps, Get paid by agents, and Run the back office. They use the same cards and chain. A step's cell detail names who to work with: "Sign up with: …" when the cell is live, "Active here: …" when it is limited or announced, nothing when it is Not yet, with links to each company's homepage. The view lives in the link: `#country=MX&view=business`, so a business link can be shared. An old `#country=MX` link opens For people. Switching the view opens its first errand.
 - `country-pick-hero` selects a country from the pins on the hero's planet, without scrolling. The sun moves behind the selected pin.
 - `country-pick-console` selects a country from the picker `[data-clist]` without scrolling.
 - `country-keys` steps through the ranking with `j` (next) and `k` (previous).
@@ -71,19 +71,19 @@ Steps:
   - Run `node $H click '.xc [data-go-country="US"]'`. The country switches without scrolling and focus stays on the US button.
 - **For businesses.**
   - Run `node $H open '/#country=MX'`, then `node $H click '[data-view="business"]'`.
-  - `node $H eval "[document.querySelector('.cn-verdict').innerText, [...document.querySelectorAll('.biz-group h3')].map(h => h.innerText), [...document.querySelectorAll('.biz-cos')].map(p => p.innerText)]"` shows a verdict with "of the 8 ways", three group titles with "of N live", and lines that start with "Sign up with" or "Active here".
+  - `node $H eval "[document.querySelector('.cn-verdict').innerText, [...document.querySelectorAll('.ecard .ec-name')].map(e => e.innerText)]"` shows a verdict with "of the 8 ways" and four business errands.
   - `node $H eval "document.activeElement.dataset.view"` prints `business`.
-  - `node $H click '.biz-group button[data-cap]'` opens the cell detail. Then `node $H press Escape`.
+  - `node $H click '.ecard[data-errand="chat"]'`, then `node $H click '.ch-node[data-cap="messaging.business-ai-agent"]'`. The cell detail's `.d-facts` reads "In Sell in chat apps, step 1" and a line that starts with "Sign up with" or "Active here". Then `node $H press Escape`.
   - Take `node $H shot business-1440-mx --at '#country'`.
-  - `node $H eval 'location.hash'` prints `#country=MX&view=business`. `node $H open '/#country=CL&view=business'` opens Chile on For businesses.
-  - Picking another country keeps the business view. `node $H click '[data-view="people"]'` brings back `#mc-works`.
+  - `node $H eval 'location.hash'` prints `#country=MX&view=business&errand=chat`. `node $H open '/#country=CL&view=business'` opens Chile on For businesses.
+  - Picking another country keeps the business view. `node $H click '[data-view="people"]'` brings back the seven errands.
 - **Hero pin.** Run `node $H open /`, then `node $H click '.hero [data-go-country="MX"]'`.
   - `location.hash` is `#country=MX`, and `#cn-title` reads Mexico.
   - The page did not scroll: `node $H eval "Math.round(document.querySelector('.hero-pins').getBoundingClientRect().top)"` is still in the viewport.
   - Take `node $H shot hero-1440-mx` (the MX pin is lit and the sun sits behind it), then `node $H shot country-1440-mx --at '#country'`.
 - **Keys.** Run `node $H press j`. The country moves to the next one in the ranking (for example BR → IN). `node $H press k` moves it back.
 - **Phone.**
-  - For businesses at 400px stacks the three cards in one column: `node $H open '/#country=MX' --width 400`, `node $H click '[data-view="business"]'`, `node $H shot business-400-mx --at '#country' --offset 120`.
+  - For businesses at 400px shows the cards two to a row and the steps down the page: `node $H open '/#country=MX' --width 400`, `node $H click '[data-view="business"]'`, `node $H shot business-400-mx --at '#country' --offset 120`.
   - Run `node $H open '/#country=CL' --width 400`, then `node $H shot country-400-cl --at '#country' --offset 120`.
   - The errand cards sit two to a row, and the steps go down the page.
   - `node $H eval 'document.documentElement.scrollWidth'` prints `400`.

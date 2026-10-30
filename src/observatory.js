@@ -330,8 +330,8 @@ export function couldClose(companies, capId, code, region) {
     .sort((a, b) => b.near.length - a.near.length || a.name.localeCompare(b.name));
 }
 
-// "For businesses": the capabilities a business needs to sell through AI agents and get paid, in display groups,
-// each with a label from the seller's side. This is the one place the set lives.
+// "For businesses": the capabilities a business needs to sell through AI agents and get paid, in groups, each with a
+// label from the seller's side. The business verdict counts these; the business errands (src/errands.js) show them.
 export const BUSINESS_GROUPS = [
   { title: 'Sell through AI agents', items: [
     { id: 'commerce.merchant-protocol', label: 'AI agents can buy from your online store' },
@@ -349,19 +349,12 @@ export const BUSINESS_GROUPS = [
   ] },
 ];
 
-// For one country: each business capability with its cell and the companies that work there for it, merged by
-// name (one company can appear in several category files). Capabilities missing from the data are skipped.
-export function forBusiness(categories, code) {
-  const caps = new Map(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { cap, cat }])));
-  return BUSINESS_GROUPS.map((g) => ({
-    title: g.title,
-    items: g.items.filter(({ id }) => caps.has(id)).map(({ id, label }) => {
-      const { cap, cat } = caps.get(id);
-      const byName = new Map();
-      for (const co of cat.companies ?? []) {
-        if ((co.capabilities ?? []).includes(id) && marketsFor(co, id).includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
-      }
-      return { cap, label, cell: cap.countries[code], companies: [...byName.values()].sort((a, b) => a.name.localeCompare(b.name)) };
-    }),
-  })).filter((g) => g.items.length);
+// The companies in a category file that work in a country for one capability, merged by name (a company can be listed
+// twice), A to Z.
+export function companiesFor(companies, capId, code) {
+  const byName = new Map();
+  for (const co of companies ?? []) {
+    if ((co.capabilities ?? []).includes(capId) && marketsFor(co, capId).includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
+  }
+  return [...byName.values()].sort((a, b) => a.name.localeCompare(b.name));
 }
