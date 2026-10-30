@@ -6,9 +6,9 @@ A visitor lands on their own country and the console shows it. In order, they se
 - one line with how many things work today, the score, and the rank;
 - a one-sentence verdict on what AI agents can and cannot do there yet, and the main reason;
 - the country picker: every country with its score, best first;
-- two short lists, "Works today" and "Not yet" (5 items each, then "Show all N"), and the four theme bars.
+- "A day with an agent": seven everyday errands as cards, then the open errand as a chain of steps, then that errand country by country.
 
-Each Not yet item shows its status, its gap reason when it has one, and a "Seen it work here? Tell us" link. Every list item opens the cell detail, which names companies that could close the gap. Below that, the closed matrix highlights the country's column. The choice lives in the URL as `#country=XX`, so a link opens the same country.
+Each step is one capability. It says whether the agent does it (Live), helps and you finish (Limited), or you do it (anything else), with the gap reason when it is not live. Every step opens the cell detail, which says which errand uses it, where else it is live, and which companies could close the gap. Below that, the closed matrix highlights the country's column. The choice lives in the URL as `#country=XX`, so a link opens the same country.
 
 ## Sub-features
 
@@ -24,8 +24,12 @@ Each Not yet item shows its status, its gap reason when it has one, and a "Seen 
   - "cannot yet …" names up to two categories with none;
   - "Main reason: …" is the most common `gapReason` label among the cells of the categories it names. It is left out when none of them has one.
 - `country-score` is the line `.cn-score`: "L of 29 things work today · score N of 100 · Rth of 8", plus ", tied" and the count of unsure cells when there are any.
-- `country-lists` are `#mc-works` ("Works today · L of 29") and `#mc-not` ("Not yet · M of 29"). Each shows 5 items, then `[data-more]` "Show all N" / "Show fewer". Their items are `.mc-list button[data-cap][data-code]`, and each one opens the cell detail (see matrix-detail.md). A Not yet item can show its gap reason label and an `a.mc-tell` link to the prefilled correction form.
-- `country-themes` is the third card, "By theme · out of 100": four bars from `themes` in `data/meta.json`, each the mean of its categories, and a note naming the weakest category.
+- `country-errands` live in `src/errands.js` (`ERRANDS`). In `[data-kpis]`:
+  - a key `.ekey`;
+  - one card per errand, `.ecard[data-errand="shop"]` (`aria-pressed` on the open one), with a step meter and "N of M by the agent";
+  - the open errand `#errand`: its title `#eh-title`, a headline `.eh-line`, and the chain `.chain`. Each step is a `.ch-node[data-cap][data-code]` button; an either/or step is a `.ch-fork` of two or three of them. "You take over here" (`.ch-over`, `.takeover`) marks only the first step left to you, and none when the agent can at least help with every step;
+  - "country by country" `.xc`: one button per country (`[data-go-country]`), most steps by the agent first.
+  The open errand lives in the link: `#country=CL&errand=car`. No `errand` opens the first one.
 - `country-business` is the "For people" / "For businesses" toggle (`[data-view]`, `aria-pressed`) under the verdict. "For businesses" swaps the verdict for a business one and the cards for three `.biz-group` cards: Sell through AI agents, Sell in chat apps, and Get paid by agents. These cover the eight capabilities in `BUSINESS_GROUPS` (`src/observatory.js`). Each item has a seller-side label, one line on why (the gap reason when the cell has one, else its status in plain words), and a `.biz-cos` line. That line reads "Sign up with: …" when the cell is live and "Active here: …" otherwise. It is left out on Not yet items, with links to each company's homepage. The view lives in the link: `#country=MX&view=business`, so a business link can be shared. An old `#country=MX` link opens For people.
 - `country-pick-hero` selects a country from the pins on the hero's planet, without scrolling. The sun moves behind the selected pin.
 - `country-pick-console` selects a country from the picker `[data-clist]` without scrolling.
@@ -58,12 +62,13 @@ Steps:
 - **Picker.** Run `node $H click '[data-clist] [data-go-country="CO"]'`. `node $H eval "[location.hash, document.querySelector('#cn-title').innerText]"` prints `#country=CO` and Colombia. The buttons list scores that never increase.
 - **Verdict.** Run `node $H eval "document.querySelector('.cn-verdict').innerText"`.
   - It starts with "In <country>, AI agents can" (or "nothing we track works") and ends with a full stop.
-  - Every category it says agents "can" do has an item under Works today.
 - **Score.** Run `node $H eval "document.querySelector('.cn-score').innerText"`. It shows "of 29 things work today", "score", "of 100" and "of 8".
-- **Lists.**
-  - Run `node $H eval "[document.querySelector('#mc-works').innerText, document.querySelector('#mc-not').innerText, document.querySelectorAll('.mc-list button[data-cap]').length]"`. The two counts add up to 29. At most 10 buttons show.
-  - Run `node $H click '[data-more="not"]'`. The Not yet list shows every item and the button reads "Show fewer".
-  - Run `node $H click '#mc-not + ul button'`. `node $H eval "document.querySelector('[data-detail]').open"` prints `true`. Then `node $H press Escape`.
+- **Errands.**
+  - Run `node $H eval "[document.querySelectorAll('.ecard').length, document.querySelector('#eh-title').innerText, document.querySelector('.eh-line').innerText]"`. It prints 7, "Do the weekly shop" and a line that starts with "In <country>,".
+  - Run `node $H click '.ecard[data-errand="car"]'`. `location.hash` ends with `&errand=car`, the title reads "Sort out car insurance", and focus stays on the card.
+  - `node $H eval "document.querySelectorAll('.takeover').length"` is at most 3 (one step, or every way of one either/or step).
+  - Run `node $H click '.ch-node[data-cap="insurance.buy-policy"]'`. The cell detail opens; its `.d-facts` names "Sort out car insurance, step 2" and "Live in:". Then `node $H press Escape`.
+  - Run `node $H click '.xc [data-go-country="US"]'`. The country switches without scrolling and focus stays on the US button.
 - **For businesses.**
   - Run `node $H open '/#country=MX'`, then `node $H click '[data-view="business"]'`.
   - `node $H eval "[document.querySelector('.cn-verdict').innerText, [...document.querySelectorAll('.biz-group h3')].map(h => h.innerText), [...document.querySelectorAll('.biz-cos')].map(p => p.innerText)]"` shows a verdict with "of the 8 ways", three group titles with "of N live", and lines that start with "Sign up with" or "Active here".
@@ -80,7 +85,7 @@ Steps:
 - **Phone.**
   - For businesses at 400px stacks the three cards in one column: `node $H open '/#country=MX' --width 400`, `node $H click '[data-view="business"]'`, `node $H shot business-400-mx --at '#country' --offset 120`.
   - Run `node $H open '/#country=CL' --width 400`, then `node $H shot country-400-cl --at '#country' --offset 120`.
-  - Works today, Not yet and the themes stack in one column.
+  - The errand cards sit two to a row, and the steps go down the page.
   - `node $H eval 'document.documentElement.scrollWidth'` prints `400`.
 - **Proof.** Finish each page with `node $H errors` (exit 0).
 

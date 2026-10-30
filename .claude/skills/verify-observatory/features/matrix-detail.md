@@ -9,7 +9,8 @@ The matrix, "Every task in every country", is a `<details id="matrix">` that sta
 - `matrix-tooltip` shows the country, status and note on hover (mouse only).
 - `cell-detail` opens the dialog for one cell: the kicker (category · country), `#detail-title` (the question), the status chip, the note and the sources.
 - `cell-low-confidence` adds the "Unsure…" note in the dialog for cells marked with "?".
-- `cell-correction` links "Suggest a correction" to `issues/new?template=data-correction.yml` with the country, capability and current status filled in.
+- `cell-errand` (`.d-facts`) says which errand and step of the current view uses the capability, and lists the other countries where it is live.
+- `cell-correction` links "Suggest a correction" ("Seen it work here? Tell us" on a cell that is not live) to `issues/new?template=data-correction.yml` with the country, capability and current status filled in.
 - `cell-close` closes the dialog with Escape or the × button.
 - `country-sources` lists every source behind the selected country, from the "N sources" button.
 - `cell-could-close` adds "Could close the gap: …" (`.detail-close`) to a cell that is not live when companies already live in the same region could bring it.
@@ -18,7 +19,7 @@ The matrix, "Every task in every country", is a `<details id="matrix">` that sta
 
 - Open "Every task in every country" under the country's cards (`node $H click '#matrix summary'`).
 - Click any cell mark.
-- Click an item in "Works today" or "Not yet".
+- Click a step of an errand in the country view.
 - Click the "N sources" button in the country view.
 
 ## Driving it with observatory.mjs
