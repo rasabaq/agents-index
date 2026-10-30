@@ -18,7 +18,7 @@ In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile
 | | |
 | --- | --- |
 | [![World map with each tracked country and its score](docs/images/map.png)](https://agentindex.art/#v-map) | [![Country view for the United States: score, what works today and what does not yet](docs/images/console.png)](https://agentindex.art/#country=US) |
-| **World map.** Where agents can act today. A brighter country has a higher score. | **Country view.** What works today, what does not yet, and why. Every cell links to its sources. |
+| **World map.** Where agents can act today. A brighter country has a higher score. | **Country view.** How many things work today, the five that do and the five that do not yet, and four theme scores. Every item links to its sources. |
 
 ## How it works
 
