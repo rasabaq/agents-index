@@ -1,0 +1,11 @@
+# Files Cloudflare must not publish. Only the site goes up: index.html, *.js, *.css, favicon.svg, charts/, data/, src/.
+.*
+node_modules/
+docs/
+scripts/
+test/
+*.md
+CNAME
+LICENSE
+package*.json
+wrangler.jsonc

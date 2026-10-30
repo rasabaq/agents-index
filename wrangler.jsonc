@@ -1,0 +1,12 @@
+// Cloudflare Workers config: serves the repo root as static assets, no Worker script.
+{
+  "name": "agents-index",
+  "compatibility_date": "2026-10-15",
+  "assets": {
+    "directory": ".",
+    // Same as GitHub Pages: /about serves about.html, unknown paths get a plain 404.
+    // The site routes with #hash, so it needs no SPA fallback.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}

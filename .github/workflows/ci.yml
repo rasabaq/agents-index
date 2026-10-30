@@ -16,3 +16,17 @@ jobs:
           node-version: 22
       - run: npm test
       - run: npm run validate
+
+  # Publishes the site to Cloudflare Workers after tests pass on main. wrangler.jsonc and .assetsignore say what goes up.
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    concurrency: deploy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          wranglerVersion: '4.151.1'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
