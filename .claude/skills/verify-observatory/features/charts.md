@@ -11,7 +11,7 @@ In page order:
 ## Sub-features
 
 - `charts-render` draws the two home charts, and flows on the companies page, with no `.view-error`.
-- `charts-compare` changes the head-to-head pair with its two selects.
+- `charts-compare` changes the pair with its two selects. It shows the 6 biggest gaps first, then `.vc-more button` "Show all N differences" / "Show fewer".
 - `charts-hash` scrolls to a chart when the page opens with `#v-<id>`.
 - `charts-map-pick` picks a country in the console from the world map, by click or by keyboard, and lights the selected country on the map.
 - `charts-map-legend` shows the score scale and the tier cuts (S 80+, A 70+, B 60+, C 50+, D <50) above the map.

@@ -9,6 +9,7 @@
 .v-compare .vc-swap:hover { border-color: var(--line-strong); color: var(--ink); }
 .v-compare .vc-swap svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .v-compare .vc-only { margin-left: auto; }
+.v-compare .vc-more:not(:empty) { display: flex; justify-content: center; margin-top: 16px; }
 .v-compare .vc-head { margin: 0; max-width: 64ch; font-size: 19px; line-height: 1.45; font-weight: 500; color: var(--ink); text-wrap: balance; }
 .v-compare .vc-sub { margin: 6px 0 0; font-size: 14px; color: var(--ink-2); }
 .v-compare .vc-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin: 18px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); font: 400 11px/1.4 var(--mono); color: var(--muted); }
@@ -97,7 +98,9 @@
       const cap1 = (s) => s[0].toUpperCase() + s.slice(1);
       const caps = Object.fromEntries(ctx.capabilities.map((c) => [c.id, c]));
       const n = ctx.capabilities.length;
-      const state = { a: 'US', b: 'CL', only: true, open: new Set() };
+      const state = { a: 'US', b: 'CL', only: true, all: false, open: new Set() };
+      // Until Show all is pressed, the list keeps this many rows: the biggest gaps.
+      const FIRST = 6;
 
       const opts = ctx.meta.countries.map((c) => `<option value="${c.code}">${emoji(c.code)} ${esc(c.name)}</option>`).join('');
       el.classList.add('v-compare');
@@ -117,7 +120,8 @@
           <span class="vc-key"><span class="low" aria-hidden="true">?</span>Unsure</span>
           <span class="vc-key"><span class="vc-track"><span class="vc-fill l" style="width:25%"></span></span><span class="vc-track"><span class="vc-fill r" style="width:37.5%"></span></span>Gap toward the leader</span>
         </div>
-        <div class="vc-list" role="region" aria-label="Capability by capability comparison"></div>`;
+        <div class="vc-list" role="region" aria-label="Capability by capability comparison"></div>
+        <div class="vc-more"></div>`;
       const $ = (s) => el.querySelector(s);
       const list = $('.vc-list');
 
@@ -141,14 +145,21 @@
         $('.vc-only').setAttribute('aria-pressed', state.only);
 
         let ahead = 0, behind = 0, html = '';
-        for (const cat of ctx.categories) {
+        const groups = ctx.categories.map((cat) => {
           let rows = cat.capabilities.map((cap) => ({ cap, d: S[cap.countries[a].status].points - S[cap.countries[b].status].points }));
           ahead += rows.filter((r) => r.d > 0).length;
           behind += rows.filter((r) => r.d < 0).length;
           if (state.only) rows = rows.filter((r) => r.d);
-          if (!rows.length) continue;
           // Biggest gap first; on a tie, rows where A leads come before rows where B leads.
           rows.sort((x, y) => Math.abs(y.d) - Math.abs(x.d) || y.d - x.d || x.cap.name.localeCompare(y.cap.name));
+          return { cat, rows };
+        });
+        // Collapsed, keep the FIRST biggest gaps across all categories, still grouped by category.
+        const total = groups.reduce((t, g) => t + g.rows.length, 0);
+        const keep = new Set(groups.flatMap((g) => g.rows).sort((x, y) => Math.abs(y.d) - Math.abs(x.d)).slice(0, state.all ? total : FIRST).map((r) => r.cap.id));
+        for (const { cat, rows: all } of groups) {
+          const rows = all.filter((r) => keep.has(r.cap.id));
+          if (!rows.length) continue;
           const ci = ctx.catIndex[cat.category];
           html += `<section class="vc-group">
             <div class="vc-cat">
@@ -178,6 +189,7 @@
           </section>`;
         }
         list.innerHTML = html || `<p class="vc-empty">${esc(name[a])} and ${esc(name[b])} have the same status on all ${n} capabilities.</p>`;
+        $('.vc-more').innerHTML = total > FIRST ? `<button type="button" class="pill" aria-expanded="${state.all}">${state.all ? 'Show fewer' : `Show all ${total} ${state.only ? 'differences' : 'capabilities'}`}</button>` : '';
 
         const gaps = ahead + behind;
         const la = ctx.byCode[a].counts.live, lb = ctx.byCode[b].counts.live;
@@ -200,6 +212,13 @@
       $('.vc-only').addEventListener('click', () => {
         state.only = !state.only;
         draw();
+      });
+      $('.vc-more').addEventListener('click', (e) => {
+        if (!e.target.closest('button')) return;
+        state.all = !state.all;
+        draw();
+        // The draw replaced the button; keep keyboard focus on it.
+        $('.vc-more button').focus({ preventScroll: true });
       });
       list.addEventListener('click', (e) => {
         if (e.target.closest('a')) return;
