@@ -1,6 +1,7 @@
 import { STATUSES, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, companiesFor, BUSINESS_GROUPS, readHash, writeHash } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS, errandIn, findStep } from './src/errands.js';
 import { pix } from './src/icons.js';
+import { mosaic, fingerprint } from './overview.js';
 import { data } from './data.js';
 import { $, esc, flag, logo, wireLogos, wireNav } from './ui.js';
 
@@ -187,6 +188,11 @@ function renderErrands(r) {
 
 // Everything below the country's cards: the same for people and for businesses.
 function renderCountryRest() {
+  // The fingerprint beside the head, and every capability as a square under the errands.
+  const code = state.country;
+  const errandOf = Object.fromEntries(errandList().flatMap((e) => e.steps.flat().map((id) => [id, e.title])));
+  $('[data-fingerprint]').innerHTML = fingerprint({ meta, capIndex, code, score: byCode[code].score });
+  $('[data-overview]').outerHTML = mosaic({ meta, capIndex, code, gapLabel, errandOf, openErrand: openErrand().steps.flat() });
   renderMatrix();
   renderBuilders();
 }

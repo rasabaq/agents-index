@@ -59,7 +59,6 @@
 /* ---------- errands: a key, the errand cards, the open errand as a chain of steps, then that errand country by
    country (app.js renderErrands). Each step is one capability; its button opens the cell detail. ---------- */
 .kpis { display: grid; gap: 18px; }
-[data-overview]:empty, .cn [data-fingerprint]:empty { display: none; }
 .ekey { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin: 0; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.055); font: 400 11.5px/1.3 var(--mono); color: var(--ink-2); }
 .ekey > span { display: inline-flex; align-items: center; gap: 8px; }
 .ekey .chip { font-size: 11px; }
