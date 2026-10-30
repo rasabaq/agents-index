@@ -32,7 +32,7 @@
   ],
   "gapReasons": [
     { "id": "no-rule", "label": "No rule in force yet" },
-    { "id": "rail-closed", "label": "The rail exists, but agents can't use it" },
+    { "id": "rail-closed", "label": "The system exists, but agents are not let in" },
     { "id": "not-launched", "label": "Not fully launched here yet" },
     { "id": "pilot-only", "label": "Pilot only" },
     { "id": "assist-only", "label": "It helps, but you do the last step" }
