@@ -301,6 +301,7 @@
         },
         "MX": {
           "status": "limited",
+          "gapReason": "assist-only",
           "note": "Mercado Pago's Mago assistant makes transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI, but no source says Mago sends money over SPEI, so it stays limited.",
           "evidence": [
             {
@@ -329,6 +330,7 @@
         },
         "CL": {
           "status": "limited",
+          "gapReason": "assist-only",
           "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms, but no source says it sends money to other banks over TEF, so it stays limited.",
           "evidence": [
             {

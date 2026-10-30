@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreCountries, validate, summarize, mergeCompanies, useCategoryWords, shortName, themeScores } from '../src/observatory.js';
+import { scoreCountries, validate, summarize, mergeCompanies, useCategoryWords, shortName } from '../src/observatory.js';
 import { readFileSync } from 'node:fs';
 // Sentences use the category words from data/meta.json, as the site does.
 useCategoryWords(JSON.parse(readFileSync(new URL('../data/meta.json', import.meta.url), 'utf8')).categories);
@@ -99,13 +99,3 @@ test('every category needs short and can in meta.json, even the first seven', ()
   assert.equal(shortName('care'), 'Care');
 });
 
-test('themes cover every category once and score the mean of their categories', () => {
-  const cats = [{ id: 'shop', short: 'Shop', can: 'shop' }, { id: 'pay', short: 'Pay', can: 'pay' }, { id: 'book', short: 'Book', can: 'book' }];
-  const data = cats.map((c) => ({ category: c.id, capabilities: [{ id: `${c.id}.a`, name: 'a', question: 'q?', countries: {} }] }));
-  const v = (themes) => validate({ countries: [], categories: cats, themes }, data).join('\n');
-  assert.equal(v([{ id: 'money', name: 'Money', categories: ['shop', 'pay'] }, { id: 'trips', name: 'Trips', categories: ['book'] }]), '');
-  assert.match(v([{ id: 'money', name: 'Money', categories: ['shop', 'pay'] }]), /"book" must be in exactly one theme/);
-  assert.match(v([{ id: 'money', name: 'Money', categories: ['shop', 'pay', 'book'] }, { id: 'x', name: 'X', categories: ['book'] }]), /"book" must be in exactly one theme/);
-  assert.match(v([{ id: 'money', name: 'Money', categories: ['shop', 'pay', 'book', 'fly'] }]), /unknown category "fly"/);
-  assert.deepEqual(themeScores([{ id: 'money', name: 'Money', categories: ['shop', 'pay'] }], { shop: 50, pay: 67 }).map((t) => t.score), [59]);
-});

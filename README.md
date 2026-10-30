@@ -52,7 +52,7 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `docs/methodology.md` | How the data is collected and scored |
-| `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, themes, then the matrix, closed), Compare two countries, Who builds it, and one line on the method |
+| `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, the errands, then the matrix, closed), Compare two countries, Who builds it, and one line on the method |
 | `companies.html` | The companies table, the flows chart and the open-source table |
 | `app.js`, `hero.js`, `lists.js` | The console, the hero, and the companies page tables |
 | `data.js`, `ui.js` | The data, fetched once per page, and the small helpers both pages share |

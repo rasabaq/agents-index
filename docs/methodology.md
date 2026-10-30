@@ -48,7 +48,7 @@ Rules:
 - Primary sources come first: company, regulator and paper. News is used only when nothing primary exists.
 - When the sources disagree or are unclear, the cell takes the lower status and the note says why.
 - A cell whose sources are thin or indirect carries `"confidence": "low"`. The site marks it with a `?`. Treat it as a lead to check, not a finding. Its score still counts.
-- A cell that is not live may carry one `"gapReason"`: the main reason agents cannot do it yet. It is one of five ids, and their labels live in `data/meta.json`: `no-rule` (no rule in force yet), `rail-closed` (the rail exists, but agents can't use it), `not-launched` (not fully launched here yet), `pilot-only` (pilot only) and `assist-only` (it helps, but you do the last step). `pilot-only` and `assist-only` describe partial availability, so they go only on a Limited cell; a Not yet cell never uses them. It does not change the score.
+- A cell that is not live may carry one `"gapReason"`: the main reason agents cannot do it yet. It is one of five ids, and their labels live in `data/meta.json`: `no-rule` (no rule in force yet), `rail-closed` (the system exists, but agents are not let in), `not-launched` (not fully launched here yet), `pilot-only` (pilot only) and `assist-only` (it helps, but you do the last step). `pilot-only` and `assist-only` describe partial availability, so they go only on a Limited cell; a Not yet cell never uses them. It does not change the score.
 
 ## Score and ranking
 
