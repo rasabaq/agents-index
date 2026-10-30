@@ -81,8 +81,8 @@
 
   (window.CHARTS ??= []).push({
     id: 'compare',
-    title: 'Head to head',
-    blurb: 'What can an agent do in one country that it cannot do in another? Pick two countries; each row shows both statuses, and the bar points to the country that is ahead and grows with the gap.',
+    title: 'Compare two countries',
+    blurb: 'Pick two countries. See what an agent can do in one but not the other.',
     render(el, ctx) {
       if (!document.getElementById('v-compare-css')) {
         const s = document.createElement('style');
@@ -97,7 +97,7 @@
       const cap1 = (s) => s[0].toUpperCase() + s.slice(1);
       const caps = Object.fromEntries(ctx.capabilities.map((c) => [c.id, c]));
       const n = ctx.capabilities.length;
-      const state = { a: 'US', b: 'CL', only: false, open: new Set() };
+      const state = { a: 'US', b: 'CL', only: true, open: new Set() };
 
       const opts = ctx.meta.countries.map((c) => `<option value="${c.code}">${emoji(c.code)} ${esc(c.name)}</option>`).join('');
       el.classList.add('v-compare');
@@ -114,14 +114,14 @@
         <p class="vc-sub"></p>
         <div class="vc-legend">
           ${Object.entries(S).map(([k, s]) => `<span class="vc-key"><span class="chip s-${k}">${s.label}</span>${pts(s.points)}</span>`).join('')}
-          <span class="vc-key"><span class="low" aria-hidden="true">?</span>Low confidence</span>
+          <span class="vc-key"><span class="low" aria-hidden="true">?</span>Unsure</span>
           <span class="vc-key"><span class="vc-track"><span class="vc-fill l" style="width:25%"></span></span><span class="vc-track"><span class="vc-fill r" style="width:37.5%"></span></span>Gap toward the leader</span>
         </div>
         <div class="vc-list" role="region" aria-label="Capability by capability comparison"></div>`;
       const $ = (s) => el.querySelector(s);
       const list = $('.vc-list');
 
-      const chip = (cell, code) => `<span class="chip vc-chip s-${cell.status}" data-code="${code}"><span class="vc-sr">${esc(name[code])}: </span>${S[cell.status].label}${cell.confidence === 'low' ? '<span class="low" title="Low confidence">?</span>' : ''}</span>`;
+      const chip = (cell, code) => `<span class="chip vc-chip s-${cell.status}" data-code="${code}"><span class="vc-sr">${esc(name[code])}: </span>${S[cell.status].label}${cell.confidence === 'low' ? '<span class="low" title="Unsure">?</span>' : ''}</span>`;
 
       const side = (cap, code) => {
         const c = cap.countries[code];
@@ -129,7 +129,7 @@
         return `<div class="vc-side">
           <h4>${flag(code)}${esc(name[code])} <span class="chip s-${c.status}">${S[c.status].label}${c.confidence === 'low' ? '<span class="low"></span>' : ''}</span></h4>
           <p>${esc(c.note)}</p>
-          ${c.confidence === 'low' ? '<p class="vc-lowtxt">Low confidence: the sources for this answer are thin or indirect.</p>' : ''}
+          ${c.confidence === 'low' ? '<p class="vc-lowtxt">Unsure: the sources for this answer are thin or indirect.</p>' : ''}
           ${ev ? `<ul>${ev}</ul>` : '<p class="vc-lowtxt">No sources: we searched and found no availability.</p>'}
         </div>`;
       };
@@ -214,7 +214,7 @@
         const c = e.target.closest('.vc-chip');
         if (!c) return ctx.tip.hide();
         const cap = caps[c.closest('.vc-row').dataset.id], cell = cap.countries[c.dataset.code];
-        ctx.tip.show(e, `<strong>${S[cell.status].label} in ${flag(c.dataset.code)}${esc(name[c.dataset.code])}</strong>${esc(cell.note)}${cell.confidence === 'low' ? '<br><em>Low confidence.</em>' : ''}`);
+        ctx.tip.show(e, `<strong>${S[cell.status].label} in ${flag(c.dataset.code)}${esc(name[c.dataset.code])}</strong>${esc(cell.note)}${cell.confidence === 'low' ? '<br><em>Unsure. The sources are thin.</em>' : ''}`);
       });
       list.addEventListener('pointerleave', () => ctx.tip.hide());
 

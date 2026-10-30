@@ -8,7 +8,7 @@ description: Drive the Agent Index site (the home page: hero, console and charts
 The product is a static web site, with no build step and no backend. Its surfaces:
 
 - `/` is the home page: the hero, the console (country view with its picker, lists and themes, then the closed matrix), Companies, Open source and Method.
-- The three charts (world map, head to head and flows) draw on the same page, between those sections.
+- The three charts (world map, compare and flows) draw on the same page, between those sections.
 - `npm test` and `npm run validate` check the data and the scoring. They do not check the UI.
 
 The helper `observatory.mjs` (next to this file) does five things:

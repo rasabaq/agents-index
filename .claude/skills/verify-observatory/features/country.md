@@ -30,7 +30,7 @@ Each Not yet item shows its status, its gap reason when it has one, and a "Seen 
 - `country-pick-hero` selects a country from the pins on the hero's planet, without scrolling. The sun moves behind the selected pin.
 - `country-pick-console` selects a country from the picker `[data-clist]` without scrolling.
 - `country-keys` steps through the ranking with `j` (next) and `k` (previous).
-- `country-compare` is the "Compare with XX" button (`[data-compare="US BR"]`, this country and its neighbour in the ranking). It does not change the console country or the hash: it scrolls to the Head to head chart `#v-compare` with that pair picked (see charts.md). If that chart did not draw, it switches the console to the neighbour instead.
+- `country-compare` is the "Compare with XX" button (`[data-compare="US BR"]`, this country and its neighbour in the ranking). It does not change the console country or the hash: it scrolls to the Compare two countries chart `#v-compare` with that pair picked (see charts.md). If that chart did not draw, it switches the console to the neighbour instead.
 - `country-sources` opens the list of every source behind the country (see matrix-detail.md).
 
 ## How to get to it (user POV)

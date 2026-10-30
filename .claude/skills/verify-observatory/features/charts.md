@@ -5,7 +5,7 @@ The home page shows three charts, each in a chart window. `index.html` places ea
 In page order:
 
 1. World map (`map`), right under the hero, where it overlaps the planet
-2. Head to head (`compare`), after the console
+2. Compare two countries (`compare`), after the console. It starts on "Only differences"
 3. Flows (`flows`), after the Companies table
 
 ## Sub-features
