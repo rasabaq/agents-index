@@ -24,12 +24,6 @@
     { "id": "work", "name": "Work & jobs", "blurb": "Agents that apply for jobs and run payroll and HR paperwork.", "short": "Work", "can": "apply for jobs for you" },
     { "id": "insurance", "name": "Insurance", "blurb": "Agents that buy car, home or travel cover and file claims for you.", "short": "Insurance", "can": "buy insurance and file claims for you" }
   ],
-  "themes": [
-    { "id": "shop-pay", "name": "Shop and pay", "categories": ["commerce", "payments", "messaging"] },
-    { "id": "get-done", "name": "Get things done", "categories": ["services", "autonomy", "health", "work", "insurance"] },
-    { "id": "money-id", "name": "Money and ID", "categories": ["banking", "government"] },
-    { "id": "ground-rules", "name": "Ground rules", "categories": ["access", "rules"] }
-  ],
   "gapReasons": [
     { "id": "no-rule", "label": "No rule in force yet" },
     { "id": "rail-closed", "label": "The system exists, but agents are not let in" },
