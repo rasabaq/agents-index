@@ -36,12 +36,6 @@ export function scoreCountries(meta, categories) {
   return rows;
 }
 
-// Themes group the categories for display, so a country shows 4 bars instead of 12. A theme scores the mean of its
-// categories' scores. The country score never uses themes.
-export function themeScores(themes, byCategory) {
-  return themes.map((t) => ({ ...t, score: Math.round(mean(t.categories.map((id) => byCategory[id]))) }));
-}
-
 // Returns a list of human-readable problems. An empty list means the data is valid.
 export function validate(meta, categories) {
   const errors = [];
@@ -57,14 +51,6 @@ export function validate(meta, categories) {
     if (typeof c.short !== 'string' || !c.short.trim() || typeof c.can !== 'string' || !c.can.trim()) {
       errors.push(`category "${c.id}" needs "short" and "can" in meta.json, for example "short": "Health", "can": "book care for you"`);
     }
-  }
-
-  // Every category sits in exactly one theme, so the theme bars cover the whole score.
-  if (meta.themes) {
-    const listed = meta.themes.flatMap((t) => t.categories ?? []);
-    for (const t of meta.themes) if (!t.id || !t.name || !t.categories?.length) errors.push(`meta: every theme needs an id, a name and categories`);
-    for (const id of listed) if (!categoryIds.has(id)) errors.push(`theme: unknown category "${id}"`);
-    for (const id of categoryIds) if (listed.filter((x) => x === id).length !== 1) errors.push(`category "${id}" must be in exactly one theme in meta.json`);
   }
 
   for (const cat of categories) {
@@ -278,13 +264,15 @@ export function guessCountry(codes, languages = [], timeZone = '') {
   return null;
 }
 
-// The page's link state: #country=MX, optionally &view=business. Old #country=MX links read as the people view.
+// The page's link state: #country=MX, optionally &view=business and &errand=shop (the open errand; none means the
+// first). Old #country=MX links read as the people view.
 export function readHash(hash) {
   const p = new URLSearchParams(hash.replace(/^#/, ''));
   const country = /^[A-Z]{2}$/.test(p.get('country') ?? '') ? p.get('country') : null;
-  return { country, view: p.get('view') === 'business' ? 'business' : 'people' };
+  const errand = /^[a-z-]+$/.test(p.get('errand') ?? '') ? p.get('errand') : null;
+  return { country, view: p.get('view') === 'business' ? 'business' : 'people', errand };
 }
-export const writeHash = (country, view) => `#country=${country}${view === 'business' ? '&view=business' : ''}`;
+export const writeHash = (country, view, errand) => `#country=${country}${view === 'business' ? '&view=business' : ''}${errand ? `&errand=${errand}` : ''}`;
 
 // The country a visitor starts on: the #country= hash, else their own country, else the United States.
 export function startCountry(codes, hash, languages = [], timeZone = '') {
@@ -328,8 +316,8 @@ export function couldClose(companies, capId, code, region) {
     .sort((a, b) => b.near.length - a.near.length || a.name.localeCompare(b.name));
 }
 
-// "For businesses": the capabilities a business needs to sell through AI agents and get paid, in display groups,
-// each with a label from the seller's side. This is the one place the set lives.
+// "For businesses": the capabilities a business needs to sell through AI agents and get paid, in groups, each with a
+// label from the seller's side. The business verdict counts these; the business errands (src/errands.js) show them.
 export const BUSINESS_GROUPS = [
   { title: 'Sell through AI agents', items: [
     { id: 'commerce.merchant-protocol', label: 'AI agents can buy from your online store' },
@@ -347,19 +335,12 @@ export const BUSINESS_GROUPS = [
   ] },
 ];
 
-// For one country: each business capability with its cell and the companies that work there for it, merged by
-// name (one company can appear in several category files). Capabilities missing from the data are skipped.
-export function forBusiness(categories, code) {
-  const caps = new Map(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { cap, cat }])));
-  return BUSINESS_GROUPS.map((g) => ({
-    title: g.title,
-    items: g.items.filter(({ id }) => caps.has(id)).map(({ id, label }) => {
-      const { cap, cat } = caps.get(id);
-      const byName = new Map();
-      for (const co of cat.companies ?? []) {
-        if ((co.capabilities ?? []).includes(id) && marketsFor(co, id).includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
-      }
-      return { cap, label, cell: cap.countries[code], companies: [...byName.values()].sort((a, b) => a.name.localeCompare(b.name)) };
-    }),
-  })).filter((g) => g.items.length);
+// The companies in a category file that work in a country for one capability, merged by name (a company can be listed
+// twice), A to Z.
+export function companiesFor(companies, capId, code) {
+  const byName = new Map();
+  for (const co of companies ?? []) {
+    if ((co.capabilities ?? []).includes(capId) && marketsFor(co, capId).includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
+  }
+  return [...byName.values()].sort((a, b) => a.name.localeCompare(b.name));
 }

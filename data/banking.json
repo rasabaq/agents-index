@@ -463,6 +463,7 @@
         },
         "CL": {
           "status": "limited",
+          "gapReason": "assist-only",
           "note": "Itaú Chile launched voice and text transfers to third parties in its app in June 2026, where an AI agent fills in the transfer and the user confirms with Itaú Pass. We count it as limited because only news reports describe it and no Itaú page confirms that all customers have it. In October 2026 we found no similar feature at BancoEstado, Banco de Chile, BCI or Santander Chile.",
           "evidence": [
             {

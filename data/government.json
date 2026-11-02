@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "limited",
-          "note": "There is no national ID, so the cell is limited. Login.gov serves only government agencies. Businesses can check state mobile driver's licenses in Google Wallet through the Digital Credentials API, but these are state IDs, not a national one.",
+          "note": "There is no national ID, so it counts as limited. Login.gov serves only government agencies. Businesses can check state mobile driver's licenses in Google Wallet through the Digital Credentials API, but these are state IDs, not a national one.",
           "evidence": [
             {
               "title": "Login.gov is now accepting mobile driver's licenses",
@@ -43,7 +43,7 @@
         },
         "GB": {
           "status": "announced",
-          "note": "GOV.UK One Login serves central government only, and GOV.UK Wallet holds just the veteran card. Since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving license in a GOV.UK Wallet sandbox, but it is not a production service, so the cell is announced. Private firms can use certified DVS providers (46 providers and 64 services on the statutory register in July 2026). The new government cancelled the national digital ID scheme in July 2026.",
+          "note": "GOV.UK One Login serves central government only, and GOV.UK Wallet holds just the veteran card. Since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving license in a GOV.UK Wallet sandbox, but it is not a production service, so it counts as announced. Private firms can use certified DVS providers (46 providers and 64 services on the statutory register in July 2026). The new government cancelled the national digital ID scheme in July 2026.",
           "gapReason": "not-launched",
           "evidence": [
             {
@@ -139,7 +139,7 @@
         },
         "MX": {
           "status": "live",
-          "note": "Banks and other firms that sign an agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo. As in Colombia, ordinary firms can get access, so the cell is live. The Llave MX rules require federal platforms to use it for sign-in but set no access for private apps, and the biometric CURP is not yet open to private apps.",
+          "note": "Banks and other firms that sign an agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo. As in Colombia, ordinary firms can get access, so it counts as live. The Llave MX rules require federal platforms to use it for sign-in but set no access for private apps, and the biometric CURP is not yet open to private apps.",
           "evidence": [
             {
               "title": "Acuerdo INE/CG92/2016: Servicio de Verificación de los Datos de la Credencial para Votar",
@@ -180,7 +180,7 @@
         },
         "CL": {
           "status": "limited",
-          "note": "ClaveÚnica is open only to private bodies that a law or rule expressly allows, such as pension funds (AFP) and e-signature providers, under terms approved in October 2025 (Resolución Exenta 733/2025). Unlike in Mexico and Colombia, an ordinary firm cannot sign up, so the cell is limited.",
+          "note": "ClaveÚnica is open only to private bodies that a law or rule expressly allows, such as pension funds (AFP) and e-signature providers, under terms approved in October 2025 (Resolución Exenta 733/2025). Unlike in Mexico and Colombia, an ordinary firm cannot sign up, so it counts as limited.",
           "evidence": [
             {
               "title": "Resolución Exenta 733/2025: aprueba términos y condiciones para la integración y uso de ClaveÚnica",
@@ -208,7 +208,7 @@
         },
         "CO": {
           "status": "live",
-          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators (fingerprint, and face at level 2), with 2026 tariffs set by Resolución 1500 of 2026. Banks can also check a face in real time against Registraduría records with the Cédula Digital PIN, a face match or both. Any firm can use a certified operator, so the cell is live. Carpeta Ciudadana stays a public-sector service.",
+          "note": "Banks and other firms check identity against the Registraduría's biometric database through certified operators (fingerprint, and face at level 2), with 2026 tariffs set by Resolución 1500 of 2026. Banks can also check a face in real time against Registraduría records with the Cédula Digital PIN, a face match or both. Any firm can use a certified operator, so it counts as live. Carpeta Ciudadana stays a public-sector service.",
           "evidence": [
             {
               "title": "Resolución Registraduría 13691 de 2016 (aliados tecnológicos)",
