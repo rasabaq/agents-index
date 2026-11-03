@@ -2,6 +2,8 @@
 {
   "name": "agents-index",
   "compatibility_date": "2026-10-15",
+  // Serves the site at agentindex.art. Cloudflare creates the DNS record and certificate.
+  "routes": [{ "pattern": "agentindex.art", "custom_domain": true }],
   "assets": {
     "directory": ".",
     // Same as GitHub Pages: /about serves about.html, unknown paths get a plain 404.
