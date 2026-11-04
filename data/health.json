@@ -171,6 +171,28 @@
             }
           ],
           "confidence": "low"
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Some hospitals and clinics use AI phone lines that take booking requests: the National Cancer Center Hospital's AI phone takes first-visit requests 24 hours a day, but staff then pick the date and reply by SMS, and it needs a referral letter. We found no patient-side agent that books a doctor, and Zocdoc in Gemini is US-only.",
+          "evidence": [
+            {
+              "title": "初診予約専用AI電話",
+              "publisher": "National Cancer Center Hospital (国立がん研究センター中央病院)",
+              "url": "https://www.ncc.go.jp/jp/ncch/d001/shoshin/AI/index.html",
+              "date": "2026-10-01",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -324,6 +346,13 @@
           "gapReason": "not-launched",
           "note": "No AI agent that renews or orders prescriptions was found at Shoppers Drug Mart, Rexall or PocketPills; pharmacy AI tools found are for staff, not patients.",
           "evidence": []
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "We found no AI agent that renews or orders prescription medicine in Japan; renewals need a doctor's visit, in person or online, and Amazon's Health AI renewals are US-only.",
+          "evidence": [],
+          "confidence": "low"
         }
       }
     },
@@ -469,6 +498,13 @@
               "type": "news"
             }
           ],
+          "confidence": "low"
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Public health insurance covers everyone at a fixed co-pay, and we found no AI assistant at a health insurance society or private insurer that looks up your own cover or a claim; UnitedHealthcare's Avery is US-only.",
+          "evidence": [],
           "confidence": "low"
         }
       }

@@ -269,6 +269,27 @@
               "type": "news"
             }
           ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "The AI Promotion Act (人工知能関連技術の研究開発及び活用の推進に関する法律) has been fully in force since 1 September 2025, and the first AI Basic Plan under it was adopted in December 2025. It is a promotion law: it sets up the AI Strategy Headquarters and asks businesses to cooperate, with no penalties and nothing on agents acting for you, so the cell is limited.",
+          "evidence": [
+            {
+              "title": "AI法 全面施行 -次なるフェーズへ-",
+              "publisher": "Cabinet Office (内閣府)",
+              "url": "https://www.cao.go.jp/press/new_wave/20251003.html",
+              "date": "2025-10-03",
+              "type": "regulation"
+            },
+            {
+              "title": "人工知能基本計画 (資料)",
+              "publisher": "Cabinet Office CSTI (内閣府)",
+              "url": "https://www8.cao.go.jp/cstp/gaiyo/yusikisha/20251120/siryo1.pdf",
+              "date": "2025-11-20",
+              "type": "regulation"
+            }
+          ]
         }
       }
     },
@@ -524,6 +545,28 @@
               "type": "regulation"
             }
           ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "Japanese law refunds some unauthorized bank withdrawals and lets you cancel an online contract made by a clear input mistake, and card issuers cover fraud under their member terms, but none of these mentions agents. The Cabinet Office's Consumer Commission set up an expert panel on AI and consumer problems in 2026, which discussed spending limits, approval before purchase and cancelling agent actions, but it has not issued rules.",
+          "evidence": [
+            {
+              "title": "第6回 人工知能(AI)技術の利用と消費者問題に関する専門調査会 議事録",
+              "publisher": "Consumer Commission, Cabinet Office (消費者委員会)",
+              "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/006/gijiroku/index.html",
+              "date": "2026-07-17",
+              "type": "regulation"
+            },
+            {
+              "title": "内閣府 消費者委員会 専門調査会にAICX協会代表理事 小栗 伸が登壇｜AIエージェント時代の消費者保護に向け、ガイドライン整備と人材育成の重要性を提言",
+              "publisher": "AICX協会 (PR TIMES)",
+              "url": "https://prtimes.jp/main/html/rd/p/000000146.000155740.html",
+              "date": "2026-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
