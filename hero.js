@@ -28,7 +28,10 @@ function geom() {
   const W = hero.clientWidth, H = hero.clientHeight, hb = hero.getBoundingClientRect(), rb = row.getBoundingClientRect();
   const R = Math.max(W * 1.25, 460), Cx = W * 0.5, Cy = rb.bottom - hb.top + R;
   const edge = (x) => Cy - Math.sqrt(Math.max(0, R * R - (x - Cx) ** 2));
-  const pins = [...row.querySelectorAll('a')];
+  // Only the pins that fit in 44px slots show: the top ranks, plus the selected country. The console lists them all.
+  const all = [...row.querySelectorAll('a')], fit = Math.max(1, Math.floor(rb.width / 44));
+  const cur = all.findIndex((p) => p.getAttribute('aria-current') === 'true');
+  const pins = all.filter((p, i) => !(p.parentElement.hidden = !(i < fit - (cur >= fit) || i === cur)));
   // Evenly spaced and centred on the planet's top, in slots up to 136px wide. The sun rises behind the selected pin.
   const step = Math.min(136, rb.width / pins.length);
   let sx = W * (W < 720 ? 0.8 : 0.71);
