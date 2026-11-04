@@ -264,6 +264,27 @@
               "type": "company"
             }
           ]
+        },
+        "NG": {
+          "status": "limited",
+          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026), on WhatsApp, its app and its website, lets customers buy and renew policies in English, Yoruba, Igbo, Hausa and other languages. No source says which products or whether payment finishes inside the chat, so the cell stays limited.",
+          "evidence": [
+            {
+              "title": "Heirs Insurance Group Launches Multi-Language AI Assistant to Deepen Insurance Access in Nigeria",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2026/05/13/heirs-insurance-group-launches-multi-language-ai-assistant-to-deepen-insurance-access-in-nigeria/",
+              "date": "2026-05-13",
+              "type": "news"
+            },
+            {
+              "title": "Heirs Insurance sets the pace with Prince AI, Nigeria's first multi-language GenAI assistant",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/heirs-insurance-sets-the-pace-with-prince-ai-nigerias-first-multi-language-genai-assistant/",
+              "date": "2026-05-12",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -489,6 +510,27 @@
           "gapReason": "not-launched",
           "note": "No Australian insurer was found whose AI agent takes a claim in a chat and moves it forward; IAG's OpenAI voice agents are due in the first half of FY27, and Lemonade is not in Australia.",
           "evidence": [],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "live",
+          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026) lets customers start a claim and track it on WhatsApp, the SimpleLife app and the website. Sources do not say whether it checks documents or settles claims itself.",
+          "evidence": [
+            {
+              "title": "Heirs Insurance Group Launches Multi-Language AI Assistant to Deepen Insurance Access in Nigeria",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2026/05/13/heirs-insurance-group-launches-multi-language-ai-assistant-to-deepen-insurance-access-in-nigeria/",
+              "date": "2026-05-13",
+              "type": "news"
+            },
+            {
+              "title": "Heirs Insurance sets the pace with Prince AI, Nigeria's first multi-language GenAI assistant",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/heirs-insurance-sets-the-pace-with-prince-ai-nigerias-first-multi-language-genai-assistant/",
+              "date": "2026-05-12",
+              "type": "news"
+            }
+          ],
           "confidence": "low"
         }
       }
@@ -778,6 +820,21 @@
       ],
       "capabilities": [
         "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "Heirs Insurance Group",
+      "hq": "NG",
+      "url": "https://www.thisdaylive.com/2026/05/13/heirs-insurance-group-launches-multi-language-ai-assistant-to-deepen-insurance-access-in-nigeria/",
+      "homepage": "https://www.heirsinsurancegroup.com",
+      "icon": "https://www.heirsinsurancegroup.com/wp-content/uploads/2023/11/icon-300x300.png",
+      "role": "Nigerian insurer whose generative AI assistant Prince AI sells and renews policies and takes claims on WhatsApp.",
+      "markets": [
+        "NG"
+      ],
+      "capabilities": [
+        "insurance.buy-policy",
+        "insurance.file-claim"
       ]
     }
   ]

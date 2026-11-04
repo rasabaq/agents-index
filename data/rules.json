@@ -311,6 +311,28 @@
               "type": "news"
             }
           ]
+        },
+        "NG": {
+          "status": "announced",
+          "gapReason": "no-rule",
+          "note": "Nigeria has no AI law in force; the Nigeria Data Protection Act 2023 covers automated decisions as a general law. The government-backed National Digital Economy and E-Governance Bill would apply to \"AI agents\" and sort AI systems into risk groups; in July 2026 the Senate ICT committee chair said it was going through third reading and would reach the president within weeks, but we found no report of final passage or assent.",
+          "evidence": [
+            {
+              "title": "'National Digital Economy and e-Governance Act 2026 Ready in Weeks'",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2026/07/09/national-digital-economy-and-e-governance-act-2026-ready-in-weeks/",
+              "date": "2026-07-09",
+              "type": "news"
+            },
+            {
+              "title": "Nigeria Set to Pass Sweeping AI Rules for Digital Economy",
+              "publisher": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-01-13/nigeria-set-to-pass-sweeping-ai-rules-for-digital-economy",
+              "date": "2026-01-13",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -599,6 +621,27 @@
               "publisher": "ASIC",
               "url": "https://asic.gov.au/regulatory-resources/financial-services/epayments-code/",
               "date": "2022-06",
+              "type": "regulation"
+            }
+          ]
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "The CBN's Consumer Protection Regulations (2019) and its Consumer Protection Framework make banks refund fraud losses and unauthorized debits, with interest, unless the customer was negligent. None of these rules names AI agents, and an agent's order is one you asked for.",
+          "evidence": [
+            {
+              "title": "CBN Consumer Protection Regulations",
+              "publisher": "Central Bank of Nigeria",
+              "url": "https://www.cbn.gov.ng/out/2019/ccd/cbn%20consumer%20protection%20regulations.pdf",
+              "date": "2019-12",
+              "type": "regulation"
+            },
+            {
+              "title": "Consumer Protection Framework",
+              "publisher": "Central Bank of Nigeria",
+              "url": "https://www.cbn.gov.ng/out/2016/cfpd/consumer%20protection%20framework%20(final).pdf",
+              "date": "2016-11-07",
               "type": "regulation"
             }
           ]

@@ -366,6 +366,33 @@
               "type": "company"
             }
           ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "Meta began opening Meta Business Agent to businesses of all sizes globally in June 2026, and Meta's Sub-Saharan Africa team is promoting it to Nigerian small businesses in the WhatsApp Business app, with an Ibadan spice seller quoted using it to answer customers and recommend products. Meta does not publish a country list.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "WhatsApp Spotlights Nigerian SMEs in New Campaign",
+              "publisher": "Business Post Nigeria",
+              "url": "https://businesspost.ng/technology/whatsapp-spotlights-nigerian-smes-in-new-campaign/",
+              "date": "2026-09-07",
+              "type": "news"
+            },
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -751,6 +778,28 @@
             }
           ],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Paystack Index (early-access beta, June 2026) lets ChatGPT or Claude set up payments to merchants such as Chowdeck, but you approve each payment in a WhatsApp message, outside the AI chat. Payaza's Chat & Pay (April 2026) runs an automated checkout on a WhatsApp number, though it is not clear the payment stays in the chat. WhatsApp's own payments are not offered in Nigeria.",
+          "evidence": [
+            {
+              "title": "Paystack launches AI checkout Index",
+              "publisher": "Techpoint Africa",
+              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
+              "date": "2026-06-25",
+              "type": "news"
+            },
+            {
+              "title": "Payaza Launches 'Chat & Pay' Feature for instant WhatsApp payments",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2026/04/15/payaza-launches-chat-pay-feature-for-instant-whatsapp-payments/",
+              "date": "2026-04-15",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -776,7 +825,8 @@
         "FR",
         "CA",
         "JP",
-        "AU"
+        "AU",
+        "NG"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [

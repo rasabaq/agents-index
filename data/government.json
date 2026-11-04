@@ -406,6 +406,33 @@
               "type": "regulation"
             }
           ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "NIMC's NINAuth, launched in May 2025, offers web, API and mobile checks of the National Identification Number with the holder's explicit consent, including for KYC and financial transactions, and is NIMC's sole channel for NIN verification; private firms reach it through licensed partners. The NIMC Act 2026, signed in June 2026, backs the system.",
+          "evidence": [
+            {
+              "title": "Nigeria unveils platform to streamline national ID authentication, verification",
+              "publisher": "Biometric Update",
+              "url": "https://www.biometricupdate.com/202505/nigeria-unveils-platform-to-streamline-national-id-authentication-verification",
+              "date": "2025-05-07",
+              "type": "news"
+            },
+            {
+              "title": "NINAuth - Nigeria Digital ID Authentication",
+              "publisher": "National Identity Management Commission",
+              "url": "https://ninauth.nimc.gov.ng",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "NIMC Act 2026: turning Nigeria's identity system into an economic asset",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/nimc-act-2026-turning-nigerias-identity-system-into-an-economic-asset",
+              "date": "2026-07",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -700,6 +727,20 @@
             }
           ],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "GovGuide Nigeria, launched in May 2026 by the digital economy ministry with Meta, NCAIR and Publica AI, answers questions about more than 35 ministries on WhatsApp and the web in English, Hausa, Igbo and Yoruba, but it does not complete applications or payments.",
+          "evidence": [
+            {
+              "title": "FG launches AI-powered GovGuideNigeria to reach citizens via WhatsApp",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/fg-launches-ai-powered-govguidenigeria-to-reach-citizens-via-whatsapp/",
+              "date": "2026-05-21",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -1012,6 +1053,20 @@
       "role": "Certifies private companies to check identity with My Number card certificates (JPKI).",
       "markets": [
         "JP"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "National Identity Management Commission (NIMC)",
+      "hq": "NG",
+      "url": "https://www.biometricupdate.com/202505/nigeria-unveils-platform-to-streamline-national-id-authentication-verification",
+      "homepage": "https://nimc.gov.ng",
+      "icon": "https://nimc.gov.ng/apple-touch-icon.png",
+      "role": "Runs the national ID database and NINAuth, the consent-based API that apps use to verify a National Identification Number.",
+      "markets": [
+        "NG"
       ],
       "capabilities": [
         "government.digital-id-api"

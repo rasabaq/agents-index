@@ -313,6 +313,20 @@
               "type": "company"
             }
           ]
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No Nigerian bank or card issuer was found in Visa Intelligent Commerce or Mastercard Agent Pay. Visa's Agentic Ready program for Central and Eastern Europe, the Middle East and Africa (May 2026) names early issuers in the Gulf, Egypt, South Africa and Ukraine, but none in Nigeria, and it is still a testing phase.",
+          "evidence": [
+            {
+              "title": "Visa Launches \"Agentic Ready\" Program in CEMEA to Accelerate Agent-Led Commerce",
+              "publisher": "Visa",
+              "url": "https://km.visamiddleeast.com/en_KM/about-visa/newsroom/press-releases/prl-20052026.html",
+              "date": "2026-05-20",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -595,6 +609,28 @@
             }
           ],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Through Paystack Index (early-access beta), ChatGPT or Claude can send money with Zap, Paystack's app that pays any Nigerian commercial bank account within seconds. Neither Paystack nor the press says the transfers run on NIBSS Instant Payments (NIP), the national instant rail, so this is inferred.",
+          "evidence": [
+            {
+              "title": "Paystack connects AI and payments",
+              "publisher": "ITWeb Africa",
+              "url": "https://itweb.africa/article/paystack-connects-ai-and-payments/Pero37Z31koMQb6m",
+              "date": "2026-06-26",
+              "type": "news"
+            },
+            {
+              "title": "Introducing Zap by Paystack",
+              "publisher": "Paystack",
+              "url": "https://paystack.com/blog/product/introducing-zap-by-paystack",
+              "date": "2025-03",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -869,6 +905,27 @@
               "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
               "date": "2026-10",
               "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT, Claude or OpenClaw pay from your Zap balance for airtime, data, bills, transfers and Chowdeck orders, within per-payment limits, after you approve each one on WhatsApp. No AI payments agent was found at OPay, PalmPay, Moniepoint or Kuda.",
+          "evidence": [
+            {
+              "title": "What is Paystack Index?",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/legal/support/about",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Paystack connects AI and payments",
+              "publisher": "ITWeb Africa",
+              "url": "https://itweb.africa/article/paystack-connects-ai-and-payments/Pero37Z31koMQb6m",
+              "date": "2026-06-26",
+              "type": "news"
             }
           ]
         }
@@ -1169,6 +1226,21 @@
       ],
       "capabilities": [
         "payments.card-agent-token"
+      ]
+    },
+    {
+      "name": "Paystack",
+      "hq": "NG",
+      "url": "https://index.paystack.com/legal/support/about",
+      "homepage": "https://paystack.com",
+      "icon": null,
+      "role": "Nigerian payments company (owned by Stripe) whose Paystack Index beta lets ChatGPT and Claude pay from a Zap wallet and buy from selected merchants.",
+      "markets": [
+        "NG"
+      ],
+      "capabilities": [
+        "payments.wallet-agent",
+        "payments.instant-rail-agent"
       ]
     }
   ],

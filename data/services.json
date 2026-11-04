@@ -314,6 +314,20 @@
               "type": "company"
             }
           ]
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No agent table booking was found: Google AI Mode table booking and Gemini's OpenTable app are not offered in Nigeria, and OpenTable runs no Nigeria site.",
+          "evidence": [
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps (OpenTable: UK and US)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -648,6 +662,26 @@
               "publisher": "Google",
               "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
               "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "Booking.com says its app in ChatGPT is available to ChatGPT users globally (hotels, and car rentals since May 2026); it finds stays and hands off to Booking.com to book. No Nigerian travel agency agent, such as one from Wakanow, was found, and Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
               "type": "company"
             }
           ]
@@ -1001,6 +1035,34 @@
             }
           ],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT or Claude order Chowdeck food deliveries; you approve the payment on WhatsApp. Glovo's ChatGPT and Claude assistant finds items but sends you to the Glovo app to pay, and no source says it covers Nigeria; Uber's ChatGPT apps are US-only.",
+          "evidence": [
+            {
+              "title": "Paystack launches AI checkout Index",
+              "publisher": "Techpoint Africa",
+              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
+              "date": "2026-06-25",
+              "type": "news"
+            },
+            {
+              "title": "What is Paystack Index?",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/legal/support/about",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Stop searching, start chatting: Glovo pioneers AI quick commerce",
+              "publisher": "Nairametrics",
+              "url": "https://nairametrics.com/2026/07/30/stop-searching-start-chatting-glovo-pioneers-ai-quick-commerce/",
+              "date": "2026-07-30",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -1046,7 +1108,8 @@
         "CO",
         "IN",
         "ES",
-        "FR"
+        "FR",
+        "NG"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -1255,7 +1318,8 @@
         "FR",
         "CA",
         "JP",
-        "AU"
+        "AU",
+        "NG"
       ],
       "capabilities": [
         "services.travel-booking"

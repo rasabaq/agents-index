@@ -214,6 +214,21 @@
               "type": "company"
             }
           ]
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No AI agent that books a doctor was found. BetaCare's WhatsApp chatbot books virtual consultations and AXA Mansard Health's WhatsApp bot Karis finds partner hospitals, but no source says either is AI or books in-person slots; Gemini's Zocdoc booking is US-only.",
+          "evidence": [
+            {
+              "title": "Karis: AXA Mansard Health's WhatsApp chatbot to reduce waiting time at hospital",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/karis-axa-mansard-healths-whatapp-chatbot-to-reduce-waiting-time-at-hospital/",
+              "date": "2026-03-26",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -381,6 +396,20 @@
           "note": "We found no AI agent that renews or orders prescription medicine in Australia. We did not search pharmacy chains one by one.",
           "evidence": [],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No AI agent that renews or orders prescription medicine was found. Sproxil's AISHA on WhatsApp only gives health information after you check a medicine is genuine.",
+          "evidence": [
+            {
+              "title": "Trust in Your Hands: Sproxil's AISHA Assistant Boosts Confidence in Nigeria's Healthcare System",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2025/05/12/trust-in-your-hands-sproxils-aisha-assistant-boosts-confidence-in-nigerias-healthcare-system",
+              "date": "2025-05-12",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -546,6 +575,21 @@
               "url": "https://www.medibank.com.au/content/dam/retail/about-assets/pdfs/investor-centre/fy26-results/FY26_Results_Media_Release.pdf",
               "date": "2026-08-20",
               "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "AXA Mansard Health's WhatsApp bot Karis (March 2026) lets enrollees check plan benefits and confirm treatment authorisations, but no source says it is AI, so the cell stays none, as for similar bots elsewhere.",
+          "evidence": [
+            {
+              "title": "AXA Mansard Health Introduces WhatsApp ChatBot 'Karis' To Streamline Healthcare Access Across Nigeria",
+              "publisher": "BrandSpur",
+              "url": "https://brandspurng.com/2026/03/26/axa-mansard-health-introduces-whatsapp-chatbot-karis-to-streamline-healthcare-access-across-nigeria/",
+              "date": "2026-03-26",
+              "type": "news"
             }
           ],
           "confidence": "low"
