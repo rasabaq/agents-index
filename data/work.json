@@ -191,6 +191,21 @@
             }
           ],
           "confidence": "low"
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no agent that applies for jobs for you in Japan. Japanese job sites such as Recruit, doda and BizReach use AI for matching and scouting, not for sending applications, and LoopCV's board list names no Japanese board, though it searches LinkedIn worldwide.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -423,6 +438,21 @@
               "type": "company"
             }
           ]
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no Japanese payroll provider whose agent runs payroll or files a form on its own; freee, Money Forward and SmartHR announced no such agent, and a 2026 market review found no payroll AI that pays without a person's approval.",
+          "evidence": [
+            {
+              "title": "2026年版 給与計算向けAIエージェント12選",
+              "publisher": "Rework",
+              "url": "https://resources.rework.com/ja/tools/ai-agents/best-ai-agents-for-payroll-2026",
+              "date": "2026-08-17",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }

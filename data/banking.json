@@ -363,6 +363,26 @@
               "type": "regulation"
             }
           ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Since June 2018 the Banking Act lets firms registered as electronic payment agency service providers (電子決済等代行業者) read account balances and history and pass transfer instructions to banks for you, under contracts with each bank. Banks open these APIs voluntarily, and far fewer offer payment (update) APIs than read-only ones, so payment initiation is patchy.",
+          "evidence": [
+            {
+              "title": "平成30年6月から「電子決済等代行業」に関する新しい制度がはじまりました",
+              "publisher": "Financial Services Agency (金融庁)",
+              "url": "https://www.fsa.go.jp/common/about/pamphlet/dendaigyo_start.pdf",
+              "date": "2018-06",
+              "type": "regulation"
+            },
+            {
+              "title": "電子決済等代行業者の登録完了のお知らせ (reference and update APIs)",
+              "publisher": "ミロク情報サービス",
+              "url": "https://www.mjs.co.jp/news/news_2019/000000124.000018493/pdf/d18493-124-pdf-0.pdf",
+              "date": "2019-06",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -694,6 +714,27 @@
               "publisher": "Retail Banker International",
               "url": "https://www.retailbankerinternational.com/news/cibc-virtual-assistant/",
               "date": "2020-12-10",
+              "type": "news"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Sumishin SBI Net Bank's NEOBANK ai agent (beta since February 2026) sends transfers to registered payees from a chat request, including several payees at once, but only for approved beta users at ten branches; a business version for some corporate customers started beta on 29 October 2026. We found no agent that moves money at the big banks (MUFG, SMBC, Mizuho).",
+          "evidence": [
+            {
+              "title": "NEOBANK ai エージェント(ベータ版)のベータテスト開始について",
+              "publisher": "住信SBIネット銀行 (now DOCOMO SMTB Net Bank)",
+              "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
+              "date": "2026-02-27",
+              "type": "company"
+            },
+            {
+              "title": "AI銀行サービス「NEOBANK ai」エージェントのベータテストを開始",
+              "publisher": "Digital PR Platform",
+              "url": "https://digitalpr.jp/r/129420",
+              "date": "2026-02",
               "type": "news"
             }
           ]
@@ -1098,6 +1139,34 @@
       ],
       "capabilities": [
         "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "DOCOMO SMTB Net Bank",
+      "hq": "JP",
+      "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
+      "homepage": "https://www.netbk.co.jp/",
+      "icon": "https://www.netbk.co.jp/favicon.ico",
+      "role": "Its NEOBANK ai agent, in beta since February 2026, makes bank transfers to registered payees from a chat request.",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Financial Services Agency (FSA)",
+      "hq": "JP",
+      "url": "https://www.fsa.go.jp/common/about/pamphlet/dendaigyo_start.pdf",
+      "homepage": "https://www.fsa.go.jp/",
+      "icon": "https://www.fsa.go.jp/images/apple-touch-icon.png",
+      "role": "Registers electronic payment agency service providers, which read bank accounts and pass transfer instructions through bank APIs.",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "banking.open-finance-access"
       ]
     }
   ],

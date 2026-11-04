@@ -318,6 +318,34 @@
             }
           ],
           "confidence": "low"
+        },
+        "JP": {
+          "status": "live",
+          "note": "Meta began opening Meta Business Agent to businesses of all sizes globally in June 2026, on WhatsApp, Messenger and Instagram, and WhatsApp partner 360dialog says the regional limits appear lifted; no Meta page names Japan. On LINE, the chat app most people in Japan use, LINE Yahoo's own AI mode for Official Accounts has no release date, and only its Agent i Biz web app launched, in limited form, in late October 2026.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Agent i for Business (LINE公式アカウント AIモード: release undecided)",
+              "publisher": "LY Corporation",
+              "url": "https://www.lycbiz.com/jp/service/agent-i/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -638,6 +666,42 @@
               "type": "news"
             }
           ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Only niche channels: Telegram bot payments through Stripe, which serves Japan. LINE Pay closed in Japan in April 2025, which also ended LINE Official Account payments, and PayPay inside LINE only sends money between people, not to businesses.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "LINE公式アカウントのLINE Pay決済機能が終了！対処法は？",
+              "publisher": "L Message (エルメッセージ)",
+              "url": "https://lme.jp/media/line/line-pay/",
+              "date": "2025-05-26",
+              "type": "news"
+            },
+            {
+              "title": "LINEでPayPayが使える (送金・割り勘)",
+              "publisher": "GIZMODO Japan",
+              "url": "https://www.gizmodo.jp/article/line-paypay/",
+              "date": "2026-07-04",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -661,7 +725,8 @@
         "IN",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "JP"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [
@@ -815,7 +880,8 @@
         "MX",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "JP"
       ],
       "capabilities": [
         "messaging.pay-in-chat"
@@ -836,7 +902,8 @@
         "MX",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "JP"
       ],
       "capabilities": [
         "messaging.pay-in-chat"

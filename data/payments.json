@@ -271,6 +271,27 @@
               "type": "company"
             }
           ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Mastercard completed Japan's first live agentic transaction in May 2026 with Mitsubishi UFJ NICOS and other issuers' cards, booking an ELife transfer through an AI agent with Agentic Tokens and Payment Passkeys. Visa's Agentic Ready program has been live in Japan since April 2026 with Credit Saison, MUFG NICOS, Rakuten Card, SB Payment Service and Sumitomo Mitsui Card, but its first phase is an issuer test environment, not a consumer launch.",
+          "evidence": [
+            {
+              "title": "Mastercard completes first agentic transaction in Japan",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/jp/ja/news-and-trends/stories-japan/2026/may/mastercard-completes-first-agentic-transaction-in-japan.html",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Visa Launches 'Agentic Ready' Program in Asia Pacific with Over 50 Partners",
+              "publisher": "Visa (Kyodo News PR Wire)",
+              "url": "https://kyodonewsprwire.jp/release/202604308373",
+              "date": "2026-04-30",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -523,6 +544,21 @@
             }
           ],
           "confidence": "low"
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Sumishin SBI Net Bank (renamed DOCOMO SMTB Net Bank in August 2026) has tested its NEOBANK ai agent since February 2026: it makes bank transfers, which run over the Zengin system, from a chat request, but only to registered payees and only for approved beta users at ten branches. It does not yet support Kotra transfers, and we found no other agent that pays over Zengin or Kotra.",
+          "evidence": [
+            {
+              "title": "NEOBANK ai エージェント(ベータ版)のベータテスト開始について",
+              "publisher": "住信SBIネット銀行 (now DOCOMO SMTB Net Bank)",
+              "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
+              "date": "2026-02-27",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -751,6 +787,27 @@
               "type": "company"
             }
           ]
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no Japanese wallet or fintech app that lets an AI agent pay. PayPay and LINE Yahoo name AI agents as a goal, but no PayPay agent payment has launched, and Stripe's shared payment tokens and Link Agent Wallet do not cover Japan.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens (supported countries)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "LINEヤフーの3つの注力とは? PayPayを中心としたデジタル金融プラットフォーム構築へ AIエージェントも強化",
+              "publisher": "Payment Navi",
+              "url": "https://paymentnavi.com/?p=160566",
+              "date": "2025-05",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -772,7 +829,8 @@
         "CO",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "JP"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -795,7 +853,8 @@
         "IN",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "JP"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -1015,6 +1074,20 @@
       "role": "Spanish bank whose Blue assistant sends Bizum instant payments from a typed or spoken request.",
       "markets": [
         "ES"
+      ],
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "DOCOMO SMTB Net Bank",
+      "hq": "JP",
+      "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
+      "homepage": "https://www.netbk.co.jp/",
+      "icon": "https://www.netbk.co.jp/favicon.ico",
+      "role": "Its NEOBANK ai agent sends Zengin bank transfers for approved beta users.",
+      "markets": [
+        "JP"
       ],
       "capabilities": [
         "payments.instant-rail-agent"

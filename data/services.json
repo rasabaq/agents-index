@@ -266,6 +266,34 @@
               "type": "company"
             }
           ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Alexa+, in free Early Access in Japan since 29 October 2026, is adding table booking through Tabelog's reservation service, rolling out over time. ChatGPT's OpenTable reservations are listed as global, but no page confirms Japanese restaurants show up, Tabelog's 2023 ChatGPT plugin only handed you off to its site, and OpenTable in Gemini is UK and US only.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            },
+            {
+              "title": "食べログ、ChatGPTプラグインの提供を開始",
+              "publisher": "Kakaku.com",
+              "url": "https://corporate.kakaku.com/news/20230508",
+              "date": "2023-05-08",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -553,6 +581,26 @@
               "publisher": "Amazon",
               "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
               "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only, and we found no ChatGPT app from Jalan, Rakuten Travel or Ikyu.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
               "type": "company"
             },
             {
@@ -869,6 +917,28 @@
               "type": "company"
             }
           ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Alexa+, in free Early Access in Japan since 29 October 2026, is adding food delivery from Uber Eats and Demae-can, rolling out over time. The Uber and Uber Eats apps in ChatGPT are shown only to US users.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -963,7 +1033,8 @@
         "DE",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "JP"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -1117,7 +1188,8 @@
         "IN",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "JP"
       ],
       "capabilities": [
         "services.travel-booking"

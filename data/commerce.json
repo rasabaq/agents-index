@@ -417,6 +417,34 @@
               "type": "company"
             }
           ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Only Alexa+ can shop for you here, in free Early Access since 29 October 2026 (by invitation or with a new Echo); Amazon lists shopping among its features but gives no Japan-specific checkout details. Google Pay agentic checkout, which Gemini and AI Mode use to buy, works only in the US and Australia, and Shopify's direct checkout in Google AI Mode and Gemini is rolling out only to shoppers in the US, Canada and Australia.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -708,6 +736,41 @@
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Only Amazon's Alexa+ in Early Access (since 29 October 2026) can order from Amazon for you. Rufus has been open to all Amazon.co.jp customers since September 2025, but its auto-buy is documented only in the US. Rakuten AI in the Rakuten Ichiba app (January 2026) helps you find products but does not pay for you, and Rakuten's 'Super Agent' was only demoed.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Rakuten Integrates Cutting-Edge Agentic AI Tool \"Rakuten AI\" into Rakuten Ichiba Mobile App",
+              "publisher": "Rakuten Group",
+              "url": "https://global.rakuten.com/corp/news/press/2026/0105_02.html",
+              "date": "2026-01-05",
+              "type": "company"
+            },
+            {
+              "title": "Rakuten Puts 'Brain Twin' AI at Center of Retail Ecosystem (assistant won't process payments)",
+              "publisher": "PYMNTS",
+              "url": "https://www.pymnts.com/?p=2914366",
+              "date": "2025-08-11",
+              "type": "news"
+            },
+            {
+              "title": "Amazon Rufus auto-buy features described for US site (Japan rollout September 2025)",
+              "publisher": "Netshop Impress",
+              "url": "https://netshop.impress.co.jp/n/2026/04/24/15978",
+              "date": "2026-04-24",
+              "type": "news"
             }
           ]
         }
@@ -1009,6 +1072,35 @@
               "type": "company"
             }
           ]
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Japan is not on Stripe's country list for its Agentic Commerce Suite, and Shopify's direct checkout in Google AI Mode and Gemini needs a store that sells to the US, Canada or Australia. Japanese Shopify stores can be found by agents, but shoppers are sent to the store to buy, and we found no Japanese protocol or platform that lets local merchants take agent orders.",
+          "evidence": [
+            {
+              "title": "Sell through agents with Agentic Commerce Suite (supported countries)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Shopify agentic storefronts",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -1097,7 +1189,8 @@
         "IN",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "JP"
       ],
       "capabilities": [
         "commerce.in-chat-checkout",

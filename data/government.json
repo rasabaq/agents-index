@@ -365,6 +365,26 @@
             }
           ],
           "confidence": "low"
+        },
+        "JP": {
+          "status": "live",
+          "note": "Private companies can check identity with the My Number card's public certificates (JPKI) once a minister certifies them or through a certified platform provider, and banks and brokers use it to open accounts. The certificates also work from a smartphone. We found no agent that uses JPKI for a person, but the rail is open to private apps.",
+          "evidence": [
+            {
+              "title": "民間事業者に対して公的個人認証サービスの利用に関する主務大臣認定を行いました",
+              "publisher": "Digital Agency (Japan)",
+              "url": "https://www.digital.go.jp/news/d4c596ac-7e18-404d-8253-cf8317151c08",
+              "date": "2023-08-01",
+              "type": "regulation"
+            },
+            {
+              "title": "「スマホ用電子証明書搭載サービス」スタート",
+              "publisher": "BCN+R",
+              "url": "https://www.bcnretail.com/market/detail/20230511_328483.html",
+              "date": "2023-05-11",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -621,6 +641,27 @@
               "url": "https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra/transparency-proactive-disclosure-canada-revenue-agency/consultations-engagement-canada-revenue-agency/virtual-assistant-consultation.html",
               "date": "2026-09-29",
               "type": "regulation"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "City chatbots answer questions but do not finish tasks: Matsudo's generative AI guide chatbot started on 12 June 2026 and answers from the city's website. The Ministry of Internal Affairs set up a study group in 2026 on AI agents for short-staffed local governments, with a final report due around summer 2027, and Osaka City's trial with Hitachi on commuting-allowance forms is staff-side.",
+          "evidence": [
+            {
+              "title": "「生成AI総合案内チャットボット」が稼働します",
+              "publisher": "Matsudo City (松戸市)",
+              "url": "https://www.city.matsudo.chiba.jp/shisei/matsudo_kouhou/pressrelease/R8/20260603.files/20260603houkoku4.pdf",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Japan Weighing AI Agents for Understaffed Local Govts",
+              "publisher": "Jiji Press via Adnkronos",
+              "url": "https://english.adnkronos.com/2026/07/11/japan-weighing-ai-agents-for-understaffed-local-govts/",
+              "date": "2026-07-11",
+              "type": "news"
             }
           ]
         }
@@ -924,6 +965,20 @@
       ],
       "capabilities": [
         "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Digital Agency (Japan)",
+      "hq": "JP",
+      "url": "https://www.digital.go.jp/news/d4c596ac-7e18-404d-8253-cf8317151c08",
+      "homepage": "https://www.digital.go.jp/",
+      "icon": "https://www.digital.go.jp/themes/custom/gov_theme_da_2023/favicon.ico",
+      "role": "Certifies private companies to check identity with My Number card certificates (JPKI).",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
       ]
     }
   ],

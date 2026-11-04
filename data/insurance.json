@@ -243,6 +243,13 @@
               "type": "company"
             }
           ]
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no insurer or comparison site in Japan that sells a car, home or travel policy start to finish in an AI chat; Lemonade does not operate in Japan, and the ChatGPT insurance apps we found serve the US and UK.",
+          "evidence": [],
+          "confidence": "low"
         }
       }
     },
@@ -448,6 +455,20 @@
               "type": "news"
             }
           ]
+        },
+        "JP": {
+          "status": "limited",
+          "note": "Rakuten General Insurance has run an AI voice system since December 2024 that takes fire and personal accident claims by phone and passes the call to a person when it cannot finish. Sompo Japan's call center AI fills in claim details from a call. We found no insurer whose AI takes a claim in a chat and settles it.",
+          "evidence": [
+            {
+              "title": "火災保険と傷害保険の事故受付に「AI自動音声システム」導入(楽天損保)",
+              "publisher": "Payment Navi",
+              "url": "https://paymentnavi.com/financenews/154949",
+              "date": "2024-12-23",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -708,6 +729,20 @@
       ],
       "capabilities": [
         "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "Rakuten General Insurance",
+      "hq": "JP",
+      "url": "https://paymentnavi.com/financenews/154949",
+      "homepage": "https://www.rakuten-sonpo.co.jp/",
+      "icon": "https://www.rakuten-sonpo.co.jp/Portals/0/images/common/apple-touch-icon.png",
+      "role": "Takes fire and personal accident claims through an AI voice system and hands hard cases to a person.",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "insurance.file-claim"
       ]
     }
   ]
