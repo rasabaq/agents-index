@@ -1424,7 +1424,7 @@
         },
         "JP": {
           "status": "live",
-          "note": "Gemini connected apps (calls, messages, WhatsApp) work in Japan, which is a Gemini app country. Alexa+ has been in free Early Access in Japanese since 29 October 2026, with Uber Eats, Demae-can, Tabelog and Ticket Pia actions rolling out. Apple's Siri AI app actions reached Japanese in beta on 26 October 2026. Partner apps such as OpenTable and Instacart in Gemini are US or UK only.",
+          "note": "Gemini connected apps (calls, messages, WhatsApp) work in Japan, which is a Gemini app country. Alexa+ has been in free Early Access in Japanese since 29 October 2026, with Uber Eats, Demae-can, Tabelog and Ticket Pia actions planned for later. Apple's Siri AI app actions reached Japanese in beta on 26 October 2026. Partner apps such as OpenTable and Instacart in Gemini are US or UK only.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -1467,6 +1467,13 @@
               "url": "https://gori.me/?p=171776",
               "date": "2026-10-27",
               "type": "news"
+            },
+            {
+              "title": "Amazon、次世代AIアシスタント「Alexa+」を日本で提供開始",
+              "publisher": "Amazon Japan",
+              "url": "https://www.aboutamazon.jp/news/devices/amazon-launches-alexa-plus-in-japan",
+              "date": "2026-10-29",
+              "type": "company"
             }
           ]
         },

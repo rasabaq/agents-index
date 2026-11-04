@@ -1438,6 +1438,187 @@
         "downloadsMonth": null,
         "dockerPulls": null
       }
+    },
+    {
+      "repo": "MONEI/agent-skills",
+      "name": "MONEI agent skills",
+      "role": "Official agent skills from MONEI, a Spanish payment institution, that teach coding and shopping agents to take payments by Bizum, Spain's instant mobile payment, and by card, with the customer approving in their bank app.",
+      "capabilities": [
+        "payments.instant-rail-agent",
+        "payments.wallet-agent"
+      ],
+      "origin": "ES",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 0,
+        "contributors": 2,
+        "pushedAt": "2026-09-15",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "MONEI/monei-node-sdk",
+      "name": "MONEI Node.js SDK",
+      "role": "Official Node.js client for MONEI, a Spanish payment gateway, so an app or agent can create and track Bizum, card, Apple Pay and Google Pay payments in Spain.",
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@monei-js/node-sdk"
+        }
+      ],
+      "origin": "ES",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 7,
+        "contributors": 1,
+        "pushedAt": "2026-10-02",
+        "archived": false,
+        "downloadsMonth": 2948,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "paypay/paypayopa-sdk-node",
+      "name": "PayPay Open Payment API Node SDK",
+      "role": "Official Node.js SDK for PayPay, Japan's largest QR code wallet, so an app or agent can create payment QR codes, check payments and issue refunds.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@paypayopa/paypayopa-sdk-node"
+        }
+      ],
+      "origin": "JP",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 39,
+        "contributors": 25,
+        "pushedAt": "2026-06-05",
+        "archived": false,
+        "downloadsMonth": 22355,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "paypay/paypayopa-sdk-python",
+      "name": "PayPay Open Payment API Python SDK",
+      "role": "Official Python SDK for PayPay, so an agent written in Python can take and refund PayPay wallet payments in Japan.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "paypayopa"
+        }
+      ],
+      "origin": "JP",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 34,
+        "contributors": 21,
+        "pushedAt": "2026-06-16",
+        "archived": false,
+        "downloadsMonth": 5185,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "monoova/MonoovaWoocommerce",
+      "name": "Monoova Payments for WooCommerce",
+      "role": "Monoova's official WooCommerce plugin to take payments over Australia's NPP instant rail with PayID and PayTo mandates, plus cards.",
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ],
+      "origin": "AU",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 2,
+        "contributors": 3,
+        "pushedAt": "2026-02-23",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "PaystackOSS/paystack-mcp-server",
+      "name": "Paystack MCP Server",
+      "role": "Paystack's official MCP server (public preview), which lets an AI agent call the Paystack API to create payments, customers, transfers and refunds for a business in Nigeria.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@paystack/mcp-server"
+        }
+      ],
+      "origin": "NG",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 56,
+        "contributors": 5,
+        "pushedAt": "2026-06-29",
+        "archived": false,
+        "downloadsMonth": 256,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "PaystackOSS/paystack-node",
+      "name": "Paystack Node library",
+      "role": "Official Node.js client for Paystack, Nigeria's main online payment gateway, to start and verify payments and send transfers to Nigerian bank accounts.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@paystack/paystack-sdk"
+        }
+      ],
+      "origin": "NG",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 31,
+        "contributors": 2,
+        "pushedAt": "2026-10-21",
+        "archived": false,
+        "downloadsMonth": 7518,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Flutterwave/Node-v3",
+      "name": "Flutterwave Node library",
+      "role": "Official Node.js client for Flutterwave, to collect card, bank transfer and USSD payments, send payouts and pay bills such as airtime and power in Nigeria and across Africa.",
+      "capabilities": [
+        "payments.wallet-agent"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "flutterwave-node-v3"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 49,
+        "contributors": 15,
+        "pushedAt": "2026-06-17",
+        "archived": false,
+        "downloadsMonth": 33511,
+        "dockerPulls": null
+      }
     }
   ]
 }

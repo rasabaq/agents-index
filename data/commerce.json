@@ -1791,6 +1791,79 @@
         "downloadsMonth": null,
         "dockerPulls": null
       }
+    },
+    {
+      "repo": "Shopify/shop",
+      "name": "Shop CLI and skill",
+      "role": "Official Shopify tool from Canada that lets an agent search Shopify stores, build a cart, check out and pay with the shopper's Shop account, then track the order.",
+      "capabilities": [
+        "commerce.in-chat-checkout"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@shopify/shop"
+        }
+      ],
+      "origin": "CA",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 11,
+        "contributors": 1,
+        "pushedAt": "2026-10-28",
+        "archived": false,
+        "downloadsMonth": 2204,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Shopify/ucp-cli",
+      "name": "Shopify UCP CLI",
+      "role": "Shopify's shopping skill for agents that searches a global product catalog and builds carts and checkouts at any merchant that supports the Universal Commerce Protocol.",
+      "capabilities": [
+        "commerce.in-chat-checkout",
+        "commerce.merchant-protocol"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@shopify/ucp-cli"
+        }
+      ],
+      "origin": "CA",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 82,
+        "contributors": 8,
+        "pushedAt": "2026-11-03",
+        "archived": false,
+        "downloadsMonth": 1609,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Shopify/Shopify-AI-Toolkit",
+      "name": "Shopify AI Toolkit",
+      "role": "Official Shopify plugin for Claude Code, Codex, Cursor and other agents that gives them Shopify's docs and API schemas and lets them manage a merchant's store.",
+      "capabilities": [
+        "commerce.merchant-protocol"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@shopify/ai-toolkit"
+        }
+      ],
+      "origin": "CA",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 627,
+        "contributors": 12,
+        "pushedAt": "2026-10-27",
+        "archived": false,
+        "downloadsMonth": 1751,
+        "dockerPulls": null
+      }
     }
   ]
 }

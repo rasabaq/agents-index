@@ -1546,6 +1546,198 @@
         "downloadsMonth": null,
         "dockerPulls": null
       }
+    },
+    {
+      "repo": "qonto/qonto-mcp-server",
+      "name": "Qonto MCP Server",
+      "role": "Qonto's official MCP server that lets an agent read account balances and transactions of a French business bank account at Qonto.",
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ],
+      "images": [
+        "qonto/qonto-mcp-server"
+      ],
+      "origin": "FR",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 42,
+        "contributors": 2,
+        "pushedAt": "2026-06-22",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 15236
+      }
+    },
+    {
+      "repo": "powenscompany/powens-webview-js",
+      "name": "Powens Webview JS",
+      "role": "Official web component from Powens, the French open banking aggregator, that lets a person link their bank accounts so an app can read balances and transactions.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@powenscompany/webview-js"
+        }
+      ],
+      "origin": "FR",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 0,
+        "contributors": 2,
+        "pushedAt": "2026-11-03",
+        "archived": false,
+        "downloadsMonth": 255,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "ConsumerDataStandardsAustralia/standards",
+      "name": "Consumer Data Standards",
+      "role": "The official Consumer Data Right (CDR) API standards from Australia's Data Standards Body, which define how an accredited app or agent reads bank accounts, balances and transactions in Australia.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "origin": "AU",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 341,
+        "contributors": 27,
+        "pushedAt": "2025-12-18",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "ConsumerDataRight/mock-data-recipient",
+      "name": "CDR Mock Data Recipient",
+      "role": "The ACCC's mock Consumer Data Right data recipient, so a developer can build and test an app or agent that gets consent and reads Australian bank data before going live.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "images": [
+        "consumerdataright/mock-data-recipient"
+      ],
+      "origin": "AU",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 14,
+        "contributors": 6,
+        "pushedAt": "2026-10-15",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": 51327
+      }
+    },
+    {
+      "repo": "Fiskil/cdr",
+      "name": "Fiskil CDR toolkit",
+      "role": "Go library from Fiskil for accredited data recipients to call Australian Consumer Data Right bank APIs, including mTLS setup and the CDR register.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "origin": "AU",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 3,
+        "contributors": 11,
+        "pushedAt": "2026-07-28",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "Fiskil/link",
+      "name": "Fiskil Link",
+      "role": "Fiskil's hosted consent screen SDK, where an Australian user grants an app or agent access to their bank data through the Consumer Data Right.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@fiskil/link"
+        }
+      ],
+      "origin": "AU",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 7,
+        "contributors": 4,
+        "pushedAt": "2026-11-04",
+        "archived": false,
+        "downloadsMonth": 18362,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "up-banking/api",
+      "name": "Up Banking API",
+      "role": "Open API spec for Up, an Australian digital bank, that lets a customer's own app or agent read accounts and transactions and get webhooks with a personal token.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "origin": "AU",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 437,
+        "contributors": 31,
+        "pushedAt": "2026-10-29",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "withmono/mono-node",
+      "name": "Mono Node library",
+      "role": "Official Node.js client for Mono, a Nigerian open banking API, to read linked bank accounts, balances, transactions and identity, and start direct bank payments.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "mono-node"
+        }
+      ],
+      "origin": "NG",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 9,
+        "contributors": 2,
+        "pushedAt": "2026-03-02",
+        "archived": false,
+        "downloadsMonth": 548,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "withmono/connect.js",
+      "name": "Mono Connect.js",
+      "role": "Official Mono widget that lets a person link their Nigerian bank account to an app, so the app or agent can then read it through Mono's API.",
+      "capabilities": [
+        "banking.open-finance-access"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "@mono.co/connect.js"
+        }
+      ],
+      "origin": "NG",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 19,
+        "contributors": 14,
+        "pushedAt": "2026-11-04",
+        "archived": false,
+        "downloadsMonth": 10556,
+        "dockerPulls": null
+      }
     }
   ]
 }

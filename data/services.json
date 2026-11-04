@@ -268,20 +268,20 @@
           ]
         },
         "JP": {
-          "status": "limited",
-          "gapReason": "pilot-only",
-          "note": "Alexa+, in free Early Access in Japan since 29 October 2026, is adding table booking through Tabelog's reservation service, rolling out over time. ChatGPT's OpenTable reservations are listed as global, but no page confirms Japanese restaurants show up, Tabelog's 2023 ChatGPT plugin only handed you off to its site, and OpenTable in Gemini is UK and US only.",
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "Amazon says Alexa+ in Japan (free Early Access since 29 October 2026) will book tables through Tabelog's Restaurant Reservations, but its launch release lists booking as planned, not yet offered. ChatGPT's OpenTable reservations are listed as global, but no page confirms Japanese restaurants show up, Tabelog's 2023 ChatGPT plugin only handed you off to its site, and OpenTable in Gemini is UK and US only.",
           "evidence": [
             {
-              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
-              "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
-              "date": "2026-10-28",
+              "title": "Amazon、次世代AIアシスタント「Alexa+」を日本で提供開始",
+              "publisher": "Amazon Japan",
+              "url": "https://www.aboutamazon.jp/news/devices/amazon-launches-alexa-plus-in-japan",
+              "date": "2026-10-29",
               "type": "company"
             },
             {
-              "title": "ChatGPT release notes (OpenTable reservations available globally)",
-              "publisher": "OpenAI",
+              "title": "ChatGPT — Release Notes",
+              "publisher": "OpenAI Help Center",
               "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
               "date": "2026-08-10",
               "type": "company"
@@ -993,15 +993,15 @@
           ]
         },
         "JP": {
-          "status": "limited",
-          "gapReason": "pilot-only",
-          "note": "Alexa+, in free Early Access in Japan since 29 October 2026, is adding food delivery from Uber Eats and Demae-can, rolling out over time. The Uber and Uber Eats apps in ChatGPT are shown only to US users.",
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "Amazon says Alexa+ in Japan (free Early Access since 29 October 2026) will order food from Uber Eats and Demae-can, but its launch release lists these as planned, not yet offered. The Uber and Uber Eats apps in ChatGPT are shown only to US users.",
           "evidence": [
             {
-              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
-              "publisher": "Amazon",
-              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
-              "date": "2026-10-28",
+              "title": "Amazon、次世代AIアシスタント「Alexa+」を日本で提供開始",
+              "publisher": "Amazon Japan",
+              "url": "https://www.aboutamazon.jp/news/devices/amazon-launches-alexa-plus-in-japan",
+              "date": "2026-10-29",
               "type": "company"
             },
             {
@@ -1011,8 +1011,7 @@
               "date": "2026-10",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "AU": {
           "status": "limited",
