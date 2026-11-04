@@ -349,6 +349,20 @@
               "type": "company"
             }
           ]
+        },
+        "CA": {
+          "status": "announced",
+          "gapReason": "no-rule",
+          "note": "The Consumer-Driven Banking Act makes the Bank of Canada the supervisor of open banking, but the regime has not started: the proposed regulations were published in the Canada Gazette on 27 June 2026, and on 2 November 2026 the Bank was still consulting on its accreditation guidelines. No launch date for account access or payment initiation is set.",
+          "evidence": [
+            {
+              "title": "Consumer-driven banking",
+              "publisher": "Bank of Canada",
+              "url": "https://www.bankofcanada.ca/core-functions/consumer-driven-banking/",
+              "date": "2026-11",
+              "type": "regulation"
+            }
+          ]
         }
       }
     },
@@ -663,6 +677,26 @@
             }
           ],
           "confidence": "low"
+        },
+        "CA": {
+          "status": "live",
+          "note": "CIBC's Virtual Assistant, a chat bot in CIBC Online Banking and the mobile app (English and French), sends Interac e-Transfers, pays bills and moves money between accounts. CIBC launched it as an AI assistant in 2020; its current page calls it a bot and does not describe the technology. No 2026 agent that moves money was found at RBC, TD, Scotiabank, BMO or Wealthsimple.",
+          "evidence": [
+            {
+              "title": "Introducing CIBC's Virtual Assistant",
+              "publisher": "CIBC",
+              "url": "https://www.cibc.com/en/personal-banking/ways-to-bank/virtual-assistant.html",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "CIBC introduces AI-based Virtual Assistant",
+              "publisher": "Retail Banker International",
+              "url": "https://www.retailbankerinternational.com/news/cibc-virtual-assistant/",
+              "date": "2020-12-10",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -1050,6 +1084,20 @@
       ],
       "capabilities": [
         "banking.open-finance-access"
+      ]
+    },
+    {
+      "name": "CIBC",
+      "hq": "CA",
+      "url": "https://www.cibc.com/en/personal-banking/ways-to-bank/virtual-assistant.html",
+      "homepage": "https://www.cibc.com",
+      "icon": "https://www.cibc.com/content/dam/global-assets/logos/partner-logos/apple/apple-touch-icon.png",
+      "role": "Big Five bank whose Virtual Assistant sends Interac e-Transfers and pays bills in a chat.",
+      "markets": [
+        "CA"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
       ]
     }
   ],

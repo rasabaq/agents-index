@@ -10,7 +10,8 @@
     { "code": "CL", "name": "Chile", "region": "Latin America" },
     { "code": "CO", "name": "Colombia", "region": "Latin America" },
     { "code": "ES", "name": "Spain", "region": "Europe" },
-    { "code": "FR", "name": "France", "region": "Europe" }
+    { "code": "FR", "name": "France", "region": "Europe" },
+    { "code": "CA", "name": "Canada", "region": "North America" }
   ],
   "categories": [
     { "id": "commerce", "name": "Shopping & checkout", "blurb": "Agents that find and buy products for you.", "short": "Shopping", "can": "shop for you" },

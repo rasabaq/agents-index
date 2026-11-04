@@ -239,6 +239,33 @@
             }
           ],
           "confidence": "low"
+        },
+        "CA": {
+          "status": "live",
+          "note": "Alexa+, open to everyone in Canada since June 2026, makes restaurant reservations through OpenTable. Gemini's OpenTable connected app is UK and US only.",
+          "evidence": [
+            {
+              "title": "Alexa+ launches in Canada (updated when Early Access ended)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-canada-launch",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -503,6 +530,33 @@
             },
             {
               "title": "How to book travel with AI Mode in Google Search (hotel booking US only; some features unavailable in EEA)",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app works for users globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Alexa+ in Canada plans trips with Tripadvisor and Fodor's. Google AI Mode hotel booking is US only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
               "publisher": "Google",
               "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
               "date": "2026-08-27",
@@ -787,6 +841,34 @@
               "type": "company"
             }
           ]
+        },
+        "CA": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "Amazon says Uber rides on Alexa+ in Canada are coming soon, and Instacart expects its Cart Assistant, which builds a grocery cart from a chat, to reach all of Canada within months of June 2026. Uber's apps in ChatGPT show results only in the US, and no SkipTheDishes or DoorDash agent was found.",
+          "evidence": [
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Instacart rolls out agentic AI assistant, boosts order size",
+              "publisher": "Let's Data Science",
+              "url": "https://letsdatascience.com/news/instacart-rolls-out-agentic-ai-assistant-boosts-order-size-4f258bce",
+              "date": "2026-06-19",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT Integration for Rides",
+              "publisher": "Uber Help",
+              "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -863,7 +945,8 @@
         "US",
         "GB",
         "DE",
-        "MX"
+        "MX",
+        "CA"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -879,7 +962,8 @@
       "markets": [
         "DE",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -1032,7 +1116,8 @@
         "CO",
         "IN",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "services.travel-booking"

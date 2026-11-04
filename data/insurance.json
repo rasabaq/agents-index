@@ -222,6 +222,27 @@
             }
           ],
           "confidence": "low"
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Manulife's app in ChatGPT (September 2026, English and French) quotes CoverMe travel insurance, and MyChoice's ChatGPT app (April 2026) compares auto and life insurance across Canada, but you finish buying on their sites. Lemonade does not sell in Canada.",
+          "evidence": [
+            {
+              "title": "Manulife first in Canada to sell insurance via ChatGPT",
+              "publisher": "Benefits and Pensions Monitor",
+              "url": "https://www.benefitsandpensionsmonitor.com/news/industry-news/manulife-first-in-canada-to-sell-insurance-via-chatgpt/394215",
+              "date": "2026-09-29",
+              "type": "news"
+            },
+            {
+              "title": "MyChoice launches Canada's first auto and life insurance app on ChatGPT",
+              "publisher": "MyChoice (Newswire)",
+              "url": "https://www.newswire.ca/news-releases/mychoice-launches-canada-s-first-auto-and-life-insurance-app-on-chatgpt-821586227.html",
+              "date": "2026-04-30",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -404,6 +425,27 @@
               "url": "https://www.lemonade.com/fr/habitation/conseils/comment-declarer-un-sinistre-avec-lemonade/",
               "date": "2026-10",
               "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "TD Insurance's generative AI virtual assistant (May 2026, English and French) answers from TD Insurance web pages without logging in; TD says reporting claims in natural language is a possible future use. No Canadian insurer agent that files a claim in chat was found.",
+          "evidence": [
+            {
+              "title": "Let's Chat Coverage: TD Insurance Rolls Out New Virtual Assistant",
+              "publisher": "TD Bank Group",
+              "url": "https://td.mediaroom.com/2026-05-01-Lets-Chat-Coverage-TD-Insurance-Rolls-Out-New-Virtual-Assistant",
+              "date": "2026-05-01",
+              "type": "company"
+            },
+            {
+              "title": "TD Insurance releases client-facing chatbot",
+              "publisher": "Canadian Underwriter",
+              "url": "https://canadianunderwriter.ca/2026/05/15/td-insurance-releases-client-facing-chatbot/",
+              "date": "2026-05-15",
+              "type": "news"
             }
           ]
         }
@@ -635,6 +677,34 @@
       "role": "Online car insurer whose Spanish app in ChatGPT quotes car insurance in a chat, with the purchase finished on its website.",
       "markets": [
         "ES"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "Manulife",
+      "hq": "CA",
+      "url": "https://www.benefitsandpensionsmonitor.com/news/industry-news/manulife-first-in-canada-to-sell-insurance-via-chatgpt/394215",
+      "homepage": "https://www.manulife.ca",
+      "icon": "https://www.manulife.ca/favicon.ico",
+      "role": "Insurer whose ChatGPT app quotes CoverMe travel insurance, with purchase on CoverMe.com.",
+      "markets": [
+        "CA"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "MyChoice",
+      "hq": "CA",
+      "url": "https://www.newswire.ca/news-releases/mychoice-launches-canada-s-first-auto-and-life-insurance-app-on-chatgpt-821586227.html",
+      "homepage": "https://www.mychoice.ca",
+      "icon": "https://www.mychoice.ca/wp-content/uploads/2024/09/cropped-piggygrey-180x180.png",
+      "role": "Insurance comparison site whose ChatGPT app shows auto and life insurance options across Canada.",
+      "markets": [
+        "CA"
       ],
       "capabilities": [
         "insurance.buy-policy"
