@@ -14,6 +14,8 @@ test('the start country comes from the hash, then the time zone, then the browse
   assert.equal(startCountry(codes, '', ['de-DE', 'es'], 'Europe/Berlin'), 'US');
   assert.equal(guessCountry(codes, ['de-DE'], 'Europe/Berlin'), null);
   assert.equal(guessCountry(codes, [], 'America/Monterrey'), 'MX');
+  const zones = { ES: 'Atlantic/Canary', FR: 'Europe/Paris', CA: 'America/St_Johns', JP: 'Asia/Tokyo', AU: 'Australia/Perth', NG: 'Africa/Lagos' };
+  for (const [code, zone] of Object.entries(zones)) assert.equal(guessCountry(Object.keys(zones), [], zone), code);
 });
 
 test('the verdict agrees with the lists: "can" has a live cell, "cannot yet" has none', () => {
