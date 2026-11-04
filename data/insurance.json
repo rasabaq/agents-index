@@ -187,6 +187,20 @@
             }
           ],
           "confidence": "low"
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "The Allianz Direct España app in ChatGPT (June 2026) quotes car insurance from a chat, but you finish buying on allianzdirect.es. Lemonade does not sell in Spain.",
+          "evidence": [
+            {
+              "title": "Allianz Direct España en ChatGPT: precios de seguros de coche al instante",
+              "publisher": "Roams",
+              "url": "https://roams.es/actualidad/seguros/explorador-allianz-direct-chatgpt-seguros-coche-precios-instante/",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -337,6 +351,27 @@
             }
           ],
           "confidence": "low"
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Mapfre's AI super-assistant on phone and WhatsApp in Spain spots claim calls, collects the details and routes them to the right team, but no source says it files or moves the claim forward; Mapfre's WhatsApp AI agent that opens car claims is documented only in Brazil.",
+          "evidence": [
+            {
+              "title": "Mapfre activa un superasistente de IA en teléfono, WhatsApp y canales digitales",
+              "publisher": "Roams",
+              "url": "https://roams.es/actualidad/seguros/superasistente-ia-mapfre-telefono-whatsapp-canales-digitales/",
+              "date": "2026-06-29",
+              "type": "news"
+            },
+            {
+              "title": "Mapfre desarrolla más de 150 casos de uso de IA durante 2025",
+              "publisher": "Interempresas",
+              "url": "https://www.interempresas.net/TIC/664331-Mapfre-desarrolla-mas-de-150-casos-de-uso-de-IA-durante-2025.html",
+              "date": "2026-09-29",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -493,7 +528,8 @@
       "icon": "https://www.mapfre.com.br/media/favicon.png",
       "role": "In Brazil, its AI agent on WhatsApp opens and moves car claims.",
       "markets": [
-        "BR"
+        "BR",
+        "ES"
       ],
       "capabilities": [
         "insurance.file-claim"
@@ -553,6 +589,20 @@
       ],
       "capabilities": [
         "insurance.file-claim"
+      ]
+    },
+    {
+      "name": "Allianz Direct",
+      "hq": "DE",
+      "url": "https://roams.es/actualidad/seguros/explorador-allianz-direct-chatgpt-seguros-coche-precios-instante/",
+      "homepage": "https://www.allianzdirect.es",
+      "icon": "https://www.allianzdirect.es/apple-touch-icon.png",
+      "role": "Online car insurer whose Spanish app in ChatGPT quotes car insurance in a chat, with the purchase finished on its website.",
+      "markets": [
+        "ES"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
       ]
     }
   ]

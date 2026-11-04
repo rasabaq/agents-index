@@ -243,6 +243,33 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "Meta Business Agent reached the EU in mid-July 2026, after Brazil, according to WhatsApp partner 360dialog, which offers it on the WhatsApp Business Platform. Meta does not publish its country list, and some business types (finance, health, alcohol and others) are excluded.",
+          "evidence": [
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent (developer overview)",
+              "publisher": "Meta",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -465,6 +492,41 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Only Telegram bot payments through Stripe, a niche channel. Apple Messages for Business was not listed for Spain, and WhatsApp payments are not offered in Spain.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Apple Business Chat Expands Beyond United States to 10 Countries and 30 More Brands (Spain not listed)",
+              "publisher": "MacRumors",
+              "url": "https://www.macrumors.com/2018/10/02/apple-business-chat-expands-to-13-countries/",
+              "date": "2018-10-02",
+              "type": "news"
+            },
+            {
+              "title": "WhatsApp payments [Supported countries, API, Peer-to-peer]",
+              "publisher": "Infobip",
+              "url": "https://www.infobip.com/blog/whatsapp-payments",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -485,7 +547,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [
@@ -524,7 +587,8 @@
         "DE",
         "BR",
         "CL",
-        "CO"
+        "CO",
+        "ES"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [
@@ -634,7 +698,8 @@
         "GB",
         "DE",
         "BR",
-        "MX"
+        "MX",
+        "ES"
       ],
       "capabilities": [
         "messaging.pay-in-chat"
@@ -652,7 +717,8 @@
         "GB",
         "DE",
         "BR",
-        "MX"
+        "MX",
+        "ES"
       ],
       "capabilities": [
         "messaging.pay-in-chat"

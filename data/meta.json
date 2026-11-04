@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-29",
+  "asOf": "2026-11-04",
   "countries": [
     { "code": "US", "name": "United States", "region": "North America" },
     { "code": "GB", "name": "United Kingdom", "region": "Europe" },
@@ -8,7 +8,8 @@
     { "code": "BR", "name": "Brazil", "region": "Latin America" },
     { "code": "MX", "name": "Mexico", "region": "Latin America" },
     { "code": "CL", "name": "Chile", "region": "Latin America" },
-    { "code": "CO", "name": "Colombia", "region": "Latin America" }
+    { "code": "CO", "name": "Colombia", "region": "Latin America" },
+    { "code": "ES", "name": "Spain", "region": "Europe" }
   ],
   "categories": [
     { "id": "commerce", "name": "Shopping & checkout", "blurb": "Agents that find and buy products for you.", "short": "Shopping", "can": "shop for you" },

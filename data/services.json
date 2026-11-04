@@ -177,6 +177,33 @@
               "type": "news"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "TheFork's app in ChatGPT is live in Spain and shows tables to book, and since June 2026 Alexa+ Early Access users can find and book TheFork tables by voice. Google AI Mode booking is not offered in the EU.",
+          "evidence": [
+            {
+              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes en España a través de ChatGPT",
+              "publisher": "Forbes España",
+              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
+              "date": "2025-12-22",
+              "type": "news"
+            },
+            {
+              "title": "TheFork ya está disponible en Alexa+ para España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/thefork-alexa-espana",
+              "date": "2026-06-19",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally; app directory availability varies by region)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -407,6 +434,26 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search (hotel booking US only; some features unavailable in EEA)",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -629,6 +676,42 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Glovo's assistant in ChatGPT and Claude (May 2026) finds supermarket and shop products near you, then sends you to the Glovo app to order and pay; food was not yet included. Just Eat's voice assistant, which fills the basket, rolled out across its European markets in August 2026 without naming Spain, and Cabify rides on Alexa+ are only announced.",
+          "evidence": [
+            {
+              "title": "Glovo se integra en ChatGPT y Claude",
+              "publisher": "Marketing4eCommerce",
+              "url": "https://marketing4ecommerce.net/glovo-se-integra-en-chatgpt-y-claude/",
+              "date": "2026-05-29",
+              "type": "news"
+            },
+            {
+              "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
+              "date": "2026-08-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ ya disponible en España: la nueva generación de Alexa",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/alexa-disponible-espana-nueva-generacion",
+              "date": "2026-04-23",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -671,7 +754,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -682,7 +766,8 @@
         "services.restaurant-booking": [
           "US",
           "GB",
-          "MX"
+          "MX",
+          "ES"
         ],
         "services.delivery-rides": [
           "US"
@@ -714,7 +799,8 @@
       "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
       "role": "Alexa+ finds and books restaurant tables through OpenTable in Germany, in Early Access.",
       "markets": [
-        "DE"
+        "DE",
+        "ES"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -770,7 +856,8 @@
       "icon": "https://www.thefork.com/favicon.ico",
       "role": "Supplies UK table bookings to Google AI Mode and runs a TheFork app inside ChatGPT.",
       "markets": [
-        "GB"
+        "GB",
+        "ES"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -863,7 +950,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "services.travel-booking"
@@ -1007,6 +1095,20 @@
       "markets": [
         "GB",
         "DE"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Glovo",
+      "hq": "ES",
+      "url": "https://marketing4ecommerce.net/glovo-se-integra-en-chatgpt-y-claude/",
+      "homepage": "https://glovoapp.com",
+      "icon": "https://glovoapp.com/apple-icon.png",
+      "role": "Barcelona delivery app whose assistant in ChatGPT and Claude finds supermarket and shop products, then hands off to the Glovo app to order.",
+      "markets": [
+        "ES"
       ],
       "capabilities": [
         "services.delivery-rides"
