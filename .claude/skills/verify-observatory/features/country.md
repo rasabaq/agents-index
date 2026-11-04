@@ -23,7 +23,7 @@ Each step is one capability. It says whether the agent does it (Live), helps and
   - "can …" names up to two categories with at least one live cell;
   - "cannot yet …" names up to two categories with none;
   - "Main reason: …" is the most common `gapReason` label among the cells of the categories it names. It is left out when none of them has one.
-- `country-score` is the line `.cn-score`: "L of 29 things work today · score N of 100 · Rth of 8", plus ", tied" and the count of unsure cells when there are any.
+- `country-score` is the line `.cn-score`: "L of 29 things work today · score N of 100 · Rth of N" (N is the number of countries in `data/meta.json`), plus ", tied" and the count of unsure cells when there are any.
 - `country-errands` live in `src/errands.js` (`ERRANDS`). In `[data-kpis]`:
   - a key `.ekey`;
   - one card per errand, `.ecard[data-errand="shop"]` (`aria-pressed` on the open one), with a step meter and "N of M by the agent";
@@ -34,7 +34,7 @@ Each step is one capability. It says whether the agent does it (Live), helps and
 - `country-pick-hero` selects a country from the pins on the hero's planet, without scrolling. The sun moves behind the selected pin.
 - `country-pick-console` selects a country from the picker `[data-clist]` without scrolling.
 - `country-keys` steps through the ranking with `j` (next) and `k` (previous).
-- `country-compare` is the "Compare with XX" button (`[data-compare="US BR"]`, this country and its neighbour in the ranking). It does not change the console country or the hash: it scrolls to the Compare two countries chart `#v-compare` with that pair picked (see charts.md). If that chart did not draw, it switches the console to the neighbour instead.
+- `country-compare` is the "Compare with XX" button (`[data-compare="US IN"]` with today's data: this country and the country it is tied with, else the next one down, else the one above). It does not change the console country or the hash: it scrolls to the Compare two countries chart `#v-compare` with that pair picked (see charts.md). If that chart did not draw, it switches the console to the neighbour instead.
 - `country-sources` opens the list of every source behind the country (see matrix-detail.md).
 
 ## How to get to it (user POV)
@@ -62,7 +62,7 @@ Steps:
 - **Picker.** Run `node $H click '[data-clist] [data-go-country="CO"]'`. `node $H eval "[location.hash, document.querySelector('#cn-title').innerText]"` prints `#country=CO` and Colombia. The buttons list scores that never increase.
 - **Verdict.** Run `node $H eval "document.querySelector('.cn-verdict').innerText"`.
   - It starts with "In <country>, AI agents can" (or "nothing we track works") and ends with a full stop.
-- **Score.** Run `node $H eval "document.querySelector('.cn-score').innerText"`. It shows "of 29 things work today", "score", "of 100" and "of 8".
+- **Score.** Run `node $H eval "document.querySelector('.cn-score').innerText"`. It shows "of 29 things work today", "score", "of 100" and "of 14".
 - **Errands.**
   - Run `node $H eval "[document.querySelectorAll('.ecard').length, document.querySelector('#eh-title').innerText, document.querySelector('.eh-line').innerText]"`. It prints 7, "Do the weekly shop" and a line that starts with "In <country>,".
   - Run `node $H click '.ecard[data-errand="car"]'`. `location.hash` ends with `&errand=car`, the title reads "Sort out car insurance", and focus stays on the card.
@@ -77,11 +77,12 @@ Steps:
   - Take `node $H shot business-1440-mx --at '#country'`.
   - `node $H eval 'location.hash'` prints `#country=MX&view=business&errand=chat`. `node $H open '/#country=CL&view=business'` opens Chile on For businesses.
   - Picking another country keeps the business view. `node $H click '[data-view="people"]'` brings back the seven errands.
-- **Hero pin.** Run `node $H open /`, then `node $H click '.hero [data-go-country="MX"]'`.
+- **Hero pin.** At 1440px, run `node $H open /`, then `node $H click '.hero [data-go-country="MX"]'`. (At 400px MX has no pin: see Gotchas.)
   - `location.hash` is `#country=MX`, and `#cn-title` reads Mexico.
   - The page did not scroll: `node $H eval "Math.round(document.querySelector('.hero-pins').getBoundingClientRect().top)"` is still in the viewport.
   - Take `node $H shot hero-1440-mx` (the MX pin is lit and the sun sits behind it), then `node $H shot country-1440-mx --at '#country'`.
-- **Keys.** Run `node $H press j`. The country moves to the next one in the ranking (for example BR → IN). `node $H press k` moves it back.
+- **Ranking.** The picker is the ranking. Run `node $H open / --lang en`, then `node $H eval "(() => { const s = [...document.querySelectorAll('[data-clist] button')].map(b => +b.querySelector('.rk-v').innerText); return [s.length, s.every((v, i) => !i || v <= s[i - 1])]; })()"`. It prints `[14, true]`: one button per country, scores never increasing. Then `node $H click '.hero-btn-1'` ("Open the ranking"); after the smooth scroll, `#ranking` sits near the top (`getBoundingClientRect().top` about 72). At 400px the buttons wrap onto about four rows and `scrollWidth` stays 400.
+- **Keys.** Run `node $H press j`. The country moves to the next one down the ranking (for example BR → FR with today's data). `node $H press k` moves it back up.
 - **Phone.**
   - For businesses at 400px shows the cards two to a row and the steps down the page: `node $H open '/#country=MX' --width 400`, `node $H click '[data-view="business"]'`, `node $H shot business-400-mx --at '#country' --offset 120`.
   - Run `node $H open '/#country=CL' --width 400`, then `node $H shot country-400-cl --at '#country' --offset 120`.
@@ -94,6 +95,7 @@ Steps:
 - The start country depends on the time zone. The harness pins it to UTC unless `--tz` is given. Without that, a run on a machine in Santiago opens Chile.
 - The picker inside the console and the hero pins do not scroll the page. Compare is not a picker: it scrolls to `#v-compare`. Other pickers (the world map, a hash change) scroll to `#country`.
 - The hero pins are links in a list (`[data-hero-pins]`), named like "United States, rank 1, score 84", and reachable with Tab.
+- The hero shows only the pins that fit in 44px slots: the top ranks, plus the selected country (`hero.js` `geom()` sets `hidden` on the others' `<li>`). At 1440px all 14 show. At 400px 8 show (the top 7 plus the selected one, or the top 8). Count them with `node $H eval "document.querySelectorAll('.hero-pins li:not([hidden])').length"`, and click only a visible pin.
 - `j` and `k` do nothing while the cell detail dialog is open or a field has focus.
 - The verdict, the reasons and "Could close the gap" come from the data, so they change when the data changes. Assert their shape (the country name, "can", "Main reason:", "already in"), not exact words.
-- "Could close the gap" (in the cell detail) only names companies that already work in two or more countries, in the same region as this one. The US and India have no same-region neighbour among the 8, so they never show it.
+- "Could close the gap" (in the cell detail) only names companies that already work in two or more countries, in the same region as this one. Every country now has a same-region neighbour (the US has Canada, India has Japan), so any country can show it.

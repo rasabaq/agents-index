@@ -132,7 +132,7 @@
 .xc-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 12px; }
 .xc-h p { margin: 0; }
 .xc-h p + p { font-size: 12.5px; color: var(--muted); }
-.xc ul { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
+.xc ul { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
 .xc button { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 8px 6px; width: 100%; padding: 9px 10px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 10px; background: none; color: var(--ink-2); font: 400 11.5px/1 var(--mono); cursor: pointer; transition: border-color 0.15s; }
 .xc button:hover { border-color: rgba(255, 255, 255, 0.3); }
 .xc .flag { margin: 0 4px 0 0; }
@@ -188,7 +188,8 @@
 .panel-mx[open] > summary { margin-bottom: 14px; }
 .panel-mx[open] > summary::after { content: 'Close'; }
 .mx { margin-bottom: 4px; font-size: 12.5px; }
-.mx-row { display: grid; grid-template-columns: minmax(0, 1fr) repeat(8, 34px); align-items: stretch; }
+/* one column per country: app.js sets --n from data/meta.json */
+.mx-row { display: grid; grid-template-columns: minmax(0, 1fr) repeat(var(--n), 34px); align-items: stretch; }
 .mx-row + .mx-row { border-top: 1px solid rgba(255, 255, 255, 0.055); }
 .mx-cat + .mx-row { border-top: 0; }
 .mx-row > span { display: grid; place-items: center; min-height: 32px; }
@@ -243,7 +244,8 @@
 /* long descriptions show two lines; hovering, tapping or focusing one shows all of it */
 .co-roles { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .co-roles:is(:hover, :focus) { -webkit-line-clamp: unset; }
-.markets { white-space: nowrap; }
+/* the country pills wrap on tablets, about seven to a line, instead of widening the page */
+.markets { min-width: 196px; }
 .markets i { display: inline-block; margin: 0 2px 2px 0; padding: 3px 5px; border-radius: 99px; box-shadow: inset 0 0 0 1px var(--line); font: 500 9.5px/1 var(--mono); font-style: normal; color: var(--muted); }
 .mk-row { display: block; }
 .mk-row + .mk-row { margin-top: 4px; }
@@ -252,6 +254,8 @@
 
 .sec-note { max-width: 36ch; margin: 0; font-size: 14px; color: var(--ink-2); }
 .repos .num { text-align: right; }
+/* long headers ("Installs a month") take two lines on tablets instead of widening the page */
+.repos thead th { white-space: normal; }
 .repos td.num { font: 500 12px/1.6 var(--mono); color: var(--ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .repos .num:last-child { text-align: left; }
 .repos .chip { margin-top: -1px; cursor: help; }
@@ -294,7 +298,7 @@
 .foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .foot-links a { color: var(--ink-2); }
 .foot-links .foot-ask { color: var(--sunrise); }
-.foot-site p + p { flex: none; padding-left: 24px; text-transform: uppercase; letter-spacing: 0.12em; font-size: 10.5px; }
+.foot-site p + p { flex: 0 1 auto; padding-left: 24px; text-transform: uppercase; letter-spacing: 0.12em; font-size: 10.5px; }
 /* the counts wrap before the note on the left gets squeezed */
 .foot-site > p:first-child { min-width: 36ch; }
 .foot-site > p:first-child a { color: var(--ink-2); }
@@ -356,7 +360,10 @@
   .cn h2 { font-size: 36px; }
   .cn h2 .flag { font-size: 30px; }
   .panel { padding: 12px; }
-  .mx-row { grid-template-columns: minmax(0, 1fr) repeat(8, 26px); }
+  /* the countries do not fit beside the names: the matrix scrolls sideways under a pinned name column */
+  .mx { overflow-x: auto; }
+  .mx-row { grid-template-columns: minmax(116px, 1fr) repeat(var(--n), 26px); width: calc(116px + var(--n) * 26px); min-width: 100%; }
+  .mx-row > :first-child { position: sticky; left: 0; z-index: 1; background: var(--surface); }
   .mx .dot { width: 11px; height: 11px; }
   .mx .dot.d-none { width: 9px; height: 2px; }
   .sec { padding-top: 72px; scroll-margin-top: -44px; }
@@ -364,14 +371,13 @@
   .foot-site { flex-direction: column; }
   .foot-site p + p { padding: 8px 0 0; border-top: 0; }
 }
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   /* tables become one card per row */
   .table thead { display: none; }
   .table tr { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 14px; border-top: 1px solid rgba(255, 255, 255, 0.055); }
   .table tbody tr:first-child { border-top: 0; }
   .table th, .table td { padding: 0; border: 0; }
   .companies td:nth-child(3), .companies td.markets { grid-column: 1 / -1; min-width: 0; }
-  .companies td.markets { white-space: normal; }
   /* a repo card: name and tier, what it does, then its four numbers in a row with their labels */
   .repos tr { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .repos tbody th { grid-column: 1 / 4; min-width: 0; }

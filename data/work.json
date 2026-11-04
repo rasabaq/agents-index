@@ -143,6 +143,119 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "LoopCV searches InfoJobs, the main Spanish job board, plus LinkedIn and Indeed, and sends applications for you by email or web form. We did not find a Spanish job board with its own agent that applies for you.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market; InfoJobs for Spain)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "LoopCV accepts France as a job location and sends applications for you by email when it finds an employer address, and on LinkedIn and Indeed through its Chrome extension; its list of boards names no French board such as France Travail or Welcome to the Jungle. France Travail's own AI tool (ChatFT) serves its advisers, not job seekers.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            },
+            {
+              "title": "France Travail customer story (ChatFT built with Mistral)",
+              "publisher": "Mistral AI",
+              "url": "https://mistral.ai/customers/france-travail/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "live",
+          "note": "LoopCV accepts a country-only location and sends applications for you by email or web form; its job-board list names Canada only under LinkedIn, and says coverage varies by country. No Canadian job board with its own applying agent was found.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no agent that applies for jobs for you in Japan. Japanese job sites such as Recruit, doda and BizReach use AI for matching and scouting, not for sending applications, and LoopCV's board list names no Japanese board, though it searches LinkedIn worldwide.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "live",
+          "note": "LoopCV searches SEEK, plus LinkedIn and Indeed, for Australian jobs and sends applications for you by email or web form; its help page does not say whether it can auto-apply on SEEK itself. SEEK has no agent of its own that applies for you.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "JobCopilot says it auto-applies to jobs at companies worldwide, and Nigerian job listings on GrabJobs carry an \"Auto-Apply with AI\" button that uses it; LoopCV searches LinkedIn worldwide but does not list Nigeria. Jobberman, the main local job board, only sends job alerts and offers one-click applying that you do yourself.",
+          "evidence": [
+            {
+              "title": "JobCopilot: automatically apply to jobs",
+              "publisher": "JobCopilot",
+              "url": "https://jobcopilot.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Internal Auditor (Nigeria job listing with Auto-Apply with AI)",
+              "publisher": "GrabJobs",
+              "url": "https://grabjobs.co/nigeria/job/full-time/others/internal-auditor-145272102",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How To Automate Your Job Search For Faster Results – Introducing The New Jobberman Job Alerts",
+              "publisher": "Jobberman",
+              "url": "https://www.jobberman.com/discover/how-to-automate-your-job-search-with-jobberman-job-alerts",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -318,6 +431,107 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Factorial, the Barcelona HR firm, launched its One AI agent in October 2026 and says it executes tasks, but no source says it runs payroll or files an HR form on its own; Deel's AI Workforce flags payroll errors but does not run payroll.",
+          "evidence": [
+            {
+              "title": "Factorial completes the jump to AI for companies with a new personal agent",
+              "publisher": "Ara",
+              "url": "https://en.ara.cat/economy/factorial-completes-the-jump-to-ai-for-companies-with-new-personal-agent_1_5872571.html",
+              "date": "2026-10-07",
+              "type": "news"
+            },
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-19",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "PayFit AI, inside the French payroll service PayFit, answers employees' HR questions and does some tasks for the employer, such as passing on variable pay items and building HR reports, but PayFit's experts run the payroll and file the social declarations (DSN).",
+          "evidence": [
+            {
+              "title": "Payfit: logiciel de paie et RH (Payfit AI)",
+              "publisher": "PayFit",
+              "url": "https://payfit.com/fr/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "PayFit launches first personalised AI agent to answer workers' queries on their contract, pay and leave",
+              "publisher": "FF News",
+              "url": "https://ffnews.com/newsarticle/paytech/payfit-launches-first-personalised-ai-agent-to-answer-workers-queries-on-their-contract-pay-and-leave/",
+              "date": "2026-01-21",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No payroll provider for Canadian small businesses was found whose agent runs payroll: Wagepoint markets AI-assisted payroll, AskPayroll is a copilot for payroll staff, and Workday's Canadian Payroll Agent targets large employers.",
+          "evidence": [
+            {
+              "title": "Workday Payroll for Canada (datasheet)",
+              "publisher": "Workday",
+              "url": "https://www.workday.com/content/dam/web/ca/documents/datasheets/datasheet-workday-payroll-ca.pdf",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no Japanese payroll provider whose agent runs payroll or files a form on its own; freee, Money Forward and SmartHR announced no such agent, and a 2026 market review found no payroll AI that pays without a person's approval.",
+          "evidence": [
+            {
+              "title": "2026年版 給与計算向けAIエージェント12選",
+              "publisher": "Rework",
+              "url": "https://resources.rework.com/ja/tools/ai-agents/best-ai-agents-for-payroll-2026",
+              "date": "2026-08-17",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Employment Hero's HeroForce (April 2026) uses AI to work out awards and payroll, but as an employer-of-record service with people checking the work, not an agent that runs payroll for the business. We found no Xero or MYOB agent that runs payroll.",
+          "evidence": [
+            {
+              "title": "Employment Hero becomes the legal employer with new AI system",
+              "publisher": "SmartCompany",
+              "url": "https://www.smartcompany.com.au/startupsmart/employment-hero-business-legal-employer-new-ai-system/",
+              "date": "2026-04-22",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Payroll tools for Nigerian small firms, such as Salario (free, March 2026), calculate PAYE, pension and statutory filings, and HONO markets an AI-native payroll, but no source shows an AI agent that runs payroll or files a form on its own.",
+          "evidence": [
+            {
+              "title": "Salario Launches Free Payroll Solution to Help Nigerian SMEs Improve Tax Compliance",
+              "publisher": "Techpoint Africa",
+              "url": "https://techpoint.africa/?p=350481",
+              "date": "2026-03",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -337,7 +551,11 @@
         "IN",
         "MX",
         "CL",
-        "CO"
+        "CO",
+        "ES",
+        "FR",
+        "CA",
+        "AU"
       ],
       "capabilities": [
         "work.job-apply"
@@ -409,6 +627,20 @@
       "role": "The Payroll Agent in QuickBooks Workforce collects time data and runs payroll for the owner, rolling out to eligible US customers.",
       "markets": [
         "US"
+      ],
+      "capabilities": [
+        "work.hr-payroll"
+      ]
+    },
+    {
+      "name": "PayFit",
+      "hq": "FR",
+      "url": "https://payfit.com/fr/",
+      "homepage": "https://payfit.com/fr/",
+      "icon": "https://www.datocms-assets.com/50397/1789377249-favicon.svg?auto=format&h=57&w=57",
+      "role": "French payroll service whose PayFit AI answers HR questions and passes on variable pay items, while its experts run the payroll.",
+      "markets": [
+        "FR"
       ],
       "capabilities": [
         "work.hr-payroll"

@@ -347,6 +347,238 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Spain, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in France, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions (France listed)",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Claude in Chrome (paid plans, and Anthropic lists Canada) and Perplexity Comet (free, worldwide) open websites and click, type and fill forms. Gemini in Chrome is offered in Canada, but Google does not say whether its auto browse agent is. ChatGPT's cloud browser was not checked for Canada.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Claude in Chrome (paid Claude plans) and Perplexity Comet (free) work in Japan, which is on Anthropic's supported list, and ChatGPT's cloud browser is on paid plans. Gemini in Chrome is offered in Japan in Japanese, but Google does not say auto browse has reached Japan.",
+          "evidence": [
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Claude in Chrome (paid plans; Australia is on Anthropic's supported list) and Perplexity Comet (free, worldwide) browse and act on websites. Gemini in Chrome reached Australia in April 2026, but Google's help page does not confirm that its auto browse agent works here. ChatGPT's cloud browser was not re-checked.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "Claude in Chrome (every paid Claude plan; Nigeria is on Anthropic's supported list) and Perplexity Comet (free, released worldwide) browse and act on websites here. Gemini in Chrome is rolling out to adults in Nigeria, but we found no source that its auto browse agent works here.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -518,6 +750,97 @@
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No consumer agent found that phones businesses in Spain; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No consumer agent found that phones businesses in Canada; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No consumer agent found that phones businesses in Japan; Google Search AI Mode's 'Check for me' calling works only in English and only in the US.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No consumer agent found that phones businesses in Nigeria; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-11",
               "type": "company"
             }
           ]
@@ -954,6 +1277,259 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "Gemini connected apps (Phone, Messages, WhatsApp, Calendar) work in Spain in Spanish; Alexa+ has been in Early Access since April 2026 and adds calendar events, sends emails and books TheFork tables. Apple's Siri AI and Gemini Spark are not available in the EU, and OpenAI's dots are not offered to Pro users in the EEA.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Las primeras 29 cosas que probar con Alexa+ en España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/29-cosas-probar-alexa-espana",
+              "date": "2026-04-23",
+              "type": "company"
+            },
+            {
+              "title": "TheFork ya está disponible en Alexa+ para España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/thefork-alexa-espana",
+              "date": "2026-06-19",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+              "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "What's new for Gemini Spark",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/17171264",
+              "date": "2026-07-17",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "Gemini connected apps send messages, make calls and add calendar events in French on Android, and Alexa+ (Early Access since May 2026) books TheFork tables and orders gifts. Apple's Siri AI and Gemini Spark are not available in the EU, and OpenAI's dots are not offered to Pro users in the EEA.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability (France listed; French fully supported)",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
+              "date": "2026-05-26",
+              "type": "news"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+              "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Alexa+ has been open to everyone in Canada since June 2026 (English and French): it shops Amazon, books OpenTable tables and plans trips with Tripadvisor. Gemini connected apps send messages, make calls and use WhatsApp in every Gemini country. Uber rides on Alexa+ are still \"coming soon\".",
+          "evidence": [
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ launches in Canada (updated when Early Access ended)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-canada-launch",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Gemini connected apps (calls, messages, WhatsApp) work in Japan, which is a Gemini app country. Alexa+ has been in free Early Access in Japanese since 29 October 2026, with Uber Eats, Demae-can, Tabelog and Ticket Pia actions rolling out. Apple's Siri AI app actions reached Japanese in beta on 26 October 2026. Partner apps such as OpenTable and Instacart in Gemini are US or UK only.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+              "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "iPadOS 27.2配信開始。Siri AIがついに日本語対応",
+              "publisher": "ゴリミー",
+              "url": "https://gori.me/?p=171776",
+              "date": "2026-10-27",
+              "type": "news"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Gemini connected apps send messages, make calls and add calendar events wherever the Gemini mobile app works, and Alexa+ (Early Access since August 2026) sends emails, adds calendar events, books tables and orders gifts. Apple's Siri AI beta is in English and Australia is not among its exclusions, but Apple does not list countries.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Your guide to the first 30 things to try with Alexa+ in Australia",
+              "publisher": "Amazon Australia",
+              "url": "https://www.aboutamazon.com.au/news/devices/your-guide-to-the-first-30-things-to-try-with-alexa-in-australia",
+              "date": "2026-08-21",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+              "date": "2026-09-14",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "Gemini connected apps work in Nigeria on Android: the Gemini mobile app lists Nigeria, and Phone, Messages and WhatsApp work in every country of the mobile app, so Gemini can make calls and send texts and WhatsApp messages. Alexa+ is not offered here, and US-only connected apps such as OpenTable and Zocdoc do not work.",
+          "evidence": [
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -974,7 +1550,9 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "autonomy.browser-agent",
@@ -1006,7 +1584,13 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU",
+        "NG"
       ],
       "capabilities": [
         "autonomy.browser-agent"
@@ -1027,7 +1611,13 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU",
+        "NG"
       ],
       "capabilities": [
         "autonomy.browser-agent"
@@ -1048,7 +1638,13 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU",
+        "NG"
       ],
       "capabilities": [
         "autonomy.browser-agent",
@@ -1078,7 +1674,12 @@
         "DE",
         "MX",
         "BR",
-        "IN"
+        "IN",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "autonomy.personal-assistant-actions"
@@ -1098,7 +1699,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "JP"
       ],
       "capabilities": [
         "autonomy.personal-assistant-actions"

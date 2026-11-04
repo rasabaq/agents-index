@@ -250,6 +250,12 @@ const ZONES = {
   IN: /^Asia\/(Kolkata|Calcutta)$/,
   GB: /^Europe\/London$/,
   DE: /^Europe\/(Berlin|Busingen)$/,
+  ES: /^(Europe\/Madrid|Africa\/Ceuta|Atlantic\/Canary)$/,
+  FR: /^Europe\/Paris$/,
+  CA: /^America\/(Toronto|Montreal|Vancouver|Edmonton|Winnipeg|Regina|Swift_Current|Halifax|Glace_Bay|Moncton|Goose_Bay|St_Johns|Whitehorse|Dawson|Dawson_Creek|Creston|Fort_Nelson|Yellowknife|Inuvik|Cambridge_Bay|Rankin_Inlet|Resolute|Iqaluit|Atikokan|Blanc-Sablon|Nipigon|Thunder_Bay|Rainy_River|Pangnirtung)$/,
+  JP: /^Asia\/Tokyo$/,
+  AU: /^(Australia\/[A-Za-z_]+|Antarctica\/Macquarie)$/,
+  NG: /^Africa\/Lagos$/,
 };
 
 // The visitor's own country, if we can tell: their time zone first, then the region of their browser languages

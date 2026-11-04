@@ -294,6 +294,145 @@
               "type": "report"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "A qualified signature with the electronic DNI's chip certificates is a legal way to prove who you are remotely, and the national mint (FNMT) validates those certificates for companies as well as government; identity services such as Didit also read the chip by NFC. Since 2 April 2026 public and private bodies must also accept the MiDNI phone app for in-person checks, but MiDNI does not yet support online sign-in or signatures, and the EU digital identity wallet is not yet live.",
+          "evidence": [
+            {
+              "title": "DNIe NFC verification in Spain",
+              "publisher": "Didit",
+              "url": "https://didit.me/es/blog/dnie-nfc-verification",
+              "date": "2026-10-06",
+              "type": "company"
+            },
+            {
+              "title": "Spain's MiDNI Mobile App Now Legally Valid for In-Person Identification",
+              "publisher": "Mobile ID World",
+              "url": "https://mobileidworld.com/spains-midni-mobile-app-now-legally-valid-for-in-person-identification/",
+              "date": "2026-04-02",
+              "type": "news"
+            },
+            {
+              "title": "Nuevo deber de identificación: aceptar el DNI móvil en trámites presenciales públicos y privados",
+              "publisher": "ECIJA",
+              "url": "https://www.ecija.com/actualidad-insights/nuevo-deber-de-identificacion-aceptar-el-dni-movil-en-tramites-presenciales-publicos-y-privados/",
+              "date": "2026-01-22",
+              "type": "report"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "rail-closed",
+          "note": "FranceConnect+ lets private firms check identity with France Identité (high level) or L'Identité Numérique La Poste (substantial), but only firms that a law requires to verify identity, such as banks, may connect, after a DataPass request. France Identité had over 5 million users in October 2026; no open API serves other apps or agents.",
+          "evidence": [
+            {
+              "title": "Conditions générales d'utilisation FranceConnect pour les fournisseurs de services (v3.9)",
+              "publisher": "FranceConnect (DINUM)",
+              "url": "https://partenaires.franceconnect.gouv.fr/files/CGU_FS_v3.9.pdf",
+              "date": "2026-10",
+              "type": "regulation"
+            },
+            {
+              "title": "Intégration FranceConnect+ (eligibility of private companies, identity providers)",
+              "publisher": "Didit",
+              "url": "https://didit.me/fr/blog/franceconnect-plus-integration",
+              "date": "2026-10-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Canada has no national digital ID. British Columbia's Person credential in BC Wallet is accepted only by select pilots, and the province says private-sector use may come later; Quebec passed its digital identity law in October 2025 with a wallet planned by 2028. We found no provincial ID that private apps can check today.",
+          "evidence": [
+            {
+              "title": "Person credential for BC Wallet",
+              "publisher": "Government of British Columbia",
+              "url": "https://www2.gov.bc.ca/gov/content/governments/government-id/person-credential",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Quebec Passes Landmark Digital ID Law Emphasizing Privacy and User Control",
+              "publisher": "Mobile ID World",
+              "url": "https://mobileidworld.com/quebec-passes-landmark-digital-id-law-emphasizing-privacy-and-user-control/",
+              "date": "2025-10",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "JP": {
+          "status": "live",
+          "note": "Private companies can check identity with the My Number card's public certificates (JPKI) once a minister certifies them or through a certified platform provider, and banks and brokers use it to open accounts. The certificates also work from a smartphone. We found no agent that uses JPKI for a person, but the rail is open to private apps.",
+          "evidence": [
+            {
+              "title": "民間事業者に対して公的個人認証サービスの利用に関する主務大臣認定を行いました",
+              "publisher": "Digital Agency (Japan)",
+              "url": "https://www.digital.go.jp/news/d4c596ac-7e18-404d-8253-cf8317151c08",
+              "date": "2023-08-01",
+              "type": "regulation"
+            },
+            {
+              "title": "「スマホ用電子証明書搭載サービス」スタート",
+              "publisher": "BCN+R",
+              "url": "https://www.bcnretail.com/market/detail/20230511_328483.html",
+              "date": "2023-05-11",
+              "type": "news"
+            }
+          ]
+        },
+        "AU": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "The Digital ID Act 2024 set up the Australian Government Digital ID System, but myID serves government services today. Private sector participation starts on 1 December 2026, so the cell is announced.",
+          "evidence": [
+            {
+              "title": "Digital ID expands to the private sector",
+              "publisher": "Minister for Finance",
+              "url": "https://ministers.finance.gov.au/financeminister/media-release/2026/06/26/digital-id-expands-private-sector",
+              "date": "2026-06-26",
+              "type": "regulation"
+            },
+            {
+              "title": "Digital ID expands to the private sector",
+              "publisher": "Senator Katy Gallagher",
+              "url": "https://katygallagher.com.au/media-centre/media-releases/digital-id-expands-to-the-private-sector/",
+              "date": "2026-06-26",
+              "type": "regulation"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "NIMC's NINAuth, launched in May 2025, offers web, API and mobile checks of the National Identification Number with the holder's explicit consent, including for KYC and financial transactions, and is NIMC's sole channel for NIN verification; private firms reach it through licensed partners. The NIMC Act 2026, signed in June 2026, backs the system.",
+          "evidence": [
+            {
+              "title": "Nigeria unveils platform to streamline national ID authentication, verification",
+              "publisher": "Biometric Update",
+              "url": "https://www.biometricupdate.com/202505/nigeria-unveils-platform-to-streamline-national-id-authentication-verification",
+              "date": "2025-05-07",
+              "type": "news"
+            },
+            {
+              "title": "NINAuth - Nigeria Digital ID Authentication",
+              "publisher": "National Identity Management Commission",
+              "url": "https://ninauth.nimc.gov.ng",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "NIMC Act 2026: turning Nigeria's identity system into an economic asset",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/nimc-act-2026-turning-nigerias-identity-system-into-an-economic-asset",
+              "date": "2026-07",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -493,6 +632,113 @@
               "url": "https://www.wadhwaniai.org/empowering-millions-of-indian-farmers-with-instant-ai-chatbot-support/",
               "date": "2025-07",
               "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "The Tax Agency (AEAT) runs virtual assistants for income tax, VAT and the SII invoice system that answer questions and help fill in forms such as VAT model 303; none files or completes the task for you, and we found no national generative AI assistant that does. The Comunidad de Madrid tested AI assistants with local information in 33 towns in December 2025.",
+          "evidence": [
+            {
+              "title": "Los asistentes virtuales que la AEAT utiliza para gestionar el SII y el IVA",
+              "publisher": "Sage",
+              "url": "https://www.sage.com/es-es/blog/los-asistentes-virtuales-que-la-aeat-utiliza-para-gestionar-el-sii-y-el-iva/",
+              "date": "2024-11-06",
+              "type": "report"
+            },
+            {
+              "title": "La Comunidad de Madrid prueba en 33 municipios asistentes virtuales con inteligencia artificial que ofrecen información local a los vecinos",
+              "publisher": "Comunidad de Madrid",
+              "url": "https://www.comunidad.madrid/notas-prensa/2025/12/09/comunidad-madrid-prueba-33-municipios-asistentes-virtuales-inteligencia-artificial-ofrecen-informacion-local-vecinos",
+              "date": "2025-12-09",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "France's state AI tools serve civil servants, not the public: the Assistant IA (Albert) was opened to all state agents in June 2026, and the Albert pilot in France Services offices was not extended in its current form, with opening it to users 'not considered at this stage'. A generative tool for the 3939 and service-public.gouv.fr advisers (ARIA) is being tested. No citizen-facing assistant that finishes a task was found.",
+          "evidence": [
+            {
+              "title": "Albert, l'outil d'IA générative, expérimenté à France Services ne sera pas généralisé",
+              "publisher": "Weka",
+              "url": "https://www.weka.fr/actualite/administration/article/albert-l-outil-d-ia-generative-experimente-a-france-services-ne-sera-pas-generalise-209194/",
+              "date": "2026-01",
+              "type": "news"
+            },
+            {
+              "title": "L'État généralise son assistant IA à tous les agents dans une version améliorée",
+              "publisher": "Acteurs publics",
+              "url": "https://acteurspublics.fr/articles/letat-generalise-son-assistant-ia-a-tous-les-agents-dans-une-version-amelioree/",
+              "date": "2026-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "The Canada Revenue Agency's generative AI virtual assistant (launched March 2025, updated May 2026) helps people find CRA information from Canada.ca but does not complete tasks; the CRA plans to add it to the secure CRA Account. No federal or provincial AI assistant that finishes a public-service task was found.",
+          "evidence": [
+            {
+              "title": "Canada Revenue Agency virtual assistant consultation",
+              "publisher": "Canada Revenue Agency",
+              "url": "https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra/transparency-proactive-disclosure-canada-revenue-agency/consultations-engagement-canada-revenue-agency/virtual-assistant-consultation.html",
+              "date": "2026-09-29",
+              "type": "regulation"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "City chatbots answer questions but do not finish tasks: Matsudo's generative AI guide chatbot started on 12 June 2026 and answers from the city's website. The Ministry of Internal Affairs set up a study group in 2026 on AI agents for short-staffed local governments, with a final report due around summer 2027, and Osaka City's trial with Hitachi on commuting-allowance forms is staff-side.",
+          "evidence": [
+            {
+              "title": "「生成AI総合案内チャットボット」が稼働します",
+              "publisher": "Matsudo City (松戸市)",
+              "url": "https://www.city.matsudo.chiba.jp/shisei/matsudo_kouhou/pressrelease/R8/20260603.files/20260603houkoku4.pdf",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Japan Weighing AI Agents for Understaffed Local Govts",
+              "publisher": "Jiji Press via Adnkronos",
+              "url": "https://english.adnkronos.com/2026/07/11/japan-weighing-ai-agents-for-understaffed-local-govts/",
+              "date": "2026-07-11",
+              "type": "news"
+            }
+          ]
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Services Australia's myGov digital assistant Charles and other web assistants answer common questions, but none completes a task for you. We found no generative or agentic government assistant in 2026.",
+          "evidence": [
+            {
+              "title": "myGov digital assistant 'Charles' is up and running",
+              "publisher": "GovTech Review",
+              "url": "https://govtechreview.com.au/content/gov-digital/news/mygov-digital-assistant-charles-is-up-and-running-1486808436",
+              "date": "2018-11-12",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "GovGuide Nigeria, launched in May 2026 by the digital economy ministry with Meta, NCAIR and Publica AI, answers questions about more than 35 ministries on WhatsApp and the web in English, Hausa, Igbo and Yoruba, but it does not complete applications or payments.",
+          "evidence": [
+            {
+              "title": "FG launches AI-powered GovGuideNigeria to reach citizens via WhatsApp",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/fg-launches-ai-powered-govguidenigeria-to-reach-citizens-via-whatsapp/",
+              "date": "2026-05-21",
+              "type": "news"
             }
           ]
         }
@@ -782,6 +1028,48 @@
       ],
       "capabilities": [
         "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Canada Revenue Agency",
+      "hq": "CA",
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra/transparency-proactive-disclosure-canada-revenue-agency/consultations-engagement-canada-revenue-agency/virtual-assistant-consultation.html",
+      "homepage": "https://www.canada.ca/en/revenue-agency.html",
+      "icon": "https://www.canada.ca/favicon.ico",
+      "role": "Federal tax agency running a generative AI virtual assistant that answers questions from Canada.ca.",
+      "markets": [
+        "CA"
+      ],
+      "capabilities": [
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Digital Agency (Japan)",
+      "hq": "JP",
+      "url": "https://www.digital.go.jp/news/d4c596ac-7e18-404d-8253-cf8317151c08",
+      "homepage": "https://www.digital.go.jp/",
+      "icon": "https://www.digital.go.jp/themes/custom/gov_theme_da_2023/favicon.ico",
+      "role": "Certifies private companies to check identity with My Number card certificates (JPKI).",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
+      ]
+    },
+    {
+      "name": "National Identity Management Commission (NIMC)",
+      "hq": "NG",
+      "url": "https://www.biometricupdate.com/202505/nigeria-unveils-platform-to-streamline-national-id-authentication-verification",
+      "homepage": "https://nimc.gov.ng",
+      "icon": "https://nimc.gov.ng/apple-touch-icon.png",
+      "role": "Runs the national ID database and NINAuth, the consent-based API that apps use to verify a National Identification Number.",
+      "markets": [
+        "NG"
+      ],
+      "capabilities": [
+        "government.digital-id-api"
       ]
     }
   ],

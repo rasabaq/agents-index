@@ -177,6 +177,157 @@
               "type": "news"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "TheFork's app in ChatGPT is live in Spain and shows tables to book, and since June 2026 Alexa+ Early Access users can find and book TheFork tables by voice. Google AI Mode booking is not offered in the EU.",
+          "evidence": [
+            {
+              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes en España a través de ChatGPT",
+              "publisher": "Forbes España",
+              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
+              "date": "2025-12-22",
+              "type": "news"
+            },
+            {
+              "title": "TheFork ya está disponible en Alexa+ para España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/thefork-alexa-espana",
+              "date": "2026-06-19",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally; app directory availability varies by region)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "Alexa+ (Early Access since May 2026) books tables through TheFork, and the TheFork app in ChatGPT, reported live in France and 12 other European countries, finds tables and hands off to TheFork to book. Google AI Mode table booking is not offered in the EU. Both sources for France are press reports.",
+          "evidence": [
+            {
+              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
+              "date": "2026-05-26",
+              "type": "news"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes a través de ChatGPT (also live in France)",
+              "publisher": "Forbes España",
+              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
+              "date": "2025-12-22",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "live",
+          "note": "Alexa+, open to everyone in Canada since June 2026, makes restaurant reservations through OpenTable. Gemini's OpenTable connected app is UK and US only.",
+          "evidence": [
+            {
+              "title": "Alexa+ launches in Canada (updated when Early Access ended)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-canada-launch",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Alexa+, in free Early Access in Japan since 29 October 2026, is adding table booking through Tabelog's reservation service, rolling out over time. ChatGPT's OpenTable reservations are listed as global, but no page confirms Japanese restaurants show up, Tabelog's 2023 ChatGPT plugin only handed you off to its site, and OpenTable in Gemini is UK and US only.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            },
+            {
+              "title": "食べログ、ChatGPTプラグインの提供を開始",
+              "publisher": "Kakaku.com",
+              "url": "https://corporate.kakaku.com/news/20230508",
+              "date": "2023-05-08",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Google AI Mode's agentic restaurant booking reached Australia in April 2026 (the final step is on the partner site), and Alexa+ Early Access books tables through OpenTable and adds them to your calendar.",
+          "evidence": [
+            {
+              "title": "Google AI Mode redesign (agentic restaurant booking in 8 new markets including Australia)",
+              "publisher": "9to5Google",
+              "url": "https://9to5google.com/2026/04/10/google-ai-mode-redesign/",
+              "date": "2026-04-10",
+              "type": "news"
+            },
+            {
+              "title": "Your guide to the first 30 things to try with Alexa+ in Australia",
+              "publisher": "Amazon Australia",
+              "url": "https://www.aboutamazon.com.au/news/devices/your-guide-to-the-first-30-things-to-try-with-alexa-in-australia",
+              "date": "2026-08-21",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No agent table booking was found: Google AI Mode table booking and Gemini's OpenTable app are not offered in Nigeria, and OpenTable runs no Nigeria site.",
+          "evidence": [
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps (OpenTable: UK and US)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -407,6 +558,133 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search (hotel booking US only; some features unavailable in EEA)",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search (hotel booking US only; some features unavailable in EEA)",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app works for users globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Alexa+ in Canada plans trips with Tripadvisor and Fodor's. Google AI Mode hotel booking is US only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only, and we found no ChatGPT app from Jalan, Rakuten Travel or Ikyu.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com is making car rentals easier with app in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "Booking.com says its app in ChatGPT is available to ChatGPT users globally (hotels, and car rentals since May 2026); it finds stays and hands off to Booking.com to book. No Nigerian travel agency agent, such as one from Wakanow, was found, and Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -629,6 +907,162 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Glovo's assistant in ChatGPT and Claude (May 2026) finds supermarket and shop products near you, then sends you to the Glovo app to order and pay; food was not yet included. Just Eat's voice assistant, which fills the basket, rolled out across its European markets in August 2026 without naming Spain, and Cabify rides on Alexa+ are only announced.",
+          "evidence": [
+            {
+              "title": "Glovo se integra en ChatGPT y Claude",
+              "publisher": "Marketing4eCommerce",
+              "url": "https://marketing4ecommerce.net/glovo-se-integra-en-chatgpt-y-claude/",
+              "date": "2026-05-29",
+              "type": "news"
+            },
+            {
+              "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
+              "date": "2026-08-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ ya disponible en España: la nueva generación de Alexa",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/alexa-disponible-espana-nueva-generacion",
+              "date": "2026-04-23",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "FR": {
+          "status": "live",
+          "note": "Since 26 March 2026 the Carrefour app in ChatGPT builds a full grocery basket from your Carrefour account, checks drive stock and picks delivery, then sends you to carrefour.fr to pay. No Uber Eats or Deliveroo agent was found in France, the Uber apps in ChatGPT are US-only, and Just Eat no longer operates in France.",
+          "evidence": [
+            {
+              "title": "Carrefour débarque dans ChatGPT pour faire ses courses avec l'IA",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/03/29/carrefour-debarque-chatgpt-courses-ia",
+              "date": "2026-03-29",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "Amazon says Uber rides on Alexa+ in Canada are coming soon, and Instacart expects its Cart Assistant, which builds a grocery cart from a chat, to reach all of Canada within months of June 2026. Uber's apps in ChatGPT show results only in the US, and no SkipTheDishes or DoorDash agent was found.",
+          "evidence": [
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Instacart rolls out agentic AI assistant, boosts order size",
+              "publisher": "Let's Data Science",
+              "url": "https://letsdatascience.com/news/instacart-rolls-out-agentic-ai-assistant-boosts-order-size-4f258bce",
+              "date": "2026-06-19",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT Integration for Rides",
+              "publisher": "Uber Help",
+              "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Alexa+, in free Early Access in Japan since 29 October 2026, is adding food delivery from Uber Eats and Demae-can, rolling out over time. The Uber and Uber Eats apps in ChatGPT are shown only to US users.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Woolworths said its Gemini-powered Olive assistant would roll out to app customers in pick-up and delivery mode from July 2026; it plans meals and builds a basket, and you review it and check out yourself. We found no source confirming the rollout finished. Uber's ChatGPT apps are US-only and Menulog has closed.",
+          "evidence": [
+            {
+              "title": "Woolworths takes the hassle out of the weekly shop with new digital tools to help you save time and money",
+              "publisher": "Woolworths Group",
+              "url": "https://woolworthsgroup.com.au/au/en/our-newsroom/media-releases/latest-news/2026/woolworths-takes-the-hassle-out-of-the-weekly-shop-with-new-digi.html",
+              "date": "2026-06-29",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Rides",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT or Claude order Chowdeck food deliveries; you approve the payment on WhatsApp. Glovo's ChatGPT and Claude assistant finds items but sends you to the Glovo app to pay, and no source says it covers Nigeria; Uber's ChatGPT apps are US-only.",
+          "evidence": [
+            {
+              "title": "Paystack launches AI checkout Index",
+              "publisher": "Techpoint Africa",
+              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
+              "date": "2026-06-25",
+              "type": "news"
+            },
+            {
+              "title": "What is Paystack Index?",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/legal/support/about",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Stop searching, start chatting: Glovo pioneers AI quick commerce",
+              "publisher": "Nairametrics",
+              "url": "https://nairametrics.com/2026/07/30/stop-searching-start-chatting-glovo-pioneers-ai-quick-commerce/",
+              "date": "2026-07-30",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -644,7 +1078,8 @@
       "markets": [
         "US",
         "GB",
-        "IN"
+        "IN",
+        "AU"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -671,7 +1106,10 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES",
+        "FR",
+        "NG"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -682,10 +1120,13 @@
         "services.restaurant-booking": [
           "US",
           "GB",
-          "MX"
+          "MX",
+          "ES",
+          "FR"
         ],
         "services.delivery-rides": [
-          "US"
+          "US",
+          "FR"
         ]
       }
     },
@@ -700,7 +1141,9 @@
         "US",
         "GB",
         "DE",
-        "MX"
+        "MX",
+        "CA",
+        "AU"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -714,7 +1157,12 @@
       "icon": "https://www.aboutamazon.com/_next/static/media/apple-touch-icon.706b1b87.png",
       "role": "Alexa+ finds and books restaurant tables through OpenTable in Germany, in Early Access.",
       "markets": [
-        "DE"
+        "DE",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -770,7 +1218,9 @@
       "icon": "https://www.thefork.com/favicon.ico",
       "role": "Supplies UK table bookings to Google AI Mode and runs a TheFork app inside ChatGPT.",
       "markets": [
-        "GB"
+        "GB",
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -863,7 +1313,13 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU",
+        "NG"
       ],
       "capabilities": [
         "services.travel-booking"
@@ -1007,6 +1463,48 @@
       "markets": [
         "GB",
         "DE"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Glovo",
+      "hq": "ES",
+      "url": "https://marketing4ecommerce.net/glovo-se-integra-en-chatgpt-y-claude/",
+      "homepage": "https://glovoapp.com",
+      "icon": "https://glovoapp.com/apple-icon.png",
+      "role": "Barcelona delivery app whose assistant in ChatGPT and Claude finds supermarket and shop products, then hands off to the Glovo app to order.",
+      "markets": [
+        "ES"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Carrefour",
+      "hq": "FR",
+      "url": "https://iphonesoft.fr/2026/03/29/carrefour-debarque-chatgpt-courses-ia",
+      "homepage": "https://www.carrefour.fr/",
+      "icon": "https://www.carrefour.fr/images/app_icons/apple-icon-180.png",
+      "role": "French grocer whose app in ChatGPT, live since March 2026, builds your grocery basket and picks delivery before you pay on carrefour.fr.",
+      "markets": [
+        "FR"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Woolworths Group",
+      "hq": "AU",
+      "url": "https://woolworthsgroup.com.au/au/en/our-newsroom/latest-news/2026/woolworths-takes-the-hassle-out-of-the-weekly-shop-with-new-digi.html",
+      "homepage": "https://www.woolworthsgroup.com.au/",
+      "icon": "https://www.woolworthsgroup.com.au/etc.clientlibs/wwg/clientlibs/clientlib-site/resources/images/icons/apple-touch-icon.png",
+      "role": "Its Gemini-powered Olive assistant builds meal plans and fills your grocery cart in the Woolworths app.",
+      "markets": [
+        "AU"
       ],
       "capabilities": [
         "services.delivery-rides"

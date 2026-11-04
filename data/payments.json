@@ -201,6 +201,132 @@
             }
           ],
           "gapReason": "pilot-only"
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Santander and Mastercard Agent Pay ran Europe's first agent purchase with a Santander España card in a controlled setting (March 2026), and Visa Intelligent Commerce lists BBVA, CaixaBank, Bankinter and Abanca among the European issuers in its July 2026 live phase, but only at a few participating merchants.",
+          "evidence": [
+            {
+              "title": "Santander y Mastercard completan el primer pago real ejecutado por un agente de IA en Europa",
+              "publisher": "Banco Santander",
+              "url": "https://www.santander.com/es/sala-de-comunicacion/notas-de-prensa/2026/03/santander-y-mastercard-completan-el-primer-pago-real-ejecutado-por-un-agente-de-ia-en-europa",
+              "date": "2026-03",
+              "type": "company"
+            },
+            {
+              "title": "Visa and banks across Europe reach the next phase of agentic commerce, unlocking secure access to merchants (issuers include BBVA, CaixaBank, Bankinter, Abanca)",
+              "publisher": "Visa",
+              "url": "https://www.visa.co.uk/about-visa/newsroom/press-releases.3457328.html",
+              "date": "2026-07-02",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Worldline, Crédit Agricole and Mastercard Agent Pay ran France's first agent payment in production in June 2026 (a festival ticket from Weezevent, confirmed by the customer), and Revolut and Visa ran a test agent purchase at Cleverbridge in September 2026. Both are single first transactions, not a launch for all cardholders.",
+          "evidence": [
+            {
+              "title": "Worldline inaugure le paiement agentique en France avec Crédit Agricole et Mastercard",
+              "publisher": "Worldline",
+              "url": "https://worldline.com/fr-fr/home/top-navigation/media-relations/communique-de-presse/pr-2026_06_25_01",
+              "date": "2026-06-25",
+              "type": "company"
+            },
+            {
+              "title": "Revolut annonce avoir réalisé le premier paiement par IA en France",
+              "publisher": "Sud Radio",
+              "url": "https://www.sudradio.fr/societe/revolut-annonce-avoir-realise-le-premier-paiement-par-ia-en-france",
+              "date": "2026-09-07",
+              "type": "news"
+            },
+            {
+              "title": "Visa and banks across Europe reach the next phase of agentic commerce, unlocking secure access to merchants (no French issuer named)",
+              "publisher": "Visa",
+              "url": "https://www.visa.co.uk/about-visa/newsroom/press-releases.3457328.html",
+              "date": "2026-07-02",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Visa's Agentic Ready program (May 2026) lets BMO, CIBC, RBC, Scotiabank and TD test agent payments with live cards and real merchants in a controlled setting, and Mastercard Agent Pay ran Canada's first agent purchase with a Rogers Bank card through Flybits in September 2026. Neither is open to all cardholders yet.",
+          "evidence": [
+            {
+              "title": "Visa Expands 'Agentic Ready' Program to Canada to Advance AI Driven Commerce",
+              "publisher": "Visa Canada",
+              "url": "https://www.visa.ca/en_CA/about-visa/newsroom/press-releases/agentic-ready.html",
+              "date": "2026-05-05",
+              "type": "company"
+            },
+            {
+              "title": "Mastercard, Flybits and Rogers establish benchmark for secure, consumer-controlled agentic commerce in Canada",
+              "publisher": "Mastercard (Newswire)",
+              "url": "https://www.newswire.ca/news-releases/mastercard-flybits-and-rogers-establish-benchmark-for-secure-consumer-controlled-agentic-commerce-in-canada-811876786.html",
+              "date": "2026-09-21",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Mastercard completed Japan's first live agentic transaction in May 2026 with Mitsubishi UFJ NICOS and other issuers' cards, booking an ELife transfer through an AI agent with Agentic Tokens and Payment Passkeys. Visa's Agentic Ready program has been live in Japan since April 2026 with Credit Saison, MUFG NICOS, Rakuten Card, SB Payment Service and Sumitomo Mitsui Card, but its first phase is an issuer test environment, not a consumer launch.",
+          "evidence": [
+            {
+              "title": "Mastercard completes first agentic transaction in Japan",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/jp/ja/news-and-trends/stories-japan/2026/may/mastercard-completes-first-agentic-transaction-in-japan.html",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Visa Launches 'Agentic Ready' Program in Asia Pacific with Over 50 Partners",
+              "publisher": "Visa (Kyodo News PR Wire)",
+              "url": "https://kyodonewsprwire.jp/release/202604308373",
+              "date": "2026-04-30",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Mastercard Agent Pay ran Australia's first authenticated agent purchases in January 2026 with a CommBank debit card (Event Cinemas) and a Westpac card, and Visa added Australian partners to its Agentic Ready program in April 2026. We found no general rollout to all cardholders.",
+          "evidence": [
+            {
+              "title": "Mastercard accelerates AI-powered commerce with Australia's first authenticated agentic transactions using Agent Pay",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-accelerates-ai-powered-commerce-with-australia-s-first-authenticated-agentic-transactions-using-agent-pay/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Visa welcomes partners into Agentic Ready program to unlock agentic commerce",
+              "publisher": "Visa Australia",
+              "url": "https://www.visa.com.au/about-visa/newsroom/press-releases/visa-welcomes-partners-into-agentic-ready-program-to-unlock-agentic-commerce.html",
+              "date": "2026-04-30",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No Nigerian bank or card issuer was found in Visa Intelligent Commerce or Mastercard Agent Pay. Visa's Agentic Ready program for Central and Eastern Europe, the Middle East and Africa (May 2026) names early issuers in the Gulf, Egypt, South Africa and Ukraine, but none in Nigeria, and it is still a testing phase.",
+          "evidence": [
+            {
+              "title": "Visa Launches \"Agentic Ready\" Program in CEMEA to Accelerate Agent-Led Commerce",
+              "publisher": "Visa",
+              "url": "https://km.visamiddleeast.com/en_KM/about-visa/newsroom/press-releases/prl-20052026.html",
+              "date": "2026-05-20",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -398,6 +524,113 @@
             }
           ],
           "gapReason": "pilot-only"
+        },
+        "ES": {
+          "status": "live",
+          "note": "BBVA's Blue assistant sends Bizum, Spain's instant mobile payment, from a typed or spoken request in the BBVA app, and customers made over 400,000 Bizum payments through it in 2022. We found no third-party AI agent that pays over Bizum.",
+          "evidence": [
+            {
+              "title": "Bizum (pídele un Bizum a Blue por voz o texto)",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.es/personas/banca-online/bizum.html",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Blue, el asistente virtual de BBVA, incrementa los pagos por Bizum un 17% en 2022",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.com/es/es/innovacion/blue-el-asistente-virtual-de-bbva-incrementa-los-pagos-por-bizum-un-17-en-2022/",
+              "date": "2023-03-03",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "No agent payments over SEPA Instant or Wero found. Wero has been live for people in France since 2024 and is adding shop and recurring payments in 2026, but it has no agent feature.",
+          "evidence": [
+            {
+              "title": "MPE 2026: five key themes for merchants (agentic commerce; Wero as Europe's own rail)",
+              "publisher": "Payment Expert",
+              "url": "https://paymentexpert.com/2026/03/23/mpe-2026-five-key-themes-merchants/",
+              "date": "2026-03-23",
+              "type": "news"
+            }
+          ]
+        },
+        "CA": {
+          "status": "limited",
+          "note": "CIBC's Virtual Assistant, a chat bot in CIBC's app and online banking, sends Interac e-Transfers, the everyday way Canadians send money in minutes. That counts the way a bank assistant sending Pix does in Brazil, but e-Transfer is not a true real-time rail, and the new Real-Time Rail is still in participant testing with launch planned for Q4 2026, so this stays limited.",
+          "evidence": [
+            {
+              "title": "CIBC Virtual Assistant",
+              "publisher": "CIBC",
+              "url": "https://www.cibc.com/en/personal-banking/ways-to-bank/virtual-assistant.html",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Real-Time Rail payment system",
+              "publisher": "Payments Canada",
+              "url": "https://www.payments.ca/systems-services/payment-systems/real-time-rail-payment-system",
+              "date": "2026-10",
+              "type": "regulation"
+            }
+          ],
+          "confidence": "low"
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Sumishin SBI Net Bank (renamed DOCOMO SMTB Net Bank in August 2026) has tested its NEOBANK ai agent since February 2026: it makes bank transfers, which run over the Zengin system, from a chat request, but only to registered payees and only for approved beta users at ten branches. It does not yet support Kotra transfers, and we found no other agent that pays over Zengin or Kotra.",
+          "evidence": [
+            {
+              "title": "NEOBANK ai エージェント(ベータ版)のベータテスト開始について",
+              "publisher": "住信SBIネット銀行 (now DOCOMO SMTB Net Bank)",
+              "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
+              "date": "2026-02-27",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "Fintech Vivi Money demonstrated AI-started account-to-account payments over the New Payments Platform by text or voice in June 2026 and said it would launch the next month; we found no confirmation that it is live. No PayTo agent feature was found.",
+          "evidence": [
+            {
+              "title": "Vivi Money demonstrates AI-initiated A2A payments on Australia's NPP",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/vivi-money-demonstrates-ai-initiated-a2a-payments-on-australias-npp",
+              "date": "2026-06-12",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Through Paystack Index (early-access beta), ChatGPT or Claude can send money with Zap, Paystack's app that pays any Nigerian commercial bank account within seconds. Neither Paystack nor the press says the transfers run on NIBSS Instant Payments (NIP), the national instant rail, so this is inferred.",
+          "evidence": [
+            {
+              "title": "Paystack connects AI and payments",
+              "publisher": "ITWeb Africa",
+              "url": "https://itweb.africa/article/paystack-connects-ai-and-payments/Pero37Z31koMQb6m",
+              "date": "2026-06-26",
+              "type": "news"
+            },
+            {
+              "title": "Introducing Zap by Paystack",
+              "publisher": "Paystack",
+              "url": "https://paystack.com/blog/product/introducing-zap-by-paystack",
+              "date": "2025-03",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -578,6 +811,123 @@
             }
           ],
           "gapReason": "pilot-only"
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Stripe shared payment tokens support Spain but are still in preview, and Stripe's Link Agent Wallet is US and Canada only; we found no Spanish wallet with an agent that pays for you.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens (supported countries include ES; preview)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Stripe shared payment tokens list FR but are still under preview terms, and Stripe's Link Agent Wallet is US and Canada only. No French wallet (Lydia/Sumeria, Paylib, Wero) lets an agent pay.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens (supported countries include FR; preview terms)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Stripe's Link Agent Wallet lets an AI agent request a one-time card credential and pay for US and Canadian Link customers after they approve each purchase. PayPal's agent checkouts are documented only in the US.",
+          "evidence": [
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no Japanese wallet or fintech app that lets an AI agent pay. PayPay and LINE Yahoo name AI agents as a goal, but no PayPay agent payment has launched, and Stripe's shared payment tokens and Link Agent Wallet do not cover Japan.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens (supported countries)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "LINEヤフーの3つの注力とは? PayPayを中心としたデジタル金融プラットフォーム構築へ AIエージェントも強化",
+              "publisher": "Payment Navi",
+              "url": "https://paymentnavi.com/?p=160566",
+              "date": "2025-05",
+              "type": "news"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Google Pay agentic checkout lets Gemini and AI Mode pay with your saved Google Pay card, and its help page lists only the US and Australia. Stripe's shared payment tokens and Link Agent Wallet do not cover Australia.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Shared payment tokens (supported countries)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet (availability)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT, Claude or OpenClaw pay from your Zap balance for airtime, data, bills, transfers and Chowdeck orders, within per-payment limits, after you approve each one on WhatsApp. No AI payments agent was found at OPay, PalmPay, Moniepoint or Kuda.",
+          "evidence": [
+            {
+              "title": "What is Paystack Index?",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/legal/support/about",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Paystack connects AI and payments",
+              "publisher": "ITWeb Africa",
+              "url": "https://itweb.africa/article/paystack-connects-ai-and-payments/Pero37Z31koMQb6m",
+              "date": "2026-06-26",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -596,7 +946,11 @@
         "BR",
         "MX",
         "CL",
-        "CO"
+        "CO",
+        "ES",
+        "FR",
+        "CA",
+        "JP"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -616,7 +970,12 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -646,7 +1005,8 @@
       "markets": [
         "BR",
         "MX",
-        "CL"
+        "CL",
+        "ES"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -662,7 +1022,10 @@
       "markets": [
         "US",
         "GB",
-        "DE"
+        "DE",
+        "ES",
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "payments.wallet-agent",
@@ -670,7 +1033,8 @@
       ],
       "marketsByCapability": {
         "payments.card-agent-token": [
-          "US"
+          "US",
+          "FR"
         ]
       }
     },
@@ -820,6 +1184,63 @@
       ],
       "capabilities": [
         "payments.wallet-agent"
+      ]
+    },
+    {
+      "name": "BBVA",
+      "hq": "ES",
+      "url": "https://www.bbva.com/es/es/innovacion/blue-el-asistente-virtual-de-bbva-incrementa-los-pagos-por-bizum-un-17-en-2022/",
+      "homepage": "https://www.bbva.es",
+      "icon": "https://www.bbva.es/favicon.ico",
+      "role": "Spanish bank whose Blue assistant sends Bizum instant payments from a typed or spoken request.",
+      "markets": [
+        "ES"
+      ],
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "DOCOMO SMTB Net Bank",
+      "hq": "JP",
+      "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
+      "homepage": "https://www.netbk.co.jp/",
+      "icon": "https://www.netbk.co.jp/favicon.ico",
+      "role": "Its NEOBANK ai agent sends Zengin bank transfers for approved beta users.",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "Commonwealth Bank of Australia",
+      "hq": "AU",
+      "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-accelerates-ai-powered-commerce-with-australia-s-first-authenticated-agentic-transactions-using-agent-pay/",
+      "homepage": "https://www.commbank.com.au/",
+      "icon": "https://www.commbank.com.au/etc/designs/commbank/favicon.ico",
+      "role": "Its debit card made Australia's first authenticated agent purchase with Mastercard Agent Pay.",
+      "markets": [
+        "AU"
+      ],
+      "capabilities": [
+        "payments.card-agent-token"
+      ]
+    },
+    {
+      "name": "Paystack",
+      "hq": "NG",
+      "url": "https://index.paystack.com/legal/support/about",
+      "homepage": "https://paystack.com",
+      "icon": null,
+      "role": "Nigerian payments company (owned by Stripe) whose Paystack Index beta lets ChatGPT and Claude pay from a Zap wallet and buy from selected merchants.",
+      "markets": [
+        "NG"
+      ],
+      "capabilities": [
+        "payments.wallet-agent",
+        "payments.instant-rail-agent"
       ]
     }
   ],

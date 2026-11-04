@@ -187,6 +187,104 @@
             }
           ],
           "confidence": "low"
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "The Allianz Direct España app in ChatGPT (June 2026) quotes car insurance from a chat, but you finish buying on allianzdirect.es. Lemonade does not sell in Spain.",
+          "evidence": [
+            {
+              "title": "Allianz Direct España en ChatGPT: precios de seguros de coche al instante",
+              "publisher": "Roams",
+              "url": "https://roams.es/actualidad/seguros/explorador-allianz-direct-chatgpt-seguros-coche-precios-instante/",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "note": "Lemonade sells home insurance for tenants and owners in France through its app and website, but no French page we found says its AI bot Maya runs the sign-up there, and no French insurer or comparison site app in ChatGPT was found.",
+          "evidence": [
+            {
+              "title": "L'assurance habitation préférée des propriétaires",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/fr/assurance-habitation",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Lemonade Insurance FAQs (France)",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/fr/faq",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Manulife's app in ChatGPT (September 2026, English and French) quotes CoverMe travel insurance, and MyChoice's ChatGPT app (April 2026) compares auto and life insurance across Canada, but you finish buying on their sites. Lemonade does not sell in Canada.",
+          "evidence": [
+            {
+              "title": "Manulife first in Canada to sell insurance via ChatGPT",
+              "publisher": "Benefits and Pensions Monitor",
+              "url": "https://www.benefitsandpensionsmonitor.com/news/industry-news/manulife-first-in-canada-to-sell-insurance-via-chatgpt/394215",
+              "date": "2026-09-29",
+              "type": "news"
+            },
+            {
+              "title": "MyChoice launches Canada's first auto and life insurance app on ChatGPT",
+              "publisher": "MyChoice (Newswire)",
+              "url": "https://www.newswire.ca/news-releases/mychoice-launches-canada-s-first-auto-and-life-insurance-app-on-chatgpt-821586227.html",
+              "date": "2026-04-30",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no insurer or comparison site in Japan that sells a car, home or travel policy start to finish in an AI chat; Lemonade does not operate in Japan, and the ChatGPT insurance apps we found serve the US and UK.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "BizCover's ChatGPT app (March 2026) gives small-business quotes from insurers such as QBE, Chubb and Zurich, but you buy on BizCover's site. Lemonade does not sell in Australia, and no insurer sells car, home or travel cover start to finish in a chat.",
+          "evidence": [
+            {
+              "title": "BizCover brings Australia's first AI-based insurance quotes to ChatGPT",
+              "publisher": "BizCover",
+              "url": "https://www.bizcover.com.au/blog/bizcover-brings-australias-first-ai-based-insurance-quotes-to-chatgpt/",
+              "date": "2026-03-31",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "limited",
+          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026), on WhatsApp, its app and its website, lets customers buy and renew policies in English, Yoruba, Igbo, Hausa and other languages. No source says which products or whether payment finishes inside the chat, so the cell stays limited.",
+          "evidence": [
+            {
+              "title": "Heirs Insurance Group Launches Multi-Language AI Assistant to Deepen Insurance Access in Nigeria",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2026/05/13/heirs-insurance-group-launches-multi-language-ai-assistant-to-deepen-insurance-access-in-nigeria/",
+              "date": "2026-05-13",
+              "type": "news"
+            },
+            {
+              "title": "Heirs Insurance sets the pace with Prince AI, Nigeria's first multi-language GenAI assistant",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/heirs-insurance-sets-the-pace-with-prince-ai-nigerias-first-multi-language-genai-assistant/",
+              "date": "2026-05-12",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -337,6 +435,103 @@
             }
           ],
           "confidence": "low"
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Mapfre's AI super-assistant on phone and WhatsApp in Spain spots claim calls, collects the details and routes them to the right team, but no source says it files or moves the claim forward; Mapfre's WhatsApp AI agent that opens car claims is documented only in Brazil.",
+          "evidence": [
+            {
+              "title": "Mapfre activa un superasistente de IA en teléfono, WhatsApp y canales digitales",
+              "publisher": "Roams",
+              "url": "https://roams.es/actualidad/seguros/superasistente-ia-mapfre-telefono-whatsapp-canales-digitales/",
+              "date": "2026-06-29",
+              "type": "news"
+            },
+            {
+              "title": "Mapfre desarrolla más de 150 casos de uso de IA durante 2025",
+              "publisher": "Interempresas",
+              "url": "https://www.interempresas.net/TIC/664331-Mapfre-desarrolla-mas-de-150-casos-de-uso-de-IA-durante-2025.html",
+              "date": "2026-09-29",
+              "type": "news"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "In Lemonade's French app, \"Déclarer un sinistre\" opens a chat with AI Jim, which asks a few questions, approves and pays simple claims at once and passes the rest to a person.",
+          "evidence": [
+            {
+              "title": "Comment déclarer un sinistre avec Lemonade ?",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/fr/habitation/conseils/comment-declarer-un-sinistre-avec-lemonade/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "TD Insurance's generative AI virtual assistant (May 2026, English and French) answers from TD Insurance web pages without logging in; TD says reporting claims in natural language is a possible future use. No Canadian insurer agent that files a claim in chat was found.",
+          "evidence": [
+            {
+              "title": "Let's Chat Coverage: TD Insurance Rolls Out New Virtual Assistant",
+              "publisher": "TD Bank Group",
+              "url": "https://td.mediaroom.com/2026-05-01-Lets-Chat-Coverage-TD-Insurance-Rolls-Out-New-Virtual-Assistant",
+              "date": "2026-05-01",
+              "type": "company"
+            },
+            {
+              "title": "TD Insurance releases client-facing chatbot",
+              "publisher": "Canadian Underwriter",
+              "url": "https://canadianunderwriter.ca/2026/05/15/td-insurance-releases-client-facing-chatbot/",
+              "date": "2026-05-15",
+              "type": "news"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "note": "Rakuten General Insurance has run an AI voice system since December 2024 that takes fire and personal accident claims by phone and passes the call to a person when it cannot finish. Sompo Japan's call center AI fills in claim details from a call. We found no insurer whose AI takes a claim in a chat and settles it.",
+          "evidence": [
+            {
+              "title": "火災保険と傷害保険の事故受付に「AI自動音声システム」導入(楽天損保)",
+              "publisher": "Payment Navi",
+              "url": "https://paymentnavi.com/financenews/154949",
+              "date": "2024-12-23",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No Australian insurer was found whose AI agent takes a claim in a chat and moves it forward; IAG's OpenAI voice agents are due in the first half of FY27, and Lemonade is not in Australia.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "live",
+          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026) lets customers start a claim and track it on WhatsApp, the SimpleLife app and the website. Sources do not say whether it checks documents or settles claims itself.",
+          "evidence": [
+            {
+              "title": "Heirs Insurance Group Launches Multi-Language AI Assistant to Deepen Insurance Access in Nigeria",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2026/05/13/heirs-insurance-group-launches-multi-language-ai-assistant-to-deepen-insurance-access-in-nigeria/",
+              "date": "2026-05-13",
+              "type": "news"
+            },
+            {
+              "title": "Heirs Insurance sets the pace with Prince AI, Nigeria's first multi-language GenAI assistant",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/heirs-insurance-sets-the-pace-with-prince-ai-nigerias-first-multi-language-genai-assistant/",
+              "date": "2026-05-12",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -352,7 +547,8 @@
       "markets": [
         "US",
         "GB",
-        "DE"
+        "DE",
+        "FR"
       ],
       "capabilities": [
         "insurance.buy-policy",
@@ -493,7 +689,8 @@
       "icon": "https://www.mapfre.com.br/media/favicon.png",
       "role": "In Brazil, its AI agent on WhatsApp opens and moves car claims.",
       "markets": [
-        "BR"
+        "BR",
+        "ES"
       ],
       "capabilities": [
         "insurance.file-claim"
@@ -552,6 +749,91 @@
         "CO"
       ],
       "capabilities": [
+        "insurance.file-claim"
+      ]
+    },
+    {
+      "name": "Allianz Direct",
+      "hq": "DE",
+      "url": "https://roams.es/actualidad/seguros/explorador-allianz-direct-chatgpt-seguros-coche-precios-instante/",
+      "homepage": "https://www.allianzdirect.es",
+      "icon": "https://www.allianzdirect.es/apple-touch-icon.png",
+      "role": "Online car insurer whose Spanish app in ChatGPT quotes car insurance in a chat, with the purchase finished on its website.",
+      "markets": [
+        "ES"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "Manulife",
+      "hq": "CA",
+      "url": "https://www.benefitsandpensionsmonitor.com/news/industry-news/manulife-first-in-canada-to-sell-insurance-via-chatgpt/394215",
+      "homepage": "https://www.manulife.ca",
+      "icon": "https://www.manulife.ca/favicon.ico",
+      "role": "Insurer whose ChatGPT app quotes CoverMe travel insurance, with purchase on CoverMe.com.",
+      "markets": [
+        "CA"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "MyChoice",
+      "hq": "CA",
+      "url": "https://www.newswire.ca/news-releases/mychoice-launches-canada-s-first-auto-and-life-insurance-app-on-chatgpt-821586227.html",
+      "homepage": "https://www.mychoice.ca",
+      "icon": "https://www.mychoice.ca/wp-content/uploads/2024/09/cropped-piggygrey-180x180.png",
+      "role": "Insurance comparison site whose ChatGPT app shows auto and life insurance options across Canada.",
+      "markets": [
+        "CA"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "Rakuten General Insurance",
+      "hq": "JP",
+      "url": "https://paymentnavi.com/financenews/154949",
+      "homepage": "https://www.rakuten-sonpo.co.jp/",
+      "icon": "https://www.rakuten-sonpo.co.jp/Portals/0/images/common/apple-touch-icon.png",
+      "role": "Takes fire and personal accident claims through an AI voice system and hands hard cases to a person.",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "insurance.file-claim"
+      ]
+    },
+    {
+      "name": "BizCover",
+      "hq": "AU",
+      "url": "https://www.bizcover.com.au/blog/bizcover-brings-australias-first-ai-based-insurance-quotes-to-chatgpt/",
+      "homepage": "https://www.bizcover.com.au/",
+      "icon": "https://www.bizcover.com.au/wp-content/uploads/cropped-bizcover-favicon-180x180.png",
+      "role": "Its ChatGPT app gives small-business insurance quotes, and you buy on BizCover's site.",
+      "markets": [
+        "AU"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
+      ]
+    },
+    {
+      "name": "Heirs Insurance Group",
+      "hq": "NG",
+      "url": "https://www.thisdaylive.com/2026/05/13/heirs-insurance-group-launches-multi-language-ai-assistant-to-deepen-insurance-access-in-nigeria/",
+      "homepage": "https://www.heirsinsurancegroup.com",
+      "icon": "https://www.heirsinsurancegroup.com/wp-content/uploads/2023/11/icon-300x300.png",
+      "role": "Nigerian insurer whose generative AI assistant Prince AI sells and renews policies and takes claims on WhatsApp.",
+      "markets": [
+        "NG"
+      ],
+      "capabilities": [
+        "insurance.buy-policy",
         "insurance.file-claim"
       ]
     }

@@ -291,6 +291,203 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "ChatGPT, Claude and Gemini can each be signed up for in Spain: all three publish Spain on their supported-countries pages. Alexa+ has been in free Early Access in Spain since 23 April 2026 (later €22.99 a month, or free with Prime). Copilot was not checked.",
+          "evidence": [
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; Spain Early Access since 23 April 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ ya disponible en España: la nueva generación de Alexa",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/alexa-disponible-espana-nueva-generacion",
+              "date": "2026-04-23",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "ChatGPT, Claude and Gemini can each be signed up for in France: all three publish France on their supported-countries pages. Alexa+ has been in Early Access in France since 26 May 2026. Copilot was not checked.",
+          "evidence": [
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions (France listed)",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Claude and Gemini both list Canada on their supported-countries pages, and Alexa+ left Early Access in Canada on 11 June 2026: it is now open to everyone, free with Prime. ChatGPT and Copilot were not checked.",
+          "evidence": [
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Claude and Gemini both list Japan on their supported-countries pages, so the cell is live. Alexa+ began rolling out in Japan on 29 October 2026 in free Early Access. ChatGPT and Copilot were not checked, because OpenAI's country page cannot be opened by script.",
+          "evidence": [
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Claude and Gemini both list Australia on their supported-countries pages, and Alexa+ has been in free Early Access in Australia since 6 August 2026. ChatGPT is also offered here, but we did not re-check its help page, which blocks scripts. Copilot was not checked.",
+          "evidence": [
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "ChatGPT, Claude and Gemini can each be signed up for in Nigeria: all three list Nigeria on their supported-countries pages. Alexa+ is not offered here: Nigeria is not on Amazon's list of Alexa+ countries. Copilot was not checked.",
+          "evidence": [
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -542,6 +739,210 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "Spanish is the main language. Alexa+ works in Spanish in Early Access since April 2026 and books tables through TheFork; the Gemini mobile app lists Spanish, and its connected apps such as Phone, Messages and WhatsApp follow the app's languages and countries. ChatGPT's TheFork app also takes bookings in Spanish.",
+          "evidence": [
+            {
+              "title": "Alexa+ ya disponible en España: la nueva generación de Alexa",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/alexa-disponible-espana-nueva-generacion",
+              "date": "2026-04-23",
+              "type": "company"
+            },
+            {
+              "title": "TheFork ya está disponible en Alexa+ para España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/thefork-alexa-espana",
+              "date": "2026-06-19",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "French is the main language. Alexa+ has been in Early Access in French since May 2026 and books TheFork tables. The Gemini mobile app lists French with full support for its action features, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app.",
+          "evidence": [
+            {
+              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
+              "date": "2026-05-26",
+              "type": "news"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability (France listed; French fully supported)",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "English and French are the main languages. Alexa+ is generally available in both English and French, and it books OpenTable tables and buys on Amazon. The Gemini mobile app lists French among its full-feature languages, and its connected apps such as WhatsApp, Phone and Messages work in every country and language of the mobile app.",
+          "evidence": [
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Japanese is the main language. Alexa+ began rolling out in Japanese on 29 October 2026 in free Early Access, by invitation or with a new Echo. Apple's Siri AI, which takes actions in apps, gained Japanese in beta with iOS 27.2 on 26 October 2026. The Gemini app and Gemini in Chrome both support Japanese and are offered in Japan.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+              "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "iPadOS 27.2配信開始。Siri AIがついに日本語対応",
+              "publisher": "ゴリミー",
+              "url": "https://gori.me/?p=171776",
+              "date": "2026-10-27",
+              "type": "news"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "English is the main language. Alexa+ in Early Access books restaurants and orders from Amazon.com.au, Claude in Chrome is generally available on paid Claude plans, and Gemini's connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the Gemini mobile app.",
+          "evidence": [
+            {
+              "title": "Your guide to the first 30 things to try with Alexa+ in Australia",
+              "publisher": "Amazon Australia",
+              "url": "https://www.aboutamazon.com.au/news/devices/your-guide-to-the-first-30-things-to-try-with-alexa-in-australia",
+              "date": "2026-08-21",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "English is the official language. The Gemini mobile app is offered in Nigeria and lists English, and its connected apps, such as WhatsApp, Phone and Messages, work in every language and country of the mobile app. Hausa, Yoruba and Igbo are not on Gemini's language list; local assistants such as Heirs Insurance's Prince AI and the government's GovGuide do speak them.",
+          "evidence": [
+            {
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "FG launches AI-powered GovGuideNigeria to reach citizens via WhatsApp",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/fg-launches-ai-powered-govguidenigeria-to-reach-citizens-via-whatsapp/",
+              "date": "2026-05-21",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -562,7 +963,10 @@
         "BR",
         "MX",
         "CL",
-        "CO"
+        "CO",
+        "ES",
+        "FR",
+        "NG"
       ],
       "capabilities": [
         "access.assistant-available"
@@ -583,7 +987,13 @@
         "BR",
         "MX",
         "CL",
-        "CO"
+        "CO",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU",
+        "NG"
       ],
       "capabilities": [
         "access.assistant-available",
@@ -592,7 +1002,8 @@
       "marketsByCapability": {
         "access.local-language": [
           "US",
-          "GB"
+          "GB",
+          "AU"
         ]
       }
     },
@@ -611,7 +1022,13 @@
         "BR",
         "MX",
         "CL",
-        "CO"
+        "CO",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU",
+        "NG"
       ],
       "capabilities": [
         "access.assistant-available",
@@ -631,7 +1048,12 @@
         "DE",
         "IN",
         "BR",
-        "MX"
+        "MX",
+        "ES",
+        "FR",
+        "CA",
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "access.assistant-available",

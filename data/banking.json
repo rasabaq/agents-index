@@ -295,6 +295,152 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "EU PSD2, applied in Spain through Real Decreto-ley 19/2018, makes banks give licensed account information and payment initiation providers API access, under Banco de España supervision. Open banking platforms such as Tink serve Spain. There is no standard for recurring variable payments yet.",
+          "evidence": [
+            {
+              "title": "Real Decreto-ley 19/2018, de servicios de pago (PSD2 in Spain: payment initiation and account information services; article 45 refunds unauthorised payments)",
+              "publisher": "BOE",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16036",
+              "date": "2018-11-24",
+              "type": "regulation"
+            },
+            {
+              "title": "Revised rules for payment services in the EU (PSD2 summary)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/EN/legal-content/summary/revised-rules-for-payment-services-in-the-eu.html",
+              "date": "2015-11",
+              "type": "regulation"
+            },
+            {
+              "title": "Tink: plataforma europea de open banking (España)",
+              "publisher": "Tink",
+              "url": "https://tink.com/es/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "EU PSD2, written into the French Code monétaire et financier, makes banks give licensed account information and payment initiation providers API access. The ACPR licenses these providers, such as Powens (CIB 16948), and platforms such as Tink and TrueLayer also serve French banks. There is no standard for recurring variable payments yet.",
+          "evidence": [
+            {
+              "title": "Revised rules for payment services in the EU (PSD2 summary)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/EN/legal-content/summary/revised-rules-for-payment-services-in-the-eu.html",
+              "date": "2015-11",
+              "type": "regulation"
+            },
+            {
+              "title": "Payment Services Directive 2 (PSD2): Directive 2015/2366/EU",
+              "publisher": "European Banking Authority",
+              "url": "https://www.eba.europa.eu/regulation-and-policy/single-rulebook/interactive-single-rulebook/14575",
+              "date": "2018-01",
+              "type": "regulation"
+            },
+            {
+              "title": "Powens: open finance platform (authorized and regulated by the ACPR, CIB 16948)",
+              "publisher": "Powens",
+              "url": "https://www.powens.com/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "announced",
+          "gapReason": "no-rule",
+          "note": "The Consumer-Driven Banking Act makes the Bank of Canada the supervisor of open banking, but the regime has not started: the proposed regulations were published in the Canada Gazette on 27 June 2026, and on 2 November 2026 the Bank was still consulting on its accreditation guidelines. No launch date for account access or payment initiation is set.",
+          "evidence": [
+            {
+              "title": "Consumer-driven banking",
+              "publisher": "Bank of Canada",
+              "url": "https://www.bankofcanada.ca/core-functions/consumer-driven-banking/",
+              "date": "2026-11",
+              "type": "regulation"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Since June 2018 the Banking Act lets firms registered as electronic payment agency service providers (電子決済等代行業者) read account balances and history and pass transfer instructions to banks for you, under contracts with each bank. Banks open these APIs voluntarily, and far fewer offer payment (update) APIs than read-only ones, so payment initiation is patchy.",
+          "evidence": [
+            {
+              "title": "平成30年6月から「電子決済等代行業」に関する新しい制度がはじまりました",
+              "publisher": "Financial Services Agency (金融庁)",
+              "url": "https://www.fsa.go.jp/common/about/pamphlet/dendaigyo_start.pdf",
+              "date": "2018-06",
+              "type": "regulation"
+            },
+            {
+              "title": "電子決済等代行業者の登録完了のお知らせ (reference and update APIs)",
+              "publisher": "ミロク情報サービス",
+              "url": "https://www.mjs.co.jp/news/news_2019/000000124.000018493/pdf/d18493-124-pdf-0.pdf",
+              "date": "2019-06",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Consumer Data Right open banking has let accredited apps read bank data since 2020, but only read-only. Payment initiation is law since August 2024, but no action type has been declared, so no regulated API lets an agent start a payment yet.",
+          "evidence": [
+            {
+              "title": "Action initiated? Action initiation under Australia's Consumer Data Right becomes law",
+              "publisher": "Ashurst",
+              "url": "https://www.ashurstperkinscoie.com/en/insights/action-initiation-under-australia-consumer-data-right-becomes-law",
+              "date": "2024-09-05",
+              "type": "report"
+            },
+            {
+              "title": "Where next for the Consumer Data Right?",
+              "publisher": "Finder",
+              "url": "https://www.finder.com.au/where-next-for-the-consumer-data-right",
+              "date": "2021-03-26",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "The CBN issued an open banking framework in 2021 and operational guidelines in 2023, with NIBSS running the registry, but the go-live slipped from August 2025: in October 2025 a CBN official said it was not live, and in June 2026 the rollout was still described as a phased go-live through mid-2026. Aggregators such as Mono connect apps to bank accounts outside the regulated regime. One trade site says the framework went live in August 2025, so the sources conflict.",
+          "evidence": [
+            {
+              "title": "Operational Guidelines for Open Banking in Nigeria",
+              "publisher": "Central Bank of Nigeria",
+              "url": "https://www.cbn.gov.ng/Out/2023/CCD/Operational%20Guidelines%20for%20Open%20Banking%20in%20Nigeria.pdf",
+              "date": "2023-03",
+              "type": "regulation"
+            },
+            {
+              "title": "Circular on the Regulatory Framework on Open Banking in Nigeria",
+              "publisher": "Central Bank of Nigeria",
+              "url": "https://www.cbn.gov.ng/Out/2021/PSMD/Circular%20on%20the%20Regulatory%20Framework%20on%20Open%20Banking%20in%20Nigeria.pdf",
+              "date": "2021-02",
+              "type": "regulation"
+            },
+            {
+              "title": "Nigeria's open banking still in the works",
+              "publisher": "TechCabal",
+              "url": "https://techcabal.com/2025/10/16/nigerias-open-banking-still-in-the-works/",
+              "date": "2025-10-16",
+              "type": "news"
+            },
+            {
+              "title": "As Nigeria prepares for the open banking rollout",
+              "publisher": "BusinessDay",
+              "url": "https://businessday.ng/?p=1143539",
+              "date": "2026-06-08",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -547,6 +693,172 @@
           ],
           "confidence": "low",
           "gapReason": "pilot-only"
+        },
+        "ES": {
+          "status": "live",
+          "note": "BBVA's Blue assistant in the Spanish app sends Bizum payments from a typed or spoken request (over 400,000 in 2022), and since February 2025 its generative AI version also carries out common account and card operations for all customers. CaixaBank's AI agents and its ChatGPT app (October 2026) only inform and guide product sign-ups, with no money movement.",
+          "evidence": [
+            {
+              "title": "Bizum (pídele un Bizum a Blue por voz o texto)",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.es/personas/banca-online/bizum.html",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Blue, el asistente virtual de BBVA, incrementa los pagos por Bizum un 17% en 2022",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.com/es/es/innovacion/blue-el-asistente-virtual-de-bbva-incrementa-los-pagos-por-bizum-un-17-en-2022/",
+              "date": "2023-03-03",
+              "type": "company"
+            },
+            {
+              "title": "For the first time in Spain, BBVA will offer AI-powered account and card management with its virtual assistant",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.com/en/innovation/for-the-first-time-in-spain-bbva-will-offer-ai-powered-account-and-card-management-with-its-virtual-assistant/",
+              "date": "2025-02-14",
+              "type": "company"
+            },
+            {
+              "title": "CaixaBank deploys its app on the ChatGPT marketplace",
+              "publisher": "CaixaBank",
+              "url": "https://www.caixabank.com/docs/comunicacion/92860.pdf",
+              "date": "2026-10-21",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "Sumeria (formerly Lydia) has offered SIA, a generative AI assistant in its app, since February 2026; it can prepare a transfer and act on your accounts. Revolut's AIR reached France in September 2026 but cannot yet prepare a transfer, and Hello bank!'s HelloïZ only points you to the right screen, with in-chat transfers planned for late 2026. Only a press article describes SIA's transfer feature.",
+          "evidence": [
+            {
+              "title": "SIA, l'assistant IA de Sumeria lancé en février 2026",
+              "publisher": "Meilleurtaux",
+              "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-avril/sia-lassistant-ia-de-sumeria-lance-en-fevrier-2026.html",
+              "date": "2026-04",
+              "type": "news"
+            },
+            {
+              "title": "Revolut déploie AIR, son assistant IA, en Europe",
+              "publisher": "Meilleurtaux",
+              "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-septembre/revolut-deploie-air-son-assistant-ia-en-europe.html",
+              "date": "2026-09-04",
+              "type": "news"
+            },
+            {
+              "title": "Hello bank! lance HelloïZ, assistant IA du service clients propulsé par Mistral",
+              "publisher": "Presse-citron",
+              "url": "https://www.presse-citron.net/hello-bank-lance-helloiz-assistant-ia-service-clients-propulse-mistral/",
+              "date": "2026-03-11",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "live",
+          "note": "CIBC's Virtual Assistant, a chat bot in CIBC Online Banking and the mobile app (English and French), sends Interac e-Transfers, pays bills and moves money between accounts. CIBC launched it as an AI assistant in 2020; its current page calls it a bot and does not describe the technology. No 2026 agent that moves money was found at RBC, TD, Scotiabank, BMO or Wealthsimple.",
+          "evidence": [
+            {
+              "title": "Introducing CIBC's Virtual Assistant",
+              "publisher": "CIBC",
+              "url": "https://www.cibc.com/en/personal-banking/ways-to-bank/virtual-assistant.html",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "CIBC introduces AI-based Virtual Assistant",
+              "publisher": "Retail Banker International",
+              "url": "https://www.retailbankerinternational.com/news/cibc-virtual-assistant/",
+              "date": "2020-12-10",
+              "type": "news"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Sumishin SBI Net Bank's NEOBANK ai agent (beta since February 2026) sends transfers to registered payees from a chat request, including several payees at once, but only for approved beta users at ten branches; a business version for some corporate customers started beta on 29 October 2026. We found no agent that moves money at the big banks (MUFG, SMBC, Mizuho).",
+          "evidence": [
+            {
+              "title": "NEOBANK ai エージェント(ベータ版)のベータテスト開始について",
+              "publisher": "住信SBIネット銀行 (now DOCOMO SMTB Net Bank)",
+              "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
+              "date": "2026-02-27",
+              "type": "company"
+            },
+            {
+              "title": "AI銀行サービス「NEOBANK ai」エージェントのベータテストを開始",
+              "publisher": "Digital PR Platform",
+              "url": "https://digitalpr.jp/r/129420",
+              "date": "2026-02",
+              "type": "news"
+            }
+          ]
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "CommBank Companion is in testing with staff and select business customers (May 2026) and does not move money; Macquarie's Q (January 2026) answers questions; CBA's older Ceba bot helps with payments but no source says it sends them itself. No Westpac, NAB or ANZ assistant that pays was found.",
+          "evidence": [
+            {
+              "title": "Reimagining banking with CommBank Companion",
+              "publisher": "Commonwealth Bank",
+              "url": "https://www.commbank.com.au/articles/newsroom/2026/05/commbank-companion.html",
+              "date": "2026-05-26",
+              "type": "company"
+            },
+            {
+              "title": "Macquarie reimagines customer-focused banking with launch of Q",
+              "publisher": "Macquarie",
+              "url": "https://www.macquarie.com/about/news/2026/macquarie-reimagines-customer-focused-banking-with-launch-of-q.html",
+              "date": "2026-01-19",
+              "type": "company"
+            },
+            {
+              "title": "Commonwealth Bank introduces chatbot that can answer 200 banking and payments questions",
+              "publisher": "NFCW",
+              "url": "https://www.nfcw.com/technology/ceba/",
+              "date": "2018-01-23",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "live",
+          "note": "UBA's Leo, which UBA calls an AI chat banking assistant, lets customers send money, buy airtime and data and pay bills inside WhatsApp, Messenger and Apple Messages for Business (number +234 903 001 0007). Leo dates from 2017 and works mostly as a guided chatbot, not a generative AI agent. We found no assistant that moves money at Moniepoint, OPay, Kuda or PalmPay; Moniepoint's \"M\" chatbot only answers questions.",
+          "evidence": [
+            {
+              "title": "Chat with Leo - UBA Nigeria",
+              "publisher": "United Bank for Africa",
+              "url": "https://www.ubagroup.com/nigeria/personal-banking/digital-banking/chat-with-leo/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Leo Is Live on WhatsApp!!!",
+              "publisher": "United Bank for Africa",
+              "url": "https://www.ubagroup.com/57-marina/leo-is-live-on-whatsapp/",
+              "date": "2018-09",
+              "type": "company"
+            },
+            {
+              "title": "Moniepoint AI chatbot for Nigeria's informal economy",
+              "publisher": "Techsoma",
+              "url": "https://techsoma.africa/moniepoint-ai-chatbot-nigeria-informal-economy/",
+              "date": "2025-11",
+              "type": "news"
+            },
+            {
+              "title": "4 years on, UBA's Leo continues to lead the pack in Nigeria, Africa",
+              "publisher": "Nairametrics",
+              "url": "https://nairametrics.com/2022/02/28/4-years-on-ubas-leo-continues-to-lead-the-pack-in-nigeria-africa/",
+              "date": "2022-02-28",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -590,7 +902,8 @@
       "icon": "https://tink.com/favicon.ico",
       "role": "Single API for PSD2 account data and payment initiation across European banks.",
       "markets": [
-        "DE"
+        "DE",
+        "ES"
       ],
       "capabilities": [
         "banking.open-finance-access"
@@ -888,6 +1201,104 @@
       "role": "Its DaviPlata wallet lets enrolled users move money by voice or AI chat.",
       "markets": [
         "CO"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "BBVA",
+      "hq": "ES",
+      "url": "https://www.bbva.com/es/es/innovacion/blue-el-asistente-virtual-de-bbva-incrementa-los-pagos-por-bizum-un-17-en-2022/",
+      "homepage": "https://www.bbva.es",
+      "icon": "https://www.bbva.es/favicon.ico",
+      "role": "Spanish bank whose Blue assistant sends Bizum payments and carries out common account and card operations from a typed or spoken request.",
+      "markets": [
+        "ES"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Sumeria (Lydia)",
+      "hq": "FR",
+      "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-avril/sia-lassistant-ia-de-sumeria-lance-en-fevrier-2026.html",
+      "homepage": "https://www.sumeria.eu/",
+      "icon": "https://sumeria.eu/wp-content/uploads/2025/12/cropped-fav_icon_app-180x180.png",
+      "role": "French neobank whose in-app AI assistant SIA, launched in February 2026, can prepare transfers and act on your accounts.",
+      "markets": [
+        "FR"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Powens",
+      "hq": "FR",
+      "url": "https://www.powens.com/",
+      "homepage": "https://www.powens.com/",
+      "icon": "https://www.powens.com/wp-content/uploads/cropped-favicon-1-180x180.webp",
+      "role": "ACPR-licensed open finance platform that connects apps to French bank accounts under PSD2.",
+      "markets": [
+        "FR"
+      ],
+      "capabilities": [
+        "banking.open-finance-access"
+      ]
+    },
+    {
+      "name": "CIBC",
+      "hq": "CA",
+      "url": "https://www.cibc.com/en/personal-banking/ways-to-bank/virtual-assistant.html",
+      "homepage": "https://www.cibc.com",
+      "icon": "https://www.cibc.com/content/dam/global-assets/logos/partner-logos/apple/apple-touch-icon.png",
+      "role": "Big Five bank whose Virtual Assistant sends Interac e-Transfers and pays bills in a chat.",
+      "markets": [
+        "CA"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "DOCOMO SMTB Net Bank",
+      "hq": "JP",
+      "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
+      "homepage": "https://www.netbk.co.jp/",
+      "icon": "https://www.netbk.co.jp/favicon.ico",
+      "role": "Its NEOBANK ai agent, in beta since February 2026, makes bank transfers to registered payees from a chat request.",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Financial Services Agency (FSA)",
+      "hq": "JP",
+      "url": "https://www.fsa.go.jp/common/about/pamphlet/dendaigyo_start.pdf",
+      "homepage": "https://www.fsa.go.jp/",
+      "icon": "https://www.fsa.go.jp/images/apple-touch-icon.png",
+      "role": "Registers electronic payment agency service providers, which read bank accounts and pass transfer instructions through bank APIs.",
+      "markets": [
+        "JP"
+      ],
+      "capabilities": [
+        "banking.open-finance-access"
+      ]
+    },
+    {
+      "name": "United Bank for Africa (UBA)",
+      "hq": "NG",
+      "url": "https://www.ubagroup.com/nigeria/personal-banking/digital-banking/chat-with-leo/",
+      "homepage": "https://www.ubagroup.com",
+      "icon": "https://www.ubagroup.com/favicon.ico",
+      "role": "Nigerian bank whose chat assistant Leo sends money and pays bills on WhatsApp and other chat apps.",
+      "markets": [
+        "NG"
       ],
       "capabilities": [
         "banking.bank-agent-actions"

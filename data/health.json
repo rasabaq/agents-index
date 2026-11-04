@@ -114,6 +114,121 @@
           "gapReason": "not-launched",
           "confidence": "low",
           "note": "No AI agent that books a doctor was found at the EPS insurers or Doctoralia; EPS Sanitas's WhatsApp assistant books visits, but no source says it is AI (searched October 2026)."
+        },
+        "ES": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "Docplanner, Doctoralia's parent, said in March 2026 that it plans to bring Noa Booking, its AI phone agent that takes patient calls at any hour and books appointments, to Spain; we found no Spanish launch yet. Patients still book on Doctoralia themselves, and Gemini's Zocdoc booking is US-only.",
+          "evidence": [
+            {
+              "title": "Docplanner expands patient access with voice AI agent powered by Twilio (plans to expand Noa Booking to Spain)",
+              "publisher": "Twilio",
+              "url": "https://www.twilio.com/en-us/press/releases/docplanner-expands-patient-access-with-voice-ai-agent-powered-by",
+              "date": "2026-03-24",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Doctolib's AI phone assistant answers patient calls at any hour and writes the appointment straight into the practice calendar, starting with GPs and dentists that pay for it, with other specialties due by the end of 2026. We found no patient-side booking agent from Doctolib in production.",
+          "evidence": [
+            {
+              "title": "Fini les appels sans réponse chez le médecin grâce à l'assistant intelligent de Doctolib",
+              "publisher": "Clubic",
+              "url": "https://www.clubic.com/actualite-589885-fini-les-appels-sans-reponse-chez-le-medecin-grace-a-l-assistant-intelligent-de-doctolib.html",
+              "date": "2025-12-03",
+              "type": "news"
+            }
+          ]
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "In Ontario a 40-clinic pilot led by Amplify Care and Strello Health tests virtual agents that triage patients and book visits (December 2025); we could not confirm how far it books on its own. Gemini's Zocdoc booking is US only.",
+          "evidence": [
+            {
+              "title": "Appointment booking AI triage pilot launches in Ontario",
+              "publisher": "Canadian Healthcare Network",
+              "url": "https://canadianhealthcarenetwork.ca/appointment-booking-ai-triage-pilot-launches-ontario",
+              "date": "2025-12-05",
+              "type": "news"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Some hospitals and clinics use AI phone lines that take booking requests: the National Cancer Center Hospital's AI phone takes first-visit requests 24 hours a day, but staff then pick the date and reply by SMS, and it needs a referral letter. We found no patient-side agent that books a doctor, and Zocdoc in Gemini is US-only.",
+          "evidence": [
+            {
+              "title": "初診予約専用AI電話",
+              "publisher": "National Cancer Center Hospital (国立がん研究センター中央病院)",
+              "url": "https://www.ncc.go.jp/jp/ncch/d001/shoshin/AI/index.html",
+              "date": "2026-10-01",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Healthengine's Helen AI receptionist answers calls and books, moves or cancels appointments straight into the practice system, but only at practices that use Best Practice or Pracsoft and pay for it. No patient-side booking agent was found, and Gemini's Zocdoc booking is US-only.",
+          "evidence": [
+            {
+              "title": "Voice AI receptionist (Helen AI)",
+              "publisher": "Healthengine",
+              "url": "https://practices.healthengine.com.au/specialty/gp/voice-ai-receptionist",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No AI agent that books a doctor was found. BetaCare's WhatsApp chatbot books virtual consultations and AXA Mansard Health's WhatsApp bot Karis finds partner hospitals, but no source says either is AI or books in-person slots; Gemini's Zocdoc booking is US-only.",
+          "evidence": [
+            {
+              "title": "Karis: AXA Mansard Health's WhatsApp chatbot to reduce waiting time at hospital",
+              "publisher": "Techeconomy",
+              "url": "https://techeconomy.ng/karis-axa-mansard-healths-whatapp-chatbot-to-reduce-waiting-time-at-hospital/",
+              "date": "2026-03-26",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -234,6 +349,67 @@
           "gapReason": "not-launched",
           "confidence": "low",
           "note": "No AI agent that orders prescription medicine was found at Cruz Verde Colombia or other chains (searched October 2026)."
+        },
+        "ES": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "Spain's electronic prescription is dispensed at the pharmacy with the health card, and we found no AI agent that renews or orders prescription medicine for you.",
+          "evidence": []
+        },
+        "FR": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "No AI agent renews or orders prescription medicine in France. Renewal needs a doctor (often by teleconsultation, such as Qare or Medadom) or, in limited cases, a pharmacist, and only a pharmacist may dispense.",
+          "evidence": [
+            {
+              "title": "Renouvellement d'ordonnance : comment ça marche ?",
+              "publisher": "Qare",
+              "url": "https://www.qare.fr/sante/renouvellement-ordonnance/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Renouvellement d'ordonnance",
+              "publisher": "Medadom",
+              "url": "https://info.medadom.com/symptomes/renouvellement-ordonnance",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No AI agent that renews or orders prescriptions was found at Shoppers Drug Mart, Rexall or PocketPills; pharmacy AI tools found are for staff, not patients.",
+          "evidence": []
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "We found no AI agent that renews or orders prescription medicine in Japan; renewals need a doctor's visit, in person or online, and Amazon's Health AI renewals are US-only.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "We found no AI agent that renews or orders prescription medicine in Australia. We did not search pharmacy chains one by one.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No AI agent that renews or orders prescription medicine was found. Sproxil's AISHA on WhatsApp only gives health information after you check a medicine is genuine.",
+          "evidence": [
+            {
+              "title": "Trust in Your Hands: Sproxil's AISHA Assistant Boosts Confidence in Nigeria's Healthcare System",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2025/05/12/trust-in-your-hands-sproxils-aisha-assistant-boosts-confidence-in-nigerias-healthcare-system",
+              "date": "2025-05-12",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -344,6 +520,79 @@
               "type": "news"
             }
           ]
+        },
+        "ES": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no live AI assistant at Sanitas, Adeslas or DKV that looks up your own cover or a claim; their apps and WhatsApp channels use ordinary menus and human agents.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "FR": {
+          "status": "live",
+          "note": "Alan's AI health companion Mo, live for over 500,000 Alan members in France (May 2026), understands the member's own cover and takes insurance questions through to care. Alan's letter does not say Mo shows claim status, so that part is unconfirmed.",
+          "evidence": [
+            {
+              "title": "Alan - 2026 Q1 Letter to shareholders (Mo live for 500k+ members in France)",
+              "publisher": "Alan",
+              "url": "https://alan.com/en/blog/discover-alan/a/alan-2026-q1-letter-to-shareholders",
+              "date": "2026-05-06",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Sun Life launched an Alexa skill in 2019 that reads your benefit balances and the status of a recent medical or dental claim, but we found no current page showing it still works. No 2026 member-facing AI that checks cover or claims was found at Manulife, Sun Life or Canada Life.",
+          "evidence": [
+            {
+              "title": "Sun Life now allows Amazon Alexa to find benefits information for clients",
+              "publisher": "Insurance Business Canada",
+              "url": "https://insurancebusinessmag.com/ca/news/breaking-news/sun-life-now-allows-amazon-alexa-to-find-benefits-information-for-clients-195428.aspx",
+              "date": "2019-12-20",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "JP": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Public health insurance covers everyone at a fixed co-pay, and we found no AI assistant at a health insurance society or private insurer that looks up your own cover or a claim; UnitedHealthcare's Avery is US-only.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No live AI assistant that checks your own cover or claim status was found at Medibank, Bupa, HCF or nib; Medibank's FY26 results do not mention one.",
+          "evidence": [
+            {
+              "title": "FY26 Results Media Release",
+              "publisher": "Medibank",
+              "url": "https://www.medibank.com.au/content/dam/retail/about-assets/pdfs/investor-centre/fy26-results/FY26_Results_Media_Release.pdf",
+              "date": "2026-08-20",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "AXA Mansard Health's WhatsApp bot Karis (March 2026) lets enrollees check plan benefits and confirm treatment authorisations, but no source says it is AI, so the cell stays none, as for similar bots elsewhere.",
+          "evidence": [
+            {
+              "title": "AXA Mansard Health Introduces WhatsApp ChatBot 'Karis' To Streamline Healthcare Access Across Nigeria",
+              "publisher": "BrandSpur",
+              "url": "https://brandspurng.com/2026/03/26/axa-mansard-health-introduces-whatsapp-chatbot-karis-to-streamline-healthcare-access-across-nigeria/",
+              "date": "2026-03-26",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -399,7 +648,8 @@
       "icon": "https://www.doctolib.de/favicon.ico",
       "role": "Booking platform whose AI phone assistant books callers into the calendars of practices that pay for it.",
       "markets": [
-        "DE"
+        "DE",
+        "FR"
       ],
       "capabilities": [
         "health.book-appointment"
@@ -459,6 +709,34 @@
       ],
       "capabilities": [
         "health.coverage-check"
+      ]
+    },
+    {
+      "name": "Alan",
+      "hq": "FR",
+      "url": "https://alan.com/en/blog/discover-alan/a/alan-2026-q1-letter-to-shareholders",
+      "homepage": "https://alan.com/",
+      "icon": "https://alan.com/website-assets/favicon/apple-icon-57x57.png",
+      "role": "French health insurer whose AI companion Mo, live for 500,000+ members in France, understands the member's cover and guides them to care.",
+      "markets": [
+        "FR"
+      ],
+      "capabilities": [
+        "health.coverage-check"
+      ]
+    },
+    {
+      "name": "Healthengine",
+      "hq": "AU",
+      "url": "https://practices.healthengine.com.au/specialty/gp/voice-ai-receptionist",
+      "homepage": "https://healthengine.com.au/",
+      "icon": "https://healthengine.com.au/favicon.ico",
+      "role": "Its Helen AI receptionist books, moves and cancels appointments straight into a practice's booking system.",
+      "markets": [
+        "AU"
+      ],
+      "capabilities": [
+        "health.book-appointment"
       ]
     }
   ],

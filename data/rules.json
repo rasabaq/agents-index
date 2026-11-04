@@ -194,6 +194,145 @@
               "type": "regulation"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "The EU AI Act is in force in Spain, so the cell is live; its transparency duties apply since 2 August 2026, and the Digital Omnibus delays high-risk rules to December 2027 and August 2028. Spain already has an AI supervisor (AESIA), and on 26 May 2026 the government sent a bill to parliament to adapt the Act and give AESIA power to fine; we could not confirm whether it has passed.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "date": "2024-07",
+              "type": "regulation"
+            },
+            {
+              "title": "Regulation (EU) 2026/1744 (Digital Omnibus on AI)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+              "date": "2026-07",
+              "type": "regulation"
+            },
+            {
+              "title": "El Gobierno aprueba el proyecto de ley que garantizará una supervisión humana y un uso confiable de la IA",
+              "publisher": "Ministerio para la Transformación Digital y de la Función Pública",
+              "url": "https://digital.gob.es/content/dam/portal-mtdfp/comunicacion/comunicacion_ministro/2026/05/2026-05-26/260526%20NP%20CMin%20APL%20IA.pdf",
+              "date": "2026-05-26",
+              "type": "regulation"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "The EU AI Act is in force in France, so the cell is live. Its transparency duties for AI systems apply since 2 August 2026, and the Digital Omnibus (Regulation 2026/1744) delays the high-risk rules to December 2027 and August 2028. The Act does not name shopping agents, but it covers AI systems that act for users.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "date": "2024-07",
+              "type": "regulation"
+            },
+            {
+              "title": "Regulation (EU) 2026/1744 (Digital Omnibus on AI)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+              "date": "2026-07",
+              "type": "regulation"
+            },
+            {
+              "title": "AI Act: regulatory framework",
+              "publisher": "European Commission",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "date": "2026-10",
+              "type": "regulation"
+            }
+          ]
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "no-rule",
+          "note": "Canada has no AI law: AIDA died with Bill C-27 in January 2025. Bill C-36, the Protecting Privacy and Consumer Data Act tabled in June 2026, is a privacy bill that has not passed, and in September 2026 the AI minister would not commit to an AI bill.",
+          "evidence": [
+            {
+              "title": "C-36: Protecting Privacy and Consumer Data Act (LEGISinfo)",
+              "publisher": "Parliament of Canada",
+              "url": "https://www.parl.ca/legisinfo/en/bill/45-1/c-36",
+              "date": "2026-10",
+              "type": "regulation"
+            },
+            {
+              "title": "AI minister says system deployment needs regulation but no details yet",
+              "publisher": "CP24 (The Canadian Press)",
+              "url": "https://www.cp24.com/news/canada/2026/09/27/ai-minister-says-system-deployment-needs-regulation-but-no-details-yet/",
+              "date": "2026-09-27",
+              "type": "news"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "The AI Promotion Act (人工知能関連技術の研究開発及び活用の推進に関する法律) has been fully in force since 1 September 2025, and the first AI Basic Plan under it was adopted in December 2025. It is a promotion law: it sets up the AI Strategy Headquarters and asks businesses to cooperate, with no penalties and nothing on agents acting for you, so the cell is limited.",
+          "evidence": [
+            {
+              "title": "AI法 全面施行 -次なるフェーズへ-",
+              "publisher": "Cabinet Office (内閣府)",
+              "url": "https://www.cao.go.jp/press/new_wave/20251003.html",
+              "date": "2025-10-03",
+              "type": "regulation"
+            },
+            {
+              "title": "人工知能基本計画 (資料)",
+              "publisher": "Cabinet Office CSTI (内閣府)",
+              "url": "https://www8.cao.go.jp/cstp/gaiyo/yusikisha/20251120/siryo1.pdf",
+              "date": "2025-11-20",
+              "type": "regulation"
+            }
+          ]
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "no-rule",
+          "note": "Australia has no AI law. The National AI Plan (December 2025) dropped the proposed mandatory guardrails and ruled out a standalone AI Act, relying on existing privacy, consumer and other laws.",
+          "evidence": [
+            {
+              "title": "Australia introduces a national AI plan: four things leaders need to know",
+              "publisher": "MinterEllison",
+              "url": "https://www.minterellison.com/articles/australia-introduces-a-national-ai-plan-four-things-leaders-need-to-know",
+              "date": "2025-12",
+              "type": "report"
+            },
+            {
+              "title": "Mandatory AI guardrails put on hold with the release of national plan",
+              "publisher": "Region Canberra",
+              "url": "https://region.com.au/mandatory-ai-guardrails-put-on-hold-with-the-release-of-national-plan/926410/",
+              "date": "2025-12-03",
+              "type": "news"
+            }
+          ]
+        },
+        "NG": {
+          "status": "announced",
+          "gapReason": "no-rule",
+          "note": "Nigeria has no AI law in force; the Nigeria Data Protection Act 2023 covers automated decisions as a general law. The government-backed National Digital Economy and E-Governance Bill would apply to \"AI agents\" and sort AI systems into risk groups; in July 2026 the Senate ICT committee chair said it was going through third reading and would reach the president within weeks, but we found no report of final passage or assent.",
+          "evidence": [
+            {
+              "title": "'National Digital Economy and e-Governance Act 2026 Ready in Weeks'",
+              "publisher": "ThisDay",
+              "url": "https://www.thisdaylive.com/2026/07/09/national-digital-economy-and-e-governance-act-2026-ready-in-weeks/",
+              "date": "2026-07-09",
+              "type": "news"
+            },
+            {
+              "title": "Nigeria Set to Pass Sweeping AI Rules for Digital Economy",
+              "publisher": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-01-13/nigeria-set-to-pass-sweeping-ai-rules-for-digital-economy",
+              "date": "2026-01-13",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -376,6 +515,133 @@
               "publisher": "Alcaldía de Bogotá (Régimen Legal)",
               "url": "https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=44306",
               "date": "2011-10",
+              "type": "regulation"
+            }
+          ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "Spanish law (Real Decreto-ley 19/2018, article 45) makes the bank refund payments you did not authorize, and the consumer law gives a 14-day right to withdraw from online purchases. Neither mentions agents. The EU's new payment rules (PSD3 and the Payment Services Regulation), agreed in November 2025, are not yet applying and do not mention agents either.",
+          "evidence": [
+            {
+              "title": "Real Decreto-ley 19/2018, de servicios de pago (PSD2 in Spain: payment initiation and account information services; article 45 refunds unauthorised payments)",
+              "publisher": "BOE",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16036",
+              "date": "2018-11-24",
+              "type": "regulation"
+            },
+            {
+              "title": "Real Decreto Legislativo 1/2007, Ley General para la Defensa de los Consumidores y Usuarios (article 102: 14-day right of withdrawal)",
+              "publisher": "BOE",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555",
+              "date": "2007-11-30",
+              "type": "regulation"
+            },
+            {
+              "title": "Payment services: Council and Parliament agree to step up the fight against fraud and increase transparency",
+              "publisher": "Council of the EU",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/11/27/payment-services-council-and-parliament-agree-to-step-up-the-fight-against-fraud-and-increase-transparency/",
+              "date": "2025-11-27",
+              "type": "regulation"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "Article L133-18 of the Code monétaire et financier makes the bank refund payments you did not authorize, and French consumer law gives a 14-day right to withdraw from online purchases, whoever placed the order. Neither rule mentions agents. The EU's new payment rules (PSD3 and the Payment Services Regulation), agreed in November 2025 and not yet applying, do not mention agents either.",
+          "evidence": [
+            {
+              "title": "Article L133-18 du Code monétaire et financier",
+              "publisher": "Doctrine",
+              "url": "https://www.doctrine.fr/l/texts/codes/LEGITEXT000006072026/articles/LEGIARTI000020861591",
+              "date": "2022-08",
+              "type": "regulation"
+            },
+            {
+              "title": "Payment services: Council and Parliament agree to step up the fight against fraud and increase transparency",
+              "publisher": "Council of the European Union",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/11/27/payment-services-council-and-parliament-agree-to-step-up-the-fight-against-fraud-and-increase-transparency/",
+              "date": "2025-11-27",
+              "type": "regulation"
+            }
+          ]
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "The Bank Act caps your loss on unauthorized credit card use at $50, card networks' zero-liability policies go further, and the debit card code covers losses beyond your control; Interac e-Transfers have no legal limit. None of these rules or FCAC statements mentions purchases an AI agent makes for you.",
+          "evidence": [
+            {
+              "title": "Fraud and FCAC oversight of unauthorized transactions (briefing, Standing Committee on Finance)",
+              "publisher": "Financial Consumer Agency of Canada",
+              "url": "https://www.canada.ca/en/financial-consumer-agency/corporate/transparency/briefing-packages-parliamentary-committee-appearances/standing-committee-finance-february-13-2024/fraud-fcac-oversight-unauthorized-transactions.html",
+              "date": "2024-02-13",
+              "type": "regulation"
+            },
+            {
+              "title": "Moving together: a systemwide response to financial fraud",
+              "publisher": "Financial Consumer Agency of Canada",
+              "url": "https://www.canada.ca/en/financial-consumer-agency/news/2026/06/moving-together-a-systemwide-response-to-financial-fraud.html",
+              "date": "2026-06",
+              "type": "regulation"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "Japanese law refunds some unauthorized bank withdrawals and lets you cancel an online contract made by a clear input mistake, and card issuers cover fraud under their member terms, but none of these mentions agents. The Cabinet Office's Consumer Commission set up an expert panel on AI and consumer problems in 2026, which discussed spending limits, approval before purchase and cancelling agent actions, but it has not issued rules.",
+          "evidence": [
+            {
+              "title": "第6回 人工知能(AI)技術の利用と消費者問題に関する専門調査会 議事録",
+              "publisher": "Consumer Commission, Cabinet Office (消費者委員会)",
+              "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/006/gijiroku/index.html",
+              "date": "2026-07-17",
+              "type": "regulation"
+            },
+            {
+              "title": "内閣府 消費者委員会 専門調査会にAICX協会代表理事 小栗 伸が登壇｜AIエージェント時代の消費者保護に向け、ガイドライン整備と人材育成の重要性を提言",
+              "publisher": "AICX協会 (PR TIMES)",
+              "url": "https://prtimes.jp/main/html/rd/p/000000146.000155740.html",
+              "date": "2026-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "ASIC's ePayments Code sets who pays for unauthorised transactions, but it is voluntary and does not mention agents; Treasury's payments reform would let the minister make it mandatory. No rule or regulator statement covers purchases an AI agent made for you.",
+          "evidence": [
+            {
+              "title": "ePayments Code",
+              "publisher": "ASIC",
+              "url": "https://asic.gov.au/regulatory-resources/financial-services/epayments-code/",
+              "date": "2022-06",
+              "type": "regulation"
+            }
+          ]
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "The CBN's Consumer Protection Regulations (2019) and its Consumer Protection Framework make banks refund fraud losses and unauthorized debits, with interest, unless the customer was negligent. None of these rules names AI agents, and an agent's order is one you asked for.",
+          "evidence": [
+            {
+              "title": "CBN Consumer Protection Regulations",
+              "publisher": "Central Bank of Nigeria",
+              "url": "https://www.cbn.gov.ng/out/2019/ccd/cbn%20consumer%20protection%20regulations.pdf",
+              "date": "2019-12",
+              "type": "regulation"
+            },
+            {
+              "title": "Consumer Protection Framework",
+              "publisher": "Central Bank of Nigeria",
+              "url": "https://www.cbn.gov.ng/out/2016/cfpd/consumer%20protection%20framework%20(final).pdf",
+              "date": "2016-11-07",
               "type": "regulation"
             }
           ]
@@ -574,7 +840,9 @@
       "icon": "https://commission.europa.eu/themes/contrib/oe_theme/images/favicons/ec/favicon.png",
       "role": "Oversees the EU AI Act, which is in force in Germany.",
       "markets": [
-        "DE"
+        "DE",
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "rules.ai-law"
@@ -602,7 +870,9 @@
       "icon": null,
       "role": "Agreed the new EU payment rules (PSD3 and the Payment Services Regulation) with the European Parliament in November 2025.",
       "markets": [
-        "DE"
+        "DE",
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "rules.agent-purchase-protection"
