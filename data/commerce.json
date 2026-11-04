@@ -341,6 +341,41 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Only Alexa+, in Early Access in France since 26 May 2026 (free with Prime, otherwise €22.99 a month after early access), can find a gift and order it from Amazon by voice. Google Pay agentic checkout, which Gemini and AI Mode use to buy, works only in the US and Australia, and the Carrefour app in ChatGPT sends you to carrefour.fr to pay.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
+              "date": "2026-05-26",
+              "type": "news"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay (US and Australia only)",
+              "publisher": "Google",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Carrefour débarque dans ChatGPT pour faire ses courses avec l'IA",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/03/29/carrefour-debarque-chatgpt-courses-ia",
+              "date": "2026-03-29",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -583,6 +618,34 @@
               "publisher": "Amazon",
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Only Amazon's Alexa+ in Early Access (since May 2026) can order from Amazon for you. Rufus has been in the French Amazon app since late 2024 but only answers and compares, and its Auto Buy is documented only in the US.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Amazon lance Rufus en France, son assistant d'achat pour guider vos choix",
+              "publisher": "Phonandroid",
+              "url": "https://www.phonandroid.com/amazon-lance-rufus-en-france-son-assistant-dachat-pour-guider-vos-choix.html",
+              "date": "2024-11",
+              "type": "news"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-05",
               "type": "company"
             }
           ]
@@ -830,6 +893,34 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "French merchants can sign up for Stripe Agentic Commerce Suite, which lists FR, and Carrefour built its own app inside ChatGPT (March 2026), but the agents that complete a purchase through these tools serve mainly shoppers in the US, Canada and Australia, so French shoppers still pay on the merchant's site.",
+          "evidence": [
+            {
+              "title": "Sell through agents with Agentic Commerce Suite (supported countries include FR)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Carrefour débarque dans ChatGPT pour faire ses courses avec l'IA",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/03/29/carrefour-debarque-chatgpt-courses-ia",
+              "date": "2026-03-29",
+              "type": "news"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -916,7 +1007,8 @@
         "BR",
         "MX",
         "IN",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "commerce.in-chat-checkout",
@@ -1008,7 +1100,8 @@
         "US",
         "GB",
         "DE",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "commerce.merchant-protocol"

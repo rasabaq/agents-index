@@ -201,6 +201,27 @@
               "type": "news"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "note": "Lemonade sells home insurance for tenants and owners in France through its app and website, but no French page we found says its AI bot Maya runs the sign-up there, and no French insurer or comparison site app in ChatGPT was found.",
+          "evidence": [
+            {
+              "title": "L'assurance habitation préférée des propriétaires",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/fr/assurance-habitation",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Lemonade Insurance FAQs (France)",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/fr/faq",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -372,6 +393,19 @@
               "type": "news"
             }
           ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "In Lemonade's French app, \"Déclarer un sinistre\" opens a chat with AI Jim, which asks a few questions, approves and pays simple claims at once and passes the rest to a person.",
+          "evidence": [
+            {
+              "title": "Comment déclarer un sinistre avec Lemonade ?",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/fr/habitation/conseils/comment-declarer-un-sinistre-avec-lemonade/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -387,7 +421,8 @@
       "markets": [
         "US",
         "GB",
-        "DE"
+        "DE",
+        "FR"
       ],
       "capabilities": [
         "insurance.buy-policy",

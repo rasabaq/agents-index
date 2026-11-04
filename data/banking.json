@@ -322,6 +322,33 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "EU PSD2, written into the French Code monétaire et financier, makes banks give licensed account information and payment initiation providers API access. The ACPR licenses these providers, such as Powens (CIB 16948), and platforms such as Tink and TrueLayer also serve French banks. There is no standard for recurring variable payments yet.",
+          "evidence": [
+            {
+              "title": "Revised rules for payment services in the EU (PSD2 summary)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/EN/legal-content/summary/revised-rules-for-payment-services-in-the-eu.html",
+              "date": "2015-11",
+              "type": "regulation"
+            },
+            {
+              "title": "Payment Services Directive 2 (PSD2): Directive 2015/2366/EU",
+              "publisher": "European Banking Authority",
+              "url": "https://www.eba.europa.eu/regulation-and-policy/single-rulebook/interactive-single-rulebook/14575",
+              "date": "2018-01",
+              "type": "regulation"
+            },
+            {
+              "title": "Powens: open finance platform (authorized and regulated by the ACPR, CIB 16948)",
+              "publisher": "Powens",
+              "url": "https://www.powens.com/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -608,6 +635,34 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "Sumeria (formerly Lydia) has offered SIA, a generative AI assistant in its app, since February 2026; it can prepare a transfer and act on your accounts. Revolut's AIR reached France in September 2026 but cannot yet prepare a transfer, and Hello bank!'s HelloïZ only points you to the right screen, with in-chat transfers planned for late 2026. Only a press article describes SIA's transfer feature.",
+          "evidence": [
+            {
+              "title": "SIA, l'assistant IA de Sumeria lancé en février 2026",
+              "publisher": "Meilleurtaux",
+              "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-avril/sia-lassistant-ia-de-sumeria-lance-en-fevrier-2026.html",
+              "date": "2026-04",
+              "type": "news"
+            },
+            {
+              "title": "Revolut déploie AIR, son assistant IA, en Europe",
+              "publisher": "Meilleurtaux",
+              "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-septembre/revolut-deploie-air-son-assistant-ia-en-europe.html",
+              "date": "2026-09-04",
+              "type": "news"
+            },
+            {
+              "title": "Hello bank! lance HelloïZ, assistant IA du service clients propulsé par Mistral",
+              "publisher": "Presse-citron",
+              "url": "https://www.presse-citron.net/hello-bank-lance-helloiz-assistant-ia-service-clients-propulse-mistral/",
+              "date": "2026-03-11",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -967,6 +1022,34 @@
       ],
       "capabilities": [
         "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Sumeria (Lydia)",
+      "hq": "FR",
+      "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-avril/sia-lassistant-ia-de-sumeria-lance-en-fevrier-2026.html",
+      "homepage": "https://www.sumeria.eu/",
+      "icon": "https://sumeria.eu/wp-content/uploads/2025/12/cropped-fav_icon_app-180x180.png",
+      "role": "French neobank whose in-app AI assistant SIA, launched in February 2026, can prepare transfers and act on your accounts.",
+      "markets": [
+        "FR"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "Powens",
+      "hq": "FR",
+      "url": "https://www.powens.com/",
+      "homepage": "https://www.powens.com/",
+      "icon": "https://www.powens.com/wp-content/uploads/cropped-favicon-1-180x180.webp",
+      "role": "ACPR-licensed open finance platform that connects apps to French bank accounts under PSD2.",
+      "markets": [
+        "FR"
+      ],
+      "capabilities": [
+        "banking.open-finance-access"
       ]
     }
   ],
