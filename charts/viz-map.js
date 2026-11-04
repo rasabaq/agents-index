@@ -75,11 +75,11 @@
   ];
   // A letter for a country not in data/meta.json draws as plain land, so the grid can name a country before it is tracked.
   const CODE = { U: 'US', G: 'GB', D: 'DE', I: 'IN', B: 'BR', M: 'MX', C: 'CL', O: 'CO', K: 'CA', F: 'FR', E: 'ES', J: 'JP', A: 'AU', N: 'NG' };
-  // Label spots in grid cells [col, row, text-anchor], placed in open sea so they never collide.
+  // Label spots in grid cells [col, row, text-anchor, short name], placed in open sea so they never collide.
   const LABELS = {
     US: [16.5, 18.5, 'end'], MX: [15, 23, 'end'], CO: [27, 33, 'end'], CL: [31, 54, 'end'],
-    BR: [51, 44, 'start'], IN: [93, 36.5, 'start'], GB: [59, 19, 'end'], DE: [59, 21.5, 'end'],
-    CA: [16.5, 13, 'end'], FR: [59, 24, 'end'], ES: [59, 26.5, 'end'], JP: [125, 19, 'start'], AU: [109, 50, 'end'], NG: [66, 37.5, 'end'],
+    BR: [51, 44, 'start'], IN: [93, 36.5, 'start'], GB: [59, 19, 'end', 'UK'], DE: [59, 21.5, 'end'],
+    CA: [45.6, 12.5, 'start'], FR: [59, 24, 'end'], ES: [59, 26.5, 'end'], JP: [125, 19, 'start'], AU: [109, 50, 'end'], NG: [66, 37.5, 'end'],
   };
   const WIDE = 1040; // below this frame width, labels move to a list under the map
   const PAD = 3; // cells of room left of the map for the US label (wide mode only)
@@ -230,10 +230,10 @@
           gs.append('g').selectAll('rect').data(mine).join('rect').attr('class', 'px').call(px);
           if (!wide) return;
 
-          const [lc, lr, anchor] = LABELS[d.code];
+          const [lc, lr, anchor, short] = LABELS[d.code];
           const lx = (lc + pad) * k, ly = lr * k;
           const text = gs.append('text').attr('class', 'v-map-label').attr('x', lx).attr('y', ly).attr('text-anchor', anchor);
-          text.append('tspan').attr('class', 'name').text(`${emoji(d.code)} ${d.name}`);
+          text.append('tspan').attr('class', 'name').text(`${emoji(d.code)} ${short ?? d.name}`);
           text.append('tspan').attr('class', 'score').attr('dx', 6).text(d.score);
           const b = text.node().getBBox();
           gs.insert('rect', 'text').attr('class', 'ring').attr('rx', 6)
