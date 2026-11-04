@@ -37,6 +37,7 @@ function init() {
   wire();
   wireNav();
   wireTooltip();
+  $('#matrix').addEventListener('toggle', showSelectedColumn);
   wireLogos();
 }
 
@@ -228,11 +229,21 @@ function renderMatrix() {
   const cols = meta.countries.map((c) => c.code);
   const sel = (code) => (code === state.country ? ' class="sel"' : '');
   const head = `<div class="mx-row mx-head" role="row"><span role="columnheader">Capability</span>${cols.map((c) => `<span role="columnheader"${sel(c)}>${flag(c)}${c}</span>`).join('')}</div>`;
+  $('[data-matrix]').style.setProperty('--n', cols.length);
   $('[data-matrix]').innerHTML = head + categories.map((cat) => `
     <div class="mx-row mx-cat" role="row"><span role="rowheader" title="${esc(catName(cat.category))}">${esc(shortName(cat.category))}</span>${cols.map((c) => `<span role="cell"${sel(c)}></span>`).join('')}</div>
     ${cat.capabilities.map((cap) => `
       <div class="mx-row" role="row"><span class="mx-cap" role="rowheader">${esc(cap.name)}</span>${cols.map((c) => `<span role="cell"${sel(c)}><button type="button" data-cap="${cap.id}" data-code="${c}" aria-label="${esc(cellLabel(cap, c, cap.countries[c]))}">${dot(cap.countries[c])}</button></span>`).join('')}</div>`).join('')}`).join('');
   $('[data-mx-count]').textContent = `${cells.length} checks`;
+  showSelectedColumn();
+}
+
+// On phones the matrix scrolls sideways under its pinned names: keep the selected country's column in view.
+// A closed <details> has no layout, so this also runs when the matrix opens.
+function showSelectedColumn() {
+  const mx = $('[data-matrix]'), sel = mx.querySelector('.mx-head .sel');
+  if (!sel || mx.scrollWidth <= mx.clientWidth) return;
+  mx.scrollLeft += sel.getBoundingClientRect().left - mx.getBoundingClientRect().left - mx.clientWidth / 2;
 }
 
 function correctionUrl(cap, code, cell) {
