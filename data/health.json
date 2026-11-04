@@ -193,6 +193,27 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Healthengine's Helen AI receptionist answers calls and books, moves or cancels appointments straight into the practice system, but only at practices that use Best Practice or Pracsoft and pay for it. No patient-side booking agent was found, and Gemini's Zocdoc booking is US-only.",
+          "evidence": [
+            {
+              "title": "Voice AI receptionist (Helen AI)",
+              "publisher": "Healthengine",
+              "url": "https://practices.healthengine.com.au/specialty/gp/voice-ai-receptionist",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -353,6 +374,13 @@
           "note": "We found no AI agent that renews or orders prescription medicine in Japan; renewals need a doctor's visit, in person or online, and Amazon's Health AI renewals are US-only.",
           "evidence": [],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "We found no AI agent that renews or orders prescription medicine in Australia. We did not search pharmacy chains one by one.",
+          "evidence": [],
+          "confidence": "low"
         }
       }
     },
@@ -506,6 +534,21 @@
           "note": "Public health insurance covers everyone at a fixed co-pay, and we found no AI assistant at a health insurance society or private insurer that looks up your own cover or a claim; UnitedHealthcare's Avery is US-only.",
           "evidence": [],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No live AI assistant that checks your own cover or claim status was found at Medibank, Bupa, HCF or nib; Medibank's FY26 results do not mention one.",
+          "evidence": [
+            {
+              "title": "FY26 Results Media Release",
+              "publisher": "Medibank",
+              "url": "https://www.medibank.com.au/content/dam/retail/about-assets/pdfs/investor-centre/fy26-results/FY26_Results_Media_Release.pdf",
+              "date": "2026-08-20",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -636,6 +679,20 @@
       ],
       "capabilities": [
         "health.coverage-check"
+      ]
+    },
+    {
+      "name": "Healthengine",
+      "hq": "AU",
+      "url": "https://practices.healthengine.com.au/specialty/gp/voice-ai-receptionist",
+      "homepage": "https://healthengine.com.au/",
+      "icon": "https://healthengine.com.au/favicon.ico",
+      "role": "Its Helen AI receptionist books, moves and cancels appointments straight into a practice's booking system.",
+      "markets": [
+        "AU"
+      ],
+      "capabilities": [
+        "health.book-appointment"
       ]
     }
   ],

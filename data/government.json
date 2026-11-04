@@ -385,6 +385,27 @@
               "type": "news"
             }
           ]
+        },
+        "AU": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "The Digital ID Act 2024 set up the Australian Government Digital ID System, but myID serves government services today. Private sector participation starts on 1 December 2026, so the cell is announced.",
+          "evidence": [
+            {
+              "title": "Digital ID expands to the private sector",
+              "publisher": "Minister for Finance",
+              "url": "https://ministers.finance.gov.au/financeminister/media-release/2026/06/26/digital-id-expands-private-sector",
+              "date": "2026-06-26",
+              "type": "regulation"
+            },
+            {
+              "title": "Digital ID expands to the private sector",
+              "publisher": "Senator Katy Gallagher",
+              "url": "https://katygallagher.com.au/media-centre/media-releases/digital-id-expands-to-the-private-sector/",
+              "date": "2026-06-26",
+              "type": "regulation"
+            }
+          ]
         }
       }
     },
@@ -664,6 +685,21 @@
               "type": "news"
             }
           ]
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Services Australia's myGov digital assistant Charles and other web assistants answer common questions, but none completes a task for you. We found no generative or agentic government assistant in 2026.",
+          "evidence": [
+            {
+              "title": "myGov digital assistant 'Charles' is up and running",
+              "publisher": "GovTech Review",
+              "url": "https://govtechreview.com.au/content/gov-digital/news/mygov-digital-assistant-charles-is-up-and-running-1486808436",
+              "date": "2018-11-12",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }

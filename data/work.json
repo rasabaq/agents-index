@@ -206,6 +206,20 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "live",
+          "note": "LoopCV searches SEEK, plus LinkedIn and Indeed, for Australian jobs and sends applications for you by email or web form; its help page does not say whether it can auto-apply on SEEK itself. SEEK has no agent of its own that applies for you.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -453,6 +467,21 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Employment Hero's HeroForce (April 2026) uses AI to work out awards and payroll, but as an employer-of-record service with people checking the work, not an agent that runs payroll for the business. We found no Xero or MYOB agent that runs payroll.",
+          "evidence": [
+            {
+              "title": "Employment Hero becomes the legal employer with new AI system",
+              "publisher": "SmartCompany",
+              "url": "https://www.smartcompany.com.au/startupsmart/employment-hero-business-legal-employer-new-ai-system/",
+              "date": "2026-04-22",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -475,7 +504,8 @@
         "CO",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "AU"
       ],
       "capabilities": [
         "work.job-apply"

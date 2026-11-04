@@ -290,6 +290,27 @@
               "type": "regulation"
             }
           ]
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "no-rule",
+          "note": "Australia has no AI law. The National AI Plan (December 2025) dropped the proposed mandatory guardrails and ruled out a standalone AI Act, relying on existing privacy, consumer and other laws.",
+          "evidence": [
+            {
+              "title": "Australia introduces a national AI plan: four things leaders need to know",
+              "publisher": "MinterEllison",
+              "url": "https://www.minterellison.com/articles/australia-introduces-a-national-ai-plan-four-things-leaders-need-to-know",
+              "date": "2025-12",
+              "type": "report"
+            },
+            {
+              "title": "Mandatory AI guardrails put on hold with the release of national plan",
+              "publisher": "Region Canberra",
+              "url": "https://region.com.au/mandatory-ai-guardrails-put-on-hold-with-the-release-of-national-plan/926410/",
+              "date": "2025-12-03",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -567,6 +588,20 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "ASIC's ePayments Code sets who pays for unauthorised transactions, but it is voluntary and does not mention agents; Treasury's payments reform would let the minister make it mandatory. No rule or regulator statement covers purchases an AI agent made for you.",
+          "evidence": [
+            {
+              "title": "ePayments Code",
+              "publisher": "ASIC",
+              "url": "https://asic.gov.au/regulatory-resources/financial-services/epayments-code/",
+              "date": "2022-06",
+              "type": "regulation"
+            }
+          ]
         }
       }
     }

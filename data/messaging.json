@@ -346,6 +346,26 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "live",
+          "note": "Meta began opening Meta Business Agent to businesses globally on WhatsApp, Messenger and Instagram in June 2026, and WhatsApp partner 360dialog says the regional limits now appear lifted. We found no Australia-specific page, and finance, health and some other business types are excluded.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -702,6 +722,35 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Only niche channels: Telegram bot payments through a payment provider, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. WhatsApp payments are not launched in Australia.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Apple Messages for Business",
+              "publisher": "Apple",
+              "url": "https://register.apple.com/business-chat",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "WhatsApp payments [Supported countries, API, Peer-to-peer]",
+              "publisher": "Infobip",
+              "url": "https://www.infobip.com/blog/whatsapp-payments",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -726,7 +775,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [
@@ -881,7 +931,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "messaging.pay-in-chat"

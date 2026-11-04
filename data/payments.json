@@ -292,6 +292,27 @@
               "type": "company"
             }
           ]
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Mastercard Agent Pay ran Australia's first authenticated agent purchases in January 2026 with a CommBank debit card (Event Cinemas) and a Westpac card, and Visa added Australian partners to its Agentic Ready program in April 2026. We found no general rollout to all cardholders.",
+          "evidence": [
+            {
+              "title": "Mastercard accelerates AI-powered commerce with Australia's first authenticated agentic transactions using Agent Pay",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-accelerates-ai-powered-commerce-with-australia-s-first-authenticated-agentic-transactions-using-agent-pay/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Visa welcomes partners into Agentic Ready program to unlock agentic commerce",
+              "publisher": "Visa Australia",
+              "url": "https://www.visa.com.au/about-visa/newsroom/press-releases/visa-welcomes-partners-into-agentic-ready-program-to-unlock-agentic-commerce.html",
+              "date": "2026-04-30",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -559,6 +580,21 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "Fintech Vivi Money demonstrated AI-started account-to-account payments over the New Payments Platform by text or voice in June 2026 and said it would launch the next month; we found no confirmation that it is live. No PayTo agent feature was found.",
+          "evidence": [
+            {
+              "title": "Vivi Money demonstrates AI-initiated A2A payments on Australia's NPP",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/vivi-money-demonstrates-ai-initiated-a2a-payments-on-australias-npp",
+              "date": "2026-06-12",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -808,6 +844,33 @@
               "type": "news"
             }
           ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Google Pay agentic checkout lets Gemini and AI Mode pay with your saved Google Pay card, and its help page lists only the US and Australia. Stripe's shared payment tokens and Link Agent Wallet do not cover Australia.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Shared payment tokens (supported countries)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet (availability)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -854,7 +917,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -1091,6 +1155,20 @@
       ],
       "capabilities": [
         "payments.instant-rail-agent"
+      ]
+    },
+    {
+      "name": "Commonwealth Bank of Australia",
+      "hq": "AU",
+      "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-accelerates-ai-powered-commerce-with-australia-s-first-authenticated-agentic-transactions-using-agent-pay/",
+      "homepage": "https://www.commbank.com.au/",
+      "icon": "https://www.commbank.com.au/etc/designs/commbank/favicon.ico",
+      "role": "Its debit card made Australia's first authenticated agent purchase with Mastercard Agent Pay.",
+      "markets": [
+        "AU"
+      ],
+      "capabilities": [
+        "payments.card-agent-token"
       ]
     }
   ],
