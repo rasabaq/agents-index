@@ -222,6 +222,34 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Worldline, Crédit Agricole and Mastercard Agent Pay ran France's first agent payment in production in June 2026 (a festival ticket from Weezevent, confirmed by the customer), and Revolut and Visa ran a test agent purchase at Cleverbridge in September 2026. Both are single first transactions, not a launch for all cardholders.",
+          "evidence": [
+            {
+              "title": "Worldline inaugure le paiement agentique en France avec Crédit Agricole et Mastercard",
+              "publisher": "Worldline",
+              "url": "https://worldline.com/fr-fr/home/top-navigation/media-relations/communique-de-presse/pr-2026_06_25_01",
+              "date": "2026-06-25",
+              "type": "company"
+            },
+            {
+              "title": "Revolut annonce avoir réalisé le premier paiement par IA en France",
+              "publisher": "Sud Radio",
+              "url": "https://www.sudradio.fr/societe/revolut-annonce-avoir-realise-le-premier-paiement-par-ia-en-france",
+              "date": "2026-09-07",
+              "type": "news"
+            },
+            {
+              "title": "Visa and banks across Europe reach the next phase of agentic commerce, unlocking secure access to merchants (no French issuer named)",
+              "publisher": "Visa",
+              "url": "https://www.visa.co.uk/about-visa/newsroom/press-releases.3457328.html",
+              "date": "2026-07-02",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -439,6 +467,20 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "No agent payments over SEPA Instant or Wero found. Wero has been live for people in France since 2024 and is adding shop and recurring payments in 2026, but it has no agent feature.",
+          "evidence": [
+            {
+              "title": "MPE 2026: five key themes for merchants (agentic commerce; Wero as Europe's own rail)",
+              "publisher": "Payment Expert",
+              "url": "https://paymentexpert.com/2026/03/23/mpe-2026-five-key-themes-merchants/",
+              "date": "2026-03-23",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -633,6 +675,27 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Stripe shared payment tokens list FR but are still under preview terms, and Stripe's Link Agent Wallet is US and Canada only. No French wallet (Lydia/Sumeria, Paylib, Wero) lets an agent pay.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens (supported countries include FR; preview terms)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -652,7 +715,8 @@
         "MX",
         "CL",
         "CO",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -673,7 +737,8 @@
         "CL",
         "CO",
         "IN",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -721,7 +786,8 @@
         "US",
         "GB",
         "DE",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "payments.wallet-agent",
@@ -729,7 +795,8 @@
       ],
       "marketsByCapability": {
         "payments.card-agent-token": [
-          "US"
+          "US",
+          "FR"
         ]
       }
     },

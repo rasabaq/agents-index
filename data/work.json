@@ -156,6 +156,27 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "LoopCV accepts France as a job location and sends applications for you by email when it finds an employer address, and on LinkedIn and Indeed through its Chrome extension; its list of boards names no French board such as France Travail or Welcome to the Jungle. France Travail's own AI tool (ChatFT) serves its advisers, not job seekers.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            },
+            {
+              "title": "France Travail customer story (ChatFT built with Mistral)",
+              "publisher": "Mistral AI",
+              "url": "https://mistral.ai/customers/france-travail/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -352,6 +373,28 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "PayFit AI, inside the French payroll service PayFit, answers employees' HR questions and does some tasks for the employer, such as passing on variable pay items and building HR reports, but PayFit's experts run the payroll and file the social declarations (DSN).",
+          "evidence": [
+            {
+              "title": "Payfit: logiciel de paie et RH (Payfit AI)",
+              "publisher": "PayFit",
+              "url": "https://payfit.com/fr/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "PayFit launches first personalised AI agent to answer workers' queries on their contract, pay and leave",
+              "publisher": "FF News",
+              "url": "https://ffnews.com/newsarticle/paytech/payfit-launches-first-personalised-ai-agent-to-answer-workers-queries-on-their-contract-pay-and-leave/",
+              "date": "2026-01-21",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -372,7 +415,8 @@
         "MX",
         "CL",
         "CO",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "work.job-apply"
@@ -444,6 +488,20 @@
       "role": "The Payroll Agent in QuickBooks Workforce collects time data and runs payroll for the owner, rolling out to eligible US customers.",
       "markets": [
         "US"
+      ],
+      "capabilities": [
+        "work.hr-payroll"
+      ]
+    },
+    {
+      "name": "PayFit",
+      "hq": "FR",
+      "url": "https://payfit.com/fr/",
+      "homepage": "https://payfit.com/fr/",
+      "icon": "https://www.datocms-assets.com/50397/1789377249-favicon.svg?auto=format&h=57&w=57",
+      "role": "French payroll service whose PayFit AI answers HR questions and passes on variable pay items, while its experts run the payroll.",
+      "markets": [
+        "FR"
       ],
       "capabilities": [
         "work.hr-payroll"

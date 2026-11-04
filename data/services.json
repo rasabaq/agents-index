@@ -204,6 +204,41 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "Alexa+ (Early Access since May 2026) books tables through TheFork, and the TheFork app in ChatGPT, reported live in France and 12 other European countries, finds tables and hands off to TheFork to book. Google AI Mode table booking is not offered in the EU. Both sources for France are press reports.",
+          "evidence": [
+            {
+              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
+              "date": "2026-05-26",
+              "type": "news"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes a través de ChatGPT (also live in France)",
+              "publisher": "Forbes España",
+              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
+              "date": "2025-12-22",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT release notes (OpenTable reservations available globally)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -436,6 +471,26 @@
           ]
         },
         "ES": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search (hotel booking US only; some features unavailable in EEA)",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
           "status": "live",
           "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only.",
           "evidence": [
@@ -712,6 +767,26 @@
             }
           ],
           "confidence": "low"
+        },
+        "FR": {
+          "status": "live",
+          "note": "Since 26 March 2026 the Carrefour app in ChatGPT builds a full grocery basket from your Carrefour account, checks drive stock and picks delivery, then sends you to carrefour.fr to pay. No Uber Eats or Deliveroo agent was found in France, the Uber apps in ChatGPT are US-only, and Just Eat no longer operates in France.",
+          "evidence": [
+            {
+              "title": "Carrefour débarque dans ChatGPT pour faire ses courses avec l'IA",
+              "publisher": "iPhoneSoft",
+              "url": "https://iphonesoft.fr/2026/03/29/carrefour-debarque-chatgpt-courses-ia",
+              "date": "2026-03-29",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -755,7 +830,8 @@
         "CL",
         "CO",
         "IN",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -767,10 +843,12 @@
           "US",
           "GB",
           "MX",
-          "ES"
+          "ES",
+          "FR"
         ],
         "services.delivery-rides": [
-          "US"
+          "US",
+          "FR"
         ]
       }
     },
@@ -800,7 +878,8 @@
       "role": "Alexa+ finds and books restaurant tables through OpenTable in Germany, in Early Access.",
       "markets": [
         "DE",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -857,7 +936,8 @@
       "role": "Supplies UK table bookings to Google AI Mode and runs a TheFork app inside ChatGPT.",
       "markets": [
         "GB",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -951,7 +1031,8 @@
         "CL",
         "CO",
         "IN",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "services.travel-booking"
@@ -1109,6 +1190,20 @@
       "role": "Barcelona delivery app whose assistant in ChatGPT and Claude finds supermarket and shop products, then hands off to the Glovo app to order.",
       "markets": [
         "ES"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Carrefour",
+      "hq": "FR",
+      "url": "https://iphonesoft.fr/2026/03/29/carrefour-debarque-chatgpt-courses-ia",
+      "homepage": "https://www.carrefour.fr/",
+      "icon": "https://www.carrefour.fr/images/app_icons/apple-icon-180.png",
+      "role": "French grocer whose app in ChatGPT, live since March 2026, builds your grocery basket and picks delivery before you pay on carrefour.fr.",
+      "markets": [
+        "FR"
       ],
       "capabilities": [
         "services.delivery-rides"

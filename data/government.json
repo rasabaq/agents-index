@@ -321,6 +321,28 @@
               "type": "report"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "rail-closed",
+          "note": "FranceConnect+ lets private firms check identity with France Identité (high level) or L'Identité Numérique La Poste (substantial), but only firms that a law requires to verify identity, such as banks, may connect, after a DataPass request. France Identité had over 5 million users in October 2026; no open API serves other apps or agents.",
+          "evidence": [
+            {
+              "title": "Conditions générales d'utilisation FranceConnect pour les fournisseurs de services (v3.9)",
+              "publisher": "FranceConnect (DINUM)",
+              "url": "https://partenaires.franceconnect.gouv.fr/files/CGU_FS_v3.9.pdf",
+              "date": "2026-10",
+              "type": "regulation"
+            },
+            {
+              "title": "Intégration FranceConnect+ (eligibility of private companies, identity providers)",
+              "publisher": "Didit",
+              "url": "https://didit.me/fr/blog/franceconnect-plus-integration",
+              "date": "2026-10-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -543,6 +565,28 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "France's state AI tools serve civil servants, not the public: the Assistant IA (Albert) was opened to all state agents in June 2026, and the Albert pilot in France Services offices was not extended in its current form, with opening it to users 'not considered at this stage'. A generative tool for the 3939 and service-public.gouv.fr advisers (ARIA) is being tested. No citizen-facing assistant that finishes a task was found.",
+          "evidence": [
+            {
+              "title": "Albert, l'outil d'IA générative, expérimenté à France Services ne sera pas généralisé",
+              "publisher": "Weka",
+              "url": "https://www.weka.fr/actualite/administration/article/albert-l-outil-d-ia-generative-experimente-a-france-services-ne-sera-pas-generalise-209194/",
+              "date": "2026-01",
+              "type": "news"
+            },
+            {
+              "title": "L'État généralise son assistant IA à tous les agents dans une version améliorée",
+              "publisher": "Acteurs publics",
+              "url": "https://acteurspublics.fr/articles/letat-generalise-son-assistant-ia-a-tous-les-agents-dans-une-version-amelioree/",
+              "date": "2026-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }

@@ -135,6 +135,20 @@
               "type": "company"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Doctolib's AI phone assistant answers patient calls at any hour and writes the appointment straight into the practice calendar, starting with GPs and dentists that pay for it, with other specialties due by the end of 2026. We found no patient-side booking agent from Doctolib in production.",
+          "evidence": [
+            {
+              "title": "Fini les appels sans réponse chez le médecin grâce à l'assistant intelligent de Doctolib",
+              "publisher": "Clubic",
+              "url": "https://www.clubic.com/actualite-589885-fini-les-appels-sans-reponse-chez-le-medecin-grace-a-l-assistant-intelligent-de-doctolib.html",
+              "date": "2025-12-03",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -261,6 +275,27 @@
           "gapReason": "rail-closed",
           "note": "Spain's electronic prescription is dispensed at the pharmacy with the health card, and we found no AI agent that renews or orders prescription medicine for you.",
           "evidence": []
+        },
+        "FR": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "No AI agent renews or orders prescription medicine in France. Renewal needs a doctor (often by teleconsultation, such as Qare or Medadom) or, in limited cases, a pharmacist, and only a pharmacist may dispense.",
+          "evidence": [
+            {
+              "title": "Renouvellement d'ordonnance : comment ça marche ?",
+              "publisher": "Qare",
+              "url": "https://www.qare.fr/sante/renouvellement-ordonnance/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Renouvellement d'ordonnance",
+              "publisher": "Medadom",
+              "url": "https://info.medadom.com/symptomes/renouvellement-ordonnance",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -378,6 +413,20 @@
           "note": "We found no live AI assistant at Sanitas, Adeslas or DKV that looks up your own cover or a claim; their apps and WhatsApp channels use ordinary menus and human agents.",
           "evidence": [],
           "confidence": "low"
+        },
+        "FR": {
+          "status": "live",
+          "note": "Alan's AI health companion Mo, live for over 500,000 Alan members in France (May 2026), understands the member's own cover and takes insurance questions through to care. Alan's letter does not say Mo shows claim status, so that part is unconfirmed.",
+          "evidence": [
+            {
+              "title": "Alan - 2026 Q1 Letter to shareholders (Mo live for 500k+ members in France)",
+              "publisher": "Alan",
+              "url": "https://alan.com/en/blog/discover-alan/a/alan-2026-q1-letter-to-shareholders",
+              "date": "2026-05-06",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -433,7 +482,8 @@
       "icon": "https://www.doctolib.de/favicon.ico",
       "role": "Booking platform whose AI phone assistant books callers into the calendars of practices that pay for it.",
       "markets": [
-        "DE"
+        "DE",
+        "FR"
       ],
       "capabilities": [
         "health.book-appointment"
@@ -490,6 +540,20 @@
       "role": "Insurer whose AI voice agent tells customers the status of their own health claims.",
       "markets": [
         "IN"
+      ],
+      "capabilities": [
+        "health.coverage-check"
+      ]
+    },
+    {
+      "name": "Alan",
+      "hq": "FR",
+      "url": "https://alan.com/en/blog/discover-alan/a/alan-2026-q1-letter-to-shareholders",
+      "homepage": "https://alan.com/",
+      "icon": "https://alan.com/website-assets/favicon/apple-icon-57x57.png",
+      "role": "French health insurer whose AI companion Mo, live for 500,000+ members in France, understands the member's cover and guides them to care.",
+      "markets": [
+        "FR"
       ],
       "capabilities": [
         "health.coverage-check"

@@ -221,6 +221,33 @@
               "type": "regulation"
             }
           ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "The EU AI Act is in force in France, so the cell is live. Its transparency duties for AI systems apply since 2 August 2026, and the Digital Omnibus (Regulation 2026/1744) delays the high-risk rules to December 2027 and August 2028. The Act does not name shopping agents, but it covers AI systems that act for users.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "date": "2024-07",
+              "type": "regulation"
+            },
+            {
+              "title": "Regulation (EU) 2026/1744 (Digital Omnibus on AI)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+              "date": "2026-07",
+              "type": "regulation"
+            },
+            {
+              "title": "AI Act: regulatory framework",
+              "publisher": "European Commission",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "date": "2026-10",
+              "type": "regulation"
+            }
+          ]
         }
       }
     },
@@ -434,6 +461,27 @@
               "type": "regulation"
             }
           ]
+        },
+        "FR": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "Article L133-18 of the Code monétaire et financier makes the bank refund payments you did not authorize, and French consumer law gives a 14-day right to withdraw from online purchases, whoever placed the order. Neither rule mentions agents. The EU's new payment rules (PSD3 and the Payment Services Regulation), agreed in November 2025 and not yet applying, do not mention agents either.",
+          "evidence": [
+            {
+              "title": "Article L133-18 du Code monétaire et financier",
+              "publisher": "Doctrine",
+              "url": "https://www.doctrine.fr/l/texts/codes/LEGITEXT000006072026/articles/LEGIARTI000020861591",
+              "date": "2022-08",
+              "type": "regulation"
+            },
+            {
+              "title": "Payment services: Council and Parliament agree to step up the fight against fraud and increase transparency",
+              "publisher": "Council of the European Union",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/11/27/payment-services-council-and-parliament-agree-to-step-up-the-fight-against-fraud-and-increase-transparency/",
+              "date": "2025-11-27",
+              "type": "regulation"
+            }
+          ]
         }
       }
     }
@@ -630,7 +678,8 @@
       "role": "Oversees the EU AI Act, which is in force in Germany.",
       "markets": [
         "DE",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "rules.ai-law"
@@ -659,7 +708,8 @@
       "role": "Agreed the new EU payment rules (PSD3 and the Payment Services Regulation) with the European Parliament in November 2025.",
       "markets": [
         "DE",
-        "ES"
+        "ES",
+        "FR"
       ],
       "capabilities": [
         "rules.agent-purchase-protection"
