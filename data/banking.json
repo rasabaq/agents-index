@@ -405,6 +405,42 @@
             }
           ],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "The CBN issued an open banking framework in 2021 and operational guidelines in 2023, with NIBSS running the registry, but the go-live slipped from August 2025: in October 2025 a CBN official said it was not live, and in June 2026 the rollout was still described as a phased go-live through mid-2026. Aggregators such as Mono connect apps to bank accounts outside the regulated regime. One trade site says the framework went live in August 2025, so the sources conflict.",
+          "evidence": [
+            {
+              "title": "Operational Guidelines for Open Banking in Nigeria",
+              "publisher": "Central Bank of Nigeria",
+              "url": "https://www.cbn.gov.ng/Out/2023/CCD/Operational%20Guidelines%20for%20Open%20Banking%20in%20Nigeria.pdf",
+              "date": "2023-03",
+              "type": "regulation"
+            },
+            {
+              "title": "Circular on the Regulatory Framework on Open Banking in Nigeria",
+              "publisher": "Central Bank of Nigeria",
+              "url": "https://www.cbn.gov.ng/Out/2021/PSMD/Circular%20on%20the%20Regulatory%20Framework%20on%20Open%20Banking%20in%20Nigeria.pdf",
+              "date": "2021-02",
+              "type": "regulation"
+            },
+            {
+              "title": "Nigeria's open banking still in the works",
+              "publisher": "TechCabal",
+              "url": "https://techcabal.com/2025/10/16/nigerias-open-banking-still-in-the-works/",
+              "date": "2025-10-16",
+              "type": "news"
+            },
+            {
+              "title": "As Nigeria prepares for the open banking rollout",
+              "publisher": "BusinessDay",
+              "url": "https://businessday.ng/?p=1143539",
+              "date": "2026-06-08",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -789,6 +825,40 @@
             }
           ],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "live",
+          "note": "UBA's Leo, which UBA calls an AI chat banking assistant, lets customers send money, buy airtime and data and pay bills inside WhatsApp, Messenger and Apple Messages for Business (number +234 903 001 0007). Leo dates from 2017 and works mostly as a guided chatbot, not a generative AI agent. We found no assistant that moves money at Moniepoint, OPay, Kuda or PalmPay; Moniepoint's \"M\" chatbot only answers questions.",
+          "evidence": [
+            {
+              "title": "Chat with Leo - UBA Nigeria",
+              "publisher": "United Bank for Africa",
+              "url": "https://www.ubagroup.com/nigeria/personal-banking/digital-banking/chat-with-leo/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Leo Is Live on WhatsApp!!!",
+              "publisher": "United Bank for Africa",
+              "url": "https://www.ubagroup.com/57-marina/leo-is-live-on-whatsapp/",
+              "date": "2018-09",
+              "type": "company"
+            },
+            {
+              "title": "Moniepoint AI chatbot for Nigeria's informal economy",
+              "publisher": "Techsoma",
+              "url": "https://techsoma.africa/moniepoint-ai-chatbot-nigeria-informal-economy/",
+              "date": "2025-11",
+              "type": "news"
+            },
+            {
+              "title": "4 years on, UBA's Leo continues to lead the pack in Nigeria, Africa",
+              "publisher": "Nairametrics",
+              "url": "https://nairametrics.com/2022/02/28/4-years-on-ubas-leo-continues-to-lead-the-pack-in-nigeria-africa/",
+              "date": "2022-02-28",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -1218,6 +1288,20 @@
       ],
       "capabilities": [
         "banking.open-finance-access"
+      ]
+    },
+    {
+      "name": "United Bank for Africa (UBA)",
+      "hq": "NG",
+      "url": "https://www.ubagroup.com/nigeria/personal-banking/digital-banking/chat-with-leo/",
+      "homepage": "https://www.ubagroup.com",
+      "icon": "https://www.ubagroup.com/favicon.ico",
+      "role": "Nigerian bank whose chat assistant Leo sends money and pays bills on WhatsApp and other chat apps.",
+      "markets": [
+        "NG"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
       ]
     }
   ],

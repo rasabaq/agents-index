@@ -220,6 +220,42 @@
             }
           ],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "JobCopilot says it auto-applies to jobs at companies worldwide, and Nigerian job listings on GrabJobs carry an \"Auto-Apply with AI\" button that uses it; LoopCV searches LinkedIn worldwide but does not list Nigeria. Jobberman, the main local job board, only sends job alerts and offers one-click applying that you do yourself.",
+          "evidence": [
+            {
+              "title": "JobCopilot: automatically apply to jobs",
+              "publisher": "JobCopilot",
+              "url": "https://jobcopilot.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Internal Auditor (Nigeria job listing with Auto-Apply with AI)",
+              "publisher": "GrabJobs",
+              "url": "https://grabjobs.co/nigeria/job/full-time/others/internal-auditor-145272102",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How To Automate Your Job Search For Faster Results – Introducing The New Jobberman Job Alerts",
+              "publisher": "Jobberman",
+              "url": "https://www.jobberman.com/discover/how-to-automate-your-job-search-with-jobberman-job-alerts",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -482,6 +518,20 @@
             }
           ],
           "confidence": "low"
+        },
+        "NG": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Payroll tools for Nigerian small firms, such as Salario (free, March 2026), calculate PAYE, pension and statutory filings, and HONO markets an AI-native payroll, but no source shows an AI agent that runs payroll or files a form on its own.",
+          "evidence": [
+            {
+              "title": "Salario Launches Free Payroll Solution to Help Nigerian SMEs Improve Tax Compliance",
+              "publisher": "Techpoint Africa",
+              "url": "https://techpoint.africa/?p=350481",
+              "date": "2026-03",
+              "type": "news"
+            }
+          ]
         }
       }
     }
