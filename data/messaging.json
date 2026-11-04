@@ -1393,6 +1393,30 @@
         "downloadsMonth": null,
         "dockerPulls": null
       }
+    },
+    {
+      "repo": "line/line-bot-sdk-python",
+      "name": "LINE Messaging API SDK for Python",
+      "role": "Official Python SDK for the LINE Messaging API, so a business can run an AI agent that chats with customers on LINE, Japan's main chat app.",
+      "capabilities": [
+        "messaging.business-ai-agent"
+      ],
+      "packages": [
+        {
+          "registry": "pypi",
+          "name": "line-bot-sdk"
+        }
+      ],
+      "origin": "JP",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 2145,
+        "contributors": 59,
+        "pushedAt": "2026-11-04",
+        "archived": false,
+        "downloadsMonth": 11357375,
+        "dockerPulls": null
+      }
     }
   ]
 }

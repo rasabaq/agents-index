@@ -1323,6 +1323,210 @@
         "downloadsMonth": null,
         "dockerPulls": null
       }
+    },
+    {
+      "repo": "ctt-gob-es/clienteafirma",
+      "name": "Autofirma (Cliente @firma)",
+      "role": "The Spanish government's official signing app, which lets a person prove who they are and sign with their DNIe national ID card or official certificate on public and private websites in Spain.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "ES",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 345,
+        "contributors": 38,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "ctt-gob-es/jmulticard",
+      "name": "jmulticard",
+      "role": "Spanish government Java library that reads smart cards such as the DNIe national ID card, so an app can check a person's identity and sign with the card in Spain.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "ES",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 47,
+        "contributors": 13,
+        "pushedAt": "2026-09-18",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "france-connect/sources",
+      "name": "FranceConnect",
+      "role": "Source code of FranceConnect, the French state's login service, so an app can sign a person in with their tax, health or postal account through OpenID Connect.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "FR",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 133,
+        "contributors": 1,
+        "pushedAt": "2026-10-23",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "datagouv/datagouv-mcp",
+      "name": "data.gouv.fr MCP Server",
+      "role": "Official MCP server from data.gouv.fr that lets an agent search, read and analyze datasets from France's national open data platform.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "origin": "FR",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 1605,
+        "contributors": 16,
+        "pushedAt": "2026-11-04",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "etalab-ia/OpenGateLLM",
+      "name": "OpenGateLLM (Albert API)",
+      "role": "Open-source AI gateway from the French state's Etalab team that runs the Albert API, the model and search service French public agencies build their assistants on.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "origin": "FR",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 218,
+        "contributors": 42,
+        "pushedAt": "2026-11-04",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "bcgov/bc-wallet-mobile",
+      "name": "BC Wallet",
+      "role": "The Government of British Columbia's official wallet app, which holds verifiable credentials such as the BC Person Credential so a person in Canada can prove who they are to an app.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "CA",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 86,
+        "contributors": 25,
+        "pushedAt": "2026-11-04",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "openwallet-foundation/acapy-vc-authn-oidc",
+      "name": "VC-AuthN OIDC",
+      "role": "OpenID Connect login provider, first built by the BC Government, that lets an app sign a person in with a credential from a wallet such as BC Wallet.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "CA",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 157,
+        "contributors": 27,
+        "pushedAt": "2026-11-02",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "bcgov/traction",
+      "name": "Traction",
+      "role": "BC Government's API-first service on top of ACA-Py that lets an organization issue and verify digital credentials in British Columbia's digital trust network.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "CA",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 63,
+        "contributors": 28,
+        "pushedAt": "2026-11-04",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "digital-go-jp/jgrants-mcp-server",
+      "name": "Jグランツ MCP Server",
+      "role": "MCP server from Japan's Digital Agency that lets an agent search Jグランツ, the national subsidy application system, and fetch each subsidy's details and forms.",
+      "capabilities": [
+        "government.ai-public-services"
+      ],
+      "origin": "JP",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 51,
+        "contributors": 2,
+        "pushedAt": "2026-04-06",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "jpki/myna",
+      "name": "myna",
+      "role": "Command-line tool and library that reads Japan's My Number Card and signs with its JPKI public certificate, the national digital ID.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "origin": "JP",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 273,
+        "contributors": 6,
+        "pushedAt": "2026-11-04",
+        "archived": false,
+        "downloadsMonth": null,
+        "dockerPulls": null
+      }
+    },
+    {
+      "repo": "smileidentity/smile-identity-core-js",
+      "name": "Smile ID Node library",
+      "role": "Official Node.js client for Smile ID, to check a person's identity against Nigerian government ID records such as the NIN and BVN.",
+      "capabilities": [
+        "government.digital-id-api"
+      ],
+      "packages": [
+        {
+          "registry": "npm",
+          "name": "smile-identity-core"
+        }
+      ],
+      "origin": "US",
+      "usage": {
+        "asOf": "2026-11-04",
+        "stars": 7,
+        "contributors": 19,
+        "pushedAt": "2026-10-25",
+        "archived": false,
+        "downloadsMonth": 36329,
+        "dockerPulls": null
+      }
     }
   ]
 }
