@@ -10,7 +10,7 @@ Each row has:
 - what it lets agents do;
 - the countries it is live in. A company in several categories gets one labelled row of country pills per category.
 
-Market pills filter the table to companies live in one country, and the label counts the matches ("Companies · 19 of 94"). The table grows with the page: it shows the first 10 rows and a "Show all N companies" button.
+Market pills filter the table to companies live in one country, and the label counts the matches ("Companies · M of N", with N = all companies, 161 today). The table grows with the page: it shows the first 10 rows and a "Show all N companies" button.
 
 ## Sub-features
 
@@ -23,8 +23,8 @@ Market pills filter the table to companies live in one country, and the label co
 
 ## How to get to it (user POV)
 
-- Use "Companies" in the site nav, the console tab "4 Companies", or press `4`.
-- Scroll to "Who makes it possible."
+- On the home page, follow "All N companies" or "+N more" in "Who builds it" (`[data-who]`). The home nav has no Companies link: its "Who builds it" goes to `#builders`.
+- On `/companies.html`, use "Companies" in its nav, or scroll to "Who makes it possible."
 
 ## Driving it with observatory.mjs
 
@@ -53,7 +53,8 @@ Steps:
   - `broken` is 0. Monograms are the intended fallback.
 - **Phone.**
   - Run `node $H open /companies.html --width 400` and `node $H shot companies-400 --at '#companies'`.
-  - Rows become cards, there is no inner scroll box, and `scrollWidth` is 400.
+  - Rows become cards (up to 760px wide), there is no inner scroll box, and `scrollWidth` is 400.
+- **Tablet.** Run `node $H open /companies.html --width 900`. The tables stay tables: the 14 country pills under Live in wrap about seven to a line, long Open source headers take two lines, and `node $H eval 'document.documentElement.scrollWidth'` prints `900`. Repeat at `--width 700` (cards) and `--width 761` (tables).
 - **Proof.** Finish with `node $H errors`. A `resource` entry for a logo is fine; script errors are not.
 
 ## Gotchas
@@ -63,3 +64,4 @@ Steps:
 - The filter goes by a company's markets in any category, so a company can match MX through one category only. Its Live in rows then show MX lit in that category and not in the others.
 - The scroll loop above is a reader's scroll to load lazy images, not a state change. It does not replace driving a feature.
 - Open source (`#opensource`) works the same way, with `[data-repos-more]` and "Show all N repos".
+- `#market=XX` is read once, when the page loads, and only for an upper-case tracked code. Editing the hash later, or `#market=mx`, does nothing, and clicking a filter does not write the hash.

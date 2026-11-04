@@ -13,7 +13,7 @@ This folder is the maintained source for verifying what visitors see and do on t
 
 - Start every recipe with `node $H open …`. It sets the width, scheme and language for that load and gives a fresh page.
 - Act with `click` and `press`. Use `eval` only to read state.
-- Prefer the data attributes and ids listed in SKILL.md over text or position. Country codes are `US GB DE IN BR MX CL CO`.
+- Prefer the data attributes and ids listed in SKILL.md over text or position. Country codes come from `data/meta.json` (14 today: `US GB DE IN BR MX CL CO ES FR CA JP AU NG`). Read counts and rankings from the data instead of copying numbers from these files.
 - Check each recipe at `--width 1440` and `--width 400`. The site is dark-only, so `--scheme light` must look the same.
 - Do not follow external links (sources, GitHub). Assert their `href`.
 
@@ -36,8 +36,7 @@ Each feature file starts with an H1 title and one paragraph describing what the 
 
 ## Features
 
-- [Country view and picker](./country.md) covers choosing a country (hero pins, world map, console list, ranking, `#country=` hash, J/K keys) and what the country view shows. **About to change:** PR #53 "My country view" replaces it.
+- [Country view and picker](./country.md) covers choosing a country (hero pins, world map, the console picker that is also the ranking, `#country=` hash, J/K keys) and what the country view shows.
 - [Capability matrix and cell detail](./matrix-detail.md) covers the matrix, the cell detail dialog, its sources, the "Suggest a correction" link and the country sources list.
-- [Ranking](./ranking.md) covers the console ranking and the score legend.
-- [Companies table](./companies.md) covers the market filters, the rows, the logos and the scroll box.
+- [Companies table](./companies.md) covers the market filters, the rows, the logos, Show all, and the card layout on phones.
 - [Charts](./charts.md) covers the three home page charts: drawing, compare and `#v-<id>` links.
