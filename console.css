@@ -132,7 +132,7 @@
 .xc-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 12px; }
 .xc-h p { margin: 0; }
 .xc-h p + p { font-size: 12.5px; color: var(--muted); }
-.xc ul { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
+.xc ul { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
 .xc button { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 8px 6px; width: 100%; padding: 9px 10px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 10px; background: none; color: var(--ink-2); font: 400 11.5px/1 var(--mono); cursor: pointer; transition: border-color 0.15s; }
 .xc button:hover { border-color: rgba(255, 255, 255, 0.3); }
 .xc .flag { margin: 0 4px 0 0; }
@@ -188,7 +188,8 @@
 .panel-mx[open] > summary { margin-bottom: 14px; }
 .panel-mx[open] > summary::after { content: 'Close'; }
 .mx { margin-bottom: 4px; font-size: 12.5px; }
-.mx-row { display: grid; grid-template-columns: minmax(0, 1fr) repeat(8, 34px); align-items: stretch; }
+/* one column per country: app.js sets --n from data/meta.json */
+.mx-row { display: grid; grid-template-columns: minmax(0, 1fr) repeat(var(--n), 34px); align-items: stretch; }
 .mx-row + .mx-row { border-top: 1px solid rgba(255, 255, 255, 0.055); }
 .mx-cat + .mx-row { border-top: 0; }
 .mx-row > span { display: grid; place-items: center; min-height: 32px; }
@@ -356,7 +357,10 @@
   .cn h2 { font-size: 36px; }
   .cn h2 .flag { font-size: 30px; }
   .panel { padding: 12px; }
-  .mx-row { grid-template-columns: minmax(0, 1fr) repeat(8, 26px); }
+  /* the countries do not fit beside the names: the matrix scrolls sideways under a pinned name column */
+  .mx { overflow-x: auto; }
+  .mx-row { grid-template-columns: minmax(116px, 1fr) repeat(var(--n), 26px); width: calc(116px + var(--n) * 26px); min-width: 100%; }
+  .mx-row > :first-child { position: sticky; left: 0; z-index: 1; background: var(--surface); }
   .mx .dot { width: 11px; height: 11px; }
   .mx .dot.d-none { width: 9px; height: 2px; }
   .sec { padding-top: 72px; scroll-margin-top: -44px; }
