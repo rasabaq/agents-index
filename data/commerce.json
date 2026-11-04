@@ -313,6 +313,34 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Only Alexa+ Early Access (since April 2026) buys for you in Spain: it finds products on Amazon.es, watches a price and buys when it drops, or orders a gift. Google Pay agentic checkout, which Gemini and AI Mode use to buy, works only in the US and Australia, and Copilot and Perplexity checkout are US-only.",
+          "evidence": [
+            {
+              "title": "Las primeras 29 cosas que probar con Alexa+ en España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/29-cosas-probar-alexa-espana",
+              "date": "2026-04-23",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; Spain Early Access since 23 April 2026)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -531,6 +559,27 @@
             },
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Only Amazon's Alexa+ in Early Access can order from Amazon.es for you, including buying when a watched price drops; we did not check whether Rufus Auto Buy works on Amazon.es, and no Spanish marketplace agent (El Corte Inglés, Glovo) was found that buys for you.",
+          "evidence": [
+            {
+              "title": "Las primeras 29 cosas que probar con Alexa+ en España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/29-cosas-probar-alexa-espana",
+              "date": "2026-04-23",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; Spain Early Access since 23 April 2026)",
               "publisher": "Amazon",
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
@@ -760,6 +809,27 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Spanish merchants can sign up for Stripe Agentic Commerce Suite (Spain is on its country list) and Shopify Agentic Storefronts, but the agents that buy through them serve mainly shoppers in the US, Canada and Australia.",
+          "evidence": [
+            {
+              "title": "Sell through agents with Agentic Commerce Suite (supported countries include ES)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -845,7 +915,8 @@
         "DE",
         "BR",
         "MX",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "commerce.in-chat-checkout",
@@ -936,7 +1007,8 @@
       "markets": [
         "US",
         "GB",
-        "DE"
+        "DE",
+        "ES"
       ],
       "capabilities": [
         "commerce.merchant-protocol"
@@ -957,7 +1029,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "commerce.merchant-protocol"

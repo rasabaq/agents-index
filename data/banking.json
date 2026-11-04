@@ -295,6 +295,33 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "EU PSD2, applied in Spain through Real Decreto-ley 19/2018, makes banks give licensed account information and payment initiation providers API access, under Banco de España supervision. Open banking platforms such as Tink serve Spain. There is no standard for recurring variable payments yet.",
+          "evidence": [
+            {
+              "title": "Real Decreto-ley 19/2018, de servicios de pago (PSD2 in Spain: payment initiation and account information services; article 45 refunds unauthorised payments)",
+              "publisher": "BOE",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16036",
+              "date": "2018-11-24",
+              "type": "regulation"
+            },
+            {
+              "title": "Revised rules for payment services in the EU (PSD2 summary)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/EN/legal-content/summary/revised-rules-for-payment-services-in-the-eu.html",
+              "date": "2015-11",
+              "type": "regulation"
+            },
+            {
+              "title": "Tink: plataforma europea de open banking (España)",
+              "publisher": "Tink",
+              "url": "https://tink.com/es/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -547,6 +574,40 @@
           ],
           "confidence": "low",
           "gapReason": "pilot-only"
+        },
+        "ES": {
+          "status": "live",
+          "note": "BBVA's Blue assistant in the Spanish app sends Bizum payments from a typed or spoken request (over 400,000 in 2022), and since February 2025 its generative AI version also carries out common account and card operations for all customers. CaixaBank's AI agents and its ChatGPT app (October 2026) only inform and guide product sign-ups, with no money movement.",
+          "evidence": [
+            {
+              "title": "Bizum (pídele un Bizum a Blue por voz o texto)",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.es/personas/banca-online/bizum.html",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Blue, el asistente virtual de BBVA, incrementa los pagos por Bizum un 17% en 2022",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.com/es/es/innovacion/blue-el-asistente-virtual-de-bbva-incrementa-los-pagos-por-bizum-un-17-en-2022/",
+              "date": "2023-03-03",
+              "type": "company"
+            },
+            {
+              "title": "For the first time in Spain, BBVA will offer AI-powered account and card management with its virtual assistant",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.com/en/innovation/for-the-first-time-in-spain-bbva-will-offer-ai-powered-account-and-card-management-with-its-virtual-assistant/",
+              "date": "2025-02-14",
+              "type": "company"
+            },
+            {
+              "title": "CaixaBank deploys its app on the ChatGPT marketplace",
+              "publisher": "CaixaBank",
+              "url": "https://www.caixabank.com/docs/comunicacion/92860.pdf",
+              "date": "2026-10-21",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -590,7 +651,8 @@
       "icon": "https://tink.com/favicon.ico",
       "role": "Single API for PSD2 account data and payment initiation across European banks.",
       "markets": [
-        "DE"
+        "DE",
+        "ES"
       ],
       "capabilities": [
         "banking.open-finance-access"
@@ -888,6 +950,20 @@
       "role": "Its DaviPlata wallet lets enrolled users move money by voice or AI chat.",
       "markets": [
         "CO"
+      ],
+      "capabilities": [
+        "banking.bank-agent-actions"
+      ]
+    },
+    {
+      "name": "BBVA",
+      "hq": "ES",
+      "url": "https://www.bbva.com/es/es/innovacion/blue-el-asistente-virtual-de-bbva-incrementa-los-pagos-por-bizum-un-17-en-2022/",
+      "homepage": "https://www.bbva.es",
+      "icon": "https://www.bbva.es/favicon.ico",
+      "role": "Spanish bank whose Blue assistant sends Bizum payments and carries out common account and card operations from a typed or spoken request.",
+      "markets": [
+        "ES"
       ],
       "capabilities": [
         "banking.bank-agent-actions"

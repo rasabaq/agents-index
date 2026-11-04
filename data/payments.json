@@ -201,6 +201,27 @@
             }
           ],
           "gapReason": "pilot-only"
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Santander and Mastercard Agent Pay ran Europe's first agent purchase with a Santander España card in a controlled setting (March 2026), and Visa Intelligent Commerce lists BBVA, CaixaBank, Bankinter and Abanca among the European issuers in its July 2026 live phase, but only at a few participating merchants.",
+          "evidence": [
+            {
+              "title": "Santander y Mastercard completan el primer pago real ejecutado por un agente de IA en Europa",
+              "publisher": "Banco Santander",
+              "url": "https://www.santander.com/es/sala-de-comunicacion/notas-de-prensa/2026/03/santander-y-mastercard-completan-el-primer-pago-real-ejecutado-por-un-agente-de-ia-en-europa",
+              "date": "2026-03",
+              "type": "company"
+            },
+            {
+              "title": "Visa and banks across Europe reach the next phase of agentic commerce, unlocking secure access to merchants (issuers include BBVA, CaixaBank, Bankinter, Abanca)",
+              "publisher": "Visa",
+              "url": "https://www.visa.co.uk/about-visa/newsroom/press-releases.3457328.html",
+              "date": "2026-07-02",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -398,6 +419,26 @@
             }
           ],
           "gapReason": "pilot-only"
+        },
+        "ES": {
+          "status": "live",
+          "note": "BBVA's Blue assistant sends Bizum, Spain's instant mobile payment, from a typed or spoken request in the BBVA app, and customers made over 400,000 Bizum payments through it in 2022. We found no third-party AI agent that pays over Bizum.",
+          "evidence": [
+            {
+              "title": "Bizum (pídele un Bizum a Blue por voz o texto)",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.es/personas/banca-online/bizum.html",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Blue, el asistente virtual de BBVA, incrementa los pagos por Bizum un 17% en 2022",
+              "publisher": "BBVA",
+              "url": "https://www.bbva.com/es/es/innovacion/blue-el-asistente-virtual-de-bbva-incrementa-los-pagos-por-bizum-un-17-en-2022/",
+              "date": "2023-03-03",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -578,6 +619,20 @@
             }
           ],
           "gapReason": "pilot-only"
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Stripe shared payment tokens support Spain but are still in preview, and Stripe's Link Agent Wallet is US and Canada only; we found no Spanish wallet with an agent that pays for you.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens (supported countries include ES; preview)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -596,7 +651,8 @@
         "BR",
         "MX",
         "CL",
-        "CO"
+        "CO",
+        "ES"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -616,7 +672,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -646,7 +703,8 @@
       "markets": [
         "BR",
         "MX",
-        "CL"
+        "CL",
+        "ES"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -662,7 +720,8 @@
       "markets": [
         "US",
         "GB",
-        "DE"
+        "DE",
+        "ES"
       ],
       "capabilities": [
         "payments.wallet-agent",
@@ -820,6 +879,20 @@
       ],
       "capabilities": [
         "payments.wallet-agent"
+      ]
+    },
+    {
+      "name": "BBVA",
+      "hq": "ES",
+      "url": "https://www.bbva.com/es/es/innovacion/blue-el-asistente-virtual-de-bbva-incrementa-los-pagos-por-bizum-un-17-en-2022/",
+      "homepage": "https://www.bbva.es",
+      "icon": "https://www.bbva.es/favicon.ico",
+      "role": "Spanish bank whose Blue assistant sends Bizum instant payments from a typed or spoken request.",
+      "markets": [
+        "ES"
+      ],
+      "capabilities": [
+        "payments.instant-rail-agent"
       ]
     }
   ],

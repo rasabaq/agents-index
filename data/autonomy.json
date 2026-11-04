@@ -347,6 +347,54 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Spain, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -518,6 +566,20 @@
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No consumer agent found that phones businesses in Spain; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
               "type": "company"
             }
           ]
@@ -954,6 +1016,68 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "Gemini connected apps (Phone, Messages, WhatsApp, Calendar) work in Spain in Spanish; Alexa+ has been in Early Access since April 2026 and adds calendar events, sends emails and books TheFork tables. Apple's Siri AI and Gemini Spark are not available in the EU, and OpenAI's dots are not offered to Pro users in the EEA.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Las primeras 29 cosas que probar con Alexa+ en España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/29-cosas-probar-alexa-espana",
+              "date": "2026-04-23",
+              "type": "company"
+            },
+            {
+              "title": "TheFork ya está disponible en Alexa+ para España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/thefork-alexa-espana",
+              "date": "2026-06-19",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+              "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "What's new for Gemini Spark",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/17171264",
+              "date": "2026-07-17",
+              "type": "company"
+            },
+            {
+              "title": "Getting started with your dot",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -974,7 +1098,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "autonomy.browser-agent",
@@ -1006,7 +1131,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "autonomy.browser-agent"
@@ -1027,7 +1153,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "autonomy.browser-agent"
@@ -1048,7 +1175,8 @@
         "MX",
         "CL",
         "CO",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "autonomy.browser-agent",
@@ -1078,7 +1206,8 @@
         "DE",
         "MX",
         "BR",
-        "IN"
+        "IN",
+        "ES"
       ],
       "capabilities": [
         "autonomy.personal-assistant-actions"

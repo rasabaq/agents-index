@@ -294,6 +294,33 @@
               "type": "report"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "A qualified signature with the electronic DNI's chip certificates is a legal way to prove who you are remotely, and the national mint (FNMT) validates those certificates for companies as well as government; identity services such as Didit also read the chip by NFC. Since 2 April 2026 public and private bodies must also accept the MiDNI phone app for in-person checks, but MiDNI does not yet support online sign-in or signatures, and the EU digital identity wallet is not yet live.",
+          "evidence": [
+            {
+              "title": "DNIe NFC verification in Spain",
+              "publisher": "Didit",
+              "url": "https://didit.me/es/blog/dnie-nfc-verification",
+              "date": "2026-10-06",
+              "type": "company"
+            },
+            {
+              "title": "Spain's MiDNI Mobile App Now Legally Valid for In-Person Identification",
+              "publisher": "Mobile ID World",
+              "url": "https://mobileidworld.com/spains-midni-mobile-app-now-legally-valid-for-in-person-identification/",
+              "date": "2026-04-02",
+              "type": "news"
+            },
+            {
+              "title": "Nuevo deber de identificación: aceptar el DNI móvil en trámites presenciales públicos y privados",
+              "publisher": "ECIJA",
+              "url": "https://www.ecija.com/actualidad-insights/nuevo-deber-de-identificacion-aceptar-el-dni-movil-en-tramites-presenciales-publicos-y-privados/",
+              "date": "2026-01-22",
+              "type": "report"
+            }
+          ]
         }
       }
     },
@@ -492,6 +519,27 @@
               "publisher": "Wadhwani AI",
               "url": "https://www.wadhwaniai.org/empowering-millions-of-indian-farmers-with-instant-ai-chatbot-support/",
               "date": "2025-07",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "The Tax Agency (AEAT) runs virtual assistants for income tax, VAT and the SII invoice system that answer questions and help fill in forms such as VAT model 303; none files or completes the task for you, and we found no national generative AI assistant that does. The Comunidad de Madrid tested AI assistants with local information in 33 towns in December 2025.",
+          "evidence": [
+            {
+              "title": "Los asistentes virtuales que la AEAT utiliza para gestionar el SII y el IVA",
+              "publisher": "Sage",
+              "url": "https://www.sage.com/es-es/blog/los-asistentes-virtuales-que-la-aeat-utiliza-para-gestionar-el-sii-y-el-iva/",
+              "date": "2024-11-06",
+              "type": "report"
+            },
+            {
+              "title": "La Comunidad de Madrid prueba en 33 municipios asistentes virtuales con inteligencia artificial que ofrecen información local a los vecinos",
+              "publisher": "Comunidad de Madrid",
+              "url": "https://www.comunidad.madrid/notas-prensa/2025/12/09/comunidad-madrid-prueba-33-municipios-asistentes-virtuales-inteligencia-artificial-ofrecen-informacion-local-vecinos",
+              "date": "2025-12-09",
               "type": "company"
             }
           ]

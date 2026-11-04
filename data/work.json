@@ -143,6 +143,19 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "LoopCV searches InfoJobs, the main Spanish job board, plus LinkedIn and Indeed, and sends applications for you by email or web form. We did not find a Spanish job board with its own agent that applies for you.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market; InfoJobs for Spain)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -318,6 +331,27 @@
               "type": "company"
             }
           ]
+        },
+        "ES": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Factorial, the Barcelona HR firm, launched its One AI agent in October 2026 and says it executes tasks, but no source says it runs payroll or files an HR form on its own; Deel's AI Workforce flags payroll errors but does not run payroll.",
+          "evidence": [
+            {
+              "title": "Factorial completes the jump to AI for companies with a new personal agent",
+              "publisher": "Ara",
+              "url": "https://en.ara.cat/economy/factorial-completes-the-jump-to-ai-for-companies-with-new-personal-agent_1_5872571.html",
+              "date": "2026-10-07",
+              "type": "news"
+            },
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-19",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -337,7 +371,8 @@
         "IN",
         "MX",
         "CL",
-        "CO"
+        "CO",
+        "ES"
       ],
       "capabilities": [
         "work.job-apply"

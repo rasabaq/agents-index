@@ -194,6 +194,33 @@
               "type": "regulation"
             }
           ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "The EU AI Act is in force in Spain, so the cell is live; its transparency duties apply since 2 August 2026, and the Digital Omnibus delays high-risk rules to December 2027 and August 2028. Spain already has an AI supervisor (AESIA), and on 26 May 2026 the government sent a bill to parliament to adapt the Act and give AESIA power to fine; we could not confirm whether it has passed.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "date": "2024-07",
+              "type": "regulation"
+            },
+            {
+              "title": "Regulation (EU) 2026/1744 (Digital Omnibus on AI)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+              "date": "2026-07",
+              "type": "regulation"
+            },
+            {
+              "title": "El Gobierno aprueba el proyecto de ley que garantizará una supervisión humana y un uso confiable de la IA",
+              "publisher": "Ministerio para la Transformación Digital y de la Función Pública",
+              "url": "https://digital.gob.es/content/dam/portal-mtdfp/comunicacion/comunicacion_ministro/2026/05/2026-05-26/260526%20NP%20CMin%20APL%20IA.pdf",
+              "date": "2026-05-26",
+              "type": "regulation"
+            }
+          ]
         }
       }
     },
@@ -376,6 +403,34 @@
               "publisher": "Alcaldía de Bogotá (Régimen Legal)",
               "url": "https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=44306",
               "date": "2011-10",
+              "type": "regulation"
+            }
+          ]
+        },
+        "ES": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "Spanish law (Real Decreto-ley 19/2018, article 45) makes the bank refund payments you did not authorize, and the consumer law gives a 14-day right to withdraw from online purchases. Neither mentions agents. The EU's new payment rules (PSD3 and the Payment Services Regulation), agreed in November 2025, are not yet applying and do not mention agents either.",
+          "evidence": [
+            {
+              "title": "Real Decreto-ley 19/2018, de servicios de pago (PSD2 in Spain: payment initiation and account information services; article 45 refunds unauthorised payments)",
+              "publisher": "BOE",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16036",
+              "date": "2018-11-24",
+              "type": "regulation"
+            },
+            {
+              "title": "Real Decreto Legislativo 1/2007, Ley General para la Defensa de los Consumidores y Usuarios (article 102: 14-day right of withdrawal)",
+              "publisher": "BOE",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555",
+              "date": "2007-11-30",
+              "type": "regulation"
+            },
+            {
+              "title": "Payment services: Council and Parliament agree to step up the fight against fraud and increase transparency",
+              "publisher": "Council of the EU",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/11/27/payment-services-council-and-parliament-agree-to-step-up-the-fight-against-fraud-and-increase-transparency/",
+              "date": "2025-11-27",
               "type": "regulation"
             }
           ]
@@ -574,7 +629,8 @@
       "icon": "https://commission.europa.eu/themes/contrib/oe_theme/images/favicons/ec/favicon.png",
       "role": "Oversees the EU AI Act, which is in force in Germany.",
       "markets": [
-        "DE"
+        "DE",
+        "ES"
       ],
       "capabilities": [
         "rules.ai-law"
@@ -602,7 +658,8 @@
       "icon": null,
       "role": "Agreed the new EU payment rules (PSD3 and the Payment Services Regulation) with the European Parliament in November 2025.",
       "markets": [
-        "DE"
+        "DE",
+        "ES"
       ],
       "capabilities": [
         "rules.agent-purchase-protection"

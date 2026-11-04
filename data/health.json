@@ -114,6 +114,27 @@
           "gapReason": "not-launched",
           "confidence": "low",
           "note": "No AI agent that books a doctor was found at the EPS insurers or Doctoralia; EPS Sanitas's WhatsApp assistant books visits, but no source says it is AI (searched October 2026)."
+        },
+        "ES": {
+          "status": "announced",
+          "gapReason": "not-launched",
+          "note": "Docplanner, Doctoralia's parent, said in March 2026 that it plans to bring Noa Booking, its AI phone agent that takes patient calls at any hour and books appointments, to Spain; we found no Spanish launch yet. Patients still book on Doctoralia themselves, and Gemini's Zocdoc booking is US-only.",
+          "evidence": [
+            {
+              "title": "Docplanner expands patient access with voice AI agent powered by Twilio (plans to expand Noa Booking to Spain)",
+              "publisher": "Twilio",
+              "url": "https://www.twilio.com/en-us/press/releases/docplanner-expands-patient-access-with-voice-ai-agent-powered-by",
+              "date": "2026-03-24",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -234,6 +255,12 @@
           "gapReason": "not-launched",
           "confidence": "low",
           "note": "No AI agent that orders prescription medicine was found at Cruz Verde Colombia or other chains (searched October 2026)."
+        },
+        "ES": {
+          "status": "none",
+          "gapReason": "rail-closed",
+          "note": "Spain's electronic prescription is dispensed at the pharmacy with the health card, and we found no AI agent that renews or orders prescription medicine for you.",
+          "evidence": []
         }
       }
     },
@@ -344,6 +371,13 @@
               "type": "news"
             }
           ]
+        },
+        "ES": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "We found no live AI assistant at Sanitas, Adeslas or DKV that looks up your own cover or a claim; their apps and WhatsApp channels use ordinary menus and human agents.",
+          "evidence": [],
+          "confidence": "low"
         }
       }
     }
