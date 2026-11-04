@@ -297,6 +297,27 @@
               "type": "company"
             }
           ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Meta began opening Meta Business Agent to businesses globally on WhatsApp, Messenger and Instagram in June 2026, and WhatsApp partner 360dialog says the regional limits appear lifted. Meta does not publish its country list, and we found no Canada-specific page.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -589,6 +610,34 @@
               "type": "company"
             }
           ]
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Only niche channels: Telegram bot payments through Stripe, which serves Canadian businesses, and Apple Messages for Business, which reached Canada in 2018 but which few brands offer. WhatsApp payments are not offered in Canada.",
+          "evidence": [
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Apple Business Chat Expands Beyond United States to 10 Countries and 30 More Brands",
+              "publisher": "MacRumors",
+              "url": "https://www.macrumors.com/2018/10/02/apple-business-chat-expands-to-13-countries/",
+              "date": "2018-10-02",
+              "type": "news"
+            }
+          ]
         }
       }
     }
@@ -611,7 +660,8 @@
         "CO",
         "IN",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [
@@ -764,7 +814,8 @@
         "BR",
         "MX",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "messaging.pay-in-chat"
@@ -784,7 +835,8 @@
         "BR",
         "MX",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "messaging.pay-in-chat"

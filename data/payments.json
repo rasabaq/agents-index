@@ -250,6 +250,27 @@
               "type": "company"
             }
           ]
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Visa's Agentic Ready program (May 2026) lets BMO, CIBC, RBC, Scotiabank and TD test agent payments with live cards and real merchants in a controlled setting, and Mastercard Agent Pay ran Canada's first agent purchase with a Rogers Bank card through Flybits in September 2026. Neither is open to all cardholders yet.",
+          "evidence": [
+            {
+              "title": "Visa Expands 'Agentic Ready' Program to Canada to Advance AI Driven Commerce",
+              "publisher": "Visa Canada",
+              "url": "https://www.visa.ca/en_CA/about-visa/newsroom/press-releases/agentic-ready.html",
+              "date": "2026-05-05",
+              "type": "company"
+            },
+            {
+              "title": "Mastercard, Flybits and Rogers establish benchmark for secure, consumer-controlled agentic commerce in Canada",
+              "publisher": "Mastercard (Newswire)",
+              "url": "https://www.newswire.ca/news-releases/mastercard-flybits-and-rogers-establish-benchmark-for-secure-consumer-controlled-agentic-commerce-in-canada-811876786.html",
+              "date": "2026-09-21",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -481,6 +502,27 @@
               "type": "news"
             }
           ]
+        },
+        "CA": {
+          "status": "limited",
+          "note": "CIBC's Virtual Assistant, a chat bot in CIBC's app and online banking, sends Interac e-Transfers, the everyday way Canadians send money in minutes. That counts the way a bank assistant sending Pix does in Brazil, but e-Transfer is not a true real-time rail, and the new Real-Time Rail is still in participant testing with launch planned for Q4 2026, so this stays limited.",
+          "evidence": [
+            {
+              "title": "CIBC Virtual Assistant",
+              "publisher": "CIBC",
+              "url": "https://www.cibc.com/en/personal-banking/ways-to-bank/virtual-assistant.html",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Real-Time Rail payment system",
+              "publisher": "Payments Canada",
+              "url": "https://www.payments.ca/systems-services/payment-systems/real-time-rail-payment-system",
+              "date": "2026-10",
+              "type": "regulation"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -696,6 +738,19 @@
               "type": "company"
             }
           ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Stripe's Link Agent Wallet lets an AI agent request a one-time card credential and pay for US and Canadian Link customers after they approve each purchase. PayPal's agent checkouts are documented only in the US.",
+          "evidence": [
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -716,7 +771,8 @@
         "CL",
         "CO",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -738,7 +794,8 @@
         "CO",
         "IN",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -787,7 +844,8 @@
         "GB",
         "DE",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "payments.wallet-agent",

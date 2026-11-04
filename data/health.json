@@ -149,6 +149,28 @@
               "type": "news"
             }
           ]
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "In Ontario a 40-clinic pilot led by Amplify Care and Strello Health tests virtual agents that triage patients and book visits (December 2025); we could not confirm how far it books on its own. Gemini's Zocdoc booking is US only.",
+          "evidence": [
+            {
+              "title": "Appointment booking AI triage pilot launches in Ontario",
+              "publisher": "Canadian Healthcare Network",
+              "url": "https://canadianhealthcarenetwork.ca/appointment-booking-ai-triage-pilot-launches-ontario",
+              "date": "2025-12-05",
+              "type": "news"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -296,6 +318,12 @@
               "type": "company"
             }
           ]
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No AI agent that renews or orders prescriptions was found at Shoppers Drug Mart, Rexall or PocketPills; pharmacy AI tools found are for staff, not patients.",
+          "evidence": []
         }
       }
     },
@@ -424,6 +452,21 @@
               "url": "https://alan.com/en/blog/discover-alan/a/alan-2026-q1-letter-to-shareholders",
               "date": "2026-05-06",
               "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Sun Life launched an Alexa skill in 2019 that reads your benefit balances and the status of a recent medical or dental claim, but we found no current page showing it still works. No 2026 member-facing AI that checks cover or claims was found at Manulife, Sun Life or Canada Life.",
+          "evidence": [
+            {
+              "title": "Sun Life now allows Amazon Alexa to find benefits information for clients",
+              "publisher": "Insurance Business Canada",
+              "url": "https://insurancebusinessmag.com/ca/news/breaking-news/sun-life-now-allows-amazon-alexa-to-find-benefits-information-for-clients-195428.aspx",
+              "date": "2019-12-20",
+              "type": "news"
             }
           ],
           "confidence": "low"

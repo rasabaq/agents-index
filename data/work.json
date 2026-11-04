@@ -177,6 +177,20 @@
             }
           ],
           "confidence": "low"
+        },
+        "CA": {
+          "status": "live",
+          "note": "LoopCV accepts a country-only location and sends applications for you by email or web form; its job-board list names Canada only under LinkedIn, and says coverage varies by country. No Canadian job board with its own applying agent was found.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -395,6 +409,20 @@
             }
           ],
           "confidence": "low"
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No payroll provider for Canadian small businesses was found whose agent runs payroll: Wagepoint markets AI-assisted payroll, AskPayroll is a copilot for payroll staff, and Workday's Canadian Payroll Agent targets large employers.",
+          "evidence": [
+            {
+              "title": "Workday Payroll for Canada (datasheet)",
+              "publisher": "Workday",
+              "url": "https://www.workday.com/content/dam/web/ca/documents/datasheets/datasheet-workday-payroll-ca.pdf",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -416,7 +444,8 @@
         "CL",
         "CO",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "work.job-apply"

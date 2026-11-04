@@ -248,6 +248,27 @@
               "type": "regulation"
             }
           ]
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "no-rule",
+          "note": "Canada has no AI law: AIDA died with Bill C-27 in January 2025. Bill C-36, the Protecting Privacy and Consumer Data Act tabled in June 2026, is a privacy bill that has not passed, and in September 2026 the AI minister would not commit to an AI bill.",
+          "evidence": [
+            {
+              "title": "C-36: Protecting Privacy and Consumer Data Act (LEGISinfo)",
+              "publisher": "Parliament of Canada",
+              "url": "https://www.parl.ca/legisinfo/en/bill/45-1/c-36",
+              "date": "2026-10",
+              "type": "regulation"
+            },
+            {
+              "title": "AI minister says system deployment needs regulation but no details yet",
+              "publisher": "CP24 (The Canadian Press)",
+              "url": "https://www.cp24.com/news/canada/2026/09/27/ai-minister-says-system-deployment-needs-regulation-but-no-details-yet/",
+              "date": "2026-09-27",
+              "type": "news"
+            }
+          ]
         }
       }
     },
@@ -479,6 +500,27 @@
               "publisher": "Council of the European Union",
               "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/11/27/payment-services-council-and-parliament-agree-to-step-up-the-fight-against-fraud-and-increase-transparency/",
               "date": "2025-11-27",
+              "type": "regulation"
+            }
+          ]
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "no-rule",
+          "note": "The Bank Act caps your loss on unauthorized credit card use at $50, card networks' zero-liability policies go further, and the debit card code covers losses beyond your control; Interac e-Transfers have no legal limit. None of these rules or FCAC statements mentions purchases an AI agent makes for you.",
+          "evidence": [
+            {
+              "title": "Fraud and FCAC oversight of unauthorized transactions (briefing, Standing Committee on Finance)",
+              "publisher": "Financial Consumer Agency of Canada",
+              "url": "https://www.canada.ca/en/financial-consumer-agency/corporate/transparency/briefing-packages-parliamentary-committee-appearances/standing-committee-finance-february-13-2024/fraud-fcac-oversight-unauthorized-transactions.html",
+              "date": "2024-02-13",
+              "type": "regulation"
+            },
+            {
+              "title": "Moving together: a systemwide response to financial fraud",
+              "publisher": "Financial Consumer Agency of Canada",
+              "url": "https://www.canada.ca/en/financial-consumer-agency/news/2026/06/moving-together-a-systemwide-response-to-financial-fraud.html",
+              "date": "2026-06",
               "type": "regulation"
             }
           ]

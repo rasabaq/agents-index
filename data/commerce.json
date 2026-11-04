@@ -376,6 +376,47 @@
               "type": "news"
             }
           ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Alexa+, open to everyone in Canada since June 2026, can search for and buy items on Amazon after you confirm the order. Google said in May 2026 that UCP checkout in AI Mode and Gemini will reach Canada in the coming months, and Shopify says direct checkout is rolling out to Canadian buyers, but Google Pay's agentic checkout page still lists only the US and Australia.",
+          "evidence": [
+            {
+              "title": "Alexa+ launches in Canada (updated when Early Access ended)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-canada-launch",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ now available to everyone in Canada and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.ca/news/devices/alexa-now-available-to-everyone-in-canada-and-free-for-prime-members",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -646,6 +687,26 @@
               "publisher": "Amazon",
               "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
               "date": "2026-05",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Amazon's Alexa+, generally available in Canada since June 2026, searches Amazon, tracks price drops on your wish list and places orders after you confirm. Amazon documents Auto Buy and Buy for Me only in the US.",
+          "evidence": [
+            {
+              "title": "Alexa+ launches in Canada (updated when Early Access ended)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-canada-launch",
+              "date": "2026-06-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
               "type": "company"
             }
           ]
@@ -921,6 +982,33 @@
               "type": "company"
             }
           ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Shopify, based in Canada, lets stores sell through Google AI Mode and Gemini to buyers in the US, Canada and Australia, with direct checkout rolling out to those buyers; Google's UCP checkout for Canada was announced in May 2026. Stripe's Link Agent Wallet lets agents pay for Canadian customers at any seller.",
+          "evidence": [
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -1008,7 +1096,8 @@
         "MX",
         "IN",
         "ES",
-        "FR"
+        "FR",
+        "CA"
       ],
       "capabilities": [
         "commerce.in-chat-checkout",
@@ -1123,7 +1212,8 @@
         "CL",
         "CO",
         "IN",
-        "ES"
+        "ES",
+        "CA"
       ],
       "capabilities": [
         "commerce.merchant-protocol"

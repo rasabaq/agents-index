@@ -343,6 +343,28 @@
             }
           ],
           "confidence": "low"
+        },
+        "CA": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Canada has no national digital ID. British Columbia's Person credential in BC Wallet is accepted only by select pilots, and the province says private-sector use may come later; Quebec passed its digital identity law in October 2025 with a wallet planned by 2028. We found no provincial ID that private apps can check today.",
+          "evidence": [
+            {
+              "title": "Person credential for BC Wallet",
+              "publisher": "Government of British Columbia",
+              "url": "https://www2.gov.bc.ca/gov/content/governments/government-id/person-credential",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Quebec Passes Landmark Digital ID Law Emphasizing Privacy and User Control",
+              "publisher": "Mobile ID World",
+              "url": "https://mobileidworld.com/quebec-passes-landmark-digital-id-law-emphasizing-privacy-and-user-control/",
+              "date": "2025-10",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -587,6 +609,20 @@
             }
           ],
           "confidence": "low"
+        },
+        "CA": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "The Canada Revenue Agency's generative AI virtual assistant (launched March 2025, updated May 2026) helps people find CRA information from Canada.ca but does not complete tasks; the CRA plans to add it to the secure CRA Account. No federal or provincial AI assistant that finishes a public-service task was found.",
+          "evidence": [
+            {
+              "title": "Canada Revenue Agency virtual assistant consultation",
+              "publisher": "Canada Revenue Agency",
+              "url": "https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra/transparency-proactive-disclosure-canada-revenue-agency/consultations-engagement-canada-revenue-agency/virtual-assistant-consultation.html",
+              "date": "2026-09-29",
+              "type": "regulation"
+            }
+          ]
         }
       }
     }
@@ -871,6 +907,20 @@
       "role": "Runs AI voice and chat bots that answer tax questions and set up payment plans.",
       "markets": [
         "US"
+      ],
+      "capabilities": [
+        "government.ai-public-services"
+      ]
+    },
+    {
+      "name": "Canada Revenue Agency",
+      "hq": "CA",
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra/transparency-proactive-disclosure-canada-revenue-agency/consultations-engagement-canada-revenue-agency/virtual-assistant-consultation.html",
+      "homepage": "https://www.canada.ca/en/revenue-agency.html",
+      "icon": "https://www.canada.ca/favicon.ico",
+      "role": "Federal tax agency running a generative AI virtual assistant that answers questions from Canada.ca.",
+      "markets": [
+        "CA"
       ],
       "capabilities": [
         "government.ai-public-services"
