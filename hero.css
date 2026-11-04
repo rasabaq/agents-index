@@ -58,7 +58,7 @@
   .hero-icons :is(rect, b) { transition: none; }
 }
 
-/* the eight countries as pins on the planet, in rank order: score, flag, a pole as tall as the score, a foot on the edge.
+/* the countries as pins on the planet, in rank order: score, flag, a pole as tall as the score, a foot on the edge.
    hero.js puts each foot on the planet's edge. The row is tall enough for a score of 100. */
 .hero-pins { position: relative; height: 270px; margin: 24px 0 0; padding: 0; list-style: none; --k: 2px; }
 .hero-pins a { position: absolute; display: flex; flex-direction: column; align-items: center; min-width: 44px; translate: -50% -100%; color: var(--ink-2); text-decoration: none; }
@@ -97,7 +97,7 @@
   /* names on the outer columns hang inward, so they stay on screen */
   .hero-icons li:nth-child(4n + 1) b { --tx: 0; left: 0; }
   .hero-icons li:nth-child(4n) b { --tx: 0; left: auto; right: 0; }
-  /* one row of 8 in about 46px slots, with shorter poles */
+  /* one row of as many pins as fit in 44px slots (hero.js), with shorter poles */
   .hero-pins { height: 156px; margin-top: 16px; --k: 1px; }
   .hero-pins a { min-width: 40px; }
   .hero-pin-n { padding-bottom: 6px; font-size: 16px; }
