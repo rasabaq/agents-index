@@ -82,6 +82,9 @@ const VIEW = (s) => JSON.stringify({ width: s.width, height: s.height, scheme: s
 async function hold(s) {
   const c = await connect(s);
   await c.send('Page.addScriptToEvaluateOnNewDocument', { source: COLLECTOR });
+  // The static server sends no cache headers, so Chrome would reuse a script or style edited during the run.
+  await c.send('Network.enable');
+  await c.send('Network.setCacheDisabled', { cacheDisabled: true });
   let applied = null;
   for (;;) {
     const now = JSON.parse(readFileSync(join(s.dir, 'state.json'), 'utf8'));
@@ -190,7 +193,8 @@ const commands = {
     url.searchParams.set('verify', Date.now().toString(36));
     await c.send('Page.navigate', { url: url.href });
     await done;
-    await waitFor(c, flags.wait ?? '#cn-title');
+    // Each page has its own sign that it rendered: the country heading on the home page, the first company row on companies.html.
+    await waitFor(c, flags.wait ?? (url.pathname.endsWith('/companies.html') ? '[data-companies] tbody tr' : '#cn-title'));
     await sleep(Number(flags.settle ?? 800));
     const info = await c.evaluate(`({ url: location.href, title: document.title, width: innerWidth, height: innerHeight, scheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', languages: navigator.languages, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone })`);
     log(s, { cmd: 'open', path, ...info });
