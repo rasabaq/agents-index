@@ -511,6 +511,40 @@
               "type": "company"
             }
           ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Claude in Chrome (paid plans; Australia is on Anthropic's supported list) and Perplexity Comet (free, worldwide) browse and act on websites. Gemini in Chrome reached Australia in April 2026, but Google's help page does not confirm that its auto browse agent works here. ChatGPT's cloud browser was not re-checked.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -738,6 +772,27 @@
               "publisher": "Google Search Help",
               "url": "https://support.google.com/websearch/answer/17104441?hl=en",
               "date": "2026-10",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Let AI do the hard parts of your holiday shopping (Let Google Call)",
+              "publisher": "Google",
+              "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
+              "date": "2025-11-13",
               "type": "company"
             }
           ]
@@ -1366,6 +1421,40 @@
               "type": "news"
             }
           ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Gemini connected apps send messages, make calls and add calendar events wherever the Gemini mobile app works, and Alexa+ (Early Access since August 2026) sends emails, adds calendar events, books tables and orders gifts. Apple's Siri AI beta is in English and Australia is not among its exclusions, but Apple does not list countries.",
+          "evidence": [
+            {
+              "title": "Connect apps to Gemini (Connected Apps)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Your guide to the first 30 things to try with Alexa+ in Australia",
+              "publisher": "Amazon Australia",
+              "url": "https://www.aboutamazon.com.au/news/devices/your-guide-to-the-first-30-things-to-try-with-alexa-in-australia",
+              "date": "2026-08-21",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+              "date": "2026-09-14",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -1424,7 +1513,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "autonomy.browser-agent"
@@ -1449,7 +1539,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "autonomy.browser-agent"
@@ -1474,7 +1565,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "autonomy.browser-agent",
@@ -1508,7 +1600,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "autonomy.personal-assistant-actions"

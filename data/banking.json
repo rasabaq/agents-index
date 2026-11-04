@@ -383,6 +383,28 @@
               "type": "company"
             }
           ]
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "not-launched",
+          "note": "Consumer Data Right open banking has let accredited apps read bank data since 2020, but only read-only. Payment initiation is law since August 2024, but no action type has been declared, so no regulated API lets an agent start a payment yet.",
+          "evidence": [
+            {
+              "title": "Action initiated? Action initiation under Australia's Consumer Data Right becomes law",
+              "publisher": "Ashurst",
+              "url": "https://www.ashurstperkinscoie.com/en/insights/action-initiation-under-australia-consumer-data-right-becomes-law",
+              "date": "2024-09-05",
+              "type": "report"
+            },
+            {
+              "title": "Where next for the Consumer Data Right?",
+              "publisher": "Finder",
+              "url": "https://www.finder.com.au/where-next-for-the-consumer-data-right",
+              "date": "2021-03-26",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -738,6 +760,35 @@
               "type": "news"
             }
           ]
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "CommBank Companion is in testing with staff and select business customers (May 2026) and does not move money; Macquarie's Q (January 2026) answers questions; CBA's older Ceba bot helps with payments but no source says it sends them itself. No Westpac, NAB or ANZ assistant that pays was found.",
+          "evidence": [
+            {
+              "title": "Reimagining banking with CommBank Companion",
+              "publisher": "Commonwealth Bank",
+              "url": "https://www.commbank.com.au/articles/newsroom/2026/05/commbank-companion.html",
+              "date": "2026-05-26",
+              "type": "company"
+            },
+            {
+              "title": "Macquarie reimagines customer-focused banking with launch of Q",
+              "publisher": "Macquarie",
+              "url": "https://www.macquarie.com/about/news/2026/macquarie-reimagines-customer-focused-banking-with-launch-of-q.html",
+              "date": "2026-01-19",
+              "type": "company"
+            },
+            {
+              "title": "Commonwealth Bank introduces chatbot that can answer 200 banking and payments questions",
+              "publisher": "NFCW",
+              "url": "https://www.nfcw.com/technology/ceba/",
+              "date": "2018-01-23",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }

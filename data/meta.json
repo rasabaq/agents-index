@@ -12,7 +12,8 @@
     { "code": "ES", "name": "Spain", "region": "Europe" },
     { "code": "FR", "name": "France", "region": "Europe" },
     { "code": "CA", "name": "Canada", "region": "North America" },
-    { "code": "JP", "name": "Japan", "region": "Asia" }
+    { "code": "JP", "name": "Japan", "region": "Asia" },
+    { "code": "AU", "name": "Australia", "region": "Oceania" }
   ],
   "categories": [
     { "id": "commerce", "name": "Shopping & checkout", "blurb": "Agents that find and buy products for you.", "short": "Shopping", "can": "shop for you" },

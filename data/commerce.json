@@ -445,6 +445,47 @@
               "type": "company"
             }
           ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Google Pay agentic checkout, which Gemini and AI Mode use to buy, works only in the US and Australia; Google's UCP checkout launched here in June 2026 with select retailers such as Kogan, Bunnings and THE ICONIC, and Shopify stores can sell to Australian shoppers through it. Alexa+ Early Access also orders from Amazon.com.au.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Google Launches Agentic Commerce in Australia",
+              "publisher": "Power Retail",
+              "url": "https://powerretail.com.au/google-launches-agentic-commerce-in-australia/",
+              "date": "2026-06-19",
+              "type": "news"
+            },
+            {
+              "title": "About the Universal Commerce Protocol (UCP) and UCP-powered checkout feature on Google",
+              "publisher": "Google Merchant Center Help",
+              "url": "https://support.google.com/merchants/answer/16837055?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Your guide to the first 30 things to try with Alexa+ in Australia",
+              "publisher": "Amazon Australia",
+              "url": "https://www.aboutamazon.com.au/news/devices/your-guide-to-the-first-30-things-to-try-with-alexa-in-australia",
+              "date": "2026-08-21",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -771,6 +812,27 @@
               "url": "https://netshop.impress.co.jp/n/2026/04/24/15978",
               "date": "2026-04-24",
               "type": "news"
+            }
+          ]
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Only Alexa+ in Early Access (since August 2026) can order from Amazon.com.au for you. Woolworths' Olive builds meal plans and fills your cart, but you check out yourself.",
+          "evidence": [
+            {
+              "title": "Your guide to the first 30 things to try with Alexa+ in Australia",
+              "publisher": "Amazon Australia",
+              "url": "https://www.aboutamazon.com.au/news/devices/your-guide-to-the-first-30-things-to-try-with-alexa-in-australia",
+              "date": "2026-08-21",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
             }
           ]
         }
@@ -1101,6 +1163,40 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "live",
+          "note": "Australian merchants can sell to Gemini and AI Mode through Google's UCP checkout, which covers products eligible in the US, Canada and Australia, and Shopify stores selling to Australian shoppers are enrolled through Agentic Storefronts. Stripe's Agentic Commerce Suite does not list Australia.",
+          "evidence": [
+            {
+              "title": "About the Universal Commerce Protocol (UCP) and UCP-powered checkout feature on Google",
+              "publisher": "Google Merchant Center Help",
+              "url": "https://support.google.com/merchants/answer/16837055?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Google Launches Agentic Commerce in Australia",
+              "publisher": "Power Retail",
+              "url": "https://powerretail.com.au/google-launches-agentic-commerce-in-australia/",
+              "date": "2026-06-19",
+              "type": "news"
+            },
+            {
+              "title": "Sell through agents with Agentic Commerce Suite (supported countries)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ]
         }
       }
     }
@@ -1132,7 +1228,8 @@
       "markets": [
         "US",
         "GB",
-        "IN"
+        "IN",
+        "AU"
       ],
       "capabilities": [
         "commerce.in-chat-checkout",
@@ -1141,7 +1238,8 @@
       "marketsByCapability": {
         "commerce.merchant-protocol": [
           "US",
-          "GB"
+          "GB",
+          "AU"
         ]
       }
     },
@@ -1190,7 +1288,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "commerce.in-chat-checkout",
@@ -1306,7 +1405,8 @@
         "CO",
         "IN",
         "ES",
-        "CA"
+        "CA",
+        "AU"
       ],
       "capabilities": [
         "commerce.merchant-protocol"
@@ -1380,6 +1480,21 @@
       ],
       "capabilities": [
         "commerce.marketplace-agent"
+      ]
+    },
+    {
+      "name": "Kogan.com",
+      "hq": "AU",
+      "url": "https://powerretail.com.au/google-launches-agentic-commerce-in-australia/",
+      "homepage": "https://www.kogan.com/au/",
+      "icon": null,
+      "role": "One of the first Australian retailers selling through Google's UCP checkout in AI Mode and Gemini.",
+      "markets": [
+        "AU"
+      ],
+      "capabilities": [
+        "commerce.merchant-protocol",
+        "commerce.in-chat-checkout"
       ]
     }
   ],

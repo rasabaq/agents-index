@@ -294,6 +294,26 @@
               "type": "company"
             }
           ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Google AI Mode's agentic restaurant booking reached Australia in April 2026 (the final step is on the partner site), and Alexa+ Early Access books tables through OpenTable and adds them to your calendar.",
+          "evidence": [
+            {
+              "title": "Google AI Mode redesign (agentic restaurant booking in 8 new markets including Australia)",
+              "publisher": "9to5Google",
+              "url": "https://9to5google.com/2026/04/10/google-ai-mode-redesign/",
+              "date": "2026-04-10",
+              "type": "news"
+            },
+            {
+              "title": "Your guide to the first 30 things to try with Alexa+ in Australia",
+              "publisher": "Amazon Australia",
+              "url": "https://www.aboutamazon.com.au/news/devices/your-guide-to-the-first-30-things-to-try-with-alexa-in-australia",
+              "date": "2026-08-21",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -598,6 +618,26 @@
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Booking.com says its ChatGPT app is available globally (hotels, and car rentals since May 2026) and hands off to Booking.com to book; Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com is making car rentals easier with app in ChatGPT",
               "publisher": "Booking.com",
               "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
               "date": "2026-05-20",
@@ -939,6 +979,28 @@
             }
           ],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Woolworths said its Gemini-powered Olive assistant would roll out to app customers in pick-up and delivery mode from July 2026; it plans meals and builds a basket, and you review it and check out yourself. We found no source confirming the rollout finished. Uber's ChatGPT apps are US-only and Menulog has closed.",
+          "evidence": [
+            {
+              "title": "Woolworths takes the hassle out of the weekly shop with new digital tools to help you save time and money",
+              "publisher": "Woolworths Group",
+              "url": "https://woolworthsgroup.com.au/au/en/our-newsroom/media-releases/latest-news/2026/woolworths-takes-the-hassle-out-of-the-weekly-shop-with-new-digi.html",
+              "date": "2026-06-29",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Rides",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -954,7 +1016,8 @@
       "markets": [
         "US",
         "GB",
-        "IN"
+        "IN",
+        "AU"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -1016,7 +1079,8 @@
         "GB",
         "DE",
         "MX",
-        "CA"
+        "CA",
+        "AU"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -1034,7 +1098,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -1189,7 +1254,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "AU"
       ],
       "capabilities": [
         "services.travel-booking"
@@ -1361,6 +1427,20 @@
       "role": "French grocer whose app in ChatGPT, live since March 2026, builds your grocery basket and picks delivery before you pay on carrefour.fr.",
       "markets": [
         "FR"
+      ],
+      "capabilities": [
+        "services.delivery-rides"
+      ]
+    },
+    {
+      "name": "Woolworths Group",
+      "hq": "AU",
+      "url": "https://woolworthsgroup.com.au/au/en/our-newsroom/latest-news/2026/woolworths-takes-the-hassle-out-of-the-weekly-shop-with-new-digi.html",
+      "homepage": "https://www.woolworthsgroup.com.au/",
+      "icon": "https://www.woolworthsgroup.com.au/etc.clientlibs/wwg/clientlibs/clientlib-site/resources/images/icons/apple-touch-icon.png",
+      "role": "Its Gemini-powered Olive assistant builds meal plans and fills your grocery cart in the Woolworths app.",
+      "markets": [
+        "AU"
       ],
       "capabilities": [
         "services.delivery-rides"

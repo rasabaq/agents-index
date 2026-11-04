@@ -250,6 +250,20 @@
           "note": "We found no insurer or comparison site in Japan that sells a car, home or travel policy start to finish in an AI chat; Lemonade does not operate in Japan, and the ChatGPT insurance apps we found serve the US and UK.",
           "evidence": [],
           "confidence": "low"
+        },
+        "AU": {
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "BizCover's ChatGPT app (March 2026) gives small-business quotes from insurers such as QBE, Chubb and Zurich, but you buy on BizCover's site. Lemonade does not sell in Australia, and no insurer sells car, home or travel cover start to finish in a chat.",
+          "evidence": [
+            {
+              "title": "BizCover brings Australia's first AI-based insurance quotes to ChatGPT",
+              "publisher": "BizCover",
+              "url": "https://www.bizcover.com.au/blog/bizcover-brings-australias-first-ai-based-insurance-quotes-to-chatgpt/",
+              "date": "2026-03-31",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -468,6 +482,13 @@
               "type": "news"
             }
           ],
+          "confidence": "low"
+        },
+        "AU": {
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "No Australian insurer was found whose AI agent takes a claim in a chat and moves it forward; IAG's OpenAI voice agents are due in the first half of FY27, and Lemonade is not in Australia.",
+          "evidence": [],
           "confidence": "low"
         }
       }
@@ -743,6 +764,20 @@
       ],
       "capabilities": [
         "insurance.file-claim"
+      ]
+    },
+    {
+      "name": "BizCover",
+      "hq": "AU",
+      "url": "https://www.bizcover.com.au/blog/bizcover-brings-australias-first-ai-based-insurance-quotes-to-chatgpt/",
+      "homepage": "https://www.bizcover.com.au/",
+      "icon": "https://www.bizcover.com.au/wp-content/uploads/cropped-bizcover-favicon-180x180.png",
+      "role": "Its ChatGPT app gives small-business insurance quotes, and you buy on BizCover's site.",
+      "markets": [
+        "AU"
+      ],
+      "capabilities": [
+        "insurance.buy-policy"
       ]
     }
   ]
