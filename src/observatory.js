@@ -305,7 +305,8 @@ export function verdict(name, byCategory, liveBy, reasonFor = () => null) {
   const cannot = cannotIds.map((id) => words(id).can);
   const reason = cannotIds.length ? reasonFor(cannotIds) : null;
   const where = `In ${placeName(name)}`;
-  const why = reason ? ` Main reason: ${reason}.` : '';
+  // The labels start with a capital ("Not fully launched here yet"); inside the sentence they read lowercase.
+  const why = reason ? ` Main reason: ${reason[0].toLowerCase()}${reason.slice(1)}.` : '';
   if (!cannot.length) return `${where}, AI agents can ${join(can, 'and')} today. Something works in every area, though not all of it yet.`;
   if (!can.length) return `${where}, nothing we track works for AI agents yet: they cannot ${join(cannot, 'or')}.${why}`;
   return `${where}, AI agents can ${join(can, 'and')} today, but cannot yet ${join(cannot, 'or')}.${why}`;
