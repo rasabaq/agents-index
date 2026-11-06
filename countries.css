@@ -1,0 +1,225 @@
+/* The countries page (countries.js): an atlas sheet, a rail of every country beside one country's profile.
+   It loads styles.css and console.css first, and uses their tokens, the window (.term), cards, chips and pixel icons. */
+.page-h { padding-top: 64px; }
+.page-h h1 { max-width: 30ch; }
+.page-h .sec-note { text-wrap: balance; }
+.term.atlas { margin: 0 auto; }
+.atlas-body { display: grid; grid-template-columns: 248px minmax(0, 1fr); }
+
+/* the rail: every country, best first */
+.rail { position: sticky; top: 60px; align-self: start; max-height: calc(100vh - 60px); overflow-y: auto; scrollbar-width: none; padding: 18px 12px 20px; border-right: 1px solid rgba(255, 255, 255, 0.055); }
+.rail > .label { padding: 0 10px 10px; }
+.rail ol { margin: 0; padding: 0; list-style: none; }
+.rail a { display: grid; grid-template-columns: 16px auto minmax(0, 1fr) auto 20px; grid-template-areas: 'rk fl nm sc tr' '. . bar bar bar'; align-items: center; gap: 6px; padding: 7px 10px 8px; border: 1px solid transparent; border-radius: 9px; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background-color 0.15s; }
+.rail a:hover { background: rgba(255, 255, 255, 0.035); color: var(--ink); }
+.rail a[aria-current='true'] { border-color: color-mix(in srgb, var(--sunrise) 40%, transparent); background: color-mix(in srgb, var(--sunrise) 8%, transparent); color: var(--sunrise); }
+.rail a:focus-visible { border-radius: 9px; }
+.r-rk { grid-area: rk; font: 400 10.5px/1 var(--mono); color: var(--muted); }
+.rail .flag { grid-area: fl; width: auto; margin: 0; font-size: 15px; }
+.r-nm { grid-area: nm; overflow: hidden; font-size: 13.5px; font-weight: 500; white-space: nowrap; text-overflow: ellipsis; }
+.r-cd { display: none; }
+.r-sc { grid-area: sc; font: 500 12px/1 var(--mono); }
+.rail .tier { grid-area: tr; }
+.rail-note { margin: 14px 10px 0; font: 400 10.5px/1.5 var(--mono); color: var(--muted); }
+/* a thin score bar; the picked country's glows in sunrise */
+.bars { grid-area: bar; display: block; height: 3px; min-width: 0; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+.bars b { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, rgba(176, 179, 194, 0.35), var(--ink-2)); }
+[aria-current='true'] .bars b { background: linear-gradient(90deg, color-mix(in srgb, var(--sunrise) 40%, transparent), var(--sunrise)); box-shadow: 0 0 10px color-mix(in srgb, var(--sunrise) 45%, transparent); }
+
+/* the tier letter, always on its tier colour with dark text (styles.css sets --c) */
+.tier { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 5px; background: var(--c); color: var(--page); font: 400 17px/1 var(--pixel); }
+
+/* the profile */
+.pane { min-width: 0; padding: 28px 32px 36px; }
+.p-head { display: grid; grid-template-columns: minmax(0, 1fr) 300px; align-items: start; gap: 28px 36px; }
+.p-head h2 { display: flex; width: fit-content; align-items: center; gap: 12px; margin-top: 10px; font: 560 44px/1 var(--font); letter-spacing: -0.05em; }
+.p-head h2 .flag { width: auto; margin: 0; font-size: 36px; }
+.p-head h2:focus-visible { outline-offset: 4px; }
+.p-verdict { max-width: 60ch; margin: 16px 0 0; font-size: 18px; line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+.p-sum { margin: 0; font-size: 14px; color: var(--ink-2); }
+.p-h { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; margin: 26px 0 10px; }
+.p-h .label b { color: var(--ink-2); font-weight: 500; }
+
+/* why the rest is not live yet: one square per check, per reason */
+.why { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.why li { display: grid; grid-template-columns: minmax(0, 1fr) 130px 22px; align-items: center; gap: 12px; font-size: 13px; color: var(--ink-2); }
+.why-bar { display: flex; flex-wrap: wrap; gap: 2px; }
+.why-bar i { width: 8px; height: 8px; border-radius: 2px; background: var(--s-limited); }
+
+/* the key to the pixel icons, on black tape as on the hero (console.css) */
+.p-h .hero-key { height: 24px; margin: 0; }
+
+/* by area: one row of small icons, each goes to its area card */
+.area-row { display: flex; justify-content: space-between; margin: 0 -4px; padding: 0; list-style: none; }
+.area-row button { position: relative; display: grid; justify-items: center; gap: 7px; width: 44px; padding: 4px 0 2px; border: 0; border-radius: 6px; background: none; color: var(--ink-2); font: 500 11px/1 var(--mono); cursor: pointer; }
+.area-row button:hover { color: var(--ink); }
+.is-full > .pix { filter: var(--glow); }
+/* the short name on black tape, on hover or focus, as on the hero (console.css); the outer ones hang inward */
+.area-row b { z-index: 6; top: calc(100% + 6px); }
+.area-row li:first-child b { --tx: 0; left: 0; }
+.area-row li:last-child b { --tx: 0; left: auto; right: 0; }
+
+/* the fact box, the way an encyclopedia sets the facts beside the text */
+.info { padding: 16px 16px 6px; }
+.info-top { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.055); }
+.info-tier { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 10px; background: var(--c); color: var(--page); font: 400 50px/1 var(--pixel); }
+.info-score { margin: 0; font: 500 30px/1 var(--mono); letter-spacing: -0.03em; color: var(--sunrise); }
+.info-score small { font-size: 13px; letter-spacing: 0; color: var(--muted); }
+.info-rank { margin: 6px 0 0; font-size: 12.5px; color: var(--ink-2); }
+.info-tie { margin: 2px 0 0; font-size: 12.5px; color: var(--muted); text-wrap: balance; }
+/* one block per check, Live first */
+.strip { display: flex; gap: 2px; margin: 14px 0 4px; }
+.strip i { flex: 1; height: 14px; border-radius: 3px; }
+.counts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 16px; margin: 10px 0 2px; }
+.counts > span { display: flex; align-items: center; justify-content: space-between; gap: 6px; font: 500 12.5px/1 var(--mono); color: var(--ink); }
+.info dl { display: grid; grid-template-columns: auto minmax(0, 1fr); margin: 8px 0 0; }
+.info dt, .info dd { margin: 0; padding: 7px 0; border-top: 1px solid rgba(255, 255, 255, 0.055); font-size: 13px; }
+.info dt { padding-right: 14px; font: 500 10px/1.9 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.info dd { color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+.info dl > :nth-child(-n + 2) { border-top: 0; }
+.info dt .low { margin: 0 0 1px 2px; }
+
+/* the sections of the profile */
+.blk { margin-top: 44px; }
+.blk-h { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 4px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.blk-h h3 { margin-top: 8px; font: 560 24px/1.15 var(--font); letter-spacing: -0.035em; }
+.blk-h > a { font-size: 14px; text-decoration: none; }
+.blk-h > a:hover { text-decoration: underline; }
+.blk-lede { max-width: 64ch; margin: 12px 0 0; font-size: 14px; color: var(--ink-2); text-wrap: pretty; }
+.p-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 0; font-size: 12px; color: var(--ink-2); }
+.p-legend .chip { height: 20px; font-size: 11px; }
+
+/* compared with its region: the table fills the pane. Every number column has the same width for every country;
+   the theme column takes the rest. */
+.cmp { width: 100%; margin-top: 14px; border-collapse: collapse; table-layout: fixed; font-size: 13px; }
+.cmp thead th + th { width: 92px; }
+.cmp th, .cmp td { padding: 9px 10px; border-top: 1px solid rgba(255, 255, 255, 0.055); text-align: right; font-variant-numeric: tabular-nums; }
+.cmp thead th { padding-bottom: 8px; border-top: 0; vertical-align: bottom; font: 500 11.5px/1.2 var(--mono); color: var(--ink-2); }
+.cmp thead .flag { display: block; width: fit-content; margin: 0 0 4px auto; font-size: 16px; }
+.cmp thead small { display: block; margin-top: 3px; font: 400 9.5px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; color: var(--muted); }
+.cmp tbody th { padding-left: 0; text-align: left; font-weight: 400; color: var(--ink-2); }
+.cmp tbody th small { display: block; margin-top: 3px; font: 400 10.5px/1.4 var(--mono); color: var(--muted); }
+.cmp td { font: 400 12.5px/1 var(--mono); color: var(--ink-2); }
+.cmp td.top { color: var(--ink); font-weight: 500; }
+.cmp td.top::before, .cmp-key i { content: ''; display: inline-block; width: 5px; height: 5px; margin: 0 6px 1px 0; border-radius: 50%; background: var(--ink-2); vertical-align: middle; }
+.cmp .me { background: color-mix(in srgb, var(--sunrise) 8%, transparent); }
+.cmp thead .me { border-radius: 8px 8px 0 0; color: var(--sunrise); }
+.cmp tbody tr:last-child .me { border-radius: 0 0 8px 8px; }
+.cmp td.me { color: var(--sunrise); font-weight: 500; }
+.cmp td.me.top::before { background: var(--sunrise); }
+.cmp tr.all :is(th, td) { border-top-color: var(--line-strong); color: var(--ink); font-weight: 500; }
+.cmp tr.all td.me { color: var(--sunrise); }
+.cmp-key { margin: 10px 0 0; font: 400 10.5px/1.5 var(--mono); color: var(--muted); }
+
+/* one card per area: its pixel icon on the left, its name and score beside it, then its checks */
+.area { display: grid; grid-template-columns: 72px minmax(0, 1fr); grid-template-areas: 'ic hd' 'ic tb'; align-items: start; column-gap: 24px; margin-top: 14px; padding: 20px 20px 20px 22px; }
+.blk-h + .area { margin-top: 20px; }
+.area > .pix { grid-area: ic; margin-top: 2px; }
+.area-h { grid-area: hd; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'nm sc' 'bl n'; align-items: baseline; gap: 4px 16px; }
+.area-h h4 { grid-area: nm; justify-self: start; font: 560 17px/1.3 var(--font); letter-spacing: -0.02em; }
+.area-h h4:focus-visible { outline-offset: 4px; }
+.area-b { grid-area: bl; margin: 0; font-size: 12.5px; color: var(--muted); }
+.area-s { grid-area: sc; margin: 0; text-align: right; font: 500 20px/1 var(--mono); letter-spacing: -0.02em; color: var(--ink); white-space: nowrap; }
+.area-s small { font-size: 11px; letter-spacing: 0; color: var(--muted); }
+.area-n { grid-area: n; margin: 0; text-align: right; font: 400 10.5px/1 var(--mono); color: var(--muted); white-space: nowrap; }
+.checks { grid-area: tb; margin: 12px 0 0; padding: 0; list-style: none; border: 1px solid rgba(255, 255, 255, 0.055); border-radius: 10px; background: rgba(3, 3, 8, 0.35); }
+.checks li + li { border-top: 1px solid rgba(255, 255, 255, 0.055); }
+.checks button { display: grid; grid-template-columns: 96px minmax(0, 1fr) 76px; align-items: start; column-gap: 14px; width: 100%; padding: 10px 12px; border: 0; border-radius: 9px; background: none; color: var(--ink); text-align: left; cursor: pointer; }
+.checks button:hover { background: rgba(255, 255, 255, 0.04); }
+.checks button:focus-visible { outline-offset: -2px; border-radius: 9px; }
+.checks .chip { justify-self: start; }
+.r-t { min-width: 0; font-size: 13.5px; font-weight: 500; line-height: 1.35; }
+.r-cap { display: block; }
+.r-note { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; margin-top: 3px; font-size: 12.5px; font-weight: 400; line-height: 1.45; color: var(--ink-2); }
+.why-tag { float: left; margin: 4px 6px 0 0; padding: 1px 6px; border-radius: 4px; background: color-mix(in srgb, var(--sunrise) 10%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--sunrise) 28%, transparent); color: var(--sunrise); font: 500 10px/1.5 var(--mono); letter-spacing: 0.02em; }
+.r-src { padding-top: 4px; text-align: right; font: 500 11.5px/1 var(--mono); color: var(--ink-2); white-space: nowrap; }
+.r-src.zero { color: var(--muted); }
+
+/* who makes it work here: logo pills by area; the ones based here are outlined in sunrise */
+.cos { margin: 14px 0 0; }
+.co-row { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: start; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255, 255, 255, 0.055); }
+.co-row:first-child { border-top: 0; }
+.co-row .label { padding-top: 10px; }
+.co-row ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.co-row a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 4px 11px 4px 5px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 99px; color: var(--ink); font-size: 13px; line-height: 1.25; text-decoration: none; transition: border-color 0.15s; }
+.co-row a:hover { border-color: rgba(255, 255, 255, 0.3); }
+.co-row a:focus-visible { border-radius: 99px; }
+.co-row a .flag { width: auto; margin: 0; font-size: 12px; }
+.co-row a.home { border-color: color-mix(in srgb, var(--sunrise) 45%, transparent); }
+.co-key { margin: 12px 0 0; font: 400 10.5px/1.5 var(--mono); color: var(--muted); }
+.co-key i { display: inline-block; width: 18px; height: 10px; margin: 0 6px -1px 0; border: 1px solid color-mix(in srgb, var(--sunrise) 50%, transparent); border-radius: 99px; }
+.p-foot { margin: 36px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font: 400 11px/1.6 var(--mono); color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rail a, .area-row b, .co-row a { transition: none; }
+}
+
+/* ---------- smaller screens ---------- */
+@media (max-width: 1120px) {
+  .p-head { grid-template-columns: minmax(0, 1fr); }
+  .info { max-width: 560px; }
+}
+@media (max-width: 900px) {
+  .atlas-body { grid-template-columns: minmax(0, 1fr); }
+  /* the rail becomes one row of country pills that scrolls sideways on its own; the page never does.
+     Its background is the window's, made opaque, so the profile does not show through when it sticks. */
+  .rail { z-index: 5; padding: 10px 0; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.055); background: color-mix(in srgb, rgb(10 10 18) 72%, var(--page)); }
+  .rail > .label, .rail-note { display: none; }
+  .rail ol { display: flex; gap: 6px; overflow-x: auto; padding: 2px 12px; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .rail ol::-webkit-scrollbar { display: none; }
+  .rail li { flex: none; }
+  .rail a { display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 6px 0 10px; border-color: rgba(255, 255, 255, 0.085); border-radius: 99px; }
+  .rail a:focus-visible { border-radius: 99px; outline-offset: -2px; }
+  .rail :is(.r-rk, .bars, .r-nm) { display: none; }
+  .r-cd { display: inline; font: 500 11.5px/1 var(--mono); }
+  .r-sc { color: var(--muted); }
+  .rail a[aria-current='true'] .r-sc { color: var(--sunrise); }
+  .rail .tier { width: 18px; height: 18px; font-size: 15px; }
+  /* jumps to a card land below the sticky pill row too */
+  .area { scroll-margin-top: 68px; }
+}
+@media (max-width: 760px) {
+  .pane { padding: 22px 12px 26px; }
+  .p-head h2 { font-size: 36px; }
+  .p-head h2 .flag { font-size: 30px; }
+  .p-verdict { font-size: 16px; }
+  .why li { grid-template-columns: minmax(0, 1fr) 90px 22px; }
+  /* six icons a row; the names on the outer columns hang inward */
+  .area-row { display: grid; grid-template-columns: repeat(6, 44px); justify-content: space-between; row-gap: 14px; }
+  .area-row li:is(:nth-child(6n + 1), :nth-child(6n)) b { translate: 0 4px; }
+  .area-row li:nth-child(6n + 1) b { left: 0; right: auto; }
+  .area-row li:nth-child(6n) b { left: auto; right: 0; }
+  .area-row li:is(:nth-child(6n + 1), :nth-child(6n)) button:is(:hover, :focus-visible) b { translate: 0 0; }
+  .p-h:has(.hero-key) { flex-wrap: wrap; }
+  .info { max-width: none; }
+  .blk-h h3 { font-size: 21px; }
+  .cmp :is(th, td) { padding: 9px 4px; }
+  .cmp thead th + th { width: 40px; }
+  .cmp thead small { font-size: 8.5px; letter-spacing: 0; white-space: normal; }
+  .p-legend { gap: 8px 10px; }
+  .cmp tbody th { font-size: 12.5px; }
+  /* the checks go under the icon and its heading, edge to edge */
+  .area { grid-template-areas: 'ic hd' 'tb tb'; column-gap: 16px; padding: 14px 12px 0; }
+  .checks { margin: 14px -12px 0; border: 0; border-top: 1px solid rgba(255, 255, 255, 0.055); border-radius: 0 0 11px 11px; }
+  .area-h { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: 'nm nm' 'sc n' 'bl bl'; gap: 6px 10px; }
+  .area-s { text-align: left; font-size: 17px; }
+  .area-n { text-align: left; }
+  /* the chip and the source count on top, then the name, its reason tag and the note across the whole row */
+  .checks button { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: 'ch src' 't t'; gap: 8px 10px; padding: 12px; }
+  .checks .chip { grid-area: ch; }
+  .r-t { grid-area: t; }
+  .r-src { grid-area: src; align-self: center; padding: 0; }
+  .r-note { -webkit-line-clamp: 2; }
+  /* the reason tag gets its own line under the check name */
+  .why-tag { float: none; display: table; margin: 4px 0 0; }
+  .co-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .co-row .label { padding-top: 4px; }
+  .foot-site > p:first-child { min-width: 0; }
+}
+@media (max-width: 520px) {
+  .term.atlas { width: calc(100% - 32px); }
+}
+/* too narrow for the five legend items on one line: three, then two, never one alone */
+@media (max-width: 380px) {
+  .p-legend { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; justify-items: start; }
+}

@@ -15,6 +15,7 @@
               tier colors always sit behind dark text (--page) and the letter is always shown.
    Type       --font (Geist: UI, headlines), --mono (JetBrains Mono: micro labels), --pixel (Jersey 10:
               pixel wordmark and big letters only), --flag (emoji fonts for flags)
+   Pixels     --pix-off (an unlit cell of a pixel icon), --glow (around a fully lit icon)
    Shape      --radius (panels), --shadow (lifted panels) */
 :root {
   color-scheme: dark;
@@ -45,6 +46,8 @@
   --tier-b: #ff8a6e;
   --tier-c: #ff5a8c;
   --tier-d: #e0287e;
+  --pix-off: color-mix(in srgb, var(--s-announced) 62%, #000);
+  --glow: drop-shadow(0 0 9px color-mix(in srgb, var(--sunrise) 45%, transparent));
   --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 30px 70px -30px rgba(0, 0, 0, 0.85);
   --radius: 14px;
   --font: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;

@@ -193,8 +193,10 @@ const commands = {
     url.searchParams.set('verify', Date.now().toString(36));
     await c.send('Page.navigate', { url: url.href });
     await done;
-    // Each page has its own sign that it rendered: the country heading on the home page, the first company row on companies.html.
-    await waitFor(c, flags.wait ?? (url.pathname.endsWith('/companies.html') ? '[data-companies] tbody tr' : '#cn-title'));
+    // Each page has its own sign that it rendered: the country heading on the home page and on countries.html, the first
+    // company row on companies.html.
+    const sign = { '/companies.html': '[data-companies] tbody tr', '/countries.html': '#p-title' }[url.pathname] ?? '#cn-title';
+    await waitFor(c, flags.wait ?? sign);
     await sleep(Number(flags.settle ?? 800));
     const info = await c.evaluate(`({ url: location.href, title: document.title, width: innerWidth, height: innerHeight, scheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', languages: navigator.languages, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone })`);
     log(s, { cmd: 'open', path, ...info });

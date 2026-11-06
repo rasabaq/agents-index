@@ -67,10 +67,21 @@
 .brk::after, .ch-link.cut::after { content: ''; position: absolute; left: 50%; top: 50%; width: 8px; height: 12px; transform: translate(-50%, -50%) skewX(-18deg); border-inline: 2px solid var(--sunrise); }
 /* the site's pixel icons (src/icons.js): unlit cells dark, lit cells in three warm tones; lit share = how much works */
 .pix { display: block; flex: none; shape-rendering: crispEdges; }
-.pix rect { fill: color-mix(in srgb, var(--s-announced) 62%, #000); }
+.pix rect { fill: var(--pix-off); }
 .pix .t0 { fill: var(--tier-s); }
 .pix .t1 { fill: var(--sunrise); }
 .pix .t2 { fill: var(--ink); }
+/* the key to the pixel icons (works, partly, not yet), on the hero and the countries page */
+.k-on { background: var(--tier-s); }
+.k-part { background: conic-gradient(var(--tier-s) 25%, transparent 0 50%, var(--tier-s) 0 75%, transparent 0) 0 0/5px 5px; outline: 1px solid color-mix(in srgb, var(--tier-s) 30%, transparent); outline-offset: -1px; }
+.k-off { background: var(--pix-off); }
+/* black tape, on the hero and the countries page: the key above, and an icon's short name on hover, tap or focus.
+   --tx moves a name sideways, so the ones at the edges can hang inward. */
+.hero-key { display: flex; align-items: center; gap: 6px; padding: 0 10px; background: #000; color: var(--ink-2); font: 500 10.5px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.hero-key i { width: 10px; height: 10px; margin-left: 8px; }
+.hero-key i:first-child { margin-left: 0; }
+:is(.hero-icons, .area-row) b { position: absolute; left: 50%; top: calc(100% + 8px); translate: var(--tx, -50%) 4px; padding: 4px 7px 5px; background: #000; color: var(--ink); font: 500 10.5px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; opacity: 0; transition: opacity 0.15s, translate 0.15s; pointer-events: none; }
+:is(.hero-icons li:is(:hover, :focus), .area-row button:is(:hover, :focus-visible)) b { opacity: 1; translate: var(--tx, -50%) 0; }
 /* one capsule per step, filled like the status chips */
 .meter { display: flex; gap: 3px; }
 .meter i { flex: 1; min-width: 6px; height: 8px; border-radius: 99px; }
