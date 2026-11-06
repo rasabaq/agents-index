@@ -104,13 +104,20 @@
         },
         "MX": {
           "status": "limited",
-          "note": "ChatGPT's OpenTable reservations are listed as global and OpenTable runs a Mexico site, but no OpenTable or OpenAI page confirms that Mexican restaurants show up in ChatGPT, so this counts as limited; Google AI Mode booking has not launched in Mexico.",
+          "note": "ChatGPT's OpenTable reservations are listed as global, but no OpenAI or OpenTable page we could open confirms Mexico (OpenAI's release notes returned 403 and OpenTable's ChatGPT page timed out, Nov 2026). OpenTable's Concierge AI in Mexico (July 2025) answers questions; booking through it was planned, not confirmed. Google AI Mode booking has not launched in Mexico.",
           "evidence": [
             {
               "title": "ChatGPT release notes (OpenTable reservations available globally)",
               "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
               "date": "2026-08-10",
+              "type": "company"
+            },
+            {
+              "title": "OpenTable lanza Concierge, impulsado por IA generativa",
+              "publisher": "OpenTable (PR Newswire Mexico)",
+              "url": "https://www.prnewswire.com/mx/comunicados-de-prensa/opentable-lanza-concierge-impulsado-por-ia-generativa-para-brindar-a-los-comensales-informacion-al-momento-sobre-mas-de-60-000-restaurantes-en-todo-el-mundo-302507343.html",
+              "date": "2025-07-16",
               "type": "company"
             }
           ],
@@ -170,11 +177,11 @@
               "type": "company"
             },
             {
-              "title": "How Swiggy Is Using AI Agents To Take Commerce Beyond Its App",
-              "publisher": "Inc42",
-              "url": "https://inc42.com/buzz/how-swiggy-is-using-ai-agents-to-take-commerce-beyond-its-app/",
-              "date": "2026-09-30",
-              "type": "news"
+              "title": "Swiggy Now Lets You Order Food, Dineout, and Shop on Instamart Directly Inside ChatGPT and Claude",
+              "publisher": "Swiggy",
+              "url": "https://www.swiggy.com/corporate/?p=16731",
+              "date": "2026-01-27",
+              "type": "company"
             }
           ]
         },
@@ -368,11 +375,11 @@
               "type": "company"
             },
             {
-              "title": "Eurostar launches ChatGPT app",
-              "publisher": "Deep Arrival",
-              "url": "https://deeparrival.com/news/eurostar-chatgpt-app-august-2026/",
-              "date": "2026-08-18",
-              "type": "news"
+              "title": "Eurostar AI travel assistant (Eurostar in ChatGPT)",
+              "publisher": "Eurostar",
+              "url": "https://www.eurostar.com/uk-en/travel-info/travel-planning/ai-travel-assistant",
+              "date": "2026-08",
+              "type": "company"
             },
             {
               "title": "ChatGPT release notes (app directory: apps for all logged-in users, availability varies by region)",
@@ -811,7 +818,7 @@
         },
         "MX": {
           "status": "none",
-          "note": "No agent ordering was found for Mexico: Uber's help center says the Uber Eats app in ChatGPT shows results only to users in the US, and Rappi's WhatsApp assistant was announced for Colombia, with no Mexico launch found.",
+          "note": "No agent ordering was found for Mexico: Uber's help center says the Uber Eats app in ChatGPT shows results only to users in the US, and Rappi's WhatsApp assistant was announced for Colombia, with no Mexico launch found. Searched Uber, Rappi, DiDi Food and PedidosYa (Nov 2026); DiDi's DiMi agent (Aug 2026) signs up restaurants, not diners. No primary source shows a diner ordering agent.",
           "evidence": [
             {
               "title": "ChatGPT Integration for Eaters",
@@ -833,7 +840,7 @@
         },
         "CL": {
           "status": "none",
-          "note": "No agent ordering was found for Chile: Uber's help center says the Uber Eats app in ChatGPT shows results only to users in the US, Rappi's WhatsApp assistant was announced for Colombia, with no Chile launch found, and no PedidosYa or DiDi ordering agent was found.",
+          "note": "No live agent ordering was found for Chile. PedidosYa's 'Pide sin Pensar con ChatGPT' chat (Nov 2023) suggests an order inside the app, but no 2026 source shows it still runs. Uber Eats in ChatGPT is US-only, Rappi's WhatsApp assistant was announced for Colombia with no Chile launch found, and no DiDi Food or Cornershop ordering agent was found (Nov 2026). No primary source confirms a live agent.",
           "evidence": [
             {
               "title": "ChatGPT Integration for Eaters",
@@ -847,6 +854,13 @@
               "publisher": "Mobile Time Latinoamérica",
               "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
               "date": "2025-09-30",
+              "type": "news"
+            },
+            {
+              "title": "PedidosYa inaugura la función Pido sin Pensar con ChatGPT",
+              "publisher": "Chocale",
+              "url": "https://chocale.cl/2023/11/pedidosya-inaugura-la-funcion-pido-sin-pensar-con-chatgpt/",
+              "date": "2023-11-28",
               "type": "news"
             }
           ],
@@ -893,11 +907,11 @@
               "type": "company"
             },
             {
-              "title": "How Swiggy Is Using AI Agents To Take Commerce Beyond Its App",
-              "publisher": "Inc42",
-              "url": "https://inc42.com/buzz/how-swiggy-is-using-ai-agents-to-take-commerce-beyond-its-app/",
-              "date": "2026-09-30",
-              "type": "news"
+              "title": "Swiggy Now Lets You Order Food, Dineout, and Shop on Instamart Directly Inside ChatGPT and Claude",
+              "publisher": "Swiggy",
+              "url": "https://www.swiggy.com/corporate/?p=16731",
+              "date": "2026-01-27",
+              "type": "company"
             },
             {
               "title": "Zomato MCP server (food ordering for AI assistants)",

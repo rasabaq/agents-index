@@ -203,7 +203,7 @@
         "CL": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Jumbo's WhatsApp AI assistant (since June 2026, in Santiago and the Valparaíso Region) builds a grocery cart in the chat, but you pay on jumbo.cl or in its app. Gemini lists Chile for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US-only, and Alexa+ is not in Chile. Only trade press covers Jumbo's assistant.",
+          "note": "Jumbo's WhatsApp AI (since June 2026, in Santiago and the Valparaiso Region, per press) builds a grocery cart in the chat, but you confirm and pay on jumbo.cl or in its app, as Jumbo's own page says. Gemini lists Chile for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only). Copilot Checkout is US-only, and Alexa+ is not in Chile. No ChatGPT or Perplexity checkout for Chile was found.",
           "evidence": [
             {
               "title": "Use agentic checkout with Google Pay",
@@ -227,26 +227,25 @@
               "type": "company"
             },
             {
-              "title": "Un supermercado de Cencosud estrena las compras por WhatsApp impulsadas por IA",
-              "publisher": "Perú Retail",
-              "url": "https://www.peru-retail.com/un-supermercado-de-cencosud-estrena-las-compras-por-whatsapp-impulsadas-por-ia/",
-              "date": "2026-06-24",
-              "type": "news"
+              "title": "Compras JUMBO por WhatsApp",
+              "publisher": "Jumbo",
+              "url": "https://www.jumbo.cl/oferta/compra-whatsapp",
+              "date": "2026-06",
+              "type": "company"
             },
             {
-              "title": "Jumbo lanza compras de supermercado vía WhatsApp",
-              "publisher": "Chócale",
-              "url": "https://chocale.cl/2026/06/jumbo-lanza-compras-de-supermercado-via-whatsapp/",
-              "date": "2026-06-19",
-              "type": "news"
+              "title": "Microsoft propels retail forward with agentic AI capabilities (Copilot Checkout)",
+              "publisher": "Microsoft",
+              "url": "https://news.microsoft.com/source/2026/01/08/microsoft-propels-retail-forward-with-agentic-ai-capabilities-that-power-intelligent-automation-for-every-retail-function/",
+              "date": "2026-01-08",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "CO": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No in-chat checkout found. Rappi has announced a WhatsApp assistant that takes orders, but it has not launched and Rappi has not said you can pay in the chat. Gemini lists Colombia for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US-only, Alexa+ is not in Colombia, and no chat checkout from Éxito or Falabella was found.",
+          "note": "No in-chat checkout found. Rappi has announced a WhatsApp assistant that takes orders and tested voice ordering in beta (press), but has not said you can pay in the chat. Gemini lists Colombia for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only). Copilot Checkout is US-only, Alexa+ is not in Colombia, and no chat checkout from Éxito or Falabella was found. Searched Rappi, Éxito, Falabella, ChatGPT and Perplexity for Colombia (Nov 2026); no primary source.",
           "evidence": [
             {
               "title": "Use agentic checkout with Google Pay",
@@ -275,6 +274,13 @@
               "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
               "date": "2025-09-30",
               "type": "news"
+            },
+            {
+              "title": "Microsoft propels retail forward with agentic AI capabilities (Copilot Checkout)",
+              "publisher": "Microsoft",
+              "url": "https://news.microsoft.com/source/2026/01/08/microsoft-propels-retail-forward-with-agentic-ai-capabilities-that-power-intelligent-automation-for-every-retail-function/",
+              "date": "2026-01-08",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -663,27 +669,20 @@
         "CL": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Jumbo (Cencosud) has a WhatsApp AI that builds a grocery cart in Santiago and the Valparaíso Region, but you pay on jumbo.cl or in its app. No buying agent was found from Falabella, Ripley, Lider or Mercado Libre, and Alexa+ is not in Chile. Only trade press covers Jumbo's assistant.",
+          "note": "Jumbo (Cencosud) has a WhatsApp AI that builds a grocery cart in Santiago and the Valparaiso Region (per press), but you confirm and pay on jumbo.cl or in its app, as Jumbo's own page says. Searched Falabella, Ripley, Lider and Mercado Libre Chile (Nov 2026): no buying agent found. Alexa+ is not in Chile. Confidence stays low: no primary source covers the local players.",
           "evidence": [
+            {
+              "title": "Compras JUMBO por WhatsApp",
+              "publisher": "Jumbo",
+              "url": "https://www.jumbo.cl/oferta/compra-whatsapp",
+              "date": "2026-06",
+              "type": "company"
+            },
             {
               "title": "Mercado Libre IA: claves para el futuro del retail 2026",
               "publisher": "ITSeller",
               "url": "https://www.itseller.cl/2026/07/16/mercado-libre-ia-claves-para-el-futuro-del-retail-2026/",
               "date": "2026-07-16",
-              "type": "news"
-            },
-            {
-              "title": "Un supermercado de Cencosud estrena las compras por WhatsApp impulsadas por IA",
-              "publisher": "Perú Retail",
-              "url": "https://www.peru-retail.com/un-supermercado-de-cencosud-estrena-las-compras-por-whatsapp-impulsadas-por-ia/",
-              "date": "2026-06-24",
-              "type": "news"
-            },
-            {
-              "title": "Jumbo lanza compras de supermercado vía WhatsApp",
-              "publisher": "Chócale",
-              "url": "https://chocale.cl/2026/06/jumbo-lanza-compras-de-supermercado-via-whatsapp/",
-              "date": "2026-06-19",
               "type": "news"
             }
           ],
@@ -692,7 +691,7 @@
         "CO": {
           "status": "announced",
           "gapReason": "not-launched",
-          "note": "Rappi announced a WhatsApp AI assistant in September 2025 that takes orders in plain language, and in December 2025 its Colombia CEO listed voice ordering on WhatsApp among its plans for 2026; no launch was found. No Éxito, Falabella or Mercado Libre buying agent was found (Éxito has an older WhatsApp ordering chatbot from 2020). Only trade press covers Rappi's assistant.",
+          "note": "Rappi announced a WhatsApp AI assistant in September 2025 that takes orders in plain language. In December 2025 its Colombia CEO said voice ordering on WhatsApp would launch more fully in 2026; press calls it a beta. No launch found. No Éxito, Falabella or Mercado Libre buying agent was found (Éxito has an older WhatsApp ordering chatbot from 2020). Mercado Libre's AI buying test is in Brazil and Mexico (press). Searched Rappi, Éxito, Falabella and Mercado Libre Colombia (Nov 2026); no primary source.",
           "evidence": [
             {
               "title": "Rappi integrará asistente de IA en WhatsApp",

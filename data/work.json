@@ -42,7 +42,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "LoopCV searches UK boards such as Reed and CV-Library, plus LinkedIn and Indeed, and sends applications for you by email or web form. Indeed's Career Scout reached the UK in July 2026; it pre-fills applications that you send yourself.",
+          "note": "LoopCV searches UK boards such as Reed and CV-Library, plus LinkedIn and Indeed, and sends applications for you by email or web form. Indeed's Career Scout, an AI career tool, reached the UK in July 2026; its UK help page lists applying as a feature but does not say whether it sends applications for you.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -100,10 +100,10 @@
           ]
         },
         "MX": {
-          "status": "limited",
+          "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Mexico, among the boards it searches, but LoopCV does not list Mexico as a market or say it applies here. We did not find a local job board, such as OCC Mundial, with its own agent that applies for you.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Mexico, among the boards it searches, but LoopCV does not list Mexico as a market or say it applies here. We searched Computrabajo and OCC Mundial (Nov 2026); no primary source shows a job board here with its own agent that applies for candidates.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -115,10 +115,10 @@
           ]
         },
         "CL": {
-          "status": "limited",
+          "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Chile, among the boards it searches, but LoopCV does not list Chile as a market or say it applies here. We did not find a local job board, such as Laborum, with its own agent that applies for you.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Chile, among the boards it searches, but LoopCV does not list Chile as a market or say it applies here. We searched Computrabajo, Laborum and Bumeran (Nov 2026); their AI tools screen profiles for recruiters, and no primary source shows an agent that applies for candidates.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -130,10 +130,10 @@
           ]
         },
         "CO": {
-          "status": "limited",
+          "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Colombia, among the boards it searches, but LoopCV does not list Colombia as a market or say it applies here. We did not find a local job board, such as elempleo, with its own agent that applies for you.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Colombia, among the boards it searches, but LoopCV does not list Colombia as a market or say it applies here. We searched Computrabajo and elempleo (Nov 2026); no primary source shows a job board here with its own agent that applies for candidates.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -303,7 +303,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own. We found no UK payroll provider whose agent runs payroll.",
+          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own. We found no UK payroll provider whose agent runs payroll. Xero's Cash Flow Actions (beta) builds plans to protect payroll but does not run it, and we searched Sage Copilot (Nov 2026) and found no UK payroll agent.",
           "evidence": [
             {
               "title": "Deel launches AI Workforce",
@@ -318,6 +318,13 @@
               "url": "https://www.deel.com/blog/big-deel-recap-2026/",
               "date": "2026-03-20",
               "type": "company"
+            },
+            {
+              "title": "xerocon london 2026 agentic era small business finance",
+              "publisher": "Xero",
+              "url": "https://blog.xero.com/product-updates/xerocon-london-2026-agentic-era-small-business-finance/",
+              "date": "2026-07",
+              "type": "company"
             }
           ]
         },
@@ -325,7 +332,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "Personio's AI Assistant answers employees' HR questions, and Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own.",
+          "note": "Personio's AI Assistant answers employees' HR questions, and Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own. We searched Personio and DATEV (Nov 2026); no primary source shows a payroll agent in Germany.",
           "evidence": [
             {
               "title": "HUG 2025 feature updates (AI Assistant for all employees)",
@@ -346,7 +353,7 @@
         "IN": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Kredily's Kai (shipped August 2026) works out the month's payroll, payslips and bank file, but it stops before payout and statutory filing, which stay with the owner; Kredily does not say whether Kai is open to all customers.",
+          "note": "Kredily's Kai (shipped August 2026) works out the month's payroll, payslips and bank file, but it stops before payout and statutory filing, which stay with the owner; Kredily does not say whether Kai is open to all customers. We searched Zoho Payroll, Keka and RazorpayX (Nov 2026) and found no payroll agent from them.",
           "evidence": [
             {
               "title": "Best AI payroll software in India (Kai payroll agent)",
@@ -362,7 +369,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own, or sends eSocial events. LG lugar de gente plans payroll-checking agents in its 2026 roadmap, with no date.",
+          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own, or sends eSocial events. LG lugar de gente plans payroll-checking agents in its 2026 roadmap, with no date. We searched Omie and Contabilizei (Nov 2026); Omie's agents cover accounting and tax tasks, and we found no payroll agent.",
           "evidence": [
             {
               "title": "Deel launches AI Workforce",
@@ -384,7 +391,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own, or files with IMSS or SAT. We found no payroll agent from Runa or Alegra.",
+          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own, or files with IMSS or SAT. We searched Runa and Worky (Nov 2026) and found no payroll agent from either.",
           "evidence": [
             {
               "title": "Deel launches AI Workforce",
@@ -399,7 +406,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own. We found no payroll agent from Buk or Talana.",
+          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own. We searched Buk and Talana (Nov 2026) and found no payroll agent from either.",
           "evidence": [
             {
               "title": "Deel launches AI Workforce",
@@ -414,7 +421,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "Aleluya's AI agent checks payroll before you pay, and Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own; no agent sends the electronic payroll to DIAN.",
+          "note": "Aleluya's AI agent checks payroll before you pay, and Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own; no agent sends the electronic payroll to DIAN. We searched Siigo and Alegra (Nov 2026) and found no payroll agent from either.",
           "evidence": [
             {
               "title": "Aleluya vs Siigo, Buk, Siesa y Loggro: compara tu nómina",

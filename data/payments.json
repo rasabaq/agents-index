@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Visa says Visa Intelligent Commerce is rolled out across a broad set of US agents with live transactions (April 2026), Amex launched its ACE kit and agent purchase protection in April 2026, and Stripe's shared payment tokens can carry Visa, Mastercard and Amex agent tokens. Mastercard planned to enable all US cardholders for Agent Pay by the 2025 holidays but has not said the rollout is done, and no network gives reach numbers.",
+          "note": "Visa says Visa Intelligent Commerce is rolled out across a broad set of US agents with live transactions (April 2026), Mastercard's FY2025 10-K says it enabled all U.S.-based Mastercard cardholders for Agent Pay in 2025, Amex launched its ACE kit and agent purchase protection in April 2026, and Stripe's shared payment tokens can carry Visa, Mastercard and Amex agent tokens. No network gives reach numbers.",
           "evidence": [
             {
               "title": "Mastercard Unveils New Tools and Collaborations to Power Smarter, Safer Agentic Commerce",
@@ -51,9 +51,15 @@
               "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Mastercard Form 10-K for fiscal year 2025",
+              "publisher": "Mastercard",
+              "url": "https://www.sec.gov/Archives/edgar/data/0001141391/000114139126000025/ma12312025-10xkasfiled.pdf",
+              "date": "2026-02-11",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "GB": {
           "status": "limited",
@@ -65,13 +71,6 @@
               "url": "https://www.visa.co.uk/about-visa/newsroom/press-releases.3457328.html",
               "date": "2026-07-02",
               "type": "company"
-            },
-            {
-              "title": "Visa partners with European banks and merchants for agentic commerce launch",
-              "publisher": "FStech",
-              "url": "https://fstech.co.uk/fst/Visa_Partners_With_European_Banks_And_Merchants_For_Agentic_Commerce_Launch.php",
-              "date": "2026-07",
-              "type": "news"
             }
           ],
           "gapReason": "pilot-only"
@@ -191,13 +190,6 @@
               "url": "https://www.mastercard.com/news/ap/en-in/newsroom/press-releases/en-in/2026/february/mastercard-demonstrates-readiness-for-a-new-era-of-ai-powered-payments-in-india-with-its-first-authenticated-agentic-commerce-transaction/",
               "date": "2026-02",
               "type": "company"
-            },
-            {
-              "title": "Mastercard brings agentic commerce vision to India",
-              "publisher": "Biometric Update",
-              "url": "https://www.biometricupdate.com/202602/mastercard-brings-agentic-commerce-vision-to-india",
-              "date": "2026-02-18",
-              "type": "news"
             }
           ],
           "gapReason": "pilot-only"
@@ -428,7 +420,7 @@
         "MX": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Mercado Pago's Mago assistant makes transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI, but no source says Mago sends money over SPEI, so it stays limited.",
+          "note": "Press says Mercado Pago's Mago assistant makes transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI, but no source says Mago sends money over SPEI, so it stays limited. Searched Mercado Pago Mexico pages and Mercado Libre news (Nov 2026); the Mercado Pago pages returned 403 and no primary source was found.",
           "evidence": [
             {
               "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
@@ -457,7 +449,7 @@
         "CL": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms, but no source says it sends money to other banks over TEF, so it stays limited.",
+          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms, but no source says it sends money to other banks over TEF, so it stays limited. Searched Mercado Pago Chile pages and Mercado Libre news (Nov 2026); the Chile pages returned 403 and no primary source was found.",
           "evidence": [
             {
               "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
@@ -478,8 +470,15 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Tpaga launched a WhatsApp AI agent in July 2026 that sends money over Bre-B from text or voice notes. It stays limited because only the press covers it and Tpaga has not said how many users can use it.",
+          "note": "Press says Tpaga launched a WhatsApp AI agent in July 2026 that sends money over Bre-B from text or voice notes. Tpaga's site lists AI agents and Bre-B transfers, but not the WhatsApp agent, and the central bank's Bre-B page does not mention AI agents. It stays limited because only the press covers the WhatsApp agent and Tpaga has not said how many users can use it. Searched Tpaga's site and the Bre-B page (Nov 2026); no primary source for the agent.",
           "evidence": [
+            {
+              "title": "Tpaga home page (AI agents and Bre-B transfers listed)",
+              "publisher": "Tpaga",
+              "url": "https://tpaga.co/",
+              "date": "2026-10",
+              "type": "company"
+            },
             {
               "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
               "publisher": "La República",
@@ -715,8 +714,8 @@
           ]
         },
         "MX": {
-          "status": "live",
-          "note": "Mercado Pago says Mago is available in Mexico, Argentina, Brazil and Chile; it makes payments and transfers for users after they confirm. Only the press covers the Mexico launch.",
+          "status": "limited",
+          "note": "Press says Mercado Pago's Mago assistant launched in Mexico in September 2026 and makes payments and transfers after the user confirms. Only the press confirms the payments, so it is limited. Searched Mercado Pago Mexico pages and Mercado Libre news (Nov 2026); the Mercado Pago pages returned 403 and no primary source was found.",
           "evidence": [
             {
               "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
@@ -737,7 +736,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Only the press covers the Chile launch.",
+          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Only the press covers the Chile launch. Searched Mercado Pago Chile pages and Mercado Libre news (Nov 2026); the Chile pages returned 403 and no primary source was found.",
           "evidence": [
             {
               "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
@@ -758,8 +757,15 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Tpaga's WhatsApp AI agent, launched in July 2026, pays bills and sends money for users. It stays limited because only the press covers it and Tpaga has not said how many users can use it. Mercado Pago's Mago is not offered in Colombia.",
+          "note": "Tpaga's WhatsApp AI agent, launched in July 2026, pays bills and sends money for users, per the press. Tpaga's site lists AI agents for businesses but does not describe the WhatsApp agent. It stays limited because only the press covers it and Tpaga has not said how many users can use it. Mercado Pago's Mago is not offered in Colombia. Searched Tpaga's site (Nov 2026); no primary source for the WhatsApp agent.",
           "evidence": [
+            {
+              "title": "Tpaga home page (AI agents listed for businesses)",
+              "publisher": "Tpaga",
+              "url": "https://tpaga.co/",
+              "date": "2026-10",
+              "type": "company"
+            },
             {
               "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
               "publisher": "Descubre",
