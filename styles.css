@@ -169,6 +169,7 @@ select, option { color-scheme: dark; }
 .detail p { color: var(--ink-2); }
 .detail .muted { color: var(--muted); }
 .detail-status { margin: 14px 0 0; }
+.detail-why { margin-left: 10px; font-size: 13.5px; color: var(--ink); vertical-align: middle; }
 .close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); color: var(--ink-2); font-size: 20px; line-height: 1; cursor: pointer; }
 .close:hover { color: var(--ink); border-color: var(--line-strong); }
 .sources { margin: 0; padding-left: 20px; }

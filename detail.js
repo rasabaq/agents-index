@@ -1,6 +1,6 @@
 // The cell detail dialog, shared by the home page (app.js) and the countries page (countries.js). Both pages have the
 // same <dialog data-detail>. `site` is the page's data, built once by siteOf.
-import { STATUSES, scoreCountries, couldClose, companiesFor } from './src/observatory.js';
+import { STATUSES, scoreCountries, couldClose, companiesFor, gapLabel } from './src/observatory.js';
 import { findStep } from './src/errands.js';
 import { $, esc, flag, chip } from './ui.js';
 
@@ -56,11 +56,13 @@ export function openDetail(site, capId, code, errands) {
   // that does not offer this capability here.
   const here = cell.status === 'none' ? [] : companiesFor(catCos, cap.id, code);
   const at = findStep(errands, capId);
+  // Why a cell is not live yet, when the data says (the same words as the gap reasons on each page).
+  const why = cell.status === 'live' ? null : gapLabel(site.meta, cell.gapReason);
   const liveIn = ranking.map((x) => x.code).filter((c) => c !== code && cap.countries[c].status === 'live');
   showDetail(`
     <p class="kicker">${esc(catName(site, cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
-    <p class="detail-status">${chip(cell.status, cell.confidence)}${cell.confidence ? '<span class="low-note">Unsure. The sources are thin or indirect, so treat this as a lead to check.</span>' : ''}</p>
+    <p class="detail-status">${chip(cell.status, cell.confidence)}${why ? `<span class="detail-why">${esc(why)}</span>` : ''}${cell.confidence ? '<span class="low-note">Unsure. The sources are thin or indirect, so treat this as a lead to check.</span>' : ''}</p>
     <p>${esc(cell.note)}</p>
     <div class="d-facts">
       ${at ? `<p>In <b>${esc(at.errand.title)}</b>, step ${at.index + 1}: “${esc(at.errand.labels[capId])}”.</p>` : ''}
