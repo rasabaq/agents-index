@@ -213,16 +213,10 @@
           ]
         },
         "FR": {
-          "status": "live",
-          "note": "Alexa+ (Early Access since May 2026) books tables through TheFork, and the TheFork app in ChatGPT, reported live in France and 12 other European countries, finds tables and hands off to TheFork to book. Google AI Mode table booking is not offered in the EU. Both sources for France are press reports.",
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Found no TheFork or Zenchef table booking inside ChatGPT or Gemini in France. Amazon's TheFork launch on Alexa+ is for Spain, and Alexa+ in France (early access since 26 May 2026) names no booking partner. Searched TheFork and Zenchef, ChatGPT and Amazon press sources (Nov 2026); no primary source confirms table booking in France.",
           "evidence": [
-            {
-              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
-              "publisher": "iPhoneSoft",
-              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
-              "date": "2026-05-26",
-              "type": "news"
-            },
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
               "publisher": "Amazon",
@@ -231,17 +225,10 @@
               "type": "company"
             },
             {
-              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes a través de ChatGPT (also live in France)",
-              "publisher": "Forbes España",
-              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
-              "date": "2025-12-22",
-              "type": "news"
-            },
-            {
-              "title": "ChatGPT release notes (OpenTable reservations available globally)",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
-              "date": "2026-08-10",
+              "title": "TheFork ya está disponible en Alexa+ para España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/thefork-alexa-espana",
+              "date": "2026-06-19",
               "type": "company"
             }
           ],
@@ -932,14 +919,14 @@
         "ES": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Glovo's assistant in ChatGPT and Claude (May 2026) finds supermarket and shop products near you, then sends you to the Glovo app to order and pay; food was not yet included. Just Eat's voice assistant, which fills the basket, rolled out across its European markets in August 2026 without naming Spain, and Cabify rides on Alexa+ are only announced.",
+          "note": "Glovo's Claude connector finds groceries and supermarket items in the cities it serves; its page names Claude only, not ChatGPT, and does not say it places orders for you. Just Eat's voice assistant launched across Europe in August 2026, but its release names only the UK and Germany. Uber's ChatGPT apps show results only in the US, and we found no Cabify Alexa+ announcement.",
           "evidence": [
             {
-              "title": "Glovo se integra en ChatGPT y Claude",
-              "publisher": "Marketing4eCommerce",
-              "url": "https://marketing4ecommerce.net/glovo-se-integra-en-chatgpt-y-claude/",
-              "date": "2026-05-29",
-              "type": "news"
+              "title": "Glovo Connector for Claude (page is undated; checked Nov 2026)",
+              "publisher": "Glovo",
+              "url": "https://glovoapp.com/docs/en/legal/mcp/",
+              "date": "2026-11",
+              "type": "company"
             },
             {
               "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe",
@@ -1037,7 +1024,7 @@
         "AU": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Woolworths said its Gemini-powered Olive assistant would roll out to app customers in pick-up and delivery mode from July 2026; it plans meals and builds a basket, and you review it and check out yourself. We found no source confirming the rollout finished. Uber's ChatGPT apps are US-only and Menulog has closed.",
+          "note": "Woolworths said in June 2026 that its Olive assistant would roll out to all app customers in pick-up and delivery mode in July. It plans meals and builds a basket, and customers review and approve the items before checkout. We found no source confirming the rollout finished. Uber's ChatGPT apps are US-only, and we found no DoorDash ChatGPT app in Australia. Menulog closed in late 2025 (news reports).",
           "evidence": [
             {
               "title": "Woolworths takes the hassle out of the weekly shop with new digital tools to help you save time and money",
@@ -1052,6 +1039,13 @@
               "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-10",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -1059,15 +1053,8 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT or Claude order Chowdeck food deliveries; you approve the payment on WhatsApp. Glovo's ChatGPT and Claude assistant finds items but sends you to the Glovo app to pay, and no source says it covers Nigeria; Uber's ChatGPT apps are US-only.",
+          "note": "Paystack Index, in early access and for Nigeria only at launch, lets Claude or ChatGPT order Chowdeck food. Glovo's Claude connector page names no Nigeria coverage, and Uber's ChatGPT apps are US-only.",
           "evidence": [
-            {
-              "title": "Paystack launches AI checkout Index",
-              "publisher": "Techpoint Africa",
-              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
-              "date": "2026-06-25",
-              "type": "news"
-            },
             {
               "title": "What is Paystack Index?",
               "publisher": "Paystack",
@@ -1076,11 +1063,11 @@
               "type": "company"
             },
             {
-              "title": "Stop searching, start chatting: Glovo pioneers AI quick commerce",
-              "publisher": "Nairametrics",
-              "url": "https://nairametrics.com/2026/07/30/stop-searching-start-chatting-glovo-pioneers-ai-quick-commerce/",
-              "date": "2026-07-30",
-              "type": "news"
+              "title": "Glovo Connector for Claude (page is undated; checked Nov 2026)",
+              "publisher": "Glovo",
+              "url": "https://glovoapp.com/docs/en/legal/mcp/",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         }
