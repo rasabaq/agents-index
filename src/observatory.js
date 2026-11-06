@@ -221,6 +221,11 @@ export function useCategoryWords(metaCategories) {
 }
 export const shortName = (id) => words(id).short;
 
+// "the United States", "Chile": a country's name inside a sentence.
+// ponytail: "the" only for names that start with "United"; add an article field to meta.json if more need one
+export const placeName = (name) => `${/^United /.test(name) ? 'the ' : ''}${name}`;
+export const ordinal = (n) => `${n}${['th', 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] ?? 'th'}`;
+
 // A country's strongest and weakest category. On a tie the first in category order wins.
 export function extremes(byCategory) {
   const ids = Object.keys(byCategory);
@@ -233,8 +238,7 @@ export function extremes(byCategory) {
 // One line about a country, from its category scores. 50 is the line between "can" and "cannot yet".
 export function summarize(name, byCategory) {
   const { best, weak } = extremes(byCategory);
-  // ponytail: "the" only for names that start with "United"; add an article field to meta.json if more need one
-  const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
+  const where = `In ${placeName(name)}`;
   if (byCategory[weak] >= 50) return `${where}, an agent can ${words(best).can}. Even its weakest area, ${words(weak).short.toLowerCase()}, scores ${byCategory[weak]}.`;
   if (byCategory[best] < 50) return `${where}, agents are still early. The best category, ${words(best).short.toLowerCase()}, scores ${byCategory[best]}.`;
   return `${where}, an agent can ${words(best).can}. It cannot ${words(weak).can} yet.`;
@@ -288,7 +292,7 @@ export function startCountry(codes, hash, languages = [], timeZone = '') {
 }
 
 // "a, b or c"; a comma before the last word only when an earlier part has its own "and" or "or", so it still reads.
-const join = (xs, word) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')}${xs.slice(0, -1).some((x) => / (and|or) /.test(x)) ? ',' : ''} ${word} ${xs.at(-1)}`);
+export const join = (xs, word) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')}${xs.slice(0, -1).some((x) => / (and|or) /.test(x)) ? ',' : ''} ${word} ${xs.at(-1)}`);
 
 // The verdict at the top of a country. It agrees with the Works today and Not yet lists: "can" names up to two
 // categories with at least one live cell (highest score first), "cannot yet" up to two with none (lowest first).
@@ -300,7 +304,7 @@ export function verdict(name, byCategory, liveBy, reasonFor = () => null) {
   const cannotIds = ids.filter((id) => !liveBy[id]).sort((a, b) => byCategory[a] - byCategory[b]).slice(0, 2);
   const cannot = cannotIds.map((id) => words(id).can);
   const reason = cannotIds.length ? reasonFor(cannotIds) : null;
-  const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
+  const where = `In ${placeName(name)}`;
   const why = reason ? ` Main reason: ${reason}.` : '';
   if (!cannot.length) return `${where}, AI agents can ${join(can, 'and')} today. Something works in every area, though not all of it yet.`;
   if (!can.length) return `${where}, nothing we track works for AI agents yet: they cannot ${join(cannot, 'or')}.${why}`;
@@ -349,4 +353,75 @@ export function companiesFor(companies, capId, code) {
     if ((co.capabilities ?? []).includes(capId) && marketsFor(co, capId).includes(code) && !byName.has(co.name.toLowerCase())) byName.set(co.name.toLowerCase(), co);
   }
   return [...byName.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+// One country's cells, as { cap: { ...capability, category }, cell } pairs (the way app.js and countries.js list them).
+// liveBy: the live cells in each category. gapCounts: how many cells that are not live have each gap reason, most
+// first, as [[reason id, n], ...]; catIds limits it to some categories, and cells with no reason are left out.
+export function liveBy(mine) {
+  const n = {};
+  for (const { cap, cell } of mine) n[cap.category] = (n[cap.category] ?? 0) + (cell.status === 'live' ? 1 : 0);
+  return n;
+}
+export function gapCounts(mine, catIds) {
+  const n = {};
+  for (const { cap, cell } of mine) {
+    if (cell.status !== 'live' && cell.gapReason && (!catIds || catIds.includes(cap.category))) n[cell.gapReason] = (n[cell.gapReason] ?? 0) + 1;
+  }
+  return Object.entries(n).sort((a, b) => b[1] - a[1]);
+}
+
+// Themes group the twelve categories into four, so a country fits in a small table beside its neighbours.
+// A theme scores the mean of its categories' scores. The country score never uses themes.
+export const THEMES = [
+  { id: 'shop-pay', name: 'Shop and pay', categories: ['commerce', 'payments', 'messaging'] },
+  { id: 'get-done', name: 'Get things done', categories: ['services', 'autonomy', 'health', 'work', 'insurance'] },
+  { id: 'money-id', name: 'Money and ID', categories: ['banking', 'government'] },
+  { id: 'ground-rules', name: 'Ground rules', categories: ['access', 'rules'] },
+];
+export const themeScores = (byCategory) => THEMES.map((t) => ({ ...t, score: Math.round(mean(t.categories.map((id) => byCategory[id]))) }));
+
+// THEMES lives in code, not in meta.json, so a new category must be added to it by hand. Run by the tests and
+// npm run validate: every category sits in exactly one theme, and every theme names known categories.
+export function checkThemes(categoryIds) {
+  const listed = THEMES.flatMap((t) => t.categories);
+  const errors = [];
+  for (const id of categoryIds) {
+    const n = listed.filter((x) => x === id).length;
+    if (n === 0) errors.push(`category "${id}" is in no theme: add it to one theme in THEMES in src/observatory.js`);
+    if (n > 1) errors.push(`category "${id}" is in ${n} themes: keep it in one theme in THEMES in src/observatory.js`);
+  }
+  for (const id of new Set(listed)) if (!categoryIds.includes(id)) errors.push(`THEMES in src/observatory.js names an unknown category "${id}"`);
+  return errors;
+}
+
+// "Compared with its region": the other tracked countries in its region (best first), and one country to measure
+// against: the leader, or the next best when this country has the top score (a tie at the top leads too). ref is
+// null when only one country is tracked. `line` says where it sits in one plain sentence. ranking comes from
+// scoreCountries, with each country's region.
+export function regionCompare(ranking, code) {
+  const me = ranking.find((r) => r.code === code);
+  const peers = ranking.filter((r) => r.region === me.region && r.code !== code);
+  const leads = me.score === ranking[0].score;
+  const ref = (leads ? ranking.find((r) => r.code !== code) : ranking[0]) ?? null;
+  const refLabel = leads ? 'next best' : 'leader';
+  const name = (r) => placeName(r.name);
+  const lower = (s) => s[0].toLowerCase() + s.slice(1);
+  let line;
+  if (!peers.length) {
+    line = ref
+      ? `${name(me)} is the only country we track in ${me.region}, so it sits beside the ${refLabel}, ${name(ref)}, and the average of all ${ranking.length}.`
+      : `${name(me)} is the only country we track so far.`;
+  } else {
+    const pos = 1 + peers.filter((p) => p.score > me.score).length;
+    const tied = peers.filter((p) => p.score === me.score);
+    // Per theme: this country's score and the best of its neighbours.
+    const themes = themeScores(me.byCategory).map((t, i) => ({ t, best: peers.map((p) => ({ p, s: themeScores(p.byCategory)[i].score })).sort((a, b) => b.s - a.s)[0] }));
+    const ahead = themes.filter(({ t, best }) => t.score > best.s).map(({ t }) => lower(t.name));
+    const behind = themes.filter(({ t, best }) => t.score < best.s).sort((a, b) => (b.best.s - b.t.score) - (a.best.s - a.t.score))[0];
+    line = `${name(me)} is ${ordinal(pos)} of ${peers.length + 1} in ${me.region}${tied.length ? `, tied with ${join(tied.map(name), 'and')}` : ''}.`;
+    if (ahead.length) line += ` It leads the region in ${ahead.length === THEMES.length ? 'every theme' : join(ahead, 'and')}.`;
+    if (behind) line += ` It is furthest behind in ${lower(behind.t.name)}: ${behind.t.score}, against ${behind.best.s} in ${name(behind.best.p)}.`;
+  }
+  return { peers, ref, refLabel, line: line[0].toUpperCase() + line.slice(1) };
 }

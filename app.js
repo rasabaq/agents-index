@@ -1,4 +1,4 @@
-import { STATUSES, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, BUSINESS_GROUPS, readHash, writeHash } from './src/observatory.js';
+import { STATUSES, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, BUSINESS_GROUPS, readHash, writeHash, ordinal, placeName, liveBy, gapCounts } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS, errandIn } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { mosaic, fingerprint } from './overview.js';
@@ -54,26 +54,20 @@ const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${S
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
 const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
 // "the United States", "Chile": a country's name inside a sentence.
-const where = (r) => `${/^United /.test(r.name) ? 'the ' : ''}${r.name}`;
-const ordinal = (n) => `${n}${['th', 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] ?? 'th'}`;
+const where = (r) => placeName(r.name);
 // Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
 // Cells may not have one yet.
 const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
+function mainReason(mine, catIds) {
+  const top = gapCounts(mine, catIds)[0];
+  return top && gapLabel(top[0]);
+}
 // "For businesses": can a business sell through AI agents here? Counts the ways in BUSINESS_GROUPS.
 function businessVerdict(r) {
   const items = BUSINESS_GROUPS.flatMap((g) => g.items).filter(({ id }) => capIndex[id]).map(({ id }) => capIndex[id].countries[r.code]);
   const live = items.filter((cell) => cell.status === 'live');
   if (!live.length) return `In ${where(r)}, a business cannot yet sell through AI agents: none of the ${items.length} ways we track works here today.`;
   return `In ${where(r)}, ${live.length === items.length ? 'every one' : `${live.length}`} of the ${items.length} ways we track for a business to sell through AI agents and get paid ${live.length === 1 ? 'works' : 'work'} today.`;
-}
-
-// Live cells per category, for the verdict: a category with one live cell is something agents "can" do.
-const liveBy = (mine) => Object.fromEntries(meta.categories.map((c) => [c.id, mine.filter((x) => x.cap.category === c.id && x.cell.status === 'live').length]));
-function mainReason(mine, catIds) {
-  const n = {};
-  for (const { cap, cell } of mine) if (catIds.includes(cap.category) && cell.status !== 'live' && gapLabel(cell.gapReason)) n[cell.gapReason] = (n[cell.gapReason] ?? 0) + 1;
-  const top = Object.keys(n).sort((a, b) => n[b] - n[a])[0];
-  return top && gapLabel(top);
 }
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}"`;
 
