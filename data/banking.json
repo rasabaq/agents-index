@@ -394,7 +394,7 @@
         "AU": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Consumer Data Right open banking has let accredited apps read bank data since 2020, but only read-only. Payment initiation is law since August 2024, but no action type has been declared, so no regulated API lets an agent start a payment yet.",
+          "note": "Consumer Data Right open banking lets accredited apps read bank data, but only read-only. Action initiation, which covers payments, has been law since August 2024, but no action type has been declared, so no regulated API lets an agent start a payment yet. Searched for a declared action type (Nov 2026) and found none; cdr.gov.au did not load.",
           "evidence": [
             {
               "title": "Action initiated? Action initiation under Australia's Consumer Data Right becomes law",
@@ -404,11 +404,11 @@
               "type": "report"
             },
             {
-              "title": "Where next for the Consumer Data Right?",
-              "publisher": "Finder",
-              "url": "https://www.finder.com.au/where-next-for-the-consumer-data-right",
-              "date": "2021-03-26",
-              "type": "news"
+              "title": "Treasury Laws Amendment (Consumer Data Right) Act 2024",
+              "publisher": "Federal Register of Legislation",
+              "url": "https://legislation.gov.au/C2024A00075/asmade/2024-08-26/text/original/word",
+              "date": "2024-08-26",
+              "type": "regulation"
             }
           ],
           "confidence": "low"
@@ -416,7 +416,7 @@
         "NG": {
           "status": "announced",
           "gapReason": "not-launched",
-          "note": "The CBN issued an open banking framework in 2021 and operational guidelines in 2023, with NIBSS running the registry, but the go-live slipped from August 2025: in October 2025 a CBN official said it was not live, and in June 2026 the rollout was still described as a phased go-live through mid-2026. Aggregators such as Mono connect apps to bank accounts outside the regulated regime. One trade site says the framework went live in August 2025, so the sources conflict.",
+          "note": "The CBN issued an open banking framework in 2021 and operational guidelines in 2023, with NIBSS named as registry operator in the plan. The go-live slipped from August 2025. In October 2025 a CBN official said it was not live, and in June 2026 the rollout was still described as a phased go-live through mid-2026. Searched the CBN site and news (Nov 2026): no confirmed go-live date found. One trade site says it went live in August 2025, so the sources conflict.",
           "evidence": [
             {
               "title": "Operational Guidelines for Open Banking in Nigeria",
@@ -722,15 +722,22 @@
           ]
         },
         "FR": {
-          "status": "live",
-          "note": "Sumeria (formerly Lydia) has offered SIA, a generative AI assistant in its app, since February 2026; it can prepare a transfer and act on your accounts. Revolut's AIR reached France in September 2026 but cannot yet prepare a transfer, and Hello bank!'s HelloïZ only points you to the right screen, with in-chat transfers planned for late 2026. Only a press article describes SIA's transfer feature.",
+          "status": "limited",
+          "note": "Sumeria's SIA assistant can act for you in its app, but Sumeria's page does not say it makes transfers. Hello bank's HelloïZ press release says you can ask for transfers in the chat, while another report puts transfers by end-2026, so the sources conflict. Revolut's AIR reached France on 1 September 2026; reports describe card and subscription actions, not transfers. Searched BNP Paribas, Société Générale and Qonto (Nov 2026): no bank agent that moves money found.",
           "evidence": [
             {
-              "title": "SIA, l'assistant IA de Sumeria lancé en février 2026",
-              "publisher": "Meilleurtaux",
-              "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-avril/sia-lassistant-ia-de-sumeria-lance-en-fevrier-2026.html",
-              "date": "2026-04",
-              "type": "news"
+              "title": "Sumeria (SIA assistant)",
+              "publisher": "Sumeria",
+              "url": "https://www.sumeria.eu/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Hello bank! lance son assistant conversationnel boosté à l'IA générative",
+              "publisher": "BNP Paribas (Hello bank!)",
+              "url": "https://group.bnpparibas/communique-de-presse/hello-bank-lance-son-assistant-conversationnel-booste-a-l-ia-generative",
+              "date": "2026-03",
+              "type": "company"
             },
             {
               "title": "Revolut déploie AIR, son assistant IA, en Europe",
@@ -738,20 +745,14 @@
               "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-septembre/revolut-deploie-air-son-assistant-ia-en-europe.html",
               "date": "2026-09-04",
               "type": "news"
-            },
-            {
-              "title": "Hello bank! lance HelloïZ, assistant IA du service clients propulsé par Mistral",
-              "publisher": "Presse-citron",
-              "url": "https://www.presse-citron.net/hello-bank-lance-helloiz-assistant-ia-service-clients-propulse-mistral/",
-              "date": "2026-03-11",
-              "type": "news"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "assist-only"
         },
         "CA": {
           "status": "live",
-          "note": "CIBC's Virtual Assistant, a chat bot in CIBC Online Banking and the mobile app (English and French), sends Interac e-Transfers, pays bills and moves money between accounts. CIBC launched it as an AI assistant in 2020; its current page calls it a bot and does not describe the technology. No 2026 agent that moves money was found at RBC, TD, Scotiabank, BMO or Wealthsimple.",
+          "note": "CIBC's Virtual Assistant, in CIBC Online Banking and the mobile app, pays bills, moves money between accounts and sends Interac e-Transfers. CIBC's page gives no launch date. No 2026 agent that moves money was found at RBC, TD, Scotiabank, BMO or Wealthsimple.",
           "evidence": [
             {
               "title": "Introducing CIBC's Virtual Assistant",
@@ -759,20 +760,13 @@
               "url": "https://www.cibc.com/en/personal-banking/ways-to-bank/virtual-assistant.html",
               "date": "2026-10",
               "type": "company"
-            },
-            {
-              "title": "CIBC introduces AI-based Virtual Assistant",
-              "publisher": "Retail Banker International",
-              "url": "https://www.retailbankerinternational.com/news/cibc-virtual-assistant/",
-              "date": "2020-12-10",
-              "type": "news"
             }
           ]
         },
         "JP": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Sumishin SBI Net Bank's NEOBANK ai agent (beta since February 2026) sends transfers to registered payees from a chat request, including several payees at once, but only for approved beta users at ten branches; a business version for some corporate customers started beta on 29 October 2026. We found no agent that moves money at the big banks (MUFG, SMBC, Mizuho).",
+          "note": "Sumishin SBI Net Bank's NEOBANK ai agent (beta since February 2026) sends transfers to registered payees from a chat request, but only for approved beta users at ten branches. We found no agent that moves money at the big banks (MUFG, SMBC, Mizuho).",
           "evidence": [
             {
               "title": "NEOBANK ai エージェント(ベータ版)のベータテスト開始について",
@@ -780,20 +774,13 @@
               "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
               "date": "2026-02-27",
               "type": "company"
-            },
-            {
-              "title": "AI銀行サービス「NEOBANK ai」エージェントのベータテストを開始",
-              "publisher": "Digital PR Platform",
-              "url": "https://digitalpr.jp/r/129420",
-              "date": "2026-02",
-              "type": "news"
             }
           ]
         },
         "AU": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "CommBank Companion is in testing with staff and select business customers (May 2026) and does not move money; Macquarie's Q (January 2026) answers questions; CBA's older Ceba bot helps with payments but no source says it sends them itself. No Westpac, NAB or ANZ assistant that pays was found.",
+          "note": "CommBank Companion is in testing with employees and select business customers (May 2026). It answers questions and guides people, and the bank says it does not make decisions for customers. Macquarie's Q (January 2026) answers questions. Searched CBA, Macquarie, Westpac, NAB, ANZ and Up (Nov 2026): no bank assistant that moves money found. Westpac and NAB comments came from trade press only.",
           "evidence": [
             {
               "title": "Reimagining banking with CommBank Companion",
@@ -808,20 +795,13 @@
               "url": "https://www.macquarie.com/about/news/2026/macquarie-reimagines-customer-focused-banking-with-launch-of-q.html",
               "date": "2026-01-19",
               "type": "company"
-            },
-            {
-              "title": "Commonwealth Bank introduces chatbot that can answer 200 banking and payments questions",
-              "publisher": "NFCW",
-              "url": "https://www.nfcw.com/technology/ceba/",
-              "date": "2018-01-23",
-              "type": "news"
             }
           ],
           "confidence": "low"
         },
         "NG": {
           "status": "live",
-          "note": "UBA's Leo, which UBA calls an AI chat banking assistant, lets customers send money, buy airtime and data and pay bills inside WhatsApp, Messenger and Apple Messages for Business (number +234 903 001 0007). Leo dates from 2017 and works mostly as a guided chatbot, not a generative AI agent. We found no assistant that moves money at Moniepoint, OPay, Kuda or PalmPay; Moniepoint's \"M\" chatbot only answers questions.",
+          "note": "UBA's Leo, which UBA calls an AI chat banking assistant, lets customers send money, buy airtime and data and pay bills inside WhatsApp, Messenger and Apple Messages for Business. UBA launched Leo on WhatsApp in 2018. It works mostly as a guided chatbot, not a generative AI agent. We found no assistant that moves money at Moniepoint, OPay, Kuda or PalmPay.",
           "evidence": [
             {
               "title": "Chat with Leo - UBA Nigeria",
@@ -836,20 +816,6 @@
               "url": "https://www.ubagroup.com/57-marina/leo-is-live-on-whatsapp/",
               "date": "2018-09",
               "type": "company"
-            },
-            {
-              "title": "Moniepoint AI chatbot for Nigeria's informal economy",
-              "publisher": "Techsoma",
-              "url": "https://techsoma.africa/moniepoint-ai-chatbot-nigeria-informal-economy/",
-              "date": "2025-11",
-              "type": "news"
-            },
-            {
-              "title": "4 years on, UBA's Leo continues to lead the pack in Nigeria, Africa",
-              "publisher": "Nairametrics",
-              "url": "https://nairametrics.com/2022/02/28/4-years-on-ubas-leo-continues-to-lead-the-pack-in-nigeria-africa/",
-              "date": "2022-02-28",
-              "type": "news"
             }
           ]
         }
