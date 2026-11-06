@@ -441,6 +441,55 @@
               "type": "news"
             }
           ]
+        },
+        "IT": {
+          "status": "live",
+          "note": "Meta opened Business Agent for WhatsApp and Messenger to businesses worldwide in June 2026, and the WhatsApp partner 360dialog says it reached the EU in mid-July 2026. We found no Italy-specific launch page from Meta, so this is low confidence. Some business types, such as finance, health and alcohol, are excluded.",
+          "evidence": [
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Meta entra nella corsa dell'AI per le imprese, lancia il nuovo Business Agent",
+              "publisher": "Milano Finanza",
+              "url": "https://www.milanofinanza.it/news/meta-entra-nella-corsa-dell-ai-per-le-imprese-lancia-il-nuovo-business-agent-202606031716252700",
+              "date": "2026-06-03",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "live",
+          "note": "Meta Business Agent, which Meta opened to businesses of all sizes worldwide in June 2026, has reached the EU since mid-July 2026, according to the WhatsApp partner 360dialog. Dutch businesses on the WhatsApp Business Platform can use it, with some business types excluded, such as finance, health, government, alcohol and gambling. Neither Meta nor 360dialog names the Netherlands.",
+          "evidence": [
+            {
+              "title": "Meta Business Agent (announcement)",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent: check eligibility",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent overview",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -884,6 +933,43 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "We could not confirm any way for an Italian customer to pay a business inside a chat app. Telegram's bot payments page names no countries, so Italy is unconfirmed, and we did not check WhatsApp Pay or Apple Messages for Italy.",
+          "evidence": [
+            {
+              "title": "Bot Payments",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "The only route I could confirm is Telegram bot payments through Stripe, which Stripe supports for Dutch accounts. Telegram's bot payment rules name no country limits. I found no WhatsApp payment feature for Dutch businesses, and no sign that many Dutch businesses take payments in chat.",
+          "evidence": [
+            {
+              "title": "Bot payments",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Stripe: countries and regions",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -912,7 +998,9 @@
         "AU",
         "NG",
         "SG",
-        "ID"
+        "ID",
+        "IT",
+        "NL"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [
@@ -953,7 +1041,9 @@
         "CL",
         "CO",
         "ES",
-        "FR"
+        "FR",
+        "IT",
+        "NL"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [

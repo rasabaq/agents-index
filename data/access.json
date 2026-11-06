@@ -571,6 +571,55 @@
             }
           ],
           "confidence": "low"
+        },
+        "IT": {
+          "status": "live",
+          "note": "Gemini lists Italy among the countries where Gemini Apps are available, so you can sign up today. Claude also lists Italy, and Alexa+ has been in invitation-only early access in Italy since April 2026. ChatGPT was not checked, because its help page blocks scripts.",
+          "evidence": [
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ in Italia da oggi, gratis",
+              "publisher": "Punto Informatico",
+              "url": "https://www.punto-informatico.it/alexa-in-italia-da-oggi-gratis-scopri-cosa-puo-fare-per-te/",
+              "date": "2026-04",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "live",
+          "note": "Gemini and Claude can each be signed up for in the Netherlands: both publish the country on their supported-countries pages. Claude's page shows an effective date of 12 November 2026, so we keep this low confidence. ChatGPT was not checked, and Alexa+ is not usable in the Netherlands.",
+          "evidence": [
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -1093,6 +1142,62 @@
               "type": "company"
             }
           ]
+        },
+        "IT": {
+          "status": "live",
+          "note": "Italian is the main language, and the Gemini mobile app supports Italian. Gemini's connected apps, such as WhatsApp, Phone and Messages, follow the app's language list, so they work in Italian. We found no sign that Chrome's auto browse, which acts on websites for you, is open in Italy yet.",
+          "evidence": [
+            {
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "live",
+          "note": "Dutch is the main language, and the Gemini mobile app lists Dutch. Its connected apps, such as Messages, Phone and WhatsApp, work in every language of the app on Android. Alexa+ is not usable in the Netherlands, and Alexa has no official Dutch version.",
+          "evidence": [
+            {
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ in Nederland: voorlopig niet te gebruiken",
+              "publisher": "Pasquale Pillitteri",
+              "url": "https://pasqualepillitteri.it/nl/news/12624/beste-alexa-skills-vandaag-alexa-plus",
+              "date": "2026-08-24",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -1145,7 +1250,8 @@
         "JP",
         "AU",
         "NG",
-        "SG"
+        "SG",
+        "NL"
       ],
       "capabilities": [
         "access.assistant-available",
@@ -1183,7 +1289,9 @@
         "NG",
         "KR",
         "SG",
-        "ID"
+        "ID",
+        "IT",
+        "NL"
       ],
       "capabilities": [
         "access.assistant-available",

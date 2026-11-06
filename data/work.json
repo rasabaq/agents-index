@@ -315,6 +315,42 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "LoopCV, which sends applications by email or web form in many markets, does not list Italy among its job-board markets. We found no Italian job board whose own agent applies for you.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "We found no agent in the Netherlands that finds jobs and sends applications for you. LoopCV's help page and homepage name no Dutch job board, and we did not find another agent that applies for you here.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            },
+            {
+              "title": "LoopCV homepage",
+              "publisher": "LoopCV",
+              "url": "https://www.loopcv.pro/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -634,6 +670,36 @@
             }
           ],
           "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "TeamSystem's payroll tools add AI and virtual agents to help the payroll consultant, who still processes payslips and filings. We found no Italian payroll provider whose agent runs payroll or files HR forms on its own.",
+          "evidence": [
+            {
+              "title": "TeamSystem: Studio amministrazione del personale",
+              "publisher": "TeamSystem",
+              "url": "https://www.teamsystem.com/studio-amministrazione-del-personale",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "SD Worx, a payroll provider, is rolling out a team of AI agents for payroll work in the Netherlands, but human experts still check the work. The article gives mixed signals on whether the Dutch rollout has started, so this is low confidence.",
+          "evidence": [
+            {
+              "title": "SD Worx integrates AI agents into payroll system",
+              "publisher": "ITdaily",
+              "url": "https://itdaily.com/news/business/sdworx-agents-payroll/",
+              "date": "2026-06-25",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
           "confidence": "low"
         }
       }

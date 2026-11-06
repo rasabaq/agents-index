@@ -17,7 +17,9 @@
     { "code": "NG", "name": "Nigeria", "region": "Africa" },
     { "code": "KR", "name": "South Korea", "region": "Asia" },
     { "code": "SG", "name": "Singapore", "region": "Asia" },
-    { "code": "ID", "name": "Indonesia", "region": "Asia" }
+    { "code": "ID", "name": "Indonesia", "region": "Asia" },
+    { "code": "IT", "name": "Italy", "region": "Europe" },
+    { "code": "NL", "name": "Netherlands", "region": "Europe" }
   ],
   "categories": [
     { "id": "commerce", "name": "Shopping & checkout", "blurb": "Agents that find and buy products for you.", "short": "Shopping", "can": "shop for you" },

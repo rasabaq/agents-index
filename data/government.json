@@ -474,6 +474,43 @@
             }
           ],
           "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "SPID, Italy's national digital ID, can be used by private services that choose to accept it. The person must log in with their own SPID, so an agent can help but cannot prove who the person is on its own. We could not confirm how private apps check identity through the IT Wallet in the IO app.",
+          "evidence": [
+            {
+              "title": "SPID home page (become a service provider section)",
+              "publisher": "SPID (spid.gov.it)",
+              "url": "https://www.spid.gov.it",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "The NL Wallet is not live: the government says it needs national implementing law first, with consultation expected at the end of 2026. Private apps can already check identity through iDIN, a bank-based service that itsme has taken over, but the person identifies through their bank and we found no AI agent that uses it.",
+          "evidence": [
+            {
+              "title": "Digital identity wallet (NL Wallet)",
+              "publisher": "Digitale Overheid",
+              "url": "https://www.nldigitalgovernment.nl/overview/identity/id-wallet/",
+              "date": "2026-11-05",
+              "type": "company"
+            },
+            {
+              "title": "Online identificeren via uw bank (iDIN)",
+              "publisher": "iDIN",
+              "url": "https://www.idin.nl",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
         }
       }
     },
@@ -827,6 +864,35 @@
               "publisher": "Komdigi (via InfoPublik)",
               "url": "https://infopublik.id/kategori/siaran-pers/981094/siaran-pers-lantik-pejabat-baru-komdigi-perkuat-pelayanan-digital-yang-lebih-mudah-cepat-dan-berdampak",
               "date": "2026-07-29",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "INPS, Italy's social security agency, announced its Arianna assistant on 27 October 2026. Arianna answers questions about more than 400 INPS benefits and guides people through the services. Help filling in applications is only planned, so Arianna does not finish a task yet.",
+          "evidence": [
+            {
+              "title": "Arianna, il nuovo assistente digitale basato sull'AI",
+              "publisher": "INPS",
+              "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.10.arianna-il-nuovo-assistente-digitale-basato-sull-ai.html",
+              "date": "2026-10-27",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only"
+        },
+        "NL": {
+          "status": "none",
+          "note": "We found no Dutch government AI assistant that finishes a public-service task. The Belastingdienst (tax) website shows only search and help links, with no chatbot, and we did not check municipal or other government assistants.",
+          "evidence": [
+            {
+              "title": "Belastingdienst (tax authority) website",
+              "publisher": "Belastingdienst",
+              "url": "https://www.belastingdienst.nl/",
+              "date": "2026-11",
               "type": "company"
             }
           ],

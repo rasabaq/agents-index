@@ -390,6 +390,53 @@
           ],
           "gapReason": "no-rule",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "live",
+          "note": "The EU AI Act applies in Italy, and its transparency duties for AI systems have applied since 2 August 2026. Italy also has its own AI law, Law 132/2025, in force since 10 October 2025, which works alongside the Act. Its main chapters cover public administration, professions, courts and crime, and our sources did not name AI agents acting for users.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "date": "2024-07-12",
+              "type": "regulation"
+            },
+            {
+              "title": "AI regulatory framework",
+              "publisher": "European Commission",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "date": "2026-10-19",
+              "type": "company"
+            },
+            {
+              "title": "Legge 23 settembre 2025, n. 132, Disposizioni e deleghe al Governo in materia di intelligenza artificiale",
+              "publisher": "Normattiva",
+              "url": "https://www.normattiva.it/eli/id/2025/09/25/25G00143/CONSOLIDATED",
+              "date": "2025-09-25",
+              "type": "regulation"
+            }
+          ]
+        },
+        "NL": {
+          "status": "live",
+          "note": "The EU AI Act is in force in the Netherlands, so the cell is live. Most of it has applied since 2 August 2026, and the high-risk rules were pushed back to December 2027 and August 2028.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "EUR-Lex (European Union)",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+              "date": "2024-06-13",
+              "type": "regulation"
+            },
+            {
+              "title": "AI Act application timeline",
+              "publisher": "European Commission",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "date": "2026-10-19",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -751,6 +798,57 @@
           "status": "none",
           "note": "We found no consumer or payment rule that clearly covers purchases an AI agent makes for you, and no regulator statement on agent purchases. We could not open the consumer protection law or Bank Indonesia's payment rules, so confidence is low.",
           "evidence": [],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "Italy applies the EU payment rules (PSD2), which require the bank to refund unauthorised payments right away. A payment counts as authorised only when the payer has consented. EU consumer rules also give a 14-day right to withdraw from online purchases. None of these names an AI agent, so it is unclear whether an order an agent places counts as the customer's consent.",
+          "evidence": [
+            {
+              "title": "Directive (EU) 2015/2366 (PSD2), Articles 64 and 73",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj",
+              "date": "2015-11-25",
+              "type": "regulation"
+            },
+            {
+              "title": "Directive 2011/83/EU on consumer rights, Article 9",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/dir/2011/83/oj",
+              "date": "2011-10-25",
+              "type": "regulation"
+            },
+            {
+              "title": "Decreto legislativo 27 gennaio 2010, n. 11 (payment services)",
+              "publisher": "Normattiva",
+              "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2010-01-27;11",
+              "date": "2010-01-27",
+              "type": "regulation"
+            },
+            {
+              "title": "Codice del consumo, Decreto legislativo 6 settembre 2005, n. 206",
+              "publisher": "Normattiva",
+              "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-09-06;206",
+              "date": "2005-09-06",
+              "type": "regulation"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "EU payment law, carried into Dutch law, makes your bank refund a payment you did not authorise, right away and no later than the end of the next business day after it learns of the payment, unless it suspects fraud. The rule does not say whether an order an agent places counts as authorised, and we found no Dutch rule or regulator statement that covers agent purchases.",
+          "evidence": [
+            {
+              "title": "Directive (EU) 2015/2366 (PSD2), Article 73: payment service provider's liability for unauthorised payment transactions",
+              "publisher": "EUR-Lex (European Union)",
+              "url": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj/eng",
+              "date": "2015-11",
+              "type": "regulation"
+            }
+          ],
           "gapReason": "no-rule",
           "confidence": "low"
         }

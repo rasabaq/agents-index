@@ -312,6 +312,43 @@
           "note": "We found no Indonesian insurer or insurtech that sells a car, home or travel policy end to end in a chat with an AI agent. Qoala, the main local insurtech we checked, had only older sources (2020 to 2023) that we could open, so its current sales channels are unconfirmed.",
           "evidence": [],
           "confidence": "low"
+        },
+        "IT": {
+          "status": "announced",
+          "note": "Laura.it has announced an AI car-insurance intermediary that was due to start in mid-October 2026, but no launch or in-chat purchase has been confirmed. A November 2025 survey found that six in ten Italian consumers used insurance chatbots and voicebots, mostly before buying a policy.",
+          "evidence": [
+            {
+              "title": "Laura.it vara l'assicurazione AI",
+              "publisher": "MF-Milano Finanza",
+              "url": "https://www.milanofinanza.it/news/laura-it-vara-l-assicurazione-ai-2719047",
+              "date": "2026-09-30",
+              "type": "news"
+            },
+            {
+              "title": "IIA: 6 consumatori su 10 usano l'AI per interagire con l'Assicurazione",
+              "publisher": "Aziendabanca",
+              "url": "https://www.aziendabanca.it/notizie/assicurazioni/iia-intelligenza-artificiale-assicurazioni",
+              "date": "2025-11-20",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "Lemonade's AI bot Maya asks a few questions in the Dutch app and then shows a quote you can edit. You still install the app and finish the sign-up there, so the chat helps but you do the last step.",
+          "evidence": [
+            {
+              "title": "Dutch Review article on Lemonade's Maya quote flow",
+              "publisher": "Dutch Review",
+              "url": "https://dutchreview.com/?p=69338",
+              "date": "2026-11",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
         }
       }
     },
@@ -578,6 +615,35 @@
           "note": "We found no Indonesian insurer whose AI agent takes a claim in a chat and moves it forward. Older reports of a WhatsApp claim bot at Qoala could not be confirmed from a dated source.",
           "evidence": [],
           "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "No insurer in Italy was found where an AI agent takes a claim in chat and moves it forward. A November 2025 survey found that over half of Italian consumers would be ready to use advanced AI assistants to buy a policy or report a claim, but that is stated interest, not a product.",
+          "evidence": [
+            {
+              "title": "IIA: 6 consumatori su 10 usano l'AI per interagire con l'Assicurazione",
+              "publisher": "Aziendabanca",
+              "url": "https://www.aziendabanca.it/notizie/assicurazioni/iia-intelligenza-artificiale-assicurazioni",
+              "date": "2025-11-20",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "live",
+          "note": "In Lemonade's Dutch app, you file a claim by starting a chat with the claims bot AI Jim from your policy page.",
+          "evidence": [
+            {
+              "title": "Zo dien je een Lemonade claim in",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/nl/inboedel/uitgelegd/lemonade-claim-indienen/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -594,7 +660,8 @@
         "US",
         "GB",
         "DE",
-        "FR"
+        "FR",
+        "NL"
       ],
       "capabilities": [
         "insurance.buy-policy",

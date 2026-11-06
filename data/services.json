@@ -372,6 +372,41 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "live",
+          "note": "TheFork's app takes restaurant bookings in Italy, and Italian press reports that TheFork's ChatGPT app finds tables and books them inside the chat (one example is a pizzeria in Rome).",
+          "evidence": [
+            {
+              "title": "TheFork: ristoranti e offerte (App Store listing, Italy bookings)",
+              "publisher": "TheFork (App Store listing)",
+              "url": "https://apps.apple.com/it/app/thefork-ristoranti-e-offerte/id424850908",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "TheFork for ChatGPT: restaurant bookings in conversation",
+              "publisher": "Techprincess",
+              "url": "https://techprincess.it/thefork-chatgpt-prenotazioni-ristoranti-conversazione-ai/amp/",
+              "date": "2026-11",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "TheFork's app inside ChatGPT is listed for the Netherlands in a December 2025 Forbes España article, and it takes restaurant reservations inside the chat. Only this press report confirms it, and other reports give different launch dates, so this is limited.",
+          "evidence": [
+            {
+              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes a través de ChatGPT",
+              "publisher": "Forbes España",
+              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
+              "date": "2025-12-22",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -769,6 +804,39 @@
         "ID": {
           "status": "live",
           "note": "The Booking.com app in ChatGPT is open to ChatGPT users worldwide. It lets Indonesian users search hotels and car rentals in chat, then sends them to Booking.com to finish the booking. Google AI Mode hotel booking is US-only, and we found no Traveloka app in ChatGPT.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            }
+          ]
+        },
+        "IT": {
+          "status": "live",
+          "note": "Booking.com's app in ChatGPT is open to ChatGPT users worldwide, and after you pick an option it sends you to Booking.com to finish the reservation. Google's AI Mode hotel booking has only started rolling out in the US so far.",
+          "evidence": [
+            {
+              "title": "Booking.com is making car rentals easier with app in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "NL": {
+          "status": "live",
+          "note": "The Booking.com app inside ChatGPT is open to ChatGPT users worldwide, so people in the Netherlands can use it to find hotels and then hand off to Booking.com to finish the booking. Google AI Mode hotel booking was not found for the Netherlands.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -1199,6 +1267,63 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "Glovo's assistant works inside ChatGPT and Claude to find food and shop items, but you finish the order in the Glovo app, according to Italian press. Just Eat's AI voice assistant names only the UK and Germany as launch markets, so Italy is not confirmed for it.",
+          "evidence": [
+            {
+              "title": "Glovo shopping AI assistant is a first for Italy (Techprincess)",
+              "publisher": "Techprincess",
+              "url": "https://techprincess.it/glovo-assistente-shopping-ai-novita-assoluta-in-italia/",
+              "date": "2026-11",
+              "type": "news"
+            },
+            {
+              "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
+              "date": "2026-08-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "Thuisbezorgd.nl, the Dutch brand of Just Eat Takeaway.com, has an AI chat assistant that places orders, according to Emerce. Bright.nl (1 October 2026) says Thuisbezorgd has no AI this smart, so the sources disagree and this counts as limited. Uber's ChatGPT rides integration only shows results in the US.",
+          "evidence": [
+            {
+              "title": "Thuisbezorgd.nl AI-assistent (Emerce, Industry Wire)",
+              "publisher": "Emerce",
+              "url": "https://www.emerce.nl/wire/thuisbezorgdnl-maakt-bestellen-nog-makkelijker-aiassistent",
+              "date": "2026-11",
+              "type": "news"
+            },
+            {
+              "title": "Eten bestellen via AI is zo makkelijk",
+              "publisher": "Bright.nl",
+              "url": "https://www.bright.nl/nieuws/2141740/eten-bestellen-via-ai-is-zo-makkelijk.html",
+              "date": "2026-10-01",
+              "type": "news"
+            },
+            {
+              "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe to make discovering your next order as easy as having a conversation",
+              "publisher": "Just Eat Takeaway.com",
+              "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
+              "date": "2026-08-11",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Rides",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -1248,7 +1373,9 @@
         "NG",
         "KR",
         "SG",
-        "ID"
+        "ID",
+        "IT",
+        "NL"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -1262,11 +1389,14 @@
           "MX",
           "ES",
           "FR",
-          "SG"
+          "SG",
+          "IT",
+          "NL"
         ],
         "services.delivery-rides": [
           "US",
-          "FR"
+          "FR",
+          "IT"
         ]
       }
     },
@@ -1361,7 +1491,9 @@
       "markets": [
         "GB",
         "ES",
-        "FR"
+        "FR",
+        "IT",
+        "NL"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -1463,7 +1595,9 @@
         "NG",
         "KR",
         "SG",
-        "ID"
+        "ID",
+        "IT",
+        "NL"
       ],
       "capabilities": [
         "services.travel-booking"
@@ -1606,7 +1740,8 @@
       "role": "Runs an AI assistant in the Just Eat and Lieferando apps that takes food orders by chat or voice and fills the basket for checkout.",
       "markets": [
         "GB",
-        "DE"
+        "DE",
+        "NL"
       ],
       "capabilities": [
         "services.delivery-rides"
@@ -1620,7 +1755,8 @@
       "icon": "https://glovoapp.com/apple-icon.png",
       "role": "Barcelona delivery app whose assistant in ChatGPT and Claude finds supermarket and shop products, then hands off to the Glovo app to order.",
       "markets": [
-        "ES"
+        "ES",
+        "IT"
       ],
       "capabilities": [
         "services.delivery-rides"

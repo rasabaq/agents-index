@@ -274,6 +274,20 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "No AI agent that books a doctor's visit in Italy was found.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "No AI agent found that books a Dutch GP (huisarts) visit. I could not open a Dutch booking portal that shows any AI option.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -500,6 +514,28 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "Italy's electronic prescription (ricetta elettronica) is sent by doctors through the national SSN system, which now needs two-factor login for prescribers. No AI agent was found that can renew or order a medicine for you.",
+          "evidence": [
+            {
+              "title": "Sistema TS, electronic prescription (ricetta elettronica)",
+              "publisher": "Sistema TS",
+              "url": "https://sistemats1.sanita.finanze.it/portale/home",
+              "date": "2026-10-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "No AI agent found that orders a Dutch prescription refill. Prescriptions go through the patient's own pharmacy, and the pharmacy site apotheek.nl sends patients back to their own pharmacy.",
+          "evidence": [],
+          "gapReason": "rail-closed",
+          "confidence": "low"
         }
       }
     },
@@ -700,6 +736,20 @@
         "ID": {
           "status": "none",
           "note": "We found no AI agent that checks your own health cover or claim status in Indonesia, for BPJS Kesehatan or for private insurers. Our checks did not look at each insurer's chat channel, so this is a low-confidence none.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "No AI agent that checks your health cover or a claim was found in Italy.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "No AI assistant found that checks your own Dutch health cover or a claim status.",
           "evidence": [],
           "gapReason": "not-launched",
           "confidence": "low"

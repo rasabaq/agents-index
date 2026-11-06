@@ -601,6 +601,56 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "We found no way for an Italian shopper to buy from an AI chat today. Google's Universal Cart launched only in the US on 15 October 2026, and Alexa+ is in invitation-only early access in Italy, but we found no sign that it places Amazon orders there. We could not check ChatGPT, Microsoft Copilot or Perplexity checkout for Italy.",
+          "evidence": [
+            {
+              "title": "Universal Cart launch",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+              "date": "2026-10-15",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ Italy: Amazon AI Assistant Guide & Features",
+              "publisher": "Pasquale Pillitteri",
+              "url": "https://pasqualepillitteri.it/en/news/933/alexa-plus-italy-guide-features",
+              "date": "2026-04-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "Amazon's Alexa+ can order from Amazon by voice, but its live country list (updated 28 October 2026) does not include the Netherlands. Google's agentic checkout in AI Mode and Gemini works only in the US and Australia, with Canada, Australia and the UK named as the next countries. I found no way to buy inside an AI assistant in the Netherlands.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+              "date": "2026-05-20",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched"
         }
       }
     },
@@ -1028,6 +1078,43 @@
             }
           ],
           "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "We found no marketplace agent that buys for Italian shoppers today. Amazon's Alexa+ is in early access by invitation in Italy, but an April 2026 guide describes restaurant bookings and smart-home routines, not Amazon purchases. We could not open Amazon's Italian Alexa+ page, so Rufus Buy for Me and Auto Buy are unchecked for Italy.",
+          "evidence": [
+            {
+              "title": "Alexa+ Italy: Amazon AI Assistant Guide & Features",
+              "publisher": "Pasquale Pillitteri",
+              "url": "https://pasqualepillitteri.it/en/news/933/alexa-plus-italy-guide-features",
+              "date": "2026-04-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "bol, the Dutch online shop, has a Gift Assistant in its app where customers can order suggested gifts. Its shopping assistant, Shophulp, opened to all customers on 15 September 2026 and recommends products, but I found no sign it buys for customers. Amazon's Alexa+ is not in the Netherlands, and I could not confirm that Rufus is live on amazon.nl.",
+          "evidence": [
+            {
+              "title": "Bol launches AI-powered gift suggestion tool in app",
+              "publisher": "Retail Systems",
+              "url": "https://retail-systems.com/rs/Dutch_Online_Retailer_Bol_Launches_AI_Powered_Gift_Suggestion_Tool_In_App.php",
+              "date": "2025-12",
+              "type": "news"
+            },
+            {
+              "title": "Bol adds AI next to the search bar",
+              "publisher": "RetailDetail",
+              "url": "https://www.retaildetail.eu/news/general/bol-adds-ai-next-to-the-search-bar/",
+              "date": "2026-09-15",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
           "confidence": "low"
         }
       }
@@ -1499,6 +1586,57 @@
           ],
           "gapReason": "assist-only",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "Italian merchants can take part in agent-shopping pilots, but agent sales are not open to Italian shoppers yet. In March 2026 Nexi, the Italian payments group, said it is working with pilot merchants in Italy and is building agent-ready payment gateways, with Google's Universal Commerce Protocol checkout support still planned. Stripe says its agent checkout is open in the US, Canada and 'select European countries' without naming them.",
+          "evidence": [
+            {
+              "title": "Nexi launches new agentic commerce capabilities",
+              "publisher": "Nexi",
+              "url": "https://www.nexigroup.com/en/media-relations/news/2026/03/new-agentic-commerce-capabilities/",
+              "date": "2026-03-04",
+              "type": "company"
+            },
+            {
+              "title": "Sell products through agents",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail.md",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "Stripe supports Dutch accounts, but the agent channels Shopify lists serve US shoppers, with Meta's checkout also covering Canada and Mexico. Google says its UCP checkout will reach Canada and Australia first and the UK later, with no date for the Netherlands. I found no agent that sells to Dutch shoppers through a merchant protocol today.",
+          "evidence": [
+            {
+              "title": "Which Shopify AI channels work outside the US? The 2026 table",
+              "publisher": "Craftshift",
+              "url": "https://craftshift.com/shopify-ai-channels-outside-us/",
+              "date": "2026-10-19",
+              "type": "news"
+            },
+            {
+              "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Stripe: countries and regions",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -1684,7 +1822,8 @@
         "GB",
         "DE",
         "ES",
-        "FR"
+        "FR",
+        "IT"
       ],
       "capabilities": [
         "commerce.merchant-protocol"

@@ -393,6 +393,56 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "announced",
+          "note": "No Italian card can make an agent purchase yet. Visa's Agentic Ready started testing agent payments in Europe in March 2026 with European issuers that include Nexi Group, but the programme's first launch is named only as Europe and the UK, not Italy. Mastercard's Agent Pay began in the US in 2025, and we found no Italian launch date for it.",
+          "evidence": [
+            {
+              "title": "Visa lancia 'Agentic Ready' e testa l'Agentic Commerce con gli issuer europei",
+              "publisher": "AziendaBanca",
+              "url": "https://www.aziendabanca.it/notizie/tecno/visa-lancia-agentic-ready",
+              "date": "2026-03-17",
+              "type": "news"
+            },
+            {
+              "title": "Visa lancia l'ecosistema per lo shopping guidato da agentic AI",
+              "publisher": "AziendaBanca",
+              "url": "https://www.aziendabanca.it/notizie/tecno/visa-intelligent-commerce-ai",
+              "date": "2025-04-30",
+              "type": "news"
+            },
+            {
+              "title": "Arriva l'Agent Pay di Mastercard per il commercio agentico",
+              "publisher": "AziendaBanca",
+              "url": "https://www.aziendabanca.it/notizie/tecno/mastercard-agent-pay",
+              "date": "2025-05-07",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "Mastercard Agent Pay has run two Dutch pilots. Rabobank made an AI agent payment on a Rabobank Mastercard credit card in late April 2026. On 2 June 2026, ING and Worldline ran a single live agent purchase on an ING card at a Dutch merchant. Neither bank has given a date for customer use.",
+          "evidence": [
+            {
+              "title": "Mastercard and Rabobank complete first AI agent payment in the Netherlands",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/mastercard-and-rabobank-complete-first-ai-agent-payment-in-the-netherlands",
+              "date": "2026-05-04",
+              "type": "news"
+            },
+            {
+              "title": "Worldline and ING execute first European agentic payment",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/worldline-ing-and-mastercard-execute-first-european-agentic-payment",
+              "date": "2026-06-02",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only"
         }
       }
     },
@@ -741,6 +791,49 @@
           ],
           "gapReason": "rail-closed",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "Italian banks must offer instant euro transfers under EU law, but we found no way for an AI agent to send one for you. Wero, the EU instant wallet, is not offered in Italy, and Satispay, an Italian instant payment app, lists no agent features.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/886 (Instant Payments Regulation)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/886/oj",
+              "date": "2024-03",
+              "type": "regulation"
+            },
+            {
+              "title": "Wero",
+              "publisher": "EPI Company",
+              "url": "https://www.wero-wallet.eu",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Satispay",
+              "publisher": "Satispay",
+              "url": "https://www.satispay.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "iDEAL, the Dutch bank payment rail, will rebrand to iDEAL | Wero in 2026, and the technical move onto Wero still needs approval from De Nederlandsche Bank. The iDEAL announcement does not mention AI agents or payments started by an assistant, so no agent can start an iDEAL or Wero payment today.",
+          "evidence": [
+            {
+              "title": "iDEAL to phase into Wero starting in 2026",
+              "publisher": "iDEAL",
+              "url": "https://ideal.nl/en/ideal-vanaf-2026-stapsgewijs-over-naar-wero",
+              "date": "2025-10-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed"
         }
       }
     },
@@ -1096,6 +1189,43 @@
           "evidence": [],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "Stripe's shared payment tokens, which pass a customer's card or wallet to a seller for an agent purchase, list Italy as a supported country, but the API is still a preview. Stripe's Link Agent Wallet, which lets an agent pay for you, works only for US and Canadian customers. We found no Italian bank, wallet or fintech app that lets an agent pay for you yet.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=agent",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet.md",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "I found no Dutch wallet or fintech app that lets an AI agent pay for you. Stripe supports Dutch accounts, but I could not confirm any agent payment feature open in the Netherlands.",
+          "evidence": [
+            {
+              "title": "Stripe: countries and regions",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -1146,7 +1276,8 @@
         "JP",
         "AU",
         "KR",
-        "SG"
+        "SG",
+        "NL"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -1196,7 +1327,8 @@
         "DE",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "IT"
       ],
       "capabilities": [
         "payments.wallet-agent",

@@ -507,6 +507,54 @@
           ],
           "gapReason": "rail-closed",
           "confidence": "low"
+        },
+        "IT": {
+          "status": "live",
+          "note": "Italy's PSD2 law (Legislative Decree 218/2017) makes account information and payment initiation licensed services, so licensed providers can read accounts and start payments. CBI Globe, an Italian open finance ecosystem, says its standard APIs follow PSD2 and that a licensed third party can reach all Italian current accounts. We did not find a named AI agent product that uses these APIs yet.",
+          "evidence": [
+            {
+              "title": "Decreto Legislativo 15 dicembre 2017, n. 218",
+              "publisher": "Normattiva",
+              "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2017-11-15;218",
+              "date": "2017-12",
+              "type": "regulation"
+            },
+            {
+              "title": "CBI Globe",
+              "publisher": "CBI S.c.p.A.",
+              "url": "https://www.cbi-org.eu/Servizi/CBI-Globe",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Directive (EU) 2015/2366 (PSD2)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj",
+              "date": "2015-11",
+              "type": "regulation"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "live",
+          "note": "PSD2 is EU law that applies in the Netherlands, and it requires banks to let licensed third parties read account data and start payments with the customer's consent. ABN AMRO's developer portal lists a live PSD2 payment initiation API, so a licensed third party can start payments from an ABN AMRO account.",
+          "evidence": [
+            {
+              "title": "Summary: revised rules for payment services in the EU (PSD2)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/EN/legal-content/summary/revised-rules-for-payment-services-in-the-eu.html",
+              "date": "2024-11-09",
+              "type": "regulation"
+            },
+            {
+              "title": "ABN AMRO Developer Portal",
+              "publisher": "ABN AMRO",
+              "url": "https://developer.abnamro.com/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -971,6 +1019,36 @@
               "url": "https://keuangan.kontan.co.id/news/bank-mandiri-permudah-transaksi-lewat-asisten-virtual-di-whatsapp",
               "date": "2020-10-08",
               "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "We found no Italian bank whose AI assistant moves money, pays bills or takes payment orders by chat or voice. A January 2026 Milano Finanza review of bank AI covers UniCredit's lending and deal tools and Intesa Sanpaolo's fraud tools, and neither moves money for customers.",
+          "evidence": [
+            {
+              "title": "L'AI cresce in banca",
+              "publisher": "Milano Finanza",
+              "url": "https://www.milanofinanza.it/news/l-ai-cresce-in-banca-2690752",
+              "date": "2026-01-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "I found no Dutch bank assistant that moves money for customers. bunq's Finn is described as an AI support assistant, and ABN AMRO's chatbot Anna answers questions. Coverage is thin, so confidence is low.",
+          "evidence": [
+            {
+              "title": "bunq launches smarter, more powerful upgrade to GenAI financial assistant",
+              "publisher": "bunq",
+              "url": "https://press.bunq.com/258930-bunq-launches-smarter-more-powerful-upgrade-to-genai-financial-assistant/",
+              "date": "2025-12-16",
+              "type": "company"
             }
           ],
           "gapReason": "not-launched",
