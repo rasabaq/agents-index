@@ -1,6 +1,6 @@
 // The country overview: a mosaic of every capability and a small fingerprint. Both return HTML strings and touch no DOM.
 // capIndex maps a capability id to { ...capability, category } (as app.js builds it); a cell is cap.countries[code].
-import { STATUSES } from './src/observatory.js';
+import { STATUSES, article } from './src/observatory.js';
 import { esc, flag } from './ui.js';
 
 // One shape per gap reason, so colour is never the only signal. 'unknown' is a cell with no reason recorded.
@@ -56,7 +56,7 @@ export function mosaic({ meta, capIndex, code, gapLabel, errandOf = {}, openErra
   ].filter(Boolean).join('');
 
   return `<section class="card panel ov" aria-labelledby="ov-title">
-    <header class="ov-h"><h2 id="ov-title">All ${caps.length} things we track in ${/^United /.test(name) ? 'the ' : ''}${flag(code)}${esc(name)}</h2>
+    <header class="ov-h"><h2 id="ov-title">All ${caps.length} things we track in ${article(name)}${flag(code)}${esc(name)}</h2>
       <p class="label">${caps.length - gaps.length} live · ${gaps.length} gaps${errands ? ` · ${inErrand} in an errand` : ''}</p></header>
     <p class="ov-sub">One square per thing an agent might do, grouped by area. Calm squares work today; gaps are coloured and shaped by why they are gaps. Press a square for the details.</p>
     <p class="ov-key">${key}</p>

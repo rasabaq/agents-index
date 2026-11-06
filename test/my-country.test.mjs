@@ -14,7 +14,11 @@ test('the start country comes from the hash, then the time zone, then the browse
   assert.equal(startCountry(codes, '', ['de-DE', 'es'], 'Europe/Berlin'), 'US');
   assert.equal(guessCountry(codes, ['de-DE'], 'Europe/Berlin'), null);
   assert.equal(guessCountry(codes, [], 'America/Monterrey'), 'MX');
-  const zones = { ES: 'Atlantic/Canary', FR: 'Europe/Paris', CA: 'America/St_Johns', JP: 'Asia/Tokyo', AU: 'Australia/Perth', NG: 'Africa/Lagos' };
+  const zones = {
+    ES: 'Atlantic/Canary', FR: 'Europe/Paris', CA: 'America/St_Johns', JP: 'Asia/Tokyo', AU: 'Australia/Perth', NG: 'Africa/Lagos',
+    KR: 'Asia/Seoul', SG: 'Asia/Singapore', ID: 'Asia/Makassar', AR: 'America/Argentina/Cordoba', ZA: 'Africa/Johannesburg',
+    IT: 'Europe/Rome', NL: 'Europe/Amsterdam', AE: 'Asia/Dubai', SA: 'Asia/Riyadh', KE: 'Africa/Nairobi',
+  };
   for (const [code, zone] of Object.entries(zones)) assert.equal(guessCountry(Object.keys(zones), [], zone), code);
 });
 

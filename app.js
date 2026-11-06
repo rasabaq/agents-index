@@ -1,4 +1,4 @@
-import { STATUSES, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, companiesFor, BUSINESS_GROUPS, readHash, writeHash } from './src/observatory.js';
+import { STATUSES, inSentence, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, couldClose, companiesFor, BUSINESS_GROUPS, readHash, writeHash } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS, errandIn, findStep } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { mosaic, fingerprint } from './overview.js';
@@ -52,8 +52,7 @@ const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : 
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', unsure' : ''}`;
 const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
 const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
-// "the United States", "Chile": a country's name inside a sentence.
-const where = (r) => `${/^United /.test(r.name) ? 'the ' : ''}${r.name}`;
+const where = (r) => inSentence(r.name);
 const ordinal = (n) => `${n}${['th', 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] ?? 'th'}`;
 // Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
 // Cells may not have one yet.

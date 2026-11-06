@@ -40,6 +40,7 @@ export function scoreCountries(meta, categories) {
 export function validate(meta, categories) {
   const errors = [];
   const codes = new Set(meta.countries.map((c) => c.code));
+  if (codes.size !== meta.countries.length) errors.push('meta: every country code must be listed once');
   const categoryIds = new Set(meta.categories.map((c) => c.id));
   const capIds = new Set();
   const gapReasons = new Set((meta.gapReasons ?? []).map((r) => r.id));
@@ -230,11 +231,15 @@ export function extremes(byCategory) {
   };
 }
 
+// A country's name inside a sentence: "the United States", "the Netherlands", "Chile".
+// ponytail: "the" only for these names; add an article field to meta.json if more need one
+export const article = (name) => (/^(United |Netherlands$)/.test(name) ? 'the ' : '');
+export const inSentence = (name) => `${article(name)}${name}`;
+
 // One line about a country, from its category scores. 50 is the line between "can" and "cannot yet".
 export function summarize(name, byCategory) {
   const { best, weak } = extremes(byCategory);
-  // ponytail: "the" only for names that start with "United"; add an article field to meta.json if more need one
-  const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
+  const where = `In ${inSentence(name)}`;
   if (byCategory[weak] >= 50) return `${where}, an agent can ${words(best).can}. Even its weakest area, ${words(weak).short.toLowerCase()}, scores ${byCategory[weak]}.`;
   if (byCategory[best] < 50) return `${where}, agents are still early. The best category, ${words(best).short.toLowerCase()}, scores ${byCategory[best]}.`;
   return `${where}, an agent can ${words(best).can}. It cannot ${words(weak).can} yet.`;
@@ -256,6 +261,16 @@ const ZONES = {
   JP: /^Asia\/Tokyo$/,
   AU: /^(Australia\/[A-Za-z_]+|Antarctica\/Macquarie)$/,
   NG: /^Africa\/Lagos$/,
+  KR: /^Asia\/Seoul$/,
+  SG: /^Asia\/Singapore$/,
+  ID: /^Asia\/(Jakarta|Pontianak|Makassar|Jayapura)$/,
+  AR: /^America\/(Argentina\/[A-Za-z_]+|Buenos_Aires)$/,
+  ZA: /^Africa\/Johannesburg$/,
+  IT: /^Europe\/Rome$/,
+  NL: /^Europe\/Amsterdam$/,
+  AE: /^Asia\/Dubai$/,
+  SA: /^Asia\/Riyadh$/,
+  KE: /^Africa\/Nairobi$/,
 };
 
 // The visitor's own country, if we can tell: their time zone first, then the region of their browser languages
@@ -300,7 +315,7 @@ export function verdict(name, byCategory, liveBy, reasonFor = () => null) {
   const cannotIds = ids.filter((id) => !liveBy[id]).sort((a, b) => byCategory[a] - byCategory[b]).slice(0, 2);
   const cannot = cannotIds.map((id) => words(id).can);
   const reason = cannotIds.length ? reasonFor(cannotIds) : null;
-  const where = `In ${/^United /.test(name) ? 'the ' : ''}${name}`;
+  const where = `In ${inSentence(name)}`;
   const why = reason ? ` Main reason: ${reason}.` : '';
   if (!cannot.length) return `${where}, AI agents can ${join(can, 'and')} today. Something works in every area, though not all of it yet.`;
   if (!can.length) return `${where}, nothing we track works for AI agents yet: they cannot ${join(cannot, 'or')}.${why}`;

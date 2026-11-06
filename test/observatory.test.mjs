@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreCountries, validate, summarize, mergeCompanies, useCategoryWords, shortName } from '../src/observatory.js';
+import { scoreCountries, validate, summarize, mergeCompanies, useCategoryWords, shortName, inSentence } from '../src/observatory.js';
 import { readFileSync } from 'node:fs';
 // Sentences use the category words from data/meta.json, as the site does.
 useCategoryWords(JSON.parse(readFileSync(new URL('../data/meta.json', import.meta.url), 'utf8')).categories);
@@ -58,6 +58,11 @@ test('valid data has no problems', () => {
   assert.deepEqual(validate(meta, categories), []);
 });
 
+test('validate catches a country listed twice', () => {
+  const twice = { ...meta, countries: [...meta.countries, meta.countries[0]] };
+  assert.match(validate(twice, categories).join('\n'), /every country code must be listed once/);
+});
+
 test('validate catches the mistakes that break trust', () => {
   const bad = structuredClone(categories);
   bad[0].capabilities[0].countries.AA.evidence = []; // live without a source
@@ -99,3 +104,7 @@ test('every category needs short and can in meta.json, even the first seven', ()
   assert.equal(shortName('care'), 'Care');
 });
 
+
+test('country names read right inside a sentence', () => {
+  assert.deepEqual(['United States', 'Netherlands', 'Chile'].map(inSentence), ['the United States', 'the Netherlands', 'Chile']);
+});
