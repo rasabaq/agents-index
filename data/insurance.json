@@ -75,8 +75,9 @@
           ]
         },
         "DE": {
-          "status": "limited",
-          "note": "Lemonade sells contents and personal liability cover in its German app and website, but no German page we found says its AI bot Maya runs the sign-up there.",
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Lemonade offers contents and personal liability cover in Germany, but its FAQ does not say its AI bot Maya runs the sign-up. Searched Check24 and Allianz (Nov 2026); neither sells a policy in a chat. No primary source shows an AI that completes a purchase here.",
           "evidence": [
             {
               "title": "Hausrat & Privathaftpflichtversicherung FAQ",
@@ -84,20 +85,6 @@
               "url": "https://www.lemonade.com/de/faq",
               "date": "2026-10",
               "type": "company"
-            },
-            {
-              "title": "Lemonade: Hausrat und Privathaftpflicht schnell per App abschließen",
-              "publisher": "appgefahren",
-              "url": "https://www.appgefahren.de/lemonade-hausrat-und-privathaftpflicht-schnell-per-app-abschliessen-269254.html",
-              "date": "2020-01-20",
-              "type": "news"
-            },
-            {
-              "title": "Insurtech Lemonade: KI und Anti-Fraud-Checks",
-              "publisher": "IT Finanzmagazin",
-              "url": "https://www.it-finanzmagazin.de/insurtech-lemonade-ai-ki-anti-fraud-checks-99386/",
-              "date": "2019-12-30",
-              "type": "news"
             }
           ],
           "confidence": "low"
@@ -105,7 +92,7 @@
         "IN": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "PolicyX's Pixie chatbot (December 2025) gives live quotes and compares plans from more than 50 insurers, but it hands complex cases to an advisor and does not complete the purchase in the chat.",
+          "note": "PolicyX's Pixie chatbot (December 2025) answers questions and compares plans, according to PolicyX's own page. That page does not say Pixie completes a purchase, so you finish on PolicyX's site. Searched ACKO and Digit (Nov 2026): both sell in their apps or websites, not in a chat. Policybazaar's site did not load.",
           "evidence": [
             {
               "title": "PolicyX launches Pixie, India's first AI insurance chatbot",
@@ -125,21 +112,14 @@
           "confidence": "low"
         },
         "BR": {
-          "status": "live",
-          "note": "HUBSEGS sells insurance entirely on WhatsApp with generative AI, from quote to a digital policy in the chat, in under three minutes, for brokers and their clients.",
+          "status": "limited",
+          "note": "Press reports that HUBSEGS sells insurance on WhatsApp with generative AI, from quote to a digital policy, for brokers and their clients. HUBSEGS's own site says it works only through brokers and does not mention a WhatsApp AI sale. Searched Youse and Pier (Nov 2026): no chat purchase found. No primary source confirms the chat sale.",
           "evidence": [
             {
               "title": "HUBSEGS comercializa seguros 100% pelo WhatsApp",
               "publisher": "Revista Apólice",
               "url": "https://revistaapolice.com.br/2025/01/hubsegs-comercializa-seguros-100-pelo-whatsapp/",
               "date": "2025-01-20",
-              "type": "news"
-            },
-            {
-              "title": "HUBSEGS vende seguros pelo WhatsApp com GenAI",
-              "publisher": "Baguete",
-              "url": "https://www.baguete.com.br/noticias/hubsegs-vende-seguros-pelo-whatsapp-com-genai",
-              "date": "2025-01",
               "type": "news"
             }
           ],
@@ -161,7 +141,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "Líder Bci sells insurance on WhatsApp with conversational AI, from quote to payment and policy issue in two to three minutes, starting with the SOAP mandatory car insurance (May 2025).",
+          "note": "Líder Bci sells insurance on WhatsApp with conversational AI, from quote to payment and policy issue in two to three minutes, starting with the SOAP mandatory car insurance (May 2025). Searched liderbci.cl and the press (Nov 2026): only one trade news report confirms the chat sale; no primary source.",
           "evidence": [
             {
               "title": "Líder Bci habilita contratación de seguros por WhatsApp",
@@ -176,7 +156,7 @@
         "CO": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "We found no AI that sells a policy in a chat in Colombia. The digital agency Seguro Canguro uses AI only to check car policy documents before it sends the policy.",
+          "note": "We found no AI that sells a policy in a chat in Colombia. The digital agency Seguro Canguro uses AI only to check car policy documents before it sends the policy. Searched Sura, Bolívar and Falabella Seguros (Nov 2026): none shows an AI that sells in a chat. No primary source.",
           "evidence": [
             {
               "title": "La inteligencia artificial reduce a minutos la revisión de pólizas en Colombia: así funciona",
@@ -361,8 +341,8 @@
           ]
         },
         "IN": {
-          "status": "live",
-          "note": "HDFC ERGO's WhatsApp chatbot registers motor claims, runs an AI photo inspection and settles minor damage claims up to Rs 20,000 straight to your bank account.",
+          "status": "limited",
+          "note": "HDFC ERGO's WhatsApp chatbot registers motor claims, runs an AI photo inspection and settles minor damage claims up to Rs 20,000 (2024 launch, reported in the press). HDFC ERGO's site lists WhatsApp only as a contact channel and does not describe the feature (Nov 2026). Digit and ACKO file claims in their apps or on their sites, not in a chat.",
           "evidence": [
             {
               "title": "Know how to get your instant motor claim settlement via WhatsApp",
@@ -376,7 +356,7 @@
         },
         "BR": {
           "status": "live",
-          "note": "Porto's conversational AI agent on WhatsApp lets policyholders across Brazil open and finish a car theft claim, and it handles 70% of those claims (October 2026). Mapfre's AI agent on WhatsApp and EZZE's AI chat assistant also open car claims.",
+          "note": "Porto's conversational AI agent on WhatsApp lets policyholders across Brazil open and finish a car theft or robbery claim, and it handles 70% of those openings (Porto release of Sep 2026, reported in October 2026). Press also reports AI chats for car claims at Mapfre and EZZE, but EZZE's site lists its assistant Eliz for questions only and Mapfre's site does not mention it. No Porto primary page was found.",
           "evidence": [
             {
               "title": "Porto automatiza 70% dos sinistros de roubo e furto",
@@ -404,7 +384,7 @@
         "MX": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Quálitas's Quali-bot on WhatsApp answers claim questions, collects documents and sends you to Ajuste Express to send photos, but we found no AI that files or moves the claim. The only source is written by Blip, the bot's maker.",
+          "note": "Quálitas's Quali-bot on WhatsApp answers claim questions, collects documents and sends you to Ajuste Express to send photos. Press reports say it can report a claim and follow it up, but cases can go to a person. Quálitas's site returned an error to our check (Nov 2026), and the only source is written by Blip, the bot's maker. Searched AXA Mexico: no AI claim chat found. No primary source confirms an AI that files the claim.",
           "evidence": [
             {
               "title": "Aseguradoras necesitan atender WhatsApp",
@@ -424,7 +404,7 @@
         },
         "CO": {
           "status": "live",
-          "note": "BNP Paribas Cardif Colombia handles claims on WhatsApp: its AI reads and checks the documents you send and decides whether the claim stays automated or goes to an advisor (May 2023).",
+          "note": "BNP Paribas Cardif Colombia handles claims on WhatsApp: its AI reads and checks the documents you send and decides whether the claim stays automated or goes to an advisor (May 2023). Its Colombia business report could not be read (Nov 2026), so press is the only source. Searched Sura and Bolívar: no AI claim assistant found.",
           "evidence": [
             {
               "title": "Aseguradora utiliza la IA para la evaluación y pagos de pólizas",
@@ -659,7 +639,7 @@
       "url": "https://revistaapolice.com.br/2025/01/hubsegs-comercializa-seguros-100-pelo-whatsapp/",
       "homepage": "https://hubsegs.com.br/",
       "icon": "https://hubsegs.com.br/wp-content/uploads/2022/04/cropped-favicon-180x180.png",
-      "role": "Sells insurance on WhatsApp with generative AI, from quote to policy.",
+      "role": "Its own site says it sells through brokers; press reports a WhatsApp AI sales flow.",
       "markets": [
         "BR"
       ],
