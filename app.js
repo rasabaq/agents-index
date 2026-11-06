@@ -95,6 +95,8 @@ function renderCountry() {
     </div>`;
 
   $('[data-kpis]').innerHTML = renderErrands(r);
+  // The nav's Countries link opens the country on show.
+  $('[data-nav-countries]').href = `countries.html${writeHash(r.code)}`;
   renderCountryRest();
 }
 

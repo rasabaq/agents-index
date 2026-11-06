@@ -16,7 +16,7 @@
 
 ## How to get to it (user POV)
 
-- "Countries" in the nav of every page.
+- "Countries" in the nav of every page. On the home page it opens the country on show (`[data-nav-countries]`, `href="countries.html#country=XX"`).
 - "Full profile →" in the home page's country view (`.cn-score a`).
 - A link such as `/countries.html#country=JP`.
 
