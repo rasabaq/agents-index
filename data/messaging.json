@@ -569,10 +569,16 @@
           ]
         },
         "CO": {
-          "status": "none",
-          "gapReason": "not-launched",
-          "note": "No mainstream way to pay inside a chat was found: WhatsApp payments are not offered in Colombia, and Stripe, the main Telegram payment provider, does not sign up businesses there.",
+          "status": "limited",
+          "note": "dale!, Grupo Aval's digital wallet, lets its customers pay utility and other bills they have enrolled in the app from its WhatsApp channel, and send Bre-B transfers there, since October 2026. It works only for dale! customers and enrolled bills, and only the press covers the bill payments so far. WhatsApp's own payments are still not offered in Colombia.",
           "evidence": [
+            {
+              "title": "dale! evoluciona su experiencia financiera en WhatsApp: ahora suma el pago de servicios públicos y privados",
+              "publisher": "Noticias Súper",
+              "url": "https://www.noticiassuper.com/2026/10/06/dale-evoluciona-su-experiencia-financiera-en-whatsapp-ahora-suma-el-pago-de-servicios-publicos-y-privados/",
+              "date": "2026-10-06",
+              "type": "news"
+            },
             {
               "title": "Bot Payments API",
               "publisher": "Telegram",
@@ -587,7 +593,8 @@
               "date": "2026-10",
               "type": "company"
             }
-          ]
+          ],
+          "confidence": "low"
         },
         "IN": {
           "status": "live",

@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "announced",
-          "note": "The CFPB finalised its Section 1033 data rights rule, but a court stayed its compliance dates in October 2025 and the CFPB is reworking it, so there is no regulated access yet. Aggregators like Plaid connect apps to banks outside a mandated regime.",
+          "note": "The CFPB finalised its Section 1033 data rights rule, but a court stayed its compliance dates in October 2025 and the CFPB is reworking it, so there is no regulated access yet. Aggregators like Plaid connect apps to banks outside a mandated regime. Claude Personal Finance (beta for US Pro, Max and Ultra plans, November 2026) reads accounts through Plaid with read-only access and cannot start payments.",
           "evidence": [
             {
               "title": "Personal financial data rights",
@@ -29,6 +29,13 @@
               "publisher": "Plaid",
               "url": "https://plaid.com/",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Introducing Personal Finance in Claude",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
+              "date": "2026-11",
               "type": "company"
             }
           ],
