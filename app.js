@@ -1,4 +1,4 @@
-import { STATUSES, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, BUSINESS_GROUPS, readHash, writeHash, ordinal, placeName, liveBy, gapCounts } from './src/observatory.js';
+import { STATUSES, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, BUSINESS_GROUPS, readHash, writeHash, ordinal, placeName, liveBy, gapLabel, mainReason, tiedWith, sourcesOf } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS, errandIn } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { mosaic, fingerprint } from './overview.js';
@@ -46,17 +46,8 @@ const catName = (id) => meta.categories.find((c) => c.id === id).name;
 // A small status mark for the matrix: a dot, half dot, ring or dash; a "?" after it means low confidence.
 const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : ''}" aria-hidden="true"></i>`;
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', unsure' : ''}`;
-const sourcesOf = (list) => new Set(list.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
-const tiedWith = (r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
 // "the United States", "Chile": a country's name inside a sentence.
 const where = (r) => placeName(r.name);
-// Gap reasons: the label for an id, and the most common one among a country's cells in some categories.
-// Cells may not have one yet.
-const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
-function mainReason(mine, catIds) {
-  const top = gapCounts(mine, catIds)[0];
-  return top && gapLabel(top[0]);
-}
 // "For businesses": can a business sell through AI agents here? Counts the ways in BUSINESS_GROUPS.
 function businessVerdict(r) {
   const items = BUSINESS_GROUPS.flatMap((g) => g.items).filter(({ id }) => capIndex[id]).map(({ id }) => capIndex[id].countries[r.code]);
@@ -81,7 +72,7 @@ function renderLegend() {
 function renderCountry() {
   const r = byCode[state.country];
   const mine = cells.filter((x) => x.code === r.code);
-  const ties = tiedWith(r);
+  const ties = tiedWith(ranking, r);
   const i = ranking.indexOf(r);
   const other = ties[0] ?? ranking[i + 1] ?? ranking[i - 1];
   const nSources = sourcesOf(mine);
@@ -94,7 +85,7 @@ function renderCountry() {
       <p class="label">${r.code === state.own ? 'Your country' : 'Country'} · ${ranking.length} countries tracked so far</p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
       <p class="cn-score"><b>${works.length} of ${total}</b> things work today · score ${r.score} of 100 · ${ordinal(r.rank)} of ${ranking.length}${ties.length ? ', tied' : ''}${low ? ` · ${low} unsure, marked ?` : ''} · <a class="nowrap" href="countries.html${writeHash(r.code)}">Full profile <span aria-hidden="true">→</span></a></p>
-      <p class="cn-lede cn-verdict">${esc(state.view === 'business' ? businessVerdict(r) : verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
+      <p class="cn-lede cn-verdict">${esc(state.view === 'business' ? businessVerdict(r) : verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(meta, mine, ids)))}</p>
       <div class="cn-view" role="group" aria-label="Show the country for">${[['people', 'For people'], ['business', 'For businesses']].map(([v, l]) => `<button type="button" class="pill" data-view="${v}" aria-pressed="${state.view === v}">${l}</button>`).join('')}</div>
     </div>
     <span data-fingerprint></span>
@@ -141,7 +132,7 @@ function renderErrands(r) {
   }).join('');
   // Each way is a button to the cell detail. "You take over here" marks only the first step left to you.
   const node = (w, i, fork, take) => {
-    const why = w.role === 'does' ? '' : gapLabel(w.cell.gapReason) ?? 'No reason recorded';
+    const why = w.role === 'does' ? '' : gapLabel(meta, w.cell.gapReason) ?? 'No reason recorded';
     return `<button type="button" class="ch-node r-${w.role}${take ? ' takeover' : ''}" data-cap="${w.id}" data-code="${r.code}" aria-label="${esc(`Step ${i + 1}: ${w.label}. ${STATUSES[w.cell.status].label}${w.cell.confidence ? ', unsure' : ''}. ${ROLE[w.role]}.${why ? ` ${why}.` : ''}${take ? ' You take over here.' : ''}`)}">
       ${fork ? '' : `<span class="label">Step ${i + 1}</span>`}<span class="node-name">${esc(w.label)}</span><span class="node-cap">${esc(w.cap.name)}</span>
       <span class="node-st">${chip(w.cell.status, w.cell.confidence)}<span class="node-role">${ROLE[w.role]}</span></span>${why ? `<span class="node-why">${esc(why)}</span>` : ''}</button>`;
@@ -183,7 +174,7 @@ function renderCountryRest() {
   const code = state.country;
   const errandOf = Object.fromEntries(errandList().flatMap((e) => e.steps.flat().map((id) => [id, e.title])));
   $('[data-fingerprint]').innerHTML = fingerprint({ meta, capIndex, code, score: byCode[code].score });
-  $('[data-overview]').outerHTML = mosaic({ meta, capIndex, code, gapLabel, errandOf, openErrand: openErrand().steps.flat() });
+  $('[data-overview]').outerHTML = mosaic({ meta, capIndex, code, errandOf, openErrand: openErrand().steps.flat() });
   renderMatrix();
   renderBuilders();
 }

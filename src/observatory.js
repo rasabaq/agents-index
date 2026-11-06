@@ -371,6 +371,14 @@ export function gapCounts(mine, catIds) {
   return Object.entries(n).sort((a, b) => b[1] - a[1]);
 }
 
+// The label of a gap reason id (meta.gapReasons); nothing for a cell with no reason recorded yet.
+export const gapLabel = (meta, id) => meta.gapReasons?.find((g) => g.id === id)?.label;
+// The most common gap reason label among some categories' cells, or nothing (the verdict's "Main reason").
+export const mainReason = (meta, mine, catIds) => gapLabel(meta, gapCounts(mine, catIds)[0]?.[0]);
+// The other countries with the same score, and how many sources back some cells (a source counts once).
+export const tiedWith = (ranking, r) => ranking.filter((x) => x.score === r.score && x.code !== r.code);
+export const sourcesOf = (cells) => new Set(cells.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
+
 // Themes group the twelve categories into four, so a country fits in a small table beside its neighbours.
 // A theme scores the mean of its categories' scores. The country score never uses themes.
 export const THEMES = [

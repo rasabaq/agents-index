@@ -1,7 +1,7 @@
 // The countries page: one fact sheet per country, beside a rail of every country, best first.
 // The link holds the country in the home page's format (#country=CL), so links match and back and forward step
 // through the countries you opened. Every check row opens the shared cell detail (detail.js).
-import { STATUSES, mergeCompanies, useCategoryWords, startCountry, readHash, writeHash, verdict, tierOf, THEMES, themeScores, regionCompare, liveBy, gapCounts, placeName, join } from './src/observatory.js';
+import { STATUSES, mergeCompanies, useCategoryWords, startCountry, readHash, writeHash, verdict, tierOf, THEMES, themeScores, regionCompare, liveBy, gapCounts, gapLabel, tiedWith, sourcesOf, placeName, join } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { data } from './data.js';
@@ -13,7 +13,6 @@ const ORDER = Object.keys(STATUSES);
 // site: what the shared cell detail needs (detail.js). code: the country on show.
 let meta, categories, site, ranking, byCode, companies, code;
 
-const gapLabel = (id) => meta.gapReasons?.find((g) => g.id === id)?.label;
 // One country's cells in category order, as { cap, cell } pairs.
 const cellsOf = (c) => categories.flatMap((cat) => cat.capabilities.map((cap) => ({ cap: site.capIndex[cap.id], cell: cap.countries[c] })));
 const tier = (score) => `<span class="tier tier-${tierOf(score).toLowerCase()}" aria-hidden="true">${tierOf(score)}</span>`;
@@ -29,12 +28,11 @@ function renderRail() {
 // The head: the verdict, why the rest is not live yet, the twelve areas as pixel icons, and the fact box.
 // The verdict leaves out its main reason: the list right under it gives every reason.
 function head({ r, mine, here, home }) {
-  const ties = ranking.filter((x) => x.score === r.score && x.code !== r.code);
+  const ties = tiedWith(ranking, r);
   const gaps = mine.filter((x) => x.cell.status !== 'live');
   const reasons = gapCounts(mine);
   const noReason = gaps.length - reasons.reduce((sum, [, n]) => sum + n, 0);
   const low = mine.filter((x) => x.cell.confidence).length;
-  const sources = new Set(mine.flatMap(({ cell }) => (cell.evidence ?? []).map((e) => e.url))).size;
   const t = tierOf(r.score);
   const sorted = [...mine].sort((a, b) => ORDER.indexOf(a.cell.status) - ORDER.indexOf(b.cell.status));
   const why = (label, n, cls = '') => `<li><span${cls}>${esc(label)}</span><span class="why-bar" aria-hidden="true">${'<i></i>'.repeat(n)}</span><span class="rk-v">${n}</span></li>`;
@@ -45,7 +43,7 @@ function head({ r, mine, here, home }) {
         <h2 id="p-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
         <p class="p-verdict">${esc(verdict(r.name, r.byCategory, liveBy(mine)))}</p>
         <div class="p-h"><p class="label">Why the rest is not live yet · <b>${gaps.length} of ${mine.length}</b></p></div>
-        ${gaps.length ? `<ul class="why">${reasons.map(([id, n]) => why(gapLabel(id), n)).join('')}${noReason ? why('No reason recorded yet', noReason, ' class="muted"') : ''}</ul>` : '<p class="p-sum">Everything we track works here.</p>'}
+        ${gaps.length ? `<ul class="why">${reasons.map(([id, n]) => why(gapLabel(meta, id), n)).join('')}${noReason ? why('No reason recorded yet', noReason, ' class="muted"') : ''}</ul>` : '<p class="p-sum">Everything we track works here.</p>'}
         <div class="p-h"><p class="label">By area · out of 100</p><p class="hero-key" aria-hidden="true"><i class="k-on"></i>works <i class="k-part"></i>partly <i class="k-off"></i>not yet</p></div>
         <ul class="area-row">${meta.categories.map((cat) => {
           const s = r.byCategory[cat.id];
@@ -65,7 +63,7 @@ function head({ r, mine, here, home }) {
           <dt>Region</dt><dd>${esc(r.region)}</dd>
           <dt>Checks</dt><dd>${mine.length} things, ${r.counts.live} work today</dd>
           <dt>Unsure <span class="low" aria-hidden="true"></span></dt><dd>${low ? plural(low, 'check') : 'none'}</dd>
-          <dt>Sources</dt><dd>${sources}</dd>
+          <dt>Sources</dt><dd>${sourcesOf(mine)}</dd>
           <dt>Companies</dt><dd>${here.length}, ${home} based here</dd>
           <dt>Data</dt><dd>${fmtDate(meta.asOf)}</dd>
         </dl>
@@ -103,7 +101,7 @@ function compare({ r }) {
 function areas({ r, mine }) {
   const row = ({ cap, cell }) => {
     const n = cell.evidence?.length ?? 0;
-    const why = cell.status !== 'live' && gapLabel(cell.gapReason);
+    const why = cell.status !== 'live' && gapLabel(meta, cell.gapReason);
     return `<li><button type="button" data-cap="${esc(cap.id)}" data-code="${r.code}" aria-label="${esc(`${cap.name}: ${STATUSES[cell.status].label}${cell.confidence ? ', unsure' : ''}. ${why ? `${why}. ` : ''}${plural(n, 'source')}. Show details`)}">
       ${chip(cell.status, cell.confidence)}
       <span class="r-t"><span class="r-cap">${esc(cap.name)}</span>${why ? `<span class="why-tag">${esc(why)}</span>` : ''}<span class="r-note">${esc(cell.note)}</span></span>
