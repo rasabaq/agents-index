@@ -864,10 +864,17 @@
           ]
         },
         "NG": {
-          "status": "none",
-          "gapReason": "not-launched",
-          "note": "No marketplace buying agent found. Jumia uses AI for customer service, logistics and sellers (and had a scripted Messenger bot in 2017), but has no agent that buys for you; Amazon's agents are not offered in Nigeria. Glovo's Claude connector finds items in cities it serves, and its page names no Nigeria coverage.",
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Paystack Index, in early access since mid-2026, lets AI agents such as Claude and ChatGPT order food or groceries on Chowdeck for you after you approve each transaction; Paystack says early users completed over 1,000 transactions in its first month. It is early access with a waitlist, so it is limited. Jumia has no agent that buys for you, and Amazon's agents are not offered in Nigeria.",
           "evidence": [
+            {
+              "title": "What we learnt from Index",
+              "publisher": "TSG Labs (Paystack)",
+              "url": "https://tsglabs.com/blog/what-we-learnt-from-index",
+              "date": "2026-09-24",
+              "type": "company"
+            },
             {
               "title": "Jumia launches Nigeria's first e-commerce bot",
               "publisher": "ITWeb Africa",
@@ -882,7 +889,8 @@
               "date": "2026-11",
               "type": "company"
             }
-          ]
+          ],
+          "confidence": "low"
         }
       }
     },

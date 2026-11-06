@@ -752,7 +752,7 @@
         },
         "CA": {
           "status": "live",
-          "note": "CIBC's Virtual Assistant, in CIBC Online Banking and the mobile app, pays bills, moves money between accounts and sends Interac e-Transfers. CIBC's page gives no launch date. No 2026 agent that moves money was found at RBC, TD, Scotiabank, BMO or Wealthsimple.",
+          "note": "CIBC's Virtual Assistant, in CIBC Online Banking and the mobile app, pays bills, moves money between accounts and sends Interac e-Transfers. CIBC's page gives no launch date. No 2026 agent that moves money was found at RBC, TD, Scotiabank, BMO or Wealthsimple. In October 2026 BMO, CIBC, RBC and TD said they block outside personal AI agents from their online banking; this does not affect a bank's own assistant.",
           "evidence": [
             {
               "title": "Introducing CIBC's Virtual Assistant",
@@ -760,6 +760,13 @@
               "url": "https://www.cibc.com/en/personal-banking/ways-to-bank/virtual-assistant.html",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "BMO, CIBC, RBC, TD Bank block personal AI agents, citing safety and security",
+              "publisher": "CBC News",
+              "url": "https://www.cbc.ca/news/business/canadian-banks-block-ai-9.7400777",
+              "date": "2026-10-29",
+              "type": "news"
             }
           ]
         },
