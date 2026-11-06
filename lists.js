@@ -2,13 +2,12 @@
 // The home page links here; #market=CL opens the companies already filtered to one country.
 import { REPO_USE, scoreCountries, mergeCompanies, rankRepos, shortName, useCategoryWords, writeHash } from './src/observatory.js';
 import { data } from './data.js';
-import { $, esc, flag, logo, wireLogos, wireNav } from './ui.js';
+import { $, esc, flag, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
 
 const fmtMonth = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 const state = { market: 'all', use: 'all', allCompanies: false, allRepos: false };
 // Long tables show this many rows until Show all is pressed.
 const FIRST_ROWS = 10;
-const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 let ranking, byCode, companies, repos;
 
 function renderCompanyFilters() {
@@ -113,7 +112,7 @@ try {
   repos = rankRepos(categories);
   const market = new URLSearchParams(location.hash.slice(1)).get('market');
   if (byCode[market]) state.market = market;
-  document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = new Date(`${meta.asOf}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })));
+  document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   renderCompanyFilters();
   renderCompanies();
   renderRepoFilters();

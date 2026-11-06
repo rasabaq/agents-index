@@ -5,11 +5,9 @@ import { STATUSES, scoreCountries, mergeCompanies, useCategoryWords, startCountr
 import { ERRANDS, BUSINESS_ERRANDS } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { data } from './data.js';
-import { $, esc, flag, chip, logo, wireLogos, wireNav } from './ui.js';
+import { $, esc, flag, chip, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
 import { openDetail } from './detail.js';
 
-const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 const plural = (n, one, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 const ORDER = Object.keys(STATUSES);
 // site: what the shared cell detail needs (detail.js). code: the country on show.

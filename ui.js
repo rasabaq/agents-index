@@ -2,6 +2,10 @@
 import { STATUSES } from './src/observatory.js';
 
 export const $ = (sel) => document.querySelector(sel);
+// A data date ("2026-11-04") as the site shows it: "Nov 4, 2026".
+export const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+// Smooth scrolling, unless the visitor asked for less motion.
+export const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 export const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 // Any ISO country code maps to its flag emoji, so company HQs outside the tracked list get one too.
 export const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));

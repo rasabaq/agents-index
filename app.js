@@ -3,14 +3,11 @@ import { ERRANDS, BUSINESS_ERRANDS, errandIn } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { mosaic, fingerprint } from './overview.js';
 import { data } from './data.js';
-import { $, esc, flag, chip, logo, wireLogos, wireNav } from './ui.js';
+import { $, esc, flag, chip, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
 import { openDetail, sourceList, showDetail } from './detail.js';
-
-const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
 // errand: the open errand's id; null opens the view's first one.
 const state = { view: 'people', country: null, errand: null };
-const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 // site: what the shared cell detail needs (detail.js).
 let meta, categories, ranking, byCode, capIndex, companies, cells, site;
 
