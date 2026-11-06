@@ -519,7 +519,7 @@
         },
         "DE": {
           "status": "none",
-          "note": "Commerzbank's Ava can block cards, check balances and order products, but we found no sign it makes transfers, Sparkasse chat channels say they do not accept transfer orders, and bunq describes its Finn assistant (December 2025 upgrade) as support and information only. In October 2026 N26's press room listed no AI assistant, ING's virtual assistant in its app only answers questions, and searches found nothing for Deutsche Bank beyond an old Siri transfer feature. Searches for DKB's AI support assistant showed only customer service, with no sign of transfers. We kept the flag because no bank page rules out a launch we missed.",
+          "note": "Commerzbank's Ava can block and unblock cards, change card limits and order a credit card, but its April 2025 release does not mention transfers or bill payments. N26's press page (Oct 2026) lists no AI assistant. ING's app help page timed out for us, and we found no sign its virtual assistant moves money. Deutsche Bank's assistant is still in development and guides users through the app; we found no launch. Sparkasse chat channels say they do not accept transfer orders (2024 Sparkasse PDF). DKB announced an AI voice-control project with OpenAI in May 2025, but we found no launch or transfers. bunq's Finn is support only. We kept the flag: we searched Commerzbank, N26, ING, Deutsche Bank, Sparkassen and DKB (Nov 2026), and no bank page rules out a launch we missed.",
           "evidence": [
             {
               "title": "Commerzbank launches AI-based Banking Avatar",
@@ -554,6 +554,13 @@
               "publisher": "N26",
               "url": "https://n26.com/en-de/press",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "DKB press release pm 250506: AI cooperation with OpenAI",
+              "publisher": "DKB",
+              "url": "https://www.dkb.de/presse/pressemitteilungen/pm-250506",
+              "date": "2025-05",
               "type": "company"
             }
           ],
@@ -610,7 +617,7 @@
         "CL": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Itaú Chile launched voice and text transfers to third parties in its app in June 2026, where an AI agent fills in the transfer and the user confirms with Itaú Pass. We count it as limited because only news reports describe it and no Itaú page confirms that all customers have it. In October 2026 we found no similar feature at BancoEstado, Banco de Chile, BCI or Santander Chile.",
+          "note": "Itaú Chile launched voice transfers to third parties in its app on 15 June 2026. An AI agent fills in the transfer, and the user confirms with Itaú Pass. Two news sites report it and quote Itaú executives; they do not limit it to some customers. Itaú's own site blocked our request, so no Itaú page confirms it. We found no similar feature at BancoEstado (its homepage showed only a browser security notice), Banco de Chile (only an aggregator mention of a digital wallet), Santander Chile (its app listing describes a 24/7 assistant for questions) or BCI (only a 2021 Siri news item). We kept the flag: we searched these banks (Nov 2026); no bank page confirms the Itaú launch.",
           "evidence": [
             {
               "title": "Itaú Chile lanza Transferencias por Voz y da un paso hacia la banca conversacional",
@@ -631,7 +638,7 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Davivienda's DaviPlata wallet let users who signed up with a QR code move money by voice or AI chat in a first phase from June 2024, but we could not confirm it is open to all users today. The payments app Tpaga (not a bank) launched a WhatsApp AI agent in July 2026 that pays utility bills and sends Bre-B transfers. Bancolombia's Tabot only answers questions, and we found no assistant that moves money at Nequi.",
+          "note": "Davivienda's DaviPlata wallet let users move money by voice or AI chat in a first, limited phase announced in June 2024. We could not open Davivienda's blog (HTTP 403), and we found no current page saying all users have it. Bancolombia's Tabot only answers questions. Nequi's site offers a help chat for questions only. Tpaga is not a bank, so we left it out. We kept the flag: we searched DaviPlata, Tabot and Nequi (Nov 2026); no current primary source confirms open access.",
           "evidence": [
             {
               "title": "En DaviPlata ahora podrá manejar su dinero con la voz",
@@ -639,13 +646,6 @@
               "url": "https://blog.davivienda.com/detail/inclusion-inteligencia-artificial-y-mas-ahora-los-colombianos-podran-manejar-su-dinero-con-su-voz-o-",
               "date": "2024-06",
               "type": "company"
-            },
-            {
-              "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE (the article covers bill payments and Bre-B transfers)",
-              "publisher": "La República",
-              "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
-              "date": "2026-07-08",
-              "type": "news"
             },
             {
               "title": "Tabot asistente virtual",
@@ -660,7 +660,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "News reports say Indian Bank's AI-TARA voice assistant (unveiled September 2026) does fund transfers and IMPS in 10 languages, but the bank's own investor deck only calls it a voice AI relationship manager and does not say all customers have it. NPCI's Hello! UPI voice payments roll out in phases, and Axis Bank's new branch kiosk (September 2026) has an AI assistant that fills in forms for services like utility bill payments. SBI's YONO Ji assistant answers questions for YONO Business users, and we found no assistant that moves money at HDFC or ICICI.",
+          "note": "News reports say Indian Bank's AI-TARA voice assistant (unveiled 10 Sept 2026) does fund transfers and IMPS in 10 languages. We could not reach Indian Bank's own site or find its press release, so no bank source confirms it or says all customers have it. NPCI's Hello! UPI voice payments launched in 2023 through UPI apps; NPCI's product page did not show its live bank list to us. SBI's YONO Ji is an information assistant for YONO Business, not a transfer tool. HDFC's EVA page says voice is for search. We found no ICICI assistant that moves money in 2026; its 2018 to 2020 Siri and Alexa features covered remittance and balances. We kept the flag: we searched Indian Bank, NPCI, SBI, HDFC and ICICI (Nov 2026); no primary source confirms the rollout.",
           "evidence": [
             {
               "title": "Indian Bank debuts AI-TARA voice banking in 10 languages at Global Fintech Fest 2026",
@@ -670,25 +670,11 @@
               "type": "news"
             },
             {
-              "title": "Performance Analysis Q2/H1 FY27",
-              "publisher": "Indian Bank",
-              "url": "https://indianbank.bank.in/documents/d/guest/presentation-september-2026",
-              "date": "2026-10-15",
-              "type": "company"
-            },
-            {
-              "title": "Axis Bank and Hitachi Payment Services unveil AI-powered solutions for smarter banking and merchant payment experiences",
-              "publisher": "Axis Bank",
-              "url": "https://www.axis.bank.in/about-us/press-releases/axis-bank-and-hitachi-payment-services-unveil-ai-powered-solutions-for-smarter-banking-and-merchant-payment-experiences",
-              "date": "2026-09-11",
-              "type": "company"
-            },
-            {
-              "title": "AI-powered conversational payments to launch on India's UPI",
-              "publisher": "FinTech Futures",
-              "url": "https://www.fintechfutures.com/ai-in-fintech/ai-powered-conversational-payments-to-launch-on-india-s-upi",
+              "title": "Say 'Hello' to simplified payments with Hello! UPI",
+              "publisher": "NPCI",
+              "url": "https://npci.org.in/what-we-do/hello-upi/product-overview",
               "date": "2023-09",
-              "type": "news"
+              "type": "company"
             }
           ],
           "confidence": "low",
