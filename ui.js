@@ -1,9 +1,13 @@
-// Small helpers shared by the home page (app.js) and the companies page (lists.js).
+// Small helpers shared by every page: the home page (app.js), the countries page (countries.js) and the companies page (lists.js).
+import { STATUSES } from './src/observatory.js';
+
 export const $ = (sel) => document.querySelector(sel);
 export const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 // Any ISO country code maps to its flag emoji, so company HQs outside the tracked list get one too.
 export const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
 export const flag = (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`;
+// A status chip; `low` (low confidence) adds the "?" mark.
+export const chip = (status, low) => `<span class="chip s-${status}${low ? ' q' : ''}">${STATUSES[status].label}</span>`;
 
 // A small logo before a company or repo name. The name sits right next to it, so the image has empty alt text.
 // No logo, or one that fails to load, becomes a monogram (see wireLogos).
