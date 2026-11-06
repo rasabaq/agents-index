@@ -545,6 +545,65 @@
             }
           ],
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "announced",
+          "note": "South Africa's digital ID is announced but not live. Home Affairs published draft rules in May 2026 that would make a digital ID a legal alternative to the Smart ID card, and final rules and a launch are still to come. Until then, no agent can use a digital ID to prove who a person is.",
+          "evidence": [
+            {
+              "title": "Digital ID launch set for 2026, not yet live",
+              "publisher": "SAnews (South African Government News Agency)",
+              "url": "https://www.sanews.gov.za/node/79676",
+              "date": "2026-02-18",
+              "type": "news"
+            },
+            {
+              "title": "Home Affairs moves to expand digital ID rollout through banks and telcos",
+              "publisher": "BusinessDay",
+              "url": "https://www.businessday.co.za/news/2026-05-06-home-affairs-moves-to-expand-digital-id-rollout-through-banks-and-telcos/",
+              "date": "2026-05-06",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "announced",
+          "note": "Kenyans already get a physical Maisha Card, but we found no way for a private app or an AI agent to check it today. On 28 June 2026 the Interior Cabinet Secretary said a digital Maisha Card on your phone would be announced very soon, with no timeline. The cell is announced, not live.",
+          "evidence": [
+            {
+              "title": "Kenyans to Soon Access Their National IDs Electronically, Murkomen Confirms",
+              "publisher": "Kenyans.co.ke",
+              "url": "https://www.kenyans.co.ke/news/124716-kenyans-soon-access-their-national-ids-electronically-murkomen-confirms",
+              "date": "2026-06-28",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Private firms can check DNI data, fingerprints and face photos with RENAPER, Argentina's national registry, but only after RENAPER agrees they have a legitimate interest and they sign an agreement. Claro, Movistar and Personal, the three phone companies, signed one in 2024. We found no way for an agent to show a person's digital DNI to an app.",
+          "evidence": [
+            {
+              "title": "SID: modalidades y productos",
+              "publisher": "Presidencia de la Nación (RENAPER)",
+              "url": "https://www.argentina.gob.ar/sid/modalidades-y-productos",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "RENAPER y ENACOM firmaron acuerdo con empresas de telefonía móvil para brindar el servicio de validación de identidad digital",
+              "publisher": "Primera Edición",
+              "url": "https://www.primeraedicion.com.ar/nota/100921812/renaper-y-enacom-firmaron-acuerdo-con-empresas-de-telefonia-movil-para-brindar-el-servicio-de-validacion-de-identidad-digital/",
+              "date": "2024-09-20",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
         }
       }
     },
@@ -967,6 +1026,56 @@
             }
           ],
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "The only government AI assistant we found is the Batho Pele AI chatbot, launched in late August 2026. It is for public servants, answers questions only and does not make decisions, so citizens cannot finish a public-service task with it. Government says it will be extended to other services over time, with no date.",
+          "evidence": [
+            {
+              "title": "AI chatbot brings Batho Principles to the future",
+              "publisher": "SAnews (South African Government News Agency)",
+              "url": "https://www.sanews.gov.za/node/84332",
+              "date": "2026-09-15",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched"
+        },
+        "KE": {
+          "status": "announced",
+          "note": "We found no Kenyan government AI assistant that finishes a public-service task. The ICT Ministry's Kabogo.AI assistant is planned and will launch only once public information, agency routing and review safeguards are in place. President Ruto has also talked about an eCitizen chatbot, but reports describe it as a planned upgrade, not a live service.",
+          "evidence": [
+            {
+              "title": "CS Kabogo Unveils AI Platform to Transform ICT Ministry Operations",
+              "publisher": "Kenyans.co.ke",
+              "url": "https://www.kenyans.co.ke/news/126535-cs-kabogo-unveils-ai-platform-transform-ict-ministry-operations",
+              "date": "2026-08-27",
+              "type": "news"
+            },
+            {
+              "title": "Ruto eyes 24/7 services on e-Citizen with AI addition",
+              "publisher": "Business Daily",
+              "url": "https://www.businessdailyafrica.com/bd/corporate/technology/ruto-eyes-24-7-services-on-e-citizen-with-ai-addition-4844860",
+              "date": "2024-12-03",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Boti, the City of Buenos Aires WhatsApp assistant, takes reports and service requests in the chat, such as a photo of a badly parked car. For procedures such as renewing a national ID or driving license, it books an appointment instead, so you do the last step yourself.",
+          "evidence": [
+            {
+              "title": "Boti",
+              "publisher": "Gobierno de la Ciudad de Buenos Aires",
+              "url": "https://buenosaires.gob.ar/innovacionytransformaciondigital/boti",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only"
         }
       }
     }

@@ -392,6 +392,64 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "Naked's ChatGPT app gives a final, binding car insurance quote inside the chat since May 2026. Reports do not show whether the purchase finishes in ChatGPT, and Naked's co-founder says its website and app are still the better route.",
+          "evidence": [
+            {
+              "title": "Naked puts car insurance quotes inside ChatGPT, but the fine print still matters",
+              "publisher": "Daily Maverick",
+              "url": "https://www.dailymaverick.co.za/article/2026-05-20-naked-puts-car-insurance-quotes-inside-chatgpt-but-the-fine-print-still-matters/",
+              "date": "2026-05-20",
+              "type": "news"
+            },
+            {
+              "title": "Naked launches world-first ChatGPT app for final car insurance quotes",
+              "publisher": "Africa Business",
+              "url": "https://africabusiness.com/2026/05/17/naked-launches-world-first-chatgpt-app-for-final-car-insurance-quotes/",
+              "date": "2026-05-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan insurer with an AI agent that sells car, home or travel cover in a chat was found. CIC offers quotes through its Easy Bima portal, and ICEA LION lists a WhatsApp contact line, and neither is an AI agent.",
+          "evidence": [
+            {
+              "title": "CIC Insurance Group Kenya",
+              "publisher": "CIC Insurance Group",
+              "url": "https://ke.cicinsurancegroup.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "ICEA LION Group",
+              "publisher": "ICEA LION Group",
+              "url": "https://www.icealion.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "La Caja's bot Letizia answers customer questions and sells policies, a La Caja executive said in September 2025. The article does not say whether the whole purchase is finished in the chat, so the cell stays limited with low confidence.",
+          "evidence": [
+            {
+              "title": "Las aseguradoras argentinas que usan IA para vender, prevenir y resolver más rápido",
+              "publisher": "El Cronista",
+              "url": "https://www.cronista.com/infotechnology/innovacion-it/las-aseguradoras-argentinas-que-usan-ia-para-vender-prevenir-y-resolver-mas-rapido",
+              "date": "2025-09-01",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -716,6 +774,57 @@
             }
           ],
           "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "Hollard lets customers start a claim in its WhatsApp chat: a chatbot takes your ID number and a few answers, then live agents can help. I found no South African insurer where an AI agent files and finishes the claim in chat.",
+          "evidence": [
+            {
+              "title": "Hollard insurance case study",
+              "publisher": "Cuedesk",
+              "url": "https://www.cuedesk.com/customers/hollard-insurance-case-study",
+              "date": "2026-11-05",
+              "type": "report"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan insurer with a chat agent that files and moves a claim forward was found. CIC has a claims portal, and Britam's homepage mentions no claims chatbot.",
+          "evidence": [
+            {
+              "title": "CIC Insurance Group Kenya",
+              "publisher": "CIC Insurance Group",
+              "url": "https://ke.cicinsurancegroup.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Britam",
+              "publisher": "Britam",
+              "url": "https://www.britam.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "La Segunda's WhatsApp chatbot takes claim reports in chat, a La Segunda executive said in September 2025, but the article does not say it settles or pays claims. La Caja's AI checks claim photos and can move a claim ahead without an inspection, though the article does not say that happens in a chat.",
+          "evidence": [
+            {
+              "title": "Las aseguradoras argentinas que usan IA para vender, prevenir y resolver más rápido",
+              "publisher": "El Cronista",
+              "url": "https://www.cronista.com/infotechnology/innovacion-it/las-aseguradoras-argentinas-que-usan-ia-para-vender-prevenir-y-resolver-mas-rapido",
+              "date": "2025-09-01",
+              "type": "news"
+            }
+          ],
           "confidence": "low"
         }
       }

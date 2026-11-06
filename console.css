@@ -132,7 +132,7 @@
 .xc-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 12px; }
 .xc-h p { margin: 0; }
 .xc-h p + p { font-size: 12.5px; color: var(--muted); }
-.xc ul { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
+.xc ul { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
 .xc button { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 8px 6px; width: 100%; padding: 9px 10px; border: 1px solid rgba(255, 255, 255, 0.085); border-radius: 10px; background: none; color: var(--ink-2); font: 400 11.5px/1 var(--mono); cursor: pointer; transition: border-color 0.15s; }
 .xc button:hover { border-color: rgba(255, 255, 255, 0.3); }
 .xc .flag { margin: 0 4px 0 0; }

@@ -21,7 +21,10 @@
     { "code": "IT", "name": "Italy", "region": "Europe" },
     { "code": "NL", "name": "Netherlands", "region": "Europe" },
     { "code": "AE", "name": "United Arab Emirates", "region": "Middle East" },
-    { "code": "SA", "name": "Saudi Arabia", "region": "Middle East" }
+    { "code": "SA", "name": "Saudi Arabia", "region": "Middle East" },
+    { "code": "ZA", "name": "South Africa", "region": "Africa" },
+    { "code": "KE", "name": "Kenya", "region": "Africa" },
+    { "code": "AR", "name": "Argentina", "region": "Latin America" }
   ],
   "categories": [
     { "id": "commerce", "name": "Shopping & checkout", "blurb": "Agents that find and buy products for you.", "short": "Shopping", "can": "shop for you" },

@@ -493,6 +493,71 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "announced",
+          "note": "Visa has started its Agentic Ready programme in South Africa and enrolled local banks, but its country head says no agent-initiated card payments have gone live yet. No banks or merchants are named, and we found no Mastercard Agent Pay or American Express agent launch here.",
+          "evidence": [
+            {
+              "title": "Visa lays groundwork for AI payments in South Africa",
+              "publisher": "TechCentral",
+              "url": "https://techcentral.co.za/visa-lays-groundwork-for-ai-payments-in-south-africa/282535/",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Visa or Mastercard agent payment is live in Kenya that I could find. Visa Intelligent Commerce was announced as a global program in 2025, and the Visa ChatGPT purchase feature reaches Kenya only 'once it becomes available in our region'. A June 2026 Kenyan article says agentic commerce will 'likely remain on standby' in Kenya until fraud defenses improve.",
+          "evidence": [
+            {
+              "title": "Visa Intelligent Commerce",
+              "publisher": "TechArena",
+              "url": "https://www.techarena.co.ke/2025/05/02/visa-intelligent-commerce-ai-shopping-payments",
+              "date": "2025-05-02",
+              "type": "news"
+            },
+            {
+              "title": "Visa enables ChatGPT's AI agents to shop, complete purchases for users",
+              "publisher": "Eastleigh Voice",
+              "url": "https://eastleighvoice.co.ke/technology/366217/visa-enables-chatgpts-ai-agents-to-shop-complete-purchases-for-users?amp=1",
+              "date": "2026-06-12",
+              "type": "news"
+            },
+            {
+              "title": "The Rise of AI-Powered Shopping in Kenya: Convenience Booms, But Trust Stops at the Checkout",
+              "publisher": "Dealfish",
+              "url": "https://dealfish.co.ke/2026/06/the-rise-of-ai-powered-shopping-in-kenya-convenience-booms-but-trust-stops-at-the-checkout-2026.html",
+              "date": "2026-06-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Santander and Visa ran a controlled pilot in March 2026 across five Latin American markets, Argentina included, where AI agents bought books using Visa Intelligent Commerce. Mastercard says its Agent Pay launch in Latin America is near, but we found no public Argentine launch. Pomelo and Mastercard were reported to have run a test payment inside a ChatGPT chat in August 2026.",
+          "evidence": [
+            {
+              "title": "Santander and Visa deliver Latin America's first end-to-end payments powered by AI agents",
+              "publisher": "Banco Santander",
+              "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
+              "date": "2026-03-12",
+              "type": "company"
+            },
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only"
         }
       }
     },
@@ -903,6 +968,65 @@
           "status": "none",
           "note": "No agent payment over Saudi Arabia's instant rail, SARIE, turned up in my checks. I could not open SAMA's own SARIE pages before my search limit ran out, so this stays low.",
           "evidence": [],
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "PayShap, South Africa's instant bank payment system, is live for people and has passed six million registered users. We found no way for an AI agent to send a PayShap payment, and the May 2026 TechCentral report on PayShap does not mention agents at all.",
+          "evidence": [
+            {
+              "title": "Three years in, PayShap pivots to merchants",
+              "publisher": "TechCentral",
+              "url": "https://techcentral.co.za/three-years-in-payshap-pivots-to-merchants/281687/",
+              "date": "2026-05-21",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "Agents cannot yet use M-PESA or PesaLink to send payments. Safaricom's M-PESA API already lets developers start payments, but agent-driven payments were still described as in development in April 2026.",
+          "evidence": [
+            {
+              "title": "How Safaricom Is Building for Automated Commerce",
+              "publisher": "TechTrend Kenya",
+              "url": "https://techtrendske.co.ke/2026/04/02/agentic-wallets-personalized-payments-kenya",
+              "date": "2026-04-02",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "No outside agent can yet start payments over Transferencias 3.0, Argentina's bank transfer system, because the open finance rules are not in force. Banks and wallets let their own assistants set up transfers in chat, such as MacroChat at Banco Macro and Mercado Pago's assistant, and reports say the account holder confirms each transfer.",
+          "evidence": [
+            {
+              "title": "Banco Macro lanzó MacroChat",
+              "publisher": "El Economista",
+              "url": "https://eleconomista.com.ar/finanzas/banco-macro-lanzo-macrochat-permite-transferir-pagar-servicios-operar-whatsapp-inteligencia-artificial-n97297",
+              "date": "2026-08-11",
+              "type": "news"
+            },
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            },
+            {
+              "title": "Open finance tracker: Argentina",
+              "publisher": "Fiskil",
+              "url": "https://www.fiskil.com/es/open-finance-tracker/argentina",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "assist-only",
           "confidence": "low"
         }
       }
@@ -1317,6 +1441,72 @@
           "note": "I found no wallet or fintech app in Saudi Arabia, such as STC Pay, Tabby or Tamara, that lets an AI agent pay for a shopper. Open banking data from Lean Technologies goes to lenders such as Tamara for underwriting, which is not an agent paying. I could not check the wallet apps' own pages before my search limit ran out.",
           "evidence": [],
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "We found no South African wallet or fintech app that lets an AI agent pay for you. Stripe's shared payment tokens cover only the US, Canada and select European countries, and Google Pay's agentic checkout works only in the US and Australia.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No wallet or fintech app lets an AI agent pay for a Kenyan today. Stripe's Link Agent Wallet serves US and Canadian customers only, and Stripe's shared payment tokens list no Kenya support. Safaricom has talked about agentic wallets for M-PESA, but that is still in development.",
+          "evidence": [
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet.md",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=agent",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How Safaricom Is Building for Automated Commerce",
+              "publisher": "TechTrend Kenya",
+              "url": "https://techtrendske.co.ke/2026/04/02/agentic-wallets-personalized-payments-kenya",
+              "date": "2026-04-02",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Mercado Pago's personal assistant is open to all of its digital-account customers in Argentina, and it can set up bill payments and transfers from text or voice commands. Reports say the account holder must confirm each operation before it runs. It does not buy from shops, and we found no wallet that lets an outside agent pay for users.",
+          "evidence": [
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
         }
       }
     }
@@ -1341,7 +1531,8 @@
         "CA",
         "JP",
         "SG",
-        "AE"
+        "AE",
+        "AR"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -1370,7 +1561,8 @@
         "KR",
         "SG",
         "NL",
-        "AE"
+        "AE",
+        "AR"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -1458,7 +1650,8 @@
       "markets": [
         "BR",
         "MX",
-        "CL"
+        "CL",
+        "AR"
       ],
       "capabilities": [
         "payments.wallet-agent",

@@ -443,6 +443,58 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "ChatGPT's OpenTable table search is listed as worldwide in OpenAI's release notes, but I found no proof that South African restaurants are on OpenTable. My search also found no Eat Out or other local booking agent.",
+          "evidence": [
+            {
+              "title": "Restaurant reservations findable in chat with OpenTable, Resy and Yelp (release notes summary)",
+              "publisher": "releases.sh",
+              "url": "https://releases.sh/release/rel_KXqfnr8PTtwmVrlJiDWYG-restaurant-reservations-findable-in-chat-with-opentable-resy-yelp",
+              "date": "2026-08-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "Google AI Mode's agentic table booking launched in the UK and India in April 2026, and Kenya is not on that list. No Kenyan restaurant booking agent was found, and ChatGPT's OpenTable booking could not be checked for Kenyan restaurants.",
+          "evidence": [
+            {
+              "title": "Google adds agentic restaurant booking (UK and India)",
+              "publisher": "Verdict Foodservice",
+              "url": "https://www.verdictfoodservice.com/news/google-adds-agentic-restaurant/",
+              "date": "2026-04-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "No AI table-booking agent was found for Argentina. TheFork, which took over Restorando here, has its ChatGPT booking app only in Spain and 12 European markets as of December 2025.",
+          "evidence": [
+            {
+              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes en España a través de ChatGPT",
+              "publisher": "Forbes España",
+              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
+              "date": "2025-12-22",
+              "type": "news"
+            },
+            {
+              "title": "Restorando desaparece y llega TheFork",
+              "publisher": "Ámbito",
+              "url": "https://www.ambito.com/restorando-desaparece-y-llega-thefork-n5043310",
+              "date": "2019-07-18",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -919,6 +971,60 @@
               "publisher": "Google",
               "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
               "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "ZA": {
+          "status": "live",
+          "note": "The Booking.com app in ChatGPT is open to ChatGPT users worldwide, and it sends you to Booking.com to finish the reservation. Google AI Mode hotel booking is only rolling out in the US, so it does not count here.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ]
+        },
+        "KE": {
+          "status": "live",
+          "note": "Booking.com says its app in ChatGPT is available globally. It finds a hotel or trip and hands you off to Booking.com to finish the booking, and ChatGPT is open in Kenya. No Kenya-specific app list was found, so confidence is low.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT supported countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "live",
+          "note": "Booking.com's app in ChatGPT is open to ChatGPT users worldwide, according to its May 2026 announcement, so people in Argentina can use it.",
+          "evidence": [
+            {
+              "title": "Booking.com is making car rentals easier with app in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
               "type": "company"
             }
           ]
@@ -1444,6 +1550,79 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "Bolt's ChatGPT app went live in South Africa in August 2026 for fare estimates and driver tracking, and a Stuff report says booking and payment still happen in the Bolt app. Uber Eats in ChatGPT is US-only, and I found no AI food or grocery ordering from Mr D Food or Takealot.",
+          "evidence": [
+            {
+              "title": "Bolt riders in South Africa can now summon their rides via ChatGPT",
+              "publisher": "Stuff",
+              "url": "https://stuff.co.za/2026/08/04/bolt-riders-in-south-africa-can-now-summon-their-rides-via-chatgpt/",
+              "date": "2026-08-04",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan food, grocery or ride agent was found. Uber's ChatGPT food integration only shows results to users in the US, and Glovo, the biggest delivery app in Kenya, reports AI only for rider dispatch and prep times.",
+          "evidence": [
+            {
+              "title": "ChatGPT integration for eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Glovo business grows 40pc on rising online shopping demand",
+              "publisher": "Capital FM",
+              "url": "https://www.capitalfm.co.ke/business/2026/05/glovo-business-grows-40pc-on-rising-online-shopping-demand/",
+              "date": "2026-05",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "No AI agent that orders food, groceries or a ride was found for Argentina. PedidosYa's ChatGPT ordering feature launched in Chile only (2023), and Uber's ChatGPT ride and Uber Eats results show only in the US.",
+          "evidence": [
+            {
+              "title": "PedidosYa inaugura la función Pido sin Pensar con ChatGPT",
+              "publisher": "Chocale",
+              "url": "https://chocale.cl/2023/11/pedidosya-inaugura-la-funcion-pido-sin-pensar-con-chatgpt/",
+              "date": "2023-11-30",
+              "type": "news"
+            },
+            {
+              "title": "ChatGPT integration for rides",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT integration for eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -1497,7 +1676,10 @@
         "IT",
         "NL",
         "AE",
-        "SA"
+        "SA",
+        "ZA",
+        "KE",
+        "AR"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -1518,7 +1700,8 @@
         "services.delivery-rides": [
           "US",
           "FR",
-          "IT"
+          "IT",
+          "ZA"
         ]
       }
     },
@@ -1721,7 +1904,10 @@
         "IT",
         "NL",
         "AE",
-        "SA"
+        "SA",
+        "ZA",
+        "KE",
+        "AR"
       ],
       "capabilities": [
         "services.travel-booking"

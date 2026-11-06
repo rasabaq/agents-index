@@ -620,6 +620,65 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "South Africa has no open finance rule in force. The FSCA's 2026 to 2029 Regulation Plan names open finance as a priority, but the work is still at policy development, so there is no rule that lets an agent use bank data or start payments. A third-party tracker gives a January 2026 start date that the FSCA plan does not support, so confidence is low.",
+          "evidence": [
+            {
+              "title": "The FSCA has published its three-year Regulation Plan for the period 1 April 2026 to 31 March 2029",
+              "publisher": "Clyde & Co",
+              "url": "https://www.clydeco.com/en/insights/2026/07/the-fsca-has-published-its-three-year-regulation-p",
+              "date": "2026-07-07",
+              "type": "report"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "announced",
+          "note": "Kenya has no open finance access in force yet. A draft National Payment System Bill, 2026, from Treasury and the Central Bank of Kenya would make banks and M-PESA share customer data with licensed third parties, but only with the customer's consent. The bill still needs Parliament, and the Central Bank's rules on access, data and fees come later.",
+          "evidence": [
+            {
+              "title": "New Bill forces banks, M-Pesa to share customer data",
+              "publisher": "Business Daily",
+              "url": "https://www.businessdailyafrica.com/bd/economy/new-bill-force-banks-m-pesa-to-share-customer-data-5605244",
+              "date": "2026-09-22",
+              "type": "news"
+            },
+            {
+              "title": "Central Bank of Kenya releases plan to implement open banking",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/online-mobile-banking/central-bank-of-kenya-releases-plan-to-implement-open-banking--1246641",
+              "date": "2021-01-13",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "announced",
+          "note": "Decree 353/2025 created Argentina's open finance system (Sistema de Finanzas Abiertas) and names the central bank, BCRA, as its enforcing authority. The BCRA has not yet published the technical standards or timeline, so no bank or app can yet let an AI agent read accounts or start payments. The first use the BCRA described was credit, with lenders reading income data.",
+          "evidence": [
+            {
+              "title": "BCRA lanzó Open Finance: un sistema que cambiará el acceso a los créditos",
+              "publisher": "Cronista",
+              "url": "https://www.cronista.com/finanzas-mercados/bcra-lanzo-open-finance-un-sistema-que-cambiara-el-acceso-a-los-creditos",
+              "date": "2025-05-22",
+              "type": "news"
+            },
+            {
+              "title": "Open finance tracker: Argentina",
+              "publisher": "Fiskil",
+              "url": "https://www.fiskil.com/es/open-finance-tracker/argentina",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
         }
       }
     },
@@ -1153,6 +1212,50 @@
               "type": "news"
             }
           ],
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "No South African bank's AI assistant sends money or pays bills yet. Absa's Abby, live on its app and website, is confined to customer support, questions and navigation, and we found no 2026 report of FNB, Standard Bank, Nedbank or Capitec launching an assistant that moves money.",
+          "evidence": [
+            {
+              "title": "Absa deepens AI push with renewed Salesforce partnership",
+              "publisher": "Business Day",
+              "url": "https://www.businessday.co.za/companies/2026-06-05-absa-deepens-ai-push-with-renewed-salesforce-partnership/",
+              "date": "2026-06-05",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "limited",
+          "note": "Equity's EVA chatbot, on WhatsApp, Messenger and Telegram, could send money and pay bills at its 2022 launch, and it was described as AI-driven. Current availability was not confirmed, and I could not open the bank's own pages.",
+          "evidence": [
+            {
+              "title": "Equity virtual assistant chat banking platform",
+              "publisher": "TechArena",
+              "url": "https://techarena.co.ke/2022/05/23/equity-virtual-assistant-chat-banking-platform",
+              "date": "2022-05-23",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Banco Macro's MacroChat, launched in August 2026, takes text, voice or photo requests on WhatsApp for transfers to the customer's own accounts and to third parties, bill payments and phone top-ups, with a handoff to a human agent. Launch reach is unclear, so we rate it limited. We found no money-moving assistant at Galicia, Santander, BBVA or Naranja X.",
+          "evidence": [
+            {
+              "title": "Banco Macro lanzó MacroChat",
+              "publisher": "El Economista",
+              "url": "https://eleconomista.com.ar/finanzas/banco-macro-lanzo-macrochat-permite-transferir-pagar-servicios-operar-whatsapp-inteligencia-artificial-n97297",
+              "date": "2026-08-11",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
           "confidence": "low"
         }
       }

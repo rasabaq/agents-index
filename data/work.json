@@ -379,6 +379,50 @@
             }
           ],
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "No big South African job board has an agent that applies for you: Pnet and CareerJunction show no such feature, and LoopCV does not search South African boards. A small app, Career Agent, said in July 2025 that it sends applications for paying users when a listing has a contact email; otherwise you apply by hand. We could not confirm that it still runs.",
+          "evidence": [
+            {
+              "title": "Stellenbosch PhD student's app applies for jobs while users sleep",
+              "publisher": "Daily Dispatch",
+              "url": "https://www.dailydispatch.co.za/news/2025-07-16-stellenbosch-phd-students-app-applies-for-jobs-while-users-sleep/",
+              "date": "2025-07-16",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "We found no tool that finds jobs and applies for you in Kenya. BrighterMonday's AI tools (CV builder, cover letters and interview practice) help you prepare, but you send each application yourself. LoopCV's help pages do not list Kenya, so its coverage here is not confirmed.",
+          "evidence": [
+            {
+              "title": "Job seeker page",
+              "publisher": "BrighterMonday",
+              "url": "https://www.brightermonday.co.ke/job-seeker",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "We found no AI agent in Argentina that finds jobs and sends applications for you. LoopCV, which does this in the UK, Germany and India, does not name Argentina or its local job boards, such as Computrabajo, Bumeran and ZonaJobs.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -757,6 +801,57 @@
               "type": "company"
             }
           ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "We found no South African payroll or HR product where an agent runs payroll or files a form for you. SimplePay and Xero show no such agent, and PaySpace's AI Assist only answers payslip and payroll-setup questions. Sage's page could not be opened, and Deel's AI Workforce names no South African feature, so confidence is low.",
+          "evidence": [
+            {
+              "title": "PaySpace home page",
+              "publisher": "PaySpace",
+              "url": "https://www.payspace.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "SimplePay home page",
+              "publisher": "SimplePay",
+              "url": "https://www.simplepay.co.za/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "We found no Kenyan payroll or HR tool where an AI agent runs payroll or files forms on its own. Deel Local Payroll works out PAYE and makes P9 forms, and it has an 'Ask AI' helper for payroll questions, but no source says its AI acts alone. KRA's planned payroll API is not confirmed as live.",
+          "evidence": [
+            {
+              "title": "Deel Local Payroll (Kenya)",
+              "publisher": "PaySpace (Deel Local Payroll)",
+              "url": "https://payspace.com/kenya",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Kenya | Simplified Pay-As-You-Earn (PAYE) filing process",
+              "publisher": "PaySpace",
+              "url": "https://support.payspace.com/portal/en/kb/articles/kenya-simplified-pay-as-you-earn-paye-filing-process",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "We found no payroll or HR agent for small businesses in Argentina. Searches for Xubio, Tango and Bejerman, the local payroll software, turned up no AI agent that runs payroll.",
+          "evidence": [],
           "gapReason": "not-launched",
           "confidence": "low"
         }

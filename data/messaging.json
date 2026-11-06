@@ -546,6 +546,76 @@
             }
           ],
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "live",
+          "note": "Meta opened Meta Business Agent to businesses of all sizes worldwide in June 2026, and WhatsApp partners such as 360dialog offer it. Meta's developer docs say a business must be in an authorised country and publish no list, and South Africa is not named, so confidence is low. Finance, government, health and some other business types are excluded.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent (developer overview)",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "live",
+          "note": "Meta Business Agent, the AI support bot inside WhatsApp, became available to businesses globally in June 2026, according to TechCrunch. Meta has not published a country list that I could check, so this is low confidence.",
+          "evidence": [
+            {
+              "title": "Meta's AI agent for WhatsApp Business is now available globally",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+              "date": "2026-06-03",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "live",
+          "note": "Meta Business Agent, which businesses can use on WhatsApp, was opened to businesses of all sizes worldwide in June 2026. Meta's docs exclude finance and health businesses and do not publish a country list, so Argentina is not confirmed directly. Banco Macro's MacroChat, an AI assistant on WhatsApp, launched in August 2026, which shows businesses already run AI agents in chat here.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent (developer overview)",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Banco Macro lanzó MacroChat",
+              "publisher": "El Economista",
+              "url": "https://eleconomista.com.ar/finanzas/banco-macro-lanzo-macrochat-permite-transferir-pagar-servicios-operar-whatsapp-inteligencia-artificial-n97297",
+              "date": "2026-08-11",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -1063,6 +1133,64 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "We found no way to pay a business inside a chat app in South Africa. WhatsApp's payment gateway guide names only India, Telegram's bot payments name no South African provider, and Apple's Business Chat page lists no countries.",
+          "evidence": [
+            {
+              "title": "Receive payments via payment gateways on WhatsApp",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Bot Payments API",
+              "publisher": "Telegram",
+              "url": "https://core.telegram.org/bots/payments",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Apple Messages for Business",
+              "publisher": "Apple",
+              "url": "https://register.apple.com/business-chat",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "limited",
+          "note": "Only bank chatbots offer payment inside a chat in Kenya. Equity's EVA chatbot on WhatsApp could pay bills and buy goods when it launched in 2022, but I found no shop that takes payment in its own chat, and current availability was not confirmed.",
+          "evidence": [
+            {
+              "title": "Equity virtual assistant chat banking platform",
+              "publisher": "TechArena",
+              "url": "https://techarena.co.ke/2022/05/23/equity-virtual-assistant-chat-banking-platform",
+              "date": "2022-05-23",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Banco Macro's MacroChat, launched in August 2026, lets customers pay bills and top up phones inside WhatsApp. That covers bank bill payments only, and we found no WhatsApp Pay or shop checkout inside chat in Argentina.",
+          "evidence": [
+            {
+              "title": "Banco Macro lanzó MacroChat",
+              "publisher": "El Economista",
+              "url": "https://eleconomista.com.ar/finanzas/banco-macro-lanzo-macrochat-permite-transferir-pagar-servicios-operar-whatsapp-inteligencia-artificial-n97297",
+              "date": "2026-08-11",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -1095,7 +1223,10 @@
         "IT",
         "NL",
         "AE",
-        "SA"
+        "SA",
+        "ZA",
+        "KE",
+        "AR"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [
@@ -1139,7 +1270,8 @@
         "FR",
         "IT",
         "NL",
-        "AE"
+        "AE",
+        "ZA"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [

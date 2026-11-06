@@ -466,6 +466,57 @@
           "evidence": [],
           "gapReason": "no-rule",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "South Africa has no AI law in force, and its draft national AI policy was withdrawn in April 2026. But section 20 of the Electronic Communications and Transactions Act already covers automated electronic agents that form contracts for a party, so it reaches AI agents acting for users in part.",
+          "evidence": [
+            {
+              "title": "Electronic Communications and Transactions Act 2002, section 20: Automated transactions",
+              "publisher": "Acts Online",
+              "url": "https://www.acts.co.za/ELECTRONIC-COMMUNICATIONS-AND-TRANSACTIONS-ACT-2002/20__automated_transactions",
+              "date": "2026-11",
+              "type": "regulation"
+            },
+            {
+              "title": "South Africa targets January 2027 for revised AI policy after earlier withdrawal",
+              "publisher": "Engineering News",
+              "url": "https://engineeringnews.co.za/print-version/south-africa-targets-january-2027-for-revised-ai-policy-after-earlier-withdrawal-2026-05-26",
+              "date": "2026-05-26",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "Kenya has no AI law in force. The Artificial Intelligence Bill, 2026 (Senate Bills No. 4 of 2026), sponsored by Sen. Karen Nyamu, is still before the Senate, and it would set up an Office of the AI Commissioner. We found no rule that covers AI agents acting for users.",
+          "evidence": [
+            {
+              "title": "Bill Digest: The Artificial Intelligence Bill, 2026 (Senate Bills No. 4 of 2026)",
+              "publisher": "Parliament of Kenya, Senate",
+              "url": "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf",
+              "date": "2026-02-19",
+              "type": "report"
+            }
+          ],
+          "gapReason": "no-rule"
+        },
+        "AR": {
+          "status": "none",
+          "note": "Argentina has no AI law in force. Congress had 53 AI bills in 2025, and only 11 of them aim at a full AI law.",
+          "evidence": [
+            {
+              "title": "Ley de Inteligencia Artificial en la Argentina: hay muchos proyectos, pero pocos completos",
+              "publisher": "DPL News",
+              "url": "https://dplnews.com/?p=311680",
+              "date": "2026-04-09",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
         }
       }
     },
@@ -900,6 +951,65 @@
           "status": "none",
           "note": "We found no Saudi consumer or payment rule, or regulator statement, that names purchases an AI agent makes for you. The bank and e-commerce rules were not checked in detail.",
           "evidence": [],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "No South African rule names AI agents. The Electronic Communications and Transactions Act gives consumers a seven-day cooling-off right on many online purchases, but section 20 presumes a person is bound by what their electronic agent agrees to, which may cut against you.",
+          "evidence": [
+            {
+              "title": "Electronic Communications and Transactions Act 2002, section 44: Cooling off period",
+              "publisher": "Acts Online",
+              "url": "https://www.acts.co.za/electronic-communications-and-transactions-act-2002/44__cooling_off_period",
+              "date": "2026-11",
+              "type": "regulation"
+            },
+            {
+              "title": "Electronic Communications and Transactions Act 2002, section 20: Automated transactions",
+              "publisher": "Acts Online",
+              "url": "https://www.acts.co.za/ELECTRONIC-COMMUNICATIONS-AND-TRANSACTIONS-ACT-2002/20__automated_transactions",
+              "date": "2026-11",
+              "type": "regulation"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "We found no Kenyan rule that clearly covers purchases an AI agent makes for you. A 2025 analysis says Kenya has no set duty to refund mobile money payments, and the Central Bank's 2025 inclusion strategy only committed to drafting a refund policy. We could not confirm the Consumer Protection Act 2012 or any final Central Bank rules.",
+          "evidence": [
+            {
+              "title": "CBK digital fraud compensation plan mobile money",
+              "publisher": "TechTrend Kenya",
+              "url": "https://techtrendske.co.ke/2025/09/28/cbk-digital-fraud-compensation-plan-mobile-money",
+              "date": "2025-09-28",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Consumer law (Ley 24.240) lets online buyers cancel within 10 days and get their money back in full, and Resolution 424/2020 requires a cancel button on shopping sites and apps. None of these names AI agents, so it is unclear whether a purchase an agent makes counts.",
+          "evidence": [
+            {
+              "title": "Defensa del Consumidor: ¿Puede deshacerse una contratación cuando ya se prestó el consentimiento?",
+              "publisher": "Gobierno de Mendoza",
+              "url": "https://www.mendoza.gov.ar/prensa/defensa-del-consumidor-puede-deshacerse-una-contratacion-cuando-ya-se-presto-el-consentimiento/",
+              "date": "2020-02-22",
+              "type": "company"
+            },
+            {
+              "title": "Las empresas deben publicar en su web el botón de arrepentimiento",
+              "publisher": "iProfesional",
+              "url": "https://www.iprofesional.com/legales/324903-las-empresas-deben-publicar-en-su-web-el-boton-de-arrepentimiento",
+              "date": "2020-10",
+              "type": "news"
+            }
+          ],
           "gapReason": "no-rule",
           "confidence": "low"
         }

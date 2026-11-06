@@ -310,6 +310,58 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "A July 2025 law firm article says the SA Doctors App uses AI chatbots for appointment scheduling, but I found no SA Doctors App page that confirms it. No AI booking agent from Discovery, Netcare or Medi-Clinic turned up in my searches.",
+          "evidence": [
+            {
+              "title": "From promise to practice: responsible AI in South African healthcare",
+              "publisher": "Werksmans",
+              "url": "https://www.werksmans.com/from-promise-to-practice-responsible-ai-in-south-african-healthcare/",
+              "date": "2025-07-16",
+              "type": "report"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan AI agent that books a doctor was found. Penda Health's site offers WhatsApp chat with clinicians and in-person visits, not an AI booking agent, and the national health portal shows no booking service.",
+          "evidence": [
+            {
+              "title": "Penda Health",
+              "publisher": "Penda Health",
+              "url": "https://www.pendahealth.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "No AI agent that books a doctor's appointment was found for Argentina. Medifé's agent lets members search its doctor directory, and automated booking is only a future step. Mi Argentina's app lists turnos as a service, but no AI is described.",
+          "evidence": [
+            {
+              "title": "Medifé incorpora un agente de IA conversacional para consultas de cartilla médica",
+              "publisher": "Mercado",
+              "url": "https://mercado.com.ar/ruta-digital/medife-incorpora-un-agente-de-ia-conversacional-para-consultas-de-cartilla-medica",
+              "date": "2026-09-09",
+              "type": "news"
+            },
+            {
+              "title": "Mi Argentina",
+              "publisher": "Gobierno de Argentina",
+              "url": "https://www.argentina.gob.ar/miargentina",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -588,6 +640,57 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "Clicks sends repeat-medicine reminders by SMS, and you can submit prescriptions in its app. A 2022 release says Dis-Chem's WhatsApp channel only sends alerts, with repeat orders placed on its Pack My Meds site. I found no AI route that places a repeat order for you.",
+          "evidence": [
+            {
+              "title": "Repeat Meds Reminder FAQ",
+              "publisher": "Clicks",
+              "url": "https://clicks.co.za/repeat-meds-reminder-FAQ",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Dis-Chem chooses Clickatell's chat commerce platform to serve millions of customers over WhatsApp",
+              "publisher": "Clickatell (via APO Group)",
+              "url": "https://pressportal.co.za/it-new-media-and-software/story/dis-chem-chooses-clickatells-chat-commerce-platform-to-serve-millions-of-customers-over-whatsapp.html",
+              "date": "2022-04-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan pharmacy or health app with an AI agent that renews or orders prescription medicine was found. Pharmacy apps were not checked one by one.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "No AI agent that renews or orders a medicine was found for Argentina. E-prescriptions passed 20 million a month by June 2026, and Mi Argentina shows them in its app, but only lets you look them up.",
+          "evidence": [
+            {
+              "title": "Digitalización del sistema de salud argentino 2026: receta electrónica e interoperabilidad",
+              "publisher": "Innovación Digital 360",
+              "url": "https://www.innovaciondigital360.com/software/software-digitalizacion-sistema-salud-argentina-2026-receta-electronica-interoperabilidad/",
+              "date": "2026-06-12",
+              "type": "news"
+            },
+            {
+              "title": "Mi Argentina",
+              "publisher": "Gobierno de Argentina",
+              "url": "https://www.argentina.gob.ar/miargentina",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
         }
       }
     },
@@ -841,6 +944,71 @@
             }
           ],
           "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "I found no AI agent that checks your own medical cover or a claim in South Africa. Discovery's site has no AI assistant for cover or claims, and its Ask Discovery help page does not say it is AI.",
+          "evidence": [
+            {
+              "title": "Discovery home page",
+              "publisher": "Discovery",
+              "url": "https://www.discovery.co.za/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Ask Discovery Health for help",
+              "publisher": "Discovery",
+              "url": "https://www.discovery.co.za/medical-aid/ask-discovery-health-for-help",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "The Social Health Authority's member portal and eligibility check, and CIC Insurance's claims portal, are ordinary web tools. No AI agent that checks your cover or claim status was found.",
+          "evidence": [
+            {
+              "title": "Social Health Authority",
+              "publisher": "Social Health Authority (Kenya)",
+              "url": "https://sha.go.ke",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "CIC Insurance Group Kenya",
+              "publisher": "CIC Insurance Group",
+              "url": "https://ke.cicinsurancegroup.com/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Prevención Salud's Previ chatbot lets members request authorizations, check their status and look up reimbursement amounts. The article says AI runs some of its functions but does not say which, so the cell is limited with low confidence. Medifé's agent lets members ask about plans and services in plain language, but reimbursements are a future step.",
+          "evidence": [
+            {
+              "title": "Prevención Salud amplía Previ, su chatbot, con nuevas gestiones para afiliados",
+              "publisher": "Mercado",
+              "url": "https://mercado.com.ar/ruta-digital/prevencion-salud-amplia-previ-su-chatbot-con-nuevas-gestiones-para-afiliados",
+              "date": "2026-01-30",
+              "type": "news"
+            },
+            {
+              "title": "Medifé incorpora un agente de IA conversacional para consultas de cartilla médica",
+              "publisher": "Mercado",
+              "url": "https://mercado.com.ar/ruta-digital/medife-incorpora-un-agente-de-ia-conversacional-para-consultas-de-cartilla-medica",
+              "date": "2026-09-09",
+              "type": "news"
+            }
+          ],
           "confidence": "low"
         }
       }
