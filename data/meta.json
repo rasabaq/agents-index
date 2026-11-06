@@ -19,7 +19,9 @@
     { "code": "SG", "name": "Singapore", "region": "Asia" },
     { "code": "ID", "name": "Indonesia", "region": "Asia" },
     { "code": "IT", "name": "Italy", "region": "Europe" },
-    { "code": "NL", "name": "Netherlands", "region": "Europe" }
+    { "code": "NL", "name": "Netherlands", "region": "Europe" },
+    { "code": "AE", "name": "United Arab Emirates", "region": "Middle East" },
+    { "code": "SA", "name": "Saudi Arabia", "region": "Middle East" }
   ],
   "categories": [
     { "id": "commerce", "name": "Shopping & checkout", "blurb": "Agents that find and buy products for you.", "short": "Shopping", "can": "shop for you" },

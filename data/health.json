@@ -288,6 +288,28 @@
           "evidence": [],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "We found no AI agent here that books a doctor for you. Doctor booking runs through ordinary health apps and websites, and our search turned up no 2026 agent launch.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no AI agent that books a Saudi doctor for you. Bupa Arabia members book consultations in its app themselves, and we could not open the Sehhaty site to check for an appointment assistant.",
+          "evidence": [
+            {
+              "title": "Bupa Arabia home page",
+              "publisher": "Bupa Arabia",
+              "url": "https://www.bupa.com.sa/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -536,6 +558,36 @@
           "evidence": [],
           "gapReason": "rail-closed",
           "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "Patients can upload prescriptions and order medicine in the talabat app with Aster Pharmacy, but no AI agent refills or orders them for you. Aster's 2024 release said patients would soon be able to schedule prescriptions in advance, and we found no agent using that.",
+          "evidence": [
+            {
+              "title": "Aster Pharmacy partners with talabat to offer prescription delivery services",
+              "publisher": "Aster DM Healthcare",
+              "url": "https://www.asterdmhealthcare.com/newsroom/aster-pharmacy-partners-with-talabat-to-offer-prescription-delivery-services",
+              "date": "2024-09-29",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no AI agent that renews or orders a prescription here. Nahdi's website does not mention refills or an AI assistant, and we could not open the Wasfaty e-prescription site to check it.",
+          "evidence": [
+            {
+              "title": "Nahdi home page",
+              "publisher": "Nahdi",
+              "url": "https://www.nahdi.sa/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -751,6 +803,43 @@
           "status": "none",
           "note": "No AI assistant found that checks your own Dutch health cover or a claim status.",
           "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "Daman and Thiqa members check cover and claims through online accounts and apps. We found no AI assistant that explains your cover or claim status for you, and Daman's website does not mention one.",
+          "evidence": [
+            {
+              "title": "Daman Insurance",
+              "publisher": "Daman",
+              "url": "https://www.damaninsurance.ae",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no AI agent that checks your own cover or claim status here. Bupa Arabia's app lists covered hospitals, while Tawuniya's eTawuniya portal and MedGulf's app let you track claims yourself.",
+          "evidence": [
+            {
+              "title": "Bupa Arabia home page",
+              "publisher": "Bupa Arabia",
+              "url": "https://www.bupa.com.sa/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Best car insurance in Saudi Arabia 2026",
+              "publisher": "Yallamotor",
+              "url": "https://www.yallamotor.com/en/news/best-car-insurance-saudi-arabia-2026-comparison-prices-guarantees-55084",
+              "date": "2026-02-22",
+              "type": "news"
+            }
+          ],
           "gapReason": "not-launched",
           "confidence": "low"
         }

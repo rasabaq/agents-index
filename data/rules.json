@@ -437,6 +437,35 @@
               "type": "company"
             }
           ]
+        },
+        "AE": {
+          "status": "limited",
+          "note": "The UAE has no comprehensive AI law, only general rules: the data protection law (Federal Decree-Law No. 45 of 2021) gives people rights over automated decisions, and DIFC Regulation 10 binds firms in the DIFC free zone. The central bank's February 2026 AI guidance covers licensed financial firms but is guidance, and none of these covers AI acting for a user.",
+          "evidence": [
+            {
+              "title": "Navigating AI in the UAE: A Financial Services Perspective",
+              "publisher": "CMS",
+              "url": "https://cms.law/en/are/legal-updates/navigating-ai-in-the-uae-a-financial-services-perspective",
+              "date": "2026-10-15",
+              "type": "report"
+            },
+            {
+              "title": "UAE Central Bank issues new rules on AI use to protect banking customers",
+              "publisher": "Gulf News",
+              "url": "https://gulfnews.com/business/banking/uae-central-bank-issues-new-rules-on-ai-use-to-protect-banking-customers-1.500452382",
+              "date": "2026-02-23",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no AI law in force in Saudi Arabia. SDAIA's AI Ethics Principles are guidance, and the Personal Data Protection Law covers personal data, not AI agents acting for users.",
+          "evidence": [],
+          "gapReason": "no-rule",
+          "confidence": "low"
         }
       }
     },
@@ -849,6 +878,28 @@
               "type": "regulation"
             }
           ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "Under the central bank's consumer protection rules (Circular No. 8 of 2020), banks must compensate customers for financial losses unless the loss came from the customer's gross negligence or fraud. These rules do not mention AI agents or software acting for a customer, so it is unclear whether a purchase an agent gets wrong is covered.",
+          "evidence": [
+            {
+              "title": "Fallen victim to bank scam in UAE? Here's how to get your money back",
+              "publisher": "Khaleej Times",
+              "url": "https://www.khaleejtimes.com/uae/legal/victim-bank-scam-how-to-get-money-back",
+              "date": "2026-07-26",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no Saudi consumer or payment rule, or regulator statement, that names purchases an AI agent makes for you. The bank and e-commerce rules were not checked in detail.",
+          "evidence": [],
           "gapReason": "no-rule",
           "confidence": "low"
         }

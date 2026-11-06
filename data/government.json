@@ -511,6 +511,40 @@
           ],
           "gapReason": "rail-closed",
           "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "UAE PASS is the UAE's national digital identity app, and banks and other private firms can offer sign-in with it, for example ADIB's mobile app. An agent can send a user to UAE PASS to prove who they are, but the user must confirm the sign-in in the app.",
+          "evidence": [
+            {
+              "title": "The UAE Pass app",
+              "publisher": "u.ae (UAE government)",
+              "url": "https://u.ae/en/about-the-uae/digital-uae/digital-transformation/platforms-and-apps/the-uae-pass-app",
+              "date": "2024-12-30",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "Nafath, the national identity app run by SDAIA's National Information Center, lets government and private firms check who a person is. Zoho Sign used it to verify signers in April 2026. The person approves each check in the Nafath app, and we found no source saying an AI agent can run the check itself.",
+          "evidence": [
+            {
+              "title": "Nafath App (SDAIA presentation)",
+              "publisher": "SDAIA, National Information Center (hosted by OECD OPSI)",
+              "url": "https://oecd-opsi.org/wp-content/uploads/2024/01/Nafath-App-1-2024-1.pdf",
+              "date": "2024-01",
+              "type": "report"
+            },
+            {
+              "title": "Zoho Sign for Saudi Arabia with Nafath app",
+              "publisher": "Zoho",
+              "url": "https://www.zoho.com/blog/sign/zoho-sign-for-saudi-arabia-with-nafath-app.html",
+              "date": "2026-04-21",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -897,6 +931,41 @@
             }
           ],
           "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "In Abu Dhabi, TAMM's AI assistant and its AutoGov feature renew licences, settle utility payments and book healthcare appointments for residents, without being asked. The claims come from the government and press reports, with no independent audit.",
+          "evidence": [
+            {
+              "title": "Abu Dhabi's AI service Tamm to be made available to international governments",
+              "publisher": "Khaleej Times",
+              "url": "https://www.khaleejtimes.com/uae/abu-dhabi-ai-service-tamm-private-company-global-international-governments",
+              "date": "2026-10-19",
+              "type": "news"
+            },
+            {
+              "title": "TAMM Abu Dhabi's AI assistant for completing government services through a single app",
+              "publisher": "Apolitical",
+              "url": "https://apolitical.co/en/navigator/case-studies/tamm-abu-dhabis-ai-assistant-for-completing-government-services-through-a-single-app",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no Saudi government AI assistant that finishes public-service tasks. Absher, the Interior Ministry's portal for residents, businesses and government staff, lists no AI features.",
+          "evidence": [
+            {
+              "title": "Absher: Individuals, Business and Government portals",
+              "publisher": "Ministry of Interior (Absher)",
+              "url": "https://www.absher.sa/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
           "confidence": "low"
         }
       }

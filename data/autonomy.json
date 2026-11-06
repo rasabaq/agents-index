@@ -722,6 +722,67 @@
               "type": "company"
             }
           ]
+        },
+        "AE": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and open to everyone worldwide, per its 2025 launch post. Claude in Chrome works on every paid Claude plan, and the UAE is on Claude's supported country list. Gemini in Chrome lists the UAE for adults, but its auto browse feature is only confirmed in the US and India.",
+          "evidence": [
+            {
+              "title": "Comet is now available to everyone worldwide",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is now generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free to download, and its launch post names no country limits, so it browses and acts on websites here. Gemini in Chrome is listed for Saudi adults aged 18 and over, but Google announced its auto browse agent only for the US.",
+          "evidence": [
+            {
+              "title": "Comet is now available to everyone worldwide",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -1048,6 +1109,35 @@
         "NL": {
           "status": "none",
           "note": "No consumer agent found that phones Dutch businesses for you. Google's AI Mode 'Check for me' calling is for signed-in users in English, and I found no Dutch rollout.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "No consumer agent here was found that phones businesses for you. Google AI Mode's \"Check for me\" calling is English-only for signed-in adults over 18, and Google's help page does not name the UAE.",
+          "evidence": [
+            {
+              "title": "Use AI Mode to check local availability and pricing",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/17104441?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no consumer agent that phones Saudi businesses for you. Google's 'Check for me' calling in AI Mode is limited to English, and its help page names no countries, so Saudi Arabia is not confirmed.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1892,6 +1982,56 @@
               "type": "company"
             }
           ]
+        },
+        "AE": {
+          "status": "none",
+          "note": "Gemini is available in the UAE, but Google's Connected Apps help page does not say whether Gemini can send messages or add calendar events here. Alexa+ and Siri AI do not name the UAE, so we found no confirmed assistant that acts across apps for you.",
+          "evidence": [
+            {
+              "title": "Gemini mobile app: where it is available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Connected Apps in Gemini",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Introducing Alexa+ internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-03-18",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "limited",
+          "note": "Gemini's built-in Phone, Messages, WhatsApp and Calendar extensions were announced in March 2025 for all Gemini countries and languages. Google's October 2026 note lists newer connected apps only for US English and some Brazil, India and English-speaking regions, and Alexa+ is not offered here, so we rate this limited.",
+          "evidence": [
+            {
+              "title": "Gemini release notes",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2025-03-03",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -1955,7 +2095,8 @@
         "NG",
         "KR",
         "SG",
-        "IT"
+        "IT",
+        "AE"
       ],
       "capabilities": [
         "autonomy.browser-agent"
@@ -1986,7 +2127,8 @@
         "KR",
         "ID",
         "IT",
-        "NL"
+        "NL",
+        "AE"
       ],
       "capabilities": [
         "autonomy.browser-agent"
@@ -2016,7 +2158,8 @@
         "NG",
         "KR",
         "SG",
-        "ID"
+        "ID",
+        "SA"
       ],
       "capabilities": [
         "autonomy.browser-agent",

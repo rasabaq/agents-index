@@ -620,6 +620,54 @@
             }
           ],
           "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "Gemini and Claude are both listed as available in the UAE, so two big assistants can be signed up for. Anthropic's page shows an effective date of 12 November 2026, so Claude's status is not fully confirmed for today. ChatGPT, Copilot and Alexa+ were not checked.",
+          "evidence": [
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "live",
+          "note": "Claude and Gemini can each be signed up for in Saudi Arabia, since both publish it on their supported-countries pages. Alexa+ is not offered here, and we did not count ChatGPT because its country page could not be opened.",
+          "evidence": [
+            {
+              "title": "Supported countries and regions",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Where Gemini Apps are available",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
         }
       }
     },
@@ -1198,6 +1246,54 @@
             }
           ],
           "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "Arabic is the main language, and the Gemini mobile app supports it. Most Gemini connected apps, such as WhatsApp, Phone and Messages, follow the app's language and country lists, so they work in Arabic here. A few connected apps have short language lists of their own, and Canva's does not include Arabic.",
+          "evidence": [
+            {
+              "title": "Gemini mobile app availability (supported languages)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "The Gemini mobile app supports Arabic and can be downloaded in Saudi Arabia. Its connected apps (WhatsApp, Phone and Messages on Android) work in every language where the app runs. Alexa+ is not offered here, and we did not check ChatGPT or Claude agent features in Arabic.",
+          "evidence": [
+            {
+              "title": "Gemini mobile app availability (supported languages and countries)",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -1251,7 +1347,9 @@
         "AU",
         "NG",
         "SG",
-        "NL"
+        "NL",
+        "AE",
+        "SA"
       ],
       "capabilities": [
         "access.assistant-available",
@@ -1291,7 +1389,9 @@
         "SG",
         "ID",
         "IT",
-        "NL"
+        "NL",
+        "AE",
+        "SA"
       ],
       "capabilities": [
         "access.assistant-available",

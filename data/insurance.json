@@ -349,6 +349,49 @@
           ],
           "gapReason": "assist-only",
           "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "Shory AI, a UAE car insurance agent that launched in October 2026, compares car quotes in English and Arabic and helps you finish the purchase in the same chat, according to two news reports. Shory's own pages could not be opened, so it is unconfirmed whether payment also happens in the chat.",
+          "evidence": [
+            {
+              "title": "Shory AI insurance agent for car insurance in the UAE",
+              "publisher": "Tbreak",
+              "url": "https://tbreak.com/shory-ai-insurance-agent/",
+              "date": "2026-10-08",
+              "type": "news"
+            },
+            {
+              "title": "Shory launches AI insurance agent for car insurance in the UAE",
+              "publisher": "BeInsure",
+              "url": "https://beinsure.com/news/shory-launches-ai-insurance-agent-for-car-insurance-uae/",
+              "date": "2026-10-08",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no Saudi insurer or comparison site where an AI agent sells a car, home or travel policy in a chat. Tameenk's site says 'Launching Soon', and a 2026 Saudi buying guide points to insurer apps and websites.",
+          "evidence": [
+            {
+              "title": "Tameenk home page",
+              "publisher": "Tameenk",
+              "url": "https://www.tameenk.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Best car insurance in Saudi Arabia 2026",
+              "publisher": "Yallamotor",
+              "url": "https://www.yallamotor.com/en/news/best-car-insurance-saudi-arabia-2026-comparison-prices-guarantees-55084",
+              "date": "2026-02-22",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -643,6 +686,36 @@
               "type": "company"
             }
           ],
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "We found no UAE insurer where an AI agent takes your claim in a chat and files it. Daman members track claims in an online account and app, and Shory's claims article could not be opened to check its claims chat.",
+          "evidence": [
+            {
+              "title": "Daman Insurance",
+              "publisher": "Daman",
+              "url": "https://www.damaninsurance.ae",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "limited",
+          "note": "MedGulf has an AI assistant that guides customers through each step of a claim, but the customer still submits it online or in the app. Tawuniya, Al Rajhi Takaful and Walaa also file claims through their own portals or apps, and we found no agent doing the filing.",
+          "evidence": [
+            {
+              "title": "Best car insurance in Saudi Arabia 2026",
+              "publisher": "Yallamotor",
+              "url": "https://www.yallamotor.com/en/news/best-car-insurance-saudi-arabia-2026-comparison-prices-guarantees-55084",
+              "date": "2026-02-22",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
           "confidence": "low"
         }
       }

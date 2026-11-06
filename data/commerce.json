@@ -651,6 +651,57 @@
             }
           ],
           "gapReason": "not-launched"
+        },
+        "AE": {
+          "status": "none",
+          "note": "No AI assistant I found can buy for UAE shoppers inside the chat. Alexa+ is not in the UAE, Google's agentic checkout in Gemini and AI Mode works only in the US and Australia, and I found no UAE launch of ChatGPT, Copilot or Perplexity checkout.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "No AI assistant I checked can buy for shoppers in Saudi Arabia. Amazon's Alexa+ is not on its list of countries, Google Pay's agentic checkout works only in the US and Australia, and Shopify's direct checkout only serves buyers in the US, Canada and Australia. I did not check ChatGPT, Copilot or Perplexity for Saudi Arabia, so this stays low.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -1115,6 +1166,26 @@
             }
           ],
           "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "We found no marketplace agent that buys for you in the UAE. A search result said Amazon is testing Alexa for Shopping with some UAE customers, but the Amazon page it pointed to does not exist, so we could not confirm it. noon and Amazon.ae were not checked further.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "I found no marketplace agent in Saudi Arabia that buys for you. Amazon's Alexa+ is not in Saudi Arabia, but I could not check Amazon.sa's Rufus, noon or other local marketplaces for auto-buy features before my search limit ran out.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
           "confidence": "low"
         }
       }
@@ -1632,6 +1703,57 @@
               "publisher": "Stripe",
               "url": "https://stripe.com/global",
               "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "Stripe lists the UAE as a supported country, but I found no UAE launch of Stripe's Agentic Commerce Suite or of Shopify Agentic Storefronts. Shopify's help page names no countries at all.",
+          "evidence": [
+            {
+              "title": "Stripe global availability (supported countries)",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Agentic storefronts",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "Saudi merchants have no confirmed open route to sell to AI agents. Stripe does not list Saudi Arabia as a supported country, and Shopify's agent storefronts only sell to buyers in the US, Canada and Australia. A Visa-sponsored Arab News piece from October 2025 names no Saudi platform, such as Salla, Zid or noon, with a live agent checkout, and I did not check those platforms directly.",
+          "evidence": [
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "AI shoppers are coming: Are Saudi merchants ready?",
+              "publisher": "Arab News (sponsored by Visa)",
+              "url": "https://www.arabnews.com/corporate-and-sponsored-content/ai-shoppers-are-coming-are-saudi-merchants-ready-2620836",
+              "date": "2025-10-30",
               "type": "company"
             }
           ],

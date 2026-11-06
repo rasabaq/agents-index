@@ -351,6 +351,34 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "LoopCV's help page says NaukriGulf covers roles across the UAE, and it lists GulfTalent as an Easy Apply board. The page does not name the UAE as a market itself, and it warns that job board coverage varies by country, so this is partial.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "live",
+          "note": "LoopCV's knowledge base lists NaukriGulf, which covers Saudi Arabia, and GulfTalent under its Middle East job boards. LoopCV sends applications for you by email or web form, and GulfTalent applications go through its Chrome extension while you are logged in. We could not check Bayt, the regional job board, for its own AI features.",
+          "evidence": [
+            {
+              "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.freshdesk.com/support/solutions/articles/103000399849-knowledge-base",
+              "date": "2026-08-19",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -701,6 +729,36 @@
           ],
           "gapReason": "assist-only",
           "confidence": "low"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "Bayzat's AI Assistant helps HR teams and managers with daily HR tasks and approvals. The page does not say it runs payroll or files forms on its own, and it credits automation, not AI, for Wage Protection System (WPS) file generation.",
+          "evidence": [
+            {
+              "title": "Bayzat home page",
+              "publisher": "Bayzat",
+              "url": "https://www.bayzat.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "Deel's AI Workforce agents flag payroll errors and analyze time-off requests, but no source says they run payroll, and the page does not mention Saudi Arabia. We found no Saudi payroll provider whose agent runs payroll.",
+          "evidence": [
+            {
+              "title": "Deel launches AI Workforce",
+              "publisher": "Deel",
+              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
+              "date": "2025-08-21",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -724,7 +782,9 @@
         "ES",
         "FR",
         "CA",
-        "AU"
+        "AU",
+        "AE",
+        "SA"
       ],
       "capabilities": [
         "work.job-apply"

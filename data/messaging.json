@@ -490,6 +490,62 @@
             }
           ],
           "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "Meta Business Agent became available globally in WhatsApp in June 2026, and 360dialog says its regional limit appears lifted after the Brazil and EU rollouts. Meta publishes no country list and excludes finance, health and government businesses, so UAE eligibility is checked number by number.",
+          "evidence": [
+            {
+              "title": "Meta's AI agent for WhatsApp Business is now available globally",
+              "publisher": "TechCrunch",
+              "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+              "date": "2026-06-03",
+              "type": "news"
+            },
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent Platform overview",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "live",
+          "note": "Meta Business Agent, which Meta opened to businesses of all sizes globally in June 2026, appears open to Saudi businesses on WhatsApp. Meta's developer page names no countries, and the WhatsApp partner 360dialog says the regional limits appear lifted, but Meta says it is starting with a select number of businesses on the WhatsApp Business app, and I found no Saudi-specific confirmation.",
+          "evidence": [
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent (developer overview)",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "1. Check Eligibility (Meta Business Agent)",
+              "publisher": "360dialog",
+              "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -970,6 +1026,43 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "I found no in-chat payment live for UAE customers in WhatsApp, Telegram or Apple Messages. A headline says First Abu Dhabi Bank and PLATX will support WhatsApp transactions in the UAE, but I could not open the article.",
+          "evidence": [
+            {
+              "title": "WhatsApp Enabled Transactions to be Supported in UAE with Assistance from First Abu Dhabi Bank and PLATX",
+              "publisher": "Crowdfund Insider",
+              "url": "https://www.crowdfundinsider.com/?p=178875",
+              "date": "2026-11",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "No way to pay a business inside a chat app in Saudi Arabia turned up. WhatsApp's in-chat payment providers are all Indian (BillDesk, Razorpay, PayU, Zaakpay) and the currency is INR only, and Stripe does not list Saudi Arabia. I did not check Apple Pay in Messages for Business for Saudi Arabia.",
+          "evidence": [
+            {
+              "title": "Receive payments via payment gateways on WhatsApp",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -1000,7 +1093,9 @@
         "SG",
         "ID",
         "IT",
-        "NL"
+        "NL",
+        "AE",
+        "SA"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [
@@ -1043,7 +1138,8 @@
         "ES",
         "FR",
         "IT",
-        "NL"
+        "NL",
+        "AE"
       ],
       "marketsByCapability": {
         "messaging.pay-in-chat": [

@@ -555,6 +555,71 @@
               "type": "company"
             }
           ]
+        },
+        "AE": {
+          "status": "limited",
+          "note": "The UAE Open Finance Regulation is issued and banks are rolling it out. ADIB says it has rolled out open finance on Central Bank-certified APIs, and Pay10 went live in April 2025 for payment initiation, including variable recurring payments. I found no bank or app that lets an AI agent read accounts or start payments, and the later rollout phases have no date.",
+          "evidence": [
+            {
+              "title": "ADIB rolls out open finance under UAE Central Bank framework",
+              "publisher": "Salaam Gateway",
+              "url": "https://salaamgateway.com/story/adib-rolls-out-open-finance-under-uae-central-bank-framework",
+              "date": "2026-01-21",
+              "type": "news"
+            },
+            {
+              "title": "Pay10 first to launch on UAE's regulated open finance infrastructure",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/fintech/news/pay10-first-to-launch-on-uaes-regulated-open-finance-infrastructure",
+              "date": "2025-04-24",
+              "type": "news"
+            },
+            {
+              "title": "UAE unveils open finance regulation to boost digital financial services",
+              "publisher": "Fintech Global",
+              "url": "https://fintech.global/2024/07/02/uae-unveils-open-finance-regulation-to-boost-digital-financial-services/",
+              "date": "2024-07-02",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "limited",
+          "note": "Saudi open banking is only starting. SAMA began licensing open banking providers on 26 March 2026, Lean Technologies was the first licensed firm, and Tatbiq Darahem Co. for Technology Almaliya was later approved for account information. Partners such as Tamara use Lean's data, but I found no consumer app that lets an AI agent read accounts or start payments.",
+          "evidence": [
+            {
+              "title": "SAMA Commences Licensing of Fintech Companies to Provide Open Banking Services",
+              "publisher": "Saudi Central Bank (SAMA)",
+              "url": "https://sama.gov.sa/en-US/MediaCenter/News/pages/news-1135.aspx",
+              "date": "2026-03-26",
+              "type": "regulation"
+            },
+            {
+              "title": "Lean Technologies becomes the first licensed company to provide open banking services in the Kingdom of Saudi Arabia",
+              "publisher": "FF News",
+              "url": "https://ffnews.com/newsarticle/paytech/lean-technologies-becomes-the-first-licensed-company-to-provide-open-banking-services-in-the-kingdom-of-saudi-arabia/",
+              "date": "2026-03-27",
+              "type": "news"
+            },
+            {
+              "title": "Saudi finance licenses climb to 74 as payment providers hit 32",
+              "publisher": "Arab News",
+              "url": "https://www.arabnews.pk/node/2643151",
+              "date": "2026-05-11",
+              "type": "news"
+            },
+            {
+              "title": "SAMA introduces Licensing Framework for open banking providers",
+              "publisher": "Clyde & Co",
+              "url": "https://www.clydeco.com/en/insights/2026/03/sama-new-licensing-framework-for-open-banking",
+              "date": "2026-03-30",
+              "type": "report"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -1052,6 +1117,42 @@
             }
           ],
           "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "ADCB unveiled a new app on 11 May 2026 with an AI assistant that takes voice or text commands. The launch coverage says it can check balances, move money, manage cards and track goals, but it does not say all customers have it or that it pays bills. I found no UAE bank assistant that pays bills.",
+          "evidence": [
+            {
+              "title": "ADCB puts AI at mobile banking core",
+              "publisher": "The Arabian Post",
+              "url": "https://thearabianpost.com/adcb-puts-ai-at-mobile-banking-core/",
+              "date": "2026-05-12",
+              "type": "news"
+            },
+            {
+              "title": "ADCB unveils to customers its unrivalled mobile banking application",
+              "publisher": "ADCB via Zawya",
+              "url": "https://www.zawya.com/en/press-release/companies-news/adcb-unveils-to-customers-its-unrivalled-mobile-banking-application-ak1038ka",
+              "date": "2026-05",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "I found no Saudi bank whose AI assistant sends money or pays bills. Searches for Al Rajhi, SNB, Alinma and STC Bank found no such assistant, and Bank AlBilad's AI plans cover corporate cash management. One result describes a Noura-branded assistant for plain-language account tasks, but the bank is unnamed and I could not confirm it moves money.",
+          "evidence": [
+            {
+              "title": "Bank AlBilad partners with Intellect Design Arena on the eMACH.ai platform",
+              "publisher": "FF News",
+              "url": "https://ffnews.com/newsarticle/fintech/bank-albilad-emach-ai-saudi-banking/",
+              "date": "2025-08-07",
+              "type": "news"
+            }
+          ],
           "confidence": "low"
         }
       }

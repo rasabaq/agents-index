@@ -443,6 +443,56 @@
             }
           ],
           "gapReason": "pilot-only"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "Visa completed the first live UAE agent payment in December 2025, a voice-led payment of Aldar service charges with an Emirates NBD Darna Visa card. Mastercard Agent Pay ran a Dubai pilot with Majid Al Futtaim in November 2025, and Visa's Agentic Ready program (May 2026) lists ADCB, ADIB, Emirates NBD and Mashreq as members that are testing. I found no general cardholder rollout.",
+          "evidence": [
+            {
+              "title": "Visa Partners with Aldar to Complete First End to End Voice-Enabled Agentic Payment in the Region",
+              "publisher": "Visa",
+              "url": "https://www.visa.com/en-ae/newsroom/visa-aldar-agentic-payments-partnership",
+              "date": "2025-12-18",
+              "type": "company"
+            },
+            {
+              "title": "Visa Launches Agentic Ready Program in UAE to Accelerate Agent Led Commerce",
+              "publisher": "Visa",
+              "url": "https://ae.visamiddleeast.com/en_AE/about-visa/newsroom/press-releases/prl-20052026.html",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Now use AI to shop in Dubai after new Mastercard-Majid Al Futtaim deal",
+              "publisher": "Gulf News",
+              "url": "https://gulfnews.com/business/banking/now-use-ai-to-shop-in-dubai-after-new-mastercard-majid-al-futtaim-deal-1.500352104",
+              "date": "2025-11-19",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only"
+        },
+        "SA": {
+          "status": "none",
+          "note": "No agent payment with a Visa, Mastercard or Amex agent token has been reported in Saudi Arabia. Visa's Agentic Ready programme launched in Oman in May 2026 and did not name Saudi Arabia as a market, and a Visa-sponsored Arab News piece from October 2025 still calls agent shopping upcoming. I found no Mastercard Agent Pay launch with Saudi banks or mada cards.",
+          "evidence": [
+            {
+              "title": "Visa Launches “Agentic Ready” Program in Oman to Accelerate Agent-Led Commerce",
+              "publisher": "Visa",
+              "url": "https://km.visamiddleeast.com/en_KM/about-visa/newsroom/press-releases/prl-oman-20052026.html",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "AI shoppers are coming: Are Saudi merchants ready?",
+              "publisher": "Arab News (sponsored by Visa)",
+              "url": "https://www.arabnews.com/corporate-and-sponsored-content/ai-shoppers-are-coming-are-saudi-merchants-ready-2620836",
+              "date": "2025-10-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -834,6 +884,26 @@
             }
           ],
           "gapReason": "rail-closed"
+        },
+        "AE": {
+          "status": "none",
+          "note": "Aani, the instant payment system run by Al Etihad Payments, is live for UAE residents and reached 12.5 million users by April 2026. I found no way for an AI agent to send a payment over it, so the rail exists but agents cannot use it.",
+          "evidence": [
+            {
+              "title": "UAE's Aani Instant-Payments Platform Reaches 12.5 Million Users",
+              "publisher": "Pulse",
+              "url": "https://www.pulse.bot/banking/news/uaes-aani-instantpayments-platform-reaches-125-million-users-7487a3fb-3c42-4b10-9d0a-f2e5d85554b0/",
+              "date": "2026-04",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed"
+        },
+        "SA": {
+          "status": "none",
+          "note": "No agent payment over Saudi Arabia's instant rail, SARIE, turned up in my checks. I could not open SAMA's own SARIE pages before my search limit ran out, so this stays low.",
+          "evidence": [],
+          "confidence": "low"
         }
       }
     },
@@ -1226,6 +1296,27 @@
           ],
           "gapReason": "not-launched",
           "confidence": "low"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "Botim, a UAE fintech wallet, says its AI assistant is live and can make money transfers through conversation. I found no wallet agent that pays merchants for you and no UAE launch of Stripe agent payment tokens. The article does not say whether every Botim user has the assistant.",
+          "evidence": [
+            {
+              "title": "Botim enhances AI capabilities with Microsoft Azure's Voice Live API integration",
+              "publisher": "Botim via Zawya",
+              "url": "https://www.zawya.com/en/press-release/companies-news/botim-enhances-ai-capabilities-with-microsoft-azures-voice-live-api-integration-cix2gmw2",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "I found no wallet or fintech app in Saudi Arabia, such as STC Pay, Tabby or Tamara, that lets an AI agent pay for a shopper. Open banking data from Lean Technologies goes to lenders such as Tamara for underwriting, which is not an agent paying. I could not check the wallet apps' own pages before my search limit ran out.",
+          "evidence": [],
+          "confidence": "low"
         }
       }
     }
@@ -1249,7 +1340,8 @@
         "FR",
         "CA",
         "JP",
-        "SG"
+        "SG",
+        "AE"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -1277,7 +1369,8 @@
         "AU",
         "KR",
         "SG",
-        "NL"
+        "NL",
+        "AE"
       ],
       "capabilities": [
         "payments.card-agent-token"

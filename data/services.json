@@ -407,6 +407,42 @@
             }
           ],
           "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "Ambl, a Dubai chat assistant, searches and confirms restaurant reservations in English, Arabic, French and Russian, and its launch release says it is live in the UAE. We found no UAE launch for Google AI Mode or for ChatGPT's OpenTable booking.",
+          "evidence": [
+            {
+              "title": "Ambl launches AI chat that speaks your language and finds your perfect reservation instantly",
+              "publisher": "Ambl (via Zawya)",
+              "url": "https://www.zawya.com/en/press-release/companies-news/ambl-launches-ai-chat-that-speaks-your-language-and-finds-your-perfect-reservation-instantly-ntp456cr",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no Saudi restaurant app where an AI agent books a table for you. Google AI Mode is listed as available in Saudi Arabia, but we found no sign that it books tables here, and Alexa+ is not offered here.",
+          "evidence": [
+            {
+              "title": "AI Mode supported locations",
+              "publisher": "Google Search Help",
+              "url": "https://support.google.com/websearch/answer/16011537",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ international launch",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -843,6 +879,46 @@
               "publisher": "Booking.com",
               "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
               "date": "2026-05-20",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "live",
+          "note": "The Booking.com app in ChatGPT is available globally for hotels and car rentals, per Booking.com's May 2026 announcement, and it hands you off to Booking.com to finish the booking. Google AI Mode hotel booking is US-only, and we could not confirm Expedia's ChatGPT app for the UAE.",
+          "evidence": [
+            {
+              "title": "Booking.com is making car rentals easier with app in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "Booking.com's ChatGPT app is open to ChatGPT users globally, and it hands the booking off to Booking.com. Almosafer, a Riyadh travel company, launched hotel search, recommendations and trip planning in ChatGPT in April 2026. Google AI Mode hotel booking is US-only.",
+          "evidence": [
+            {
+              "title": "Booking.com car rentals app in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Almosafer launches ChatGPT-integrated platform",
+              "publisher": "TradeArabia",
+              "url": "https://www.tradearabia.com/News/413794/Almosafer-launches-ChatGPT-integrated-platform",
+              "date": "2026-04-08",
+              "type": "news"
+            },
+            {
+              "title": "Book travel in AI Mode",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
               "type": "company"
             }
           ]
@@ -1324,6 +1400,50 @@
             }
           ],
           "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "We found no AI agent here that orders food, groceries or a ride for you. Uber's ChatGPT ride and food integrations are US-only, and Talabat's AI assistant gives recipes and ingredient lists but does not place orders. Careem has an AI grocery list tool, but we could not confirm that it places the order.",
+          "evidence": [
+            {
+              "title": "Uber ChatGPT integration for rides",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Uber Eats ChatGPT integration for eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no Saudi food, grocery or ride app where an AI agent places the order. Uber's ChatGPT ride and Uber Eats links show results only for US users, and our search found no agent at Keeta, HungerStation, Jahez or Careem.",
+          "evidence": [
+            {
+              "title": "Uber rides in ChatGPT",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Uber Eats in ChatGPT",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -1375,7 +1495,9 @@
         "SG",
         "ID",
         "IT",
-        "NL"
+        "NL",
+        "AE",
+        "SA"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -1597,7 +1719,9 @@
         "SG",
         "ID",
         "IT",
-        "NL"
+        "NL",
+        "AE",
+        "SA"
       ],
       "capabilities": [
         "services.travel-booking"
