@@ -480,10 +480,18 @@
           "confidence": "low"
         },
         "AU": {
-          "status": "none",
+          "status": "announced",
           "gapReason": "not-launched",
-          "note": "No Australian insurer was found whose AI agent takes a claim in a chat and moves it forward. IAG's OpenAI voice agents are due in the first half of FY27, and Suncorp plans automated claims lodgement by voice and chat. Lemonade is not in Australia. Searched Suncorp, IAG and NRMA (Nov 2026); no live customer chat that files a claim was found.",
-          "evidence": [],
+          "note": "IAG, the first Australian partner for OpenAI Presence, plans to let its voice agent take claim calls, with rollout due in the first half of 2027. Suncorp plans automated claims lodgement by voice and chat. No Australian insurer's AI agent takes a claim today, and Lemonade is not in Australia. Searched Suncorp, IAG and NRMA (Nov 2026).",
+          "evidence": [
+            {
+              "title": "OpenAI agentic platform to answer IAG's claim calls",
+              "publisher": "Insurance News",
+              "url": "https://www.insurancenews.com.au/corporate/open-ai-agentic-platform-to-answer-iags-claim-calls",
+              "date": "2026-07-27",
+              "type": "news"
+            }
+          ],
           "confidence": "low"
         },
         "NG": {

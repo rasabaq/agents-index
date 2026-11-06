@@ -262,10 +262,16 @@
           ]
         },
         "JP": {
-          "status": "announced",
-          "gapReason": "not-launched",
-          "note": "Amazon says Alexa+ in Japan (free Early Access since 29 October 2026) will book tables through Tabelog's Restaurant Reservations, but its launch release lists booking as planned, not yet offered. ChatGPT's OpenTable reservations are listed as global, but no page confirms Japanese restaurants show up, Tabelog's 2023 ChatGPT plugin only handed you off to its site, and OpenTable in Gemini is UK and US only.",
+          "status": "limited",
+          "note": "Since October 2026 LINE Yahoo's LINE AI Reservation answers the phone at restaurants that turn it on and, through the Toreta reservation ledger, checks seats and books, changes or cancels a table for the caller. It works only at restaurants that use it, and only trade press covers the launch so far. Amazon says Alexa+ in Japan (free Early Access since 29 October 2026) will book tables through Tabelog's Restaurant Reservations, but its launch release lists booking as planned, not yet offered. ChatGPT's OpenTable reservations are listed as global, but no page confirms Japanese restaurants show up, Tabelog's 2023 ChatGPT plugin only handed you off to its site, and OpenTable in Gemini is UK and US only.",
           "evidence": [
+            {
+              "title": "LY Corporation launches the AI-powered telephone answer service for restaurants, covering from reservation to alternative ideas",
+              "publisher": "Travel Voice",
+              "url": "https://www.travelvoice.jp/english/ly-corporation-launches-the-ai-powered-telephone-answer-service-for-restaurants-covering-from-reservation-to-alternative-ideas",
+              "date": "2026-10-31",
+              "type": "news"
+            },
             {
               "title": "Amazon、次世代AIアシスタント「Alexa+」を日本で提供開始",
               "publisher": "Amazon Japan",
@@ -287,7 +293,8 @@
               "date": "2023-05-08",
               "type": "company"
             }
-          ]
+          ],
+          "confidence": "low"
         },
         "AU": {
           "status": "live",
