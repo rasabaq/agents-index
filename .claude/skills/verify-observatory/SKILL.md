@@ -82,7 +82,7 @@ How `open` works:
 - It sets the whole view each time. Anything you leave out returns to the default: 1440 × 900, dark scheme, the browser's own language.
 - `--width 400` gives a 400 × 860 phone viewport.
 - It adds a `?verify=` query, so `#country=XX` always triggers a fresh load.
-- By default it waits for `#cn-title` on the home page and for `[data-companies] tbody tr` on `/companies.html`. The charts draw after that, so pass `--wait '#v-compare .vc-group'` (or `--wait '#v-flows svg'`) when you check them.
+- By default it waits for `#cn-title` on the home page and for the market filters (`[data-company-filters] [data-market]`) on `/companies.html`, which draw in the same step as the table and also when a market has no companies. The charts draw after that, so pass `--wait '#v-compare .vc-group'` (or `--wait '#v-flows svg'`) when you check them.
 
 Stable handles in this repo (use these, not coordinates):
 
@@ -138,4 +138,4 @@ Run `down` after a failed attempt too, so no ports or processes are left behind.
 - The sticky header covers the top of the viewport. `shot --at` scrolls the element to 70px below the top; pass `--offset <px>` at 400px if the header hides it.
 - Companies and Open source grow with the page; there is no inner scroll box. They show 10 rows until their "Show all" button is pressed.
 - The holder turns Chrome's cache off, so a file you edit during a run shows on the next `open`. A run started before this change may still serve stale scripts: `down` and `up` again.
-- The matrix scrolls sideways inside itself on phones (`[data-matrix]`), and the hero hides the country pins that do not fit. Count what is visible before you click it.
+- The matrix scrolls sideways inside itself whenever the countries do not fit, below about 1000px (`[data-matrix]`), and the hero hides the country pins that do not fit. Count what is visible before you click it.

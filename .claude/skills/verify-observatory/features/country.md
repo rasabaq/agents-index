@@ -62,7 +62,7 @@ Steps:
 - **Picker.** Run `node $H click '[data-clist] [data-go-country="CO"]'`. `node $H eval "[location.hash, document.querySelector('#cn-title').innerText]"` prints `#country=CO` and Colombia. The buttons list scores that never increase.
 - **Verdict.** Run `node $H eval "document.querySelector('.cn-verdict').innerText"`.
   - It starts with "In <country>, AI agents can" (or "nothing we track works") and ends with a full stop.
-- **Score.** Run `node $H eval "document.querySelector('.cn-score').innerText"`. It shows "of 29 things work today", "score", "of 100" and "of 14".
+- **Score.** Run `node $H eval "document.querySelector('.cn-score').innerText"`. It shows "of 29 things work today", "score", "of 100" and "of 24".
 - **Errands.**
   - Run `node $H eval "[document.querySelectorAll('.ecard').length, document.querySelector('#eh-title').innerText, document.querySelector('.eh-line').innerText]"`. It prints 7, "Do the weekly shop" and a line that starts with "In <country>,".
   - Run `node $H click '.ecard[data-errand="car"]'`. `location.hash` ends with `&errand=car`, the title reads "Sort out car insurance", and focus stays on the card.
@@ -81,7 +81,7 @@ Steps:
   - `location.hash` is `#country=MX`, and `#cn-title` reads Mexico.
   - The page did not scroll: `node $H eval "Math.round(document.querySelector('.hero-pins').getBoundingClientRect().top)"` is still in the viewport.
   - Take `node $H shot hero-1440-mx` (the MX pin is lit and the sun sits behind it), then `node $H shot country-1440-mx --at '#country'`.
-- **Ranking.** The picker is the ranking. Run `node $H open / --lang en`, then `node $H eval "(() => { const s = [...document.querySelectorAll('[data-clist] button')].map(b => +b.querySelector('.rk-v').innerText); return [s.length, s.every((v, i) => !i || v <= s[i - 1])]; })()"`. It prints `[14, true]`: one button per country, scores never increasing. Then `node $H click '.hero-btn-1'` ("Open the ranking"); after the smooth scroll, `#ranking` sits near the top (`getBoundingClientRect().top` about 72). At 400px the buttons wrap onto about four rows and `scrollWidth` stays 400.
+- **Ranking.** The picker is the ranking. Run `node $H open / --lang en`, then `node $H eval "(() => { const s = [...document.querySelectorAll('[data-clist] button')].map(b => +b.querySelector('.rk-v').innerText); return [s.length, s.every((v, i) => !i || v <= s[i - 1])]; })()"`. It prints `[24, true]`: one button per country, scores never increasing. Then `node $H click '.hero-btn-1'` ("Open the ranking"); after the smooth scroll, `#ranking` sits near the top (`getBoundingClientRect().top` about 72). At 400px the buttons wrap four to a row, onto six rows, and `scrollWidth` stays 400.
 - **Keys.** Run `node $H press j`. The country moves to the next one down the ranking (for example BR → FR with today's data). `node $H press k` moves it back up.
 - **Phone.**
   - For businesses at 400px shows the cards two to a row and the steps down the page: `node $H open '/#country=MX' --width 400`, `node $H click '[data-view="business"]'`, `node $H shot business-400-mx --at '#country' --offset 120`.
@@ -95,7 +95,7 @@ Steps:
 - The start country depends on the time zone. The harness pins it to UTC unless `--tz` is given. Without that, a run on a machine in Santiago opens Chile.
 - The picker inside the console and the hero pins do not scroll the page. Compare is not a picker: it scrolls to `#v-compare`. Other pickers (the world map, a hash change) scroll to `#country`.
 - The hero pins are links in a list (`[data-hero-pins]`), named like "United States, rank 1, score 84", and reachable with Tab.
-- The hero shows only the pins that fit in 44px slots: the top ranks, plus the selected country (`hero.js` `geom()` sets `hidden` on the others' `<li>`). At 1440px all 14 show. At 400px 8 show (the top 7 plus the selected one, or the top 8). Count them with `node $H eval "document.querySelectorAll('.hero-pins li:not([hidden])').length"`, and click only a visible pin.
+- The hero shows only the pins that fit in 44px slots: the top ranks, plus the selected country (`hero.js` `geom()` sets `hidden` on the others' `<li>`). At 1440px all 24 show. At 400px 8 show (the top 7 plus the selected one, or the top 8). Count them with `node $H eval "document.querySelectorAll('.hero-pins li:not([hidden])').length"`, and click only a visible pin.
 - `j` and `k` do nothing while the cell detail dialog is open or a field has focus.
 - The verdict, the reasons and "Could close the gap" come from the data, so they change when the data changes. Assert their shape (the country name, "can", "Main reason:", "already in"), not exact words.
 - "Could close the gap" (in the cell detail) only names companies that already work in two or more countries, in the same region as this one. Every country now has a same-region neighbour (the US has Canada, India has Japan), so any country can show it.

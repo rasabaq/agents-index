@@ -13,7 +13,7 @@ This folder is the maintained source for verifying what visitors see and do on t
 
 - Start every recipe with `node $H open …`. It sets the width, scheme and language for that load and gives a fresh page.
 - Act with `click` and `press`. Use `eval` only to read state.
-- Prefer the data attributes and ids listed in SKILL.md over text or position. Country codes come from `data/meta.json` (14 today: `US GB DE IN BR MX CL CO ES FR CA JP AU NG`). Read counts and rankings from the data instead of copying numbers from these files.
+- Prefer the data attributes and ids listed in SKILL.md over text or position. Country codes come from `data/meta.json` (24 today: `US GB DE IN BR MX CL CO ES FR CA JP AU NG KR SG ID IT NL AE SA ZA KE AR`). Read counts and rankings from the data instead of copying numbers from these files.
 - Check each recipe at `--width 1440` and `--width 400`. The site is dark-only, so `--scheme light` must look the same.
 - Do not follow external links (sources, GitHub). Assert their `href`.
 

@@ -54,7 +54,7 @@ Steps:
 - **Phone.**
   - Run `node $H open /companies.html --width 400` and `node $H shot companies-400 --at '#companies'`.
   - Rows become cards (up to 760px wide), there is no inner scroll box, and `scrollWidth` is 400.
-- **Tablet.** Run `node $H open /companies.html --width 900`. The tables stay tables: the 14 country pills under Live in wrap about seven to a line, long Open source headers take two lines, and `node $H eval 'document.documentElement.scrollWidth'` prints `900`. Repeat at `--width 700` (cards) and `--width 761` (tables).
+- **Tablet.** Run `node $H open /companies.html --width 900`. The tables stay tables: the 24 country pills under Live in wrap about seven to a line, long Open source headers take two lines, and `node $H eval 'document.documentElement.scrollWidth'` prints `900`. Repeat at `--width 700` (cards) and `--width 761` (tables).
 - **Proof.** Finish with `node $H errors`. A `resource` entry for a logo is fine; script errors are not.
 
 ## Gotchas
