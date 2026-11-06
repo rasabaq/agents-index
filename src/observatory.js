@@ -275,10 +275,11 @@ export function guessCountry(codes, languages = [], timeZone = '') {
 }
 
 // The page's link state: #country=MX, optionally &view=business and &errand=shop (the open errand; none means the
-// first). Old #country=MX links read as the people view.
+// first). Old #country=MX links read as the people view. A typed #country=mx reads as MX.
 export function readHash(hash) {
   const p = new URLSearchParams(hash.replace(/^#/, ''));
-  const country = /^[A-Z]{2}$/.test(p.get('country') ?? '') ? p.get('country') : null;
+  const code = (p.get('country') ?? '').toUpperCase();
+  const country = /^[A-Z]{2}$/.test(code) ? code : null;
   const errand = /^[a-z-]+$/.test(p.get('errand') ?? '') ? p.get('errand') : null;
   return { country, view: p.get('view') === 'business' ? 'business' : 'people', errand };
 }

@@ -171,10 +171,12 @@ function show(next) {
 
 function wire() {
   // The rail links change the hash, which adds a history entry, so back and forward work. A link to a country we do
-  // not track keeps the one on show and puts its code back in the URL. Going to another country closes the detail.
+  // not track keeps the one on show; either way the URL gets the code in capitals. Going to another country closes
+  // the detail.
   addEventListener('hashchange', () => {
-    const next = readHash(location.hash).country;
-    if (!byCode[next]) return history.replaceState(null, '', writeHash(code));
+    const asked = readHash(location.hash).country;
+    const next = byCode[asked] ? asked : code;
+    if (location.hash !== writeHash(next)) history.replaceState(null, '', writeHash(next));
     if (next === code) return;
     $('[data-detail]').close();
     show(next);
@@ -208,7 +210,7 @@ try {
   companies = mergeCompanies(categories);
   // Same start as the home page: the link, else the visitor's own country, else the United States.
   code = startCountry(meta.countries.map((c) => c.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
-  if (readHash(location.hash).country !== code) history.replaceState(null, '', writeHash(code));
+  if (location.hash !== writeHash(code)) history.replaceState(null, '', writeHash(code));
   document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   renderRail();
   renderProfile();
