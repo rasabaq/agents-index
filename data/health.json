@@ -164,9 +164,9 @@
           ]
         },
         "CA": {
-          "status": "limited",
-          "gapReason": "pilot-only",
-          "note": "In Ontario a 40-clinic pilot led by Amplify Care and Strello Health tests virtual agents that triage patients and book visits (December 2025); we could not confirm how far it books on its own. Gemini's Zocdoc booking is US only.",
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Medeo lets patients book in its own app, with no AI. Maple matches you with a clinician and does not book visits. A 40-clinic Ontario pilot by Amplify Care and Strello Health (Dec 2025) tests whether virtual agents can book, but we could not confirm it books on its own. Searched Medeo, Maple and Amplify Care (Nov 2026); no primary source confirms AI booking. Provincial booking not checked.",
           "evidence": [
             {
               "title": "Appointment booking AI triage pilot launches in Ontario",
@@ -186,9 +186,9 @@
           "confidence": "low"
         },
         "JP": {
-          "status": "limited",
+          "status": "none",
           "gapReason": "not-launched",
-          "note": "Some hospitals and clinics use AI phone lines that take booking requests: the National Cancer Center Hospital's AI phone takes first-visit requests 24 hours a day, but staff then pick the date and reply by SMS, and it needs a referral letter. We found no patient-side agent that books a doctor, and Zocdoc in Gemini is US-only.",
+          "note": "A cancer centre's AI phone line (National Cancer Center Hospital) takes first-visit requests 24 hours a day, but staff pick the slot and reply by text within three business days, and it needs a referral letter. We found no AI that books a doctor for a patient. EPARK's phone line is automated without AI. LINE Healthcare's booking pages were not available (its domain now redirects to a parked page), and its LINE Doctor material dates from 2020 to 2022. Clinics not checked. Zocdoc in Gemini is US-only.",
           "evidence": [
             {
               "title": "初診予約専用AI電話",
@@ -204,8 +204,7 @@
               "date": "2026-10",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "AU": {
           "status": "limited",
@@ -231,7 +230,7 @@
         "NG": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No AI agent that books a doctor was found. BetaCare's WhatsApp chatbot books virtual consultations and AXA Mansard Health's WhatsApp bot Karis finds partner hospitals, but no source says either is AI or books in-person slots; Gemini's Zocdoc booking is US-only.",
+          "note": "No AI agent that books a doctor was found. Helium Health's HeliumDoc offers virtual consultations, and older coverage mentions booking; no source says it is AI. Reliance's WhatsApp bot covers enrolment and support, per a third-party blog. BetaCare's WhatsApp bot books virtual consultations, but no source says it is AI or books in-person slots. AXA Mansard's WhatsApp bot Karis finds partner hospitals, but no source says it is AI or books in-person slots. Gemini's Zocdoc booking is US-only. Searched Helium, Reliance and AXA Mansard sites and news (Nov 2026); no primary source.",
           "evidence": [
             {
               "title": "Karis: AXA Mansard Health's WhatsApp chatbot to reduce waiting time at hospital",
@@ -406,14 +405,14 @@
         "JP": {
           "status": "none",
           "gapReason": "rail-closed",
-          "note": "We found no AI agent that renews or orders prescription medicine in Japan; renewals need a doctor's visit, in person or online, and Amazon's Health AI renewals are US-only.",
+          "note": "We found no AI agent that renews or orders prescription medicine in Japan. Renewals still need a doctor's visit, in person or online. Searched Japanese sources on online prescription guidance and AI refills (Nov 2026); none shows AI ordering. Amazon's Health AI renewals are US-only.",
           "evidence": [],
           "confidence": "low"
         },
         "AU": {
           "status": "none",
           "gapReason": "rail-closed",
-          "note": "We found no AI agent that renews or orders prescription medicine in Australia. We did not search pharmacy chains one by one.",
+          "note": "We found no AI agent that renews or orders prescription medicine in Australia. Chemist Warehouse's app stores eScripts and sends refill reminders, with no AI; eScript repeats come as tokens sent by text or email. Instant Scripts is doctor-led, with no AI. Searched Chemist Warehouse, eScript and Instant Scripts (Nov 2026); Chemist Warehouse's site blocked our fetch.",
           "evidence": [],
           "confidence": "low"
         },
@@ -544,13 +543,13 @@
         "ES": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "We found no live AI assistant at Sanitas, Adeslas or DKV that looks up your own cover or a claim; their apps and WhatsApp channels use ordinary menus and human agents.",
+          "note": "We found no live AI assistant at Sanitas, Adeslas or DKV that looks up your own cover or a claim. Their sites point to apps, web areas and human agents; reimbursement requests are made in the app. Searched the three sites (Nov 2026); no primary source confirms an assistant.",
           "evidence": [],
           "confidence": "low"
         },
         "FR": {
-          "status": "live",
-          "note": "Alan's AI health companion Mo, live for over 500,000 Alan members in France (May 2026), understands the member's own cover and takes insurance questions through to care. Alan's letter does not say Mo shows claim status, so that part is unconfirmed.",
+          "status": "limited",
+          "note": "Alan's AI health companion Mo is live for over 500,000 members in France (Q1 2026 letter). The letter says Mo \"understands your coverage\", but it does not say Mo shows reimbursements or claim status. Alan's Nov 2024 article describes Mo as a health-advice assistant. ameliBot, the public insurer's chatbot, exists, but ameli.fr blocked our fetch and its AI features and refund tracking are not confirmed.",
           "evidence": [
             {
               "title": "Alan - 2026 Q1 Letter to shareholders (Mo live for 500k+ members in France)",
@@ -558,21 +557,29 @@
               "url": "https://alan.com/en/blog/discover-alan/a/alan-2026-q1-letter-to-shareholders",
               "date": "2026-05-06",
               "type": "company"
+            },
+            {
+              "title": "Mo: Les premiers résultats de notre assistant médical IA",
+              "publisher": "Alan",
+              "url": "https://alan.com/fr-fr/blog/tout-alan/a/mo-ia-etude",
+              "date": "2024-11-25",
+              "type": "company"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "not-launched"
         },
         "CA": {
-          "status": "none",
+          "status": "limited",
           "gapReason": "not-launched",
-          "note": "Sun Life launched an Alexa skill in 2019 that reads your benefit balances and the status of a recent medical or dental claim, but we found no current page showing it still works. No 2026 member-facing AI that checks cover or claims was found at Manulife, Sun Life or Canada Life.",
+          "note": "Sun Life's Canadian support page says members can use Alexa to check the status of a medical or dental claim (now also short- and long-term disability) and to get plan details. Alexa was launched in 2019. The page is undated and our fetch was blocked, so this comes from a search result (Nov 2026). We found no 2026 Canadian chat assistant at Sun Life; Manulife and provincial plans were not checked.",
           "evidence": [
             {
-              "title": "Sun Life now allows Amazon Alexa to find benefits information for clients",
-              "publisher": "Insurance Business Canada",
-              "url": "https://insurancebusinessmag.com/ca/news/breaking-news/sun-life-now-allows-amazon-alexa-to-find-benefits-information-for-clients-195428.aspx",
-              "date": "2019-12-20",
-              "type": "news"
+              "title": "Sun Life on Alexa",
+              "publisher": "Sun Life Canada",
+              "url": "https://sunlife.ca/ca/Support/Ella/Speak+to+Sun+Life/Sun+Life+on+Alexa",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -580,20 +587,20 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "Public health insurance covers everyone at a fixed co-pay, and we found no AI assistant at a health insurance society or private insurer that looks up your own cover or a claim; UnitedHealthcare's Avery is US-only.",
+          "note": "Public health insurance covers everyone at a fixed co-pay. We found no AI assistant at a health insurance society or private insurer that looks up your own cover or a claim. Searched Japanese sources on insurer chatbots and claims (Nov 2026); only market reports came up. UnitedHealthcare's Avery is US-only.",
           "evidence": [],
           "confidence": "low"
         },
         "AU": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No live AI assistant that checks your own cover or claim status was found at Medibank, Bupa, HCF or nib; Medibank's FY26 results do not mention one.",
+          "note": "No live AI assistant that checks your own cover or claim status was found at Medibank, Bupa or nib. Medibank's site has no assistant. nib runs a chatbot (nibby) that has handled over four million member queries and uses Claude, but no source says it checks cover or claims; nib's app shows claim status without AI. Bupa Australia has no confirmed chatbot. HCF was not checked.",
           "evidence": [
             {
-              "title": "FY26 Results Media Release",
-              "publisher": "Medibank",
-              "url": "https://www.medibank.com.au/content/dam/retail/about-assets/pdfs/investor-centre/fy26-results/FY26_Results_Media_Release.pdf",
-              "date": "2026-08-20",
+              "title": "nib group uses Amazon Bedrock to drive productivity and personalised health insurance",
+              "publisher": "Amazon Web Services",
+              "url": "https://press.aboutamazon.com/aws/2025/3/nib-group-uses-amazon-bedrock-to-drive-productivity-and-personalised-health-insurance",
+              "date": "2025-03",
               "type": "company"
             }
           ],
@@ -602,7 +609,7 @@
         "NG": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "AXA Mansard Health's WhatsApp bot Karis (March 2026) lets enrollees check plan benefits and confirm treatment authorisations, but no source says it is AI, so the cell stays none, as for similar bots elsewhere.",
+          "note": "AXA Mansard Health's WhatsApp bot Karis (March 2026) lets enrollees check plan benefits and confirm treatment authorisations through a menu. No source says it is AI, so the cell stays none, as for similar bots elsewhere. Searched AXA Mansard's site (no Karis mention) and Nigerian news (Nov 2026).",
           "evidence": [
             {
               "title": "AXA Mansard Health Introduces WhatsApp ChatBot 'Karis' To Streamline Healthcare Access Across Nigeria",
