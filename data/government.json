@@ -11,13 +11,6 @@
           "note": "There is no national ID, so it counts as limited. Login.gov serves only government agencies. Businesses can check state mobile driver's licenses in Google Wallet through the Digital Credentials API, but these are state IDs, not a national one.",
           "evidence": [
             {
-              "title": "Login.gov is now accepting mobile driver's licenses",
-              "publisher": "Nextgov/FCW",
-              "url": "https://www.nextgov.com/digital-government/2026/09/logingov-now-accepting-mobile-drivers-licenses/416146/",
-              "date": "2026-09",
-              "type": "news"
-            },
-            {
               "title": "Accepted ID types: mobile driver's licenses in a digital wallet",
               "publisher": "Login.gov",
               "url": "https://www.login.gov/help/verify-your-identity/accepted-id-type/",
@@ -139,7 +132,7 @@
         },
         "MX": {
           "status": "live",
-          "note": "Banks and other firms that sign an agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo. As in Colombia, ordinary firms can get access, so it counts as live. The Llave MX rules require federal platforms to use it for sign-in but set no access for private apps, and the biometric CURP is not yet open to private apps.",
+          "note": "Banks and other firms that sign an agreement with INE check the voter credential, the de facto national ID, through INE's data verification service set up in 2016, and vendors such as Veridas also match the person's face against the INE photo. As in Colombia, ordinary firms can get access, so the cell is live. The Llave MX rules (Article 29) require federal platforms to add Llave MX sign-in, but the rules do not say private apps can use it.",
           "evidence": [
             {
               "title": "Acuerdo INE/CG92/2016: Servicio de Verificación de los Datos de la Credencial para Votar",
@@ -485,13 +478,6 @@
               "url": "https://roadmap-for-modern-digital-government.campaign.gov.uk/join-up-services/govuk-app",
               "date": "2026-10",
               "type": "report"
-            },
-            {
-              "title": "AI chatbot fully integrated into GOV.UK app",
-              "publisher": "Civil Service World",
-              "url": "https://www.civilserviceworld.com/news/article/govuk-ai-chatbot-launched",
-              "date": "2026-05-19",
-              "type": "news"
             },
             {
               "title": "Anthropic partners with the UK Government to bring AI assistance to GOV.UK services",

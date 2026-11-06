@@ -72,13 +72,6 @@
               "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
               "date": "2026-10",
               "type": "company"
-            },
-            {
-              "title": "EU Digital Omnibus on AI enters into force",
-              "publisher": "Hunton Andrews Kurth",
-              "url": "https://www.hunton.com/privacy-and-cybersecurity-law-blog/eu-digital-omnibus-on-ai-enters-into-force",
-              "date": "2026-07-28",
-              "type": "news"
             }
           ]
         },
@@ -133,7 +126,7 @@
         },
         "MX": {
           "status": "none",
-          "note": "Mexico has no AI law and no binding AI rules. In October 2026 the Chamber of Deputies published a proposal to give Congress the power to legislate on AI, and we found no AI bill that has passed either chamber. As in Colombia, only lawmakers' proposals are pending, so it counts as none.",
+          "note": "Mexico has no AI law and no binding AI rules. Congress has AI bills pending: a constitutional reform to let Congress legislate on AI (filed April 2026), a general AI law proposal from PRI deputies (June 2026) and a federal AI law bill (24 July 2026). Searched Congress records and Mexican press (Nov 2026): none has passed either chamber. The October 2026 gazette entry could not be opened, so its date is not confirmed. As in Colombia, only lawmakers' proposals are pending, so it counts as none.",
           "gapReason": "no-rule",
           "confidence": "low",
           "evidence": [
@@ -157,13 +150,6 @@
               "url": "https://www.camara.cl/legislacion/proyectosdeley/tramitacion.aspx?prmID=17429",
               "date": "2025-10",
               "type": "regulation"
-            },
-            {
-              "title": "Ley de Inteligencia Artificial: últimas novedades en su tramitación",
-              "publisher": "AZ Abogados",
-              "url": "https://www.az.cl/ley-de-inteligencia-artificial-ultimas-novedades-en-su-tramitacion/",
-              "date": "2025-05-15",
-              "type": "news"
             }
           ]
         },
@@ -420,7 +406,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "The Reserve Bank of India's 2017 circular limits your loss on unauthorized electronic payments and orders banks to credit the money within 10 working days. The E-Commerce Rules 2020 require platforms to answer complaints within a month. Neither names agents, and an order an agent places for you may count as authorized.",
+          "note": "The Reserve Bank of India's 2017 circular limits your loss on unauthorized electronic payments and orders banks to credit the money within 10 working days (circular text checked, Nov 2026). The E-Commerce Rules 2020 require platforms to answer complaints within a month (a Lok Sabha answer confirms this; the consumeraffairs.nic.in link did not resolve). Neither names agents, and an order an agent places for you may count as authorized, so the flag stays.",
           "gapReason": "no-rule",
           "confidence": "low",
           "evidence": [
@@ -442,7 +428,7 @@
         },
         "BR": {
           "status": "limited",
-          "note": "Brazil's consumer code gives seven days to withdraw from a distance purchase, and the central bank's Pix refund scheme (MED) returns money after fraud or a bank error. The central bank says MED does not cover a purchase that went wrong, such as the wrong item, and no rule names agents.",
+          "note": "Brazil's consumer code gives seven days to withdraw from a distance purchase, and the central bank's Pix refund scheme (MED) returns money after fraud or a bank error. The central bank's MED guide (v4.3) confirms MED covers fraud and payment-provider operational failures, not a purchase that went wrong, such as the wrong item. The consumer code could not be checked (Planalto refused access, Nov 2026). No rule names agents, so the flag stays.",
           "gapReason": "no-rule",
           "confidence": "low",
           "evidence": [
@@ -464,7 +450,7 @@
         },
         "MX": {
           "status": "limited",
-          "note": "Condusef, the national commission that protects users of financial services, says a bank must credit a charge you do not recognize within about 48 hours while it investigates for up to 45 days, and for online buys the bank must prove it used online authentication. The consumer protection law (LFPC) covers online sales. None of it names agents, and an agent's order is one you asked for.",
+          "note": "Condusef, the national commission that protects users of financial services, says a bank must credit a charge you do not recognize while it investigates for up to 45 days. Press reports of Condusef's guidance disagree on the credit time (about 48 hours, or the second business day), so the cell stays limited and the flag stays. The Condusef page would not load, and searches found no rule on online authentication, so that claim is removed. The consumer protection law (LFPC) covers online sales. None of it names agents, and an agent's order is one you asked for.",
           "gapReason": "no-rule",
           "confidence": "low",
           "evidence": [

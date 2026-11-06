@@ -28,7 +28,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "Meta began opening Meta Business Agent to businesses globally in June 2026, and WhatsApp partner 360dialog deploys it and says the regional limits now appear lifted. Meta's developer docs say a business must be based in \"a country authorized for Meta Business Agent\" but do not publish that list, and we found no UK-specific page, so the flag stays.",
+          "note": "Meta began opening Meta Business Agent to businesses globally in June 2026, and WhatsApp partner 360dialog deploys it and says the regional limits now appear lifted. Meta's developer docs say a business must be based in \"a country authorized for Meta Business Agent\" but do not publish that list. Searched Meta's June 2026 announcement, Meta's developer overview and 360dialog's eligibility page (Nov 2026): none names the UK or lists excluded countries, so the flag stays.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -460,7 +460,7 @@
         "DE": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats (in Germany since 2018), which few businesses offer. WhatsApp payments are not offered in Germany.",
+          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. Apple's page does not list the countries it covers. WhatsApp payments are not offered in Germany.",
           "evidence": [
             {
               "title": "Bot Payments API",
@@ -475,13 +475,6 @@
               "url": "https://register.apple.com/business-chat",
               "date": "2026-10",
               "type": "company"
-            },
-            {
-              "title": "Apple Business Chat Expands Beyond United States to 10 Countries and 30 More Brands",
-              "publisher": "MacRumors",
-              "url": "https://www.macrumors.com/2018/10/02/apple-business-chat-expands-to-13-countries/",
-              "date": "2018-10-02",
-              "type": "news"
             },
             {
               "title": "Stripe global availability",
