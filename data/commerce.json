@@ -368,13 +368,6 @@
               "type": "company"
             },
             {
-              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
-              "publisher": "iPhoneSoft",
-              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
-              "date": "2026-05-26",
-              "type": "news"
-            },
-            {
               "title": "Use agentic checkout with Google Pay (US and Australia only)",
               "publisher": "Google",
               "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
@@ -503,7 +496,7 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT, Claude or OpenClaw buy airtime and data, pay bills and order Chowdeck food. The agent sets up each purchase in the chat, and you approve the payment on WhatsApp. Gemini shopping does not list Nigeria, Google Pay agentic checkout is only in the US and Australia, and Alexa+ is not offered here.",
+          "note": "Paystack Index, in early access and for Nigeria only at launch, lets Claude, ChatGPT or OpenClaw buy airtime and data, pay bills, send money and order Chowdeck food. Gemini shopping does not list Nigeria, Google Pay agentic checkout is only in the US and Australia, and Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "What is Paystack Index?",
@@ -511,13 +504,6 @@
               "url": "https://index.paystack.com/legal/support/about",
               "date": "2026-11",
               "type": "company"
-            },
-            {
-              "title": "Paystack launches AI checkout Index",
-              "publisher": "Techpoint Africa",
-              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
-              "date": "2026-06-25",
-              "type": "news"
             },
             {
               "title": "Get help with your shopping in Gemini Apps (supported countries)",
@@ -878,10 +864,17 @@
           ]
         },
         "NG": {
-          "status": "none",
-          "gapReason": "not-launched",
-          "note": "No marketplace buying agent found. Jumia uses AI for customer service, logistics and sellers (and had a scripted Messenger bot in 2017), but has no agent that buys for you; Amazon's agents are not offered in Nigeria. Glovo's ChatGPT and Claude assistant only finds items and sends you to the Glovo app to pay, and no source says it covers Nigeria.",
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Paystack Index, in early access since mid-2026, lets AI agents such as Claude and ChatGPT order food or groceries on Chowdeck for you after you approve each transaction; Paystack says early users completed over 1,000 transactions in its first month. It is early access with a waitlist, so it is limited. Jumia has no agent that buys for you, and Amazon's agents are not offered in Nigeria.",
           "evidence": [
+            {
+              "title": "What we learnt from Index",
+              "publisher": "TSG Labs (Paystack)",
+              "url": "https://tsglabs.com/blog/what-we-learnt-from-index",
+              "date": "2026-09-24",
+              "type": "company"
+            },
             {
               "title": "Jumia launches Nigeria's first e-commerce bot",
               "publisher": "ITWeb Africa",
@@ -890,13 +883,14 @@
               "type": "news"
             },
             {
-              "title": "Stop searching, start chatting: Glovo pioneers AI quick commerce",
-              "publisher": "Nairametrics",
-              "url": "https://nairametrics.com/2026/07/30/stop-searching-start-chatting-glovo-pioneers-ai-quick-commerce/",
-              "date": "2026-07-30",
-              "type": "news"
+              "title": "Glovo Connector for Claude (page is undated; checked Nov 2026)",
+              "publisher": "Glovo",
+              "url": "https://glovoapp.com/docs/en/legal/mcp/",
+              "date": "2026-11",
+              "type": "company"
             }
-          ]
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -1200,7 +1194,7 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "Japan is not on Stripe's country list for its Agentic Commerce Suite, and Shopify's direct checkout in Google AI Mode and Gemini needs a store that sells to the US, Canada or Australia. Japanese Shopify stores can be found by agents, but shoppers are sent to the store to buy, and we found no Japanese protocol or platform that lets local merchants take agent orders.",
+          "note": "Japan is not on Stripe's country list for its Agentic Commerce Suite, and Google's UCP checkout names only the US, Canada and Australia. Shopify's direct checkout in Google AI Mode and Gemini needs a store that sells to those countries, and Japanese Shopify stores are sent to the store to buy. We found no Japanese protocol or platform that lets local merchants take agent orders. Rakuten and LINE Yahoo run AI agents for their own shoppers, and a vendor audit says some of their agents can finish a purchase, but we found no primary source for that. Searched Stripe, Shopify, Google, Rakuten and LINE Yahoo sources (Nov 2026); no primary source shows Japanese merchants taking agent orders.",
           "evidence": [
             {
               "title": "Sell through agents with Agentic Commerce Suite (supported countries)",
@@ -1220,6 +1214,13 @@
               "title": "Shopify agentic storefronts",
               "publisher": "Shopify Help Center",
               "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "About the Universal Commerce Protocol (UCP) and UCP-powered checkout feature on Google",
+              "publisher": "Google Merchant Center Help",
+              "url": "https://support.google.com/merchants/answer/16837055?hl=en",
               "date": "2026-10",
               "type": "company"
             }
@@ -1263,15 +1264,8 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index lets AI agents pay Paystack merchants, but Paystack hand-picks the merchants during its early-access beta (Chowdeck, airtime and data at launch). Shopify stores in Nigeria can sell through Agentic Storefronts, but ChatGPT reaches only US shoppers.",
+          "note": "Paystack Index, in early access and for Nigeria only at launch, lets Claude, ChatGPT or OpenClaw buy airtime and data, pay bills and order Chowdeck food. Shopify stores in Nigeria can sell through Agentic Storefronts, but ChatGPT reaches only US shoppers.",
           "evidence": [
-            {
-              "title": "Paystack launches AI checkout Index",
-              "publisher": "Techpoint Africa",
-              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
-              "date": "2026-06-25",
-              "type": "news"
-            },
             {
               "title": "What is Paystack Index?",
               "publisher": "Paystack",

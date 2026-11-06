@@ -183,8 +183,8 @@
           ]
         },
         "FR": {
-          "status": "limited",
-          "note": "Lemonade sells home insurance for tenants and owners in France through its app and website, but no French page we found says its AI bot Maya runs the sign-up there, and no French insurer or comparison site app in ChatGPT was found.",
+          "status": "none",
+          "note": "We found no French insurer that sells home, car or travel cover start to finish in an AI chat. Lemonade sells home insurance in France by app and website, but no French page we could open says its AI bot Maya sells there. Leocare's LeoBot only answers questions. Searched Alan, Leocare, Luko and Lemonade France (Nov 2026); the Lemonade France pages returned 403 to our fetches.",
           "evidence": [
             {
               "title": "L'assurance habitation préférée des propriétaires",
@@ -201,7 +201,8 @@
               "type": "company"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "not-launched"
         },
         "CA": {
           "status": "limited",
@@ -227,7 +228,7 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "We found no insurer or comparison site in Japan that sells a car, home or travel policy start to finish in an AI chat; Lemonade does not operate in Japan, and the ChatGPT insurance apps we found serve the US and UK.",
+          "note": "We found no insurer or comparison site in Japan that sells a car, home or travel policy start to finish in an AI chat. Lemonade does not operate in Japan, and the ChatGPT insurance apps we found serve the US, UK, Spain and Canada. Searched Tokio Marine, Sompo and Lifenet (Nov 2026); no AI chat sale found.",
           "evidence": [],
           "confidence": "low"
         },
@@ -247,7 +248,7 @@
         },
         "NG": {
           "status": "limited",
-          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026), on WhatsApp, its app and its website, lets customers buy and renew policies in English, Yoruba, Igbo, Hausa and other languages. No source says which products or whether payment finishes inside the chat, so the cell stays limited.",
+          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026), on WhatsApp, its app and its website, lets customers buy and renew policies in English, Yoruba, Igbo, Hausa and other languages. No source says which products or whether payment finishes inside the chat, so the cell stays limited. Heirs' website (Nov 2026) shows a 'Chat with Prince AI' button but does not list products or payment. Searched Leadway, AXA Mansard and Curacel (Nov 2026); no chat sales found for them.",
           "evidence": [
             {
               "title": "Heirs Insurance Group Launches Multi-Language AI Assistant to Deepen Insurance Access in Nigeria",
@@ -461,19 +462,12 @@
               "url": "https://td.mediaroom.com/2026-05-01-Lets-Chat-Coverage-TD-Insurance-Rolls-Out-New-Virtual-Assistant",
               "date": "2026-05-01",
               "type": "company"
-            },
-            {
-              "title": "TD Insurance releases client-facing chatbot",
-              "publisher": "Canadian Underwriter",
-              "url": "https://canadianunderwriter.ca/2026/05/15/td-insurance-releases-client-facing-chatbot/",
-              "date": "2026-05-15",
-              "type": "news"
             }
           ]
         },
         "JP": {
           "status": "limited",
-          "note": "Rakuten General Insurance has run an AI voice system since December 2024 that takes fire and personal accident claims by phone and passes the call to a person when it cannot finish. Sompo Japan's call center AI fills in claim details from a call. We found no insurer whose AI takes a claim in a chat and settles it.",
+          "note": "Rakuten General Insurance has run an AI voice system since December 2024 that takes fire and personal accident claims by phone and passes the call to a person when it cannot finish. Sompo Japan's call center AI fills in claim details from a call. We found no insurer whose AI takes a claim in a chat and settles it. Searched Tokio Marine and Sompo (Nov 2026); we found no chat claim filing. Rakuten's news page we tried returned 404.",
           "evidence": [
             {
               "title": "火災保険と傷害保険の事故受付に「AI自動音声システム」導入(楽天損保)",
@@ -486,15 +480,23 @@
           "confidence": "low"
         },
         "AU": {
-          "status": "none",
+          "status": "announced",
           "gapReason": "not-launched",
-          "note": "No Australian insurer was found whose AI agent takes a claim in a chat and moves it forward; IAG's OpenAI voice agents are due in the first half of FY27, and Lemonade is not in Australia.",
-          "evidence": [],
+          "note": "IAG, the first Australian partner for OpenAI Presence, plans to let its voice agent take claim calls, with rollout due in the first half of 2027. Suncorp plans automated claims lodgement by voice and chat. No Australian insurer's AI agent takes a claim today, and Lemonade is not in Australia. Searched Suncorp, IAG and NRMA (Nov 2026).",
+          "evidence": [
+            {
+              "title": "OpenAI agentic platform to answer IAG's claim calls",
+              "publisher": "Insurance News",
+              "url": "https://www.insurancenews.com.au/corporate/open-ai-agentic-platform-to-answer-iags-claim-calls",
+              "date": "2026-07-27",
+              "type": "news"
+            }
+          ],
           "confidence": "low"
         },
         "NG": {
-          "status": "live",
-          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026) lets customers start a claim and track it on WhatsApp, the SimpleLife app and the website. Sources do not say whether it checks documents or settles claims itself.",
+          "status": "limited",
+          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026), on WhatsApp, its app and its website, lets customers start a claim and track it. Heirs' website shows a 'Chat with Prince AI' button but no claims steps, and no source says whether it checks documents or settles claims. Searched Curacel and Leadway (Nov 2026): Curacel sells claims tools to insurers, and we found no Leadway chat claim.",
           "evidence": [
             {
               "title": "Heirs Insurance Group Launches Multi-Language AI Assistant to Deepen Insurance Access in Nigeria",
@@ -511,7 +513,8 @@
               "type": "news"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "assist-only"
         }
       }
     }
