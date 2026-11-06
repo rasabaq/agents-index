@@ -1,10 +1,10 @@
-import { STATUSES, scoreCountries, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, BUSINESS_GROUPS, readHash, writeHash, ordinal, placeName, liveBy, gapCounts } from './src/observatory.js';
+import { STATUSES, mergeCompanies, shortName, useCategoryWords, startCountry, guessCountry, verdict, BUSINESS_GROUPS, readHash, writeHash, ordinal, placeName, liveBy, gapCounts } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS, errandIn } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { mosaic, fingerprint } from './overview.js';
 import { data } from './data.js';
 import { $, esc, flag, chip, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
-import { openDetail, sourceList, showDetail } from './detail.js';
+import { openDetail, sourceList, showDetail, siteOf } from './detail.js';
 
 // errand: the open errand's id; null opens the view's first one.
 const state = { view: 'people', country: null, errand: null };
@@ -13,13 +13,11 @@ let meta, categories, ranking, byCode, capIndex, companies, cells, site;
 
 function init() {
   useCategoryWords(meta.categories);
-  ranking = scoreCountries(meta, categories);
-  byCode = Object.fromEntries(ranking.map((r) => [r.code, r]));
-  capIndex = Object.fromEntries(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { ...cap, category: cat.category }])));
+  site = siteOf(meta, categories);
+  ({ ranking, byCode, capIndex } = site);
   // Every cell with its capability and country, in category order.
   cells = Object.values(capIndex).flatMap((cap) => meta.countries.map((c) => ({ cap, code: c.code, cell: cap.countries[c.code] })));
   companies = mergeCompanies(categories);
-  site = { meta, categories, capIndex, byCode, ranking, region: Object.fromEntries(meta.countries.map((c) => [c.code, c.region])) };
   const codes = meta.countries.map((c) => c.code);
   state.view = readHash(location.hash).view;
   state.errand = pickErrand(readHash(location.hash).errand);

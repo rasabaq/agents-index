@@ -1,9 +1,22 @@
 // The cell detail dialog, shared by the home page (app.js) and the countries page (countries.js). Both pages have the
-// same <dialog data-detail>. `site` is the page's data: { meta, categories, capIndex, byCode, ranking, region }, where
-// capIndex maps a capability id to { ...capability, category } and region maps a country code to its region.
-import { STATUSES, couldClose, companiesFor } from './src/observatory.js';
+// same <dialog data-detail>. `site` is the page's data, built once by siteOf.
+import { STATUSES, scoreCountries, couldClose, companiesFor } from './src/observatory.js';
 import { findStep } from './src/errands.js';
 import { $, esc, flag, chip } from './ui.js';
+
+// The page's data: the ranking (scoreCountries), byCode (a country code to its ranking row), capIndex (a capability id
+// to { ...capability, category }) and region (a country code to its region).
+export function siteOf(meta, categories) {
+  const ranking = scoreCountries(meta, categories);
+  return {
+    meta,
+    categories,
+    ranking,
+    byCode: Object.fromEntries(ranking.map((r) => [r.code, r])),
+    capIndex: Object.fromEntries(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { ...cap, category: cat.category }]))),
+    region: Object.fromEntries(ranking.map((r) => [r.code, r.region])),
+  };
+}
 
 const catName = (site, id) => site.meta.categories.find((c) => c.id === id).name;
 

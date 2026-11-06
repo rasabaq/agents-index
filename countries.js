@@ -1,12 +1,12 @@
 // The countries page: one fact sheet per country, beside a rail of every country, best first.
 // The link holds the country in the home page's format (#country=CL), so links match and back and forward step
 // through the countries you opened. Every check row opens the shared cell detail (detail.js).
-import { STATUSES, scoreCountries, mergeCompanies, useCategoryWords, startCountry, readHash, writeHash, verdict, tierOf, THEMES, themeScores, regionCompare, liveBy, gapCounts, placeName, join } from './src/observatory.js';
+import { STATUSES, mergeCompanies, useCategoryWords, startCountry, readHash, writeHash, verdict, tierOf, THEMES, themeScores, regionCompare, liveBy, gapCounts, placeName, join } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { data } from './data.js';
 import { $, esc, flag, chip, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
-import { openDetail } from './detail.js';
+import { openDetail, siteOf } from './detail.js';
 
 const plural = (n, one, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 const ORDER = Object.keys(STATUSES);
@@ -205,11 +205,9 @@ wireLogos();
 try {
   ({ meta, categories } = await data);
   useCategoryWords(meta.categories);
-  ranking = scoreCountries(meta, categories);
-  byCode = Object.fromEntries(ranking.map((r) => [r.code, r]));
+  site = siteOf(meta, categories);
+  ({ ranking, byCode } = site);
   companies = mergeCompanies(categories);
-  const capIndex = Object.fromEntries(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { ...cap, category: cat.category }])));
-  site = { meta, categories, capIndex, byCode, ranking, region: Object.fromEntries(meta.countries.map((c) => [c.code, c.region])) };
   // Same start as the home page: the link, else the visitor's own country, else the United States.
   code = startCountry(meta.countries.map((c) => c.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
   if (readHash(location.hash).country !== code) history.replaceState(null, '', writeHash(code));
