@@ -228,11 +228,11 @@
               "type": "company"
             },
             {
-              "title": "Revolut annonce avoir réalisé le premier paiement par IA en France",
-              "publisher": "Sud Radio",
-              "url": "https://www.sudradio.fr/societe/revolut-annonce-avoir-realise-le-premier-paiement-par-ia-en-france",
-              "date": "2026-09-07",
-              "type": "news"
+              "title": "Cleverbridge Completes First Live AI Agent Initiated Payment in France with Visa and Revolut",
+              "publisher": "Cleverbridge (BusinessWire)",
+              "url": "https://secure.businesswire.com/news/home/20260924668305/en/Cleverbridge-Completes-First-Live-AI-Agent-Initiated-Payment-in-France-with-Visa-and-Revolut",
+              "date": "2026-09-24",
+              "type": "company"
             },
             {
               "title": "Visa and banks across Europe reach the next phase of agentic commerce, unlocking secure access to merchants (no French issuer named)",
@@ -554,20 +554,20 @@
         "FR": {
           "status": "none",
           "gapReason": "rail-closed",
-          "note": "No agent payments over SEPA Instant or Wero found. Wero has been live for people in France since 2024 and is adding shop and recurring payments in 2026, but it has no agent feature.",
+          "note": "No agent payments over SEPA Instant or Wero found. Wero is live for people in France: online shop payments work now, while in-store and recurring payments are still planned. Wero has no agent feature.",
           "evidence": [
             {
-              "title": "MPE 2026: five key themes for merchants (agentic commerce; Wero as Europe's own rail)",
-              "publisher": "Payment Expert",
-              "url": "https://paymentexpert.com/2026/03/23/mpe-2026-five-key-themes-merchants/",
-              "date": "2026-03-23",
-              "type": "news"
+              "title": "Wero: pay instantly online",
+              "publisher": "Wero",
+              "url": "https://www.wero-wallet.eu/",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "CA": {
           "status": "limited",
-          "note": "CIBC's Virtual Assistant, a chat bot in CIBC's app and online banking, sends Interac e-Transfers, the everyday way Canadians send money in minutes. That counts the way a bank assistant sending Pix does in Brazil, but e-Transfer is not a true real-time rail, and the new Real-Time Rail is still in participant testing with launch planned for Q4 2026, so this stays limited.",
+          "note": "CIBC's Virtual Assistant pays bills, moves money between accounts and sends Interac e-Transfers, the everyday way Canadians send money in minutes. e-Transfer is not a true real-time rail. Payments Canada's Real-Time Rail is still in participant testing, with launch targeted for Q4 2026, so no agent uses it yet. Searched CIBC's page and Payments Canada (Nov 2026); no primary source shows an agent on a real-time rail.",
           "evidence": [
             {
               "title": "CIBC Virtual Assistant",
@@ -580,31 +580,31 @@
               "title": "Real-Time Rail payment system",
               "publisher": "Payments Canada",
               "url": "https://www.payments.ca/systems-services/payment-systems/real-time-rail-payment-system",
-              "date": "2026-10",
+              "date": "2026-11",
               "type": "regulation"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "not-launched"
         },
         "JP": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Sumishin SBI Net Bank (renamed DOCOMO SMTB Net Bank in August 2026) has tested its NEOBANK ai agent since February 2026: it makes bank transfers, which run over the Zengin system, from a chat request, but only to registered payees and only for approved beta users at ten branches. It does not yet support Kotra transfers, and we found no other agent that pays over Zengin or Kotra.",
+          "note": "Sumishin SBI Net Bank's NEOBANK ai agent (beta since 27 February 2026) makes transfers to registered payees from a chat request, but only for approved beta users at ten branches. The release does not name the payment rail, so Zengin use is not confirmed. Kotra transfers are not yet supported, and we found no other agent that pays over Zengin or Kotra.",
           "evidence": [
             {
               "title": "NEOBANK ai エージェント(ベータ版)のベータテスト開始について",
-              "publisher": "住信SBIネット銀行 (now DOCOMO SMTB Net Bank)",
+              "publisher": "住信SBIネット銀行 (Sumishin SBI Net Bank)",
               "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
               "date": "2026-02-27",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "AU": {
           "status": "announced",
           "gapReason": "not-launched",
-          "note": "Fintech Vivi Money demonstrated AI-started account-to-account payments over the New Payments Platform by text or voice in June 2026 and said it would launch the next month; we found no confirmation that it is live. No PayTo agent feature was found.",
+          "note": "Fintech Vivi Money demonstrated AI-started account-to-account payments over the New Payments Platform in June 2026 and said a market launch would follow the next month. We found no confirmation of a live launch and no PayTo agent feature. Searched Vivi and NPP coverage (Nov 2026); Vivi's own site did not give a primary page.",
           "evidence": [
             {
               "title": "Vivi Money demonstrates AI-initiated A2A payments on Australia's NPP",
@@ -619,14 +619,21 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Through Paystack Index (early-access beta), ChatGPT or Claude can send money with Zap, Paystack's app that pays any Nigerian commercial bank account within seconds. Neither Paystack nor the press says the transfers run on NIBSS Instant Payments (NIP), the national instant rail, so this is inferred.",
+          "note": "Through Paystack Index (early access, Nigeria only), Claude, ChatGPT or OpenClaw can send money with Zap, Paystack's app that pays any Nigerian commercial bank account within seconds. Paystack says money moves on its existing infrastructure and does not name NIBSS Instant Payments (NIP), so NIP use is inferred.",
           "evidence": [
             {
-              "title": "Paystack connects AI and payments",
-              "publisher": "ITWeb Africa",
-              "url": "https://itweb.africa/article/paystack-connects-ai-and-payments/Pero37Z31koMQb6m",
-              "date": "2026-06-26",
-              "type": "news"
+              "title": "What is Paystack Index?",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/legal/support/about",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Paystack Index (home page)",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/",
+              "date": "2026-11",
+              "type": "company"
             },
             {
               "title": "Introducing Zap by Paystack",
@@ -924,21 +931,21 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT, Claude or OpenClaw pay from your Zap balance for airtime, data, bills, transfers and Chowdeck orders, within per-payment limits, after you approve each one on WhatsApp. No AI payments agent was found at OPay, PalmPay, Moniepoint or Kuda.",
+          "note": "Paystack Index, an early-access beta in Nigeria, lets Claude, ChatGPT or OpenClaw pay from your Zap balance for airtime, data, food (via Chowdeck) and money transfers. No AI payments agent was found at OPay, PalmPay, Moniepoint or Kuda.",
           "evidence": [
+            {
+              "title": "Paystack Index (home page)",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
             {
               "title": "What is Paystack Index?",
               "publisher": "Paystack",
               "url": "https://index.paystack.com/legal/support/about",
               "date": "2026-11",
               "type": "company"
-            },
-            {
-              "title": "Paystack connects AI and payments",
-              "publisher": "ITWeb Africa",
-              "url": "https://itweb.africa/article/paystack-connects-ai-and-payments/Pero37Z31koMQb6m",
-              "date": "2026-06-26",
-              "type": "news"
             }
           ]
         }
