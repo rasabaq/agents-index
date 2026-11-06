@@ -161,7 +161,7 @@
         "MX": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Alexa+ is available, in early access since January 2026, and it can order and pay for you (for example food orders). Gemini lists Mexico for shopping, but its Buy button needs Google Pay agentic checkout, which works only in the US and Australia. No ChatGPT, Copilot or Perplexity checkout is offered, and no Mercado Libre or Walmart México checkout inside a chat was found. Liverpool has only announced groundwork (November 2025, with commercetools) to let shoppers buy in ChatGPT \"where supported\".",
+          "note": "Only Alexa+ is available, in early access since January 2026, and it can order and pay for you (for example food orders). Gemini lists Mexico for shopping, but its Buy button needs Google Pay agentic checkout, which works only in the US and Australia. No ChatGPT, Copilot or Perplexity checkout is offered, and no Mercado Libre or Walmart México checkout inside a chat was found. Liverpool has only announced groundwork (November 2025, with commercetools) to let shoppers buy in ChatGPT \"where supported\". Since 5 November 2026 Meta's Muse agent also sells Cinépolis tickets inside the chat in Mexico.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
@@ -197,6 +197,13 @@
               "url": "https://commercetools.com/press-releases/commercetools-and-liverpool-agentic-commerce",
               "date": "2025-11-05",
               "type": "company"
+            },
+            {
+              "title": "Muse de Meta llega a México: ¿cómo descargarlo gratis y qué puedes hacer con su IA?",
+              "publisher": "Expansión",
+              "url": "https://expansion.mx/tecnologia/2026/11/05/muse-el-agente-de-meta-llega-a-mexico",
+              "date": "2026-11-05",
+              "type": "news"
             }
           ]
         },

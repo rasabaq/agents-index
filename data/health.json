@@ -57,9 +57,15 @@
         "DE": {
           "status": "limited",
           "gapReason": "not-launched",
-          "confidence": "low",
-          "note": "Doctolib's AI phone assistant takes patient calls and books visits for primary care and specialist practices that pay for it, with no public count. Doctolib's February 2026 FAQ says staff copy call data into the practice software by hand, and a May 2026 trade report says patients can now also move and cancel visits by phone. Doctolib has no patient-side booking agent, and no AI booking was found on the public 116117 service.",
+          "note": "Doctolib's AI phone assistant answers patient calls and books visits straight into the calendar of practices that switch it on; since 2026 it can also move and cancel visits within the practice's rules. Doctolib says more than 5,000 practices in Germany use it. It works only at practices that pay for it, Doctolib has no patient-side booking agent, and no AI booking was found on the public 116117 service.",
           "evidence": [
+            {
+              "title": "Ein Jahr KI-Telefonassistent – das ist bisher passiert",
+              "publisher": "Doctolib Community",
+              "url": "https://community.doctolib.de/t/ein-jahr-ki-telefonassistent-das-ist-bisher-passiert/116279",
+              "date": "2026-06-04",
+              "type": "company"
+            },
             {
               "title": "KI-Sprechstundenassistent: Fragen und Antworten (Doctolib webinar, Stand Februar 2026)",
               "publisher": "Doctolib",

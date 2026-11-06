@@ -505,7 +505,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "NPCI, Razorpay and OpenAI run a private beta for UPI payments inside ChatGPT using UPI Reserve Pay. MediaNama reports that Amazon Pay launched a consent-based Smart Wallet for agentic UPI payments at GFF 2026, but Amazon Pay has published no details, and NPCI has set no public date for agent payments on UPI.",
+          "note": "NPCI, Razorpay and OpenAI run a private beta for UPI payments inside ChatGPT using UPI Reserve Pay. MediaNama reports that Amazon Pay launched a consent-based Smart Wallet for agentic UPI payments at GFF 2026, but Amazon Pay has published no details, and NPCI has set no public date for agent payments on UPI. In September 2026 NPCI put its agent payments protocol for UPI on hold before launch while it builds safeguards on who is liable when an agent pays wrongly.",
           "evidence": [
             {
               "title": "Razorpay, NPCI, and OpenAI Come Together to Launch Agentic Payments, Ushering in AI-Driven Commerce at National Scale",
@@ -519,6 +519,13 @@
               "publisher": "MediaNama",
               "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
               "date": "2026-09-10",
+              "type": "news"
+            },
+            {
+              "title": "UPI's AI protocol temporarily on hold as NPCI builds safeguards",
+              "publisher": "Business Standard",
+              "url": "https://www.business-standard.com/finance/news/upi-s-ai-protocol-temporarily-on-hold-as-npci-builds-safeguards-126091101413_1.html",
+              "date": "2026-09-11",
               "type": "news"
             }
           ],
