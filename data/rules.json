@@ -301,7 +301,7 @@
         "NG": {
           "status": "announced",
           "gapReason": "no-rule",
-          "note": "Nigeria has no AI law in force; the Nigeria Data Protection Act 2023 covers automated decisions as a general law. The government-backed National Digital Economy and E-Governance Bill would apply to \"AI agents\" and sort AI systems into risk groups; in July 2026 the Senate ICT committee chair said it was going through third reading and would reach the president within weeks, but we found no report of final passage or assent.",
+          "note": "Nigeria has no AI law in force; the Nigeria Data Protection Act 2023 covers automated decisions as a general law. The government-backed National Digital Economy and E-Governance Bill would apply to \"AI agents\" and sort AI systems into risk groups. In June and July 2026 the Senate ICT committee chair said the bill was ready and would go to the president for assent within weeks, but we found no official record of final passage or assent. Searched for Senate and Presidency records (Nov 2026); none found.",
           "evidence": [
             {
               "title": "'National Digital Economy and e-Governance Act 2026 Ready in Weeks'",
@@ -578,21 +578,14 @@
         "JP": {
           "status": "limited",
           "gapReason": "no-rule",
-          "note": "Japanese law refunds some unauthorized bank withdrawals and lets you cancel an online contract made by a clear input mistake, and card issuers cover fraud under their member terms, but none of these mentions agents. The Cabinet Office's Consumer Commission set up an expert panel on AI and consumer problems in 2026, which discussed spending limits, approval before purchase and cancelling agent actions, but it has not issued rules.",
+          "note": "Japanese law refunds some unauthorized bank withdrawals and lets you cancel an online contract made by a clear input mistake, and card issuers cover fraud under their member terms, but none of these mentions agents. The Consumer Commission's expert panel on AI and consumer problems met in July 2026. In its sixth meeting it discussed hypothetical agents that spend within a weekly budget and buy without asking, and approval by voice, but not cancelling agent purchases. It has not issued rules. We could not load the e-Gov text of the laws, so those points are unverified. Searched e-Gov and Consumer Affairs Agency pages (Nov 2026); no primary source confirms the card or contract rules.",
           "evidence": [
             {
               "title": "第6回 人工知能(AI)技術の利用と消費者問題に関する専門調査会 議事録",
               "publisher": "Consumer Commission, Cabinet Office (消費者委員会)",
               "url": "https://www.cao.go.jp/consumer/kabusoshiki/ai_technology/006/gijiroku/index.html",
               "date": "2026-07-17",
-              "type": "regulation"
-            },
-            {
-              "title": "内閣府 消費者委員会 専門調査会にAICX協会代表理事 小栗 伸が登壇｜AIエージェント時代の消費者保護に向け、ガイドライン整備と人材育成の重要性を提言",
-              "publisher": "AICX協会 (PR TIMES)",
-              "url": "https://prtimes.jp/main/html/rd/p/000000146.000155740.html",
-              "date": "2026-06",
-              "type": "news"
+              "type": "report"
             }
           ],
           "confidence": "low"

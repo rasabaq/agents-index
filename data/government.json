@@ -318,7 +318,7 @@
         "FR": {
           "status": "limited",
           "gapReason": "rail-closed",
-          "note": "FranceConnect+ lets private firms check identity with France Identité (high level) or L'Identité Numérique La Poste (substantial), but only firms that a law requires to verify identity, such as banks, may connect, after a DataPass request. France Identité had over 5 million users in October 2026; no open API serves other apps or agents.",
+          "note": "FranceConnect+ lets private firms check identity with France Identité (high level) or L'Identité Numérique La Poste (substantial). Our reading of the provider terms is that only firms a law requires to verify identity, such as banks, may connect, but we could not open the terms to confirm it. France Identité passed 4 million users in March 2026, and no open API serves other apps or agents. Searched FranceConnect partner pages and DINUM guidance (Nov 2026); no primary page confirmed the eligibility rule.",
           "evidence": [
             {
               "title": "Conditions générales d'utilisation FranceConnect pour les fournisseurs de services (v3.9)",
@@ -328,11 +328,11 @@
               "type": "regulation"
             },
             {
-              "title": "Intégration FranceConnect+ (eligibility of private companies, identity providers)",
-              "publisher": "Didit",
-              "url": "https://didit.me/fr/blog/franceconnect-plus-integration",
-              "date": "2026-10-06",
-              "type": "news"
+              "title": "France Identité eID figures (ITU workshop presentation)",
+              "publisher": "ITU",
+              "url": "https://www.itu.int/en/ITU-T/Workshops-and-Seminars/2026/0330/Documents/Anthony%20Carmoy.pdf",
+              "date": "2026-03-30",
+              "type": "report"
             }
           ],
           "confidence": "low"
@@ -340,7 +340,7 @@
         "CA": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "Canada has no national digital ID. British Columbia's Person credential in BC Wallet is accepted only by select pilots, and the province says private-sector use may come later; Quebec passed its digital identity law in October 2025 with a wallet planned by 2028. We found no provincial ID that private apps can check today.",
+          "note": "Canada has no national digital ID. British Columbia's Person credential in BC Wallet is accepted only by select pilots, and the province says private-sector use may come later. Quebec passed its digital identity law (Bill 82) in October 2025, with a wallet planned by 2028. Interac Verified (formerly Verified.Me) is a private, bank-backed check, not a government ID. We found no provincial ID that private apps can check today. Searched BC, Quebec and Interac sources (Nov 2026); no primary source shows a live rail.",
           "evidence": [
             {
               "title": "Person credential for BC Wallet",
@@ -350,11 +350,11 @@
               "type": "company"
             },
             {
-              "title": "Quebec Passes Landmark Digital ID Law Emphasizing Privacy and User Control",
-              "publisher": "Mobile ID World",
-              "url": "https://mobileidworld.com/quebec-passes-landmark-digital-id-law-emphasizing-privacy-and-user-control/",
+              "title": "Projet de loi no 82 (2025, chapitre 26): Loi concernant l'identité numérique nationale",
+              "publisher": "Publications Québec",
+              "url": "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2025/2025C26F.PDF",
               "date": "2025-10",
-              "type": "news"
+              "type": "regulation"
             }
           ],
           "confidence": "low"
@@ -419,11 +419,11 @@
               "type": "company"
             },
             {
-              "title": "NIMC Act 2026: turning Nigeria's identity system into an economic asset",
-              "publisher": "Techeconomy",
-              "url": "https://techeconomy.ng/nimc-act-2026-turning-nigerias-identity-system-into-an-economic-asset",
-              "date": "2026-07",
-              "type": "news"
+              "title": "President Tinubu signs NIMC Act 2026 into law",
+              "publisher": "State House, Nigeria",
+              "url": "https://statehouse.gov.ng/?p=64693",
+              "date": "2026-06-26",
+              "type": "regulation"
             }
           ]
         }
@@ -645,7 +645,7 @@
         "FR": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "France's state AI tools serve civil servants, not the public: the Assistant IA (Albert) was opened to all state agents in June 2026, and the Albert pilot in France Services offices was not extended in its current form, with opening it to users 'not considered at this stage'. A generative tool for the 3939 and service-public.gouv.fr advisers (ARIA) is being tested. No citizen-facing assistant that finishes a task was found.",
+          "note": "France's state AI tools serve civil servants, not the public: the Assistant IA (Albert) was opened to all state agents in June 2026, and the Albert pilot in 48 France Services offices will not be extended in its current form. ARIA is a DILA tool for the agency's own staff, and we found no link to the 3939 or service-public.gouv.fr. No citizen-facing assistant that finishes a task was found. Searched Albert and service-public.gouv.fr sources (Nov 2026); no primary source.",
           "evidence": [
             {
               "title": "Albert, l'outil d'IA générative, expérimenté à France Services ne sera pas généralisé",
@@ -702,17 +702,16 @@
         "AU": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Services Australia's myGov digital assistant Charles and other web assistants answer common questions, but none completes a task for you. We found no generative or agentic government assistant in 2026.",
+          "note": "Services Australia's myGov Digital Assistant (formerly Charles) gives pre-approved answers to general questions, such as setting up a myGov account. It does not complete tasks, and we found no generative or agentic government assistant in 2026. The page is undated; checked Nov 2026.",
           "evidence": [
             {
-              "title": "myGov digital assistant 'Charles' is up and running",
-              "publisher": "GovTech Review",
-              "url": "https://govtechreview.com.au/content/gov-digital/news/mygov-digital-assistant-charles-is-up-and-running-1486808436",
-              "date": "2018-11-12",
-              "type": "news"
+              "title": "myGov Digital Assistant",
+              "publisher": "Services Australia",
+              "url": "https://operational.servicesaustralia.gov.au/public/Pages/self-service/133-25112552-01.html",
+              "date": "2026-11-06",
+              "type": "report"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "NG": {
           "status": "limited",
