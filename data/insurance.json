@@ -75,8 +75,9 @@
           ]
         },
         "DE": {
-          "status": "limited",
-          "note": "Lemonade sells contents and personal liability cover in its German app and website, but no German page we found says its AI bot Maya runs the sign-up there.",
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Lemonade offers contents and personal liability cover in Germany, but its FAQ does not say its AI bot Maya runs the sign-up. Searched Check24 and Allianz (Nov 2026); neither sells a policy in a chat. No primary source shows an AI that completes a purchase here.",
           "evidence": [
             {
               "title": "Hausrat & Privathaftpflichtversicherung FAQ",
@@ -84,20 +85,6 @@
               "url": "https://www.lemonade.com/de/faq",
               "date": "2026-10",
               "type": "company"
-            },
-            {
-              "title": "Lemonade: Hausrat und Privathaftpflicht schnell per App abschließen",
-              "publisher": "appgefahren",
-              "url": "https://www.appgefahren.de/lemonade-hausrat-und-privathaftpflicht-schnell-per-app-abschliessen-269254.html",
-              "date": "2020-01-20",
-              "type": "news"
-            },
-            {
-              "title": "Insurtech Lemonade: KI und Anti-Fraud-Checks",
-              "publisher": "IT Finanzmagazin",
-              "url": "https://www.it-finanzmagazin.de/insurtech-lemonade-ai-ki-anti-fraud-checks-99386/",
-              "date": "2019-12-30",
-              "type": "news"
             }
           ],
           "confidence": "low"
@@ -105,7 +92,7 @@
         "IN": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "PolicyX's Pixie chatbot (December 2025) gives live quotes and compares plans from more than 50 insurers, but it hands complex cases to an advisor and does not complete the purchase in the chat.",
+          "note": "PolicyX's Pixie chatbot (December 2025) answers questions and compares plans, according to PolicyX's own page. That page does not say Pixie completes a purchase, so you finish on PolicyX's site. Searched ACKO and Digit (Nov 2026): both sell in their apps or websites, not in a chat. Policybazaar's site did not load.",
           "evidence": [
             {
               "title": "PolicyX launches Pixie, India's first AI insurance chatbot",
@@ -125,21 +112,14 @@
           "confidence": "low"
         },
         "BR": {
-          "status": "live",
-          "note": "HUBSEGS sells insurance entirely on WhatsApp with generative AI, from quote to a digital policy in the chat, in under three minutes, for brokers and their clients.",
+          "status": "limited",
+          "note": "Press reports that HUBSEGS sells insurance on WhatsApp with generative AI, from quote to a digital policy, for brokers and their clients. HUBSEGS's own site says it works only through brokers and does not mention a WhatsApp AI sale. Searched Youse and Pier (Nov 2026): no chat purchase found. No primary source confirms the chat sale.",
           "evidence": [
             {
               "title": "HUBSEGS comercializa seguros 100% pelo WhatsApp",
               "publisher": "Revista Apólice",
               "url": "https://revistaapolice.com.br/2025/01/hubsegs-comercializa-seguros-100-pelo-whatsapp/",
               "date": "2025-01-20",
-              "type": "news"
-            },
-            {
-              "title": "HUBSEGS vende seguros pelo WhatsApp com GenAI",
-              "publisher": "Baguete",
-              "url": "https://www.baguete.com.br/noticias/hubsegs-vende-seguros-pelo-whatsapp-com-genai",
-              "date": "2025-01",
               "type": "news"
             }
           ],
@@ -161,7 +141,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "Líder Bci sells insurance on WhatsApp with conversational AI, from quote to payment and policy issue in two to three minutes, starting with the SOAP mandatory car insurance (May 2025).",
+          "note": "Líder Bci sells insurance on WhatsApp with conversational AI, from quote to payment and policy issue in two to three minutes, starting with the SOAP mandatory car insurance (May 2025). Searched liderbci.cl and the press (Nov 2026): only one trade news report confirms the chat sale; no primary source.",
           "evidence": [
             {
               "title": "Líder Bci habilita contratación de seguros por WhatsApp",
@@ -176,7 +156,7 @@
         "CO": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "We found no AI that sells a policy in a chat in Colombia. The digital agency Seguro Canguro uses AI only to check car policy documents before it sends the policy.",
+          "note": "We found no AI that sells a policy in a chat in Colombia. The digital agency Seguro Canguro uses AI only to check car policy documents before it sends the policy. Searched Sura, Bolívar and Falabella Seguros (Nov 2026): none shows an AI that sells in a chat. No primary source.",
           "evidence": [
             {
               "title": "La inteligencia artificial reduce a minutos la revisión de pólizas en Colombia: así funciona",
@@ -203,8 +183,8 @@
           ]
         },
         "FR": {
-          "status": "limited",
-          "note": "Lemonade sells home insurance for tenants and owners in France through its app and website, but no French page we found says its AI bot Maya runs the sign-up there, and no French insurer or comparison site app in ChatGPT was found.",
+          "status": "none",
+          "note": "We found no French insurer that sells home, car or travel cover start to finish in an AI chat. Lemonade sells home insurance in France by app and website, but no French page we could open says its AI bot Maya sells there. Leocare's LeoBot only answers questions. Searched Alan, Leocare, Luko and Lemonade France (Nov 2026); the Lemonade France pages returned 403 to our fetches.",
           "evidence": [
             {
               "title": "L'assurance habitation préférée des propriétaires",
@@ -221,7 +201,8 @@
               "type": "company"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "not-launched"
         },
         "CA": {
           "status": "limited",
@@ -247,7 +228,7 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "We found no insurer or comparison site in Japan that sells a car, home or travel policy start to finish in an AI chat; Lemonade does not operate in Japan, and the ChatGPT insurance apps we found serve the US and UK.",
+          "note": "We found no insurer or comparison site in Japan that sells a car, home or travel policy start to finish in an AI chat. Lemonade does not operate in Japan, and the ChatGPT insurance apps we found serve the US, UK, Spain and Canada. Searched Tokio Marine, Sompo and Lifenet (Nov 2026); no AI chat sale found.",
           "evidence": [],
           "confidence": "low"
         },
@@ -267,7 +248,7 @@
         },
         "NG": {
           "status": "limited",
-          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026), on WhatsApp, its app and its website, lets customers buy and renew policies in English, Yoruba, Igbo, Hausa and other languages. No source says which products or whether payment finishes inside the chat, so the cell stays limited.",
+          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026), on WhatsApp, its app and its website, lets customers buy and renew policies in English, Yoruba, Igbo, Hausa and other languages. No source says which products or whether payment finishes inside the chat, so the cell stays limited. Heirs' website (Nov 2026) shows a 'Chat with Prince AI' button but does not list products or payment. Searched Leadway, AXA Mansard and Curacel (Nov 2026); no chat sales found for them.",
           "evidence": [
             {
               "title": "Heirs Insurance Group Launches Multi-Language AI Assistant to Deepen Insurance Access in Nigeria",
@@ -361,8 +342,8 @@
           ]
         },
         "IN": {
-          "status": "live",
-          "note": "HDFC ERGO's WhatsApp chatbot registers motor claims, runs an AI photo inspection and settles minor damage claims up to Rs 20,000 straight to your bank account.",
+          "status": "limited",
+          "note": "HDFC ERGO's WhatsApp chatbot registers motor claims, runs an AI photo inspection and settles minor damage claims up to Rs 20,000 (2024 launch, reported in the press). HDFC ERGO's site lists WhatsApp only as a contact channel and does not describe the feature (Nov 2026). Digit and ACKO file claims in their apps or on their sites, not in a chat.",
           "evidence": [
             {
               "title": "Know how to get your instant motor claim settlement via WhatsApp",
@@ -376,7 +357,7 @@
         },
         "BR": {
           "status": "live",
-          "note": "Porto's conversational AI agent on WhatsApp lets policyholders across Brazil open and finish a car theft claim, and it handles 70% of those claims (October 2026). Mapfre's AI agent on WhatsApp and EZZE's AI chat assistant also open car claims.",
+          "note": "Porto's conversational AI agent on WhatsApp lets policyholders across Brazil open and finish a car theft or robbery claim, and it handles 70% of those openings (Porto release of Sep 2026, reported in October 2026). Press also reports AI chats for car claims at Mapfre and EZZE, but EZZE's site lists its assistant Eliz for questions only and Mapfre's site does not mention it. No Porto primary page was found.",
           "evidence": [
             {
               "title": "Porto automatiza 70% dos sinistros de roubo e furto",
@@ -404,7 +385,7 @@
         "MX": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Quálitas's Quali-bot on WhatsApp answers claim questions, collects documents and sends you to Ajuste Express to send photos, but we found no AI that files or moves the claim. The only source is written by Blip, the bot's maker.",
+          "note": "Quálitas's Quali-bot on WhatsApp answers claim questions, collects documents and sends you to Ajuste Express to send photos. Press reports say it can report a claim and follow it up, but cases can go to a person. Quálitas's site returned an error to our check (Nov 2026), and the only source is written by Blip, the bot's maker. Searched AXA Mexico: no AI claim chat found. No primary source confirms an AI that files the claim.",
           "evidence": [
             {
               "title": "Aseguradoras necesitan atender WhatsApp",
@@ -424,7 +405,7 @@
         },
         "CO": {
           "status": "live",
-          "note": "BNP Paribas Cardif Colombia handles claims on WhatsApp: its AI reads and checks the documents you send and decides whether the claim stays automated or goes to an advisor (May 2023).",
+          "note": "BNP Paribas Cardif Colombia handles claims on WhatsApp: its AI reads and checks the documents you send and decides whether the claim stays automated or goes to an advisor (May 2023). Its Colombia business report could not be read (Nov 2026), so press is the only source. Searched Sura and Bolívar: no AI claim assistant found.",
           "evidence": [
             {
               "title": "Aseguradora utiliza la IA para la evaluación y pagos de pólizas",
@@ -481,19 +462,12 @@
               "url": "https://td.mediaroom.com/2026-05-01-Lets-Chat-Coverage-TD-Insurance-Rolls-Out-New-Virtual-Assistant",
               "date": "2026-05-01",
               "type": "company"
-            },
-            {
-              "title": "TD Insurance releases client-facing chatbot",
-              "publisher": "Canadian Underwriter",
-              "url": "https://canadianunderwriter.ca/2026/05/15/td-insurance-releases-client-facing-chatbot/",
-              "date": "2026-05-15",
-              "type": "news"
             }
           ]
         },
         "JP": {
           "status": "limited",
-          "note": "Rakuten General Insurance has run an AI voice system since December 2024 that takes fire and personal accident claims by phone and passes the call to a person when it cannot finish. Sompo Japan's call center AI fills in claim details from a call. We found no insurer whose AI takes a claim in a chat and settles it.",
+          "note": "Rakuten General Insurance has run an AI voice system since December 2024 that takes fire and personal accident claims by phone and passes the call to a person when it cannot finish. Sompo Japan's call center AI fills in claim details from a call. We found no insurer whose AI takes a claim in a chat and settles it. Searched Tokio Marine and Sompo (Nov 2026); we found no chat claim filing. Rakuten's news page we tried returned 404.",
           "evidence": [
             {
               "title": "火災保険と傷害保険の事故受付に「AI自動音声システム」導入(楽天損保)",
@@ -506,15 +480,23 @@
           "confidence": "low"
         },
         "AU": {
-          "status": "none",
+          "status": "announced",
           "gapReason": "not-launched",
-          "note": "No Australian insurer was found whose AI agent takes a claim in a chat and moves it forward; IAG's OpenAI voice agents are due in the first half of FY27, and Lemonade is not in Australia.",
-          "evidence": [],
+          "note": "IAG, the first Australian partner for OpenAI Presence, plans to let its voice agent take claim calls, with rollout due in the first half of 2027. Suncorp plans automated claims lodgement by voice and chat. No Australian insurer's AI agent takes a claim today, and Lemonade is not in Australia. Searched Suncorp, IAG and NRMA (Nov 2026).",
+          "evidence": [
+            {
+              "title": "OpenAI agentic platform to answer IAG's claim calls",
+              "publisher": "Insurance News",
+              "url": "https://www.insurancenews.com.au/corporate/open-ai-agentic-platform-to-answer-iags-claim-calls",
+              "date": "2026-07-27",
+              "type": "news"
+            }
+          ],
           "confidence": "low"
         },
         "NG": {
-          "status": "live",
-          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026) lets customers start a claim and track it on WhatsApp, the SimpleLife app and the website. Sources do not say whether it checks documents or settles claims itself.",
+          "status": "limited",
+          "note": "Heirs Insurance Group's generative AI assistant Prince AI (May 2026), on WhatsApp, its app and its website, lets customers start a claim and track it. Heirs' website shows a 'Chat with Prince AI' button but no claims steps, and no source says whether it checks documents or settles claims. Searched Curacel and Leadway (Nov 2026): Curacel sells claims tools to insurers, and we found no Leadway chat claim.",
           "evidence": [
             {
               "title": "Heirs Insurance Group Launches Multi-Language AI Assistant to Deepen Insurance Access in Nigeria",
@@ -531,7 +513,8 @@
               "type": "news"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "assist-only"
         }
       }
     }
@@ -659,7 +642,7 @@
       "url": "https://revistaapolice.com.br/2025/01/hubsegs-comercializa-seguros-100-pelo-whatsapp/",
       "homepage": "https://hubsegs.com.br/",
       "icon": "https://hubsegs.com.br/wp-content/uploads/2022/04/cropped-favicon-180x180.png",
-      "role": "Sells insurance on WhatsApp with generative AI, from quote to policy.",
+      "role": "Its own site says it sells through brokers; press reports a WhatsApp AI sales flow.",
       "markets": [
         "BR"
       ],

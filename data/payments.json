@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Visa says Visa Intelligent Commerce is rolled out across a broad set of US agents with live transactions (April 2026), Amex launched its ACE kit and agent purchase protection in April 2026, and Stripe's shared payment tokens can carry Visa, Mastercard and Amex agent tokens. Mastercard planned to enable all US cardholders for Agent Pay by the 2025 holidays but has not said the rollout is done, and no network gives reach numbers.",
+          "note": "Visa says Visa Intelligent Commerce is rolled out across a broad set of US agents with live transactions (April 2026), Mastercard's FY2025 10-K says it enabled all U.S.-based Mastercard cardholders for Agent Pay in 2025, Amex launched its ACE kit and agent purchase protection in April 2026, and Stripe's shared payment tokens can carry Visa, Mastercard and Amex agent tokens. No network gives reach numbers.",
           "evidence": [
             {
               "title": "Mastercard Unveils New Tools and Collaborations to Power Smarter, Safer Agentic Commerce",
@@ -51,9 +51,15 @@
               "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Mastercard Form 10-K for fiscal year 2025",
+              "publisher": "Mastercard",
+              "url": "https://www.sec.gov/Archives/edgar/data/0001141391/000114139126000025/ma12312025-10xkasfiled.pdf",
+              "date": "2026-02-11",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "GB": {
           "status": "limited",
@@ -65,13 +71,6 @@
               "url": "https://www.visa.co.uk/about-visa/newsroom/press-releases.3457328.html",
               "date": "2026-07-02",
               "type": "company"
-            },
-            {
-              "title": "Visa partners with European banks and merchants for agentic commerce launch",
-              "publisher": "FStech",
-              "url": "https://fstech.co.uk/fst/Visa_Partners_With_European_Banks_And_Merchants_For_Agentic_Commerce_Launch.php",
-              "date": "2026-07",
-              "type": "news"
             }
           ],
           "gapReason": "pilot-only"
@@ -191,13 +190,6 @@
               "url": "https://www.mastercard.com/news/ap/en-in/newsroom/press-releases/en-in/2026/february/mastercard-demonstrates-readiness-for-a-new-era-of-ai-powered-payments-in-india-with-its-first-authenticated-agentic-commerce-transaction/",
               "date": "2026-02",
               "type": "company"
-            },
-            {
-              "title": "Mastercard brings agentic commerce vision to India",
-              "publisher": "Biometric Update",
-              "url": "https://www.biometricupdate.com/202602/mastercard-brings-agentic-commerce-vision-to-india",
-              "date": "2026-02-18",
-              "type": "news"
             }
           ],
           "gapReason": "pilot-only"
@@ -236,11 +228,11 @@
               "type": "company"
             },
             {
-              "title": "Revolut annonce avoir réalisé le premier paiement par IA en France",
-              "publisher": "Sud Radio",
-              "url": "https://www.sudradio.fr/societe/revolut-annonce-avoir-realise-le-premier-paiement-par-ia-en-france",
-              "date": "2026-09-07",
-              "type": "news"
+              "title": "Cleverbridge Completes First Live AI Agent Initiated Payment in France with Visa and Revolut",
+              "publisher": "Cleverbridge (BusinessWire)",
+              "url": "https://secure.businesswire.com/news/home/20260924668305/en/Cleverbridge-Completes-First-Live-AI-Agent-Initiated-Payment-in-France-with-Visa-and-Revolut",
+              "date": "2026-09-24",
+              "type": "company"
             },
             {
               "title": "Visa and banks across Europe reach the next phase of agentic commerce, unlocking secure access to merchants (no French issuer named)",
@@ -428,7 +420,7 @@
         "MX": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Mercado Pago's Mago assistant makes transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI, but no source says Mago sends money over SPEI, so it stays limited.",
+          "note": "Press says Mercado Pago's Mago assistant makes transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI, but no source says Mago sends money over SPEI, so it stays limited. Searched Mercado Pago Mexico pages and Mercado Libre news (Nov 2026); the Mercado Pago pages returned 403 and no primary source was found.",
           "evidence": [
             {
               "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
@@ -457,7 +449,7 @@
         "CL": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms, but no source says it sends money to other banks over TEF, so it stays limited.",
+          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms, but no source says it sends money to other banks over TEF, so it stays limited. Searched Mercado Pago Chile pages and Mercado Libre news (Nov 2026); the Chile pages returned 403 and no primary source was found.",
           "evidence": [
             {
               "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
@@ -478,8 +470,15 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Tpaga launched a WhatsApp AI agent in July 2026 that sends money over Bre-B from text or voice notes. It stays limited because only the press covers it and Tpaga has not said how many users can use it.",
+          "note": "Press says Tpaga launched a WhatsApp AI agent in July 2026 that sends money over Bre-B from text or voice notes. Tpaga's site lists AI agents and Bre-B transfers, but not the WhatsApp agent, and the central bank's Bre-B page does not mention AI agents. It stays limited because only the press covers the WhatsApp agent and Tpaga has not said how many users can use it. Searched Tpaga's site and the Bre-B page (Nov 2026); no primary source for the agent.",
           "evidence": [
+            {
+              "title": "Tpaga home page (AI agents and Bre-B transfers listed)",
+              "publisher": "Tpaga",
+              "url": "https://tpaga.co/",
+              "date": "2026-10",
+              "type": "company"
+            },
             {
               "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
               "publisher": "La República",
@@ -506,7 +505,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "NPCI, Razorpay and OpenAI run a private beta for UPI payments inside ChatGPT using UPI Reserve Pay. MediaNama reports that Amazon Pay launched a consent-based Smart Wallet for agentic UPI payments at GFF 2026, but Amazon Pay has published no details, and NPCI has set no public date for agent payments on UPI.",
+          "note": "NPCI, Razorpay and OpenAI run a private beta for UPI payments inside ChatGPT using UPI Reserve Pay. MediaNama reports that Amazon Pay launched a consent-based Smart Wallet for agentic UPI payments at GFF 2026, but Amazon Pay has published no details, and NPCI has set no public date for agent payments on UPI. In September 2026 NPCI put its agent payments protocol for UPI on hold before launch while it builds safeguards on who is liable when an agent pays wrongly.",
           "evidence": [
             {
               "title": "Razorpay, NPCI, and OpenAI Come Together to Launch Agentic Payments, Ushering in AI-Driven Commerce at National Scale",
@@ -520,6 +519,13 @@
               "publisher": "MediaNama",
               "url": "https://www.medianama.com/2026/09/223-npci-ai-agents-upi-payments/",
               "date": "2026-09-10",
+              "type": "news"
+            },
+            {
+              "title": "UPI's AI protocol temporarily on hold as NPCI builds safeguards",
+              "publisher": "Business Standard",
+              "url": "https://www.business-standard.com/finance/news/upi-s-ai-protocol-temporarily-on-hold-as-npci-builds-safeguards-126091101413_1.html",
+              "date": "2026-09-11",
               "type": "news"
             }
           ],
@@ -548,20 +554,20 @@
         "FR": {
           "status": "none",
           "gapReason": "rail-closed",
-          "note": "No agent payments over SEPA Instant or Wero found. Wero has been live for people in France since 2024 and is adding shop and recurring payments in 2026, but it has no agent feature.",
+          "note": "No agent payments over SEPA Instant or Wero found. Wero is live for people in France: online shop payments work now, while in-store and recurring payments are still planned. Wero has no agent feature.",
           "evidence": [
             {
-              "title": "MPE 2026: five key themes for merchants (agentic commerce; Wero as Europe's own rail)",
-              "publisher": "Payment Expert",
-              "url": "https://paymentexpert.com/2026/03/23/mpe-2026-five-key-themes-merchants/",
-              "date": "2026-03-23",
-              "type": "news"
+              "title": "Wero: pay instantly online",
+              "publisher": "Wero",
+              "url": "https://www.wero-wallet.eu/",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "CA": {
           "status": "limited",
-          "note": "CIBC's Virtual Assistant, a chat bot in CIBC's app and online banking, sends Interac e-Transfers, the everyday way Canadians send money in minutes. That counts the way a bank assistant sending Pix does in Brazil, but e-Transfer is not a true real-time rail, and the new Real-Time Rail is still in participant testing with launch planned for Q4 2026, so this stays limited.",
+          "note": "CIBC's Virtual Assistant pays bills, moves money between accounts and sends Interac e-Transfers, the everyday way Canadians send money in minutes. e-Transfer is not a true real-time rail. Payments Canada's Real-Time Rail is still in participant testing, with launch targeted for Q4 2026, so no agent uses it yet. Searched CIBC's page and Payments Canada (Nov 2026); no primary source shows an agent on a real-time rail.",
           "evidence": [
             {
               "title": "CIBC Virtual Assistant",
@@ -574,31 +580,31 @@
               "title": "Real-Time Rail payment system",
               "publisher": "Payments Canada",
               "url": "https://www.payments.ca/systems-services/payment-systems/real-time-rail-payment-system",
-              "date": "2026-10",
+              "date": "2026-11",
               "type": "regulation"
             }
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "gapReason": "not-launched"
         },
         "JP": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Sumishin SBI Net Bank (renamed DOCOMO SMTB Net Bank in August 2026) has tested its NEOBANK ai agent since February 2026: it makes bank transfers, which run over the Zengin system, from a chat request, but only to registered payees and only for approved beta users at ten branches. It does not yet support Kotra transfers, and we found no other agent that pays over Zengin or Kotra.",
+          "note": "Sumishin SBI Net Bank's NEOBANK ai agent (beta since 27 February 2026) makes transfers to registered payees from a chat request, but only for approved beta users at ten branches. The release does not name the payment rail, so Zengin use is not confirmed. Kotra transfers are not yet supported, and we found no other agent that pays over Zengin or Kotra.",
           "evidence": [
             {
               "title": "NEOBANK ai エージェント(ベータ版)のベータテスト開始について",
-              "publisher": "住信SBIネット銀行 (now DOCOMO SMTB Net Bank)",
+              "publisher": "住信SBIネット銀行 (Sumishin SBI Net Bank)",
               "url": "https://www.netbk.co.jp/contents/company/press/2026/0227_003049.html",
               "date": "2026-02-27",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "AU": {
           "status": "announced",
           "gapReason": "not-launched",
-          "note": "Fintech Vivi Money demonstrated AI-started account-to-account payments over the New Payments Platform by text or voice in June 2026 and said it would launch the next month; we found no confirmation that it is live. No PayTo agent feature was found.",
+          "note": "Fintech Vivi Money demonstrated AI-started account-to-account payments over the New Payments Platform in June 2026 and said a market launch would follow the next month. We found no confirmation of a live launch and no PayTo agent feature. Searched Vivi and NPP coverage (Nov 2026); Vivi's own site did not give a primary page.",
           "evidence": [
             {
               "title": "Vivi Money demonstrates AI-initiated A2A payments on Australia's NPP",
@@ -613,14 +619,21 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Through Paystack Index (early-access beta), ChatGPT or Claude can send money with Zap, Paystack's app that pays any Nigerian commercial bank account within seconds. Neither Paystack nor the press says the transfers run on NIBSS Instant Payments (NIP), the national instant rail, so this is inferred.",
+          "note": "Through Paystack Index (early access, Nigeria only), Claude, ChatGPT or OpenClaw can send money with Zap, Paystack's app that pays any Nigerian commercial bank account within seconds. Paystack says money moves on its existing infrastructure and does not name NIBSS Instant Payments (NIP), so NIP use is inferred.",
           "evidence": [
             {
-              "title": "Paystack connects AI and payments",
-              "publisher": "ITWeb Africa",
-              "url": "https://itweb.africa/article/paystack-connects-ai-and-payments/Pero37Z31koMQb6m",
-              "date": "2026-06-26",
-              "type": "news"
+              "title": "What is Paystack Index?",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/legal/support/about",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Paystack Index (home page)",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/",
+              "date": "2026-11",
+              "type": "company"
             },
             {
               "title": "Introducing Zap by Paystack",
@@ -715,8 +728,8 @@
           ]
         },
         "MX": {
-          "status": "live",
-          "note": "Mercado Pago says Mago is available in Mexico, Argentina, Brazil and Chile; it makes payments and transfers for users after they confirm. Only the press covers the Mexico launch.",
+          "status": "limited",
+          "note": "Press says Mercado Pago's Mago assistant launched in Mexico in September 2026 and makes payments and transfers after the user confirms. Only the press confirms the payments, so it is limited. Searched Mercado Pago Mexico pages and Mercado Libre news (Nov 2026); the Mercado Pago pages returned 403 and no primary source was found.",
           "evidence": [
             {
               "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
@@ -737,7 +750,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Only the press covers the Chile launch.",
+          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Only the press covers the Chile launch. Searched Mercado Pago Chile pages and Mercado Libre news (Nov 2026); the Chile pages returned 403 and no primary source was found.",
           "evidence": [
             {
               "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
@@ -758,8 +771,15 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Tpaga's WhatsApp AI agent, launched in July 2026, pays bills and sends money for users. It stays limited because only the press covers it and Tpaga has not said how many users can use it. Mercado Pago's Mago is not offered in Colombia.",
+          "note": "Tpaga's WhatsApp AI agent, launched in July 2026, pays bills and sends money for users, per the press. Tpaga's site lists AI agents for businesses but does not describe the WhatsApp agent. It stays limited because only the press covers it and Tpaga has not said how many users can use it. Mercado Pago's Mago is not offered in Colombia. Searched Tpaga's site (Nov 2026); no primary source for the WhatsApp agent.",
           "evidence": [
+            {
+              "title": "Tpaga home page (AI agents listed for businesses)",
+              "publisher": "Tpaga",
+              "url": "https://tpaga.co/",
+              "date": "2026-10",
+              "type": "company"
+            },
             {
               "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
               "publisher": "Descubre",
@@ -911,21 +931,21 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT, Claude or OpenClaw pay from your Zap balance for airtime, data, bills, transfers and Chowdeck orders, within per-payment limits, after you approve each one on WhatsApp. No AI payments agent was found at OPay, PalmPay, Moniepoint or Kuda.",
+          "note": "Paystack Index, an early-access beta in Nigeria, lets Claude, ChatGPT or OpenClaw pay from your Zap balance for airtime, data, food (via Chowdeck) and money transfers. No AI payments agent was found at OPay, PalmPay, Moniepoint or Kuda.",
           "evidence": [
+            {
+              "title": "Paystack Index (home page)",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
             {
               "title": "What is Paystack Index?",
               "publisher": "Paystack",
               "url": "https://index.paystack.com/legal/support/about",
               "date": "2026-11",
               "type": "company"
-            },
-            {
-              "title": "Paystack connects AI and payments",
-              "publisher": "ITWeb Africa",
-              "url": "https://itweb.africa/article/paystack-connects-ai-and-payments/Pero37Z31koMQb6m",
-              "date": "2026-06-26",
-              "type": "news"
             }
           ]
         }

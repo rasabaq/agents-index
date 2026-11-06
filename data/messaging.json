@@ -28,7 +28,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "Meta began opening Meta Business Agent to businesses globally in June 2026, and WhatsApp partner 360dialog deploys it and says the regional limits now appear lifted. Meta's developer docs say a business must be based in \"a country authorized for Meta Business Agent\" but do not publish that list, and we found no UK-specific page, so the flag stays.",
+          "note": "Meta began opening Meta Business Agent to businesses globally in June 2026, and WhatsApp partner 360dialog deploys it and says the regional limits now appear lifted. Meta's developer docs say a business must be based in \"a country authorized for Meta Business Agent\" but do not publish that list. Searched Meta's June 2026 announcement, Meta's developer overview and 360dialog's eligibility page (Nov 2026): none names the UK or lists excluded countries, so the flag stays.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -300,7 +300,7 @@
         },
         "CA": {
           "status": "live",
-          "note": "Meta began opening Meta Business Agent to businesses globally on WhatsApp, Messenger and Instagram in June 2026, and WhatsApp partner 360dialog says the regional limits appear lifted. Meta does not publish its country list, and we found no Canada-specific page.",
+          "note": "Meta says it is expanding Meta Business Agent to businesses globally, starting with a select number of businesses on WhatsApp, Messenger, Instagram and Meta Business Suite. Meta's developer page says the business must be based in a country authorized for the agent, but names no countries. We found no Canada-specific page (Meta, developer docs and web search, Nov 2026).",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -315,13 +315,20 @@
               "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Meta Business Agent (developer overview: eligibility)",
+              "publisher": "Meta",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026-10",
+              "type": "company"
             }
           ],
           "confidence": "low"
         },
         "JP": {
           "status": "live",
-          "note": "Meta began opening Meta Business Agent to businesses of all sizes globally in June 2026, on WhatsApp, Messenger and Instagram, and WhatsApp partner 360dialog says the regional limits appear lifted; no Meta page names Japan. On LINE, the chat app most people in Japan use, LINE Yahoo's own AI mode for Official Accounts has no release date, and only its Agent i Biz web app launched, in limited form, in late October 2026.",
+          "note": "Meta says it is expanding Meta Business Agent to businesses globally, starting with a select number of businesses on WhatsApp, Messenger, Instagram and Meta Business Suite. Meta's developer page says the business must be in an authorized country but names none, and no Meta page names Japan. On LINE, the chat app most people in Japan use, LINE Yahoo's AI mode for Official Accounts has no release date (LY Corporation page, Nov 2026). Only Agent i Biz, a web app, launched in limited form in late October 2026.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -341,6 +348,13 @@
               "title": "Agent i for Business (LINE公式アカウント AIモード: release undecided)",
               "publisher": "LY Corporation",
               "url": "https://www.lycbiz.com/jp/service/agent-i/",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent (developer overview: eligibility)",
+              "publisher": "Meta",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
               "date": "2026-10",
               "type": "company"
             }
@@ -460,7 +474,7 @@
         "DE": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats (in Germany since 2018), which few businesses offer. WhatsApp payments are not offered in Germany.",
+          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. Apple's page does not list the countries it covers. WhatsApp payments are not offered in Germany.",
           "evidence": [
             {
               "title": "Bot Payments API",
@@ -475,13 +489,6 @@
               "url": "https://register.apple.com/business-chat",
               "date": "2026-10",
               "type": "company"
-            },
-            {
-              "title": "Apple Business Chat Expands Beyond United States to 10 Countries and 30 More Brands",
-              "publisher": "MacRumors",
-              "url": "https://www.macrumors.com/2018/10/02/apple-business-chat-expands-to-13-countries/",
-              "date": "2018-10-02",
-              "type": "news"
             },
             {
               "title": "Stripe global availability",
@@ -576,10 +583,16 @@
           ]
         },
         "CO": {
-          "status": "none",
-          "gapReason": "not-launched",
-          "note": "No mainstream way to pay inside a chat was found: WhatsApp payments are not offered in Colombia, and Stripe, the main Telegram payment provider, does not sign up businesses there.",
+          "status": "limited",
+          "note": "dale!, Grupo Aval's digital wallet, lets its customers pay utility and other bills they have enrolled in the app from its WhatsApp channel, and send Bre-B transfers there, since October 2026. It works only for dale! customers and enrolled bills, and only the press covers the bill payments so far. WhatsApp's own payments are still not offered in Colombia.",
           "evidence": [
+            {
+              "title": "dale! evoluciona su experiencia financiera en WhatsApp: ahora suma el pago de servicios públicos y privados",
+              "publisher": "Noticias Súper",
+              "url": "https://www.noticiassuper.com/2026/10/06/dale-evoluciona-su-experiencia-financiera-en-whatsapp-ahora-suma-el-pago-de-servicios-publicos-y-privados/",
+              "date": "2026-10-06",
+              "type": "news"
+            },
             {
               "title": "Bot Payments API",
               "publisher": "Telegram",
@@ -594,7 +607,8 @@
               "date": "2026-10",
               "type": "company"
             }
-          ]
+          ],
+          "confidence": "low"
         },
         "IN": {
           "status": "live",
@@ -717,7 +731,7 @@
         "JP": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Only niche channels: Telegram bot payments through Stripe, which serves Japan. LINE Pay closed in Japan in April 2025, which also ended LINE Official Account payments, and PayPay inside LINE only sends money between people, not to businesses.",
+          "note": "Only niche channels: Telegram bot payments through Stripe, which serves Japan. LINE Pay closed in Japan in April 2025, which also ended LINE Official Account payments. PayPay in LINE, announced 2 July 2026, sends money and splits bills between people, not to businesses. We searched LINE Yahoo and PayPay sources for business payments in LINE and found none (Nov 2026).",
           "evidence": [
             {
               "title": "Bot Payments API",
@@ -753,7 +767,7 @@
         "AU": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Only niche channels: Telegram bot payments through a payment provider, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. WhatsApp payments are not launched in Australia.",
+          "note": "Only niche channels: Telegram bot payments through a payment provider, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. WhatsApp payments are not launched in Australia: Meta's pages name no country, and the only sign of Australia is an unreleased WhatsApp settings screen in a secondhand report (Nov 2026).",
           "evidence": [
             {
               "title": "Bot Payments API",
@@ -782,7 +796,7 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index (early-access beta, June 2026) lets ChatGPT or Claude set up payments to merchants such as Chowdeck, but you approve each payment in a WhatsApp message, outside the AI chat. Payaza's Chat & Pay (April 2026) runs an automated checkout on a WhatsApp number, though it is not clear the payment stays in the chat. WhatsApp's own payments are not offered in Nigeria.",
+          "note": "Paystack Index (early access, June 2026, Nigeria only) lets ChatGPT or Claude start payments for selected Zap users, but coverage does not say where the final approval happens. Payaza's Chat & Pay (April 2026) gives merchants a WhatsApp number where buyers pay in the chat, according to launch coverage; Payaza's own page was not opened. WhatsApp's own payments are not offered in Nigeria. We searched Paystack, Payaza and WhatsApp payments (Nov 2026); Paystack's site blocks scripts.",
           "evidence": [
             {
               "title": "Paystack launches AI checkout Index",
