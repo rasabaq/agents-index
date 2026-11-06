@@ -48,6 +48,8 @@
 .cn h2:focus-visible { outline-offset: 4px; }
 .cn-score { margin: 10px 0 0; font: 400 12.5px/1.5 var(--mono); color: var(--ink-2); }
 .cn-score b { font-weight: 500; color: var(--sunrise); }
+.cn-score a { text-decoration: none; }
+.cn-score a:hover { text-decoration: underline; }
 .cn-lede { margin: 10px 0 0; font-size: 14.5px; color: var(--ink-2); }
 .cn-r { display: flex; flex-wrap: wrap; gap: 8px; }
 

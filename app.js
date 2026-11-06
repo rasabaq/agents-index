@@ -98,7 +98,7 @@ function renderCountry() {
     <div>
       <p class="label">${r.code === state.own ? 'Your country' : 'Country'} · ${ranking.length} countries tracked so far</p>
       <h2 id="cn-title" tabindex="-1">${flag(r.code)}${esc(r.name)}</h2>
-      <p class="cn-score"><b>${works.length} of ${total}</b> things work today · score ${r.score} of 100 · ${ordinal(r.rank)} of ${ranking.length}${ties.length ? ', tied' : ''}${low ? ` · ${low} unsure, marked ?` : ''}</p>
+      <p class="cn-score"><b>${works.length} of ${total}</b> things work today · score ${r.score} of 100 · ${ordinal(r.rank)} of ${ranking.length}${ties.length ? ', tied' : ''}${low ? ` · ${low} unsure, marked ?` : ''} · <a class="nowrap" href="countries.html${writeHash(r.code)}">Full profile <span aria-hidden="true">→</span></a></p>
       <p class="cn-lede cn-verdict">${esc(state.view === 'business' ? businessVerdict(r) : verdict(r.name, r.byCategory, liveBy(mine), (ids) => mainReason(mine, ids)))}</p>
       <div class="cn-view" role="group" aria-label="Show the country for">${[['people', 'For people'], ['business', 'For businesses']].map(([v, l]) => `<button type="button" class="pill" data-view="${v}" aria-pressed="${state.view === v}">${l}</button>`).join('')}</div>
     </div>

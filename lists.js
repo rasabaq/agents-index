@@ -1,6 +1,6 @@
 // The companies page: the companies table and the open-source table, each with filters and Show all.
 // The home page links here; #market=CL opens the companies already filtered to one country.
-import { REPO_USE, scoreCountries, mergeCompanies, rankRepos, shortName, useCategoryWords } from './src/observatory.js';
+import { REPO_USE, scoreCountries, mergeCompanies, rankRepos, shortName, useCategoryWords, writeHash } from './src/observatory.js';
 import { data } from './data.js';
 import { $, esc, flag, logo, wireLogos, wireNav } from './ui.js';
 
@@ -34,6 +34,8 @@ function renderCompanies() {
   const matching = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
   const rows = firstRows(matching, state.allCompanies, $('[data-companies-more]'), 'companies');
   $('[data-companies-label]').textContent = `Companies · ${matching.length} of ${companies.length}`;
+  // Back to the countries page, on the country picked here.
+  $('[data-back]').href = `countries.html${state.market === 'all' ? '' : writeHash(state.market)}`;
   $('[data-companies]').innerHTML = `
     <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
     <tbody>${rows.map((c) => `
