@@ -441,6 +441,72 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "limited",
+          "note": "AI services can already read account data with consent through MyData, such as Hana Bank's MyData-based AI financial advice from March 2026. Agents starting payments through open banking is still a proof of concept, and industry speakers in May 2026 said the rules for agent-made payments are not yet set.",
+          "evidence": [
+            {
+              "title": "Hana Bank Launches Customized Financial Consultation Service Combining MyData and AI",
+              "publisher": "Asiae",
+              "url": "https://www.asiae.co.kr/en/article/2026030214392067081",
+              "date": "2026-03-02",
+              "type": "news"
+            },
+            {
+              "title": "'Buy my 200,000-won sneakers when they drop to 170,000 won': Inside Naver Pay's AI agent payment push",
+              "publisher": "The Herald Business",
+              "url": "https://mbiz.heraldcorp.com/article/10913545",
+              "date": "2026-10-24",
+              "type": "news"
+            },
+            {
+              "title": "“네이버·카카오·토스 기술력은 충분한데” AI가 사람 대신 결제, 한국서 늦어지는 이유는? [크립토360]",
+              "publisher": "Herald",
+              "url": "https://heraldk.com/2026/05/29/%e2%80%9c%eb%84%a4%ec%9d%b4%eb%b2%84%c2%b7%ec%b9%b4%ec%b9%b4%ec%98%a4%c2%b7%ed%86%a0%ec%8a%a4-%ea%b8%b0%ec%88%a0%eb%a0%a5%ec%9d%80-%ec%b6%a9%eb%b6%84%ed%95%9c%eb%8d%b0%e2%80%9d-ai%ea%b0%80-%ec%82%ac/",
+              "date": "2026-05-29",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "We found no open banking rule in Singapore that lets third parties read your bank accounts or start payments through regulated APIs. A 2016 push to open bank APIs only encouraged firms and set no timeframe, and our search found no 2026 rule that changes this.",
+          "evidence": [
+            {
+              "title": "Singapore moves to promote open APIs in banking as fintech push gathers pace",
+              "publisher": "Pinsent Masons",
+              "url": "https://www.pinsentmasons.com/out-law/news/singapore-moves-to-promote-open-apis-in-banking-as-fintech-push-gathers-pace",
+              "date": "2016-04-01",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "limited",
+          "note": "Indonesia's SNAP open API standard, set by Bank Indonesia, is in force. Banks and payment providers have to adopt it, and non-bank firms can join to serve their own customers, with customer consent and Bank Indonesia approval. We found no consumer app or AI agent that reads bank balances or starts payments through it yet.",
+          "evidence": [
+            {
+              "title": "PADG 23/15/PADG/2021 on SNAP, the national open payment API standard",
+              "publisher": "Bank Indonesia",
+              "url": "https://bi.go.id/id/publikasi/peraturan/Pages/PADG_231521.aspx",
+              "date": "2021-08-20",
+              "type": "regulation"
+            },
+            {
+              "title": "Open banking in Indonesia (SNAP) tracker",
+              "publisher": "Fiskil",
+              "url": "https://www.fiskil.com/open-finance-tracker/indonesia",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
         }
       }
     },
@@ -859,6 +925,56 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "limited",
+          "note": "KakaoBank's AI transfer (launched November 2025) lets any deposit account holder send money by chat or voice, up to 2 million won per transfer and per day. The customer must still confirm and verify the final step, and K Bank's similar AI transfer from July 2026 works the same way. No similar feature was found at Kookmin, Shinhan, Woori or Toss Bank.",
+          "evidence": [
+            {
+              "title": "“엄마한테 5만원 보내줘”…카카오뱅크, ‘AI이체’ 출시",
+              "publisher": "Herald",
+              "url": "https://www.heraldk.com/article/2025112317191945767",
+              "date": "2025-11-23",
+              "type": "news"
+            },
+            {
+              "title": "계좌번호 없이 문장·음성으로 송금",
+              "publisher": "Asiae",
+              "url": "https://view.asiae.co.kr/article/2026072713424907424",
+              "date": "2026-07-27",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "DBS says some features of its Joy assistant, which now use generative and agentic AI, let customers finish a banking task in the chat. The article does not name those tasks, so we could not confirm that Joy sends money or pays bills. OCBC's assistant is described only for portfolio questions, and we found no UOB assistant that moves money.",
+          "evidence": [
+            {
+              "title": "How DBS, OCBC and UOB are betting on AI in 2026",
+              "publisher": "Fintech News Singapore",
+              "url": "https://fintechnews.sg/137393/ai/how-dbs-ocbc-and-uob-are-betting-on-ai-in-2026/",
+              "date": "2026-10-14",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no Indonesian bank whose AI assistant moves money by chat or voice. Mandiri's MITA assistant on WhatsApp answers questions, and a 2020 report said its transaction services were still being built. We did not find a 2026 source showing that changed.",
+          "evidence": [
+            {
+              "title": "Bank Mandiri permudah transaksi lewat asisten virtual di WhatsApp",
+              "publisher": "Kontan",
+              "url": "https://keuangan.kontan.co.id/news/bank-mandiri-permudah-transaksi-lewat-asisten-virtual-di-whatsapp",
+              "date": "2020-10-08",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }

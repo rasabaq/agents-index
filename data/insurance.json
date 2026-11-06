@@ -285,6 +285,33 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "none",
+          "note": "I found no Korean insurer or app where an AI agent sells you a car, home or travel policy from start to finish in a chat. Toss's car-insurance comparison gives quotes in its app, but it is not an AI agent that completes the purchase.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "Pand.ai's GINA.sg bot on WhatsApp compares car insurance quotes and guides you to buy, with a cash-back offer. A 2021 release does not confirm that the policy is completed in the chat, and we found no 2026 source. We found no AI chat that sells home or travel cover in Singapore.",
+          "evidence": [
+            {
+              "title": "Local fintech Pand.ai launches Singapore's first bilingual digital insurance broker with Allianz, Etiqa and MSIG",
+              "publisher": "Pand.ai",
+              "url": "https://insurancenewsnet.com/oarticle/local-fintech-pand-ai-launches-singapores-first-bilingual-digital-insurance-broker-with-allianz-etiqa-and-msig",
+              "date": "2021-11-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no Indonesian insurer or insurtech that sells a car, home or travel policy end to end in a chat with an AI agent. Qoala, the main local insurtech we checked, had only older sources (2020 to 2023) that we could open, so its current sales channels are unconfirmed.",
+          "evidence": [],
+          "confidence": "low"
         }
       }
     },
@@ -531,6 +558,25 @@
               "type": "news"
             }
           ],
+          "confidence": "low"
+        },
+        "KR": {
+          "status": "none",
+          "note": "I found no Korean insurer whose AI agent takes a claim in a chat and moves it forward. My one search on Korean insurers' AI claim tools found only general industry reports.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "We found no Singapore insurer AI that files a claim and moves it forward. FWD Singapore's Faith chatbot explains how to submit a travel claim, and the article does not say it files one. We could not find a date for that article.",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "evidence": []
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no Indonesian insurer whose AI agent takes a claim in a chat and moves it forward. Older reports of a WhatsApp claim bot at Qoala could not be confirmed from a dated source.",
+          "evidence": [],
           "confidence": "low"
         }
       }

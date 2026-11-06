@@ -327,6 +327,72 @@
               "type": "company"
             }
           ]
+        },
+        "KR": {
+          "status": "limited",
+          "note": "Mastercard says it completed Korea's first live agent payments in March 2026, reported as a ride booking, so the rollout is still small. Visa launched its Agentic Ready program in April 2026 with six Korean partners, including KB Kookmin Card and Samsung Card, but no live Visa agent purchase in Korea was found.",
+          "evidence": [
+            {
+              "title": "Mastercard completes Korea's first live agentic transactions, unlocking trusted AI-powered commerce",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-completes-korea-s-first-live-agentic-transactions-unlocking-trusted-ai-powered-commerce/",
+              "date": "2026-03",
+              "type": "company"
+            },
+            {
+              "title": "'Visa Agentic Ready' Launched... Strengthening Agentic Commerce Leadership with Six Korean Partners",
+              "publisher": "Asiae",
+              "url": "https://view.asiae.co.kr/en/article/2026043009175883199",
+              "date": "2026-04-30",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "Visa and Mastercard agent card tokens run only as pilots in Singapore. DBS ran a Visa Intelligent Commerce pilot for food and drink purchases from February 2026, and Visa's Agentic Ready programme lets issuers test agent payments in a controlled environment. Mastercard Agent Pay made its first live agent payment in Singapore with DBS and UOB in March 2026, and press coverage calls it pilot-stage.",
+          "evidence": [
+            {
+              "title": "DBS is first bank in Asia Pacific to pilot Visa Intelligent Commerce for everyday payments",
+              "publisher": "DBS",
+              "url": "https://www.dbs.com/newsroom/DBS_is_first_bank_in_Asia_Pacific_to_pilot_Visa_Intelligent_Commerce_for_everyday_payments",
+              "date": "2026-02-16",
+              "type": "company"
+            },
+            {
+              "title": "Visa Launches 'Agentic Ready' Program in Asia Pacific with Over 50 Partners",
+              "publisher": "Visa",
+              "url": "https://kyodonewsprwire.jp/release/202604308373",
+              "date": "2026-04-30",
+              "type": "company"
+            },
+            {
+              "title": "Mastercard delivers its first live agentic transaction in Singapore with DBS and UOB",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-delivers-its-first-live-agentic-transaction-in-singapore-with-dbs-and-uob/",
+              "date": "2026-03",
+              "type": "company"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no Visa or Mastercard agent payment for Indonesia. Visa's Agentic Ready program went live in April 2026 in Australia, Hong Kong, Japan, Malaysia, New Zealand, Singapore, South Korea, Taiwan, Thailand and Vietnam, and Indonesia is not on that list. We found no Indonesian launch of Mastercard Agent Pay either.",
+          "evidence": [
+            {
+              "title": "Visa Launches 'Agentic Ready' Program in Asia Pacific with Over 50 Partners",
+              "publisher": "Visa",
+              "url": "https://www.visa.com.sg/about-visa/newsroom/press-releases/visa-launches-agentic-ready-program-in-asia-pacific-with-over-50-partners-advancing-agentic-commerce.html",
+              "date": "2026-04-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -631,6 +697,50 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "none",
+          "note": "No agent can send a payment over Korea's instant bank transfer rail yet. In May 2026 the Korea Financial Telecommunications and Clearings Institute said it will test an AI-agent-only payment platform within the year, and industry speakers said the rules for agent-made payments are still pending.",
+          "evidence": [
+            {
+              "title": "AI가 쇼핑해주는 시대…금결원장 \"AI 결제플랫폼 연내 기술검증\"(종합)",
+              "publisher": "Yonhap (via Daum News)",
+              "url": "https://v.daum.net/v/20260503180009019",
+              "date": "2026-05-03",
+              "type": "news"
+            },
+            {
+              "title": "“네이버·카카오·토스 기술력은 충분한데” AI가 사람 대신 결제, 한국서 늦어지는 이유는? [크립토360]",
+              "publisher": "Herald",
+              "url": "https://heraldk.com/2026/05/29/%e2%80%9c%eb%84%a4%ec%9d%b4%eb%b2%84%c2%b7%ec%b9%b4%ec%b9%b4%ec%98%a4%c2%b7%ed%86%a0%ec%8a%a4-%ea%b8%b0%ec%88%a0%eb%a0%a5%ec%9d%80-%ec%b6%a9%eb%b6%84%ed%95%9c%eb%8d%b0%e2%80%9d-ai%ea%b0%80-%ec%82%ac/",
+              "date": "2026-05-29",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "We found no way for an AI agent to send money over PayNow, Singapore's instant bank transfer service. The card pilots use card networks, not PayNow. We could not open PayNow's own site, so this cell rests on the absence of agent payments.",
+          "evidence": [],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no AI agent that can send a payment over QRIS or instant bank transfers. QRIS passed 15 billion transactions to July 2026, and the Bank Indonesia figures reported for 2026 do not mention agents or agentic payments.",
+          "evidence": [
+            {
+              "title": "BI: Transaksi QRIS Tembus 15 Miliar hingga Juli 2026",
+              "publisher": "Katadata (citing Bank Indonesia)",
+              "url": "https://katadata.co.id/finansial/keuangan/6a9e3b775a371/bi-transaksi-qris-tembus-15-miliar-hingga-juli-2026",
+              "date": "2026-09-07",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
         }
       }
     },
@@ -928,6 +1038,64 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "announced",
+          "note": "Kakao Pay showed AI agents paying from its wallet with stablecoins in a September 2026 demo, and it plans to launch once the rules are in place. Naver Pay is running a proof of concept with the Korea Financial Telecommunications and Clearings Institute in which an agent gets payment authority, so customers cannot pay through an agent yet.",
+          "evidence": [
+            {
+              "title": "카카오페이, AI 대리 결제 구매-판매 양방향 실증",
+              "publisher": "SBS Biz",
+              "url": "https://biz.sbs.co.kr/amp/article/20000334666",
+              "date": "2026-09-15",
+              "type": "news"
+            },
+            {
+              "title": "'Buy my 200,000-won sneakers when they drop to 170,000 won': Inside Naver Pay's AI agent payment push",
+              "publisher": "The Herald Business",
+              "url": "https://mbiz.heraldcorp.com/article/10913545",
+              "date": "2026-10-24",
+              "type": "news"
+            },
+            {
+              "title": "“네이버·카카오·토스 기술력은 충분한데” AI가 사람 대신 결제, 한국서 늦어지는 이유는? [크립토360]",
+              "publisher": "Herald",
+              "url": "https://heraldk.com/2026/05/29/%e2%80%9c%eb%84%a4%ec%9d%b4%eb%b2%84%c2%b7%ec%b9%b4%ec%b9%b4%ec%98%a4%c2%b7%ed%86%a0%ec%8a%a4-%ea%b8%b0%ec%88%a0%eb%a0%a5%ec%9d%80-%ec%b6%a9%eb%b6%84%ed%95%9c%eb%8d%b0%e2%80%9d-ai%ea%b0%80-%ec%82%ac/",
+              "date": "2026-05-29",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "Stripe's shared payment tokens, which let an agent pay with a customer's card, are offered to customers in the US, Canada and several European countries, but not Singapore. Stripe's Link Agent Wallet is for US and Canadian customers only. We found no Singapore wallet or fintech app that lets an agent pay for you.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no e-wallet in Indonesia where an AI agent can pay for you. GoPay, OVO, DANA and ShopeePay had no agent-payment launch that we could find in 2026.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -950,7 +1118,8 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "SG"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -975,7 +1144,9 @@
         "FR",
         "CA",
         "JP",
-        "AU"
+        "AU",
+        "KR",
+        "SG"
       ],
       "capabilities": [
         "payments.card-agent-token"

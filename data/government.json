@@ -433,6 +433,47 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "live",
+          "note": "South Korea's national mobile ID is open to six private apps: Samsung, Naver, Toss, KB Kookmin Bank, NH Nonghyup Bank and KakaoBank. Eighteen banks link it for remote services, mainly account opening. No source found says an AI agent can present it on your behalf.",
+          "evidence": [
+            {
+              "title": "Financial Security Institute expands mobile ID use in finance",
+              "publisher": "Byline Network (reporting the Financial Security Institute)",
+              "url": "https://byline.network/2026/03/19-600/",
+              "date": "2026-03-20",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "live",
+          "note": "Singpass is Singapore's national digital ID, and private firms can use it: it serves over 1,400 government agencies and participating private organisations, and more than 1,800 digital services use Myinfo to pre-fill forms. The person still has to approve each login with a face scan, fingerprint or passcode in the Singpass app.",
+          "evidence": [
+            {
+              "title": "Singpass: Singapore's national digital identity (Annex D factsheet)",
+              "publisher": "GovTech Singapore",
+              "url": "https://isomer-user-content.by.gov.sg/85/16f1b7a4-1da4-4c51-aabe-5334d635ba45/Annex%20D%20-%20Singpass%20Factsheet%20(30%20June%202026).pdf",
+              "date": "2026-06-30",
+              "type": "report"
+            }
+          ]
+        },
+        "ID": {
+          "status": "limited",
+          "note": "Indonesia's national digital ID app, IKD, lets people prove who they are at some private firms. OCBC has let new customers open accounts with it at every branch since February 2025, and secondary reports say BNI and Bank DKI use it for mobile banking, but we could not open those reports. We found no AI agent that can use IKD for you, and access beyond a few banks is unclear, so the status is limited.",
+          "evidence": [
+            {
+              "title": "OCBC press release: opening an account with the IKD app",
+              "publisher": "OCBC",
+              "url": "https://www.ocbc.id/en/tentang-ocbc-nisp/informasi/siaran-pers/2025/02/12/kerjasama-ocbc-x-ikd-dukcapil",
+              "date": "2025-02-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -741,6 +782,56 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "limited",
+          "note": "AI정부24, run by the Ministry of the Interior and Safety, answers questions and recommends public services in everyday language. Issuing documents through chat, such as a resident registration copy, is planned for late 2026, so for now you finish the task yourself.",
+          "evidence": [
+            {
+              "title": "AI Gov24 usage results and year-end plans (press release)",
+              "publisher": "Ministry of the Interior and Safety (via Korea.kr)",
+              "url": "https://www.korea.kr/policy/civilView.do?newsId=148967560",
+              "date": "2026-07",
+              "type": "company"
+            },
+            {
+              "title": "AI Gov24 trial reaches 28.5 million users",
+              "publisher": "Financial News",
+              "url": "https://www.fnnews.com/news/202606301129496308",
+              "date": "2026-06-30",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only"
+        },
+        "SG": {
+          "status": "live",
+          "note": "The OneService Chatbot, on WhatsApp and Telegram, lets residents report municipal issues such as neighbourhood cleanliness and facility breakdowns in chat, and it routes each case to the right agency. GovTech's AI services page describes no citizen tool that completes a payment or booking, so the scope is narrow.",
+          "evidence": [
+            {
+              "title": "How GovTech uses AI to enhance digital public services",
+              "publisher": "GovTech Singapore",
+              "url": "https://www.tech.gov.sg/technews/how-govtech-uses-ai-to-enhance-digital-public-services/",
+              "date": "2024-01-12",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "In July 2026 Komdigi, the communications and digital ministry, said it wants AI to improve public services, but its statement names no AI service that is running. We found no government AI assistant that finishes a task for citizens. Chatbots that only answer questions may exist in some agencies, but we could not confirm one on an official page.",
+          "evidence": [
+            {
+              "title": "Komdigi press release on new officials and digital public services",
+              "publisher": "Komdigi (via InfoPublik)",
+              "url": "https://infopublik.id/kategori/siaran-pers/981094/siaran-pers-lantik-pejabat-baru-komdigi-perkuat-pelayanan-digital-yang-lebih-mudah-cepat-dan-berdampak",
+              "date": "2026-07-29",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }

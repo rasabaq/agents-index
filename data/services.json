@@ -328,6 +328,50 @@
               "type": "company"
             }
           ]
+        },
+        "KR": {
+          "status": "none",
+          "note": "Google's agentic restaurant booking in AI Mode works in the US and eight other markets, not in South Korea. I found no Korean booking app, such as CatchTable or Naver, with an AI agent, and I could not confirm that ChatGPT's OpenTable booking covers Korean restaurants.",
+          "evidence": [
+            {
+              "title": "Google AI Mode redesign",
+              "publisher": "9to5Google",
+              "url": "https://9to5google.com/2026/04/10/google-ai-mode-redesign/",
+              "date": "2026-04-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "live",
+          "note": "ChatGPT finds open tables on OpenTable and books the one you pick. OpenAI's release notes list OpenTable as global from 10 August 2026, but we could not open that page or confirm Singapore restaurants on OpenTable. We found no booking agent for Chope or Google AI Mode in Singapore.",
+          "evidence": [
+            {
+              "title": "ChatGPT release notes (restaurant reservations with OpenTable, Resy and Yelp)",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-08-10",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "announced",
+          "note": "Grab, the Indonesian super app, announced an AI assistant at GrabX 2026 in Jakarta that can surface restaurants and make bookings in one chat. We found no Indonesian launch date, and the restaurant example given was in Malaysia. We did not confirm Google AI Mode or ChatGPT table booking for Indonesia.",
+          "evidence": [
+            {
+              "title": "Grab unveils GrabX 2026 AI intelligence layer, new hardware and 13 app features in Jakarta",
+              "publisher": "MarketBeat",
+              "url": "https://marketbeat.com/instant-alerts/grab-unveils-grabx-2026-ai-intelligence-layer-new-hardware-and-13-app-features-in-jakarta-2026-04-08/",
+              "date": "2026-04-08",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -682,6 +726,55 @@
               "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
               "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KR": {
+          "status": "live",
+          "note": "Booking.com says its app in ChatGPT is open to ChatGPT users globally, including for car rentals, and it sends you to Booking.com to finish the reservation. Google AI Mode hotel booking is US-only, so it does not count here.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "How to book travel with AI Mode in Google Search",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+              "date": "2026-08-27",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "ChatGPT's Booking.com and Expedia apps search hotels and hand you off to the partner site to finish the booking. No source confirms that these apps are open in Singapore.",
+          "evidence": [
+            {
+              "title": "Travel bookings in the age of ChatGPT apps: the good, the bad and the test of the future",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/expert-views/travel-bookings-in-the-age-of-chatgpt-apps-the-good-the-bad-and-the-test-of-the-future",
+              "date": "2026-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "live",
+          "note": "The Booking.com app in ChatGPT is open to ChatGPT users worldwide. It lets Indonesian users search hotels and car rentals in chat, then sends them to Booking.com to finish the booking. Google AI Mode hotel booking is US-only, and we found no Traveloka app in ChatGPT.",
+          "evidence": [
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
               "type": "company"
             }
           ]
@@ -1062,6 +1155,50 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "announced",
+          "note": "Kakao said in August 2026 that its KakaoTalk AI agent will let users order Coupang Eats food inside the chat, but it gave no launch date. I found no live Korean food, grocery or ride-hailing agent.",
+          "evidence": [
+            {
+              "title": "[컨콜 종합] '사상 최대 실적' 카카오 \"카톡에서 AI로 쿠팡이츠 배달\"⋯커머스 강화 전략",
+              "publisher": "inews24",
+              "url": "https://www.inews24.com/view/1992514",
+              "date": "2026-08-06",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "Grab's AI Assistant is available now in Singapore. It helps with quick food reorders, but the article does not say it places the order itself. It only queues a ride booking reminder, and booking rides through the assistant is still being built.",
+          "evidence": [
+            {
+              "title": "Grab AI Assistant (GrabX 2026)",
+              "publisher": "Grab",
+              "url": "https://www.grab.com/sg/inside-grab/stories/grabx-ai-assistant/",
+              "date": "2026-04-08",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "announced",
+          "note": "Grab announced AI features for rides, food and travel at GrabX 2026 in Jakarta, including an assistant that can build shopping carts. We could not confirm that an ordering agent is open to Indonesian users today. We found no Gojek ordering agent in our searches.",
+          "evidence": [
+            {
+              "title": "Grab unveils GrabX 2026 AI intelligence layer, new hardware and 13 app features in Jakarta",
+              "publisher": "MarketBeat",
+              "url": "https://marketbeat.com/instant-alerts/grab-unveils-grabx-2026-ai-intelligence-layer-new-hardware-and-13-app-features-in-jakarta-2026-04-08/",
+              "date": "2026-04-08",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -1108,7 +1245,10 @@
         "IN",
         "ES",
         "FR",
-        "NG"
+        "NG",
+        "KR",
+        "SG",
+        "ID"
       ],
       "capabilities": [
         "services.restaurant-booking",
@@ -1121,7 +1261,8 @@
           "GB",
           "MX",
           "ES",
-          "FR"
+          "FR",
+          "SG"
         ],
         "services.delivery-rides": [
           "US",
@@ -1142,7 +1283,8 @@
         "DE",
         "MX",
         "CA",
-        "AU"
+        "AU",
+        "SG"
       ],
       "capabilities": [
         "services.restaurant-booking"
@@ -1318,7 +1460,10 @@
         "CA",
         "JP",
         "AU",
-        "NG"
+        "NG",
+        "KR",
+        "SG",
+        "ID"
       ],
       "capabilities": [
         "services.travel-booking"

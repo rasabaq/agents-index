@@ -256,6 +256,65 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "limited",
+          "note": "Wanted Lab's two AI agents, launched in November 2025, find positions that fit your resume and coach your resume. We found no Saramin, JobKorea or Wanted agent that sends applications for you, so you still apply yourself.",
+          "evidence": [
+            {
+              "title": "Wanted Lab launches two AI agents for job seekers",
+              "publisher": "Digital Today (Ditoday)",
+              "url": "https://ditoday.com/?p=136869",
+              "date": "2025-11-20",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "Indeed's app in ChatGPT reached Singapore in April 2026. It can search jobs and show company reviews in chat, but applications are sent on Indeed's website or app, so you do the last step. We found no Singapore listing for LoopCV or Indeed's Career Scout.",
+          "evidence": [
+            {
+              "title": "Indeed Brings Job Search Into ChatGPT for Singapore Users",
+              "publisher": "Tech Coffee House",
+              "url": "https://techcoffeehouse.com/2026/04/29/indeed-brings-job-search-into-chatgpt-for-singapore-users/",
+              "date": "2026-04-29",
+              "type": "news"
+            },
+            {
+              "title": "About the Indeed app on ChatGPT",
+              "publisher": "Indeed",
+              "url": "https://indeed.zendesk.com/hc/en-us/articles/43197872743565",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "JobStreet and Glints offer AI matching and one-tap apply, but we found no agent that finds jobs and sends applications for you. JobStreet's AI launch from December 2023 lists matching and recommendations, not automatic applying. LoopCV's site names no Indonesian job board, and a third-party profile mentions a Glints auto-apply feature that we could not check on Glints' own site.",
+          "evidence": [
+            {
+              "title": "JobStreet by SEEK: AI-powered platform launch",
+              "publisher": "JobStreet by SEEK",
+              "url": "https://id.jobstreet.com/about/news/article/ai-powered-platform-launch",
+              "date": "2023-12-13",
+              "type": "company"
+            },
+            {
+              "title": "LoopCV home page",
+              "publisher": "LoopCV",
+              "url": "https://loopcv.pro/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -532,6 +591,50 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "limited",
+          "note": "MetaPay, a payroll product from Metanet, has an AI agent that automates four-insurance filings on the health insurance portal and flags filing errors for staff. The 2025 report does not say whether small firms can use it or whether a person approves each filing.",
+          "evidence": [
+            {
+              "title": "MetaPay AI agent automates four-insurance filings",
+              "publisher": "Byline Network",
+              "url": "https://byline.network/2025/07/21-488/",
+              "date": "2025-07-21",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "HeyHR's Singapore product is in beta, and its AI handles CPF calculation, IR8A and AIS submission to IRAS as platform features. In its chat demo the employer confirms before the agent acts, so the agent helps rather than runs payroll alone.",
+          "evidence": [
+            {
+              "title": "HeyHR payroll for Singapore",
+              "publisher": "HeyHR",
+              "url": "https://www-heyhr.pages.dev/payroll/singapore-payroll.html",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "Mekari Talenta runs payroll, PPh 21 and BPJS calculations, and can create e-Bupot tax forms without manual upload to Coretax, but it presents these as automation with no AI claimed. Its AI Assistant gives HR insights and answers. We found no AI agent that runs payroll or files a form for a business on its own, so confidence is low.",
+          "evidence": [
+            {
+              "title": "Mekari Talenta payroll software features",
+              "publisher": "Mekari Talenta",
+              "url": "https://www.talenta.co/fitur/aplikasi-payroll",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }
@@ -584,7 +687,8 @@
       "role": "Its ChatGPT app and Career Scout agent find jobs and pre-fill applications, but you send them on Indeed.",
       "markets": [
         "US",
-        "GB"
+        "GB",
+        "SG"
       ],
       "capabilities": [
         "work.job-apply"
