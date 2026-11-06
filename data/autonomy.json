@@ -350,7 +350,7 @@
         },
         "ES": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Spain, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
+          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Spain, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country. Meta's Muse is not listed for this country (Meta names the US, Canada and Japan).",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -398,7 +398,7 @@
         },
         "FR": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in France, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
+          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in France, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country. Meta's Muse is not listed for this country (Meta names the US, Canada and Japan).",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -446,7 +446,7 @@
         },
         "CA": {
           "status": "live",
-          "note": "Claude in Chrome (paid plans, and Anthropic lists Canada) and Perplexity Comet (free, worldwide) open websites and click, type and fill forms. Gemini in Chrome is offered in Canada, but Google does not say whether its auto browse agent is. ChatGPT's cloud browser was not checked for Canada.",
+          "note": "Claude in Chrome (paid plans, and Anthropic lists Canada) and Perplexity Comet (free, worldwide) open websites and click, type and fill forms. Meta's Muse agent is available in Canada and completes tasks for you, per Meta. Gemini in Chrome is offered in Canada, but Google does not say whether its auto browse agent is. ChatGPT's cloud browser was not checked for Canada.",
           "evidence": [
             {
               "title": "Claude in Chrome is generally available",
@@ -474,13 +474,20 @@
               "publisher": "Google Chrome Help",
               "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Introducing Muse for Small Business (Muse is available in the US and Canada)",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+              "date": "2026-09-29",
               "type": "company"
             }
           ]
         },
         "JP": {
           "status": "live",
-          "note": "Claude in Chrome (paid Claude plans) and Perplexity Comet (free) work in Japan, which is on Anthropic's supported list, and ChatGPT's cloud browser is on paid plans. Gemini in Chrome is offered in Japan in Japanese, but Google does not say auto browse has reached Japan.",
+          "note": "Claude in Chrome (paid Claude plans) and Perplexity Comet (free) work in Japan, which is on Anthropic's supported list, and ChatGPT's cloud browser is on paid plans. Meta's Muse launched in Japan on 23 October 2026 and can open a browser and fill in forms, per Meta. Gemini in Chrome is offered in Japan in Japanese, but Google does not say auto browse has reached Japan.",
           "evidence": [
             {
               "title": "Supported countries and regions",
@@ -509,12 +516,19 @@
               "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Muse personal AI agent launches in Japan (Japanese press release)",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/",
+              "date": "2026-10-23",
+              "type": "company"
             }
           ]
         },
         "AU": {
           "status": "live",
-          "note": "Claude in Chrome (paid plans; Australia is on Anthropic's supported list) and Perplexity Comet (free, worldwide) browse and act on websites. Gemini in Chrome reached Australia in April 2026, but Google's help page does not confirm that its auto browse agent works here. ChatGPT's cloud browser was not re-checked.",
+          "note": "Claude in Chrome (paid plans; Australia is on Anthropic's supported list) and Perplexity Comet (free, worldwide) browse and act on websites. Gemini in Chrome reached Australia in April 2026, but Google's help page does not confirm that its auto browse agent works here. ChatGPT's cloud browser was not re-checked. Meta's Muse is not listed for this country (Meta names the US, Canada and Japan).",
           "evidence": [
             {
               "title": "Claude in Chrome is generally available",
@@ -548,7 +562,7 @@
         },
         "NG": {
           "status": "live",
-          "note": "Claude in Chrome (every paid Claude plan; Nigeria is on Anthropic's supported list) and Perplexity Comet (free, released worldwide) browse and act on websites here. Gemini in Chrome is rolling out to adults in Nigeria, but we found no source that its auto browse agent works here.",
+          "note": "Claude in Chrome (every paid Claude plan; Nigeria is on Anthropic's supported list) and Perplexity Comet (free, released worldwide) browse and act on websites here. Gemini in Chrome is rolling out to adults in Nigeria, but we found no source that its auto browse agent works here. Meta's Muse is not listed for this country (Meta names the US, Canada and Japan).",
           "evidence": [
             {
               "title": "Claude in Chrome is generally available",
@@ -757,7 +771,7 @@
         "ES": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses in Spain; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in Spain. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -771,7 +785,7 @@
         "FR": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in France. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -785,7 +799,7 @@
         "CA": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses in Canada; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in Canada. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -799,7 +813,7 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses in Japan; Google Search AI Mode's 'Check for me' calling works only in English and only in the US.",
+          "note": "No consumer agent found that phones businesses in Japan. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -813,7 +827,7 @@
         "AU": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in Australia. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -834,7 +848,7 @@
         "NG": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses in Nigeria; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in Nigeria. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1364,13 +1378,6 @@
               "url": "https://support.google.com/gemini/answer/14579026?hl=en",
               "date": "2026-10",
               "type": "company"
-            },
-            {
-              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
-              "publisher": "iPhoneSoft",
-              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
-              "date": "2026-05-26",
-              "type": "news"
             },
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
