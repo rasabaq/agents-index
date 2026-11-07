@@ -173,8 +173,8 @@
     /* the task checked, with the seal pressed beside it */
     #v-map .fly-entry { display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 12px; align-items: start; }
     #v-map .fly-entry-t { display: grid; gap: 6px; min-width: 0; }
-    #v-map .fly-tasks { display: flex; flex-direction: column; gap: 4px; height: 122px; overflow-y: auto; scrollbar-width: none; } /* 3 rows of up to 2 lines (the most an area has today); a 4th scrolls */
-    #v-map .fly-task { display: flex; flex: none; align-items: center; gap: 8px; min-height: 28px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--page); color: var(--ink-2); font: 12.5px/1.25 var(--font); text-align: left; cursor: pointer; }
+    #v-map .fly-tasks { display: flex; flex-direction: column; gap: 4px; height: 128px; overflow-y: auto; scrollbar-width: none; } /* 3 rows of 40px, each fits 2 lines (the most an area has today); a 4th scrolls */
+    #v-map .fly-task { display: flex; flex: none; align-items: center; gap: 8px; height: 40px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--page); color: var(--ink-2); font: 12.5px/1.25 var(--font); text-align: left; cursor: pointer; }
     #v-map .fly-task span { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
     #v-map .fly-task:hover { border-color: var(--line-strong); color: var(--ink); }
     #v-map .fly-task[aria-pressed="true"] { border-color: var(--sunrise); color: var(--sunrise); }
