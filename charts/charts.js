@@ -2,7 +2,8 @@
 // A chart is a classic script that pushes { id, title, blurb, render(el, ctx) } onto window.CHARTS.
 // blurb may be a function of ctx, so it can count what is in the data.
 // index.html places the slots (<section data-chart="<id>">), so the page order lives in the HTML.
-import { STATUSES, TIERS, scoreCountries, tierOf, placeName } from '../src/observatory.js';
+import { STATUSES, TIERS, scoreCountries, tierOf, placeName, startCountry } from '../src/observatory.js';
+import { ICONS, BAYER } from '../src/icons.js';
 import { data } from '../data.js';
 
 const $ = (sel) => document.querySelector(sel);
@@ -34,7 +35,9 @@ function buildContext({ meta, categories }) {
     meta, categories, ranking, byCode, catIndex, capabilities,
     companies: [...map.values()],
     STATUSES, scoreCountries, esc, emoji, edgeFade, placeName,
-    TIERS, tierOf,
+    TIERS, tierOf, ICONS, BAYER,
+    // The country the page starts on (the same rule app.js uses): the map's tour starts there.
+    start: startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone),
     // A flag for HTML: emoji font, hidden from screen readers (the code or name next to it is the text).
     flag: (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`,
     catName: (id) => catIndex[id].name,

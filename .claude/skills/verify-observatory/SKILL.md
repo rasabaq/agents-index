@@ -7,10 +7,10 @@ description: Drive the Agent Index site (the home page with its hero, console an
 
 The product is a static web site, with no build step and no backend. Its surfaces:
 
-- `/` is the home page: the hero, the console (country view with its picker and errands, then the closed matrix), Who builds it, and the one-line Method (`#method`, counts in `[data-trust-count]`).
+- `/` is the home page: the hero (the pixel wordmark, the headline and the "Open the ranking" button `[data-to-ranking]`), the map stage right under it, the console (country view with its picker and errands, then the closed matrix), Who builds it, and the one-line Method (`#method`, counts in `[data-trust-count]`).
 - `/countries.html` is the countries page: a rail of every country beside one country's fact sheet. `#country=CL` picks the country, the same link format as `/`.
 - `/companies.html` is the companies page: the Companies table, the flows chart and the Open source table. `#market=CL` opens it filtered to one country.
-- The charts draw into their slots: the world map and compare on `/`, flows on `/companies.html`.
+- The charts draw into their slots: the map stage and compare on `/`, flows on `/companies.html`.
 - `npm test` and `npm run validate` check the data and the scoring. They do not check the UI.
 
 The helper `observatory.mjs` (next to this file) does five things:
@@ -87,7 +87,7 @@ How `open` works:
 
 Stable handles in this repo (use these, not coordinates):
 
-- **Country pickers:** `[data-go-country="CL"]`. These are in the hero pins, the world map and the console picker `[data-clist]` (`#ranking`). The URL hash is `#country=CL`.
+- **Country pickers:** the map stage `#v-map` (its map dots, the ← / → buttons, the "Country" select, and the area icons on its passport card) and the console picker `[data-clist]` (`#ranking`, buttons `[data-go-country="CL"]`). The stage tells the page with a `pickcountry` event on `document` (detail: the code), and the console selects that country without scrolling. The URL hash is `#country=CL`.
 - **Country view:** `[data-country]`, the heading `#cn-title`, the score line `.cn-score`, and the cards `[data-kpis]`.
 - **Matrix cells:** open `#matrix summary` first, then `#matrix button[data-cap="<capability id>"][data-code="<country>"]`. Their `aria-label` reads `<capability> in <country>: <status>`.
 - **Cell detail:** `dialog[data-detail]`, the title `#detail-title`, the status `.detail-status`, the sources `.sources a`, and the correction link `.suggest a`.
@@ -140,4 +140,4 @@ Run `down` after a failed attempt too, so no ports or processes are left behind.
 - The sticky header covers the top of the viewport. `shot --at` scrolls the element to 70px below the top; pass `--offset <px>` at 400px if the header hides it.
 - Companies and Open source grow with the page; there is no inner scroll box. They show 10 rows until their "Show all" button is pressed.
 - The holder turns Chrome's cache off, so a file you edit during a run shows on the next `open`. A run started before this change may still serve stale scripts: `down` and `up` again.
-- The matrix scrolls sideways inside itself whenever the countries do not fit, below about 1000px (`[data-matrix]`), and the hero hides the country pins that do not fit. Count what is visible before you click it.
+- The matrix scrolls sideways inside itself whenever the countries do not fit, below about 1000px (`[data-matrix]`). Count what is visible before you click it.

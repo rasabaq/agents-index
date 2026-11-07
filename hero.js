@@ -1,16 +1,9 @@
-// The hero: a planet at sunrise whose air dissolves into magenta pixels (WebGL, with a 2D fallback),
-// the pixel wordmark, and the data parts (twelve pixel icons lit by the country's scores, country pins standing on the planet).
-// It reads the shared data (data.js) itself, so it does not depend on app.js. Its country links carry data-go-country, which app.js
-// handles like every other country picker; app.js then fires "countrychange" and the sun moves to that country.
-import { scoreCountries, shortName, useCategoryWords, startCountry } from './src/observatory.js';
-import { data } from './data.js';
-import { ICONS, BAYER } from './src/icons.js';
+// The hero: a planet at sunrise whose air dissolves into magenta pixels (WebGL, with a 2D fallback), and the pixel wordmark.
+// It needs no data: the country pickers live in the map below it and in the console.
+import { BAYER } from './src/icons.js';
 
 const hero = document.querySelector('[data-hero]');
 const $ = (sel) => hero.querySelector(sel);
-const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
-const emoji = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
-const flag = (code) => `<span class="flag" aria-hidden="true">${emoji(code)}</span>`;
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const T0 = 12; // the still frame (2D fallback, reduced motion) shows this moment
@@ -20,28 +13,14 @@ const hex = (h) => { const n = parseInt(h.slice(1), 16); return [n >> 16, (n >> 
 
 let cv = $('.hero-sky');
 const wm = $('.hero-wm');
-const row = $('[data-hero-pins]');
 let G = {}; // hero geometry in CSS px, y down
 
-/* ---------- geometry: the planet's top touches the bottom of the pin row; each pin stands on its edge ---------- */
+/* ---------- geometry: the planet's top sits --planet above the hero's bottom (hero.css); the sun rises right of centre ---------- */
 function geom() {
-  const W = hero.clientWidth, H = hero.clientHeight, hb = hero.getBoundingClientRect(), rb = row.getBoundingClientRect();
-  const R = Math.max(W * 1.25, 460), Cx = W * 0.5, Cy = rb.bottom - hb.top + R;
-  const edge = (x) => Cy - Math.sqrt(Math.max(0, R * R - (x - Cx) ** 2));
-  // Only the pins that fit in 44px slots show: the top ranks, plus the selected country. The console lists them all.
-  const all = [...row.querySelectorAll('a')], fit = Math.max(1, Math.floor(rb.width / 44));
-  const cur = all.findIndex((p) => p.getAttribute('aria-current') === 'true');
-  const pins = all.filter((p, i) => !(p.parentElement.hidden = !(i < fit - (cur >= fit) || i === cur)));
-  // Evenly spaced and centred on the planet's top, in slots up to 136px wide. The sun rises behind the selected pin.
-  const step = Math.min(136, rb.width / pins.length);
-  let sx = W * (W < 720 ? 0.8 : 0.71);
-  pins.forEach((p, i) => {
-    const x = Cx + (i - (pins.length - 1) / 2) * step;
-    p.style.left = `${x - (rb.left - hb.left)}px`;
-    p.style.top = `${edge(x) - (rb.top - hb.top)}px`;
-    if (p.getAttribute('aria-current') === 'true') sx = x;
-  });
-  G = { W, H, R, Cx, Cy, sx, sy: edge(sx) + 4 };
+  const W = hero.clientWidth, H = hero.clientHeight;
+  const R = Math.max(W * 1.25, 460), Cx = W * 0.5, Cy = H - parseFloat(getComputedStyle(hero).getPropertyValue('--planet')) + R;
+  const sx = W * (W < 720 ? 0.8 : 0.71);
+  G = { W, H, R, Cx, Cy, sx, sy: Cy - Math.sqrt(R * R - (sx - Cx) ** 2) + 4 };
 }
 
 /* ---------- sky: render the smooth scene, then dither the cells a mask picks (top, edges, air above the limb) ---------- */
@@ -330,59 +309,3 @@ new ResizeObserver(() => {
 }).observe(hero);
 document.fonts?.load('28px "Jersey 10"').then(heroAll, () => {});
 document.fonts?.ready.then(heroAll);
-
-/* ---------- data: pins and the twelve pixel icons ---------- */
-let ranking, focus;
-
-function renderCountries() {
-  row.innerHTML = ranking.map((r) => `
-    <li><a href="#country=${r.code}" data-go-country="${r.code}" aria-current="${r.code === focus}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}" style="--s: ${r.score}">
-      <span class="hero-pin-n">${r.score}</span><span class="hero-pin-f">${flag(r.code)}</span><i class="hero-pin-p"></i><i class="hero-pin-b"></i></a></li>`).join('');
-  // Stand the new pins on the planet.
-  size();
-  drawSky(gl ? now() : T0);
-}
-
-// A 5px cell on a 6px step per '#'. Each cell keeps its dither threshold and a wordmark-like colour (t0 to t2).
-const cellsOf = (rows) => rows.flatMap((line, y) => [...line].map((ch, x) => {
-  if (ch !== '#') return '';
-  const n = Math.random(), delay = reduce ? '' : ` style="transition-delay:${Math.round(n * 320)}ms"`;
-  return `<rect x="${x * 6}" y="${y * 6}" width="5" height="5" class="t${n < 0.55 ? 0 : n < 0.85 ? 1 : 2}" data-b="${BAYER[(y & 3) * 4 + (x & 3)]}"${delay}/>`;
-})).join('');
-
-function renderIcons(categories) {
-  $('[data-hero-ic]').innerHTML = categories.filter((c) => ICONS[c.id]).map((c) => `
-    <li tabindex="0" role="img" data-cat="${c.id}"><svg viewBox="0 0 72 72" aria-hidden="true">${cellsOf(ICONS[c.id])}</svg><b aria-hidden="true">${esc(shortName(c.id))}</b></li>`).join('');
-}
-
-// Light each icon by the country's category score: a cell is on when its threshold is under score * 16 / 100, so 50 is a checkerboard.
-function light(code) {
-  const r = ranking.find((x) => x.code === code), icons = [...hero.querySelectorAll('[data-cat]')];
-  for (const li of icons) {
-    const s = r.byCategory[li.dataset.cat], on = Math.round((s * 16) / 100);
-    li.querySelectorAll('rect').forEach((c) => c.classList.toggle('on', +c.dataset.b < on));
-    li.classList.toggle('is-full', s >= 100);
-    li.setAttribute('aria-label', `${shortName(li.dataset.cat)}: ${s >= 100 ? 'works' : s > 0 ? 'works partly' : 'does not work yet'}`);
-  }
-  $('[data-hero-live]').textContent = `${r.name}: ${icons.filter((li) => li.classList.contains('is-full')).length} of ${icons.length} work fully`;
-}
-
-try {
-  const { meta, categories } = await data;
-  useCategoryWords(meta.categories);
-  ranking = scoreCountries(meta, categories);
-  focus = startCountry(ranking.map((r) => r.code), location.hash, navigator.languages ?? [navigator.language], Intl.DateTimeFormat().resolvedOptions().timeZone);
-  renderCountries();
-  renderIcons(meta.categories);
-  light(focus);
-  // app.js already marked the new country (aria-current); move the sun behind its pin and light its icons.
-  document.addEventListener('countrychange', (e) => {
-    focus = e.detail;
-    size();
-    drawSky(gl ? now() : T0);
-    light(focus);
-  });
-  $('[data-hero-icons]').hidden = false;
-} catch {
-  // app.js shows the load error; the hero keeps its sky and wordmark.
-}
