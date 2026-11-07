@@ -53,28 +53,26 @@
 /* The map opens the data: it takes the console's old place over the hero's planet, at the console's width,
    and the console follows it.
    Until the map draws, its empty slot reserves the drawn height, so the console never jumps down: the window
-   around the map (borders, bar, head with a 2-line blurb, 3 lines on phones, frame padding, legend rows, the list
-   under the map) plus the dot grid (139 x 65 cells, 3 more columns in the wide layout) at the frame's inner width.
-   These numbers mirror the .view-* rules above and the fixed rows in viz-map.js; change them together. The list is
-   one 40px row per country (24) with 2px gaps, in two columns from 601px: --map-list changes with the country count. */
+   around the stage (borders, bar, head with a 2-line blurb, 3 lines on phones, frame padding) plus the stage and the
+   strip under it. Every height in the stage is fixed (viz-map.js), so --map-stage is a constant from 1000px, where
+   the card sets the height beside the map; below that the map stacks on top at a fixed aspect ratio (1.8, 1.25 on
+   phones) of the frame's inner width. These numbers mirror the .view-* rules above and the CSS in viz-map.js;
+   change them together. */
 .hero + [data-chart='map'] {
   position: relative; z-index: 4; margin-top: -270px; padding-top: 0;
-  --map-chrome: 196.5px; --map-win: min(1216px, 100% - 48px); --map-inset: 50px; --map-cols: 142; --map-list: 0px;
+  --map-chrome: 182.5px; --map-win: min(1216px, 100% - 48px); --map-inset: 50px; --map-stage: 724px;
 }
-.hero + [data-chart='map']:empty { padding-top: calc(var(--map-chrome) + 1.2 * clamp(24px, 3vw, 32px) + (var(--map-win) - var(--map-inset)) * 65 / var(--map-cols) + var(--map-list)); }
+.hero + [data-chart='map']:empty { padding-top: calc(var(--map-chrome) + 1.2 * clamp(24px, 3vw, 32px) + var(--map-stage)); }
 [data-chart='map'] + .term { margin-top: 32px; }
-@media (max-width: 1089px) {
-  .hero + [data-chart='map'] { --map-chrome: 238.5px; --map-win: calc(100% - 48px); --map-cols: 139; --map-list: 502px; }
+@media (max-width: 999px) {
+  .hero + [data-chart='map'] { --map-stage: calc((var(--map-win) - var(--map-inset)) / 1.8 + 780px); }
 }
 @media (max-width: 760px) {
   /* the console sits 12px from each edge here, so the map does too */
   .hero + [data-chart='map'] { margin-top: -200px; padding-inline: 12px; --map-win: calc(100% - 24px); }
 }
-@media (max-width: 600px) {
-  .hero + [data-chart='map'] { --map-list: 1006px; }
-}
 @media (max-width: 520px) {
-  .hero + [data-chart='map'] { --map-chrome: 261.75px; --map-inset: 34px; }
+  .hero + [data-chart='map'] { --map-chrome: 183.75px; --map-inset: 34px; --map-stage: calc((var(--map-win) - var(--map-inset)) / 1.25 + 794px); }
 }
 
 @media (max-width: 520px) {
