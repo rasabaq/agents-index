@@ -333,6 +333,190 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "live",
+          "note": "South Korea's AI Basic Act (the Framework Act on AI Development and Trust) took effect on 22 January 2026. It covers AI systems in general and requires notice to users before they use high-impact or generative AI, and it does not single out agents that act for users.",
+          "evidence": [
+            {
+              "title": "AI Basic Act takes effect on 22 January, per the Ministry of Science and ICT",
+              "publisher": "Financial News",
+              "url": "https://www.fnnews.com/news/202601211823243681",
+              "date": "2026-01-21",
+              "type": "news"
+            },
+            {
+              "title": "Framework Act on the Development of AI and Establishment of Trust (AI Basic Act)",
+              "publisher": "Korea Ministry of Government Legislation (law.go.kr)",
+              "url": "https://www.law.go.kr/법령/인공지능발전과신뢰기반조성등에관한기본법",
+              "date": "2025-01-21",
+              "type": "regulation"
+            }
+          ]
+        },
+        "SG": {
+          "status": "none",
+          "note": "Singapore has no AI law that covers agents acting for users. The IMDA's Model AI Governance Framework for Agentic AI, announced on 22 January 2026, is guidance, not law.",
+          "evidence": [
+            {
+              "title": "Singapore launches new Model AI Governance Framework for Agentic AI",
+              "publisher": "Allen & Gledhill",
+              "url": "https://www.allenandgledhill.com/sg/publication/articles/32314/launches-new-model-ai-governance-framework-for-agentic-ai",
+              "date": "2026-01-22",
+              "type": "report"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "Indonesia has no AI law in force. The government's AI rules are still drafts: a presidential regulation on AI ethics dated 27 January 2026 was still a draft in June 2026, and the national AI roadmap was in public consultation in August 2025. We could not open the 2022 data protection law, which may cover automated decisions in general, so confidence is low.",
+          "evidence": [
+            {
+              "title": "Draft presidential regulation on AI ethics (dated 27 January 2026)",
+              "publisher": "Legal 500 (Mondaq article)",
+              "url": "https://www.legal500.com/intelligence/indonesia/technology/indonesian-ethics-on-artificial-intelligence-presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026",
+              "date": "2026-06-02",
+              "type": "report"
+            },
+            {
+              "title": "Komdigi opens public consultation on the national AI roadmap white paper",
+              "publisher": "Fortune Indonesia",
+              "url": "https://www.fortuneidn.com/tech/komdigi-buka-konsultasi-publik-peta-jalan-ai-minta-masukan-hingga-22-agustus-00-6cmtl-l3dzfx",
+              "date": "2025-08-11",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "live",
+          "note": "The EU AI Act applies in Italy, and its transparency duties for AI systems have applied since 2 August 2026. Italy also has its own AI law, Law 132/2025, in force since 10 October 2025, which works alongside the Act. Its main chapters cover public administration, professions, courts and crime, and our sources did not name AI agents acting for users.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "date": "2024-07-12",
+              "type": "regulation"
+            },
+            {
+              "title": "AI regulatory framework",
+              "publisher": "European Commission",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "date": "2026-10-19",
+              "type": "company"
+            },
+            {
+              "title": "Legge 23 settembre 2025, n. 132, Disposizioni e deleghe al Governo in materia di intelligenza artificiale",
+              "publisher": "Normattiva",
+              "url": "https://www.normattiva.it/eli/id/2025/09/25/25G00143/CONSOLIDATED",
+              "date": "2025-09-25",
+              "type": "regulation"
+            }
+          ]
+        },
+        "NL": {
+          "status": "live",
+          "note": "The EU AI Act is in force in the Netherlands, so the cell is live. Most of it has applied since 2 August 2026, and the high-risk rules were pushed back to December 2027 and August 2028.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+              "publisher": "EUR-Lex (European Union)",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+              "date": "2024-06-13",
+              "type": "regulation"
+            },
+            {
+              "title": "AI Act application timeline",
+              "publisher": "European Commission",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+              "date": "2026-10-19",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "limited",
+          "note": "The UAE has no comprehensive AI law, only general rules: the data protection law (Federal Decree-Law No. 45 of 2021) gives people rights over automated decisions, and DIFC Regulation 10 binds firms in the DIFC free zone. The central bank's February 2026 AI guidance covers licensed financial firms but is guidance, and none of these covers AI acting for a user.",
+          "evidence": [
+            {
+              "title": "Navigating AI in the UAE: A Financial Services Perspective",
+              "publisher": "CMS",
+              "url": "https://cms.law/en/are/legal-updates/navigating-ai-in-the-uae-a-financial-services-perspective",
+              "date": "2026-10-15",
+              "type": "report"
+            },
+            {
+              "title": "UAE Central Bank issues new rules on AI use to protect banking customers",
+              "publisher": "Gulf News",
+              "url": "https://gulfnews.com/business/banking/uae-central-bank-issues-new-rules-on-ai-use-to-protect-banking-customers-1.500452382",
+              "date": "2026-02-23",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no AI law in force in Saudi Arabia. SDAIA's AI Ethics Principles are guidance, and the Personal Data Protection Law covers personal data, not AI agents acting for users.",
+          "evidence": [],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "South Africa has no AI law in force, and its draft national AI policy was withdrawn in April 2026. But section 20 of the Electronic Communications and Transactions Act already covers automated electronic agents that form contracts for a party, so it reaches AI agents acting for users in part.",
+          "evidence": [
+            {
+              "title": "Electronic Communications and Transactions Act 2002, section 20: Automated transactions",
+              "publisher": "Acts Online",
+              "url": "https://www.acts.co.za/ELECTRONIC-COMMUNICATIONS-AND-TRANSACTIONS-ACT-2002/20__automated_transactions",
+              "date": "2026-11",
+              "type": "regulation"
+            },
+            {
+              "title": "South Africa targets January 2027 for revised AI policy after earlier withdrawal",
+              "publisher": "Engineering News",
+              "url": "https://engineeringnews.co.za/print-version/south-africa-targets-january-2027-for-revised-ai-policy-after-earlier-withdrawal-2026-05-26",
+              "date": "2026-05-26",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "Kenya has no AI law in force. The Artificial Intelligence Bill, 2026 (Senate Bills No. 4 of 2026), sponsored by Sen. Karen Nyamu, is still before the Senate, and it would set up an Office of the AI Commissioner. We found no rule that covers AI agents acting for users.",
+          "evidence": [
+            {
+              "title": "Bill Digest: The Artificial Intelligence Bill, 2026 (Senate Bills No. 4 of 2026)",
+              "publisher": "Parliament of Kenya, Senate",
+              "url": "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf",
+              "date": "2026-02-19",
+              "type": "report"
+            }
+          ],
+          "gapReason": "no-rule"
+        },
+        "AR": {
+          "status": "none",
+          "note": "Argentina has no AI law in force. Congress had 53 AI bills in 2025, and only 11 of them aim at a full AI law.",
+          "evidence": [
+            {
+              "title": "Ley de Inteligencia Artificial en la Argentina: hay muchos proyectos, pero pocos completos",
+              "publisher": "DPL News",
+              "url": "https://dplnews.com/?p=311680",
+              "date": "2026-04-09",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
         }
       }
     },
@@ -645,6 +829,189 @@
               "type": "regulation"
             }
           ]
+        },
+        "KR": {
+          "status": "limited",
+          "note": "The Electronic Financial Transactions Act is the main payment rule that comes up, but legal commentary says it assumes a person gives each payment instruction. It is unclear who pays when an AI agent buys the wrong thing, and no regulator position on agent purchases has been reported.",
+          "evidence": [
+            {
+              "title": "AI agent payments: the legal issues",
+              "publisher": "Law Times (Yulchon law firm authors)",
+              "url": "https://www.lawtimes.co.kr/news/articleViewAmp.html?idxno=219447",
+              "date": "2026-04-16",
+              "type": "news"
+            },
+            {
+              "title": "Who pays when an AI agent buys the wrong thing",
+              "publisher": "Herald Korea",
+              "url": "https://www.heraldk.com/article/2026092622002784444",
+              "date": "2026-09-26",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "MAS's E-Payments User Protection Guidelines decide who bears losses from unauthorised payments on bank and e-money accounts held by individuals and sole proprietors. Card payments fall under the Association of Banks in Singapore's card code instead. The guidelines do not mention AI agents, so it is unclear whether a purchase an agent made counts as one the person consented to.",
+          "evidence": [
+            {
+              "title": "E-Payments User Protection Guidelines (effective 16 December 2024)",
+              "publisher": "Monetary Authority of Singapore",
+              "url": "https://www.mas.gov.sg/-/media/mas-media-library/regulation/guidelines/pso/e-payments-user-protection-guidelines-with-effect-from-16-dec-2024/e-payments-user-protection-guidelines-with-effect-from-16-december-2024.pdf",
+              "date": "2024-12-16",
+              "type": "regulation"
+            },
+            {
+              "title": "E-Payments User Protection Guidelines",
+              "publisher": "Monetary Authority of Singapore",
+              "url": "https://www.mas.gov.sg/regulation/guidelines/e-payments-user-protection-guidelines",
+              "date": "2024-10-25",
+              "type": "regulation"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no consumer or payment rule that clearly covers purchases an AI agent makes for you, and no regulator statement on agent purchases. We could not open the consumer protection law or Bank Indonesia's payment rules, so confidence is low.",
+          "evidence": [],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "Italy applies the EU payment rules (PSD2), which require the bank to refund unauthorised payments right away. A payment counts as authorised only when the payer has consented. EU consumer rules also give a 14-day right to withdraw from online purchases. None of these names an AI agent, so it is unclear whether an order an agent places counts as the customer's consent.",
+          "evidence": [
+            {
+              "title": "Directive (EU) 2015/2366 (PSD2), Articles 64 and 73",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj",
+              "date": "2015-11-25",
+              "type": "regulation"
+            },
+            {
+              "title": "Directive 2011/83/EU on consumer rights, Article 9",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/dir/2011/83/oj",
+              "date": "2011-10-25",
+              "type": "regulation"
+            },
+            {
+              "title": "Decreto legislativo 27 gennaio 2010, n. 11 (payment services)",
+              "publisher": "Normattiva",
+              "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2010-01-27;11",
+              "date": "2010-01-27",
+              "type": "regulation"
+            },
+            {
+              "title": "Codice del consumo, Decreto legislativo 6 settembre 2005, n. 206",
+              "publisher": "Normattiva",
+              "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-09-06;206",
+              "date": "2005-09-06",
+              "type": "regulation"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "EU payment law, carried into Dutch law, makes your bank refund a payment you did not authorise, right away and no later than the end of the next business day after it learns of the payment, unless it suspects fraud. The rule does not say whether an order an agent places counts as authorised, and we found no Dutch rule or regulator statement that covers agent purchases.",
+          "evidence": [
+            {
+              "title": "Directive (EU) 2015/2366 (PSD2), Article 73: payment service provider's liability for unauthorised payment transactions",
+              "publisher": "EUR-Lex (European Union)",
+              "url": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj/eng",
+              "date": "2015-11",
+              "type": "regulation"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "Under the central bank's consumer protection rules (Circular No. 8 of 2020), banks must compensate customers for financial losses unless the loss came from the customer's gross negligence or fraud. These rules do not mention AI agents or software acting for a customer, so it is unclear whether a purchase an agent gets wrong is covered.",
+          "evidence": [
+            {
+              "title": "Fallen victim to bank scam in UAE? Here's how to get your money back",
+              "publisher": "Khaleej Times",
+              "url": "https://www.khaleejtimes.com/uae/legal/victim-bank-scam-how-to-get-money-back",
+              "date": "2026-07-26",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no Saudi consumer or payment rule, or regulator statement, that names purchases an AI agent makes for you. The bank and e-commerce rules were not checked in detail.",
+          "evidence": [],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "No South African rule names AI agents. The Electronic Communications and Transactions Act gives consumers a seven-day cooling-off right on many online purchases, but section 20 presumes a person is bound by what their electronic agent agrees to, which may cut against you.",
+          "evidence": [
+            {
+              "title": "Electronic Communications and Transactions Act 2002, section 44: Cooling off period",
+              "publisher": "Acts Online",
+              "url": "https://www.acts.co.za/electronic-communications-and-transactions-act-2002/44__cooling_off_period",
+              "date": "2026-11",
+              "type": "regulation"
+            },
+            {
+              "title": "Electronic Communications and Transactions Act 2002, section 20: Automated transactions",
+              "publisher": "Acts Online",
+              "url": "https://www.acts.co.za/ELECTRONIC-COMMUNICATIONS-AND-TRANSACTIONS-ACT-2002/20__automated_transactions",
+              "date": "2026-11",
+              "type": "regulation"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "We found no Kenyan rule that clearly covers purchases an AI agent makes for you. A 2025 analysis says Kenya has no set duty to refund mobile money payments, and the Central Bank's 2025 inclusion strategy only committed to drafting a refund policy. We could not confirm the Consumer Protection Act 2012 or any final Central Bank rules.",
+          "evidence": [
+            {
+              "title": "CBK digital fraud compensation plan mobile money",
+              "publisher": "TechTrend Kenya",
+              "url": "https://techtrendske.co.ke/2025/09/28/cbk-digital-fraud-compensation-plan-mobile-money",
+              "date": "2025-09-28",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Consumer law (Ley 24.240) lets online buyers cancel within 10 days and get their money back in full, and Resolution 424/2020 requires a cancel button on shopping sites and apps. None of these names AI agents, so it is unclear whether a purchase an agent makes counts.",
+          "evidence": [
+            {
+              "title": "Defensa del Consumidor: ¿Puede deshacerse una contratación cuando ya se prestó el consentimiento?",
+              "publisher": "Gobierno de Mendoza",
+              "url": "https://www.mendoza.gov.ar/prensa/defensa-del-consumidor-puede-deshacerse-una-contratacion-cuando-ya-se-presto-el-consentimiento/",
+              "date": "2020-02-22",
+              "type": "company"
+            },
+            {
+              "title": "Las empresas deben publicar en su web el botón de arrepentimiento",
+              "publisher": "iProfesional",
+              "url": "https://www.iprofesional.com/legales/324903-las-empresas-deben-publicar-en-su-web-el-boton-de-arrepentimiento",
+              "date": "2020-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
         }
       }
     }

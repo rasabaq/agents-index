@@ -521,6 +521,302 @@
               "type": "company"
             }
           ]
+        },
+        "KR": {
+          "status": "announced",
+          "note": "Naver's shopping agent is still being tested, and shoppers cannot pay inside it yet. Naver Pay and the Korea Financial Telecommunications and Clearings Institute are running a proof of concept where an agent buys once a price condition is met. No payment feature for Kanana, the AI agent in KakaoTalk, was found.",
+          "evidence": [
+            {
+              "title": "Naver's shopping agent and Kakao's Kanana in KakaoTalk",
+              "publisher": "Korea Herald",
+              "url": "https://www.koreaherald.com/article/10675959",
+              "date": "2026-02-15",
+              "type": "news"
+            },
+            {
+              "title": "'Buy my 200,000-won sneakers when they drop to 170,000 won': Inside Naver Pay's AI agent payment push",
+              "publisher": "The Herald Business",
+              "url": "https://mbiz.heraldcorp.com/article/10913545",
+              "date": "2026-10-24",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "We found no way to buy inside an AI chat in Singapore. Gemini lists Singapore for shopping help, but Google says agentic checkout with Google Pay works only in the US and Australia. Alexa+ is not offered in Singapore, and we found no Singapore in-chat checkout from ChatGPT, Copilot or local apps, though that search was thin.",
+          "evidence": [
+            {
+              "title": "Get help with your shopping in Gemini Apps (supported countries)",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/answer/16730149?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no way to buy inside an AI assistant in Indonesia. Gemini lists Indonesia for shopping, but Google's agentic checkout with Google Pay works only in the US and Australia. Alexa+ is not in Indonesia, and we found no Tokopedia, Shopee or Blibli checkout inside a chat.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Get help with your shopping in Gemini Apps (supported countries)",
+              "publisher": "Gemini Apps Help",
+              "url": "https://support.google.com/gemini/answer/16730149?hl=en-GB",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "We found no way for an Italian shopper to buy from an AI chat today. Google's Universal Cart launched only in the US on 15 October 2026, and Alexa+ is in invitation-only early access in Italy, but we found no sign that it places Amazon orders there. We could not check ChatGPT, Microsoft Copilot or Perplexity checkout for Italy.",
+          "evidence": [
+            {
+              "title": "Universal Cart launch",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+              "date": "2026-10-15",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ Italy: Amazon AI Assistant Guide & Features",
+              "publisher": "Pasquale Pillitteri",
+              "url": "https://pasqualepillitteri.it/en/news/933/alexa-plus-italy-guide-features",
+              "date": "2026-04-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "Amazon's Alexa+ can order from Amazon by voice, but its live country list (updated 28 October 2026) does not include the Netherlands. Google's agentic checkout in AI Mode and Gemini works only in the US and Australia, with Canada, Australia and the UK named as the next countries. I found no way to buy inside an AI assistant in the Netherlands.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+              "date": "2026-05-20",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched"
+        },
+        "AE": {
+          "status": "none",
+          "note": "No AI assistant I found can buy for UAE shoppers inside the chat. Alexa+ is not in the UAE, Google's agentic checkout in Gemini and AI Mode works only in the US and Australia, and I found no UAE launch of ChatGPT, Copilot or Perplexity checkout.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "No AI assistant I checked can buy for shoppers in Saudi Arabia. Amazon's Alexa+ is not on its list of countries, Google Pay's agentic checkout works only in the US and Australia, and Shopify's direct checkout only serves buyers in the US, Canada and Australia. I did not check ChatGPT, Copilot or Perplexity for Saudi Arabia, so this stays low.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "No AI assistant can buy from a shop inside the chat for people in South Africa. Amazon's Alexa+ country list does not include South Africa, and Shopify's guide to selling through Google AI Mode and Gemini names only US, Canadian and Australian shoppers. We found no sign that ChatGPT Instant Checkout or Perplexity checkout works here.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No AI assistant can buy for a shopper inside a chat in Kenya. Gemini's shopping help, Alexa+ and Meta's direct checkout do not list Kenya, and Google Pay agentic checkout works only in the US and Australia. The Visa and ChatGPT purchase feature is not in Kenya yet, and I could not check OpenAI's own checkout country list.",
+          "evidence": [
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Get help with your shopping in Gemini Apps (supported countries)",
+              "publisher": "Gemini Apps Help",
+              "url": "https://support.google.com/gemini/answer/16730149?hl=en-GB&co=GENIE.Platform%3DAndroid",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Meta",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Visa enables ChatGPT's AI agents to shop, complete purchases for users",
+              "publisher": "Eastleigh Voice",
+              "url": "https://eastleighvoice.co.ke/technology/366217/visa-enables-chatgpts-ai-agents-to-shop-complete-purchases-for-users?amp=1",
+              "date": "2026-06-12",
+              "type": "news"
+            },
+            {
+              "title": "The Rise of AI-Powered Shopping in Kenya: Convenience Booms, But Trust Stops at the Checkout",
+              "publisher": "Dealfish",
+              "url": "https://dealfish.co.ke/2026/06/the-rise-of-ai-powered-shopping-in-kenya-convenience-booms-but-trust-stops-at-the-checkout-2026.html",
+              "date": "2026-06-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "The bank-backed wallet MODO launched an app inside ChatGPT in October 2026 that lets any ChatGPT user search, build a cart and pay for Frávega products, but the user must confirm each payment. Fully autonomous purchases are not possible in Argentina yet, and only one press report covers the launch. Alexa+ is not offered in Argentina, and Google's agentic checkout works only in the US and Australia.",
+          "evidence": [
+            {
+              "title": "El comercio agéntico ya llegó",
+              "publisher": "El Economista",
+              "url": "https://eleconomista.com.ar/negocios/el-comercio-agentico-ya-llego-como-ia-revolucionara-forma-ofrecer-vender-tanto-productos-como-servicios-n98869",
+              "date": "2026-10-14",
+              "type": "news"
+            },
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
         }
       }
     },
@@ -891,6 +1187,193 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "announced",
+          "note": "Naver's shopping agent can search and suggest products, but it does not place orders for shoppers yet. Naver Pay and the Korea Financial Telecommunications and Clearings Institute are testing an agent that buys when a price condition is met, and that work is still a proof of concept.",
+          "evidence": [
+            {
+              "title": "Naver's shopping agent and Kakao's Kanana in KakaoTalk",
+              "publisher": "Korea Herald",
+              "url": "https://www.koreaherald.com/article/10675959",
+              "date": "2026-02-15",
+              "type": "news"
+            },
+            {
+              "title": "'Buy my 200,000-won sneakers when they drop to 170,000 won': Inside Naver Pay's AI agent payment push",
+              "publisher": "The Herald Business",
+              "url": "https://mbiz.heraldcorp.com/article/10913545",
+              "date": "2026-10-24",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "Grab's AI Shopping Agent has been available in Singapore since April 2026, but it only works for GrabMart groceries. It suggests items and loads your cart, and you review the items and place the order yourself. We could not verify any Shopee or Lazada agent that buys for you, and Alexa+ is not offered in Singapore.",
+          "evidence": [
+            {
+              "title": "Grab Shopping Agent for GrabMart groceries",
+              "publisher": "Grab",
+              "url": "https://www.grab.com/sg/inside-grab/stories/grabx-ai-shopping-agent-grocery-list",
+              "date": "2026-04-08",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only"
+        },
+        "ID": {
+          "status": "none",
+          "note": "No marketplace agent that buys for you has launched in Indonesia. Reuters reported in February 2026 that Google and Sea, which owns Shopee, would explore an agentic shopping prototype on Shopee, with no launch date or country named. We found nothing similar at Tokopedia or Lazada, and Alexa+ is not in Indonesia.",
+          "evidence": [
+            {
+              "title": "Google + Sea Bring Agentic AI to Shopee and Garena: What It Means for E-commerce and Gaming",
+              "publisher": "Quantilus",
+              "url": "https://quantilus.com/?p=27371",
+              "date": "2026-02-19",
+              "type": "news"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "We found no marketplace agent that buys for Italian shoppers today. Amazon's Alexa+ is in early access by invitation in Italy, but an April 2026 guide describes restaurant bookings and smart-home routines, not Amazon purchases. We could not open Amazon's Italian Alexa+ page, so Rufus Buy for Me and Auto Buy are unchecked for Italy.",
+          "evidence": [
+            {
+              "title": "Alexa+ Italy: Amazon AI Assistant Guide & Features",
+              "publisher": "Pasquale Pillitteri",
+              "url": "https://pasqualepillitteri.it/en/news/933/alexa-plus-italy-guide-features",
+              "date": "2026-04-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "bol, the Dutch online shop, has a Gift Assistant in its app where customers can order suggested gifts. Its shopping assistant, Shophulp, opened to all customers on 15 September 2026 and recommends products, but I found no sign it buys for customers. Amazon's Alexa+ is not in the Netherlands, and I could not confirm that Rufus is live on amazon.nl.",
+          "evidence": [
+            {
+              "title": "Bol launches AI-powered gift suggestion tool in app",
+              "publisher": "Retail Systems",
+              "url": "https://retail-systems.com/rs/Dutch_Online_Retailer_Bol_Launches_AI_Powered_Gift_Suggestion_Tool_In_App.php",
+              "date": "2025-12",
+              "type": "news"
+            },
+            {
+              "title": "Bol adds AI next to the search bar",
+              "publisher": "RetailDetail",
+              "url": "https://www.retaildetail.eu/news/general/bol-adds-ai-next-to-the-search-bar/",
+              "date": "2026-09-15",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "We found no marketplace agent that buys for you in the UAE. A search result said Amazon is testing Alexa for Shopping with some UAE customers, but the Amazon page it pointed to does not exist, so we could not confirm it. noon and Amazon.ae were not checked further.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "I found no marketplace agent in Saudi Arabia that buys for you. Amazon's Alexa+ is not in Saudi Arabia, but I could not check Amazon.sa's Rufus, noon or other local marketplaces for auto-buy features before my search limit ran out.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "Pick n Pay's Penny assistant in its asap! app rolled out to shoppers from 6 July 2026, and it helps you build grocery orders by voice, text or photo. Shoprite's Pixie on sixty60 (April 2026) is described as handling shopping, but neither source says whether either assistant places and pays for the order, so we rate it limited.",
+          "evidence": [
+            {
+              "title": "Pick n Pay launches AI grocery shopping assistant in South Africa",
+              "publisher": "The Star",
+              "url": "https://www.thestar.com.my/tech/tech-news/2026/07/03/pick-n-pay-launches-ai-grocery-shopping-assistant-in-south-africa",
+              "date": "2026-07-03",
+              "type": "news"
+            },
+            {
+              "title": "Watch: sixty60 launches Pixie, South Africa's first AI shopping assistant",
+              "publisher": "Cape Argus",
+              "url": "https://capeargus.co.za/business/2026-04-09-watch-sixty60-launches-pixie-south-africas-first-ai-shopping-assistant/",
+              "date": "2026-04-09",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No marketplace agent that buys for you was found in Kenya. Amazon's Alexa for Shopping, with Auto Buy, is for US customers only, and Alexa+ does not reach Kenya. I could not confirm a buying agent at local marketplaces such as Jumia.",
+          "evidence": [
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "No marketplace agent buys for shoppers in Argentina yet. Mercado Libre has described agents that could compare options and buy for users, and a headline says it is testing them, but the article treats this as a future plan. Mercado Pago's assistant handles bills, transfers and reminders only, and Amazon's Alexa+ is not offered in Argentina.",
+          "evidence": [
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            },
+            {
+              "title": "El comercio agéntico ya llegó",
+              "publisher": "El Economista",
+              "url": "https://eleconomista.com.ar/negocios/el-comercio-agentico-ya-llego-como-ia-revolucionara-forma-ofrecer-vender-tanto-productos-como-servicios-n98869",
+              "date": "2026-10-14",
+              "type": "news"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
+              "publisher": "Amazon",
+              "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched"
         }
       }
     },
@@ -1281,6 +1764,259 @@
               "type": "company"
             }
           ]
+        },
+        "KR": {
+          "status": "announced",
+          "note": "Kakao Pay announced a payment toolkit in August 2025 that lets developers connect AI agents to its payment API, and in September 2026 it demoed agents buying and selling data for stablecoins. Stripe's agent payment tokens and Shopify's agentic storefronts do not serve Korean shoppers, so Korean merchants cannot yet sell to agents through those protocols.",
+          "evidence": [
+            {
+              "title": "카카오페이, AI 결제 혁신 위한 핵심 기술 '결제 MCP 및 에이전트 툴킷' 공개",
+              "publisher": "Kakao Corp",
+              "url": "https://www.kakaocorp.com/page/detail/11760?lang=ENG",
+              "date": "2025-08-07",
+              "type": "company"
+            },
+            {
+              "title": "카카오페이, AI 대리 결제 구매-판매 양방향 실증",
+              "publisher": "SBS Biz",
+              "url": "https://biz.sbs.co.kr/amp/article/20000334666",
+              "date": "2026-09-15",
+              "type": "news"
+            },
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Agentic storefronts with Google",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "Shopify's Singapore page says Agentic Storefronts is enabled for eligible stores and names ChatGPT, Gemini and Copilot as channels. It does not say that Singapore shoppers can buy through them. Google says agentic checkout with Google Pay works only in the US and Australia, so we found no confirmed way for a Singapore merchant to sell to agents that Singapore shoppers can use.",
+          "evidence": [
+            {
+              "title": "Agentic Storefronts",
+              "publisher": "Shopify",
+              "url": "https://www.shopify.com/sg/agentic-storefronts",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "limited",
+          "note": "Indonesian stores can join Shopify Agentic Storefronts, since a store can be based in any country. But agents only complete checkout for US, Canada and Australia shoppers, and everyone else is sent to the store to pay. Stripe's Agentic Commerce Suite does not list Indonesia.",
+          "evidence": [
+            {
+              "title": "Agentic storefronts: Google (Shopify Help Center)",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Sell through agents with Agentic Commerce Suite",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "Italian merchants can take part in agent-shopping pilots, but agent sales are not open to Italian shoppers yet. In March 2026 Nexi, the Italian payments group, said it is working with pilot merchants in Italy and is building agent-ready payment gateways, with Google's Universal Commerce Protocol checkout support still planned. Stripe says its agent checkout is open in the US, Canada and 'select European countries' without naming them.",
+          "evidence": [
+            {
+              "title": "Nexi launches new agentic commerce capabilities",
+              "publisher": "Nexi",
+              "url": "https://www.nexigroup.com/en/media-relations/news/2026/03/new-agentic-commerce-capabilities/",
+              "date": "2026-03-04",
+              "type": "company"
+            },
+            {
+              "title": "Sell products through agents",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail.md",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "Stripe supports Dutch accounts, but the agent channels Shopify lists serve US shoppers, with Meta's checkout also covering Canada and Mexico. Google says its UCP checkout will reach Canada and Australia first and the UK later, with no date for the Netherlands. I found no agent that sells to Dutch shoppers through a merchant protocol today.",
+          "evidence": [
+            {
+              "title": "Which Shopify AI channels work outside the US? The 2026 table",
+              "publisher": "Craftshift",
+              "url": "https://craftshift.com/shopify-ai-channels-outside-us/",
+              "date": "2026-10-19",
+              "type": "news"
+            },
+            {
+              "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Stripe: countries and regions",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "Stripe lists the UAE as a supported country, but I found no UAE launch of Stripe's Agentic Commerce Suite or of Shopify Agentic Storefronts. Shopify's help page names no countries at all.",
+          "evidence": [
+            {
+              "title": "Stripe global availability (supported countries)",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Agentic storefronts",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "Saudi merchants have no confirmed open route to sell to AI agents. Stripe does not list Saudi Arabia as a supported country, and Shopify's agent storefronts only sell to buyers in the US, Canada and Australia. A Visa-sponsored Arab News piece from October 2025 names no Saudi platform, such as Salla, Zid or noon, with a live agent checkout, and I did not check those platforms directly.",
+          "evidence": [
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "AI shoppers are coming: Are Saudi merchants ready?",
+              "publisher": "Arab News (sponsored by Visa)",
+              "url": "https://www.arabnews.com/corporate-and-sponsored-content/ai-shoppers-are-coming-are-saudi-merchants-ready-2620836",
+              "date": "2025-10-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "South African shops cannot yet sell to AI agents through Stripe's Agentic Commerce Suite, which covers the US, Canada and select European countries. Shopify's agentic storefronts on Google require shoppers in the US, Canada or Australia, and we found no local open protocol or platform that reaches South African buyers.",
+          "evidence": [
+            {
+              "title": "Sell through agents with Agentic Commerce Suite",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched"
+        },
+        "KE": {
+          "status": "none",
+          "note": "Kenyan merchants have no route to sell through AI agents that I could find. Shopify's agentic storefronts need merchants to sell into one of 11 listed markets, and Kenya is not one of them. Stripe's managed agent checkout is offered in the US, Canada and select European countries.",
+          "evidence": [
+            {
+              "title": "Selling on Meta",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Sell products through agents (Agentic Commerce Suite)",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail.md",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "Argentine merchants cannot yet sell to AI agents through a major platform. Stripe's Agentic Commerce Suite does not list Argentina, and Shopify's agentic storefronts with Google AI Mode and Gemini sell only to shoppers in the US, Canada and Australia. Mercado Pago says its payments API is only approaching agent logic.",
+          "evidence": [
+            {
+              "title": "Stripe global availability",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Selling on Google AI Mode and Gemini",
+              "publisher": "Shopify Help Center",
+              "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched"
         }
       }
     }
@@ -1295,7 +2031,8 @@
       "role": "Co-created the Agentic Commerce Protocol and lets ChatGPT buy from merchants, now mainly through merchant apps, plus a UPI pilot in India.",
       "markets": [
         "US",
-        "IN"
+        "IN",
+        "AR"
       ],
       "capabilities": [
         "commerce.in-chat-checkout",
@@ -1466,7 +2203,8 @@
         "GB",
         "DE",
         "ES",
-        "FR"
+        "FR",
+        "IT"
       ],
       "capabilities": [
         "commerce.merchant-protocol"
@@ -1490,7 +2228,8 @@
         "IN",
         "ES",
         "CA",
-        "AU"
+        "AU",
+        "ID"
       ],
       "capabilities": [
         "commerce.merchant-protocol"

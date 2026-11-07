@@ -433,6 +433,177 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "live",
+          "note": "South Korea's national mobile ID is open to six private apps: Samsung, Naver, Toss, KB Kookmin Bank, NH Nonghyup Bank and KakaoBank. Eighteen banks link it for remote services, mainly account opening. No source found says an AI agent can present it on your behalf.",
+          "evidence": [
+            {
+              "title": "Financial Security Institute expands mobile ID use in finance",
+              "publisher": "Byline Network (reporting the Financial Security Institute)",
+              "url": "https://byline.network/2026/03/19-600/",
+              "date": "2026-03-20",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "live",
+          "note": "Singpass is Singapore's national digital ID, and private firms can use it: it serves over 1,400 government agencies and participating private organisations, and more than 1,800 digital services use Myinfo to pre-fill forms. The person still has to approve each login with a face scan, fingerprint or passcode in the Singpass app.",
+          "evidence": [
+            {
+              "title": "Singpass: Singapore's national digital identity (Annex D factsheet)",
+              "publisher": "GovTech Singapore",
+              "url": "https://isomer-user-content.by.gov.sg/85/16f1b7a4-1da4-4c51-aabe-5334d635ba45/Annex%20D%20-%20Singpass%20Factsheet%20(30%20June%202026).pdf",
+              "date": "2026-06-30",
+              "type": "report"
+            }
+          ]
+        },
+        "ID": {
+          "status": "limited",
+          "note": "Indonesia's national digital ID app, IKD, lets people prove who they are at some private firms. OCBC has let new customers open accounts with it at every branch since February 2025, and secondary reports say BNI and Bank DKI use it for mobile banking, but we could not open those reports. We found no AI agent that can use IKD for you, and access beyond a few banks is unclear, so the status is limited.",
+          "evidence": [
+            {
+              "title": "OCBC press release: opening an account with the IKD app",
+              "publisher": "OCBC",
+              "url": "https://www.ocbc.id/en/tentang-ocbc-nisp/informasi/siaran-pers/2025/02/12/kerjasama-ocbc-x-ikd-dukcapil",
+              "date": "2025-02-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "SPID, Italy's national digital ID, can be used by private services that choose to accept it. The person must log in with their own SPID, so an agent can help but cannot prove who the person is on its own. We could not confirm how private apps check identity through the IT Wallet in the IO app.",
+          "evidence": [
+            {
+              "title": "SPID home page (become a service provider section)",
+              "publisher": "SPID (spid.gov.it)",
+              "url": "https://www.spid.gov.it",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "The NL Wallet is not live: the government says it needs national implementing law first, with consultation expected at the end of 2026. Private apps can already check identity through iDIN, a bank-based service that itsme has taken over, but the person identifies through their bank and we found no AI agent that uses it.",
+          "evidence": [
+            {
+              "title": "Digital identity wallet (NL Wallet)",
+              "publisher": "Digitale Overheid",
+              "url": "https://www.nldigitalgovernment.nl/overview/identity/id-wallet/",
+              "date": "2026-11-05",
+              "type": "company"
+            },
+            {
+              "title": "Online identificeren via uw bank (iDIN)",
+              "publisher": "iDIN",
+              "url": "https://www.idin.nl",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "UAE PASS is the UAE's national digital identity app, and banks and other private firms can offer sign-in with it, for example ADIB's mobile app. An agent can send a user to UAE PASS to prove who they are, but the user must confirm the sign-in in the app.",
+          "evidence": [
+            {
+              "title": "The UAE Pass app",
+              "publisher": "u.ae (UAE government)",
+              "url": "https://u.ae/en/about-the-uae/digital-uae/digital-transformation/platforms-and-apps/the-uae-pass-app",
+              "date": "2024-12-30",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "Nafath, the national identity app run by SDAIA's National Information Center, lets government and private firms check who a person is. Zoho Sign used it to verify signers in April 2026. The person approves each check in the Nafath app, and we found no source saying an AI agent can run the check itself.",
+          "evidence": [
+            {
+              "title": "Nafath App (SDAIA presentation)",
+              "publisher": "SDAIA, National Information Center (hosted by OECD OPSI)",
+              "url": "https://oecd-opsi.org/wp-content/uploads/2024/01/Nafath-App-1-2024-1.pdf",
+              "date": "2024-01",
+              "type": "report"
+            },
+            {
+              "title": "Zoho Sign for Saudi Arabia with Nafath app",
+              "publisher": "Zoho",
+              "url": "https://www.zoho.com/blog/sign/zoho-sign-for-saudi-arabia-with-nafath-app.html",
+              "date": "2026-04-21",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "announced",
+          "note": "South Africa's digital ID is announced but not live. Home Affairs published draft rules in May 2026 that would make a digital ID a legal alternative to the Smart ID card, and final rules and a launch are still to come. Until then, no agent can use a digital ID to prove who a person is.",
+          "evidence": [
+            {
+              "title": "Digital ID launch set for 2026, not yet live",
+              "publisher": "SAnews (South African Government News Agency)",
+              "url": "https://www.sanews.gov.za/node/79676",
+              "date": "2026-02-18",
+              "type": "news"
+            },
+            {
+              "title": "Home Affairs moves to expand digital ID rollout through banks and telcos",
+              "publisher": "BusinessDay",
+              "url": "https://www.businessday.co.za/news/2026-05-06-home-affairs-moves-to-expand-digital-id-rollout-through-banks-and-telcos/",
+              "date": "2026-05-06",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "announced",
+          "note": "Kenyans already get a physical Maisha Card, but we found no way for a private app or an AI agent to check it today. On 28 June 2026 the Interior Cabinet Secretary said a digital Maisha Card on your phone would be announced very soon, with no timeline. The cell is announced, not live.",
+          "evidence": [
+            {
+              "title": "Kenyans to Soon Access Their National IDs Electronically, Murkomen Confirms",
+              "publisher": "Kenyans.co.ke",
+              "url": "https://www.kenyans.co.ke/news/124716-kenyans-soon-access-their-national-ids-electronically-murkomen-confirms",
+              "date": "2026-06-28",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Private firms can check DNI data, fingerprints and face photos with RENAPER, Argentina's national registry, but only after RENAPER agrees they have a legitimate interest and they sign an agreement. Claro, Movistar and Personal, the three phone companies, signed one in 2024. We found no way for an agent to show a person's digital DNI to an app.",
+          "evidence": [
+            {
+              "title": "SID: modalidades y productos",
+              "publisher": "Presidencia de la Nación (RENAPER)",
+              "url": "https://www.argentina.gob.ar/sid/modalidades-y-productos",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "RENAPER y ENACOM firmaron acuerdo con empresas de telefonía móvil para brindar el servicio de validación de identidad digital",
+              "publisher": "Primera Edición",
+              "url": "https://www.primeraedicion.com.ar/nota/100921812/renaper-y-enacom-firmaron-acuerdo-con-empresas-de-telefonia-movil-para-brindar-el-servicio-de-validacion-de-identidad-digital/",
+              "date": "2024-09-20",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
         }
       }
     },
@@ -741,6 +912,170 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "limited",
+          "note": "AI정부24, run by the Ministry of the Interior and Safety, answers questions and recommends public services in everyday language. Issuing documents through chat, such as a resident registration copy, is planned for late 2026, so for now you finish the task yourself.",
+          "evidence": [
+            {
+              "title": "AI Gov24 usage results and year-end plans (press release)",
+              "publisher": "Ministry of the Interior and Safety (via Korea.kr)",
+              "url": "https://www.korea.kr/policy/civilView.do?newsId=148967560",
+              "date": "2026-07",
+              "type": "company"
+            },
+            {
+              "title": "AI Gov24 trial reaches 28.5 million users",
+              "publisher": "Financial News",
+              "url": "https://www.fnnews.com/news/202606301129496308",
+              "date": "2026-06-30",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only"
+        },
+        "SG": {
+          "status": "live",
+          "note": "The OneService Chatbot, on WhatsApp and Telegram, lets residents report municipal issues such as neighbourhood cleanliness and facility breakdowns in chat, and it routes each case to the right agency. GovTech's AI services page describes no citizen tool that completes a payment or booking, so the scope is narrow.",
+          "evidence": [
+            {
+              "title": "How GovTech uses AI to enhance digital public services",
+              "publisher": "GovTech Singapore",
+              "url": "https://www.tech.gov.sg/technews/how-govtech-uses-ai-to-enhance-digital-public-services/",
+              "date": "2024-01-12",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "In July 2026 Komdigi, the communications and digital ministry, said it wants AI to improve public services, but its statement names no AI service that is running. We found no government AI assistant that finishes a task for citizens. Chatbots that only answer questions may exist in some agencies, but we could not confirm one on an official page.",
+          "evidence": [
+            {
+              "title": "Komdigi press release on new officials and digital public services",
+              "publisher": "Komdigi (via InfoPublik)",
+              "url": "https://infopublik.id/kategori/siaran-pers/981094/siaran-pers-lantik-pejabat-baru-komdigi-perkuat-pelayanan-digital-yang-lebih-mudah-cepat-dan-berdampak",
+              "date": "2026-07-29",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "INPS, Italy's social security agency, announced its Arianna assistant on 27 October 2026. Arianna answers questions about more than 400 INPS benefits and guides people through the services. Help filling in applications is only planned, so Arianna does not finish a task yet.",
+          "evidence": [
+            {
+              "title": "Arianna, il nuovo assistente digitale basato sull'AI",
+              "publisher": "INPS",
+              "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.10.arianna-il-nuovo-assistente-digitale-basato-sull-ai.html",
+              "date": "2026-10-27",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only"
+        },
+        "NL": {
+          "status": "none",
+          "note": "We found no Dutch government AI assistant that finishes a public-service task. The Belastingdienst (tax) website shows only search and help links, with no chatbot, and we did not check municipal or other government assistants.",
+          "evidence": [
+            {
+              "title": "Belastingdienst (tax authority) website",
+              "publisher": "Belastingdienst",
+              "url": "https://www.belastingdienst.nl/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "In Abu Dhabi, TAMM's AI assistant and its AutoGov feature renew licences, settle utility payments and book healthcare appointments for residents, without being asked. The claims come from the government and press reports, with no independent audit.",
+          "evidence": [
+            {
+              "title": "Abu Dhabi's AI service Tamm to be made available to international governments",
+              "publisher": "Khaleej Times",
+              "url": "https://www.khaleejtimes.com/uae/abu-dhabi-ai-service-tamm-private-company-global-international-governments",
+              "date": "2026-10-19",
+              "type": "news"
+            },
+            {
+              "title": "TAMM Abu Dhabi's AI assistant for completing government services through a single app",
+              "publisher": "Apolitical",
+              "url": "https://apolitical.co/en/navigator/case-studies/tamm-abu-dhabis-ai-assistant-for-completing-government-services-through-a-single-app",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no Saudi government AI assistant that finishes public-service tasks. Absher, the Interior Ministry's portal for residents, businesses and government staff, lists no AI features.",
+          "evidence": [
+            {
+              "title": "Absher: Individuals, Business and Government portals",
+              "publisher": "Ministry of Interior (Absher)",
+              "url": "https://www.absher.sa/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "The only government AI assistant we found is the Batho Pele AI chatbot, launched in late August 2026. It is for public servants, answers questions only and does not make decisions, so citizens cannot finish a public-service task with it. Government says it will be extended to other services over time, with no date.",
+          "evidence": [
+            {
+              "title": "AI chatbot brings Batho Principles to the future",
+              "publisher": "SAnews (South African Government News Agency)",
+              "url": "https://www.sanews.gov.za/node/84332",
+              "date": "2026-09-15",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched"
+        },
+        "KE": {
+          "status": "announced",
+          "note": "We found no Kenyan government AI assistant that finishes a public-service task. The ICT Ministry's Kabogo.AI assistant is planned and will launch only once public information, agency routing and review safeguards are in place. President Ruto has also talked about an eCitizen chatbot, but reports describe it as a planned upgrade, not a live service.",
+          "evidence": [
+            {
+              "title": "CS Kabogo Unveils AI Platform to Transform ICT Ministry Operations",
+              "publisher": "Kenyans.co.ke",
+              "url": "https://www.kenyans.co.ke/news/126535-cs-kabogo-unveils-ai-platform-transform-ict-ministry-operations",
+              "date": "2026-08-27",
+              "type": "news"
+            },
+            {
+              "title": "Ruto eyes 24/7 services on e-Citizen with AI addition",
+              "publisher": "Business Daily",
+              "url": "https://www.businessdailyafrica.com/bd/corporate/technology/ruto-eyes-24-7-services-on-e-citizen-with-ai-addition-4844860",
+              "date": "2024-12-03",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Boti, the City of Buenos Aires WhatsApp assistant, takes reports and service requests in the chat, such as a photo of a badly parked car. For procedures such as renewing a national ID or driving license, it books an appointment instead, so you do the last step yourself.",
+          "evidence": [
+            {
+              "title": "Boti",
+              "publisher": "Gobierno de la Ciudad de Buenos Aires",
+              "url": "https://buenosaires.gob.ar/innovacionytransformaciondigital/boti",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only"
         }
       }
     }

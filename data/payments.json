@@ -327,6 +327,237 @@
               "type": "company"
             }
           ]
+        },
+        "KR": {
+          "status": "limited",
+          "note": "Mastercard says it completed Korea's first live agent payments in March 2026, reported as a ride booking, so the rollout is still small. Visa launched its Agentic Ready program in April 2026 with six Korean partners, including KB Kookmin Card and Samsung Card, but no live Visa agent purchase in Korea was found.",
+          "evidence": [
+            {
+              "title": "Mastercard completes Korea's first live agentic transactions, unlocking trusted AI-powered commerce",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-completes-korea-s-first-live-agentic-transactions-unlocking-trusted-ai-powered-commerce/",
+              "date": "2026-03",
+              "type": "company"
+            },
+            {
+              "title": "'Visa Agentic Ready' Launched... Strengthening Agentic Commerce Leadership with Six Korean Partners",
+              "publisher": "Asiae",
+              "url": "https://view.asiae.co.kr/en/article/2026043009175883199",
+              "date": "2026-04-30",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "Visa and Mastercard agent card tokens run only as pilots in Singapore. DBS ran a Visa Intelligent Commerce pilot for food and drink purchases from February 2026, and Visa's Agentic Ready programme lets issuers test agent payments in a controlled environment. Mastercard Agent Pay made its first live agent payment in Singapore with DBS and UOB in March 2026, and press coverage calls it pilot-stage.",
+          "evidence": [
+            {
+              "title": "DBS is first bank in Asia Pacific to pilot Visa Intelligent Commerce for everyday payments",
+              "publisher": "DBS",
+              "url": "https://www.dbs.com/newsroom/DBS_is_first_bank_in_Asia_Pacific_to_pilot_Visa_Intelligent_Commerce_for_everyday_payments",
+              "date": "2026-02-16",
+              "type": "company"
+            },
+            {
+              "title": "Visa Launches 'Agentic Ready' Program in Asia Pacific with Over 50 Partners",
+              "publisher": "Visa",
+              "url": "https://kyodonewsprwire.jp/release/202604308373",
+              "date": "2026-04-30",
+              "type": "company"
+            },
+            {
+              "title": "Mastercard delivers its first live agentic transaction in Singapore with DBS and UOB",
+              "publisher": "Mastercard",
+              "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-delivers-its-first-live-agentic-transaction-in-singapore-with-dbs-and-uob/",
+              "date": "2026-03",
+              "type": "company"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no Visa or Mastercard agent payment for Indonesia. Visa's Agentic Ready program went live in April 2026 in Australia, Hong Kong, Japan, Malaysia, New Zealand, Singapore, South Korea, Taiwan, Thailand and Vietnam, and Indonesia is not on that list. We found no Indonesian launch of Mastercard Agent Pay either.",
+          "evidence": [
+            {
+              "title": "Visa Launches 'Agentic Ready' Program in Asia Pacific with Over 50 Partners",
+              "publisher": "Visa",
+              "url": "https://www.visa.com.sg/about-visa/newsroom/press-releases/visa-launches-agentic-ready-program-in-asia-pacific-with-over-50-partners-advancing-agentic-commerce.html",
+              "date": "2026-04-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "announced",
+          "note": "No Italian card can make an agent purchase yet. Visa's Agentic Ready started testing agent payments in Europe in March 2026 with European issuers that include Nexi Group, but the programme's first launch is named only as Europe and the UK, not Italy. Mastercard's Agent Pay began in the US in 2025, and we found no Italian launch date for it.",
+          "evidence": [
+            {
+              "title": "Visa lancia 'Agentic Ready' e testa l'Agentic Commerce con gli issuer europei",
+              "publisher": "AziendaBanca",
+              "url": "https://www.aziendabanca.it/notizie/tecno/visa-lancia-agentic-ready",
+              "date": "2026-03-17",
+              "type": "news"
+            },
+            {
+              "title": "Visa lancia l'ecosistema per lo shopping guidato da agentic AI",
+              "publisher": "AziendaBanca",
+              "url": "https://www.aziendabanca.it/notizie/tecno/visa-intelligent-commerce-ai",
+              "date": "2025-04-30",
+              "type": "news"
+            },
+            {
+              "title": "Arriva l'Agent Pay di Mastercard per il commercio agentico",
+              "publisher": "AziendaBanca",
+              "url": "https://www.aziendabanca.it/notizie/tecno/mastercard-agent-pay",
+              "date": "2025-05-07",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "Mastercard Agent Pay has run two Dutch pilots. Rabobank made an AI agent payment on a Rabobank Mastercard credit card in late April 2026. On 2 June 2026, ING and Worldline ran a single live agent purchase on an ING card at a Dutch merchant. Neither bank has given a date for customer use.",
+          "evidence": [
+            {
+              "title": "Mastercard and Rabobank complete first AI agent payment in the Netherlands",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/mastercard-and-rabobank-complete-first-ai-agent-payment-in-the-netherlands",
+              "date": "2026-05-04",
+              "type": "news"
+            },
+            {
+              "title": "Worldline and ING execute first European agentic payment",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/payments/news/worldline-ing-and-mastercard-execute-first-european-agentic-payment",
+              "date": "2026-06-02",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "Visa completed the first live UAE agent payment in December 2025, a voice-led payment of Aldar service charges with an Emirates NBD Darna Visa card. Mastercard Agent Pay ran a Dubai pilot with Majid Al Futtaim in November 2025, and Visa's Agentic Ready program (May 2026) lists ADCB, ADIB, Emirates NBD and Mashreq as members that are testing. I found no general cardholder rollout.",
+          "evidence": [
+            {
+              "title": "Visa Partners with Aldar to Complete First End to End Voice-Enabled Agentic Payment in the Region",
+              "publisher": "Visa",
+              "url": "https://www.visa.com/en-ae/newsroom/visa-aldar-agentic-payments-partnership",
+              "date": "2025-12-18",
+              "type": "company"
+            },
+            {
+              "title": "Visa Launches Agentic Ready Program in UAE to Accelerate Agent Led Commerce",
+              "publisher": "Visa",
+              "url": "https://ae.visamiddleeast.com/en_AE/about-visa/newsroom/press-releases/prl-20052026.html",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "Now use AI to shop in Dubai after new Mastercard-Majid Al Futtaim deal",
+              "publisher": "Gulf News",
+              "url": "https://gulfnews.com/business/banking/now-use-ai-to-shop-in-dubai-after-new-mastercard-majid-al-futtaim-deal-1.500352104",
+              "date": "2025-11-19",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only"
+        },
+        "SA": {
+          "status": "none",
+          "note": "No agent payment with a Visa, Mastercard or Amex agent token has been reported in Saudi Arabia. Visa's Agentic Ready programme launched in Oman in May 2026 and did not name Saudi Arabia as a market, and a Visa-sponsored Arab News piece from October 2025 still calls agent shopping upcoming. I found no Mastercard Agent Pay launch with Saudi banks or mada cards.",
+          "evidence": [
+            {
+              "title": "Visa Launches “Agentic Ready” Program in Oman to Accelerate Agent-Led Commerce",
+              "publisher": "Visa",
+              "url": "https://km.visamiddleeast.com/en_KM/about-visa/newsroom/press-releases/prl-oman-20052026.html",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "AI shoppers are coming: Are Saudi merchants ready?",
+              "publisher": "Arab News (sponsored by Visa)",
+              "url": "https://www.arabnews.com/corporate-and-sponsored-content/ai-shoppers-are-coming-are-saudi-merchants-ready-2620836",
+              "date": "2025-10-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "announced",
+          "note": "Visa has started its Agentic Ready programme in South Africa and enrolled local banks, but its country head says no agent-initiated card payments have gone live yet. No banks or merchants are named, and we found no Mastercard Agent Pay or American Express agent launch here.",
+          "evidence": [
+            {
+              "title": "Visa lays groundwork for AI payments in South Africa",
+              "publisher": "TechCentral",
+              "url": "https://techcentral.co.za/visa-lays-groundwork-for-ai-payments-in-south-africa/282535/",
+              "date": "2026-06-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Visa or Mastercard agent payment is live in Kenya that I could find. Visa Intelligent Commerce was announced as a global program in 2025, and the Visa ChatGPT purchase feature reaches Kenya only 'once it becomes available in our region'. A June 2026 Kenyan article says agentic commerce will 'likely remain on standby' in Kenya until fraud defenses improve.",
+          "evidence": [
+            {
+              "title": "Visa Intelligent Commerce",
+              "publisher": "TechArena",
+              "url": "https://www.techarena.co.ke/2025/05/02/visa-intelligent-commerce-ai-shopping-payments",
+              "date": "2025-05-02",
+              "type": "news"
+            },
+            {
+              "title": "Visa enables ChatGPT's AI agents to shop, complete purchases for users",
+              "publisher": "Eastleigh Voice",
+              "url": "https://eastleighvoice.co.ke/technology/366217/visa-enables-chatgpts-ai-agents-to-shop-complete-purchases-for-users?amp=1",
+              "date": "2026-06-12",
+              "type": "news"
+            },
+            {
+              "title": "The Rise of AI-Powered Shopping in Kenya: Convenience Booms, But Trust Stops at the Checkout",
+              "publisher": "Dealfish",
+              "url": "https://dealfish.co.ke/2026/06/the-rise-of-ai-powered-shopping-in-kenya-convenience-booms-but-trust-stops-at-the-checkout-2026.html",
+              "date": "2026-06-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Santander and Visa ran a controlled pilot in March 2026 across five Latin American markets, Argentina included, where AI agents bought books using Visa Intelligent Commerce. Mastercard says its Agent Pay launch in Latin America is near, but we found no public Argentine launch. Pomelo and Mastercard were reported to have run a test payment inside a ChatGPT chat in August 2026.",
+          "evidence": [
+            {
+              "title": "Santander and Visa deliver Latin America's first end-to-end payments powered by AI agents",
+              "publisher": "Banco Santander",
+              "url": "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-visa-deliver-latin-americas-first-end-to-end-payments-powered-by-ai-agents",
+              "date": "2026-03-12",
+              "type": "company"
+            },
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only"
         }
       }
     },
@@ -631,6 +862,172 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "none",
+          "note": "No agent can send a payment over Korea's instant bank transfer rail yet. In May 2026 the Korea Financial Telecommunications and Clearings Institute said it will test an AI-agent-only payment platform within the year, and industry speakers said the rules for agent-made payments are still pending.",
+          "evidence": [
+            {
+              "title": "AI가 쇼핑해주는 시대…금결원장 \"AI 결제플랫폼 연내 기술검증\"(종합)",
+              "publisher": "Yonhap (via Daum News)",
+              "url": "https://v.daum.net/v/20260503180009019",
+              "date": "2026-05-03",
+              "type": "news"
+            },
+            {
+              "title": "“네이버·카카오·토스 기술력은 충분한데” AI가 사람 대신 결제, 한국서 늦어지는 이유는? [크립토360]",
+              "publisher": "Herald",
+              "url": "https://heraldk.com/2026/05/29/%e2%80%9c%eb%84%a4%ec%9d%b4%eb%b2%84%c2%b7%ec%b9%b4%ec%b9%b4%ec%98%a4%c2%b7%ed%86%a0%ec%8a%a4-%ea%b8%b0%ec%88%a0%eb%a0%a5%ec%9d%80-%ec%b6%a9%eb%b6%84%ed%95%9c%eb%8d%b0%e2%80%9d-ai%ea%b0%80-%ec%82%ac/",
+              "date": "2026-05-29",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "We found no way for an AI agent to send money over PayNow, Singapore's instant bank transfer service. The card pilots use card networks, not PayNow. We could not open PayNow's own site, so this cell rests on the absence of agent payments.",
+          "evidence": [],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no AI agent that can send a payment over QRIS or instant bank transfers. QRIS passed 15 billion transactions to July 2026, and the Bank Indonesia figures reported for 2026 do not mention agents or agentic payments.",
+          "evidence": [
+            {
+              "title": "BI: Transaksi QRIS Tembus 15 Miliar hingga Juli 2026",
+              "publisher": "Katadata (citing Bank Indonesia)",
+              "url": "https://katadata.co.id/finansial/keuangan/6a9e3b775a371/bi-transaksi-qris-tembus-15-miliar-hingga-juli-2026",
+              "date": "2026-09-07",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "Italian banks must offer instant euro transfers under EU law, but we found no way for an AI agent to send one for you. Wero, the EU instant wallet, is not offered in Italy, and Satispay, an Italian instant payment app, lists no agent features.",
+          "evidence": [
+            {
+              "title": "Regulation (EU) 2024/886 (Instant Payments Regulation)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/886/oj",
+              "date": "2024-03",
+              "type": "regulation"
+            },
+            {
+              "title": "Wero",
+              "publisher": "EPI Company",
+              "url": "https://www.wero-wallet.eu",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Satispay",
+              "publisher": "Satispay",
+              "url": "https://www.satispay.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "iDEAL, the Dutch bank payment rail, will rebrand to iDEAL | Wero in 2026, and the technical move onto Wero still needs approval from De Nederlandsche Bank. The iDEAL announcement does not mention AI agents or payments started by an assistant, so no agent can start an iDEAL or Wero payment today.",
+          "evidence": [
+            {
+              "title": "iDEAL to phase into Wero starting in 2026",
+              "publisher": "iDEAL",
+              "url": "https://ideal.nl/en/ideal-vanaf-2026-stapsgewijs-over-naar-wero",
+              "date": "2025-10-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed"
+        },
+        "AE": {
+          "status": "none",
+          "note": "Aani, the instant payment system run by Al Etihad Payments, is live for UAE residents and reached 12.5 million users by April 2026. I found no way for an AI agent to send a payment over it, so the rail exists but agents cannot use it.",
+          "evidence": [
+            {
+              "title": "UAE's Aani Instant-Payments Platform Reaches 12.5 Million Users",
+              "publisher": "Pulse",
+              "url": "https://www.pulse.bot/banking/news/uaes-aani-instantpayments-platform-reaches-125-million-users-7487a3fb-3c42-4b10-9d0a-f2e5d85554b0/",
+              "date": "2026-04",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed"
+        },
+        "SA": {
+          "status": "none",
+          "note": "No agent payment over Saudi Arabia's instant rail, SARIE, turned up in my checks. I could not open SAMA's own SARIE pages before my search limit ran out, so this stays low.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "PayShap, South Africa's instant bank payment system, is live for people and has passed six million registered users. We found no way for an AI agent to send a PayShap payment, and the May 2026 TechCentral report on PayShap does not mention agents at all.",
+          "evidence": [
+            {
+              "title": "Three years in, PayShap pivots to merchants",
+              "publisher": "TechCentral",
+              "url": "https://techcentral.co.za/three-years-in-payshap-pivots-to-merchants/281687/",
+              "date": "2026-05-21",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "Agents cannot yet use M-PESA or PesaLink to send payments. Safaricom's M-PESA API already lets developers start payments, but agent-driven payments were still described as in development in April 2026.",
+          "evidence": [
+            {
+              "title": "How Safaricom Is Building for Automated Commerce",
+              "publisher": "TechTrend Kenya",
+              "url": "https://techtrendske.co.ke/2026/04/02/agentic-wallets-personalized-payments-kenya",
+              "date": "2026-04-02",
+              "type": "news"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "No outside agent can yet start payments over Transferencias 3.0, Argentina's bank transfer system, because the open finance rules are not in force. Banks and wallets let their own assistants set up transfers in chat, such as MacroChat at Banco Macro and Mercado Pago's assistant, and reports say the account holder confirms each transfer.",
+          "evidence": [
+            {
+              "title": "Banco Macro lanzó MacroChat",
+              "publisher": "El Economista",
+              "url": "https://eleconomista.com.ar/finanzas/banco-macro-lanzo-macrochat-permite-transferir-pagar-servicios-operar-whatsapp-inteligencia-artificial-n97297",
+              "date": "2026-08-11",
+              "type": "news"
+            },
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            },
+            {
+              "title": "Open finance tracker: Argentina",
+              "publisher": "Fiskil",
+              "url": "https://www.fiskil.com/es/open-finance-tracker/argentina",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
         }
       }
     },
@@ -928,6 +1325,188 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "announced",
+          "note": "Kakao Pay showed AI agents paying from its wallet with stablecoins in a September 2026 demo, and it plans to launch once the rules are in place. Naver Pay is running a proof of concept with the Korea Financial Telecommunications and Clearings Institute in which an agent gets payment authority, so customers cannot pay through an agent yet.",
+          "evidence": [
+            {
+              "title": "카카오페이, AI 대리 결제 구매-판매 양방향 실증",
+              "publisher": "SBS Biz",
+              "url": "https://biz.sbs.co.kr/amp/article/20000334666",
+              "date": "2026-09-15",
+              "type": "news"
+            },
+            {
+              "title": "'Buy my 200,000-won sneakers when they drop to 170,000 won': Inside Naver Pay's AI agent payment push",
+              "publisher": "The Herald Business",
+              "url": "https://mbiz.heraldcorp.com/article/10913545",
+              "date": "2026-10-24",
+              "type": "news"
+            },
+            {
+              "title": "“네이버·카카오·토스 기술력은 충분한데” AI가 사람 대신 결제, 한국서 늦어지는 이유는? [크립토360]",
+              "publisher": "Herald",
+              "url": "https://heraldk.com/2026/05/29/%e2%80%9c%eb%84%a4%ec%9d%b4%eb%b2%84%c2%b7%ec%b9%b4%ec%b9%b4%ec%98%a4%c2%b7%ed%86%a0%ec%8a%a4-%ea%b8%b0%ec%88%a0%eb%a0%a5%ec%9d%80-%ec%b6%a9%eb%b6%84%ed%95%9c%eb%8d%b0%e2%80%9d-ai%ea%b0%80-%ec%82%ac/",
+              "date": "2026-05-29",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "Stripe's shared payment tokens, which let an agent pay with a customer's card, are offered to customers in the US, Canada and several European countries, but not Singapore. Stripe's Link Agent Wallet is for US and Canadian customers only. We found no Singapore wallet or fintech app that lets an agent pay for you.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no e-wallet in Indonesia where an AI agent can pay for you. GoPay, OVO, DANA and ShopeePay had no agent-payment launch that we could find in 2026.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "limited",
+          "note": "Stripe's shared payment tokens, which pass a customer's card or wallet to a seller for an agent purchase, list Italy as a supported country, but the API is still a preview. Stripe's Link Agent Wallet, which lets an agent pay for you, works only for US and Canadian customers. We found no Italian bank, wallet or fintech app that lets an agent pay for you yet.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=agent",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet.md",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "I found no Dutch wallet or fintech app that lets an AI agent pay for you. Stripe supports Dutch accounts, but I could not confirm any agent payment feature open in the Netherlands.",
+          "evidence": [
+            {
+              "title": "Stripe: countries and regions",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/global",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "Botim, a UAE fintech wallet, says its AI assistant is live and can make money transfers through conversation. I found no wallet agent that pays merchants for you and no UAE launch of Stripe agent payment tokens. The article does not say whether every Botim user has the assistant.",
+          "evidence": [
+            {
+              "title": "Botim enhances AI capabilities with Microsoft Azure's Voice Live API integration",
+              "publisher": "Botim via Zawya",
+              "url": "https://www.zawya.com/en/press-release/companies-news/botim-enhances-ai-capabilities-with-microsoft-azures-voice-live-api-integration-cix2gmw2",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "I found no wallet or fintech app in Saudi Arabia, such as STC Pay, Tabby or Tamara, that lets an AI agent pay for a shopper. Open banking data from Lean Technologies goes to lenders such as Tamara for underwriting, which is not an agent paying. I could not check the wallet apps' own pages before my search limit ran out.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "We found no South African wallet or fintech app that lets an AI agent pay for you. Stripe's shared payment tokens cover only the US, Canada and select European countries, and Google Pay's agentic checkout works only in the US and Australia.",
+          "evidence": [
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Use agentic checkout with Google Pay",
+              "publisher": "Google Pay Help",
+              "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No wallet or fintech app lets an AI agent pay for a Kenyan today. Stripe's Link Agent Wallet serves US and Canadian customers only, and Stripe's shared payment tokens list no Kenya support. Safaricom has talked about agentic wallets for M-PESA, but that is still in development.",
+          "evidence": [
+            {
+              "title": "Link Agent Wallet",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet.md",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Shared payment tokens",
+              "publisher": "Stripe",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=agent",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How Safaricom Is Building for Automated Commerce",
+              "publisher": "TechTrend Kenya",
+              "url": "https://techtrendske.co.ke/2026/04/02/agentic-wallets-personalized-payments-kenya",
+              "date": "2026-04-02",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Mercado Pago's personal assistant is open to all of its digital-account customers in Argentina, and it can set up bill payments and transfers from text or voice commands. Reports say the account holder must confirm each operation before it runs. It does not buy from shops, and we found no wallet that lets an outside agent pay for users.",
+          "evidence": [
+            {
+              "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/finanzas/70397-mercado-libre-tiendanube-y-tarjetas-ya-prueban-compras-agenticas-en-argentina.amp",
+              "date": "2026-08-12",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
         }
       }
     }
@@ -950,7 +1529,10 @@
         "ES",
         "FR",
         "CA",
-        "JP"
+        "JP",
+        "SG",
+        "AE",
+        "AR"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -975,7 +1557,12 @@
         "FR",
         "CA",
         "JP",
-        "AU"
+        "AU",
+        "KR",
+        "SG",
+        "NL",
+        "AE",
+        "AR"
       ],
       "capabilities": [
         "payments.card-agent-token"
@@ -1025,7 +1612,8 @@
         "DE",
         "ES",
         "FR",
-        "CA"
+        "CA",
+        "IT"
       ],
       "capabilities": [
         "payments.wallet-agent",
@@ -1062,7 +1650,8 @@
       "markets": [
         "BR",
         "MX",
-        "CL"
+        "CL",
+        "AR"
       ],
       "capabilities": [
         "payments.wallet-agent",

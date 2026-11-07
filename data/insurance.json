@@ -285,6 +285,171 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "none",
+          "note": "I found no Korean insurer or app where an AI agent sells you a car, home or travel policy from start to finish in a chat. Toss's car-insurance comparison gives quotes in its app, but it is not an AI agent that completes the purchase.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "Pand.ai's GINA.sg bot on WhatsApp compares car insurance quotes and guides you to buy, with a cash-back offer. A 2021 release does not confirm that the policy is completed in the chat, and we found no 2026 source. We found no AI chat that sells home or travel cover in Singapore.",
+          "evidence": [
+            {
+              "title": "Local fintech Pand.ai launches Singapore's first bilingual digital insurance broker with Allianz, Etiqa and MSIG",
+              "publisher": "Pand.ai",
+              "url": "https://insurancenewsnet.com/oarticle/local-fintech-pand-ai-launches-singapores-first-bilingual-digital-insurance-broker-with-allianz-etiqa-and-msig",
+              "date": "2021-11-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no Indonesian insurer or insurtech that sells a car, home or travel policy end to end in a chat with an AI agent. Qoala, the main local insurtech we checked, had only older sources (2020 to 2023) that we could open, so its current sales channels are unconfirmed.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "announced",
+          "note": "Laura.it has announced an AI car-insurance intermediary that was due to start in mid-October 2026, but no launch or in-chat purchase has been confirmed. A November 2025 survey found that six in ten Italian consumers used insurance chatbots and voicebots, mostly before buying a policy.",
+          "evidence": [
+            {
+              "title": "Laura.it vara l'assicurazione AI",
+              "publisher": "MF-Milano Finanza",
+              "url": "https://www.milanofinanza.it/news/laura-it-vara-l-assicurazione-ai-2719047",
+              "date": "2026-09-30",
+              "type": "news"
+            },
+            {
+              "title": "IIA: 6 consumatori su 10 usano l'AI per interagire con l'Assicurazione",
+              "publisher": "Aziendabanca",
+              "url": "https://www.aziendabanca.it/notizie/assicurazioni/iia-intelligenza-artificiale-assicurazioni",
+              "date": "2025-11-20",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "limited",
+          "note": "Lemonade's AI bot Maya asks a few questions in the Dutch app and then shows a quote you can edit. You still install the app and finish the sign-up there, so the chat helps but you do the last step.",
+          "evidence": [
+            {
+              "title": "Dutch Review article on Lemonade's Maya quote flow",
+              "publisher": "Dutch Review",
+              "url": "https://dutchreview.com/?p=69338",
+              "date": "2026-11",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "live",
+          "note": "Shory AI, a UAE car insurance agent that launched in October 2026, compares car quotes in English and Arabic and helps you finish the purchase in the same chat, according to two news reports. Shory's own pages could not be opened, so it is unconfirmed whether payment also happens in the chat.",
+          "evidence": [
+            {
+              "title": "Shory AI insurance agent for car insurance in the UAE",
+              "publisher": "Tbreak",
+              "url": "https://tbreak.com/shory-ai-insurance-agent/",
+              "date": "2026-10-08",
+              "type": "news"
+            },
+            {
+              "title": "Shory launches AI insurance agent for car insurance in the UAE",
+              "publisher": "BeInsure",
+              "url": "https://beinsure.com/news/shory-launches-ai-insurance-agent-for-car-insurance-uae/",
+              "date": "2026-10-08",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no Saudi insurer or comparison site where an AI agent sells a car, home or travel policy in a chat. Tameenk's site says 'Launching Soon', and a 2026 Saudi buying guide points to insurer apps and websites.",
+          "evidence": [
+            {
+              "title": "Tameenk home page",
+              "publisher": "Tameenk",
+              "url": "https://www.tameenk.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Best car insurance in Saudi Arabia 2026",
+              "publisher": "Yallamotor",
+              "url": "https://www.yallamotor.com/en/news/best-car-insurance-saudi-arabia-2026-comparison-prices-guarantees-55084",
+              "date": "2026-02-22",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "Naked's ChatGPT app gives a final, binding car insurance quote inside the chat since May 2026. Reports do not show whether the purchase finishes in ChatGPT, and Naked's co-founder says its website and app are still the better route.",
+          "evidence": [
+            {
+              "title": "Naked puts car insurance quotes inside ChatGPT, but the fine print still matters",
+              "publisher": "Daily Maverick",
+              "url": "https://www.dailymaverick.co.za/article/2026-05-20-naked-puts-car-insurance-quotes-inside-chatgpt-but-the-fine-print-still-matters/",
+              "date": "2026-05-20",
+              "type": "news"
+            },
+            {
+              "title": "Naked launches world-first ChatGPT app for final car insurance quotes",
+              "publisher": "Africa Business",
+              "url": "https://africabusiness.com/2026/05/17/naked-launches-world-first-chatgpt-app-for-final-car-insurance-quotes/",
+              "date": "2026-05-17",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan insurer with an AI agent that sells car, home or travel cover in a chat was found. CIC offers quotes through its Easy Bima portal, and ICEA LION lists a WhatsApp contact line, and neither is an AI agent.",
+          "evidence": [
+            {
+              "title": "CIC Insurance Group Kenya",
+              "publisher": "CIC Insurance Group",
+              "url": "https://ke.cicinsurancegroup.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "ICEA LION Group",
+              "publisher": "ICEA LION Group",
+              "url": "https://www.icealion.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "La Caja's bot Letizia answers customer questions and sells policies, a La Caja executive said in September 2025. The article does not say whether the whole purchase is finished in the chat, so the cell stays limited with low confidence.",
+          "evidence": [
+            {
+              "title": "Las aseguradoras argentinas que usan IA para vender, prevenir y resolver más rápido",
+              "publisher": "El Cronista",
+              "url": "https://www.cronista.com/infotechnology/innovacion-it/las-aseguradoras-argentinas-que-usan-ia-para-vender-prevenir-y-resolver-mas-rapido",
+              "date": "2025-09-01",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     },
@@ -532,6 +697,135 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "none",
+          "note": "I found no Korean insurer whose AI agent takes a claim in a chat and moves it forward. My one search on Korean insurers' AI claim tools found only general industry reports.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "We found no Singapore insurer AI that files a claim and moves it forward. FWD Singapore's Faith chatbot explains how to submit a travel claim, and the article does not say it files one. We could not find a date for that article.",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "evidence": []
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no Indonesian insurer whose AI agent takes a claim in a chat and moves it forward. Older reports of a WhatsApp claim bot at Qoala could not be confirmed from a dated source.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "No insurer in Italy was found where an AI agent takes a claim in chat and moves it forward. A November 2025 survey found that over half of Italian consumers would be ready to use advanced AI assistants to buy a policy or report a claim, but that is stated interest, not a product.",
+          "evidence": [
+            {
+              "title": "IIA: 6 consumatori su 10 usano l'AI per interagire con l'Assicurazione",
+              "publisher": "Aziendabanca",
+              "url": "https://www.aziendabanca.it/notizie/assicurazioni/iia-intelligenza-artificiale-assicurazioni",
+              "date": "2025-11-20",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "live",
+          "note": "In Lemonade's Dutch app, you file a claim by starting a chat with the claims bot AI Jim from your policy page.",
+          "evidence": [
+            {
+              "title": "Zo dien je een Lemonade claim in",
+              "publisher": "Lemonade",
+              "url": "https://www.lemonade.com/nl/inboedel/uitgelegd/lemonade-claim-indienen/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "We found no UAE insurer where an AI agent takes your claim in a chat and files it. Daman members track claims in an online account and app, and Shory's claims article could not be opened to check its claims chat.",
+          "evidence": [
+            {
+              "title": "Daman Insurance",
+              "publisher": "Daman",
+              "url": "https://www.damaninsurance.ae",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "limited",
+          "note": "MedGulf has an AI assistant that guides customers through each step of a claim, but the customer still submits it online or in the app. Tawuniya, Al Rajhi Takaful and Walaa also file claims through their own portals or apps, and we found no agent doing the filing.",
+          "evidence": [
+            {
+              "title": "Best car insurance in Saudi Arabia 2026",
+              "publisher": "Yallamotor",
+              "url": "https://www.yallamotor.com/en/news/best-car-insurance-saudi-arabia-2026-comparison-prices-guarantees-55084",
+              "date": "2026-02-22",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "limited",
+          "note": "Hollard lets customers start a claim in its WhatsApp chat: a chatbot takes your ID number and a few answers, then live agents can help. I found no South African insurer where an AI agent files and finishes the claim in chat.",
+          "evidence": [
+            {
+              "title": "Hollard insurance case study",
+              "publisher": "Cuedesk",
+              "url": "https://www.cuedesk.com/customers/hollard-insurance-case-study",
+              "date": "2026-11-05",
+              "type": "report"
+            }
+          ],
+          "gapReason": "assist-only",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan insurer with a chat agent that files and moves a claim forward was found. CIC has a claims portal, and Britam's homepage mentions no claims chatbot.",
+          "evidence": [
+            {
+              "title": "CIC Insurance Group Kenya",
+              "publisher": "CIC Insurance Group",
+              "url": "https://ke.cicinsurancegroup.com/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Britam",
+              "publisher": "Britam",
+              "url": "https://www.britam.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "La Segunda's WhatsApp chatbot takes claim reports in chat, a La Segunda executive said in September 2025, but the article does not say it settles or pays claims. La Caja's AI checks claim photos and can move a claim ahead without an inspection, though the article does not say that happens in a chat.",
+          "evidence": [
+            {
+              "title": "Las aseguradoras argentinas que usan IA para vender, prevenir y resolver más rápido",
+              "publisher": "El Cronista",
+              "url": "https://www.cronista.com/infotechnology/innovacion-it/las-aseguradoras-argentinas-que-usan-ia-para-vender-prevenir-y-resolver-mas-rapido",
+              "date": "2025-09-01",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
         }
       }
     }
@@ -548,7 +842,8 @@
         "US",
         "GB",
         "DE",
-        "FR"
+        "FR",
+        "NL"
       ],
       "capabilities": [
         "insurance.buy-policy",

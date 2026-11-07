@@ -40,6 +40,7 @@ export function scoreCountries(meta, categories) {
 export function validate(meta, categories) {
   const errors = [];
   const codes = new Set(meta.countries.map((c) => c.code));
+  if (codes.size !== meta.countries.length) errors.push('meta: every country code must be listed once');
   const categoryIds = new Set(meta.categories.map((c) => c.id));
   const capIds = new Set();
   const gapReasons = new Set((meta.gapReasons ?? []).map((r) => r.id));
@@ -222,8 +223,10 @@ export function useCategoryWords(metaCategories) {
 export const shortName = (id) => words(id).short;
 
 // "the United States", "Chile": a country's name inside a sentence.
-// ponytail: "the" only for names that start with "United"; add an article field to meta.json if more need one
-export const placeName = (name) => `${/^United /.test(name) ? 'the ' : ''}${name}`;
+// A country or region name inside a sentence: "the United States", "the Netherlands", "the Middle East", "Chile".
+// ponytail: "the" only for these names; add an article field to meta.json if more need one
+export const article = (name) => (/^(United |Netherlands$|Middle East$)/.test(name) ? 'the ' : '');
+export const placeName = (name) => `${article(name)}${name}`;
 export const ordinal = (n) => `${n}${['th', 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] ?? 'th'}`;
 
 // A country's strongest and weakest category. On a tie the first in category order wins.
@@ -260,6 +263,16 @@ const ZONES = {
   JP: /^Asia\/Tokyo$/,
   AU: /^(Australia\/[A-Za-z_]+|Antarctica\/Macquarie)$/,
   NG: /^Africa\/Lagos$/,
+  KR: /^Asia\/Seoul$/,
+  SG: /^Asia\/Singapore$/,
+  ID: /^Asia\/(Jakarta|Pontianak|Makassar|Jayapura)$/,
+  AR: /^America\/(Argentina\/[A-Za-z_]+|Buenos_Aires)$/,
+  ZA: /^Africa\/Johannesburg$/,
+  IT: /^Europe\/Rome$/,
+  NL: /^Europe\/Amsterdam$/,
+  AE: /^Asia\/Dubai$/,
+  SA: /^Asia\/Riyadh$/,
+  KE: /^Africa\/Nairobi$/,
 };
 
 // The visitor's own country, if we can tell: their time zone first, then the region of their browser languages
@@ -420,7 +433,7 @@ export function regionCompare(ranking, code) {
   let line;
   if (!peers.length) {
     line = ref
-      ? `${name(me)} is the only country we track in ${me.region}, so it sits beside the ${refLabel}, ${name(ref)}, and the average of all ${ranking.length}.`
+      ? `${name(me)} is the only country we track in ${placeName(me.region)}, so it sits beside the ${refLabel}, ${name(ref)}, and the average of all ${ranking.length}.`
       : `${name(me)} is the only country we track so far.`;
   } else {
     const pos = 1 + peers.filter((p) => p.score > me.score).length;
@@ -429,7 +442,7 @@ export function regionCompare(ranking, code) {
     const themes = themeScores(me.byCategory).map((t, i) => ({ t, best: peers.map((p) => ({ p, s: themeScores(p.byCategory)[i].score })).sort((a, b) => b.s - a.s)[0] }));
     const ahead = themes.filter(({ t, best }) => t.score > best.s).map(({ t }) => lower(t.name));
     const behind = themes.filter(({ t, best }) => t.score < best.s).sort((a, b) => (b.best.s - b.t.score) - (a.best.s - a.t.score))[0];
-    line = `${name(me)} is ${ordinal(pos)} of ${peers.length + 1} in ${me.region}${tied.length ? `, tied with ${join(tied.map(name), 'and')}` : ''}.`;
+    line = `${name(me)} is ${ordinal(pos)} of ${peers.length + 1} in ${placeName(me.region)}${tied.length ? `, tied with ${join(tied.map(name), 'and')}` : ''}.`;
     if (ahead.length) line += ` It leads the region in ${ahead.length === THEMES.length ? 'every theme' : join(ahead, 'and')}.`;
     if (behind) line += ` It is furthest behind in ${lower(behind.t.name)}: ${behind.t.score}, against ${behind.best.s} in ${name(behind.best.p)}.`;
   }

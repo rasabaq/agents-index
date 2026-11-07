@@ -46,7 +46,6 @@ const catName = (id) => meta.categories.find((c) => c.id === id).name;
 // A small status mark for the matrix: a dot, half dot, ring or dash; a "?" after it means low confidence.
 const dot = (cell) => `<i class="dot d-${cell.status}${cell.confidence ? ' q' : ''}" aria-hidden="true"></i>`;
 const cellLabel = (cap, code, cell) => `${cap.name} in ${byCode[code].name}: ${STATUSES[cell.status].label}${cell.confidence ? ', unsure' : ''}`;
-// "the United States", "Chile": a country's name inside a sentence.
 const where = (r) => placeName(r.name);
 // "For businesses": can a business sell through AI agents here? Counts the ways in BUSINESS_GROUPS.
 function businessVerdict(r) {

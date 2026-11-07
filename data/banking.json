@@ -441,6 +441,244 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "limited",
+          "note": "AI services can already read account data with consent through MyData, such as Hana Bank's MyData-based AI financial advice from March 2026. Agents starting payments through open banking is still a proof of concept, and industry speakers in May 2026 said the rules for agent-made payments are not yet set.",
+          "evidence": [
+            {
+              "title": "Hana Bank Launches Customized Financial Consultation Service Combining MyData and AI",
+              "publisher": "Asiae",
+              "url": "https://www.asiae.co.kr/en/article/2026030214392067081",
+              "date": "2026-03-02",
+              "type": "news"
+            },
+            {
+              "title": "'Buy my 200,000-won sneakers when they drop to 170,000 won': Inside Naver Pay's AI agent payment push",
+              "publisher": "The Herald Business",
+              "url": "https://mbiz.heraldcorp.com/article/10913545",
+              "date": "2026-10-24",
+              "type": "news"
+            },
+            {
+              "title": "“네이버·카카오·토스 기술력은 충분한데” AI가 사람 대신 결제, 한국서 늦어지는 이유는? [크립토360]",
+              "publisher": "Herald",
+              "url": "https://heraldk.com/2026/05/29/%e2%80%9c%eb%84%a4%ec%9d%b4%eb%b2%84%c2%b7%ec%b9%b4%ec%b9%b4%ec%98%a4%c2%b7%ed%86%a0%ec%8a%a4-%ea%b8%b0%ec%88%a0%eb%a0%a5%ec%9d%80-%ec%b6%a9%eb%b6%84%ed%95%9c%eb%8d%b0%e2%80%9d-ai%ea%b0%80-%ec%82%ac/",
+              "date": "2026-05-29",
+              "type": "news"
+            }
+          ],
+          "gapReason": "pilot-only",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "We found no open banking rule in Singapore that lets third parties read your bank accounts or start payments through regulated APIs. A 2016 push to open bank APIs only encouraged firms and set no timeframe, and our search found no 2026 rule that changes this.",
+          "evidence": [
+            {
+              "title": "Singapore moves to promote open APIs in banking as fintech push gathers pace",
+              "publisher": "Pinsent Masons",
+              "url": "https://www.pinsentmasons.com/out-law/news/singapore-moves-to-promote-open-apis-in-banking-as-fintech-push-gathers-pace",
+              "date": "2016-04-01",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "limited",
+          "note": "Indonesia's SNAP open API standard, set by Bank Indonesia, is in force. Banks and payment providers have to adopt it, and non-bank firms can join to serve their own customers, with customer consent and Bank Indonesia approval. We found no consumer app or AI agent that reads bank balances or starts payments through it yet.",
+          "evidence": [
+            {
+              "title": "PADG 23/15/PADG/2021 on SNAP, the national open payment API standard",
+              "publisher": "Bank Indonesia",
+              "url": "https://bi.go.id/id/publikasi/peraturan/Pages/PADG_231521.aspx",
+              "date": "2021-08-20",
+              "type": "regulation"
+            },
+            {
+              "title": "Open banking in Indonesia (SNAP) tracker",
+              "publisher": "Fiskil",
+              "url": "https://www.fiskil.com/open-finance-tracker/indonesia",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "live",
+          "note": "Italy's PSD2 law (Legislative Decree 218/2017) makes account information and payment initiation licensed services, so licensed providers can read accounts and start payments. CBI Globe, an Italian open finance ecosystem, says its standard APIs follow PSD2 and that a licensed third party can reach all Italian current accounts. We did not find a named AI agent product that uses these APIs yet.",
+          "evidence": [
+            {
+              "title": "Decreto Legislativo 15 dicembre 2017, n. 218",
+              "publisher": "Normattiva",
+              "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2017-11-15;218",
+              "date": "2017-12",
+              "type": "regulation"
+            },
+            {
+              "title": "CBI Globe",
+              "publisher": "CBI S.c.p.A.",
+              "url": "https://www.cbi-org.eu/Servizi/CBI-Globe",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Directive (EU) 2015/2366 (PSD2)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj",
+              "date": "2015-11",
+              "type": "regulation"
+            }
+          ],
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "live",
+          "note": "PSD2 is EU law that applies in the Netherlands, and it requires banks to let licensed third parties read account data and start payments with the customer's consent. ABN AMRO's developer portal lists a live PSD2 payment initiation API, so a licensed third party can start payments from an ABN AMRO account.",
+          "evidence": [
+            {
+              "title": "Summary: revised rules for payment services in the EU (PSD2)",
+              "publisher": "EUR-Lex",
+              "url": "https://eur-lex.europa.eu/EN/legal-content/summary/revised-rules-for-payment-services-in-the-eu.html",
+              "date": "2024-11-09",
+              "type": "regulation"
+            },
+            {
+              "title": "ABN AMRO Developer Portal",
+              "publisher": "ABN AMRO",
+              "url": "https://developer.abnamro.com/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "limited",
+          "note": "The UAE Open Finance Regulation is issued and banks are rolling it out. ADIB says it has rolled out open finance on Central Bank-certified APIs, and Pay10 went live in April 2025 for payment initiation, including variable recurring payments. I found no bank or app that lets an AI agent read accounts or start payments, and the later rollout phases have no date.",
+          "evidence": [
+            {
+              "title": "ADIB rolls out open finance under UAE Central Bank framework",
+              "publisher": "Salaam Gateway",
+              "url": "https://salaamgateway.com/story/adib-rolls-out-open-finance-under-uae-central-bank-framework",
+              "date": "2026-01-21",
+              "type": "news"
+            },
+            {
+              "title": "Pay10 first to launch on UAE's regulated open finance infrastructure",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/fintech/news/pay10-first-to-launch-on-uaes-regulated-open-finance-infrastructure",
+              "date": "2025-04-24",
+              "type": "news"
+            },
+            {
+              "title": "UAE unveils open finance regulation to boost digital financial services",
+              "publisher": "Fintech Global",
+              "url": "https://fintech.global/2024/07/02/uae-unveils-open-finance-regulation-to-boost-digital-financial-services/",
+              "date": "2024-07-02",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "limited",
+          "note": "Saudi open banking is only starting. SAMA began licensing open banking providers on 26 March 2026, Lean Technologies was the first licensed firm, and Tatbiq Darahem Co. for Technology Almaliya was later approved for account information. Partners such as Tamara use Lean's data, but I found no consumer app that lets an AI agent read accounts or start payments.",
+          "evidence": [
+            {
+              "title": "SAMA Commences Licensing of Fintech Companies to Provide Open Banking Services",
+              "publisher": "Saudi Central Bank (SAMA)",
+              "url": "https://sama.gov.sa/en-US/MediaCenter/News/pages/news-1135.aspx",
+              "date": "2026-03-26",
+              "type": "regulation"
+            },
+            {
+              "title": "Lean Technologies becomes the first licensed company to provide open banking services in the Kingdom of Saudi Arabia",
+              "publisher": "FF News",
+              "url": "https://ffnews.com/newsarticle/paytech/lean-technologies-becomes-the-first-licensed-company-to-provide-open-banking-services-in-the-kingdom-of-saudi-arabia/",
+              "date": "2026-03-27",
+              "type": "news"
+            },
+            {
+              "title": "Saudi finance licenses climb to 74 as payment providers hit 32",
+              "publisher": "Arab News",
+              "url": "https://www.arabnews.pk/node/2643151",
+              "date": "2026-05-11",
+              "type": "news"
+            },
+            {
+              "title": "SAMA introduces Licensing Framework for open banking providers",
+              "publisher": "Clyde & Co",
+              "url": "https://www.clydeco.com/en/insights/2026/03/sama-new-licensing-framework-for-open-banking",
+              "date": "2026-03-30",
+              "type": "report"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "South Africa has no open finance rule in force. The FSCA's 2026 to 2029 Regulation Plan names open finance as a priority, but the work is still at policy development, so there is no rule that lets an agent use bank data or start payments. A third-party tracker gives a January 2026 start date that the FSCA plan does not support, so confidence is low.",
+          "evidence": [
+            {
+              "title": "The FSCA has published its three-year Regulation Plan for the period 1 April 2026 to 31 March 2029",
+              "publisher": "Clyde & Co",
+              "url": "https://www.clydeco.com/en/insights/2026/07/the-fsca-has-published-its-three-year-regulation-p",
+              "date": "2026-07-07",
+              "type": "report"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "announced",
+          "note": "Kenya has no open finance access in force yet. A draft National Payment System Bill, 2026, from Treasury and the Central Bank of Kenya would make banks and M-PESA share customer data with licensed third parties, but only with the customer's consent. The bill still needs Parliament, and the Central Bank's rules on access, data and fees come later.",
+          "evidence": [
+            {
+              "title": "New Bill forces banks, M-Pesa to share customer data",
+              "publisher": "Business Daily",
+              "url": "https://www.businessdailyafrica.com/bd/economy/new-bill-force-banks-m-pesa-to-share-customer-data-5605244",
+              "date": "2026-09-22",
+              "type": "news"
+            },
+            {
+              "title": "Central Bank of Kenya releases plan to implement open banking",
+              "publisher": "The Paypers",
+              "url": "https://thepaypers.com/online-mobile-banking/central-bank-of-kenya-releases-plan-to-implement-open-banking--1246641",
+              "date": "2021-01-13",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "announced",
+          "note": "Decree 353/2025 created Argentina's open finance system (Sistema de Finanzas Abiertas) and names the central bank, BCRA, as its enforcing authority. The BCRA has not yet published the technical standards or timeline, so no bank or app can yet let an AI agent read accounts or start payments. The first use the BCRA described was credit, with lenders reading income data.",
+          "evidence": [
+            {
+              "title": "BCRA lanzó Open Finance: un sistema que cambiará el acceso a los créditos",
+              "publisher": "Cronista",
+              "url": "https://www.cronista.com/finanzas-mercados/bcra-lanzo-open-finance-un-sistema-que-cambiara-el-acceso-a-los-creditos",
+              "date": "2025-05-22",
+              "type": "news"
+            },
+            {
+              "title": "Open finance tracker: Argentina",
+              "publisher": "Fiskil",
+              "url": "https://www.fiskil.com/es/open-finance-tracker/argentina",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
         }
       }
     },
@@ -859,6 +1097,166 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "limited",
+          "note": "KakaoBank's AI transfer (launched November 2025) lets any deposit account holder send money by chat or voice, up to 2 million won per transfer and per day. The customer must still confirm and verify the final step, and K Bank's similar AI transfer from July 2026 works the same way. No similar feature was found at Kookmin, Shinhan, Woori or Toss Bank.",
+          "evidence": [
+            {
+              "title": "“엄마한테 5만원 보내줘”…카카오뱅크, ‘AI이체’ 출시",
+              "publisher": "Herald",
+              "url": "https://www.heraldk.com/article/2025112317191945767",
+              "date": "2025-11-23",
+              "type": "news"
+            },
+            {
+              "title": "계좌번호 없이 문장·음성으로 송금",
+              "publisher": "Asiae",
+              "url": "https://view.asiae.co.kr/article/2026072713424907424",
+              "date": "2026-07-27",
+              "type": "news"
+            }
+          ],
+          "gapReason": "assist-only"
+        },
+        "SG": {
+          "status": "limited",
+          "note": "DBS says some features of its Joy assistant, which now use generative and agentic AI, let customers finish a banking task in the chat. The article does not name those tasks, so we could not confirm that Joy sends money or pays bills. OCBC's assistant is described only for portfolio questions, and we found no UOB assistant that moves money.",
+          "evidence": [
+            {
+              "title": "How DBS, OCBC and UOB are betting on AI in 2026",
+              "publisher": "Fintech News Singapore",
+              "url": "https://fintechnews.sg/137393/ai/how-dbs-ocbc-and-uob-are-betting-on-ai-in-2026/",
+              "date": "2026-10-14",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no Indonesian bank whose AI assistant moves money by chat or voice. Mandiri's MITA assistant on WhatsApp answers questions, and a 2020 report said its transaction services were still being built. We did not find a 2026 source showing that changed.",
+          "evidence": [
+            {
+              "title": "Bank Mandiri permudah transaksi lewat asisten virtual di WhatsApp",
+              "publisher": "Kontan",
+              "url": "https://keuangan.kontan.co.id/news/bank-mandiri-permudah-transaksi-lewat-asisten-virtual-di-whatsapp",
+              "date": "2020-10-08",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "We found no Italian bank whose AI assistant moves money, pays bills or takes payment orders by chat or voice. A January 2026 Milano Finanza review of bank AI covers UniCredit's lending and deal tools and Intesa Sanpaolo's fraud tools, and neither moves money for customers.",
+          "evidence": [
+            {
+              "title": "L'AI cresce in banca",
+              "publisher": "Milano Finanza",
+              "url": "https://www.milanofinanza.it/news/l-ai-cresce-in-banca-2690752",
+              "date": "2026-01-10",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "I found no Dutch bank assistant that moves money for customers. bunq's Finn is described as an AI support assistant, and ABN AMRO's chatbot Anna answers questions. Coverage is thin, so confidence is low.",
+          "evidence": [
+            {
+              "title": "bunq launches smarter, more powerful upgrade to GenAI financial assistant",
+              "publisher": "bunq",
+              "url": "https://press.bunq.com/258930-bunq-launches-smarter-more-powerful-upgrade-to-genai-financial-assistant/",
+              "date": "2025-12-16",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "limited",
+          "note": "ADCB unveiled a new app on 11 May 2026 with an AI assistant that takes voice or text commands. The launch coverage says it can check balances, move money, manage cards and track goals, but it does not say all customers have it or that it pays bills. I found no UAE bank assistant that pays bills.",
+          "evidence": [
+            {
+              "title": "ADCB puts AI at mobile banking core",
+              "publisher": "The Arabian Post",
+              "url": "https://thearabianpost.com/adcb-puts-ai-at-mobile-banking-core/",
+              "date": "2026-05-12",
+              "type": "news"
+            },
+            {
+              "title": "ADCB unveils to customers its unrivalled mobile banking application",
+              "publisher": "ADCB via Zawya",
+              "url": "https://www.zawya.com/en/press-release/companies-news/adcb-unveils-to-customers-its-unrivalled-mobile-banking-application-ak1038ka",
+              "date": "2026-05",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "I found no Saudi bank whose AI assistant sends money or pays bills. Searches for Al Rajhi, SNB, Alinma and STC Bank found no such assistant, and Bank AlBilad's AI plans cover corporate cash management. One result describes a Noura-branded assistant for plain-language account tasks, but the bank is unnamed and I could not confirm it moves money.",
+          "evidence": [
+            {
+              "title": "Bank AlBilad partners with Intellect Design Arena on the eMACH.ai platform",
+              "publisher": "FF News",
+              "url": "https://ffnews.com/newsarticle/fintech/bank-albilad-emach-ai-saudi-banking/",
+              "date": "2025-08-07",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "No South African bank's AI assistant sends money or pays bills yet. Absa's Abby, live on its app and website, is confined to customer support, questions and navigation, and we found no 2026 report of FNB, Standard Bank, Nedbank or Capitec launching an assistant that moves money.",
+          "evidence": [
+            {
+              "title": "Absa deepens AI push with renewed Salesforce partnership",
+              "publisher": "Business Day",
+              "url": "https://www.businessday.co.za/companies/2026-06-05-absa-deepens-ai-push-with-renewed-salesforce-partnership/",
+              "date": "2026-06-05",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "limited",
+          "note": "Equity's EVA chatbot, on WhatsApp, Messenger and Telegram, could send money and pay bills at its 2022 launch, and it was described as AI-driven. Current availability was not confirmed, and I could not open the bank's own pages.",
+          "evidence": [
+            {
+              "title": "Equity virtual assistant chat banking platform",
+              "publisher": "TechArena",
+              "url": "https://techarena.co.ke/2022/05/23/equity-virtual-assistant-chat-banking-platform",
+              "date": "2022-05-23",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Banco Macro's MacroChat, launched in August 2026, takes text, voice or photo requests on WhatsApp for transfers to the customer's own accounts and to third parties, bill payments and phone top-ups, with a handoff to a human agent. Launch reach is unclear, so we rate it limited. We found no money-moving assistant at Galicia, Santander, BBVA or Naranja X.",
+          "evidence": [
+            {
+              "title": "Banco Macro lanzó MacroChat",
+              "publisher": "El Economista",
+              "url": "https://eleconomista.com.ar/finanzas/banco-macro-lanzo-macrochat-permite-transferir-pagar-servicios-operar-whatsapp-inteligencia-artificial-n97297",
+              "date": "2026-08-11",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     }

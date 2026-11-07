@@ -229,6 +229,139 @@
             }
           ],
           "confidence": "low"
+        },
+        "KR": {
+          "status": "limited",
+          "note": "Hallym University Kangnam Sacred Heart Hospital's CareChat, inside KakaoTalk, books, changes and cancels appointments, and it opened in July 2025. That is one hospital's service, and I found no agent that books a doctor across hospitals for you.",
+          "evidence": [
+            {
+              "title": "비대면 원스톱 서비스 '케어챗' 오픈",
+              "publisher": "Newsis",
+              "url": "https://mobile.newsis.com/view/NISX20250731_0003273441",
+              "date": "2025-07-31",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "HealthHub's Appointments service needs a Singpass login and is a normal online booking form. We found no AI agent that books a doctor slot in Singapore.",
+          "evidence": [
+            {
+              "title": "HealthHub",
+              "publisher": "HealthHub",
+              "url": "https://www.healthhub.sg/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "Halodoc's AI assistant, AIDA, is built to help doctors, not patients, and we found no AI agent that books a doctor for patients in Indonesia. Patients still book through apps such as Halodoc and Alodokter.",
+          "evidence": [
+            {
+              "title": "Halodoc perkenalkan AIDA, AI Doctor Assistant untuk memberdayakan layanan kesehatan dan dokter Indonesia",
+              "publisher": "Halodoc",
+              "url": "https://www.halodoc.com/artikel/halodoc-perkenalkan-aida-ai-doctor-assistant-untuk-memberdayakan-layanan-kesehatan-dan-dokter-indonesia",
+              "date": "2025-08-21",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "No AI agent that books a doctor's visit in Italy was found.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "No AI agent found that books a Dutch GP (huisarts) visit. I could not open a Dutch booking portal that shows any AI option.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "We found no AI agent here that books a doctor for you. Doctor booking runs through ordinary health apps and websites, and our search turned up no 2026 agent launch.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no AI agent that books a Saudi doctor for you. Bupa Arabia members book consultations in its app themselves, and we could not open the Sehhaty site to check for an appointment assistant.",
+          "evidence": [
+            {
+              "title": "Bupa Arabia home page",
+              "publisher": "Bupa Arabia",
+              "url": "https://www.bupa.com.sa/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "A July 2025 law firm article says the SA Doctors App uses AI chatbots for appointment scheduling, but I found no SA Doctors App page that confirms it. No AI booking agent from Discovery, Netcare or Medi-Clinic turned up in my searches.",
+          "evidence": [
+            {
+              "title": "From promise to practice: responsible AI in South African healthcare",
+              "publisher": "Werksmans",
+              "url": "https://www.werksmans.com/from-promise-to-practice-responsible-ai-in-south-african-healthcare/",
+              "date": "2025-07-16",
+              "type": "report"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan AI agent that books a doctor was found. Penda Health's site offers WhatsApp chat with clinicians and in-person visits, not an AI booking agent, and the national health portal shows no booking service.",
+          "evidence": [
+            {
+              "title": "Penda Health",
+              "publisher": "Penda Health",
+              "url": "https://www.pendahealth.com",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "No AI agent that books a doctor's appointment was found for Argentina. Medifé's agent lets members search its doctor directory, and automated booking is only a future step. Mi Argentina's app lists turnos as a service, but no AI is described.",
+          "evidence": [
+            {
+              "title": "Medifé incorpora un agente de IA conversacional para consultas de cartilla médica",
+              "publisher": "Mercado",
+              "url": "https://mercado.com.ar/ruta-digital/medife-incorpora-un-agente-de-ia-conversacional-para-consultas-de-cartilla-medica",
+              "date": "2026-09-09",
+              "type": "news"
+            },
+            {
+              "title": "Mi Argentina",
+              "publisher": "Gobierno de Argentina",
+              "url": "https://www.argentina.gob.ar/miargentina",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         }
       }
     },
@@ -410,6 +543,154 @@
               "type": "news"
             }
           ]
+        },
+        "KR": {
+          "status": "none",
+          "note": "A Medical Act amendment due to take effect on December 24 allows prescription medicine delivery only to island and remote residents, vulnerable groups, and people with infectious or rare diseases. The government is studying wider delivery, but no agent can order a refill for ordinary patients today.",
+          "evidence": [
+            {
+              "title": "모든 환자 대상 비대면 진료 '약 배송' 확대 본격 검토",
+              "publisher": "Daily Pharm",
+              "url": "https://m.dailypharm.com/user/news/341620",
+              "date": "2026-08-20",
+              "type": "news"
+            }
+          ],
+          "gapReason": "no-rule",
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "HealthHub has a Medication refill service that needs no Singpass login. We found no AI agent that can order a refill for you.",
+          "evidence": [
+            {
+              "title": "HealthHub",
+              "publisher": "HealthHub",
+              "url": "https://www.healthhub.sg/",
+              "date": "2026-10",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "ID": {
+          "status": "none",
+          "note": "Halodoc says its platform works with pharmacies, but we found no AI agent that renews or orders a prescription for you in Indonesia. Our checks did not look at pharmacy apps in depth.",
+          "evidence": [
+            {
+              "title": "Halodoc perkenalkan AIDA, AI Doctor Assistant untuk memberdayakan layanan kesehatan dan dokter Indonesia",
+              "publisher": "Halodoc",
+              "url": "https://www.halodoc.com/artikel/halodoc-perkenalkan-aida-ai-doctor-assistant-untuk-memberdayakan-layanan-kesehatan-dan-dokter-indonesia",
+              "date": "2025-08-21",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "Italy's electronic prescription (ricetta elettronica) is sent by doctors through the national SSN system, which now needs two-factor login for prescribers. No AI agent was found that can renew or order a medicine for you.",
+          "evidence": [
+            {
+              "title": "Sistema TS, electronic prescription (ricetta elettronica)",
+              "publisher": "Sistema TS",
+              "url": "https://sistemats1.sanita.finanze.it/portale/home",
+              "date": "2026-10-30",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "No AI agent found that orders a Dutch prescription refill. Prescriptions go through the patient's own pharmacy, and the pharmacy site apotheek.nl sends patients back to their own pharmacy.",
+          "evidence": [],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "Patients can upload prescriptions and order medicine in the talabat app with Aster Pharmacy, but no AI agent refills or orders them for you. Aster's 2024 release said patients would soon be able to schedule prescriptions in advance, and we found no agent using that.",
+          "evidence": [
+            {
+              "title": "Aster Pharmacy partners with talabat to offer prescription delivery services",
+              "publisher": "Aster DM Healthcare",
+              "url": "https://www.asterdmhealthcare.com/newsroom/aster-pharmacy-partners-with-talabat-to-offer-prescription-delivery-services",
+              "date": "2024-09-29",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no AI agent that renews or orders a prescription here. Nahdi's website does not mention refills or an AI assistant, and we could not open the Wasfaty e-prescription site to check it.",
+          "evidence": [
+            {
+              "title": "Nahdi home page",
+              "publisher": "Nahdi",
+              "url": "https://www.nahdi.sa/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "Clicks sends repeat-medicine reminders by SMS, and you can submit prescriptions in its app. A 2022 release says Dis-Chem's WhatsApp channel only sends alerts, with repeat orders placed on its Pack My Meds site. I found no AI route that places a repeat order for you.",
+          "evidence": [
+            {
+              "title": "Repeat Meds Reminder FAQ",
+              "publisher": "Clicks",
+              "url": "https://clicks.co.za/repeat-meds-reminder-FAQ",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Dis-Chem chooses Clickatell's chat commerce platform to serve millions of customers over WhatsApp",
+              "publisher": "Clickatell (via APO Group)",
+              "url": "https://pressportal.co.za/it-new-media-and-software/story/dis-chem-chooses-clickatells-chat-commerce-platform-to-serve-millions-of-customers-over-whatsapp.html",
+              "date": "2022-04-28",
+              "type": "company"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "No Kenyan pharmacy or health app with an AI agent that renews or orders prescription medicine was found. Pharmacy apps were not checked one by one.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "none",
+          "note": "No AI agent that renews or orders a medicine was found for Argentina. E-prescriptions passed 20 million a month by June 2026, and Mi Argentina shows them in its app, but only lets you look them up.",
+          "evidence": [
+            {
+              "title": "Digitalización del sistema de salud argentino 2026: receta electrónica e interoperabilidad",
+              "publisher": "Innovación Digital 360",
+              "url": "https://www.innovaciondigital360.com/software/software-digitalizacion-sistema-salud-argentina-2026-receta-electronica-interoperabilidad/",
+              "date": "2026-06-12",
+              "type": "news"
+            },
+            {
+              "title": "Mi Argentina",
+              "publisher": "Gobierno de Argentina",
+              "url": "https://www.argentina.gob.ar/miargentina",
+              "date": "2026-11",
+              "type": "report"
+            }
+          ],
+          "gapReason": "rail-closed",
+          "confidence": "low"
         }
       }
     },
@@ -589,6 +870,142 @@
               "publisher": "BrandSpur",
               "url": "https://brandspurng.com/2026/03/26/axa-mansard-health-introduces-whatsapp-chatbot-karis-to-streamline-healthcare-access-across-nigeria/",
               "date": "2026-03-26",
+              "type": "news"
+            }
+          ],
+          "confidence": "low"
+        },
+        "KR": {
+          "status": "none",
+          "note": "I found no AI agent that checks your own health cover or a claim status in Korea. I did not check each insurer's app in depth, so this is a thin result.",
+          "evidence": [],
+          "confidence": "low"
+        },
+        "SG": {
+          "status": "none",
+          "note": "We found no Singapore insurer with an AI assistant that checks your own health cover or claim status. The insurer AI tools we found serve agents or staff, or give general answers.",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "evidence": []
+        },
+        "ID": {
+          "status": "none",
+          "note": "We found no AI agent that checks your own health cover or claim status in Indonesia, for BPJS Kesehatan or for private insurers. Our checks did not look at each insurer's chat channel, so this is a low-confidence none.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "IT": {
+          "status": "none",
+          "note": "No AI agent that checks your health cover or a claim was found in Italy.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "NL": {
+          "status": "none",
+          "note": "No AI assistant found that checks your own Dutch health cover or a claim status.",
+          "evidence": [],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AE": {
+          "status": "none",
+          "note": "Daman and Thiqa members check cover and claims through online accounts and apps. We found no AI assistant that explains your cover or claim status for you, and Daman's website does not mention one.",
+          "evidence": [
+            {
+              "title": "Daman Insurance",
+              "publisher": "Daman",
+              "url": "https://www.damaninsurance.ae",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "SA": {
+          "status": "none",
+          "note": "We found no AI agent that checks your own cover or claim status here. Bupa Arabia's app lists covered hospitals, while Tawuniya's eTawuniya portal and MedGulf's app let you track claims yourself.",
+          "evidence": [
+            {
+              "title": "Bupa Arabia home page",
+              "publisher": "Bupa Arabia",
+              "url": "https://www.bupa.com.sa/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Best car insurance in Saudi Arabia 2026",
+              "publisher": "Yallamotor",
+              "url": "https://www.yallamotor.com/en/news/best-car-insurance-saudi-arabia-2026-comparison-prices-guarantees-55084",
+              "date": "2026-02-22",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "ZA": {
+          "status": "none",
+          "note": "I found no AI agent that checks your own medical cover or a claim in South Africa. Discovery's site has no AI assistant for cover or claims, and its Ask Discovery help page does not say it is AI.",
+          "evidence": [
+            {
+              "title": "Discovery home page",
+              "publisher": "Discovery",
+              "url": "https://www.discovery.co.za/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Ask Discovery Health for help",
+              "publisher": "Discovery",
+              "url": "https://www.discovery.co.za/medical-aid/ask-discovery-health-for-help",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "KE": {
+          "status": "none",
+          "note": "The Social Health Authority's member portal and eligibility check, and CIC Insurance's claims portal, are ordinary web tools. No AI agent that checks your cover or claim status was found.",
+          "evidence": [
+            {
+              "title": "Social Health Authority",
+              "publisher": "Social Health Authority (Kenya)",
+              "url": "https://sha.go.ke",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "CIC Insurance Group Kenya",
+              "publisher": "CIC Insurance Group",
+              "url": "https://ke.cicinsurancegroup.com/",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
+        },
+        "AR": {
+          "status": "limited",
+          "note": "Prevención Salud's Previ chatbot lets members request authorizations, check their status and look up reimbursement amounts. The article says AI runs some of its functions but does not say which, so the cell is limited with low confidence. Medifé's agent lets members ask about plans and services in plain language, but reimbursements are a future step.",
+          "evidence": [
+            {
+              "title": "Prevención Salud amplía Previ, su chatbot, con nuevas gestiones para afiliados",
+              "publisher": "Mercado",
+              "url": "https://mercado.com.ar/ruta-digital/prevencion-salud-amplia-previ-su-chatbot-con-nuevas-gestiones-para-afiliados",
+              "date": "2026-01-30",
+              "type": "news"
+            },
+            {
+              "title": "Medifé incorpora un agente de IA conversacional para consultas de cartilla médica",
+              "publisher": "Mercado",
+              "url": "https://mercado.com.ar/ruta-digital/medife-incorpora-un-agente-de-ia-conversacional-para-consultas-de-cartilla-medica",
+              "date": "2026-09-09",
               "type": "news"
             }
           ],
