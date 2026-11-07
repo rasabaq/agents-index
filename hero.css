@@ -1,6 +1,7 @@
-/* Hero: the planet at sunrise, the pixel wordmark, the headline, the twelve pixel icons and the country pins.
-   hero.js draws the two canvases and fills the data parts. Colors come from the tokens in styles.css. */
-.hero { position: relative; isolation: isolate; overflow: hidden; container-type: inline-size; padding: 0 0 400px; }
+/* Hero: the planet at sunrise, the pixel wordmark, the headline and the button.
+   hero.js draws the two canvases. Colors come from the tokens in styles.css.
+   --planet is how far above the hero's bottom the planet's top sits (hero.js reads it). */
+.hero { --planet: 400px; position: relative; isolation: isolate; overflow: hidden; container-type: inline-size; padding: 0 0 calc(var(--planet) + 72px); }
 .hero-sky { position: absolute; inset: 0 auto auto 0; z-index: 0; display: block; width: 100%; height: 100%; }
 /* Shown until the first frame is drawn, and if scripts never run. */
 .hero::before { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -8,9 +9,9 @@
 .hero.is-ready::before { display: none; }
 .hero::after { content: ''; position: absolute; inset: auto 0 0; height: 200px; z-index: 1; pointer-events: none; background: linear-gradient(rgba(5, 6, 11, 0), var(--page)); }
 .hero > .wrap { position: relative; z-index: 3; }
-/* The map overlaps the hero's bottom by 270px, 200px on phones (charts.css), so 130px of planet shows below the pins, 90px on phones.
+/* The map overlaps the hero's bottom by 270px, 200px on phones (charts.css), so 130px of planet shows above it, 90px on phones.
    A media query, not a container query: a container query cannot style the container itself. */
-@media (max-width: 760px) { .hero { padding-bottom: 290px; } }
+@media (max-width: 760px) { .hero { --planet: 290px; padding-bottom: calc(var(--planet) + 48px); } }
 
 /* the pixel wordmark */
 .hero-wm-wrap { padding-top: 60px; }
@@ -18,7 +19,6 @@
 
 /* headline and button */
 .hero-copy { padding-top: 56px; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: start; }
 .hero h1 { max-width: none; margin: 0; font: 600 clamp(36px, 5.2cqw, 66px)/0.95 var(--font); letter-spacing: -0.06em; color: var(--ink); text-wrap: initial; }
 .hero h1 > span { display: block; color: inherit; }
 .hero h1 > span + span { margin-top: 0.03em; }
@@ -31,52 +31,6 @@
 .hero-btn-1:hover { background: #fff; }
 .hero-btn-1 span { opacity: 0.6; }
 
-/* twelve pixel icons, one per category, lit by the country's category score (hero.js). 5px cells on a 6px step. */
-.hero-icons:not([hidden]) { display: flex; flex-direction: column; align-self: stretch; gap: 28px; }
-.hero-icons ul { position: relative; isolation: isolate; display: grid; grid-template-columns: repeat(6, 72px); gap: 46px 25px; margin: 0; padding: 0; list-style: none; }
-/* soft dark pool behind the icons so the sky dither does not read as icon pixels */
-.hero-icons ul::before { content: ''; position: absolute; inset: -60px -70px; z-index: -1; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.8) 55%, transparent); }
-.hero-icons li { position: relative; width: 72px; height: 72px; outline: none; }
-.hero-icons svg { display: block; width: 72px; height: 72px; overflow: visible; shape-rendering: crispEdges; }
-.hero-icons li.is-full svg { filter: var(--glow); }
-.hero-icons rect { fill: var(--pix-off); transition: fill 0.22s; }
-.hero-icons rect.on.t0 { fill: var(--tier-s); }
-.hero-icons rect.on.t1 { fill: var(--sunrise); }
-.hero-icons rect.on.t2 { fill: var(--ink); }
-/* the short name on a black tape (console.css), on hover, tap or focus */
-.hero-icons li:focus-visible { outline: 2px solid var(--sunrise); outline-offset: 6px; }
-/* key: works, partly, not yet (console.css). Its bottom lines up with the buttons. */
-.hero-key { align-self: flex-end; height: 40px; margin: auto 0 0; }
-@media (prefers-reduced-motion: reduce) {
-  .hero-icons :is(rect, b) { transition: none; }
-}
-
-/* the countries as pins on the planet, in rank order: score, flag, a pole as tall as the score, a foot on the edge.
-   hero.js puts each foot on the planet's edge. The row is tall enough for a score of 100. */
-.hero-pins { position: relative; height: 270px; margin: 24px 0 0; padding: 0; list-style: none; --k: 2px; }
-.hero-pins a { position: absolute; display: flex; flex-direction: column; align-items: center; min-width: 44px; translate: -50% -100%; color: var(--ink-2); text-decoration: none; }
-.hero-pin-n { padding-bottom: 8px; font: 600 20px/1 var(--font); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; text-shadow: 0 1px 6px #000, 0 0 2px #000; }
-.hero-pin-f { display: grid; place-items: center; width: 44px; height: 36px; background: #000; box-shadow: 0 0 0 1px var(--line-strong); }
-.hero-pin-f .flag { width: auto; margin: 0; font-size: 24px; line-height: 1; opacity: 0.8; }
-.hero-pin-p { width: 2px; height: calc(var(--s) * var(--k)); background: linear-gradient(color-mix(in srgb, var(--ink) 55%, transparent), color-mix(in srgb, var(--ink) 15%, transparent)); }
-.hero-pin-b { width: 8px; height: 4px; background: var(--ink-2); opacity: 0.7; }
-.hero-pins a:hover { color: var(--ink); }
-.hero-pins a:is(:hover, [aria-current='true']) .flag { opacity: 1; }
-.hero-pins [aria-current='true'] { color: var(--sunrise); }
-.hero-pins [aria-current='true'] .hero-pin-f { box-shadow: 0 0 0 2px var(--sunrise), 0 0 24px 2px color-mix(in srgb, var(--sunrise) 55%, transparent); }
-.hero-pins [aria-current='true'] :is(.hero-pin-p, .hero-pin-b) { background: var(--sunrise); opacity: 1; }
-.hero-pins [aria-current='true'] .hero-pin-b { box-shadow: 0 0 14px 5px color-mix(in srgb, var(--sunrise) 70%, transparent); }
-.hero-pins a:focus-visible { outline: none; }
-.hero-pins a:focus-visible .hero-pin-f { outline: 2px solid var(--ink); outline-offset: 4px; }
-@media (prefers-reduced-motion: no-preference) {
-  .hero-pins a, .hero-pins a * { transition: color 0.2s, background 0.2s, box-shadow 0.2s, opacity 0.2s; }
-}
-
-/* the icons take about 560px: stack them under the headline before its tape line would wrap */
-@container (max-width: 1200px) {
-  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
-  .hero-key { align-self: flex-start; }
-}
 @container (max-width: 1100px) {
   .hero h1 { font-size: clamp(34px, 7.6cqw, 66px); }
 }
@@ -85,15 +39,4 @@
   .hero-copy { padding-top: 36px; }
   .hero h1 { font-size: clamp(32px, 10.4cqw, 60px); }
   .hero-ctas { margin-top: 36px; }
-  /* 4 x 3 on phones; the cells stay whole pixels */
-  .hero-icons ul { grid-template-columns: repeat(4, 72px); justify-content: space-between; column-gap: 0; }
-  /* names on the outer columns hang inward, so they stay on screen */
-  .hero-icons li:nth-child(4n + 1) b { --tx: 0; left: 0; }
-  .hero-icons li:nth-child(4n) b { --tx: 0; left: auto; right: 0; }
-  /* one row of as many pins as fit in 44px slots (hero.js), with shorter poles */
-  .hero-pins { height: 156px; margin-top: 16px; --k: 1px; }
-  .hero-pins a { min-width: 40px; }
-  .hero-pin-n { padding-bottom: 6px; font-size: 16px; }
-  .hero-pin-f { width: 38px; height: 30px; }
-  .hero-pin-f .flag { font-size: 20px; }
 }
