@@ -173,9 +173,9 @@
     /* the task checked, with the seal pressed beside it */
     #v-map .fly-entry { display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 12px; align-items: start; }
     #v-map .fly-entry-t { display: grid; gap: 6px; min-width: 0; }
-    #v-map .fly-tasks { display: flex; flex-direction: column; gap: 4px; height: 92px; overflow-y: auto; scrollbar-width: none; } /* 3 rows (the most an area has today); a 4th scrolls */
-    #v-map .fly-task { display: flex; flex: none; align-items: center; gap: 8px; height: 28px; padding: 0 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--page); color: var(--ink-2); font: 12.5px/1 var(--font); text-align: left; cursor: pointer; }
-    #v-map .fly-task span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #v-map .fly-tasks { display: flex; flex-direction: column; gap: 4px; height: 122px; overflow-y: auto; scrollbar-width: none; } /* 3 rows of up to 2 lines (the most an area has today); a 4th scrolls */
+    #v-map .fly-task { display: flex; flex: none; align-items: center; gap: 8px; min-height: 28px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--page); color: var(--ink-2); font: 12.5px/1.25 var(--font); text-align: left; cursor: pointer; }
+    #v-map .fly-task span { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
     #v-map .fly-task:hover { border-color: var(--line-strong); color: var(--ink); }
     #v-map .fly-task[aria-pressed="true"] { border-color: var(--sunrise); color: var(--sunrise); }
     #v-map .fly-task .fly-mk { width: 13px; height: 13px; }
@@ -275,7 +275,8 @@
       const st = {
         code: tour[0][0], cap: tour[0][1], dest: tour[0][0], world: false, live: new Set(), hov: null,
         cam: null, anim: null, trail: null, pulse: -1e9, t0: -1e9, fid: 0, raf: 0, view: null,
-        visible: false, intro: false, touring: !RM, pauseUntil: 0,
+        // A link to one country (#country=XX) lands on it and stays: the tour plays only on a plain visit.
+        visible: false, intro: false, touring: !RM && !/[#&]country=/.test(location.hash), pauseUntil: 0,
       };
       const area = () => caps[st.cap].category;
       const hold = () => { st.pauseUntil = performance.now() + PAUSE; };
@@ -428,7 +429,9 @@
           if (a.arc) st.pulse = now;
           a.done(a.id);
         }
-        const s = k0() * cam.z, ox = W / 2 - cam.f[0] * s, oy = H / 2 - cam.f[1] * s;
+        // Keep the camera inside the map: near an edge (the UK, Chile) it stops at the edge instead of showing empty space.
+        const s = k0() * cam.z, fit = (f, n, half) => (n > 2 * half ? clamp(f, half, n - half) : n / 2);
+        const ox = W / 2 - fit(cam.f[0], COLS, W / 2 / s) * s, oy = H / 2 - fit(cam.f[1], ROWS, H / 2 / s) * s;
         st.view = { s, ox, oy };
         const r = Math.max(0.7, s * 0.32), X = (x) => ox + x * s, Y = (y) => oy + y * s;
         const inView = (x, y) => x > -s && x < W + s && y > -s && y < H + s;
