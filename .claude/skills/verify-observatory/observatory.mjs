@@ -193,8 +193,10 @@ const commands = {
     url.searchParams.set('verify', Date.now().toString(36));
     await c.send('Page.navigate', { url: url.href });
     await done;
-    // Each page has its own sign that it rendered: the country heading on the home page, the first company row on companies.html.
-    await waitFor(c, flags.wait ?? (url.pathname.endsWith('/companies.html') ? '[data-companies] tbody tr' : '#cn-title'));
+    // Each page has its own sign that it rendered: the country heading on the home page and on countries.html, the first
+    // company row on companies.html.
+    const sign = { '/companies.html': '[data-companies] tbody tr', '/countries.html': '#p-title' }[url.pathname] ?? '#cn-title';
+    await waitFor(c, flags.wait ?? sign);
     await sleep(Number(flags.settle ?? 800));
     const info = await c.evaluate(`({ url: location.href, title: document.title, width: innerWidth, height: innerHeight, scheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', languages: navigator.languages, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone })`);
     log(s, { cmd: 'open', path, ...info });
@@ -234,7 +236,10 @@ const commands = {
     const key = args[0];
     const codes = { Escape: 27, Enter: 13, Tab: 9, ArrowDown: 40, ArrowUp: 38, ArrowLeft: 37, ArrowRight: 39 };
     const vk = codes[key] ?? key.toUpperCase().charCodeAt(0);
-    await c.send('Input.dispatchKeyEvent', { type: 'keyDown', key, windowsVirtualKeyCode: vk, ...(key.length === 1 ? { text: key } : {}) });
+    // A key that types something carries its text, as a real key press does. Enter types "\r": without it, Enter
+    // never activates a button or a link.
+    const text = key === 'Enter' ? '\r' : key.length === 1 ? key : null;
+    await c.send('Input.dispatchKeyEvent', { type: 'keyDown', key, windowsVirtualKeyCode: vk, ...(text ? { text } : {}) });
     await c.send('Input.dispatchKeyEvent', { type: 'keyUp', key, windowsVirtualKeyCode: vk });
     await sleep(Number(flags.settle ?? 300));
     log(s, { cmd: 'press', key });
