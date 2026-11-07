@@ -18,7 +18,7 @@ In the US, an AI agent can buy from a merchant inside a chat assistant. In Chile
 | | |
 | --- | --- |
 | [![World map with each tracked country and its score](docs/images/map.png)](https://agentindex.art/#v-map) | [![Country view for the United States: score, what works today and what does not yet](docs/images/console.png)](https://agentindex.art/#country=US) |
-| **World map.** Where agents can act today. A brighter country has a higher score. | **Country view.** How many things work today, the five that do and the five that do not yet, and four theme scores. Every item links to its sources. |
+| **World map.** Where agents can act today. A brighter country has a higher score. | **Country view.** How many things work today and what agents cannot do yet, then everyday errands step by step: what an agent does, where it helps and what you still do. Every item links to its sources. |
 
 ## How it works
 
@@ -51,13 +51,16 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/meta.json` | Countries, categories and the `asOf` date |
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
+| `src/errands.js`, `src/icons.js` | The everyday errands (the checks each step uses) and the twelve pixel icons, one per category |
 | `docs/methodology.md` | How the data is collected and scored |
 | `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, the errands, then the matrix, closed), Compare two countries, Who builds it, and one line on the method |
+| `countries.html` | One fact sheet per country: a rail of every country, then the chosen one's verdict, gap reasons, facts, its region compared by theme, every check by area, and its companies (`#country=CL`) |
 | `companies.html` | The companies table, the flows chart and the open-source table |
-| `app.js`, `hero.js`, `lists.js` | The console, the hero, and the companies page tables |
-| `data.js`, `ui.js` | The data, fetched once per page, and the small helpers both pages share |
+| `app.js`, `hero.js`, `countries.js`, `lists.js` | The console, the hero, the countries page and the companies page tables |
+| `overview.js` | The home country view's overview: a mosaic of every check by gap reason, and the small fingerprint beside the country name |
+| `data.js`, `ui.js`, `detail.js` | The data, fetched once per page, the small helpers every page shares, and the cell detail dialog of the home and countries pages |
 | `charts/charts.js`, `charts/viz-*.js` | The three charts (map, compare, flows): `charts.js` draws each chart into its `<section data-chart="<id>">` slot in `index.html` or `companies.html` |
-| `styles.css`, `console.css`, `hero.css`, `charts/charts.css` | Shared tokens, then the home page parts and the chart windows |
+| `styles.css`, `console.css`, `hero.css`, `countries.css`, `charts/charts.css` | Shared tokens, then the home page parts, the countries page and the chart windows |
 | `scripts/` | Data checks and refresh scripts run by `npm` |
 | `test/` | Node tests for scoring, validation and the data |
 

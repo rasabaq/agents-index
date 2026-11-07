@@ -36,6 +36,7 @@ Each step is one capability. It says whether the agent does it (Live), helps and
 - `country-keys` steps through the ranking with `j` (next) and `k` (previous).
 - `country-compare` is the "Compare with XX" button (`[data-compare="US IN"]` with today's data: this country and the country it is tied with, else the next one down, else the one above). It does not change the console country or the hash: it scrolls to the Compare two countries chart `#v-compare` with that pair picked (see charts.md). If that chart did not draw, it switches the console to the neighbour instead.
 - `country-sources` opens the list of every source behind the country (see matrix-detail.md).
+- `country-profile` is the "Full profile →" link at the end of `.cn-score`. It opens `/countries.html#country=XX` for the same country (see countries.md).
 
 ## How to get to it (user POV)
 

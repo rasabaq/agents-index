@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreCountries, validate, summarize, mergeCompanies, useCategoryWords, shortName, inSentence } from '../src/observatory.js';
+import { scoreCountries, validate, summarize, mergeCompanies, useCategoryWords, shortName, placeName } from '../src/observatory.js';
 import { readFileSync } from 'node:fs';
 // Sentences use the category words from data/meta.json, as the site does.
 useCategoryWords(JSON.parse(readFileSync(new URL('../data/meta.json', import.meta.url), 'utf8')).categories);
@@ -105,6 +105,6 @@ test('every category needs short and can in meta.json, even the first seven', ()
 });
 
 
-test('country names read right inside a sentence', () => {
-  assert.deepEqual(['United States', 'Netherlands', 'Chile'].map(inSentence), ['the United States', 'the Netherlands', 'Chile']);
+test('country and region names read right inside a sentence', () => {
+  assert.deepEqual(['United States', 'Netherlands', 'Middle East', 'Chile'].map(placeName), ['the United States', 'the Netherlands', 'the Middle East', 'Chile']);
 });

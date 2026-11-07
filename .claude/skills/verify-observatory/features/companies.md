@@ -23,8 +23,9 @@ Market pills filter the table to companies live in one country, and the label co
 
 ## How to get to it (user POV)
 
-- On the home page, follow "All N companies" or "+N more" in "Who builds it" (`[data-who]`). The home nav has no Companies link: its "Who builds it" goes to `#builders`.
-- On `/companies.html`, use "Companies" in its nav, or scroll to "Who makes it possible."
+- "Companies" in the nav of every page. The nav is the same on all three pages: Map, Your country, Compare, Countries, Companies, Method.
+- On the home page, follow "All N companies" or "+N more" in "Who builds it" (`[data-who]`).
+- "Back to the countries" (`[data-back]`) goes to `/countries.html`, on the market's country when one is picked.
 
 ## Driving it with observatory.mjs
 

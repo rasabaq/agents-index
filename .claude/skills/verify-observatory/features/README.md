@@ -37,6 +37,7 @@ Each feature file starts with an H1 title and one paragraph describing what the 
 ## Features
 
 - [Country view and picker](./country.md) covers choosing a country (hero pins, world map, the console picker that is also the ranking, `#country=` hash, J/K keys) and what the country view shows.
+- [Countries page](./countries.md) covers the rail of countries, one country's fact sheet, the region comparison, the area cards and their rows, and the `#country=` link with back and forward.
 - [Capability matrix and cell detail](./matrix-detail.md) covers the matrix, the cell detail dialog, its sources, the "Suggest a correction" link and the country sources list.
 - [Companies table](./companies.md) covers the market filters, the rows, the logos, Show all, and the card layout on phones.
 - [Charts](./charts.md) covers the three home page charts: drawing, compare and `#v-<id>` links.

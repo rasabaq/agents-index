@@ -1,14 +1,13 @@
 // The companies page: the companies table and the open-source table, each with filters and Show all.
 // The home page links here; #market=CL opens the companies already filtered to one country.
-import { REPO_USE, scoreCountries, mergeCompanies, rankRepos, shortName, useCategoryWords } from './src/observatory.js';
+import { REPO_USE, scoreCountries, mergeCompanies, rankRepos, shortName, useCategoryWords, writeHash } from './src/observatory.js';
 import { data } from './data.js';
-import { $, esc, flag, logo, wireLogos, wireNav } from './ui.js';
+import { $, esc, flag, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
 
 const fmtMonth = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 const state = { market: 'all', use: 'all', allCompanies: false, allRepos: false };
 // Long tables show this many rows until Show all is pressed.
 const FIRST_ROWS = 10;
-const scrollBehavior = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
 let ranking, byCode, companies, repos;
 
 function renderCompanyFilters() {
@@ -34,6 +33,8 @@ function renderCompanies() {
   const matching = companies.filter((c) => state.market === 'all' || c.markets.includes(state.market));
   const rows = firstRows(matching, state.allCompanies, $('[data-companies-more]'), 'companies');
   $('[data-companies-label]').textContent = `Companies · ${matching.length} of ${companies.length}`;
+  // Back to the countries page, on the country picked here.
+  $('[data-back]').href = `countries.html${state.market === 'all' ? '' : writeHash(state.market)}`;
   $('[data-companies]').innerHTML = `
     <thead><tr><th scope="col">Company</th><th scope="col">Based in</th><th scope="col">What it lets agents do</th><th scope="col">Live in</th></tr></thead>
     <tbody>${rows.map((c) => `
@@ -111,7 +112,7 @@ try {
   repos = rankRepos(categories);
   const market = new URLSearchParams(location.hash.slice(1)).get('market');
   if (byCode[market]) state.market = market;
-  document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = new Date(`${meta.asOf}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })));
+  document.querySelectorAll('[data-asof]').forEach((el) => (el.textContent = fmtDate(meta.asOf)));
   renderCompanyFilters();
   renderCompanies();
   renderRepoFilters();

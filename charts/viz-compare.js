@@ -93,7 +93,7 @@
       }
       const { esc, emoji, flag, STATUSES: S } = ctx;
       const name = Object.fromEntries(ctx.meta.countries.map((c) => [c.code, c.name]));
-      const the = (code) => ctx.inSentence(name[code]);
+      const the = (code) => ctx.placeName(name[code]);
       const cap1 = (s) => s[0].toUpperCase() + s.slice(1);
       const caps = Object.fromEntries(ctx.capabilities.map((c) => [c.id, c]));
       const n = ctx.capabilities.length;

@@ -1,6 +1,6 @@
 // The country overview: a mosaic of every capability and a small fingerprint. Both return HTML strings and touch no DOM.
 // capIndex maps a capability id to { ...capability, category } (as app.js builds it); a cell is cap.countries[code].
-import { STATUSES, article } from './src/observatory.js';
+import { STATUSES, article, gapLabel } from './src/observatory.js';
 import { esc, flag } from './ui.js';
 
 // One shape per gap reason, so colour is never the only signal. 'unknown' is a cell with no reason recorded.
@@ -17,10 +17,10 @@ const shape = (r) => `<svg class="ov-r" data-r="${r}" viewBox="0 0 10 10" aria-h
 const capsOf = (capIndex, catId) => Object.values(capIndex).filter((cap) => cap.category === catId);
 const nameOf = (meta, code) => meta.countries.find((c) => c.code === code).name;
 
-export function mosaic({ meta, capIndex, code, gapLabel, errandOf = {}, openErrand = [] }) {
+export function mosaic({ meta, capIndex, code, errandOf = {}, openErrand = [] }) {
   const caps = Object.values(capIndex);
-  const reasonOf = (cell) => (gapLabel(cell.gapReason) && SHAPES[cell.gapReason] ? cell.gapReason : 'unknown');
-  const labelOf = (r) => (r === 'unknown' ? NO_REASON : gapLabel(r));
+  const reasonOf = (cell) => (gapLabel(meta, cell.gapReason) && SHAPES[cell.gapReason] ? cell.gapReason : 'unknown');
+  const labelOf = (r) => (r === 'unknown' ? NO_REASON : gapLabel(meta, r));
   // With no errands at all, nothing is marked "Not in an errand".
   const errands = Object.keys(errandOf).length > 0;
   const open = new Set(openErrand);

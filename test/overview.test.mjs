@@ -10,13 +10,12 @@ const meta = read('meta');
 const categories = meta.categories.map((c) => read(c.id));
 const capIndex = Object.fromEntries(categories.flatMap((cat) => cat.capabilities.map((cap) => [cap.id, { ...cap, category: cat.category }])));
 const capIds = Object.keys(capIndex);
-const gapLabel = (id) => meta.gapReasons.find((g) => g.id === id)?.label;
 const score = Object.fromEntries(scoreCountries(meta, categories).map((r) => [r.code, r.score]));
 const count = (html, re) => html.match(re)?.length ?? 0;
 
 test('every country: one data-cap button per capability, one fingerprint slice per capability, nothing throws', () => {
   for (const { code } of meta.countries) {
-    const html = mosaic({ meta, capIndex, code, gapLabel, errandOf: { [capIds[0]]: 'An errand' }, openErrand: [capIds[0]] });
+    const html = mosaic({ meta, capIndex, code, errandOf: { [capIds[0]]: 'An errand' }, openErrand: [capIds[0]] });
     const caps = [...html.matchAll(/<button type="button"[^>]* data-cap="([^"]+)" data-code="([^"]+)"/g)];
     assert.deepEqual(caps.map((m) => m[1]).sort(), [...capIds].sort(), code);
     assert.ok(caps.every((m) => m[2] === code));
@@ -33,7 +32,7 @@ test('every country: one data-cap button per capability, one fingerprint slice p
 test('a gap without a reason says "No reason recorded"; no errands means no errand marks', () => {
   const [id] = capIds;
   const one = { [id]: { ...capIndex[id], countries: { CL: { status: 'none', note: 'n', evidence: [] } } } };
-  const html = mosaic({ meta, capIndex: one, code: 'CL', gapLabel });
+  const html = mosaic({ meta, capIndex: one, code: 'CL' });
   assert.match(html, /aria-label="[^"]*No reason recorded\./);
   assert.match(html, /No reason recorded <b>1<\/b>/);
   assert.doesNotMatch(html, /errand/);
