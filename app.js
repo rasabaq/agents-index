@@ -56,7 +56,7 @@ function businessVerdict(r) {
 }
 const pick = (r) => `aria-current="${r.code === state.country}" aria-label="${esc(r.name)}, rank ${r.rank}, score ${r.score}"`;
 
-// The country picker: every country with its score, best first. It is the ranking too (the hero's "Open the ranking").
+// The country picker: every country with its score, best first. It is the ranking too (the hero's "Open the ranking" scrolls here).
 function renderPicker() {
   $('[data-clist]').innerHTML = ranking.map((r) => `
     <button type="button" data-go-country="${r.code}" ${pick(r)}>${flag(r.code)}<span>${r.code}</span><span class="rk-v">${r.score}</span></button>`).join('');
@@ -253,7 +253,7 @@ function selectCountry(code, scroll) {
   const keep = $('[data-kpis]').contains(a) && (a.dataset.errand ? `[data-errand="${a.dataset.errand}"]` : a.dataset.cap ? `[data-kpis] [data-cap="${a.dataset.cap}"]` : a.dataset.goCountry ? `.xc [data-go-country="${code}"]` : null);
   state.country = code;
   history.replaceState(null, '', writeHash(code, state.view, state.errand));
-  // Every country picker on the page (hero pins, world map, console) marks the same country.
+  // Every country picker on the page (the map stage, the console) marks the same country.
   document.querySelectorAll('[data-go-country]').forEach((el) => el.setAttribute('aria-current', el.dataset.goCountry === code));
   renderCountry();
   if (refocus) $('#cn-title').focus({ preventScroll: true });
@@ -267,12 +267,20 @@ function renderCounts() {
 }
 
 function wire() {
-  // Any country picker selects; pickers outside the console and the hero also bring the console into view.
+  // Any country picker selects; pickers outside the console also bring the console into view.
   document.addEventListener('click', (e) => {
     const el = e.target.closest('[data-go-country]');
     if (!el || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
-    selectCountry(el.dataset.goCountry, !el.closest('[data-term], [data-hero]'));
+    selectCountry(el.dataset.goCountry, !el.closest('[data-term]'));
+  });
+  // The map stage picks a country in place: select it without scrolling.
+  document.addEventListener('pickcountry', (e) => selectCountry(e.detail, false));
+  // "Open the ranking" scrolls to the picker but keeps #country=XX in the URL. Without scripts it is a plain #ranking link.
+  $('[data-to-ranking]').addEventListener('click', (e) => {
+    if (e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    $('#ranking').scrollIntoView({ behavior: scrollBehavior() });
   });
   // Compare with: the Head to head chart takes the pair and scrolls into view (viz-compare.js cancels the event).
   // If that chart did not draw, nothing cancels it, so the console switches to the other country instead.
