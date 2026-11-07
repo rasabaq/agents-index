@@ -17,7 +17,7 @@ In page order:
 - `charts-map-world` toggles the "World view" button: the camera flies out to the whole world and back.
 - `charts-map-areas` makes an area icon on the card the focus area: its tasks list on the card, the first is selected, and the seal, the map highlight and the strip follow the selected task.
 - `charts-map-pick` picks a country in the stage (select, ← / →, map click, swipe on the card): the stage flies there and sends `pickcountry`. A country picked anywhere else (`countrychange`) flies the stage there too.
-- `charts-map-tour` plays a tour by itself after the intro. It never changes the page's country. With reduced motion there is no tour.
+- `charts-map-tour` plays a tour by itself after the intro, on a plain visit to `/` only: a link to one country (`/#country=GB`) lands on it with no tour. The tour never changes the page's country. It holds while the stage is off screen. With reduced motion there is no tour.
 
 ## How to get to it (user POV)
 
