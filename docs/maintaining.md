@@ -74,6 +74,17 @@ A data PR is ready for Chief when all of these hold:
 
 The researcher who owns the file checks the facts. Maintainer checks the rules above.
 
+## The hero's agent log
+
+The home page hero shows a log of agents running errands, such as "book a table · GB". The lines live in `src/crew.js`. Each line points at one real cell, and its status and live count come from the data, so a data refresh updates the log by itself.
+
+To add or change a line:
+
+- Pick a cell, and use a product name that the cell's note names.
+- Add the product's icon as a 48 x 48 PNG in `images/logos`, and a row for it in `images/logos/SOURCES.md`.
+
+`npm run validate` and `npm test` fail when a line points at a missing cell, names a product its note does not name, or has no logo.
+
 ## Standard replies
 
 > **DRAFT.** Nobody has approved these replies yet. Until the user approves them, every reply goes to Chief first.
