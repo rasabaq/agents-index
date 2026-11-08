@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="hero.css">
   <link rel="stylesheet" href="console.css">
   <script type="module" src="hero.js"></script>
+  <script type="module" src="hero-crew.js"></script>
   <script type="module" src="app.js"></script>
   <link rel="stylesheet" href="charts/charts.css">
   <!-- Charts draw after the page above them: d3 and every chart script are deferred, then charts.js mounts them. -->
@@ -58,6 +59,19 @@
         <div class="hero-ctas">
           <a class="hero-btn hero-btn-1" href="#ranking" data-to-ranking>Open the ranking <span aria-hidden="true">→</span></a>
         </div>
+        <!-- Agents at work (hero-crew.js): the log types real errands, the pixel agent for each one does it below. -->
+        <section class="crew" aria-label="Agents at work: errands from the index" data-crew>
+          <div class="crew-log">
+            <div class="term-bar">
+              <span class="term-app"><i aria-hidden="true"></i>Agent log</span>
+              <span class="term-fill" aria-hidden="true"></span>
+              <span class="term-date"><i aria-hidden="true"></i>Data <span data-crew-asof></span></span>
+            </div>
+            <div class="crew-body"><div class="crew-list" role="log" aria-live="off" aria-label="Agent log" data-crew-list></div></div>
+            <ul class="crew-ports" aria-label="The four agents: how many countries have their current task live"></ul>
+          </div>
+          <div class="crew-yard" aria-hidden="true"><canvas class="crew-cv"></canvas></div>
+        </section>
       </div>
     </section>
 

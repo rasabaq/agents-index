@@ -40,3 +40,88 @@
   .hero h1 { font-size: clamp(32px, 10.4cqw, 60px); }
   .hero-ctas { margin-top: 36px; }
 }
+
+/* ---------- Agents at work (hero-crew.js): the agent log, and the pixel agents under it ----------
+   Wide screens: right of the headline. Top on the headline's cap line (the copy's padding + 10% of the h1 size),
+   bottom on the button's bottom, left on the lit "I" of INDEX and right on the wordmark's last lit column
+   (--wm-i and --wm-end come from hero.js; 24px is the .wrap padding). */
+.crew {
+  position: absolute; z-index: 1;
+  top: calc(56px + 0.1 * clamp(36px, 5.2cqw, 66px)); bottom: 0;
+  left: calc(24px + var(--wm-i)); right: calc(24px + var(--wm-end));
+  display: flex; flex-direction: column;
+}
+.crew:not(.is-ready) { visibility: hidden; }
+.crew-yard { position: relative; flex: 1; min-height: 0; }
+.crew-cv { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+
+/* the log: the console's window (.term-bar from console.css), a little shorter.
+   Bar 32 + four 23px rows + ports 26, plus the two inner borders: the top row fades out under the bar. */
+.crew-log {
+  --row: 23px;
+  flex: none; display: flex; flex-direction: column; height: 154px;
+  border: 1px solid rgba(255, 255, 255, 0.085); border-radius: var(--radius); overflow: clip;
+  background: rgba(10, 10, 18, 0.72); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 30px 70px -30px rgba(0, 0, 0, 0.85);
+  font: 400 12px/1 var(--mono); font-variant-numeric: tabular-nums;
+}
+.crew .term-bar { flex: none; height: 32px; }
+.crew .term-date { display: inline-flex; }
+
+/* status marks: console.css's shapes, a size smaller */
+.crew .dot { width: 10px; height: 10px; }
+.crew .dot.d-none { width: 9px; height: 2px; }
+.crew .dot.q { margin-right: 8px; } /* room for its "?" */
+
+/* rows: prompt, errand, country, status, product. The newest row sits at the bottom, next to the agents' ports. */
+.crew-body { flex: 1; min-height: 0; overflow: hidden; -webkit-mask-image: linear-gradient(transparent, #000 45%); mask-image: linear-gradient(transparent, #000 45%); }
+.crew-list { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.crew-row { flex: none; display: grid; grid-template-columns: 12px minmax(0, 1fr) 26px 96px minmax(0, 0.9fr); column-gap: 12px; align-items: center; height: var(--row); padding: 0 18px; white-space: nowrap; color: var(--ink-2); transition: background-color 0.3s; }
+.crew-row > * { overflow: hidden; text-overflow: ellipsis; }
+.crew-row.is-on { background: rgba(255, 255, 255, 0.04); }
+.crew-p { color: var(--tone); }
+.crew-task { color: var(--ink); }
+.crew-st { display: flex; align-items: center; gap: 8px; }
+.crew-st b { font-weight: inherit; }
+.crew-st[data-s='live'] { color: var(--ink); }
+.crew-st[data-s='announced'], .crew-st[data-s='none'] { color: var(--muted); }
+.crew-via { display: flex; align-items: center; gap: 7px; color: var(--sunrise); }
+.crew-via span { overflow: hidden; text-overflow: ellipsis; }
+.crew-via.is-none { color: var(--muted); }
+/* the product's logo, 12 x 12 cells, one cell per pixel */
+.crew-logo { flex: none; width: 12px; height: 12px; image-rendering: pixelated; }
+.crew-st, .crew-cc, .crew-via { transition: opacity 0.25s; }
+.crew-row .is-hidden { opacity: 0; }
+.crew-st .dot { transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1); }
+.crew-st.is-hidden .dot { transform: scale(0.2); }
+/* the block caret: blinks while the agent waits, solid while it types */
+.crew-caret { display: inline-block; width: 7px; height: 13px; margin-left: 1px; vertical-align: -2px; background: var(--magenta); animation: crew-blink 1s steps(1) infinite; }
+.is-typing .crew-caret { animation: none; }
+@keyframes crew-blink { 50% { opacity: 0; } }
+
+/* one port per agent along the log's bottom edge: name, how many countries have its current task live, and the
+   status mark of its last errand. Each agent's wire hangs from its port's mark. */
+.crew-ports { flex: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); height: 26px; margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.055); }
+.crew-port { display: flex; align-items: center; justify-content: flex-end; gap: 6px; min-width: 0; padding: 0 9px 0 4px; font: 500 10px/1 var(--mono); color: var(--muted); white-space: nowrap; transition: background-color 0.3s, color 0.3s; }
+.crew-port + .crew-port { border-left: 1px solid rgba(255, 255, 255, 0.045); }
+.crew-port b { font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tone); }
+.crew-port.is-on { background: color-mix(in srgb, var(--tone) 14%, transparent); color: var(--ink); }
+.crew-port .dot { transform: scale(0.8); }
+
+/* Under 1200px the headline grows wide, so there is no right side: the crew moves under the button.
+   The log shows three rows; the yard keeps the agents' 124 x 32 cell grid. */
+@container (max-width: 1199px) {
+  .crew { position: relative; inset: auto; max-width: 560px; margin-top: 36px; }
+  .crew-log { height: 130px; }
+  .crew-yard { flex: none; aspect-ratio: 124 / 32; }
+}
+@container (max-width: 720px) {
+  .crew { margin-top: 32px; }
+  .crew-log { height: 124px; font-size: 11px; }
+  .crew-row { grid-template-columns: 10px minmax(0, 1fr) 20px 10px minmax(0, 1fr); column-gap: 10px; padding: 0 14px; }
+  .crew-st { overflow: visible; }
+  .crew-st b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } /* read, not shown */
+  .crew-port { gap: 5px; padding: 0 7px 0 3px; font-size: 9.5px; }
+  .crew-port b { letter-spacing: 0.08em; }
+  .crew-port .cnt-live { display: none; }
+}
