@@ -1,4 +1,4 @@
-# Files Cloudflare must not publish. Only the site goes up: index.html, companies.html, countries.html, *.js, *.css, favicon.svg, charts/, data/, src/.
+# Files Cloudflare must not publish. Only the site goes up: index.html, companies.html, countries.html, *.js, *.css, favicon.svg, charts/, data/, images/, src/.
 .*
 node_modules/
 docs/
