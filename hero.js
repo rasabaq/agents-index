@@ -252,6 +252,15 @@ function buildMask() {
   wm.width = Math.round(avail * wdpr);
   wm.height = Math.round(rows * cell * wdpr);
   gapD = cell >= 3 ? Math.max(1, Math.round(wdpr)) : wdpr >= 2 ? 1 : 0;
+  // The crew beside the headline (hero-crew.js) shares this grid. Tell it the cell size and, in px from the canvas's
+  // edges, where the lit "I" of INDEX starts and where the last lit column ends; 'herolayout' says they changed.
+  const iFrom = LINES.length > 1 ? 0 : Math.round(ms[0].actualBoundingBoxLeft) + t.measureText('AGENT ').width;
+  let iCol = cols, end = 0;
+  for (const idx of lit) { const cx = idx % cols; if (cx >= iFrom && cx < iCol) iCol = cx; if (cx > end) end = cx; }
+  hero.style.setProperty('--wm-cell', `${cell}px`);
+  hero.style.setProperty('--wm-i', `${iCol * cell}px`);
+  hero.style.setProperty('--wm-end', `${avail - (end + 1) * cell}px`);
+  hero.dispatchEvent(new Event('herolayout'));
   return true;
 }
 function drawWord(time) {
