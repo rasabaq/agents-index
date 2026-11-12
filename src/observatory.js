@@ -76,7 +76,7 @@ export function validate(meta, categories) {
           errors.push(`${where}/${code}: missing`);
           continue;
         }
-        if (!STATUSES[cell.status]) errors.push(`${where}/${code}: bad status "${cell.status}"`);
+        if (!Object.hasOwn(STATUSES, cell.status)) errors.push(`${where}/${code}: bad status "${cell.status}"`);
         if (!cell.note) errors.push(`${where}/${code}: needs a note`);
         if (cell.confidence !== undefined && cell.confidence !== 'low') errors.push(`${where}/${code}: confidence can only be "low"`);
         // Why a cell is not live yet: one of the ids in meta.gapReasons, never on a live cell.

@@ -44,6 +44,8 @@ const top = (xs) => (xs.length ? Math.max(...xs) : null);
 async function measure(r) {
   const info = await (await gh(`repos/${r.repo}`)).json();
   if (info.full_name.toLowerCase() !== r.repo.toLowerCase()) throw new Error(`moved to ${info.full_name}; update "repo"`);
+  // The token may see private repos; never publish one's stats.
+  if (info.private) throw new Error('private repo; list only public repos');
   const dls = [];
   for (const p of r.packages ?? []) dls.push(await downloads(p));
   const pulls = [];
