@@ -467,45 +467,31 @@
           ]
         },
         "GB": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own. We found no UK payroll provider whose agent runs payroll.",
+          "note": "PayFit Copilot, an AI agent built into PayFit's payroll and HR software, answers employees' questions about their contract, pay and leave. It does not approve leave or run payroll on its own, so HR still does the last step.",
           "evidence": [
             {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
-              "type": "company"
-            },
-            {
-              "title": "The Big Deel 2026: Everything We Announced",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/big-deel-recap-2026/",
-              "date": "2026-03-20",
-              "type": "company"
+              "title": "PayFit launches first AI agent for workers",
+              "publisher": "Workplace Journal",
+              "url": "https://workplacejournal.co.uk/2026/01/payfit-launches-first-ai-agent-for-workers/",
+              "date": "2026-01-21",
+              "type": "news"
             }
           ]
         },
         "DE": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Personio's AI Assistant answers employees' HR questions, and Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own.",
+          "note": "Personio Assistant lets employees ask HR questions, such as how many vacation days they have left, and request an absence in the chat. It does not approve the request or run payroll, so a manager or HR still does the last step.",
           "evidence": [
             {
-              "title": "HUG 2025 feature updates (AI Assistant for all employees)",
+              "title": "Personio Assistant launch resources to share with employees",
               "publisher": "Personio",
-              "url": "https://www.personio.com/about-personio/press/hug-2025-feature-updates/",
-              "date": "2025-10-16",
-              "type": "company"
-            },
-            {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "url": "https://community.personio.de/fid-260/tid-14849",
+              "date": "2026-02-19",
               "type": "company"
             }
           ]
@@ -526,96 +512,104 @@
           "confidence": "low"
         },
         "BR": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own, or sends eSocial events. LG lugar de gente plans payroll-checking agents in its 2026 roadmap, with no date.",
+          "note": "Senior's Folha X (September 2026) lets HR work on payroll by chatting with an AI, but a person still checks and approves the run, and Senior mostly serves larger firms. Sólides markets AI for small businesses that checks payroll before payment. No source shows an agent that runs payroll or files with eSocial on its own.",
           "evidence": [
             {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "title": "O RH já pode operar a folha de pagamento em conversas com a IA",
+              "publisher": "Senior Sistemas",
+              "url": "https://www.senior.com.br/?p=833735",
+              "date": "2026-09-21",
               "type": "company"
             },
             {
-              "title": "Roadmap Nuvem 2026",
-              "publisher": "LG lugar de gente",
-              "url": "https://page.lg.com.br/lps/wp-content/uploads/2026/01/Roadmap-Nuvem-2026.pdf",
-              "date": "2026-01",
-              "type": "company"
+              "title": "IA que trabalha para a PME: a aposta da Sólides para transformar a gestão de pessoas (sponsored)",
+              "publisher": "Bloomberg Línea",
+              "url": "https://www.bloomberglinea.com.br/2026/05/19/ia-que-trabalha-para-a-pme-a-aposta-da-solides-para-transformar-a-gestao-de-pessoas/",
+              "date": "2026-05-19",
+              "type": "news"
             }
           ]
         },
         "MX": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own, or files with IMSS or SAT. We found no payroll agent from Runa or Alegra.",
+          "note": "Buk's Agente del Colaborador answers employees' questions about vacation and payslips and lets them request vacation in Slack, Teams or Google Chat. It does not run payroll or file with the IMSS or SAT, so a person still does the last step.",
           "evidence": [
             {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "title": "Agentes de IA para Recursos Humanos",
+              "publisher": "Buk",
+              "url": "https://www.buk.mx/productos/ia-y-automatizaciones/agentes-ia",
+              "date": "2026-11",
               "type": "company"
             }
           ]
         },
         "CL": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own. We found no payroll agent from Buk or Talana.",
+          "note": "Buk's Agente del Colaborador answers employees' questions about vacation and payslips and lets them request vacation in chat; Buk says several of its agents are still in beta. Talana's Smart Talana and Rex+'s Smart Rex answer payroll questions and build reports. None runs payroll or files with Previred or the SII on its own, so a person still does the last step.",
           "evidence": [
             {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "title": "Agentes de IA para Recursos Humanos",
+              "publisher": "Buk",
+              "url": "https://www.buk.cl/productos/ia-y-automatizaciones/agentes-ia",
+              "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Nueva solución de RRHH con IA",
+              "publisher": "Buk",
+              "url": "https://www.buk.cl/blog/ia-automatizaciones-buk-nueva-solucion-rrhh",
+              "date": "2026-10-29",
+              "type": "company"
+            },
+            {
+              "title": "Reportes de remuneraciones con IA: qué son y qué resuelven",
+              "publisher": "Talana",
+              "url": "https://web.talana.com/blog/reportes-de-remuneraciones-con-ia-que-son-y-que-resuelven",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Rex+ lanza Smart Rex, agente IA para nóminas en Chile",
+              "publisher": "Ecosistema Startup",
+              "url": "https://ecosistemastartup.com/rex-lanza-smart-rex-agente-ia-para-nominas-en-chile/",
+              "date": "2026-10-02",
+              "type": "news"
             }
           ]
         },
         "CO": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Aleluya's AI agent checks payroll before you pay, and Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own; no agent sends the electronic payroll to DIAN.",
+          "note": "Aleluya's Pulso is an AI agent that checks each payroll run and warns about errors and overcharges before you pay. It does not approve or pay anything, so a person still does the last step.",
           "evidence": [
             {
               "title": "Aleluya vs Siigo, Buk, Siesa y Loggro: compara tu nómina",
               "publisher": "Aleluya",
               "url": "https://aleluya.com/compara-nomina",
-              "date": "2026-07",
-              "type": "company"
-            },
-            {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "date": "2026-11",
               "type": "company"
             }
           ]
         },
         "ES": {
-          "status": "none",
-          "gapReason": "not-launched",
-          "note": "Factorial, the Barcelona HR firm, launched its One AI agent in October 2026 and says it executes tasks, but no source says it runs payroll or files an HR form on its own; Deel's AI Workforce flags payroll errors but does not run payroll.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "Factorial One, the AI agent in Factorial's HR and payroll software, explains payslip lines to employees. It does not run payroll or file forms, so a person still approves and pays.",
           "evidence": [
             {
-              "title": "Factorial completes the jump to AI for companies with a new personal agent",
-              "publisher": "Ara",
-              "url": "https://en.ara.cat/economy/factorial-completes-the-jump-to-ai-for-companies-with-new-personal-agent_1_5872571.html",
-              "date": "2026-10-07",
-              "type": "news"
-            },
-            {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "title": "Entiende tu nómina con One",
+              "publisher": "Factorial",
+              "url": "https://www.factorial.es/product-launches/understand-your-payslip-with-one",
+              "date": "2026-11-03",
               "type": "company"
             }
           ]
@@ -659,8 +653,15 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "We found no Japanese payroll provider whose agent runs payroll or files a form on its own; freee, Money Forward and SmartHR announced no such agent, and a 2026 market review found no payroll AI that pays without a person's approval.",
+          "note": "We found no Japanese payroll or HR product whose AI agent runs payroll or files a form on its own. freee said in June 2026 that it is building AI agents into its accounting and HR services, but it named no live payroll agent, and Money Forward and SmartHR showed none.",
           "evidence": [
+            {
+              "title": "freee, AIエージェント機能の実装を推進",
+              "publisher": "IT Leaders (Impress)",
+              "url": "https://it.impress.co.jp/articles/-/29502",
+              "date": "2026-06-25",
+              "type": "news"
+            },
             {
               "title": "2026年版 給与計算向けAIエージェント12選",
               "publisher": "Rework",
@@ -730,19 +731,19 @@
           "confidence": "low"
         },
         "ID": {
-          "status": "none",
-          "note": "Mekari Talenta runs payroll, PPh 21 and BPJS calculations, and can create e-Bupot tax forms without manual upload to Coretax, but it presents these as automation with no AI claimed. Its AI Assistant gives HR insights and answers. We found no AI agent that runs payroll or files a form for a business on its own, so confidence is low.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "Mekari Talenta's AI Assistant gives HR teams answers and insights. Talenta's payroll works out PPh 21 and BPJS and can create e-Bupot tax forms, but that is automation, and no source says the assistant runs payroll or files a form on its own.",
           "evidence": [
             {
-              "title": "Mekari Talenta payroll software features",
+              "title": "Mekari Talenta: AI Assistant",
               "publisher": "Mekari Talenta",
-              "url": "https://www.talenta.co/fitur/aplikasi-payroll",
+              "url": "https://www.talenta.co/en/home-2",
               "date": "2026-11",
               "type": "company"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "IT": {
           "status": "none",
@@ -760,19 +761,19 @@
           "confidence": "low"
         },
         "NL": {
-          "status": "limited",
-          "note": "SD Worx, a payroll provider, is rolling out a team of AI agents for payroll work in the Netherlands, but human experts still check the work. The article gives mixed signals on whether the Dutch rollout has started, so this is low confidence.",
+          "status": "announced",
+          "gapReason": "not-launched",
+          "confidence": "low",
+          "note": "SD Worx runs AI payroll agents for small-business payroll teams in Belgium, with human experts checking the work. It says agents for the Netherlands are being developed, with no launch date, so Dutch small businesses cannot use one yet.",
           "evidence": [
             {
-              "title": "SD Worx integrates AI agents into payroll system",
-              "publisher": "ITdaily",
-              "url": "https://itdaily.com/news/business/sdworx-agents-payroll/",
-              "date": "2026-06-25",
-              "type": "news"
+              "title": "SD Worx introduces agentic AI payroll to enhance customer engagement",
+              "publisher": "SD Worx",
+              "url": "https://www.sdworx.com/en-en/about-sd-worx/press/2026-06-24-sd-worx-introduces-agentic-ai-payroll-enhance-customer-engagement",
+              "date": "2026-06-24",
+              "type": "company"
             }
-          ],
-          "gapReason": "assist-only",
-          "confidence": "low"
+          ]
         },
         "AE": {
           "status": "limited",
@@ -805,48 +806,41 @@
           "confidence": "low"
         },
         "ZA": {
-          "status": "none",
-          "note": "We found no South African payroll or HR product where an agent runs payroll or files a form for you. SimplePay and Xero show no such agent, and PaySpace's AI Assist only answers payslip and payroll-setup questions. Sage's page could not be opened, and Deel's AI Workforce names no South African feature, so confidence is low.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "PaySpace's AI Assist, built into every edition, answers payroll questions in plain language, such as why an employee's net pay changed. It does not run payroll or file EMP201 or IRP5 forms, and Sage's payroll agents are early access or only flag anomalies, so a person still does the last step.",
           "evidence": [
             {
-              "title": "PaySpace home page",
+              "title": "PaySpace: AI Assist",
               "publisher": "PaySpace",
               "url": "https://www.payspace.com/",
               "date": "2026-11",
               "type": "company"
             },
             {
-              "title": "SimplePay home page",
-              "publisher": "SimplePay",
-              "url": "https://www.simplepay.co.za/",
-              "date": "2026-11",
-              "type": "company"
+              "title": "Sage AI gains momentum in Africa and the Middle East (partnered content)",
+              "publisher": "IOL",
+              "url": "https://iol.co.za/news/partnered/2026-05-22-sage-ai-gains-momentum-in-africa-and-the-middle-east-helping-smbs-reduce-admin-and-unlock-growth/",
+              "date": "2026-05-22",
+              "type": "news"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "KE": {
-          "status": "none",
-          "note": "We found no Kenyan payroll or HR tool where an AI agent runs payroll or files forms on its own. Deel Local Payroll works out PAYE and makes P9 forms, and it has an 'Ask AI' helper for payroll questions, but no source says its AI acts alone. KRA's planned payroll API is not confirmed as live.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "PaySpace's Kenya product includes AI Assist, which answers payroll questions in plain language for employees and payroll admins. It does not run payroll or file PAYE returns with the KRA, so a person still does the last step.",
           "evidence": [
             {
-              "title": "Deel Local Payroll (Kenya)",
-              "publisher": "PaySpace (Deel Local Payroll)",
+              "title": "PaySpace Kenya: AI Assist",
+              "publisher": "PaySpace",
               "url": "https://payspace.com/kenya",
               "date": "2026-11",
               "type": "company"
-            },
-            {
-              "title": "Kenya | Simplified Pay-As-You-Earn (PAYE) filing process",
-              "publisher": "PaySpace",
-              "url": "https://support.payspace.com/portal/en/kb/articles/kenya-simplified-pay-as-you-earn-paye-filing-process",
-              "date": "2026-11",
-              "type": "company"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "AR": {
           "status": "none",
