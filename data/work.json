@@ -653,8 +653,15 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "We found no Japanese payroll provider whose agent runs payroll or files a form on its own; freee, Money Forward and SmartHR announced no such agent, and a 2026 market review found no payroll AI that pays without a person's approval.",
+          "note": "We found no Japanese payroll or HR product whose AI agent runs payroll or files a form on its own. freee said in June 2026 that it is building AI agents into its accounting and HR services, but it named no live payroll agent, and Money Forward and SmartHR showed none.",
           "evidence": [
+            {
+              "title": "freee, AIエージェント機能の実装を推進",
+              "publisher": "IT Leaders (Impress)",
+              "url": "https://it.impress.co.jp/articles/-/29502",
+              "date": "2026-06-25",
+              "type": "news"
+            },
             {
               "title": "2026年版 給与計算向けAIエージェント12選",
               "publisher": "Rework",
@@ -724,19 +731,19 @@
           "confidence": "low"
         },
         "ID": {
-          "status": "none",
-          "note": "Mekari Talenta runs payroll, PPh 21 and BPJS calculations, and can create e-Bupot tax forms without manual upload to Coretax, but it presents these as automation with no AI claimed. Its AI Assistant gives HR insights and answers. We found no AI agent that runs payroll or files a form for a business on its own, so confidence is low.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "Mekari Talenta's AI Assistant gives HR teams answers and insights. Talenta's payroll works out PPh 21 and BPJS and can create e-Bupot tax forms, but that is automation, and no source says the assistant runs payroll or files a form on its own.",
           "evidence": [
             {
-              "title": "Mekari Talenta payroll software features",
+              "title": "Mekari Talenta: AI Assistant",
               "publisher": "Mekari Talenta",
-              "url": "https://www.talenta.co/fitur/aplikasi-payroll",
+              "url": "https://www.talenta.co/en/home-2",
               "date": "2026-11",
               "type": "company"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "IT": {
           "status": "none",
@@ -799,48 +806,41 @@
           "confidence": "low"
         },
         "ZA": {
-          "status": "none",
-          "note": "We found no South African payroll or HR product where an agent runs payroll or files a form for you. SimplePay and Xero show no such agent, and PaySpace's AI Assist only answers payslip and payroll-setup questions. Sage's page could not be opened, and Deel's AI Workforce names no South African feature, so confidence is low.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "PaySpace's AI Assist, built into every edition, answers payroll questions in plain language, such as why an employee's net pay changed. It does not run payroll or file EMP201 or IRP5 forms, and Sage's payroll agents are early access or only flag anomalies, so a person still does the last step.",
           "evidence": [
             {
-              "title": "PaySpace home page",
+              "title": "PaySpace: AI Assist",
               "publisher": "PaySpace",
               "url": "https://www.payspace.com/",
               "date": "2026-11",
               "type": "company"
             },
             {
-              "title": "SimplePay home page",
-              "publisher": "SimplePay",
-              "url": "https://www.simplepay.co.za/",
-              "date": "2026-11",
-              "type": "company"
+              "title": "Sage AI gains momentum in Africa and the Middle East (partnered content)",
+              "publisher": "IOL",
+              "url": "https://iol.co.za/news/partnered/2026-05-22-sage-ai-gains-momentum-in-africa-and-the-middle-east-helping-smbs-reduce-admin-and-unlock-growth/",
+              "date": "2026-05-22",
+              "type": "news"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "KE": {
-          "status": "none",
-          "note": "We found no Kenyan payroll or HR tool where an AI agent runs payroll or files forms on its own. Deel Local Payroll works out PAYE and makes P9 forms, and it has an 'Ask AI' helper for payroll questions, but no source says its AI acts alone. KRA's planned payroll API is not confirmed as live.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "confidence": "low",
+          "note": "PaySpace's Kenya product includes AI Assist, which answers payroll questions in plain language for employees and payroll admins. It does not run payroll or file PAYE returns with the KRA, so a person still does the last step.",
           "evidence": [
             {
-              "title": "Deel Local Payroll (Kenya)",
-              "publisher": "PaySpace (Deel Local Payroll)",
+              "title": "PaySpace Kenya: AI Assist",
+              "publisher": "PaySpace",
               "url": "https://payspace.com/kenya",
               "date": "2026-11",
               "type": "company"
-            },
-            {
-              "title": "Kenya | Simplified Pay-As-You-Earn (PAYE) filing process",
-              "publisher": "PaySpace",
-              "url": "https://support.payspace.com/portal/en/kb/articles/kenya-simplified-pay-as-you-earn-paye-filing-process",
-              "date": "2026-11",
-              "type": "company"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "AR": {
           "status": "none",
