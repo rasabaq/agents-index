@@ -512,75 +512,89 @@
           "confidence": "low"
         },
         "BR": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own, or sends eSocial events. LG lugar de gente plans payroll-checking agents in its 2026 roadmap, with no date.",
+          "note": "Senior's Folha X (September 2026) lets HR work on payroll by chatting with an AI, but a person still checks and approves the run, and Senior mostly serves larger firms. Sólides markets AI for small businesses that checks payroll before payment. No source shows an agent that runs payroll or files with eSocial on its own.",
           "evidence": [
             {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "title": "O RH já pode operar a folha de pagamento em conversas com a IA",
+              "publisher": "Senior Sistemas",
+              "url": "https://www.senior.com.br/?p=833735",
+              "date": "2026-09-21",
               "type": "company"
             },
             {
-              "title": "Roadmap Nuvem 2026",
-              "publisher": "LG lugar de gente",
-              "url": "https://page.lg.com.br/lps/wp-content/uploads/2026/01/Roadmap-Nuvem-2026.pdf",
-              "date": "2026-01",
-              "type": "company"
+              "title": "IA que trabalha para a PME: a aposta da Sólides para transformar a gestão de pessoas (sponsored)",
+              "publisher": "Bloomberg Línea",
+              "url": "https://www.bloomberglinea.com.br/2026/05/19/ia-que-trabalha-para-a-pme-a-aposta-da-solides-para-transformar-a-gestao-de-pessoas/",
+              "date": "2026-05-19",
+              "type": "news"
             }
           ]
         },
         "MX": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own, or files with IMSS or SAT. We found no payroll agent from Runa or Alegra.",
+          "note": "Buk's Agente del Colaborador answers employees' questions about vacation and payslips and lets them request vacation in Slack, Teams or Google Chat. It does not run payroll or file with the IMSS or SAT, so a person still does the last step.",
           "evidence": [
             {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "title": "Agentes de IA para Recursos Humanos",
+              "publisher": "Buk",
+              "url": "https://www.buk.mx/productos/ia-y-automatizaciones/agentes-ia",
+              "date": "2026-11",
               "type": "company"
             }
           ]
         },
         "CL": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own. We found no payroll agent from Buk or Talana.",
+          "note": "Buk's Agente del Colaborador answers employees' questions about vacation and payslips and lets them request vacation in chat; Buk says several of its agents are still in beta. Talana's Smart Talana and Rex+'s Smart Rex answer payroll questions and build reports. None runs payroll or files with Previred or the SII on its own, so a person still does the last step.",
           "evidence": [
             {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "title": "Agentes de IA para Recursos Humanos",
+              "publisher": "Buk",
+              "url": "https://www.buk.cl/productos/ia-y-automatizaciones/agentes-ia",
+              "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Nueva solución de RRHH con IA",
+              "publisher": "Buk",
+              "url": "https://www.buk.cl/blog/ia-automatizaciones-buk-nueva-solucion-rrhh",
+              "date": "2026-10-29",
+              "type": "company"
+            },
+            {
+              "title": "Reportes de remuneraciones con IA: qué son y qué resuelven",
+              "publisher": "Talana",
+              "url": "https://web.talana.com/blog/reportes-de-remuneraciones-con-ia-que-son-y-que-resuelven",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Rex+ lanza Smart Rex, agente IA para nóminas en Chile",
+              "publisher": "Ecosistema Startup",
+              "url": "https://ecosistemastartup.com/rex-lanza-smart-rex-agente-ia-para-nominas-en-chile/",
+              "date": "2026-10-02",
+              "type": "news"
             }
           ]
         },
         "CO": {
-          "status": "none",
-          "gapReason": "not-launched",
+          "status": "limited",
+          "gapReason": "assist-only",
           "confidence": "low",
-          "note": "Aleluya's AI agent checks payroll before you pay, and Deel's AI Workforce flags payroll errors before payout and handles managers' time-off requests, but no source says it approves a request or runs payroll on its own; no agent sends the electronic payroll to DIAN.",
+          "note": "Aleluya's Pulso is an AI agent that checks each payroll run and warns about errors and overcharges before you pay. It does not approve or pay anything, so a person still does the last step.",
           "evidence": [
             {
               "title": "Aleluya vs Siigo, Buk, Siesa y Loggro: compara tu nómina",
               "publisher": "Aleluya",
               "url": "https://aleluya.com/compara-nomina",
-              "date": "2026-07",
-              "type": "company"
-            },
-            {
-              "title": "Deel launches AI Workforce",
-              "publisher": "Deel",
-              "url": "https://www.deel.com/blog/deel-launches-ai-workforce/",
-              "date": "2025-08-19",
+              "date": "2026-11",
               "type": "company"
             }
           ]
