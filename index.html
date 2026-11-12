@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Only this site may run scripts, so markup slipped into the data cannot run. Styles allow inline for style="" and the charts' <style> blocks.
+       Images also allow GitHub, where repo logos come from. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://github.com https://avatars.githubusercontent.com; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#05060b">
   <meta name="viewport" content="width=device-width, initial-scale=1">
