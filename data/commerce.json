@@ -74,13 +74,6 @@
               "type": "company"
             },
             {
-              "title": "Amazon brings Alexa+ to the UK",
-              "publisher": "TechCrunch",
-              "url": "https://techcrunch.com/2026/03/19/amazon-brings-alexa-to-the-uk",
-              "date": "2026-03-19",
-              "type": "news"
-            },
-            {
               "title": "How we're helping retailers thrive with new Universal Commerce Protocol features",
               "publisher": "Google",
               "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
@@ -161,7 +154,7 @@
         "MX": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Alexa+ is available, in early access since January 2026, and it can order and pay for you (for example food orders). Gemini lists Mexico for shopping, but its Buy button needs Google Pay agentic checkout, which works only in the US and Australia. No ChatGPT, Copilot or Perplexity checkout is offered, and no Mercado Libre or Walmart México checkout inside a chat was found. Liverpool has only announced groundwork (November 2025, with commercetools) to let shoppers buy in ChatGPT \"where supported\".",
+          "note": "Only Alexa+ is available, in early access since January 2026, and it can order and pay for you (for example food orders). Gemini lists Mexico for shopping, but its Buy button needs Google Pay agentic checkout, which works only in the US and Australia. No ChatGPT, Copilot or Perplexity checkout is offered, and no Mercado Libre or Walmart México checkout inside a chat was found. Liverpool has only announced groundwork (November 2025, with commercetools) to let shoppers buy in ChatGPT \"where supported\". Since 5 November 2026 Meta's Muse agent also sells Cinépolis tickets inside the chat in Mexico.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
@@ -197,13 +190,20 @@
               "url": "https://commercetools.com/press-releases/commercetools-and-liverpool-agentic-commerce",
               "date": "2025-11-05",
               "type": "company"
+            },
+            {
+              "title": "Muse de Meta llega a México: ¿cómo descargarlo gratis y qué puedes hacer con su IA?",
+              "publisher": "Expansión",
+              "url": "https://expansion.mx/tecnologia/2026/11/05/muse-el-agente-de-meta-llega-a-mexico",
+              "date": "2026-11-05",
+              "type": "news"
             }
           ]
         },
         "CL": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Jumbo's WhatsApp AI assistant (since June 2026, in Santiago and the Valparaíso Region) builds a grocery cart in the chat, but you pay on jumbo.cl or in its app. Gemini lists Chile for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US-only, and Alexa+ is not in Chile. Only trade press covers Jumbo's assistant.",
+          "note": "Jumbo's WhatsApp AI (since June 2026, in Santiago and the Valparaiso Region, per press) builds a grocery cart in the chat, but you confirm and pay on jumbo.cl or in its app, as Jumbo's own page says. Gemini lists Chile for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only). Copilot Checkout is US-only, and Alexa+ is not in Chile. No ChatGPT or Perplexity checkout for Chile was found.",
           "evidence": [
             {
               "title": "Use agentic checkout with Google Pay",
@@ -227,26 +227,25 @@
               "type": "company"
             },
             {
-              "title": "Un supermercado de Cencosud estrena las compras por WhatsApp impulsadas por IA",
-              "publisher": "Perú Retail",
-              "url": "https://www.peru-retail.com/un-supermercado-de-cencosud-estrena-las-compras-por-whatsapp-impulsadas-por-ia/",
-              "date": "2026-06-24",
-              "type": "news"
+              "title": "Compras JUMBO por WhatsApp",
+              "publisher": "Jumbo",
+              "url": "https://www.jumbo.cl/oferta/compra-whatsapp",
+              "date": "2026-06",
+              "type": "company"
             },
             {
-              "title": "Jumbo lanza compras de supermercado vía WhatsApp",
-              "publisher": "Chócale",
-              "url": "https://chocale.cl/2026/06/jumbo-lanza-compras-de-supermercado-via-whatsapp/",
-              "date": "2026-06-19",
-              "type": "news"
+              "title": "Microsoft propels retail forward with agentic AI capabilities (Copilot Checkout)",
+              "publisher": "Microsoft",
+              "url": "https://news.microsoft.com/source/2026/01/08/microsoft-propels-retail-forward-with-agentic-ai-capabilities-that-power-intelligent-automation-for-every-retail-function/",
+              "date": "2026-01-08",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "CO": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No in-chat checkout found. Rappi has announced a WhatsApp assistant that takes orders, but it has not launched and Rappi has not said you can pay in the chat. Gemini lists Colombia for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only), Copilot Checkout is US-only, Alexa+ is not in Colombia, and no chat checkout from Éxito or Falabella was found.",
+          "note": "No in-chat checkout found. Rappi has announced a WhatsApp assistant that takes orders and tested voice ordering in beta (press), but has not said you can pay in the chat. Gemini lists Colombia for shopping, but its Buy button needs Google Pay agentic checkout (US and Australia only). Copilot Checkout is US-only, Alexa+ is not in Colombia, and no chat checkout from Éxito or Falabella was found. Searched Rappi, Éxito, Falabella, ChatGPT and Perplexity for Colombia (Nov 2026); no primary source.",
           "evidence": [
             {
               "title": "Use agentic checkout with Google Pay",
@@ -275,6 +274,13 @@
               "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
               "date": "2025-09-30",
               "type": "news"
+            },
+            {
+              "title": "Microsoft propels retail forward with agentic AI capabilities (Copilot Checkout)",
+              "publisher": "Microsoft",
+              "url": "https://news.microsoft.com/source/2026/01/08/microsoft-propels-retail-forward-with-agentic-ai-capabilities-that-power-intelligent-automation-for-every-retail-function/",
+              "date": "2026-01-08",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -355,13 +361,6 @@
               "type": "company"
             },
             {
-              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
-              "publisher": "iPhoneSoft",
-              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
-              "date": "2026-05-26",
-              "type": "news"
-            },
-            {
               "title": "Use agentic checkout with Google Pay (US and Australia only)",
               "publisher": "Google",
               "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
@@ -379,7 +378,7 @@
         },
         "CA": {
           "status": "live",
-          "note": "Alexa+, open to everyone in Canada since June 2026, can search for and buy items on Amazon after you confirm the order. Google said in May 2026 that UCP checkout in AI Mode and Gemini will reach Canada in the coming months, and Shopify says direct checkout is rolling out to Canadian buyers, but Google Pay's agentic checkout page still lists only the US and Australia.",
+          "note": "Alexa+, open to everyone in Canada since June 2026, can search for and buy items on Amazon after you confirm the order. Google began direct checkout (UCP) for Canadian shoppers in AI Mode and the Gemini app on 4 November 2026, for a limited set of eligible retailers. Google Pay's agentic checkout page still lists only the US and Australia.",
           "evidence": [
             {
               "title": "Alexa+ launches in Canada (updated when Early Access ended)",
@@ -414,6 +413,13 @@
               "publisher": "Google Pay Help",
               "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "A new way to shop: Introducing a more intuitive, agentic shopping experience for consumers and retailers in Canada",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-ca/products/explore-get-answers/a-new-way-to-shop-introducing-a-more-intuitive-agentic-shopping-experience-for-consumers-and-retailers-in-canada/",
+              "date": "2026-11-04",
               "type": "company"
             }
           ]
@@ -490,7 +496,7 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT, Claude or OpenClaw buy airtime and data, pay bills and order Chowdeck food. The agent sets up each purchase in the chat, and you approve the payment on WhatsApp. Gemini shopping does not list Nigeria, Google Pay agentic checkout is only in the US and Australia, and Alexa+ is not offered here.",
+          "note": "Paystack Index, in early access and for Nigeria only at launch, lets Claude, ChatGPT or OpenClaw buy airtime and data, pay bills, send money and order Chowdeck food. Gemini shopping does not list Nigeria, Google Pay agentic checkout is only in the US and Australia, and Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "What is Paystack Index?",
@@ -498,13 +504,6 @@
               "url": "https://index.paystack.com/legal/support/about",
               "date": "2026-11",
               "type": "company"
-            },
-            {
-              "title": "Paystack launches AI checkout Index",
-              "publisher": "Techpoint Africa",
-              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
-              "date": "2026-06-25",
-              "type": "news"
             },
             {
               "title": "Get help with your shopping in Gemini Apps (supported countries)",
@@ -517,6 +516,13 @@
               "title": "Use agentic checkout with Google Pay",
               "publisher": "Google Pay Help",
               "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Food orders",
+              "publisher": "Paystack Index",
+              "url": "https://index.paystack.com/legal/support/food-orders",
               "date": "2026-11",
               "type": "company"
             }
@@ -604,7 +610,7 @@
         },
         "IT": {
           "status": "none",
-          "note": "We found no way for an Italian shopper to buy from an AI chat today. Google's Universal Cart launched only in the US on 15 October 2026, and Alexa+ is in invitation-only early access in Italy, but we found no sign that it places Amazon orders there. We could not check ChatGPT, Microsoft Copilot or Perplexity checkout for Italy.",
+          "note": "We found no way for an Italian shopper to buy from an AI chat today. Google's Universal Cart launched only in the US on 15 October 2026, and Alexa+ has been in early access in Italy since 15 April 2026, but we found no sign that it places Amazon orders there. We could not check ChatGPT, Microsoft Copilot or Perplexity checkout for Italy.",
           "evidence": [
             {
               "title": "Universal Cart launch",
@@ -704,8 +710,8 @@
           "confidence": "low"
         },
         "ZA": {
-          "status": "none",
-          "note": "No AI assistant can buy from a shop inside the chat for people in South Africa. Amazon's Alexa+ country list does not include South Africa, and Shopify's guide to selling through Google AI Mode and Gemini names only US, Canadian and Australian shoppers. We found no sign that ChatGPT Instant Checkout or Perplexity checkout works here.",
+          "status": "announced",
+          "note": "Paystack Index, which lets AI assistants such as Claude and ChatGPT make payments, is coming soon to South Africa. Paystack has a waitlist and gives no date. Amazon's Alexa+ country list does not include South Africa, and Shopify's guide to selling through Google AI Mode and Gemini names only US, Canadian and Australian shoppers. We found no sign that ChatGPT Instant Checkout or Perplexity checkout works here.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
@@ -727,14 +733,21 @@
               "url": "https://support.google.com/googlepay/answer/16421147?hl=en",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "What is Paystack Index?",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/legal/support/about",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "gapReason": "not-launched",
           "confidence": "low"
         },
         "KE": {
-          "status": "none",
-          "note": "No AI assistant can buy for a shopper inside a chat in Kenya. Gemini's shopping help, Alexa+ and Meta's direct checkout do not list Kenya, and Google Pay agentic checkout works only in the US and Australia. The Visa and ChatGPT purchase feature is not in Kenya yet, and I could not check OpenAI's own checkout country list.",
+          "status": "announced",
+          "note": "Paystack Index, which lets AI assistants such as Claude and ChatGPT make payments, is coming soon to Kenya. Paystack has a waitlist and gives no date. Gemini's shopping help, Alexa+ and Meta's direct checkout do not list Kenya, and Google Pay agentic checkout works only in the US and Australia. The Visa and ChatGPT purchase feature is not in Kenya yet, and I could not check OpenAI's own checkout country list.",
           "evidence": [
             {
               "title": "Use agentic checkout with Google Pay",
@@ -777,6 +790,13 @@
               "url": "https://dealfish.co.ke/2026/06/the-rise-of-ai-powered-shopping-in-kenya-convenience-booms-but-trust-stops-at-the-checkout-2026.html",
               "date": "2026-06-17",
               "type": "news"
+            },
+            {
+              "title": "What is Paystack Index?",
+              "publisher": "Paystack",
+              "url": "https://index.paystack.com/legal/support/about",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "gapReason": "not-launched",
@@ -784,7 +804,7 @@
         },
         "AR": {
           "status": "limited",
-          "note": "The bank-backed wallet MODO launched an app inside ChatGPT in October 2026 that lets any ChatGPT user search, build a cart and pay for Frávega products, but the user must confirm each payment. Fully autonomous purchases are not possible in Argentina yet, and only one press report covers the launch. Alexa+ is not offered in Argentina, and Google's agentic checkout works only in the US and Australia.",
+          "note": "The bank-backed wallet MODO launched an app inside ChatGPT in late September 2026 (press). It lets any ChatGPT user search, build a cart and pay for Frávega products. The user is sent to MODO to confirm each payment with a QR code, so the payment step leaves the chat. Fully autonomous purchases are not possible in Argentina yet, and only one press report covers the launch. Alexa+ is not offered in Argentina, and Google's agentic checkout works only in the US and Australia.",
           "evidence": [
             {
               "title": "El comercio agéntico ya llegó",
@@ -827,7 +847,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Amazon's Alexa for Shopping (with Rufus) can auto-buy at a set price for all US customers, Walmart's Sparky auto-reorders repeat items, and Amazon Buy for Me (buying from other brand sites) is still a beta for some US users.",
+          "note": "Amazon's Alexa for Shopping (with Rufus) can auto-buy at a set price for all US customers, Walmart's Sparky auto-reorders repeat items, and Amazon Buy for Me (buying from other brand sites) was in beta for some US users when Amazon announced it in April 2025.",
           "evidence": [
             {
               "title": "Alexa for Shopping",
@@ -840,7 +860,7 @@
               "title": "Amazon's new 'Buy for Me' feature helps customers find and buy products from other brands' sites",
               "publisher": "Amazon",
               "url": "https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands",
-              "date": "2026-10",
+              "date": "2025-04",
               "type": "company"
             },
             {
@@ -855,7 +875,7 @@
         "GB": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Amazon's Alexa+ in early access can order from Amazon for you; Rufus works in the UK, but its Auto Buy and Buy for Me are documented only in the US.",
+          "note": "Only Amazon's Alexa+ in early access can order from Amazon for you; Amazon's Alexa for Shopping page (updated 13 November 2026) lists the UK, but it does not say whether Auto Buy or Buy for Me work here. Buy for Me is documented only in the US.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
@@ -876,7 +896,7 @@
         "DE": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Amazon's Alexa+ in early access (since May 2026); Rufus is live in Germany, but its Auto Buy is documented only in the US.",
+          "note": "Only Amazon's Alexa+ in early access (since May 2026). Amazon's Alexa for Shopping page (updated 13 November 2026) lists Germany, but it does not say whether Auto Buy works there.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
@@ -884,12 +904,19 @@
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "BR": {
           "status": "live",
-          "note": "Magalu's own agent, Lu, places orders for shoppers inside WhatsApp (7.7 million users since November 2025), and Amazon's Alexa+ in early access (since June 2026) orders from Amazon after you confirm. Mercado Pago's Mago assistant makes payments but does not shop on Mercado Libre, and a Mercado Libre buying agent was only reported as planned (June 2026). Casas Bahia's WhatsApp assistant only gives advice, and iFood's Ailo hands the cart to the iFood app to pay.",
+          "note": "Magalu's own agent, Lu, places orders for shoppers inside WhatsApp (7.7 million users since November 2025), and Amazon's Alexa+ in early access (since June 2026) orders from Amazon after you confirm. Mercado Pago's Mago assistant makes payments but does not shop on Mercado Libre. A September 2026 iProUP report says some Mercado Libre users can already use agent features, but it names no country and does not say the agent completes purchases. Casas Bahia's WhatsApp assistant only gives advice, and iFood's Ailo hands the cart to the iFood app to pay.",
           "evidence": [
             {
               "title": "WhatsApp da Lu: canal oficial para compras AI Commerce",
@@ -925,13 +952,20 @@
               "url": "https://www.mercadopago.com.br/assistente-pessoal",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Mercado Libre ya prueba agentes de IA que compran por vos y revela cómo usará robots",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/innovacion/71442-mercado-libre-ya-prueba-agentes-de-ia-y-robots-para-entregas.amp",
+              "date": "2026-09-10",
+              "type": "news"
             }
           ]
         },
         "MX": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Amazon's Alexa+ in early access (since January 2026) can buy from Amazon for you. Walmart México's Sparky (in its app since 24 September 2026) helps find and compare products, but its press release does not mention adding to cart or paying. No Mercado Libre buying agent or Rufus launch in Mexico was found.",
+          "note": "Only Amazon's Alexa+ in early access (since January 2026) can buy from Amazon for you. Walmart México's Sparky (in its app since 24 September 2026) helps find and compare products, but its press release does not mention adding to cart or paying. Amazon's Alexa for Shopping page (updated 13 November 2026) lists Mexico, but it does not say whether Auto Buy works there. No Mercado Libre buying agent was found in Mexico.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
@@ -953,33 +987,33 @@
               "url": "https://www.walmartmexico.com/sala-de-prensa/2026/09/presentamos-sparky--nuestro-nuevo-asistente-de-compras-impulsado",
               "date": "2026-09-24",
               "type": "company"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "CL": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Jumbo (Cencosud) has a WhatsApp AI that builds a grocery cart in Santiago and the Valparaíso Region, but you pay on jumbo.cl or in its app. No buying agent was found from Falabella, Ripley, Lider or Mercado Libre, and Alexa+ is not in Chile. Only trade press covers Jumbo's assistant.",
+          "note": "Jumbo (Cencosud) has a WhatsApp AI that builds a grocery cart. Jumbo's own page (checked Nov 2026) says the order is confirmed and paid on jumbo.cl or in its app. Press reports say it covers Santiago and the Valparaiso Region; Jumbo's page names no area. Searched Falabella, Ripley, Lider and Mercado Libre Chile (Nov 2026): no buying agent found. Alexa+ is not in Chile. Confidence stays low: no primary source covers the local players.",
           "evidence": [
+            {
+              "title": "Compras JUMBO por WhatsApp",
+              "publisher": "Jumbo",
+              "url": "https://www.jumbo.cl/oferta/compra-whatsapp",
+              "date": "2026-06",
+              "type": "company"
+            },
             {
               "title": "Mercado Libre IA: claves para el futuro del retail 2026",
               "publisher": "ITSeller",
               "url": "https://www.itseller.cl/2026/07/16/mercado-libre-ia-claves-para-el-futuro-del-retail-2026/",
               "date": "2026-07-16",
-              "type": "news"
-            },
-            {
-              "title": "Un supermercado de Cencosud estrena las compras por WhatsApp impulsadas por IA",
-              "publisher": "Perú Retail",
-              "url": "https://www.peru-retail.com/un-supermercado-de-cencosud-estrena-las-compras-por-whatsapp-impulsadas-por-ia/",
-              "date": "2026-06-24",
-              "type": "news"
-            },
-            {
-              "title": "Jumbo lanza compras de supermercado vía WhatsApp",
-              "publisher": "Chócale",
-              "url": "https://chocale.cl/2026/06/jumbo-lanza-compras-de-supermercado-via-whatsapp/",
-              "date": "2026-06-19",
               "type": "news"
             }
           ],
@@ -988,7 +1022,7 @@
         "CO": {
           "status": "announced",
           "gapReason": "not-launched",
-          "note": "Rappi announced a WhatsApp AI assistant in September 2025 that takes orders in plain language, and in December 2025 its Colombia CEO listed voice ordering on WhatsApp among its plans for 2026; no launch was found. No Éxito, Falabella or Mercado Libre buying agent was found (Éxito has an older WhatsApp ordering chatbot from 2020). Only trade press covers Rappi's assistant.",
+          "note": "Rappi announced a WhatsApp AI assistant in September 2025 that takes orders in plain language. In December 2025 its Colombia CEO said voice ordering on WhatsApp would launch more fully in 2026; press calls it a beta. No launch found. No Éxito, Falabella or Mercado Libre buying agent was found (Éxito has an older WhatsApp ordering chatbot from 2020). Mercado Libre's AI buying test is in Brazil and Mexico (press). Searched Rappi, Éxito, Falabella and Mercado Libre Colombia (Nov 2026); no primary source.",
           "evidence": [
             {
               "title": "Rappi integrará asistente de IA en WhatsApp",
@@ -1010,7 +1044,7 @@
         "IN": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Flipkart's payments app super.money started rolling out agents that shop on Flipkart in September 2026, and Amazon's Alexa+ (with shopping) is in early access; neither has reached all users yet. Amazon India's Rufus only sends deal alerts, with no Auto Buy.",
+          "note": "Flipkart's payments app super.money started rolling out agents that shop on Flipkart in September 2026, and Amazon's Alexa+ (with shopping) is in early access; neither has reached all users yet. Amazon India's Rufus only sends deal alerts, with no Auto Buy, per its October 2026 post. Amazon's Alexa for Shopping page (updated 13 November 2026) lists India, but it does not say whether Auto Buy works there.",
           "evidence": [
             {
               "title": "Flipkart's Super.money lets AI agents shop for you",
@@ -1039,13 +1073,20 @@
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "ES": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Amazon's Alexa+ in Early Access can order from Amazon.es for you, including buying when a watched price drops; we did not check whether Rufus Auto Buy works on Amazon.es, and no Spanish marketplace agent (El Corte Inglés, Glovo) was found that buys for you.",
+          "note": "Only Amazon's Alexa+ in Early Access can order from Amazon.es for you, including buying when a watched price drops (Amazon Spain, 23 April 2026). Amazon's Alexa for Shopping page (updated 13 November 2026) lists Spain, but it does not say whether Auto Buy works there. No Spanish marketplace agent (El Corte Inglés, Glovo) was found that buys for you.",
           "evidence": [
             {
               "title": "Las primeras 29 cosas que probar con Alexa+ en España",
@@ -1060,13 +1101,20 @@
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "FR": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Amazon's Alexa+ in Early Access (since May 2026) can order from Amazon for you. Rufus has been in the French Amazon app since late 2024 but only answers and compares, and its Auto Buy is documented only in the US.",
+          "note": "Only Amazon's Alexa+ in Early Access (since May 2026) can order from Amazon for you. Rufus has been in the French Amazon app since late 2024 but only answers and compares. Amazon's Alexa for Shopping page (updated 13 November 2026) lists France, but it does not say whether Auto Buy works there.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
@@ -1114,7 +1162,7 @@
         "JP": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Amazon's Alexa+ in Early Access (since 29 October 2026) can order from Amazon for you. Rufus has been open to all Amazon.co.jp customers since September 2025, but its auto-buy is documented only in the US. Rakuten AI in the Rakuten Ichiba app (January 2026) helps you find products but does not pay for you, and Rakuten's 'Super Agent' was only demoed.",
+          "note": "Only Amazon's Alexa+ in Early Access (since 29 October 2026) can order from Amazon for you. Rufus has been open to all Amazon.co.jp customers since September 2025. Amazon's Alexa for Shopping page (updated 13 November 2026) lists Japan, but it does not say whether Auto Buy works there. Rakuten AI in the Rakuten Ichiba app (January 2026) helps you find products but does not pay for you, and Rakuten's 'Super Agent' was only demoed.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
@@ -1143,13 +1191,20 @@
               "url": "https://netshop.impress.co.jp/n/2026/04/24/15978",
               "date": "2026-04-24",
               "type": "news"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "AU": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Only Alexa+ in Early Access (since August 2026) can order from Amazon.com.au for you. Woolworths' Olive builds meal plans and fills your cart, but you check out yourself.",
+          "note": "Only Alexa+ in Early Access (since August 2026) can order from Amazon.com.au for you. Amazon's Alexa for Shopping page (updated 13 November 2026) lists Australia, but it does not say whether Auto Buy works there. Woolworths' Olive builds meal plans and fills your cart, but you check out yourself.",
           "evidence": [
             {
               "title": "Your guide to the first 30 things to try with Alexa+ in Australia",
@@ -1164,14 +1219,28 @@
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "NG": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No marketplace buying agent found. Jumia uses AI for customer service, logistics and sellers (and had a scripted Messenger bot in 2017), but has no agent that buys for you; Amazon's agents are not offered in Nigeria. Glovo's ChatGPT and Claude assistant only finds items and sends you to the Glovo app to pay, and no source says it covers Nigeria.",
+          "note": "Paystack Index lets third-party assistants such as Claude and ChatGPT order food from Chowdeck in Nigeria. That is covered in the in-chat row. It is not a marketplace's own agent, so this row stays none. Jumia has no agent that buys for you, and Amazon's agents are not offered in Nigeria.",
           "evidence": [
+            {
+              "title": "What we learnt from Index",
+              "publisher": "TSG Labs (Paystack)",
+              "url": "https://tsglabs.com/blog/what-we-learnt-from-index",
+              "date": "2026-09-24",
+              "type": "company"
+            },
             {
               "title": "Jumia launches Nigeria's first e-commerce bot",
               "publisher": "ITWeb Africa",
@@ -1180,13 +1249,14 @@
               "type": "news"
             },
             {
-              "title": "Stop searching, start chatting: Glovo pioneers AI quick commerce",
-              "publisher": "Nairametrics",
-              "url": "https://nairametrics.com/2026/07/30/stop-searching-start-chatting-glovo-pioneers-ai-quick-commerce/",
-              "date": "2026-07-30",
-              "type": "news"
+              "title": "Glovo Connector for Claude (page is undated; checked Nov 2026)",
+              "publisher": "Glovo",
+              "url": "https://glovoapp.com/docs/en/legal/mcp/",
+              "date": "2026-11",
+              "type": "company"
             }
-          ]
+          ],
+          "confidence": "low"
         },
         "KR": {
           "status": "announced",
@@ -1226,7 +1296,7 @@
         },
         "ID": {
           "status": "none",
-          "note": "No marketplace agent that buys for you has launched in Indonesia. Reuters reported in February 2026 that Google and Sea, which owns Shopee, would explore an agentic shopping prototype on Shopee, with no launch date or country named. We found nothing similar at Tokopedia or Lazada, and Alexa+ is not in Indonesia.",
+          "note": "No marketplace agent that buys for you has launched in Indonesia. In February 2026, press reports said Google and Sea, which owns Shopee, would explore an agentic shopping prototype on Shopee, with no launch date or country named. We found nothing similar at Tokopedia or Lazada, and Alexa+ is not in Indonesia.",
           "evidence": [
             {
               "title": "Google + Sea Bring Agentic AI to Shopee and Garena: What It Means for E-commerce and Gaming",
@@ -1248,7 +1318,7 @@
         },
         "IT": {
           "status": "none",
-          "note": "We found no marketplace agent that buys for Italian shoppers today. Amazon's Alexa+ is in early access by invitation in Italy, but an April 2026 guide describes restaurant bookings and smart-home routines, not Amazon purchases. We could not open Amazon's Italian Alexa+ page, so Rufus Buy for Me and Auto Buy are unchecked for Italy.",
+          "note": "We found no marketplace agent that buys for Italian shoppers today. Alexa+ has been in early access in Italy since 15 April 2026, but an April 2026 guide describes restaurant bookings and smart-home routines, not Amazon purchases. Amazon's Alexa for Shopping page (updated 13 November 2026) lists Italy, but it does not say whether Auto Buy or Buy for Me work there.",
           "evidence": [
             {
               "title": "Alexa+ Italy: Amazon AI Assistant Guide & Features",
@@ -1256,6 +1326,13 @@
               "url": "https://pasqualepillitteri.it/en/news/933/alexa-plus-italy-guide-features",
               "date": "2026-04-17",
               "type": "news"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "gapReason": "not-launched",
@@ -1263,7 +1340,7 @@
         },
         "NL": {
           "status": "limited",
-          "note": "bol, the Dutch online shop, has a Gift Assistant in its app where customers can order suggested gifts. Its shopping assistant, Shophulp, opened to all customers on 15 September 2026 and recommends products, but I found no sign it buys for customers. Amazon's Alexa+ is not in the Netherlands, and I could not confirm that Rufus is live on amazon.nl.",
+          "note": "bol, the Dutch online shop, has a Gift Assistant in its app where customers can order suggested gifts. Its shopping assistant, Shophulp, helps customers find and compare products. bol's partner notice (15 July 2026) describes it that way and does not mention ordering. Press says it reached all customers in mid-September 2026. Amazon's Alexa+ is not in the Netherlands, and Amazon's Alexa for Shopping page (updated 13 November 2026) does not list it either.",
           "evidence": [
             {
               "title": "Bol launches AI-powered gift suggestion tool in app",
@@ -1278,26 +1355,47 @@
               "url": "https://www.retaildetail.eu/news/general/bol-adds-ai-next-to-the-search-bar/",
               "date": "2026-09-15",
               "type": "news"
+            },
+            {
+              "title": "bol partner platform: Shop help page",
+              "publisher": "bol",
+              "url": "https://partnerplatform.bol.com/en/nadp/shop-help",
+              "date": "2026-07-15",
+              "type": "company"
             }
           ],
-          "gapReason": "assist-only",
-          "confidence": "low"
+          "gapReason": "assist-only"
         },
         "AE": {
           "status": "none",
-          "note": "We found no marketplace agent that buys for you in the UAE. A search result said Amazon is testing Alexa for Shopping with some UAE customers, but the Amazon page it pointed to does not exist, so we could not confirm it. noon and Amazon.ae were not checked further.",
-          "evidence": [],
+          "note": "We found no marketplace agent that buys for you in the UAE. Amazon's Alexa for Shopping page (updated 13 November 2026) says it is in beta in the United Arab Emirates. The page does not say whether the beta includes buying, so this stays none. noon and Amazon.ae were not checked further.",
+          "evidence": [
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
           "confidence": "low"
         },
         "SA": {
           "status": "none",
-          "note": "I found no marketplace agent in Saudi Arabia that buys for you. Amazon's Alexa+ is not in Saudi Arabia, but I could not check Amazon.sa's Rufus, noon or other local marketplaces for auto-buy features before my search limit ran out.",
+          "note": "I found no marketplace agent in Saudi Arabia that buys for you. Amazon's Alexa+ is not in Saudi Arabia, but I could not check Amazon.sa's Rufus, noon or other local marketplaces for auto-buy features before my search limit ran out. Amazon's Alexa for Shopping page (updated 13 November 2026) does not list Saudi Arabia either.",
           "evidence": [
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries)",
               "publisher": "Amazon",
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
+              "type": "company"
+            },
+            {
+              "title": "Alexa for Shopping",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+              "date": "2026-11",
               "type": "company"
             }
           ],
@@ -1327,7 +1425,7 @@
         },
         "KE": {
           "status": "none",
-          "note": "No marketplace agent that buys for you was found in Kenya. Amazon's Alexa for Shopping, with Auto Buy, is for US customers only, and Alexa+ does not reach Kenya. I could not confirm a buying agent at local marketplaces such as Jumia.",
+          "note": "No marketplace agent that buys for you was found in Kenya. Amazon's Alexa for Shopping page (updated 13 November 2026) does not list Kenya, and Alexa+ does not reach Kenya. I could not confirm a buying agent at local marketplaces such as Jumia.",
           "evidence": [
             {
               "title": "Alexa for Shopping",
@@ -1349,7 +1447,7 @@
         },
         "AR": {
           "status": "none",
-          "note": "No marketplace agent buys for shoppers in Argentina yet. Mercado Libre has described agents that could compare options and buy for users, and a headline says it is testing them, but the article treats this as a future plan. Mercado Pago's assistant handles bills, transfers and reminders only, and Amazon's Alexa+ is not offered in Argentina.",
+          "note": "No marketplace agent buys for shoppers in Argentina yet. Mercado Libre has described agents that could compare options and buy for users, and an iProUP report dated 10 September 2026 says some users can already use agent features. It names no country and does not say the agent completes purchases, so this stays none. Mercado Pago's assistant handles bills, transfers and reminders only, and Amazon's Alexa+ is not offered in Argentina.",
           "evidence": [
             {
               "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
@@ -1371,6 +1469,13 @@
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10-28",
               "type": "company"
+            },
+            {
+              "title": "Mercado Libre ya prueba agentes de IA que compran por vos y revela cómo usará robots",
+              "publisher": "iProUP",
+              "url": "https://www.iproup.com/innovacion/71442-mercado-libre-ya-prueba-agentes-de-ia-y-robots-para-entregas.amp",
+              "date": "2026-09-10",
+              "type": "news"
             }
           ],
           "gapReason": "not-launched"
@@ -1649,7 +1754,7 @@
         },
         "CA": {
           "status": "live",
-          "note": "Shopify, based in Canada, lets stores sell through Google AI Mode and Gemini to buyers in the US, Canada and Australia, with direct checkout rolling out to those buyers; Google's UCP checkout for Canada was announced in May 2026. Stripe's Link Agent Wallet lets agents pay for Canadian customers at any seller.",
+          "note": "Shopify, based in Canada, lets stores sell through Google AI Mode and Gemini to buyers in the US, Canada and Australia, with direct checkout rolling out to those buyers; Google began UCP checkout for Canadian shoppers on 4 November 2026, in a staged rollout for eligible retailers. Stripe's Link Agent Wallet lets agents pay for Canadian customers at any seller.",
           "evidence": [
             {
               "title": "Selling on Google AI Mode and Gemini",
@@ -1671,13 +1776,20 @@
               "url": "https://docs.stripe.com/agentic-commerce/agents/link-agent-wallet",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "A new way to shop: Introducing a more intuitive, agentic shopping experience for consumers and retailers in Canada",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-ca/products/explore-get-answers/a-new-way-to-shop-introducing-a-more-intuitive-agentic-shopping-experience-for-consumers-and-retailers-in-canada/",
+              "date": "2026-11-04",
+              "type": "company"
             }
           ]
         },
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "Japan is not on Stripe's country list for its Agentic Commerce Suite, and Shopify's direct checkout in Google AI Mode and Gemini needs a store that sells to the US, Canada or Australia. Japanese Shopify stores can be found by agents, but shoppers are sent to the store to buy, and we found no Japanese protocol or platform that lets local merchants take agent orders.",
+          "note": "Japan is not on Stripe's country list for its Agentic Commerce Suite, and Google's UCP checkout names only the US, Canada and Australia. Shopify's direct checkout in Google AI Mode and Gemini needs a store that sells to those countries, and Japanese Shopify stores are sent to the store to buy. We found no Japanese protocol or platform that lets local merchants take agent orders. Rakuten and LINE Yahoo run AI agents for their own shoppers, and a vendor audit says some of their agents can finish a purchase, but we found no primary source for that. Searched Stripe, Shopify, Google, Rakuten and LINE Yahoo sources (Nov 2026); no primary source shows Japanese merchants taking agent orders.",
           "evidence": [
             {
               "title": "Sell through agents with Agentic Commerce Suite (supported countries)",
@@ -1697,6 +1809,13 @@
               "title": "Shopify agentic storefronts",
               "publisher": "Shopify Help Center",
               "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "About the Universal Commerce Protocol (UCP) and UCP-powered checkout feature on Google",
+              "publisher": "Google Merchant Center Help",
+              "url": "https://support.google.com/merchants/answer/16837055?hl=en",
               "date": "2026-10",
               "type": "company"
             }
@@ -1740,15 +1859,8 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index lets AI agents pay Paystack merchants, but Paystack hand-picks the merchants during its early-access beta (Chowdeck, airtime and data at launch). Shopify stores in Nigeria can sell through Agentic Storefronts, but ChatGPT reaches only US shoppers.",
+          "note": "Paystack Index, in early access and for Nigeria only at launch, lets Claude, ChatGPT or OpenClaw buy airtime and data, pay bills and order Chowdeck food. Shopify stores in Nigeria can sell through Agentic Storefronts, but ChatGPT reaches only US shoppers.",
           "evidence": [
-            {
-              "title": "Paystack launches AI checkout Index",
-              "publisher": "Techpoint Africa",
-              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
-              "date": "2026-06-25",
-              "type": "news"
-            },
             {
               "title": "What is Paystack Index?",
               "publisher": "Paystack",
@@ -1842,12 +1954,11 @@
               "type": "company"
             }
           ],
-          "gapReason": "assist-only",
-          "confidence": "low"
+          "gapReason": "not-launched"
         },
         "IT": {
           "status": "limited",
-          "note": "Italian merchants can take part in agent-shopping pilots, but agent sales are not open to Italian shoppers yet. In March 2026 Nexi, the Italian payments group, said it is working with pilot merchants in Italy and is building agent-ready payment gateways, with Google's Universal Commerce Protocol checkout support still planned. Stripe says its agent checkout is open in the US, Canada and 'select European countries' without naming them.",
+          "note": "Italian merchants can take part in agent-shopping pilots, but agent sales are not open to Italian shoppers yet. In March 2026 Nexi, the Italian payments group, said it is working with pilot merchants in the Nordics and Italy and is deploying infrastructure for agent payments. It said UCP support is planned, with no Italy date. Stripe's country list (checked Nov 2026) includes Italy for merchant sign-up. Stripe does not say which shoppers its agents reach in Italy, so this stays low.",
           "evidence": [
             {
               "title": "Nexi launches new agentic commerce capabilities",
@@ -1862,6 +1973,13 @@
               "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail.md",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Sell through agents with Agentic Commerce Suite",
+              "publisher": "Stripe Docs",
+              "url": "https://docs.stripe.com/agentic-commerce/sellers/use-cases/retail/checkout",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "gapReason": "pilot-only",
@@ -1869,7 +1987,7 @@
         },
         "NL": {
           "status": "none",
-          "note": "Stripe supports Dutch accounts, but the agent channels Shopify lists serve US shoppers, with Meta's checkout also covering Canada and Mexico. Google says its UCP checkout will reach Canada and Australia first and the UK later, with no date for the Netherlands. I found no agent that sells to Dutch shoppers through a merchant protocol today.",
+          "note": "Stripe's country list (checked Nov 2026) includes the Netherlands, but the agent channels Shopify lists serve US shoppers, with Meta's checkout also covering Canada and Mexico. Google says its UCP checkout will reach Canada and Australia first and the UK later, with no date for the Netherlands. I found no agent that sells to Dutch shoppers through a merchant protocol today.",
           "evidence": [
             {
               "title": "Which Shopify AI channels work outside the US? The 2026 table",
@@ -1898,7 +2016,7 @@
         },
         "AE": {
           "status": "none",
-          "note": "Stripe lists the UAE as a supported country, but I found no UAE launch of Stripe's Agentic Commerce Suite or of Shopify Agentic Storefronts. Shopify's help page names no countries at all.",
+          "note": "Stripe's country list for its Agentic Commerce Suite (checked Nov 2026) does not include the UAE. I found no UAE launch of Shopify Agentic Storefronts. Shopify's overview names no countries, and its Google page lists only US, Canadian and Australian buyers.",
           "evidence": [
             {
               "title": "Stripe global availability (supported countries)",
@@ -1970,7 +2088,7 @@
         },
         "KE": {
           "status": "none",
-          "note": "Kenyan merchants have no route to sell through AI agents that I could find. Shopify's agentic storefronts need merchants to sell into one of 11 listed markets, and Kenya is not one of them. Stripe's managed agent checkout is offered in the US, Canada and select European countries.",
+          "note": "Kenyan merchants have no route to sell through AI agents that I could find. Shopify's Google channel needs merchants to sell to customers in the US, Canada or Australia, and Kenya is not one of them. Stripe's managed agent checkout is offered in the US, Canada and select European countries.",
           "evidence": [
             {
               "title": "Selling on Meta",

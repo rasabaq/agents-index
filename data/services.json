@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Google AI Mode finds real-time slots on OpenTable, Resy and Tock for all US users without Labs, and since August 2026 ChatGPT finds bookable tables through OpenTable, Resy and Yelp on all plans.",
+          "note": "Google AI Mode finds real-time slots on OpenTable, Resy and Tock for all US users without Labs, and since August 2026 ChatGPT finds bookable tables through OpenTable, Resy and Yelp on all plans except ChatGPT Work.",
           "evidence": [
             {
               "title": "Explore new ways to plan and book travel with AI in Search",
@@ -104,13 +104,20 @@
         },
         "MX": {
           "status": "limited",
-          "note": "ChatGPT's OpenTable reservations are listed as global and OpenTable runs a Mexico site, but no OpenTable or OpenAI page confirms that Mexican restaurants show up in ChatGPT, so this counts as limited; Google AI Mode booking has not launched in Mexico.",
+          "note": "OpenAI's release notes (10 August 2026) say ChatGPT reservations are available globally with OpenTable, but they do not name Mexico. An OpenTable release from July 2025 says its Mexico Concierge then only answered questions. Google AI Mode booking has not launched in Mexico, and no OpenTable or OpenAI page we could open confirms Mexican restaurants.",
           "evidence": [
             {
               "title": "ChatGPT release notes (OpenTable reservations available globally)",
               "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
               "date": "2026-08-10",
+              "type": "company"
+            },
+            {
+              "title": "OpenTable lanza Concierge, impulsado por IA generativa",
+              "publisher": "OpenTable (PR Newswire Mexico)",
+              "url": "https://www.prnewswire.com/mx/comunicados-de-prensa/opentable-lanza-concierge-impulsado-por-ia-generativa-para-brindar-a-los-comensales-informacion-al-momento-sobre-mas-de-60-000-restaurantes-en-todo-el-mundo-302507343.html",
+              "date": "2025-07-16",
               "type": "company"
             }
           ],
@@ -170,11 +177,11 @@
               "type": "company"
             },
             {
-              "title": "How Swiggy Is Using AI Agents To Take Commerce Beyond Its App",
-              "publisher": "Inc42",
-              "url": "https://inc42.com/buzz/how-swiggy-is-using-ai-agents-to-take-commerce-beyond-its-app/",
-              "date": "2026-09-30",
-              "type": "news"
+              "title": "Swiggy Now Lets You Order Food, Dineout, and Shop on Instamart Directly Inside ChatGPT and Claude",
+              "publisher": "Swiggy",
+              "url": "https://www.swiggy.com/corporate/?p=16731",
+              "date": "2026-01-27",
+              "type": "company"
             }
           ]
         },
@@ -206,16 +213,10 @@
           ]
         },
         "FR": {
-          "status": "live",
-          "note": "Alexa+ (Early Access since May 2026) books tables through TheFork, and the TheFork app in ChatGPT, reported live in France and 12 other European countries, finds tables and hands off to TheFork to book. Google AI Mode table booking is not offered in the EU. Both sources for France are press reports.",
+          "status": "none",
+          "gapReason": "not-launched",
+          "note": "Found no TheFork or Zenchef table booking inside ChatGPT or Gemini in France. Amazon's TheFork launch on Alexa+ is for Spain. Amazon's Alexa+ country page (checked November 2026) gives 26 May 2026 as France's Early Access start and names no restaurant partner there. OpenAI's release notes (10 August 2026) do not name France. No primary source confirms table booking in France.",
           "evidence": [
-            {
-              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
-              "publisher": "iPhoneSoft",
-              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
-              "date": "2026-05-26",
-              "type": "news"
-            },
             {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
               "publisher": "Amazon",
@@ -224,17 +225,10 @@
               "type": "company"
             },
             {
-              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes a través de ChatGPT (also live in France)",
-              "publisher": "Forbes España",
-              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
-              "date": "2025-12-22",
-              "type": "news"
-            },
-            {
-              "title": "ChatGPT release notes (OpenTable reservations available globally)",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
-              "date": "2026-08-10",
+              "title": "TheFork ya está disponible en Alexa+ para España",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.es/noticias/dispositivos/thefork-alexa-espana",
+              "date": "2026-06-19",
               "type": "company"
             }
           ],
@@ -268,29 +262,21 @@
           ]
         },
         "JP": {
-          "status": "announced",
-          "gapReason": "not-launched",
-          "note": "Amazon says Alexa+ in Japan (free Early Access since 29 October 2026) will book tables through Tabelog's Restaurant Reservations, but its launch release lists booking as planned, not yet offered. ChatGPT's OpenTable reservations are listed as global, but no page confirms Japanese restaurants show up, Tabelog's 2023 ChatGPT plugin only handed you off to its site, and OpenTable in Gemini is UK and US only.",
+          "status": "limited",
+          "note": "LINE AI予約, from LY Corporation (LINEヤフー), officially launched on 22 October 2026 for restaurants. It answers calls, checks open seats and books a table for the caller. It costs from ¥10,000 a month and works only at restaurants that sign up, so it is limited. Amazon says Alexa+ in Japan (Early Access since 29 October 2026) will book tables through Tabelog's Restaurant Reservations, but its launch release lists this as planned, not yet offered.",
           "evidence": [
+            {
+              "title": "LINEヤフー、電話に出られない時間を予約機会に変える音声AI 「LINE AI予約」を正式提供開始",
+              "publisher": "LY Corporation",
+              "url": "https://www.lycorp.co.jp/ja/news/release/020924/",
+              "date": "2026-10-22",
+              "type": "company"
+            },
             {
               "title": "Amazon、次世代AIアシスタント「Alexa+」を日本で提供開始",
               "publisher": "Amazon Japan",
               "url": "https://www.aboutamazon.jp/news/devices/amazon-launches-alexa-plus-in-japan",
               "date": "2026-10-29",
-              "type": "company"
-            },
-            {
-              "title": "ChatGPT — Release Notes",
-              "publisher": "OpenAI Help Center",
-              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
-              "date": "2026-08-10",
-              "type": "company"
-            },
-            {
-              "title": "食べログ、ChatGPTプラグインの提供を開始",
-              "publisher": "Kakaku.com",
-              "url": "https://corporate.kakaku.com/news/20230508",
-              "date": "2023-05-08",
               "type": "company"
             }
           ]
@@ -331,7 +317,7 @@
         },
         "KR": {
           "status": "none",
-          "note": "Google's agentic restaurant booking in AI Mode works in the US and eight other markets, not in South Korea. I found no Korean booking app, such as CatchTable or Naver, with an AI agent, and I could not confirm that ChatGPT's OpenTable booking covers Korean restaurants.",
+          "note": "Google's agentic restaurant booking in AI Mode works in the US and eight other markets, not in South Korea. We found no Korean booking app, such as CatchTable or Naver, with an AI agent. OpenAI's release notes (10 August 2026) say OpenTable is global, but do not name South Korea.",
           "evidence": [
             {
               "title": "Google AI Mode redesign",
@@ -346,7 +332,7 @@
         },
         "SG": {
           "status": "live",
-          "note": "ChatGPT finds open tables on OpenTable and books the one you pick. OpenAI's release notes list OpenTable as global from 10 August 2026, but we could not open that page or confirm Singapore restaurants on OpenTable. We found no booking agent for Chope or Google AI Mode in Singapore.",
+          "note": "ChatGPT helps you find open tables on OpenTable. OpenAI's release notes (10 August 2026) say reservations are available globally with OpenTable, but they do not name Singapore, and we could not open OpenTable's Singapore site to confirm local listings. We found no booking agent for Chope or Google AI Mode in Singapore.",
           "evidence": [
             {
               "title": "ChatGPT release notes (restaurant reservations with OpenTable, Resy and Yelp)",
@@ -360,7 +346,7 @@
         },
         "ID": {
           "status": "announced",
-          "note": "Grab, the Indonesian super app, announced an AI assistant at GrabX 2026 in Jakarta that can surface restaurants and make bookings in one chat. We found no Indonesian launch date, and the restaurant example given was in Malaysia. We did not confirm Google AI Mode or ChatGPT table booking for Indonesia.",
+          "note": "Grab, the Southeast Asian super app, announced an AI assistant at GrabX 2026 in Jakarta that can surface restaurants and make bookings in one chat. Grab's GrabX 2026 release says products roll out by market, and press reports disagree on whether the assistant is live in Indonesia. We found no Indonesian launch date. We did not confirm Google AI Mode or ChatGPT table booking for Indonesia.",
           "evidence": [
             {
               "title": "Grab unveils GrabX 2026 AI intelligence layer, new hardware and 13 app features in Jakarta",
@@ -368,6 +354,13 @@
               "url": "https://marketbeat.com/instant-alerts/grab-unveils-grabx-2026-ai-intelligence-layer-new-hardware-and-13-app-features-in-jakarta-2026-04-08/",
               "date": "2026-04-08",
               "type": "news"
+            },
+            {
+              "title": "Grab Unveils 13 AI-Powered Experiences at GrabX 2026 as Southeast Asia's Intelligent Everyday Guide",
+              "publisher": "Grab",
+              "url": "https://www.grab.com/sg/press/others/grab-unveils-13-ai-powered-experiences-at-grabx-2026-as-southeast-asias-intelligent-everyday-guide/",
+              "date": "2026-04",
+              "type": "company"
             }
           ],
           "gapReason": "not-launched",
@@ -375,7 +368,7 @@
         },
         "IT": {
           "status": "live",
-          "note": "TheFork's app takes restaurant bookings in Italy, and Italian press reports that TheFork's ChatGPT app finds tables and books them inside the chat (one example is a pizzeria in Rome).",
+          "note": "TheFork's app takes restaurant bookings in Italy, and Italian press reports that TheFork's ChatGPT app finds tables and books them inside the chat (one example is a pizzeria in Rome). Forbes España (22 December 2025) lists Italy among TheFork's ChatGPT markets. We could not open a TheFork page for Italy, so this stays low confidence.",
           "evidence": [
             {
               "title": "TheFork: ristoranti e offerte (App Store listing, Italy bookings)",
@@ -390,13 +383,20 @@
               "url": "https://techprincess.it/thefork-chatgpt-prenotazioni-ristoranti-conversazione-ai/amp/",
               "date": "2026-11",
               "type": "news"
+            },
+            {
+              "title": "TheFork apuesta por la IA para hacer reservas en restaurantes en España a través de ChatGPT",
+              "publisher": "Forbes España",
+              "url": "https://forbes.es/economia/849255/thefork-apuesta-por-la-ia-para-hacer-reservas-en-restaurantes-en-espana-a-traves-de-chatgpt/",
+              "date": "2025-12-22",
+              "type": "news"
             }
           ],
           "confidence": "low"
         },
         "NL": {
           "status": "limited",
-          "note": "TheFork's app inside ChatGPT is listed for the Netherlands in a December 2025 Forbes España article, and it takes restaurant reservations inside the chat. Only this press report confirms it, and other reports give different launch dates, so this is limited.",
+          "note": "TheFork's app inside ChatGPT is listed for the Netherlands in a 22 December 2025 Forbes España article, and it takes restaurant reservations inside the chat. We could not open a TheFork page to confirm this. Other reports give different launch dates, so this is limited.",
           "evidence": [
             {
               "title": "TheFork apuesta por la IA para hacer reservas en restaurantes a través de ChatGPT",
@@ -410,7 +410,7 @@
         },
         "AE": {
           "status": "live",
-          "note": "Ambl, a Dubai chat assistant, searches and confirms restaurant reservations in English, Arabic, French and Russian, and its launch release says it is live in the UAE. We found no UAE launch for Google AI Mode or for ChatGPT's OpenTable booking.",
+          "note": "Ambl, a Dubai chat assistant, searches and confirms restaurant reservations in English, Arabic, French and Russian. Ambl's own launch release, carried by Zawya, says it is already live in the UK and UAE. We found no UAE launch for Google AI Mode or for ChatGPT's OpenTable booking.",
           "evidence": [
             {
               "title": "Ambl launches AI chat that speaks your language and finds your perfect reservation instantly",
@@ -419,12 +419,11 @@
               "date": "2026-11",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "SA": {
           "status": "none",
-          "note": "We found no Saudi restaurant app where an AI agent books a table for you. Google AI Mode is listed as available in Saudi Arabia, but we found no sign that it books tables here, and Alexa+ is not offered here.",
+          "note": "We found no Saudi restaurant app where an AI agent books a table for you. Google AI Mode is listed as available in Saudi Arabia, but we found no sign that it books tables here, and Alexa+ is not offered here. OpenAI's release notes (10 August 2026) do not name Saudi Arabia.",
           "evidence": [
             {
               "title": "AI Mode supported locations",
@@ -446,7 +445,7 @@
         },
         "ZA": {
           "status": "none",
-          "note": "ChatGPT's OpenTable table search is listed as worldwide in OpenAI's release notes, but I found no proof that South African restaurants are on OpenTable. My search also found no Eat Out or other local booking agent.",
+          "note": "OpenAI's release notes (10 August 2026) say ChatGPT reservations are available globally with OpenTable, but do not name South Africa. We found no proof that South African restaurants are on OpenTable. We found no Eat Out or other local booking agent.",
           "evidence": [
             {
               "title": "Restaurant reservations findable in chat with OpenTable, Resy and Yelp (release notes summary)",
@@ -461,7 +460,7 @@
         },
         "KE": {
           "status": "none",
-          "note": "Google AI Mode's agentic table booking launched in the UK and India in April 2026, and Kenya is not on that list. No Kenyan restaurant booking agent was found, and ChatGPT's OpenTable booking could not be checked for Kenyan restaurants.",
+          "note": "Google's April 2026 agentic booking rollout covers several markets, and the coverage we checked does not name Kenya. No Kenyan restaurant booking agent was found, and ChatGPT's OpenTable booking could not be checked for Kenyan restaurants. OpenAI's release notes (10 August 2026) do not name Kenya.",
           "evidence": [
             {
               "title": "Google adds agentic restaurant booking (UK and India)",
@@ -476,7 +475,7 @@
         },
         "AR": {
           "status": "none",
-          "note": "No AI table-booking agent was found for Argentina. TheFork, which took over Restorando here, has its ChatGPT booking app only in Spain and 12 European markets as of December 2025.",
+          "note": "No AI table-booking agent was found for Argentina. TheFork, which took over Restorando here, has its ChatGPT booking app only in Spain and 12 European markets as of December 2025. OpenAI's release notes (10 August 2026) do not name Argentina.",
           "evidence": [
             {
               "title": "TheFork apuesta por la IA para hacer reservas en restaurantes en España a través de ChatGPT",
@@ -535,11 +534,11 @@
               "type": "company"
             },
             {
-              "title": "Eurostar launches ChatGPT app",
-              "publisher": "Deep Arrival",
-              "url": "https://deeparrival.com/news/eurostar-chatgpt-app-august-2026/",
-              "date": "2026-08-18",
-              "type": "news"
+              "title": "Eurostar AI travel assistant (Eurostar in ChatGPT)",
+              "publisher": "Eurostar",
+              "url": "https://www.eurostar.com/uk-en/travel-info/travel-planning/ai-travel-assistant",
+              "date": "2026-08",
+              "type": "company"
             },
             {
               "title": "ChatGPT release notes (app directory: apps for all logged-in users, availability varies by region)",
@@ -855,7 +854,7 @@
         },
         "KR": {
           "status": "live",
-          "note": "Booking.com says its app in ChatGPT is open to ChatGPT users globally, including for car rentals, and it sends you to Booking.com to finish the reservation. Google AI Mode hotel booking is US-only, so it does not count here.",
+          "note": "Booking.com says its app in ChatGPT is open to ChatGPT users globally, including for car rentals, and it sends you to Booking.com to finish the reservation. OpenAI lists South Korea as a ChatGPT country, but we found no Korea-specific app listing. Google AI Mode hotel booking is US-only, so it does not count here.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -870,13 +869,20 @@
               "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
               "date": "2026-08-27",
               "type": "company"
+            },
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "confidence": "low"
         },
         "SG": {
           "status": "limited",
-          "note": "ChatGPT's Booking.com and Expedia apps search hotels and hand you off to the partner site to finish the booking. No source confirms that these apps are open in Singapore.",
+          "note": "ChatGPT's Booking.com and Expedia apps search hotels and hand you off to the partner site to finish the booking. Booking.com says its app is open to ChatGPT users globally, and OpenAI lists Singapore as a ChatGPT country, but no source confirms that these apps are open in Singapore.",
           "evidence": [
             {
               "title": "Travel bookings in the age of ChatGPT apps: the good, the bad and the test of the future",
@@ -884,6 +890,20 @@
               "url": "https://thepaypers.com/payments/expert-views/travel-bookings-in-the-age-of-chatgpt-apps-the-good-the-bad-and-the-test-of-the-future",
               "date": "2026-10",
               "type": "news"
+            },
+            {
+              "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
+              "publisher": "Booking.com",
+              "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+              "date": "2026-05-20",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT Supported Countries",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "gapReason": "assist-only",
@@ -997,7 +1017,7 @@
         },
         "KE": {
           "status": "live",
-          "note": "Booking.com says its app in ChatGPT is available globally. It finds a hotel or trip and hands you off to Booking.com to finish the booking, and ChatGPT is open in Kenya. No Kenya-specific app list was found, so confidence is low.",
+          "note": "Booking.com says its app in ChatGPT is available globally. It finds a hotel or trip and hands you off to Booking.com to finish the booking. OpenAI lists Kenya as a ChatGPT country. No Kenya-specific app list was found, so confidence is low.",
           "evidence": [
             {
               "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT",
@@ -1133,7 +1153,7 @@
         },
         "BR": {
           "status": "limited",
-          "note": "iFood's Ailo agent takes food orders by chat in WhatsApp, open to the general public as a test since October 2025, and hands off a confirmed cart with a link to the iFood app to pay; the only iFood app found in ChatGPT is a merchant tool (Fala Delivery), not consumer ordering, and the Uber Eats ChatGPT app is US-only.",
+          "note": "iFood's Ailo agent takes food orders by chat in WhatsApp, open to the public as a test since October 2025. From 28 August 2026 Ailo also takes payment inside the chat, and iFood is rolling it out to all Ailo users. Trade press says it would reach everyone within a month, but we could not confirm that, so this stays limited. The only iFood app found in ChatGPT is a merchant tool (Fala Delivery), not consumer ordering, and the Uber Eats ChatGPT app is US-only.",
           "evidence": [
             {
               "title": "iFood lança agente de IA que permite fazer pedidos pelo WhatsApp",
@@ -1148,14 +1168,28 @@
               "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "ifood pagamento agentico",
+              "publisher": "Mobile Time",
+              "url": "https://www.mobiletime.com.br/noticias/28/08/2026/ifood-pagamento-agentico/",
+              "date": "2026-08-28",
+              "type": "news"
             }
           ],
           "gapReason": "pilot-only"
         },
         "MX": {
-          "status": "none",
-          "note": "No agent ordering was found for Mexico: Uber's help center says the Uber Eats app in ChatGPT shows results only to users in the US, and Rappi's WhatsApp assistant was announced for Colombia, with no Mexico launch found.",
+          "status": "announced",
+          "note": "Meta's Muse agent launched in Mexico on 5 November 2026, and press reports name Rappi among its launch connectors. Connector features are rolling out gradually, and no source says Muse can place a Rappi food, grocery or ride order rather than track one. Uber's help center says the Uber Eats app in ChatGPT shows results only to users in the US. Rappi's WhatsApp assistant was announced for Colombia, with no Mexico launch found. DiDi's DiMi agent (August 2026) signs up restaurants, not diners. No primary source shows a diner ordering agent.",
           "evidence": [
+            {
+              "title": "Muse de Meta llega a México: ¿cómo descargarlo gratis y qué puedes hacer con su IA?",
+              "publisher": "Expansión",
+              "url": "https://expansion.mx/tecnologia/2026/11/05/muse-el-agente-de-meta-llega-a-mexico",
+              "date": "2026-11-05",
+              "type": "news"
+            },
             {
               "title": "ChatGPT Integration for Eaters",
               "publisher": "Uber",
@@ -1176,7 +1210,7 @@
         },
         "CL": {
           "status": "none",
-          "note": "No agent ordering was found for Chile: Uber's help center says the Uber Eats app in ChatGPT shows results only to users in the US, Rappi's WhatsApp assistant was announced for Colombia, with no Chile launch found, and no PedidosYa or DiDi ordering agent was found.",
+          "note": "No live agent ordering was found for Chile. PedidosYa's 'Pide sin Pensar con ChatGPT' chat (Nov 2023) suggests an order inside the app, but no 2026 source shows it still runs. Uber Eats in ChatGPT is US-only, Rappi's WhatsApp assistant was announced for Colombia with no Chile launch found, and no DiDi Food or Cornershop ordering agent was found (Nov 2026). No primary source confirms a live agent.",
           "evidence": [
             {
               "title": "ChatGPT Integration for Eaters",
@@ -1191,16 +1225,30 @@
               "url": "https://mobiletime.la/noticias/30/09/2025/rappi-asistente-ia-en-whatsapp/",
               "date": "2025-09-30",
               "type": "news"
+            },
+            {
+              "title": "PedidosYa inaugura la función Pido sin Pensar con ChatGPT",
+              "publisher": "Chocale",
+              "url": "https://chocale.cl/2023/11/pedidosya-inaugura-la-funcion-pido-sin-pensar-con-chatgpt/",
+              "date": "2023-11-28",
+              "type": "news"
             }
           ],
           "confidence": "low",
           "gapReason": "not-launched"
         },
         "CO": {
-          "status": "announced",
-          "gapReason": "not-launched",
-          "note": "Rappi announced in 2025 a WhatsApp AI assistant for ordering in natural language and voice-note ordering in Colombia, but no launch was confirmed; the Uber Eats app in ChatGPT is US-only.",
+          "status": "limited",
+          "gapReason": "pilot-only",
+          "note": "Rappi's Colombia CEO said in a 25 December 2025 interview that its AI ordering feature runs in beta, and that access would widen in the coming weeks. It is not open to all users yet, and we found no 2026 launch notice. Uber Eats in ChatGPT is US-only.",
           "evidence": [
+            {
+              "title": "Entrevista | Con solo un mensaje de voz por WhatsApp, Rappi le apostará a atender pedidos en 2026",
+              "publisher": "Valora Analitik",
+              "url": "https://www.valoraanalitik.com/mensaje-voz-whatsapp-rappi-pedidos-2026/",
+              "date": "2025-12-25",
+              "type": "news"
+            },
             {
               "title": "Rappi integrará asistente de IA en WhatsApp",
               "publisher": "Mobile Time Latinoamérica",
@@ -1222,11 +1270,12 @@
               "date": "2026-10",
               "type": "company"
             }
-          ]
+          ],
+          "confidence": "low"
         },
         "IN": {
           "status": "live",
-          "note": "Swiggy's MCP servers for Food, Instamart and Dineout let an AI assistant that the user connects to them build a cart and place an order, and Zomato's MCP server (marked for testing) does the same in Claude.",
+          "note": "Swiggy's MCP servers for Food, Instamart and Dineout let an AI assistant that the user connects to them build a cart and place an order, in ChatGPT, Claude and Gemini. Press reports disagree on whether Zomato has an ordering agent, so we do not count Zomato.",
           "evidence": [
             {
               "title": "Swiggy Builders Club | Cook on Swiggy's MCP APIs",
@@ -1236,11 +1285,11 @@
               "type": "company"
             },
             {
-              "title": "How Swiggy Is Using AI Agents To Take Commerce Beyond Its App",
-              "publisher": "Inc42",
-              "url": "https://inc42.com/buzz/how-swiggy-is-using-ai-agents-to-take-commerce-beyond-its-app/",
-              "date": "2026-09-30",
-              "type": "news"
+              "title": "Swiggy Now Lets You Order Food, Dineout, and Shop on Instamart Directly Inside ChatGPT and Claude",
+              "publisher": "Swiggy",
+              "url": "https://www.swiggy.com/corporate/?p=16731",
+              "date": "2026-01-27",
+              "type": "company"
             },
             {
               "title": "Zomato MCP server (food ordering for AI assistants)",
@@ -1254,14 +1303,14 @@
         "ES": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Glovo's assistant in ChatGPT and Claude (May 2026) finds supermarket and shop products near you, then sends you to the Glovo app to order and pay; food was not yet included. Just Eat's voice assistant, which fills the basket, rolled out across its European markets in August 2026 without naming Spain, and Cabify rides on Alexa+ are only announced.",
+          "note": "Glovo's Claude connector finds items and hands you off to the Glovo app. Its page (checked November 2026) names Claude only, not ChatGPT, and says ordering happens in the Glovo app, not inside Claude. It names no country. Its example city is Barcelona, and it sends users to glovoapp.com to check coverage. Just Eat's voice assistant launched across Europe in August 2026, but its release names only the UK and Germany. Uber's ChatGPT apps show results only in the US, and we found no Cabify Alexa+ announcement.",
           "evidence": [
             {
-              "title": "Glovo se integra en ChatGPT y Claude",
-              "publisher": "Marketing4eCommerce",
-              "url": "https://marketing4ecommerce.net/glovo-se-integra-en-chatgpt-y-claude/",
-              "date": "2026-05-29",
-              "type": "news"
+              "title": "Glovo Connector for Claude (page is undated; checked Nov 2026)",
+              "publisher": "Glovo",
+              "url": "https://glovoapp.com/docs/en/legal/mcp/",
+              "date": "2026-11",
+              "type": "company"
             },
             {
               "title": "Just Eat Takeaway.com launches AI Voice Assistant across Europe",
@@ -1308,9 +1357,9 @@
           ]
         },
         "CA": {
-          "status": "announced",
-          "gapReason": "not-launched",
-          "note": "Amazon says Uber rides on Alexa+ in Canada are coming soon, and Instacart expects its Cart Assistant, which builds a grocery cart from a chat, to reach all of Canada within months of June 2026. Uber's apps in ChatGPT show results only in the US, and no SkipTheDishes or DoorDash agent was found.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Instacart's Clementine assistant launched on 9 September 2026 for customers across the U.S. and Canada on the Instacart Marketplace. It turns a conversation, grocery list or recipe into a personalized cart, but Instacart's release does not say it places the order for you. Instacart says its Cart Assistant is already live on retailer storefronts across North America. Uber's ChatGPT apps show results only in the US, and Amazon says booking a ride with Uber on Alexa+ in Canada is coming soon. No SkipTheDishes or DoorDash agent was found.",
           "evidence": [
             {
               "title": "Alexa+ now available to everyone in Canada and free for Prime members",
@@ -1320,11 +1369,11 @@
               "type": "company"
             },
             {
-              "title": "Instacart rolls out agentic AI assistant, boosts order size",
-              "publisher": "Let's Data Science",
-              "url": "https://letsdatascience.com/news/instacart-rolls-out-agentic-ai-assistant-boosts-order-size-4f258bce",
-              "date": "2026-06-19",
-              "type": "news"
+              "title": "Meet Clementine: Instacart's AI Shopping Assistant That Takes \"What's for Dinner?\" Off Your Plate",
+              "publisher": "Instacart",
+              "url": "https://s25.q4cdn.com/251036341/files/doc_news/Meet-Clementine-Instacarts-AI-Shopping-Assistant-That-Takes-Whats-for-Dinner-Off-Your-Plate-2026.pdf",
+              "date": "2026-09-09",
+              "type": "company"
             },
             {
               "title": "ChatGPT Integration for Rides",
@@ -1359,7 +1408,7 @@
         "AU": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Woolworths said its Gemini-powered Olive assistant would roll out to app customers in pick-up and delivery mode from July 2026; it plans meals and builds a basket, and you review it and check out yourself. We found no source confirming the rollout finished. Uber's ChatGPT apps are US-only and Menulog has closed.",
+          "note": "Woolworths said on 29 June 2026 that its Olive assistant would roll out to all app customers in pick-up and delivery mode in July. It plans meals and builds a basket, and customers review and approve the items before checkout. We could not confirm that the rollout finished. Uber's ChatGPT apps are US-only, and we found no DoorDash ChatGPT app in Australia. Menulog closed in late 2025 (news reports).",
           "evidence": [
             {
               "title": "Woolworths takes the hassle out of the weekly shop with new digital tools to help you save time and money",
@@ -1374,6 +1423,13 @@
               "url": "https://help.uber.com/en/riders/article/chatgpt-integration-for-rides?nodeId=afa53c91-a8e0-4306-b18f-9f742bf24252",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "ChatGPT Integration for Eaters",
+              "publisher": "Uber",
+              "url": "https://help.uber.com/ubereats/restaurants/article/chatgpt-integration-for-eaters?nodeId=7e56650b-9482-4a55-a560-1902ba2dd70e",
+              "date": "2026-10",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -1381,15 +1437,8 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Paystack Index, an early-access beta since June 2026 (you sign up, wait for approval and link a Zap account), lets ChatGPT or Claude order Chowdeck food deliveries; you approve the payment on WhatsApp. Glovo's ChatGPT and Claude assistant finds items but sends you to the Glovo app to pay, and no source says it covers Nigeria; Uber's ChatGPT apps are US-only.",
+          "note": "Paystack Index, in early access and for Nigeria only at launch, lets Claude or ChatGPT order Chowdeck food. Glovo's Claude connector page names no Nigeria coverage, and Uber's ChatGPT apps are US-only.",
           "evidence": [
-            {
-              "title": "Paystack launches AI checkout Index",
-              "publisher": "Techpoint Africa",
-              "url": "https://techpoint.africa/news/paystack-launches-ai-checkout-index/",
-              "date": "2026-06-25",
-              "type": "news"
-            },
             {
               "title": "What is Paystack Index?",
               "publisher": "Paystack",
@@ -1398,17 +1447,17 @@
               "type": "company"
             },
             {
-              "title": "Stop searching, start chatting: Glovo pioneers AI quick commerce",
-              "publisher": "Nairametrics",
-              "url": "https://nairametrics.com/2026/07/30/stop-searching-start-chatting-glovo-pioneers-ai-quick-commerce/",
-              "date": "2026-07-30",
-              "type": "news"
+              "title": "Glovo Connector for Claude (page is undated; checked Nov 2026)",
+              "publisher": "Glovo",
+              "url": "https://glovoapp.com/docs/en/legal/mcp/",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "KR": {
           "status": "announced",
-          "note": "Kakao said in August 2026 that its KakaoTalk AI agent will let users order Coupang Eats food inside the chat, but it gave no launch date. I found no live Korean food, grocery or ride-hailing agent.",
+          "note": "Kakao said on 6 August 2026 that its KakaoTalk AI agent will let users order Coupang Eats food inside the chat, but it gave no launch date. A September 2026 report still describes it as in preparation, and we found no launch notice. We found no live Korean food, grocery or ride-hailing agent.",
           "evidence": [
             {
               "title": "[컨콜 종합] '사상 최대 실적' 카카오 \"카톡에서 AI로 쿠팡이츠 배달\"⋯커머스 강화 전략",
@@ -1422,7 +1471,7 @@
         },
         "SG": {
           "status": "limited",
-          "note": "Grab's AI Assistant is available now in Singapore. It helps with quick food reorders, but the article does not say it places the order itself. It only queues a ride booking reminder, and booking rides through the assistant is still being built.",
+          "note": "Grab's AI Assistant is available to users in Singapore, according to Grab's own page (8 April 2026). It helps with quick reorders and with finding new food, and it queues a ride reminder. Ride booking through it is still in development. The page does not say the assistant places food orders itself.",
           "evidence": [
             {
               "title": "Grab AI Assistant (GrabX 2026)",
@@ -1432,12 +1481,11 @@
               "type": "company"
             }
           ],
-          "gapReason": "assist-only",
-          "confidence": "low"
+          "gapReason": "assist-only"
         },
         "ID": {
           "status": "announced",
-          "note": "Grab announced AI features for rides, food and travel at GrabX 2026 in Jakarta, including an assistant that can build shopping carts. We could not confirm that an ordering agent is open to Indonesian users today. We found no Gojek ordering agent in our searches.",
+          "note": "Grab announced AI features for rides, food and travel at GrabX 2026 in Jakarta, including an assistant that can build shopping carts. Grab's GrabX 2026 release says products roll out by market. Press reports disagree on whether the assistant is live in Indonesia, and we found no launch date. We could not confirm that an ordering agent is open to Indonesian users today. We found no Gojek ordering agent in our searches.",
           "evidence": [
             {
               "title": "Grab unveils GrabX 2026 AI intelligence layer, new hardware and 13 app features in Jakarta",
@@ -1445,6 +1493,13 @@
               "url": "https://marketbeat.com/instant-alerts/grab-unveils-grabx-2026-ai-intelligence-layer-new-hardware-and-13-app-features-in-jakarta-2026-04-08/",
               "date": "2026-04-08",
               "type": "news"
+            },
+            {
+              "title": "Grab Unveils 13 AI-Powered Experiences at GrabX 2026 as Southeast Asia's Intelligent Everyday Guide",
+              "publisher": "Grab",
+              "url": "https://www.grab.com/sg/press/others/grab-unveils-13-ai-powered-experiences-at-grabx-2026-as-southeast-asias-intelligent-everyday-guide/",
+              "date": "2026-04",
+              "type": "company"
             }
           ],
           "gapReason": "not-launched",
@@ -1452,7 +1507,7 @@
         },
         "IT": {
           "status": "limited",
-          "note": "Glovo's assistant works inside ChatGPT and Claude to find food and shop items, but you finish the order in the Glovo app, according to Italian press. Just Eat's AI voice assistant names only the UK and Germany as launch markets, so Italy is not confirmed for it.",
+          "note": "Glovo's assistant works inside ChatGPT and Claude to find food and shop items, but you finish the order in the Glovo app, according to Italian press. Glovo's own Claude connector page (checked November 2026) names Claude only and no country, so the ChatGPT part is not confirmed. Just Eat's AI voice assistant names only the UK and Germany as launch markets, so Italy is not confirmed for it.",
           "evidence": [
             {
               "title": "Glovo shopping AI assistant is a first for Italy (Techprincess)",
@@ -1467,6 +1522,13 @@
               "url": "https://newsroom.justeattakeaway.com/en-WW/269108-just-eat-takeaway-com-launches-ai-voice-assistant-across-europe-to-make-discovering-your-next-order-as-easy-as-having-a-conversation/",
               "date": "2026-08-11",
               "type": "company"
+            },
+            {
+              "title": "Glovo Connector for Claude (page is undated; checked Nov 2026)",
+              "publisher": "Glovo",
+              "url": "https://glovoapp.com/docs/en/legal/mcp/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "gapReason": "assist-only",
@@ -1474,7 +1536,7 @@
         },
         "NL": {
           "status": "limited",
-          "note": "Thuisbezorgd.nl, the Dutch brand of Just Eat Takeaway.com, has an AI chat assistant that places orders, according to Emerce. Bright.nl (1 October 2026) says Thuisbezorgd has no AI this smart, so the sources disagree and this counts as limited. Uber's ChatGPT rides integration only shows results in the US.",
+          "note": "Thuisbezorgd.nl, the Dutch brand of Just Eat Takeaway.com, has an in-app AI chat. An Industry Wire item placed by Thuisbezorgd's parent, JET, says it takes orders. Bright.nl (1 October 2026) says Thuisbezorgd has no AI this smart, so the sources disagree and this counts as limited. Uber's ChatGPT rides integration only shows results in the US.",
           "evidence": [
             {
               "title": "Thuisbezorgd.nl AI-assistent (Emerce, Industry Wire)",
@@ -1553,7 +1615,7 @@
         },
         "ZA": {
           "status": "limited",
-          "note": "Bolt's ChatGPT app went live in South Africa in August 2026 for fare estimates and driver tracking, and a Stuff report says booking and payment still happen in the Bolt app. Uber Eats in ChatGPT is US-only, and I found no AI food or grocery ordering from Mr D Food or Takealot.",
+          "note": "Bolt's ChatGPT app went live in South Africa in late July or early August 2026, for ride requests and fare estimates. Press reports say booking and payment still happen in the Bolt app. Uber Eats in ChatGPT is US-only, and we found no AI food or grocery ordering from Mr D Food or Takealot.",
           "evidence": [
             {
               "title": "Bolt riders in South Africa can now summon their rides via ChatGPT",
@@ -2089,7 +2151,7 @@
     {
       "name": "Woolworths Group",
       "hq": "AU",
-      "url": "https://woolworthsgroup.com.au/au/en/our-newsroom/latest-news/2026/woolworths-takes-the-hassle-out-of-the-weekly-shop-with-new-digi.html",
+      "url": "https://woolworthsgroup.com.au/au/en/our-newsroom/media-releases/latest-news/2026/woolworths-takes-the-hassle-out-of-the-weekly-shop-with-new-digi.html",
       "homepage": "https://www.woolworthsgroup.com.au/",
       "icon": "https://www.woolworthsgroup.com.au/etc.clientlibs/wwg/clientlibs/clientlib-site/resources/images/icons/apple-touch-icon.png",
       "role": "Its Gemini-powered Olive assistant builds meal plans and fills your grocery cart in the Woolworths app.",

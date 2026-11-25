@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans), Perplexity Comet (free) and Google's Chrome auto browse (AI Pro and Ultra) all browse and act on websites.",
+          "note": "Claude in Chrome (paid plans), Perplexity's Comet (free) and Google's Chrome auto browse (AI Pro and Ultra) all browse and act on websites. Gemini's computer use on Mac (US only, Google AI Plus, Pro and Ultra, from 19 November 2026) can click, type and fill in forms. ChatGPT's cloud browser is on paid plans in supported regions.",
           "evidence": [
             {
               "title": "Using cloud browser in ChatGPT",
@@ -22,13 +22,6 @@
               "publisher": "Anthropic",
               "url": "https://claude.com/blog/claude-in-chrome-generally-available",
               "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
               "type": "company"
             },
             {
@@ -51,18 +44,25 @@
               "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.11.19: computer use in the Gemini app for Mac)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-19",
+              "type": "company"
             }
           ]
         },
         "GB": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work in the UK; Gemini in Chrome now reaches the UK on desktop, but its auto browse agent is only in the US and India.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for the UK, but Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
               "type": "company"
             },
             {
@@ -73,44 +73,37 @@
               "type": "company"
             },
             {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
               "title": "Gemini in Chrome availability",
               "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "DE": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Germany, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is not listed for Germany, and Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "ChatGPT Supported Countries",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
-              "date": "2026-10",
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
               "type": "company"
             },
             {
@@ -121,37 +114,37 @@
               "type": "company"
             },
             {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
               "title": "Gemini in Chrome availability",
               "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "BR": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Portuguese prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Brazil, but Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
               "type": "company"
             },
             {
@@ -162,37 +155,37 @@
               "type": "company"
             },
             {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
               "title": "Gemini in Chrome availability",
               "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "MX": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Mexico, but Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
               "type": "company"
             },
             {
@@ -203,37 +196,37 @@
               "type": "company"
             },
             {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
               "title": "Gemini in Chrome availability",
               "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "CL": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Chile, but Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
               "type": "company"
             },
             {
@@ -244,37 +237,37 @@
               "type": "company"
             },
             {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
               "title": "Gemini in Chrome availability",
               "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "CO": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Spanish prompts; Google's Chrome auto browse is only in the US and India.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Colombia, but Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
               "type": "company"
             },
             {
@@ -285,37 +278,37 @@
               "type": "company"
             },
             {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
               "title": "Gemini in Chrome availability",
               "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "IN": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans; it replaced ChatGPT agent in August 2026), Claude in Chrome (paid plans) and Perplexity Comet (free) work here and accept Hindi and English prompts; Google's Chrome auto browse reached India in October 2026 for AI Pro and Ultra users, in English only.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Google's Chrome auto browse reached India in October 2026 for AI Pro and AI Ultra subscribers, in English only.",
           "evidence": [
             {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
               "type": "company"
             },
             {
@@ -326,17 +319,17 @@
               "type": "company"
             },
             {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
               "type": "company"
             },
             {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
               "type": "company"
             },
             {
@@ -350,239 +343,7 @@
         },
         "ES": {
           "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in Spain, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
-          "evidence": [
-            {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "ChatGPT Supported Countries",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
-              "title": "Gemini in Chrome availability",
-              "publisher": "Google",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
-              "type": "company"
-            }
-          ]
-        },
-        "FR": {
-          "status": "live",
-          "note": "ChatGPT Work's cloud browser (paid plans), Claude in Chrome (paid plans) and Perplexity Comet (free) work in France, which is on both OpenAI's and Anthropic's supported country lists; Google's Gemini in Chrome is not offered in any EU country.",
-          "evidence": [
-            {
-              "title": "Using cloud browser in ChatGPT",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "ChatGPT Supported Countries",
-              "publisher": "OpenAI",
-              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions (France listed)",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
-              "title": "Gemini in Chrome availability",
-              "publisher": "Google",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
-              "type": "company"
-            }
-          ]
-        },
-        "CA": {
-          "status": "live",
-          "note": "Claude in Chrome (paid plans, and Anthropic lists Canada) and Perplexity Comet (free, worldwide) open websites and click, type and fill forms. Gemini in Chrome is offered in Canada, but Google does not say whether its auto browse agent is. ChatGPT's cloud browser was not checked for Canada.",
-          "evidence": [
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
-              "title": "Gemini in Chrome availability",
-              "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
-              "type": "company"
-            }
-          ]
-        },
-        "JP": {
-          "status": "live",
-          "note": "Claude in Chrome (paid Claude plans) and Perplexity Comet (free) work in Japan, which is on Anthropic's supported list, and ChatGPT's cloud browser is on paid plans. Gemini in Chrome is offered in Japan in Japanese, but Google does not say auto browse has reached Japan.",
-          "evidence": [
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
-              "title": "Gemini in Chrome availability",
-              "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
-              "type": "company"
-            }
-          ]
-        },
-        "AU": {
-          "status": "live",
-          "note": "Claude in Chrome (paid plans; Australia is on Anthropic's supported list) and Perplexity Comet (free, worldwide) browse and act on websites. Gemini in Chrome reached Australia in April 2026, but Google's help page does not confirm that its auto browse agent works here. ChatGPT's cloud browser was not re-checked.",
-          "evidence": [
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
-              "title": "Gemini in Chrome availability",
-              "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-10",
-              "type": "company"
-            }
-          ]
-        },
-        "NG": {
-          "status": "live",
-          "note": "Claude in Chrome (every paid Claude plan; Nigeria is on Anthropic's supported list) and Perplexity Comet (free, released worldwide) browse and act on websites here. Gemini in Chrome is rolling out to adults in Nigeria, but we found no source that its auto browse agent works here.",
-          "evidence": [
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-11",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
-              "title": "Gemini in Chrome availability",
-              "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-11",
-              "type": "company"
-            }
-          ]
-        },
-        "KR": {
-          "status": "live",
-          "note": "Perplexity Comet is free and was released to everyone worldwide in October 2025. Claude in Chrome works on every paid Claude plan, and South Korea is on Anthropic's supported-countries list. Gemini in Chrome is listed for South Korea for adult users, but the Google page does not say whether auto browse is included.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is not listed for Spain, and Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
               "title": "The internet is better on Comet",
@@ -596,182 +357,12 @@
               "publisher": "Anthropic",
               "url": "https://claude.com/blog/claude-in-chrome-generally-available",
               "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-11",
               "type": "company"
             },
             {
               "title": "Gemini in Chrome availability",
               "publisher": "Google Chrome Help",
               "url": "https://support.google.com/chrome/answer/17140089?hl=en",
-              "date": "2026-11",
-              "type": "company"
-            }
-          ]
-        },
-        "SG": {
-          "status": "live",
-          "note": "Claude in Chrome (paid plans) and Perplexity's Comet browser both appear to work in Singapore. Claude is on Anthropic's supported-country list, and neither page limits countries. Gemini in Chrome is here, but its auto browse agent is reported as US-only, so it does not count.",
-          "evidence": [
-            {
-              "title": "Claude for Chrome",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-for-chrome",
-              "date": "2025-08-25",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-10",
-              "type": "company"
-            },
-            {
-              "title": "Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/comet",
-              "date": "2026-10",
-              "type": "company"
-            }
-          ],
-          "confidence": "low"
-        },
-        "ID": {
-          "status": "live",
-          "note": "Claude in Chrome is open to people on paid Claude plans, and Anthropic's supported-countries list includes Indonesia. Perplexity's Comet browser is free and was made available worldwide in October 2025. Both can open websites and act on them for you.",
-          "evidence": [
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-11",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            }
-          ]
-        },
-        "IT": {
-          "status": "live",
-          "note": "Perplexity's Comet browser is free for anyone to download, and Claude in Chrome works on every paid Claude plan, with Italy on Anthropic's supported-country list. Google's Gemini in Chrome is not listed for Italy, so its auto browse agent is not available here.",
-          "evidence": [
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-11",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            }
-          ]
-        },
-        "NL": {
-          "status": "live",
-          "note": "Claude in Chrome works in desktop Chrome on paid Claude plans, and Anthropic lists the Netherlands as a country where Claude is offered. Perplexity's Comet browser is free and was released to the world in October 2025.",
-          "evidence": [
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-11",
-              "type": "company"
-            },
-            {
-              "title": "The internet is better on Comet",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            }
-          ]
-        },
-        "AE": {
-          "status": "live",
-          "note": "Perplexity's Comet browser is free and open to everyone worldwide, per its 2025 launch post. Claude in Chrome works on every paid Claude plan, and the UAE is on Claude's supported country list. Gemini in Chrome lists the UAE for adults, but its auto browse feature is only confirmed in the US and India.",
-          "evidence": [
-            {
-              "title": "Comet is now available to everyone worldwide",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
-              "title": "Claude in Chrome is now generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-11",
-              "type": "company"
-            },
-            {
-              "title": "Gemini in Chrome availability",
-              "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
-              "date": "2026-11",
-              "type": "company"
-            }
-          ]
-        },
-        "SA": {
-          "status": "live",
-          "note": "Perplexity's Comet browser is free to download, and its launch post names no country limits, so it browses and acts on websites here. Gemini in Chrome is listed for Saudi adults aged 18 and over, but Google announced its auto browse agent only for the US.",
-          "evidence": [
-            {
-              "title": "Comet is now available to everyone worldwide",
-              "publisher": "Perplexity",
-              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
-              "date": "2025-10-02",
-              "type": "company"
-            },
-            {
-              "title": "Gemini in Chrome availability",
-              "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
               "date": "2026-11",
               "type": "company"
             },
@@ -781,27 +372,20 @@
               "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
               "date": "2026-01-28",
               "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
             }
           ]
         },
-        "ZA": {
+        "FR": {
           "status": "live",
-          "note": "Claude in Chrome is generally available on every paid Claude plan, and South Africa is on Anthropic's list of supported countries. Perplexity's Comet browser is free and was released to the world in October 2025. Gemini in Chrome is listed for South Africa for adults, but I could not confirm its auto browse agent there.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is not listed for France, and Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
-            {
-              "title": "Claude in Chrome is generally available",
-              "publisher": "Anthropic",
-              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-              "date": "2026-08-26",
-              "type": "company"
-            },
-            {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
-              "date": "2026-11",
-              "type": "company"
-            },
             {
               "title": "The internet is better on Comet",
               "publisher": "Perplexity",
@@ -810,17 +394,544 @@
               "type": "company"
             },
             {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
               "title": "Gemini in Chrome availability",
               "publisher": "Google Chrome Help",
-              "url": "https://support.google.com/chrome/answer/17140089?hl=en&co=GENIE.Platform%3DDesktop",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
               "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Meta's Muse agent is available in Canada and completes tasks for you, per Meta. Gemini in Chrome is listed for Canada, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            },
+            {
+              "title": "Introducing Muse for Small Business (Muse is available in the US and Canada)",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+              "date": "2026-09-29",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Meta's Muse launched in Japan on 23 October 2026 and can open a browser and fill in forms, per Meta. Gemini in Chrome is listed for Japan, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            },
+            {
+              "title": "Muse personal AI agent launches in Japan (Japanese press release)",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/",
+              "date": "2026-10-23",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Australia, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Nigeria, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "KR": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for South Korea, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "SG": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Singapore, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "ID": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Indonesia, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "IT": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is not listed for Italy, and Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "NL": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is not listed for the Netherlands, and Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for the UAE, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Saudi Arabia, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            }
+          ]
+        },
+        "ZA": {
+          "status": "live",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for South Africa, but Google has announced Chrome auto browse only for the US and India.",
+          "evidence": [
+            {
+              "title": "The internet is better on Comet",
+              "publisher": "Perplexity",
+              "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
+              "date": "2025-10-02",
+              "type": "company"
+            },
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "KE": {
           "status": "live",
-          "note": "Perplexity's Comet browser has been free to everyone worldwide since October 2025. Claude in Chrome is open to every paid Claude plan, and Kenya is on Anthropic's list of supported countries. ChatGPT's cloud browser could not be checked for Kenya.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Kenya, but Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
               "title": "The internet is better on Comet",
@@ -837,20 +948,34 @@
               "type": "company"
             },
             {
-              "title": "Supported countries and regions",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
               "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
         },
         "AR": {
           "status": "live",
-          "note": "Perplexity's Comet browser has been free to download worldwide since October 2025, and Claude in Chrome is available on every paid Claude plan. Argentina is on Anthropic's list of countries where its products are offered.",
+          "note": "Perplexity's Comet browser is free and was released to the world in October 2025, with no country limit named. Claude in Chrome works on paid plans. Gemini in Chrome is listed for Argentina, but Google has announced Chrome auto browse only for the US and India.",
           "evidence": [
             {
-              "title": "Comet is now available to everyone worldwide",
+              "title": "The internet is better on Comet",
               "publisher": "Perplexity",
               "url": "https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide",
               "date": "2025-10-02",
@@ -864,10 +989,24 @@
               "type": "company"
             },
             {
-              "title": "Countries and regions where we currently offer access to our products and services",
-              "publisher": "Anthropic",
-              "url": "https://www.anthropic.com/supported-countries",
+              "title": "Gemini in Chrome availability",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/17140089?hl=en",
               "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            },
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
               "type": "company"
             }
           ]
@@ -881,7 +1020,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Google Search AI Mode's \"Check for me\" phones local businesses for prices and availability for signed-in adults in English; it grew out of the US \"Let Google Call\" shopping feature.",
+          "note": "Google Search AI Mode's \"Check for me\" phones local businesses for prices and availability for signed-in adults in English; it grew out of the US \"Let Google Call\" shopping feature. Gemini Tasks can also call US businesses for you (17 November 2026).",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -895,6 +1034,13 @@
               "publisher": "Google",
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
+              "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.11.17: Tasks in Gemini, calls to US businesses)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-17",
               "type": "company"
             }
           ]
@@ -1049,7 +1195,7 @@
         "ES": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses in Spain; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in Spain. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1063,7 +1209,7 @@
         "FR": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in France. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1077,7 +1223,7 @@
         "CA": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses in Canada; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in Canada. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1091,7 +1237,7 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses in Japan; Google Search AI Mode's 'Check for me' calling works only in English and only in the US.",
+          "note": "No consumer agent found that phones businesses in Japan. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1105,7 +1251,7 @@
         "AU": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses here; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in Australia. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1126,7 +1272,7 @@
         "NG": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "No consumer agent found that phones businesses in Nigeria; Google Search AI Mode's \"Check for me\" calling works only in English and rolled out only in the US.",
+          "note": "No consumer agent found that phones businesses in Nigeria. Google Search AI Mode's \"Check for me\" calling is available only in English, to signed-in users over 18, and Google's help page names no country. Meta's Muse releases do not mention phone calls. Rechecked Nov 2026.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1139,7 +1285,7 @@
         },
         "KR": {
           "status": "none",
-          "note": "Google's AI Mode calling feature works in English only, and its help page does not name Korea. I found no Korean agent that phones businesses for you, but my search for one was thin.",
+          "note": "No consumer agent found that phones businesses here. Google's AI Mode 'Check for me' calling is English-only and names no countries, and Gemini's calling in Tasks (17 November 2026) is for US businesses.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1147,21 +1293,27 @@
               "url": "https://support.google.com/websearch/answer/17104441?hl=en",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.11.17: Tasks in Gemini, calls to US businesses)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-17",
+              "type": "company"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "not-launched"
         },
         "SG": {
           "status": "none",
-          "note": "We found no AI agent in Singapore that phones businesses for you. Google's Gemini can now call businesses, but only US phone numbers so far.",
+          "note": "We found no AI agent in Singapore that phones businesses for you. Gemini's calling in Tasks (17 November 2026) is for US businesses.",
           "evidence": [
             {
-              "title": "Gemini can now make phone calls for you, Canada has to wait",
-              "publisher": "iPhone in Canada",
-              "url": "https://www.iphoneincanada.ca/2026/09/24/gemini-can-now-make-phone-calls-for-you-canada-has-to-wait/",
-              "date": "2026-09-24",
-              "type": "news"
+              "title": "Gemini Apps release notes (2026.11.17: Tasks in Gemini, calls to US businesses)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-17",
+              "type": "company"
             }
           ],
           "gapReason": "not-launched"
@@ -1196,7 +1348,7 @@
         },
         "NL": {
           "status": "none",
-          "note": "No consumer agent found that phones Dutch businesses for you. Google's AI Mode 'Check for me' calling is for signed-in users in English, and I found no Dutch rollout.",
+          "note": "No consumer agent found that phones Dutch businesses for you. Google's AI Mode 'Check for me' calling is for signed-in users in English, and Gemini's calling in Tasks (17 November 2026) is for US businesses.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1204,10 +1356,16 @@
               "url": "https://support.google.com/websearch/answer/17104441?hl=en",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.11.17: Tasks in Gemini, calls to US businesses)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-17",
+              "type": "company"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "not-launched"
         },
         "AE": {
           "status": "none",
@@ -1225,7 +1383,7 @@
         },
         "SA": {
           "status": "none",
-          "note": "We found no consumer agent that phones Saudi businesses for you. Google's 'Check for me' calling in AI Mode is limited to English, and its help page names no countries, so Saudi Arabia is not confirmed.",
+          "note": "No consumer agent found that phones Saudi businesses for you. Google's 'Check for me' calling in AI Mode is English-only and names no countries, and Gemini's calling in Tasks (17 November 2026) is for US businesses.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1233,14 +1391,20 @@
               "url": "https://support.google.com/websearch/answer/17104441?hl=en",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.11.17: Tasks in Gemini, calls to US businesses)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-17",
+              "type": "company"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "not-launched"
         },
         "ZA": {
           "status": "none",
-          "note": "I found no consumer agent that phones South African businesses for you. Google's AI Mode local availability help page is English-only for signed-in adults, and it names no countries.",
+          "note": "No consumer agent found that phones South African businesses for you. Google's AI Mode 'Check for me' calling is English-only for signed-in adults and names no countries, and Gemini's calling in Tasks (17 November 2026) is for US businesses.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1248,14 +1412,20 @@
               "url": "https://support.google.com/websearch/answer/17104441?hl=en",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.11.17: Tasks in Gemini, calls to US businesses)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-17",
+              "type": "company"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "not-launched"
         },
         "KE": {
           "status": "none",
-          "note": "No consumer agent that phones local businesses for you was found in Kenya. Google's AI Mode local checks do not name Kenya, and Google's Let Google Call started rolling out in the US only.",
+          "note": "No consumer agent found that phones local businesses for you in Kenya. Google's AI Mode 'Check for me' calling names no countries, and Gemini's calling in Tasks (17 November 2026) is for US businesses.",
           "evidence": [
             {
               "title": "Use AI Mode to check local availability and pricing",
@@ -1270,14 +1440,20 @@
               "url": "https://blog.google/products/shopping/agentic-checkout-holiday-ai-shopping/",
               "date": "2025-11-13",
               "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.11.17: Tasks in Gemini, calls to US businesses)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-17",
+              "type": "company"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "not-launched"
         },
         "AR": {
           "status": "none",
-          "note": "No consumer agent that phones local businesses was found for Argentina. Google's Check for me calling works in English only, and its help page names no countries.",
+          "note": "No consumer agent found that phones local businesses in Argentina. Google's 'Check for me' calling works in English only, and Gemini's calling in Tasks (17 November 2026) is for US businesses.",
           "evidence": [
             {
               "title": "Check for me in Google Search AI Mode",
@@ -1285,10 +1461,16 @@
               "url": "https://support.google.com/websearch/answer/17104441?hl=en",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Gemini Apps release notes (2026.11.17: Tasks in Gemini, calls to US businesses)",
+              "publisher": "Google",
+              "url": "https://gemini.google/release-notes/",
+              "date": "2026-11-17",
+              "type": "company"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "not-launched"
         }
       }
     },
@@ -1299,7 +1481,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "Gemini connected apps (calls, messages, WhatsApp, Calendar, Instacart, OpenTable), Alexa+ (free with Prime) and Gemini Spark act across apps; Apple's Siri AI app actions are in beta; OpenAI's dots, always-on agents with their own cloud computer that work across connected apps, are rolling out to Pro users outside the EEA, Switzerland and the UK, and to Business Premium workspaces.",
+          "note": "Gemini connected apps (calls, messages, WhatsApp, Calendar, Instacart, OpenTable), Alexa+ (free with Prime) and Gemini Spark act across apps. Apple's Siri AI app actions are still a developer preview, due to reach customers in a few months (Apple, 3 November 2026). OpenAI's dots, always-on agents that work across connected apps, are rolling out to Pro users outside the EEA, Switzerland and the UK, and to Business workspaces in supported regions. Since 17 November 2026, Tasks in Gemini is free here: it makes calls, books and shops for you, within a spending cap you set.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -1348,6 +1530,27 @@
               "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI is now open to all developers",
+              "publisher": "Apple",
+              "url": "https://developer.apple.com/news?id=gdk2umrf",
+              "date": "2026-11-03",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            },
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Gemini Apps Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
               "type": "company"
             }
           ]
@@ -1677,7 +1880,7 @@
         },
         "IN": {
           "status": "live",
-          "note": "Gemini connected apps work in Hindi and English on Android; Alexa+ is in Early Access in Hindi and English since September 2026, with Swiggy, MakeMyTrip and EazyDiner links coming soon; Siri AI is in beta in English; OpenAI's dots, always-on agents that work across connected apps, are rolling out to Pro users here.",
+          "note": "Gemini connected apps work in Hindi and English on Android; Alexa+ is in Early Access in Hindi and English since September 2026, with Swiggy, MakeMyTrip and EazyDiner links coming soon; Siri AI is in beta in English; OpenAI's dots, always-on agents that work across connected apps, are rolling out to Pro users here. Since 17 November 2026, Tasks in Gemini is free here: it makes calls, books and shops for you, within a spending cap you set.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -1719,6 +1922,20 @@
               "publisher": "OpenAI",
               "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            },
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Gemini Apps Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
               "type": "company"
             }
           ]
@@ -1811,13 +2028,6 @@
               "type": "company"
             },
             {
-              "title": "Amazon lance Alexa+ en France : ce que l'IA change vraiment pour les clients",
-              "publisher": "iPhoneSoft",
-              "url": "https://iphonesoft.fr/2026/05/26/amazon-alexa-france-ia-change-vraiment-clients",
-              "date": "2026-05-26",
-              "type": "news"
-            },
-            {
               "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally (list of Alexa+ countries; France since 26 May 2026)",
               "publisher": "Amazon",
               "url": "https://aboutamazon.com/news/devices/alexa-plus-international-launch",
@@ -1842,7 +2052,7 @@
         },
         "CA": {
           "status": "live",
-          "note": "Alexa+ has been open to everyone in Canada since June 2026 (English and French): it shops Amazon, books OpenTable tables and plans trips with Tripadvisor. Gemini connected apps send messages, make calls and use WhatsApp in every Gemini country. Uber rides on Alexa+ are still \"coming soon\".",
+          "note": "Alexa+ has been open to everyone in Canada since June 2026 (English and French): it shops Amazon, books OpenTable tables and plans trips with Tripadvisor. Gemini connected apps send messages, make calls and use WhatsApp in every Gemini country. Uber rides on Alexa+ are still \"coming soon\". Since 17 November 2026, Tasks in Gemini is free here: it makes calls, books and shops for you, within a spending cap you set.",
           "evidence": [
             {
               "title": "Alexa+ now available to everyone in Canada and free for Prime members",
@@ -1864,12 +2074,26 @@
               "url": "https://support.google.com/gemini/table/17434654?hl=en",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            },
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Gemini Apps Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "JP": {
           "status": "live",
-          "note": "Gemini connected apps (calls, messages, WhatsApp) work in Japan, which is a Gemini app country. Alexa+ has been in free Early Access in Japanese since 29 October 2026, with Uber Eats, Demae-can, Tabelog and Ticket Pia actions planned for later. Apple's Siri AI app actions reached Japanese in beta on 26 October 2026. Partner apps such as OpenTable and Instacart in Gemini are US or UK only.",
+          "note": "Gemini connected apps (calls, messages, WhatsApp) work in Japan, which is a Gemini app country. Alexa+ has been in free Early Access in Japanese since 29 October 2026, with Uber Eats, Demae-can, Tabelog and Ticket Pia actions planned for later. Apple's Siri AI reached Japanese in beta on 26 October 2026. Partner apps such as OpenTable and Instacart in Gemini are US or UK only. Since 17 November 2026, Tasks in Gemini is free here: it makes calls, books and shops for you, within a spending cap you set.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -1907,24 +2131,38 @@
               "type": "company"
             },
             {
-              "title": "iPadOS 27.2配信開始。Siri AIがついに日本語対応",
-              "publisher": "ゴリミー",
-              "url": "https://gori.me/?p=171776",
-              "date": "2026-10-27",
-              "type": "news"
-            },
-            {
               "title": "Amazon、次世代AIアシスタント「Alexa+」を日本で提供開始",
               "publisher": "Amazon Japan",
               "url": "https://www.aboutamazon.jp/news/devices/amazon-launches-alexa-plus-in-japan",
               "date": "2026-10-29",
+              "type": "company"
+            },
+            {
+              "title": "Siri AI is available in more languages starting today",
+              "publisher": "Apple",
+              "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+              "date": "2026-10-26",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            },
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Gemini Apps Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
               "type": "company"
             }
           ]
         },
         "AU": {
           "status": "live",
-          "note": "Gemini connected apps send messages, make calls and add calendar events wherever the Gemini mobile app works, and Alexa+ (Early Access since August 2026) sends emails, adds calendar events, books tables and orders gifts. Apple's Siri AI beta is in English and Australia is not among its exclusions, but Apple does not list countries.",
+          "note": "Gemini connected apps send messages, make calls and add calendar events wherever the Gemini mobile app works, and Alexa+ (Early Access since August 2026) sends emails, adds calendar events, books tables and orders gifts. Apple's Siri AI beta is in English and Australia is not among its exclusions, but Apple does not list countries. Since 17 November 2026, Tasks in Gemini is free here: it makes calls, books and shops for you, within a spending cap you set.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -1952,6 +2190,20 @@
               "publisher": "Apple",
               "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
               "date": "2026-09-14",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            },
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Gemini Apps Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
               "type": "company"
             }
           ]
@@ -1985,7 +2237,7 @@
         },
         "KR": {
           "status": "live",
-          "note": "Gemini's connected apps can send messages and make calls through Android's Messages and Phone apps wherever the Gemini mobile app works, and South Korea is on Gemini's Play Store country list. Siri AI lists Korean as a language but is in beta and does not name Korea. Alexa+ does not list Korea.",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in South Korea. Google says they work wherever the Gemini mobile app is offered, and South Korea is on the Play Store list for that app. Siri AI lists Korean as a language but names no country. Alexa+ is not offered here. Since 17 November 2026, Tasks in Gemini is free here: it makes calls, books and shops for you, within a spending cap you set.",
           "evidence": [
             {
               "title": "Check the availability and requirements of connected apps in Gemini Apps",
@@ -2007,13 +2259,26 @@
               "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
               "date": "2026-10-26",
               "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            },
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Gemini Apps Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "SG": {
-          "status": "limited",
-          "note": "Gemini connected apps on Android can send messages, make calls and add calendar events. Google says availability varies by country, app and device, and its help pages do not list Singapore. Alexa+ and Apple's Siri were not checked.",
+          "status": "live",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in Singapore. Google says they work wherever the Gemini mobile app is offered, and Singapore is on the Play Store list for that app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Gemini connected apps",
@@ -2028,13 +2293,26 @@
               "url": "https://support.google.com/gemini/answer/15575143",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "ID": {
           "status": "live",
-          "note": "Gemini connected apps can act in your apps, such as Gmail, Calendar, Keep and Tasks and, on Android, Phone, Messages and WhatsApp. Google said in March 2025 that these extensions are available in all Gemini countries and languages. Google's newest connected-apps list (October 2026) is mostly US English, and we found no Alexa+ or Siri AI launch that covers Indonesia, so the confidence is low.",
+          "note": "Gemini's connected apps work in Indonesia. Phone, Messages and WhatsApp work on Android wherever the Gemini mobile app is offered, and Indonesia is on the Play Store list for that app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Gemini Apps release notes (March 2025 extensions available in all Gemini countries and languages)",
@@ -2056,21 +2334,27 @@
               "url": "https://support.google.com/gemini/answer/13575153?hl=en",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "IT": {
-          "status": "limited",
-          "note": "Alexa+ has been in free Early Access in Italy since April 2026, by invitation only. Gemini's connected apps include Phone, Messages and WhatsApp on Android, but Google's help page does not say which countries have them. Apple's Siri AI is not offered in the EU yet.",
+          "status": "live",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in Italy. Google says they work wherever the Gemini mobile app is offered, and Italy is on the Play Store list for that app. Alexa+ has been in free Early Access since 15 April 2026, and Apple's Siri AI is not offered in the EU yet.",
           "evidence": [
-            {
-              "title": "Alexa arriva in Italia e promette di diventare una vera ed evoluta assistente tuttofare",
-              "publisher": "Panorama",
-              "url": "https://www.panorama.it/tempo-libero/tecnologia/alexa-arriva-in-italia-e-promette-di-diventare-una-vera-ed-evoluta-assistente-tuttofare",
-              "date": "2026-04-15",
-              "type": "news"
-            },
             {
               "title": "Connect apps to Gemini (Connected Apps)",
               "publisher": "Google Gemini Help",
@@ -2084,14 +2368,33 @@
               "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
               "date": "2026-09-14",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
             }
-          ],
-          "gapReason": "pilot-only",
-          "confidence": "low"
+          ]
         },
         "NL": {
-          "status": "limited",
-          "note": "Gemini's WhatsApp, Messages, Phone and Calendar extensions were rolled out in every Gemini country in March 2025, but Google's connected-apps page says availability varies by location and I found no Dutch line, so this is limited. Amazon's Alexa+ has no Dutch launch in the sources I found, and Apple's Siri AI is not available in the EU at first.",
+          "status": "live",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in the Netherlands. Google says they work wherever the Gemini mobile app is offered, and the Netherlands is on the Play Store list for that app. Alexa+ is not on Amazon's country list, and Apple's Siri AI is not offered in the EU yet.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -2120,12 +2423,26 @@
               "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
               "date": "2026-09-14",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
         "AE": {
-          "status": "none",
-          "note": "Gemini is available in the UAE, but Google's Connected Apps help page does not say whether Gemini can send messages or add calendar events here. Alexa+ and Siri AI do not name the UAE, so we found no confirmed assistant that acts across apps for you.",
+          "status": "live",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in the UAE. Google says they work wherever the Gemini mobile app is offered, and the UAE is on the Play Store list for that app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Gemini mobile app: where it is available",
@@ -2147,14 +2464,19 @@
               "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-03-18",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "SA": {
-          "status": "limited",
-          "note": "Gemini's built-in Phone, Messages, WhatsApp and Calendar extensions were announced in March 2025 for all Gemini countries and languages. Google's October 2026 note lists newer connected apps only for US English and some Brazil, India and English-speaking regions, and Alexa+ is not offered here, so we rate this limited.",
+          "status": "live",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in Saudi Arabia. Google says they work wherever the Gemini mobile app is offered, and Saudi Arabia is on the Play Store list for that app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Gemini release notes",
@@ -2169,13 +2491,26 @@
               "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "ZA": {
-          "status": "none",
-          "note": "Gemini is listed as available in South Africa, but Google says its connected apps vary by country and does not name South Africa, so I could not confirm that Gemini can send messages or book for you here. Alexa+ is not in the country list in a June 2026 report, and Apple's Siri AI does not name South Africa.",
+          "status": "live",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in South Africa. Google says they work wherever the Gemini mobile app is offered, and South Africa is on the Play Store list for that app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Where Gemini Apps are available",
@@ -2199,19 +2534,31 @@
               "type": "company"
             },
             {
-              "title": "Alexa+ rolls out to more countries, but Australia has to wait till 2027",
-              "publisher": "EFTM",
-              "url": "https://eftm.com/2026/06/alexa-rolls-out-to-more-countries-but-australia-has-to-wait-till-2027-276635/amp",
-              "date": "2026-06",
-              "type": "news"
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "KE": {
-          "status": "none",
-          "note": "Gemini is open in Kenya and its connected apps can send messages and make calls on Android, but Google does not name Kenya as a place where connected apps work. Alexa+ is not listed for Kenya, and Apple's Siri AI is an English-only beta with no Kenya listing.",
+          "status": "live",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in Kenya. Google says they work wherever the Gemini mobile app is offered, and Kenya is on the Play Store list for that app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Connect apps to Gemini (Connected Apps)",
@@ -2228,26 +2575,38 @@
               "type": "company"
             },
             {
-              "title": "Alexa+ rolls out to more countries, but Australia has to wait till 2027",
-              "publisher": "eftm",
-              "url": "https://eftm.com/2026/06/alexa-rolls-out-to-more-countries-but-australia-has-to-wait-till-2027-276635",
-              "date": "2026-06",
-              "type": "news"
-            },
-            {
               "title": "Siri AI, a profoundly more capable and personal assistant, is here",
               "publisher": "Apple",
               "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
               "date": "2026-09-14",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
             }
-          ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          ]
         },
         "AR": {
-          "status": "limited",
-          "note": "Gemini on Android can make calls and send messages through its Phone, Messages and WhatsApp extensions, and Google said in March 2025 that its new extensions were available in all Gemini countries and languages. But Google's October 2026 notes on its connected apps name Brazil and India, not Argentina, so the cell is set to limited with low confidence. Alexa+ is not on Amazon's list of countries, and Apple does not name Argentina for Siri AI.",
+          "status": "live",
+          "note": "Gemini's Phone, Messages and WhatsApp apps work on Android in Argentina. Google says they work wherever the Gemini mobile app is offered, and Argentina is on the Play Store list for that app. Alexa+ is not offered here.",
           "evidence": [
             {
               "title": "Gemini release notes (2025.03.03: extensions for Phone, Messages and WhatsApp)",
@@ -2276,9 +2635,22 @@
               "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
               "date": "2026-10-26",
               "type": "company"
+            },
+            {
+              "title": "Check the availability and requirements of connected apps in Gemini Apps",
+              "publisher": "Google",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         }
       }
     }

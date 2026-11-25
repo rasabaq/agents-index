@@ -25,7 +25,7 @@ export const CREW = [
   { agent: 'pay', errand: 'pay by UPI', cap: 'payments.instant-rail-agent', country: 'IN', product: 'ChatGPT', logo: 'chatgpt' },
   { agent: 'shop', errand: 'order food', cap: 'services.delivery-rides', country: 'KR', product: 'KakaoTalk', logo: 'kakao' },
   { agent: 'act', errand: 'phone a shop', cap: 'autonomy.calls-for-you', country: 'US', product: 'AI Mode', logo: 'google' },
-  { agent: 'book', errand: 'book a table', cap: 'services.restaurant-booking', country: 'JP', product: 'Alexa+', logo: 'amazon' },
+  { agent: 'book', errand: 'book a table', cap: 'services.restaurant-booking', country: 'CA', product: 'Alexa+', logo: 'amazon' },
   // A gap on purpose: the log also shows where no agent works yet.
   { agent: 'pay', errand: 'pay from a wallet', cap: 'payments.wallet-agent', country: 'KE', product: null, logo: null },
 ];

@@ -42,7 +42,7 @@
         },
         "GB": {
           "status": "live",
-          "note": "LoopCV searches UK boards such as Reed and CV-Library, plus LinkedIn and Indeed, and sends applications for you by email or web form. Indeed's Career Scout reached the UK in July 2026; it pre-fills applications that you send yourself.",
+          "note": "LoopCV searches UK boards such as Reed and CV-Library, plus LinkedIn and Indeed, and sends applications for you by email or web form. Indeed's Career Scout, an AI career tool, reached the UK in July 2026; its UK help page lists applying as a feature but does not say whether it sends applications for you.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -100,10 +100,10 @@
           ]
         },
         "MX": {
-          "status": "limited",
+          "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Mexico, among the boards it searches, but LoopCV does not list Mexico as a market or say it applies here. We did not find a local job board, such as OCC Mundial, with its own agent that applies for you.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Mexico, among the boards it searches, but LoopCV does not list Mexico as a market or say it applies here. We searched Computrabajo and OCC Mundial (Nov 2026); no primary source shows a job board here with its own agent that applies for candidates. A November 2026 check of LoopCV's Spanish agent page found no Mexico listing.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -115,10 +115,10 @@
           ]
         },
         "CL": {
-          "status": "limited",
+          "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Chile, among the boards it searches, but LoopCV does not list Chile as a market or say it applies here. We did not find a local job board, such as Laborum, with its own agent that applies for you.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Chile, among the boards it searches, but LoopCV does not list Chile as a market or say it applies here. We searched Computrabajo, Laborum and Bumeran (Nov 2026); their AI tools screen profiles for recruiters, and no primary source shows an agent that applies for candidates. A November 2026 check of LoopCV's Spanish agent page found no Chile listing.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -130,10 +130,10 @@
           ]
         },
         "CO": {
-          "status": "limited",
+          "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Colombia, among the boards it searches, but LoopCV does not list Colombia as a market or say it applies here. We did not find a local job board, such as elempleo, with its own agent that applies for you.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Colombia, among the boards it searches, but LoopCV does not list Colombia as a market or say it applies here. We searched Computrabajo and elempleo (Nov 2026); no primary source shows a job board here with its own agent that applies for candidates. A November 2026 check of LoopCV's Spanish agent page found no Colombia listing.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -158,8 +158,8 @@
           ]
         },
         "FR": {
-          "status": "live",
-          "note": "LoopCV accepts France as a job location and sends applications for you by email when it finds an employer address, and on LinkedIn and Indeed through its Chrome extension; its list of boards names no French board such as France Travail or Welcome to the Jungle. France Travail's own AI tool (ChatFT) serves its advisers, not job seekers.",
+          "status": "limited",
+          "note": "LoopCV can apply to jobs in France through LinkedIn, which its help page says covers Europe. Its board list names no French board, such as France Travail or Welcome to the Jungle. France Travail's AI tool (ChatFT) is for its advisers, not job seekers. A November 2026 check of LoopCV's help page found France only as a location example.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -169,7 +169,7 @@
               "type": "company"
             },
             {
-              "title": "France Travail customer story (ChatFT built with Mistral)",
+              "title": "Mistral AI customer story: France Travail (ChatFT built with Mistral)",
               "publisher": "Mistral AI",
               "url": "https://mistral.ai/customers/france-travail/",
               "date": "2026-10",
@@ -179,8 +179,8 @@
           "confidence": "low"
         },
         "CA": {
-          "status": "live",
-          "note": "LoopCV accepts a country-only location and sends applications for you by email or web form; its job-board list names Canada only under LinkedIn, and says coverage varies by country. No Canadian job board with its own applying agent was found.",
+          "status": "limited",
+          "note": "LoopCV accepts a country-only location and sends applications for you by email or web form. Its help page names Canada only in its LinkedIn coverage line. Indeed Career Scout (Canada page) finds jobs and helps with résumés and interview prep, and does not say it applies for you. We found no Canadian job board with its own agent that applies for you.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -195,7 +195,7 @@
         "JP": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "We found no agent that applies for jobs for you in Japan. Japanese job sites such as Recruit, doda and BizReach use AI for matching and scouting, not for sending applications, and LoopCV's board list names no Japanese board, though it searches LinkedIn worldwide.",
+          "note": "We found no agent that applies for jobs for you in Japan. We searched Indeed Japan and doda (2026). doda's AI tools write job postings for employers and draft résumé job histories, and we found no auto-apply feature. LoopCV's board list names no Japanese board, though it searches LinkedIn worldwide.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -208,8 +208,8 @@
           "confidence": "low"
         },
         "AU": {
-          "status": "live",
-          "note": "LoopCV searches SEEK, plus LinkedIn and Indeed, for Australian jobs and sends applications for you by email or web form; its help page does not say whether it can auto-apply on SEEK itself. SEEK has no agent of its own that applies for you.",
+          "status": "limited",
+          "note": "LoopCV searches SEEK, plus LinkedIn and Indeed, for Australian jobs and sends applications for you by email or web form. Its help page does not say it can apply on SEEK itself. We found no SEEK feature that applies for you; SEEK's site blocked our check, and search found only third-party SEEK auto-apply extensions.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -222,21 +222,14 @@
           "confidence": "low"
         },
         "NG": {
-          "status": "limited",
+          "status": "none",
           "gapReason": "not-launched",
-          "note": "JobCopilot says it auto-applies to jobs at companies worldwide, and Nigerian job listings on GrabJobs carry an \"Auto-Apply with AI\" button that uses it; LoopCV searches LinkedIn worldwide but does not list Nigeria. Jobberman, the main local job board, only sends job alerts and offers one-click applying that you do yourself.",
+          "note": "JobCopilot says it applies to jobs on company career pages worldwide, but its site does not name Nigeria. Jobberman's job alerts send listings only; its page describes no auto-apply. LoopCV does not list Nigeria. We could not open a GrabJobs Nigeria listing that showed an \"Auto-Apply with AI\" button (site returned 403).",
           "evidence": [
             {
               "title": "JobCopilot: automatically apply to jobs",
               "publisher": "JobCopilot",
               "url": "https://jobcopilot.com/",
-              "date": "2026-11",
-              "type": "company"
-            },
-            {
-              "title": "Internal Auditor (Nigeria job listing with Auto-Apply with AI)",
-              "publisher": "GrabJobs",
-              "url": "https://grabjobs.co/nigeria/job/full-time/others/internal-auditor-145272102",
               "date": "2026-11",
               "type": "company"
             },
@@ -353,8 +346,8 @@
           "confidence": "low"
         },
         "AE": {
-          "status": "limited",
-          "note": "LoopCV's help page says NaukriGulf covers roles across the UAE, and it lists GulfTalent as an Easy Apply board. The page does not name the UAE as a market itself, and it warns that job board coverage varies by country, so this is partial.",
+          "status": "live",
+          "note": "LoopCV's help page names the UAE under NaukriGulf, which covers roles across the UAE, and lists GulfTalent as a board you apply to with its Chrome extension while you are logged in. LoopCV sends applications for you by email or web form. The page warns that board coverage can vary by country and region.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -363,8 +356,7 @@
               "date": "2026-08-19",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "SA": {
           "status": "live",
@@ -377,12 +369,11 @@
               "date": "2026-08-19",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "ZA": {
           "status": "limited",
-          "note": "No big South African job board has an agent that applies for you: Pnet and CareerJunction show no such feature, and LoopCV does not search South African boards. A small app, Career Agent, said in July 2025 that it sends applications for paying users when a listing has a contact email; otherwise you apply by hand. We could not confirm that it still runs.",
+          "note": "No big South African job board has an agent that applies for you: Pnet and CareerJunction show no such feature, and LoopCV does not search South African boards. A small app, Career Agent, said in July 2025 that it sends applications for paying users when a listing has a contact email; otherwise you apply by hand. We could not confirm that it still runs. A November 2026 search found no newer report on Career Agent.",
           "evidence": [
             {
               "title": "Stellenbosch PhD student's app applies for jobs while users sleep",
@@ -411,7 +402,7 @@
         },
         "AR": {
           "status": "none",
-          "note": "We found no AI agent in Argentina that finds jobs and sends applications for you. LoopCV, which does this in the UK, Germany and India, does not name Argentina or its local job boards, such as Computrabajo, Bumeran and ZonaJobs.",
+          "note": "We found no AI agent in Argentina that finds jobs and sends applications for you. LoopCV, which does this in the UK, Germany and India, does not name Argentina or its local job boards, such as Computrabajo, Bumeran and ZonaJobs. A November 2026 check of LoopCV's Spanish agent page found no Argentina listing.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -499,7 +490,7 @@
         "IN": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Kredily's Kai (shipped August 2026) works out the month's payroll, payslips and bank file, but it stops before payout and statutory filing, which stay with the owner; Kredily does not say whether Kai is open to all customers.",
+          "note": "Kredily's Kai (shipped August 2026) works out the month's payroll, payslips and bank file, but it stops before payout and statutory filing, which stay with the owner; Kredily does not say whether Kai is open to all customers. We searched Zoho Payroll, Keka and RazorpayX (Nov 2026) and found no payroll agent from them.",
           "evidence": [
             {
               "title": "Best AI payroll software in India (Kai payroll agent)",
@@ -617,7 +608,7 @@
         "FR": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "PayFit AI, inside the French payroll service PayFit, answers employees' HR questions and does some tasks for the employer, such as passing on variable pay items and building HR reports, but PayFit's experts run the payroll and file the social declarations (DSN).",
+          "note": "PayFit AI, inside the French payroll service PayFit, answers employees' HR questions and does some tasks for the employer, such as passing on variable pay items and detecting payroll anomalies. PayFit's experts run the payroll, and PayFit handles the social declarations (DSN); the AI is not named as the filer. Lucca's Ask Lucca agent answers questions and says it will soon run tasks, but its page names no payroll run or filing.",
           "evidence": [
             {
               "title": "Payfit: logiciel de paie et RH (Payfit AI)",
@@ -625,16 +616,8 @@
               "url": "https://payfit.com/fr/",
               "date": "2026-10",
               "type": "company"
-            },
-            {
-              "title": "PayFit launches first personalised AI agent to answer workers' queries on their contract, pay and leave",
-              "publisher": "FF News",
-              "url": "https://ffnews.com/newsarticle/paytech/payfit-launches-first-personalised-ai-agent-to-answer-workers-queries-on-their-contract-pay-and-leave/",
-              "date": "2026-01-21",
-              "type": "news"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "CA": {
           "status": "none",
@@ -673,16 +656,23 @@
           "confidence": "low"
         },
         "AU": {
-          "status": "none",
-          "gapReason": "not-launched",
-          "note": "Employment Hero's HeroForce (April 2026) uses AI to work out awards and payroll, but as an employer-of-record service with people checking the work, not an agent that runs payroll for the business. We found no Xero or MYOB agent that runs payroll.",
+          "status": "limited",
+          "gapReason": "assist-only",
+          "note": "Employment Hero's HeroForce (launched in Australia, April 2026) uses Hero AI to process payroll in seconds. It flags anomalies for the business to approve, and Employment Hero says a payroll agent is still in development. We found no Xero or MYOB agent that runs payroll. Xero's JAX covers reconciliation and reporting, and Xero Payroll (powered by Gusto) was announced for US customers only. MYOB's AI covers bookkeeping and BAS; the only payroll agent we found was Beryl, a third-party product.",
           "evidence": [
             {
-              "title": "Employment Hero becomes the legal employer with new AI system",
-              "publisher": "SmartCompany",
-              "url": "https://www.smartcompany.com.au/startupsmart/employment-hero-business-legal-employer-new-ai-system/",
-              "date": "2026-04-22",
-              "type": "news"
+              "title": "HeroForce: AI fixing Australian employment complexity and tax",
+              "publisher": "Employment Hero",
+              "url": "https://employmenthero.com/news/heroforce-ai-fixing-australian-employment-complexity-tax/",
+              "date": "2026-04-21",
+              "type": "company"
+            },
+            {
+              "title": "Xero Announces New AI Innovations for Small Businesses and Accountants at Xerocon US",
+              "publisher": "Xero",
+              "url": "https://www.xero.com/ca/media-releases/new-ai-innovations-xerocon-denver/",
+              "date": "2026-08-20",
+              "type": "company"
             }
           ],
           "confidence": "low"
