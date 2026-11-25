@@ -1,4 +1,4 @@
-// Usage: node scripts/check-links.mjs — fetches every source URL, company link and homepage, and adoption source, and fails on dead links (404/410).
+// Usage: node scripts/check-links.mjs — fetches every source URL, company link and homepage, adoption source and assistants source, and fails on dead links (404/410).
 // 401/403/429 and similar are reported but pass: many publishers block scripts while the page is fine.
 import { readFile } from 'node:fs/promises';
 
@@ -11,6 +11,7 @@ for (const { id } of meta.categories) {
   for (const co of cat.companies ?? []) urls.add(co.url).add(co.homepage);
 }
 for (const m of (await read('adoption')).measures) urls.add(m.source.url);
+for (const f of (await read('assistants')).features) for (const cell of Object.values(f.countries)) for (const ev of cell.evidence ?? []) urls.add(ev.url);
 
 const queue = [...urls];
 const results = [];

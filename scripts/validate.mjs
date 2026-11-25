@@ -5,12 +5,15 @@ import { validate, checkThemes, scoreCountries } from '../src/observatory.js';
 import { checkErrands } from '../src/errands.js';
 import { checkCrew } from '../src/crew.js';
 import { checkAdoption } from '../src/adoption.js';
+import { checkAssistants } from '../src/assistants.js';
 
 const read = async (name) => JSON.parse(await readFile(new URL(`../data/${name}.json`, import.meta.url), 'utf8'));
 
 const meta = await read('meta');
 // How many people use AI (data/adoption.json): context beside the index, checked here but never scored.
 const adoption = await read('adoption');
+// The big assistants' agent features by country (data/assistants.json): a table on the countries page, never scored.
+const assistants = await read('assistants');
 const categories = await Promise.all(meta.categories.map((c) => read(c.id).catch(() => ({ category: c.id, capabilities: [] }))));
 // The errands (src/errands.js) name capabilities by id, so a renamed capability shows here too. The themes
 // (THEMES in src/observatory.js) name categories, so a new category shows here until it is in one.
@@ -21,6 +24,7 @@ const errors = [
   ...checkThemes(meta.categories.map((c) => c.id)),
   ...checkCrew(categories, (logo) => existsSync(new URL(`../images/logos/${logo}.png`, import.meta.url))),
   ...checkAdoption(meta, adoption),
+  ...checkAssistants(meta, assistants),
 ];
 
 if (errors.length) {

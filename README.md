@@ -55,6 +55,7 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `src/adoption.js` | Checks `data/adoption.json`, ranks the countries on it, and writes the "agents vs people" sentence |
+| `src/assistants.js` | Checks `data/assistants.json`: the same cell rules as the category files |
 | `src/feed.js`, `src/csv.js` | What changed, one row per move for the home page; and every cell as a CSV file for the footer's Download CSV |
 | `src/errands.js`, `src/icons.js` | The everyday errands (the checks each step uses) and the twelve pixel icons, one per category |
 | `docs/methodology.md` | How the data is collected and scored |
