@@ -1,0 +1,2501 @@
+{
+  "asOf": "2026-11-25",
+  "about": "The agent features of the big AI assistants, country by country. Each cell has the same shape and statuses as the category files. A country with no cell has not been checked yet. Shown on the countries page, never scored.",
+  "features": [
+    {
+      "id": "alexa-plus",
+      "name": "Alexa+",
+      "vendor": "Amazon",
+      "does": "books and orders by voice",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Alexa+ is open to everyone in the US and free with Prime. It orders takeout, makes restaurant bookings, books rides and schedules home repairs.",
+          "evidence": [
+            {
+              "title": "Alexa+ now available to everyone in the US, and free for Prime members",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-available-free-prime-members-us",
+              "date": "2026-02-04",
+              "type": "company"
+            },
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in the United Kingdom since 19 March 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in Germany since 7 May 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in India since 16 September 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in Brazil since 18 June 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in Mexico since 22 January 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: Chile is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: Colombia is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in Spain since 23 April 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in France since 26 May 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Early Access ended on 11 June 2026, so Alexa+ is open to everyone in Canada, in English and French. It is free with Prime, or CA$27.99 a month.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in Japan since 29 October 2026. You get it with a new Echo or Fire TV, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in Australia since 6 August 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: Nigeria is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "KR": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: South Korea is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "SG": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: Singapore is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "ID": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: Indonesia is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "IT": {
+          "status": "limited",
+          "note": "Alexa+ has been in free Early Access in Italy since 15 April 2026. You get it with a new Echo, or sign up for an invitation.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "NL": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: the Netherlands is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: the United Arab Emirates is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: Saudi Arabia is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "ZA": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: South Africa is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "KE": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: Kenya is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        },
+        "AR": {
+          "status": "none",
+          "note": "Alexa+ is not offered here: Argentina is not on Amazon's list of Alexa+ countries. Amazon plans more than 10 new countries in 2027.",
+          "evidence": [
+            {
+              "title": "Alexa+ arrives in Japan as Amazon's next-generation AI assistant expands internationally",
+              "publisher": "Amazon",
+              "url": "https://www.aboutamazon.com/news/devices/alexa-plus-international-launch",
+              "date": "2026-10-28",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gemini-connected-apps",
+      "name": "Gemini connected apps",
+      "vendor": "Google",
+      "does": "calls and messages for you",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in the United States. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in the United Kingdom. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Germany. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in India. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Brazil. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Mexico. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Chile. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Colombia. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Spain. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in France. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Canada. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Japan. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Australia. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Nigeria. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KR": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in South Korea. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SG": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Singapore. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ID": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Indonesia. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IT": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Italy. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NL": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in the Netherlands. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in the United Arab Emirates. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Saudi Arabia. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ZA": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in South Africa. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KE": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Kenya. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AR": {
+          "status": "live",
+          "note": "The Gemini mobile app is offered in Argentina. Its Phone, Messages and WhatsApp connected apps make calls and send messages for you in every country of the mobile app, on Android only.",
+          "evidence": [
+            {
+              "title": "Check the availability & requirements of Connected Apps in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/table/17434654?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Gemini mobile app availability",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/14579026?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tasks-in-gemini",
+      "name": "Tasks in Gemini",
+      "vendor": "Google",
+      "does": "shops and books on websites",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Tasks in Gemini is free here. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "none",
+          "note": "Tasks in Gemini is not offered here. Google leaves out the European Economic Area, Nigeria, Switzerland and the UK.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "none",
+          "note": "Tasks in Gemini is not offered here. Google leaves out the European Economic Area, Nigeria, Switzerland and the UK.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "Tasks in Gemini is free here. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "none",
+          "note": "Tasks in Gemini is not offered here. Google leaves out the European Economic Area, Nigeria, Switzerland and the UK.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "none",
+          "note": "Tasks in Gemini is not offered here. Google leaves out the European Economic Area, Nigeria, Switzerland and the UK.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Tasks in Gemini is free here. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Tasks in Gemini is free here. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Tasks in Gemini is free here. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "none",
+          "note": "Tasks in Gemini is not offered here. Google leaves out the European Economic Area, Nigeria, Switzerland and the UK.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KR": {
+          "status": "live",
+          "note": "Tasks in Gemini is free here. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "How to use Tasks in Gemini for personal assistance",
+              "publisher": "Google",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+              "date": "2026-11-17",
+              "type": "company"
+            }
+          ]
+        },
+        "SG": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ID": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IT": {
+          "status": "none",
+          "note": "Tasks in Gemini is not offered here. Google leaves out the European Economic Area, Nigeria, Switzerland and the UK.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NL": {
+          "status": "none",
+          "note": "Tasks in Gemini is not offered here. Google leaves out the European Economic Area, Nigeria, Switzerland and the UK.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ZA": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KE": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AR": {
+          "status": "live",
+          "note": "Tasks in Gemini works here with a Google AI Pro or Ultra plan. Gemini works on websites and in connected apps to shop, book travel or reserve a table for you. It is free only in Australia, Canada, India, Japan, South Korea and the US.",
+          "evidence": [
+            {
+              "title": "Manage your tasks & workflows in Gemini Apps",
+              "publisher": "Google Gemini Help",
+              "url": "https://support.google.com/gemini/answer/17094507?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "chrome-auto-browse",
+      "name": "Chrome auto browse",
+      "vendor": "Google",
+      "does": "does tasks in your browser",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Auto browse in Gemini in Chrome compares products, books stays and makes restaurant reservations on websites for you. It needs Google AI Plus, Pro or Ultra and a computer set to English.",
+          "evidence": [
+            {
+              "title": "Ask Gemini in Chrome to complete tasks for you with auto browse",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/16821166?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Chrome gets new Gemini 3 features, including auto browse",
+              "publisher": "Google",
+              "url": "https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/",
+              "date": "2026-01-28",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "limited",
+          "note": "Google's India blog and its Google One help page say auto browse is open to AI Pro and Ultra subscribers in India, in English. Chrome's own help page still says US only, so we mark it Limited until the pages agree.",
+          "evidence": [
+            {
+              "title": "Bringing Gemini in Chrome with auto browse to India",
+              "publisher": "Google",
+              "url": "https://blog.google/intl/en-in/products/bringing-gemini-in-chrome-with-auto-browse-to-india/",
+              "date": "2026-10-07",
+              "type": "company"
+            },
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Ask Gemini in Chrome to complete tasks for you with auto browse",
+              "publisher": "Google Chrome Help",
+              "url": "https://support.google.com/chrome/answer/16821166?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ],
+          "confidence": "low"
+        },
+        "BR": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KR": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SG": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ID": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IT": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NL": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ZA": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KE": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AR": {
+          "status": "none",
+          "note": "Chrome auto browse is not offered here: Google says it works only in India and the US.",
+          "evidence": [
+            {
+              "title": "Use Google AI Ultra benefits",
+              "publisher": "Google One Help",
+              "url": "https://support.google.com/googleone/answer/16286513?hl=en",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "claude-in-chrome",
+      "name": "Claude in Chrome",
+      "vendor": "Anthropic",
+      "does": "does tasks in your browser",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists the United States as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists the United Kingdom as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Germany as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists India as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Brazil as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Mexico as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Chile as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Colombia as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Spain as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists France as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Canada as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Japan as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Australia as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Nigeria as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KR": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists South Korea as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SG": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Singapore as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ID": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Indonesia as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IT": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Italy as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NL": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists the Netherlands as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists the United Arab Emirates as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Saudi Arabia as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ZA": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists South Africa as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KE": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Kenya as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AR": {
+          "status": "live",
+          "note": "Claude in Chrome is generally available on every paid Claude plan, and Anthropic lists Argentina as a supported country. It reads pages, clicks and fills in forms in your browser for you.",
+          "evidence": [
+            {
+              "title": "Claude in Chrome is generally available",
+              "publisher": "Anthropic",
+              "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+              "date": "2026-08-26",
+              "type": "company"
+            },
+            {
+              "title": "Supported Regions Policy",
+              "publisher": "Anthropic",
+              "url": "https://www.anthropic.com/supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "chatgpt-cloud-browser",
+      "name": "ChatGPT cloud browser",
+      "vendor": "OpenAI",
+      "does": "uses websites for you",
+      "countries": {
+        "US": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists the United States as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "GB": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists the United Kingdom as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "DE": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Germany as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IN": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists India as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "BR": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Brazil as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "MX": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Mexico as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CL": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Chile as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CO": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Colombia as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ES": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Spain as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "FR": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists France as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "CA": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Canada as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "JP": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Japan as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AU": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Australia as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NG": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Nigeria as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KR": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists South Korea as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SG": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Singapore as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ID": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Indonesia as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "IT": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Italy as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "NL": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists the Netherlands as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AE": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists the United Arab Emirates as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "SA": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Saudi Arabia as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "ZA": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists South Africa as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "KE": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Kenya as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        },
+        "AR": {
+          "status": "live",
+          "note": "The cloud browser in ChatGPT Work uses websites for you, including ones you sign in to. It runs on paid ChatGPT plans, not Free or Go, and OpenAI lists Argentina as a supported country.",
+          "evidence": [
+            {
+              "title": "Using cloud browser in ChatGPT",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+              "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "ChatGPT and OpenAI API supported countries and territories",
+              "publisher": "OpenAI",
+              "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+              "date": "2026-11",
+              "type": "company"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

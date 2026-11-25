@@ -43,6 +43,25 @@ export function showDetail(html) {
   $('[data-detail]').showModal();
 }
 
+const LOW_NOTE = '<span class="low-note">Unsure. The sources are thin or indirect, so treat this as a lead to check.</span>';
+
+// One assistant feature in one country (data/assistants.json), on the countries page: the same parts as a
+// capability's detail, without the errands and companies, which belong to the categories.
+export function openFeatureDetail(site, feature, code) {
+  const cell = feature.countries[code];
+  const ev = cell.evidence ?? [];
+  const liveIn = site.ranking.map((x) => x.code).filter((c) => c !== code && feature.countries[c]?.status === 'live');
+  showDetail(`
+    <p class="kicker">${esc(feature.vendor)} · ${flag(code)}${esc(site.byCode[code].name)}</p>
+    <h3 id="detail-title">${esc(feature.name)}</h3>
+    <p class="detail-status">${chip(cell.status, cell.confidence)}${cell.confidence ? LOW_NOTE : ''}</p>
+    <p>${esc(cell.note)}</p>
+    <div class="d-facts"><p>${liveIn.length ? `Live in: ${liveIn.map((c) => `${flag(c)}${c}`).join(' ')}` : 'Not live in any other country yet.'}</p></div>
+    <h4>${ev.length ? `Sources (${ev.length})` : 'Sources'}</h4>
+    ${ev.length ? sourceList(ev) : '<p class="muted">No availability found. Nothing to cite yet.</p>'}
+    <p class="suggest"><a href="${esc(correctionUrl(site, { id: `assistants.${feature.id}`, name: feature.name }, code, cell))}" target="_blank" rel="noopener noreferrer">${cell.status === 'live' ? 'Suggest a correction' : 'Seen it work here? Tell us'}</a></p>`);
+}
+
 // One capability in one country. `errands` is the errand list the page shows, to say which step uses it.
 export function openDetail(site, capId, code, errands) {
   const { categories, capIndex, byCode, ranking, region } = site;
@@ -62,7 +81,7 @@ export function openDetail(site, capId, code, errands) {
   showDetail(`
     <p class="kicker">${esc(catName(site, cap.category))} · ${flag(code)}${esc(byCode[code].name)}</p>
     <h3 id="detail-title">${esc(cap.question)}</h3>
-    <p class="detail-status">${chip(cell.status, cell.confidence)}${why ? `<span class="detail-why">${esc(why)}</span>` : ''}${cell.confidence ? '<span class="low-note">Unsure. The sources are thin or indirect, so treat this as a lead to check.</span>' : ''}</p>
+    <p class="detail-status">${chip(cell.status, cell.confidence)}${why ? `<span class="detail-why">${esc(why)}</span>` : ''}${cell.confidence ? LOW_NOTE : ''}</p>
     <p>${esc(cell.note)}</p>
     <div class="d-facts">
       ${at ? `<p>In <b>${esc(at.errand.title)}</b>, step ${at.index + 1}: “${esc(at.errand.labels[capId])}”.</p>` : ''}

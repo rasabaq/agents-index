@@ -132,6 +132,20 @@
 .cmp tr.all td.me { color: var(--sunrise); }
 .cmp-key { margin: 10px 0 0; font: 400 10.5px/1.5 var(--mono); color: var(--muted); text-wrap: pretty; }
 
+/* the big assistants here: the region table's columns, with a status chip in each cell. When the columns do not fit,
+   the table scrolls inside its box and the feature names stay put; the page never scrolls sideways. */
+.ax-box { margin-top: 14px; overflow-x: auto; overscroll-behavior-x: contain; }
+.ax { margin-top: 0; min-width: calc(190px + var(--cols, 6) * 92px); }
+.cmp.ax thead th + th { width: 92px; }
+.ax :is(thead th + th, td) { text-align: center; vertical-align: middle; }
+.ax thead .flag { margin: 0 auto 4px; }
+.ax :is(tbody th, thead th:first-child) { position: sticky; left: 0; z-index: 1; padding-right: 12px; background: color-mix(in srgb, rgb(10 10 18) 72%, var(--page)); color: var(--ink); }
+.ax td { padding: 7px 4px; }
+.ax td button { display: inline-flex; padding: 2px; border: 0; border-radius: 999px; background: none; cursor: pointer; }
+.ax td button:hover .chip { box-shadow: inset 0 0 0 1px var(--ink); }
+.ax td button:focus-visible { border-radius: 999px; }
+.ax .unk { font: 500 12px/1 var(--mono); color: var(--muted); }
+
 /* one card per area: its pixel icon on the left, its name and score beside it, then its checks */
 .area { display: grid; grid-template-columns: 72px minmax(0, 1fr); grid-template-areas: 'ic hd' 'ic tb'; align-items: start; column-gap: 24px; margin-top: 14px; padding: 20px 20px 20px 22px; }
 .blk-h + .area { margin-top: 20px; }
@@ -219,6 +233,10 @@
   .cmp thead small { font-size: 8.5px; letter-spacing: 0; white-space: normal; }
   .p-legend { gap: 8px 10px; }
   .cmp tbody th { font-size: 12.5px; }
+  /* the assistants table: a narrower feature column, so two or three countries show before it scrolls */
+  .ax { min-width: calc(136px + var(--cols, 6) * 84px); }
+  .cmp.ax thead th + th { width: 84px; }
+  .cmp.ax thead small { white-space: nowrap; }
   /* the chart under the numbers; each number above its words, the place to the right */
   .use-body { grid-template-columns: minmax(0, 1fr); }
   .use li { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'n rk' 't t'; gap: 8px 12px; }
