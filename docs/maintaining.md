@@ -85,6 +85,14 @@ To add or change a line:
 
 `npm run validate` and `npm test` fail when a line points at a missing cell, names a product its note does not name, or has no logo.
 
+## What changed
+
+The home page lists the latest status changes under the method line, and `changes.xml` is the same list as an RSS feed. Both come from `npm run changes` (`scripts/changes.mjs`), which reads the git history of `data/` on the main line and writes `data/changes.json` and `changes.xml`.
+
+- A change is a cell that exists before and after a merged PR with a different status. New countries and new checks are not changes.
+- Git ignores both files. The deploy job runs `npm run changes` on the full history before each upload, so the list is fresh after every merge to main.
+- Run `npm run changes` yourself to see the list on `npm start`. Without the file, the home page hides the list.
+
 ## Standard replies
 
 > **DRAFT.** Nobody has approved these replies yet. Until the user approves them, every reply goes to Chief first.

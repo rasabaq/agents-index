@@ -8,6 +8,7 @@
     "validate": "node scripts/validate.mjs",
     "check-links": "node scripts/check-links.mjs",
     "refresh-repos": "node scripts/refresh-repos.mjs",
-    "refresh-sites": "node scripts/refresh-sites.mjs"
+    "refresh-sites": "node scripts/refresh-sites.mjs",
+    "changes": "node scripts/changes.mjs"
   }
 }

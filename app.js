@@ -2,8 +2,9 @@ import { STATUSES, mergeCompanies, shortName, useCategoryWords, startCountry, gu
 import { ERRANDS, BUSINESS_ERRANDS, errandIn } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { mosaic, fingerprint } from './overview.js';
-import { data } from './data.js';
-import { $, esc, flag, chip, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
+import { data, getJson } from './data.js';
+import { groupMoves, countryList } from './src/feed.js';
+import { $, esc, flag, chip, logo, wireLogos, wireNav, wireCsv, fmtDate, scrollBehavior } from './ui.js';
 import { openDetail, sourceList, showDetail, siteOf } from './detail.js';
 
 // errand: the open errand's id; null opens the view's first one.
@@ -33,6 +34,7 @@ function init() {
   renderCountry();
   wire();
   wireNav();
+  wireCsv(data);
   wireTooltip();
   $('#matrix').addEventListener('toggle', showSelectedColumn);
   wireLogos();
@@ -263,7 +265,8 @@ function selectCountry(code, scroll) {
 }
 
 function renderCounts() {
-  $('[data-trust-count]').textContent = `${cells.length} checks · ${sourcesOf(cells)} sources · ${companies.length} companies`;
+  // A number stays on the same line as its word.
+  $('[data-trust-count]').textContent = `${cells.length}\u00a0checks · ${sourcesOf(cells)}\u00a0sources · ${companies.length}\u00a0companies`;
 }
 
 function wire() {
@@ -359,10 +362,42 @@ function wireTooltip() {
   addEventListener('scroll', () => (tip.hidden = true), { passive: true });
 }
 
+// What changed: the latest status moves (data/changes.json), one row per check and change, five until Show all.
+// The file is generated at deploy time; without it the block stays hidden.
+const FIRST_CHANGES = 5;
+async function renderChanges() {
+  let rows;
+  try {
+    rows = groupMoves((await getJson('changes')).changes);
+  } catch {
+    return;
+  }
+  if (!rows.length) return;
+  const name = (code) => byCode[code]?.name ?? code;
+  const day = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  const li = (r) => `<li><time datetime="${r.date}">${day(r.date)}</time>
+    <span class="ch-n">${esc(r.name)}<small>${esc(countryList(r.countries.map(name)))}</small></span>
+    <span class="ch-s">${chip(r.from)}<span aria-label="to">→</span>${chip(r.to)}</span></li>`;
+  let all = false;
+  const draw = () => {
+    $('[data-changes-list]').innerHTML = (all ? rows : rows.slice(0, FIRST_CHANGES)).map(li).join('');
+    $('[data-changes-more]').innerHTML = rows.length > FIRST_CHANGES ? `<button type="button" class="pill" aria-expanded="${all}">${all ? 'Show fewer' : `Show all ${rows.length}`}</button>` : '';
+  };
+  $('[data-changes-more]').addEventListener('click', (e) => {
+    if (!e.target.closest('button')) return;
+    all = !all;
+    draw();
+    if (!all) $('[data-changes]').scrollIntoView({ behavior: scrollBehavior(), block: 'nearest' });
+  });
+  draw();
+  $('[data-changes]').hidden = false;
+}
+
 // Start last: the helpers above are consts and must exist before init runs.
 try {
   ({ meta, categories } = await data);
   init();
+  renderChanges();
 } catch (err) {
   $('main').insertAdjacentHTML('afterbegin', `<p class="wrap error">Could not load the data (${esc(err.message)}). Serve the folder over HTTP, for example with <code>npm start</code>.</p>`);
 }

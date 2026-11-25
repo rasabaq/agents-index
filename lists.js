@@ -2,7 +2,7 @@
 // The home page links here; #market=CL opens the companies already filtered to one country.
 import { REPO_USE, scoreCountries, mergeCompanies, rankRepos, shortName, useCategoryWords, writeHash } from './src/observatory.js';
 import { data } from './data.js';
-import { $, esc, flag, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
+import { $, esc, flag, logo, wireLogos, wireNav, wireCsv, fmtDate, scrollBehavior } from './ui.js';
 
 const fmtMonth = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 const state = { market: 'all', use: 'all', allCompanies: false, allRepos: false };
@@ -102,6 +102,7 @@ function wire() {
 }
 
 wireNav();
+wireCsv(data);
 wireLogos();
 try {
   const { meta, categories } = await data;

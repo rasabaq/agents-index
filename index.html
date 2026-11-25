@@ -112,13 +112,19 @@
 
     <section id="method" class="wrap sec trust">
       <p class="trust-t">Every answer links to a source. Unsure answers are marked with a <b>?</b></p>
-      <p class="trust-n"><span data-trust-count></span> · <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">How we score</a></p>
+      <p class="trust-n"><span data-trust-count></span><span class="nowrap"> · <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">How we score</a></span></p>
+      <!-- What changed: the latest status moves, from data/changes.json (scripts/changes.mjs). Hidden without the file. -->
+      <div class="changes" aria-labelledby="changes-h" data-changes hidden>
+        <div class="changes-h"><h2 id="changes-h" class="label">What changed lately</h2><a href="changes.xml">RSS</a></div>
+        <ol data-changes-list></ol>
+        <div class="changes-more" data-changes-more></div>
+      </div>
     </section>
   </main>
 
   <footer class="wrap foot foot-site">
     <p>Agent Index, made by <a class="nowrap" href="https://ramonsanchez.xyz/" target="_blank" rel="noopener noreferrer">Ramon Sanchez</a>. Availability changes fast. A cell says what was true on <span data-asof></span>.</p>
-    <p class="foot-links"><a class="foot-ask" href="https://github.com/rasabaq/agents-index/issues/new?template=add-country.yml" target="_blank" rel="noopener noreferrer">Your country is not here? Request it</a><a href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/agents-index/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
+    <p class="foot-links"><a class="foot-ask" href="https://github.com/rasabaq/agents-index/issues/new?template=add-country.yml" target="_blank" rel="noopener noreferrer">Your country is not here? Request it</a><a href="https://github.com/rasabaq/agents-index" target="_blank" rel="noopener noreferrer">Code on GitHub</a><a href="https://github.com/rasabaq/agents-index/tree/main/data" target="_blank" rel="noopener noreferrer">Data (CC BY 4.0)</a><a href="#" data-csv>Download CSV</a><a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">Methodology</a></p>
   </footer>
 
   <dialog class="detail" data-detail aria-labelledby="detail-title">

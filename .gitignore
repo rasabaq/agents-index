@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 .verify-runs/
 .wrangler/
+# Written by npm run changes from the git history; the deploy job makes them fresh.
+data/changes.json
+changes.xml

@@ -24,7 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: deploy
     steps:
+      # The full history, so scripts/changes.mjs can write what changed (data/changes.json and changes.xml).
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run changes
       - uses: cloudflare/wrangler-action@v3
         with:
           wranglerVersion: '4.151.1'
