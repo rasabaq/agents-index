@@ -8,7 +8,7 @@
       "countries": {
         "US": {
           "status": "limited",
-          "note": "There is no national ID, so it counts as limited. Login.gov serves only government agencies. Businesses can check state mobile driver's licenses in Google Wallet through the Digital Credentials API, but these are state IDs, not a national one.",
+          "note": "There is no national ID, so it counts as limited. Login.gov's help pages describe an agency partner path and do not say that private firms can use it. Businesses can check state mobile driver's licenses in Google Wallet through the Digital Credentials API, but these are state IDs, not a national one.",
           "evidence": [
             {
               "title": "Accepted ID types: mobile driver's licenses in a digital wallet",
@@ -36,7 +36,7 @@
         },
         "GB": {
           "status": "announced",
-          "note": "GOV.UK One Login serves central government only, and GOV.UK Wallet holds just the veteran card. Since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving license in a GOV.UK Wallet sandbox, but it is not a production service, so it counts as announced. Private firms can use certified DVS providers (46 providers and 64 services on the statutory register in July 2026). The new government cancelled the national digital ID scheme in July 2026.",
+          "note": "GOV.UK One Login serves central government only, and GOV.UK Wallet holds just the veteran card. Since 1 September 2026 certified digital verification services (DVS) can test checks of a sample driving license in a GOV.UK Wallet sandbox, but it is not a production service, so it counts as announced. Private firms can use certified DVS providers (46 providers and 64 services on the statutory register in July 2026). The incoming government dropped the national digital ID scheme in July 2026.",
           "gapReason": "not-launched",
           "evidence": [
             {
@@ -72,6 +72,13 @@
               "publisher": "House of Commons Library",
               "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10369/",
               "date": "2026-09-04",
+              "type": "report"
+            },
+            {
+              "title": "New government stops national digital ID scheme but digital verification must move forward",
+              "publisher": "techUK",
+              "url": "https://www.techuk.org/insights/policy-views/new-government-stops-national-digital-id-scheme-but-digital-verification-must-move-forward",
+              "date": "2026-07-21",
               "type": "report"
             }
           ]
@@ -242,13 +249,13 @@
         },
         "IN": {
           "status": "live",
-          "note": "Aadhaar eKYC and face authentication are open to approved private entities (417 KUAs and about 26 billion eKYC transactions on UIDAI's dashboard), and DigiLocker lets registered firms pull documents with user consent.",
+          "note": "Aadhaar eKYC and face authentication are open to approved private entities (418 KUAs, and UIDAI's dashboard shows 2,752.41 crore eKYC transactions in FY 2025-26), and DigiLocker lets registered firms pull documents with user consent.",
           "evidence": [
             {
               "title": "eKYC Dashboard",
               "publisher": "UIDAI",
               "url": "https://uidai.gov.in/en/aadhaar-dashboard/ekyc",
-              "date": "2026-10",
+              "date": "2026-11",
               "type": "report"
             },
             {
@@ -340,7 +347,7 @@
         "CA": {
           "status": "none",
           "gapReason": "not-launched",
-          "note": "Canada has no national digital ID. British Columbia's Person credential in BC Wallet is accepted only by select pilots, and the province says private-sector use may come later. Quebec passed its digital identity law (Bill 82) in October 2025, with a wallet planned by 2028. Interac Verified (formerly Verified.Me) is a private, bank-backed check, not a government ID. We found no provincial ID that private apps can check today. Searched BC, Quebec and Interac sources (Nov 2026); no primary source shows a live rail.",
+          "note": "Canada has no national digital ID. The BC government's page on its Person credential does not say who can accept it. Quebec passed its digital identity law (Bill 82) in October 2025, and the government says a public consultation will set how it is rolled out. Interac Verified (formerly Verified.Me) is a private, bank-backed check, not a government ID. We found no provincial ID that private apps can check today. Searched BC, Quebec and Interac sources (Nov 2026); no primary source shows a live rail.",
           "evidence": [
             {
               "title": "Person credential for BC Wallet",
@@ -355,6 +362,13 @@
               "url": "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2025/2025C26F.PDF",
               "date": "2025-10",
               "type": "regulation"
+            },
+            {
+              "title": "Adoption du projet de loi no 82",
+              "publisher": "Gouvernement du Québec",
+              "url": "https://www.quebec.ca/nouvelles/actualites/details/adoption-du-projet-de-loi-no-82-66586",
+              "date": "2025-10-23",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -429,7 +443,7 @@
         },
         "KR": {
           "status": "live",
-          "note": "South Korea's national mobile ID is open to six private apps: Samsung, Naver, Toss, KB Kookmin Bank, NH Nonghyup Bank and KakaoBank. Eighteen banks link it for remote services, mainly account opening. No source found says an AI agent can present it on your behalf.",
+          "note": "South Korea's national mobile ID is open to private apps: Samsung, Naver, Toss, KB Kookmin Bank, NH Nonghyup Bank and KakaoBank. Four more banks, IBK, Shinhan, Woori and Hana, opened their apps on 14 October 2026. Eighteen banks link it for remote services, mainly account opening. No source found says an AI agent can present it on your behalf. A November 2026 check of Korean government releases confirmed the four new banks and five of the six older providers. We could not confirm Samsung.",
           "evidence": [
             {
               "title": "Financial Security Institute expands mobile ID use in finance",
@@ -437,6 +451,13 @@
               "url": "https://byline.network/2026/03/19-600/",
               "date": "2026-03-20",
               "type": "news"
+            },
+            {
+              "title": "Mobile ID opens in four more bank apps",
+              "publisher": "Korea.kr",
+              "url": "https://www.korea.kr/news/reporterView.do?newsId=148973704",
+              "date": "2026-10-19",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -451,6 +472,13 @@
               "url": "https://isomer-user-content.by.gov.sg/85/16f1b7a4-1da4-4c51-aabe-5334d635ba45/Annex%20D%20-%20Singpass%20Factsheet%20(30%20June%202026).pdf",
               "date": "2026-06-30",
               "type": "report"
+            },
+            {
+              "title": "About Singpass",
+              "publisher": "Singpass",
+              "url": "https://www.singpass.gov.sg/main/about/",
+              "date": "2026-11",
+              "type": "company"
             }
           ]
         },
@@ -469,8 +497,8 @@
           "confidence": "low"
         },
         "IT": {
-          "status": "limited",
-          "note": "SPID, Italy's national digital ID, can be used by private services that choose to accept it. The person must log in with their own SPID, so an agent can help but cannot prove who the person is on its own. We could not confirm how private apps check identity through the IT Wallet in the IO app.",
+          "status": "live",
+          "note": "SPID, Italy's national digital ID, is open to private services: a private company can enable SPID login for its services after it signs an agreement with AgID and passes AgID's technical checks. The person logs in with their own SPID, so an agent cannot prove who the person is on its own.",
           "evidence": [
             {
               "title": "SPID home page (become a service provider section)",
@@ -478,14 +506,19 @@
               "url": "https://www.spid.gov.it",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Diventa fornitore di servizi (become an SPID service provider)",
+              "publisher": "SPID (spid.gov.it)",
+              "url": "https://www.spid.gov.it/cos-e-spid/diventa-fornitore-di-servizi/",
+              "date": "2026-11",
+              "type": "company"
             }
-          ],
-          "gapReason": "rail-closed",
-          "confidence": "low"
+          ]
         },
         "NL": {
           "status": "limited",
-          "note": "The NL Wallet is not live: the government says it needs national implementing law first, with consultation expected at the end of 2026. Private apps can already check identity through iDIN, a bank-based service that itsme has taken over, but the person identifies through their bank and we found no AI agent that uses it.",
+          "note": "The NL Wallet is not live: the government says it is still under development and needs national implementing law first, with consultation expected at the end of 2026. Private apps can already check identity through iDIN, a bank-based service that itsme has taken over. iDIN says hundreds of organisations use it, but the person identifies through their own bank, and we found no AI agent that uses it. We kept the status limited because iDIN is not a national ID.",
           "evidence": [
             {
               "title": "Digital identity wallet (NL Wallet)",
@@ -536,12 +569,11 @@
               "date": "2026-04-21",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "ZA": {
           "status": "announced",
-          "note": "South Africa's digital ID is announced but not live. Home Affairs published draft rules in May 2026 that would make a digital ID a legal alternative to the Smart ID card, and final rules and a launch are still to come. Until then, no agent can use a digital ID to prove who a person is.",
+          "note": "South Africa's digital ID is announced but not live. Home Affairs published draft regulations on 6 May 2026 that would make the digital ID legally equivalent to the physical ID card. SAnews said in February 2026 that the system was set to launch this year. Final rules and a launch are still to come, and until then no agent can use a digital ID to prove who a person is.",
           "evidence": [
             {
               "title": "Digital ID launch set for 2026, not yet live",
@@ -563,7 +595,7 @@
         },
         "KE": {
           "status": "announced",
-          "note": "Kenyans already get a physical Maisha Card, but we found no way for a private app or an AI agent to check it today. On 28 June 2026 the Interior Cabinet Secretary said a digital Maisha Card on your phone would be announced very soon, with no timeline. The cell is announced, not live.",
+          "note": "Kenyans already get a physical Maisha Card, but we found no way for a private app or an AI agent to check it today. On 28 June 2026 the Interior Cabinet Secretary said a digital Maisha Card on your phone would launch soon, with no timeline. The cell is announced, not live.",
           "evidence": [
             {
               "title": "Kenyans to Soon Access Their National IDs Electronically, Murkomen Confirms",
@@ -595,8 +627,7 @@
               "type": "news"
             }
           ],
-          "gapReason": "rail-closed",
-          "confidence": "low"
+          "gapReason": "rail-closed"
         }
       }
     },
@@ -607,7 +638,7 @@
       "countries": {
         "US": {
           "status": "live",
-          "note": "The IRS voice bot lets taxpayers who prove who they are set up and manage payment plans and make payments (deployed in June 2022; the Treasury inspector general's June 2026 report describes it but tested only chat); IRS web chatbots use set answers, not generative AI, and most state chatbots only answer questions.",
+          "note": "The IRS voice bot lets taxpayers who prove who they are set up and change payment plans, and the IRS page says it answers inquiries about making payments (deployed in June 2022; the Treasury inspector general's June 2026 report describes it but tested only chat); IRS web chatbots use set answers, not generative AI, and most state chatbots only answer questions. The IRS page we checked in November 2026 is marked historical, and we could not open the 2026 TIGTA report.",
           "evidence": [
             {
               "title": "Using voice and chat bots to improve the collection taxpayer experience",
@@ -637,11 +668,12 @@
               "date": "2026-03",
               "type": "report"
             }
-          ]
+          ],
+          "confidence": "low"
         },
         "GB": {
           "status": "limited",
-          "note": "GOV.UK Chat in the GOV.UK app answers questions from GOV.UK guidance but does not complete tasks; an agent pilot for 16 to 24 year olds is testing next steps, and agentic features are planned from March 2027.",
+          "note": "GOV.UK Chat in the GOV.UK app answers questions from GOV.UK guidance but does not complete tasks; a separate AI agents pilot helps 16 to 24 year olds explore career options, and GOV.UK Chat plans agentic answers from March 2027.",
           "evidence": [
             {
               "title": "GOV.UK app - Roadmap for modern digital government",
@@ -887,7 +919,7 @@
         "NG": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "GovGuide Nigeria, launched in May 2026 by the digital economy ministry with Meta, NCAIR and Publica AI, answers questions about more than 35 ministries on WhatsApp and the web in English, Hausa, Igbo and Yoruba, but it does not complete applications or payments.",
+          "note": "GovGuide Nigeria, launched in May 2026 by the digital economy ministry with Meta, NCAIR and Publica AI, answers questions about more than 35 ministries on WhatsApp and the web in English, Hausa, Igbo and Yoruba, and the launch material we checked does not say it completes applications or payments.",
           "evidence": [
             {
               "title": "FG launches AI-powered GovGuideNigeria to reach citizens via WhatsApp",
@@ -895,6 +927,13 @@
               "url": "https://techeconomy.ng/fg-launches-ai-powered-govguidenigeria-to-reach-citizens-via-whatsapp/",
               "date": "2026-05-21",
               "type": "news"
+            },
+            {
+              "title": "GovGuide Nigeria AI platform launch",
+              "publisher": "Federal Ministry of Communications, Innovation and Digital Economy",
+              "url": "https://fmcide.gov.ng/?p=4110",
+              "date": "2026-05-21",
+              "type": "company"
             }
           ]
         },
@@ -908,26 +947,26 @@
               "url": "https://www.korea.kr/policy/civilView.do?newsId=148967560",
               "date": "2026-07",
               "type": "company"
-            },
-            {
-              "title": "AI Gov24 trial reaches 28.5 million users",
-              "publisher": "Financial News",
-              "url": "https://www.fnnews.com/news/202606301129496308",
-              "date": "2026-06-30",
-              "type": "news"
             }
           ],
           "gapReason": "assist-only"
         },
         "SG": {
           "status": "live",
-          "note": "The OneService Chatbot, on WhatsApp and Telegram, lets residents report municipal issues such as neighbourhood cleanliness and facility breakdowns in chat, and it routes each case to the right agency. GovTech's AI services page describes no citizen tool that completes a payment or booking, so the scope is narrow.",
+          "note": "The OneService Chatbot, on WhatsApp and Telegram, lets residents report municipal issues such as neighbourhood cleanliness and facility breakdowns in chat, and it routes each case to the right agency. A GovTech article from January 2024 says it handles over 30,000 cases a month. The article describes issue reports, not payments or bookings. We found no 2026 page that confirms it still runs.",
           "evidence": [
             {
               "title": "How GovTech uses AI to enhance digital public services",
               "publisher": "GovTech Singapore",
               "url": "https://www.tech.gov.sg/technews/how-govtech-uses-ai-to-enhance-digital-public-services/",
               "date": "2024-01-12",
+              "type": "company"
+            },
+            {
+              "title": "New AI-powered OneService Chatbot for easy reporting of municipal issues",
+              "publisher": "MDDI (Singapore)",
+              "url": "https://www.mddi.gov.sg/newsroom/new-ai-powered-oneservice/",
+              "date": "2021-07-15",
               "type": "company"
             }
           ],
@@ -979,7 +1018,7 @@
         },
         "AE": {
           "status": "live",
-          "note": "In Abu Dhabi, TAMM's AI assistant and its AutoGov feature renew licences, settle utility payments and book healthcare appointments for residents, without being asked. The claims come from the government and press reports, with no independent audit.",
+          "note": "In Abu Dhabi, TAMM's AutoGov feature renews licences, settles utility payments and schedules routine healthcare appointments for residents, without the resident starting each process. The government unveiled it in October 2025. The claims come from the government and press reports, with no independent audit, and we could not open TAMM's own site.",
           "evidence": [
             {
               "title": "Abu Dhabi's AI service Tamm to be made available to international governments",
@@ -994,19 +1033,33 @@
               "url": "https://apolitical.co/en/navigator/case-studies/tamm-abu-dhabis-ai-assistant-for-completing-government-services-through-a-single-app",
               "date": "2026-11",
               "type": "report"
+            },
+            {
+              "title": "TAMM 4 and AutoGov at GITEX Global 2025",
+              "publisher": "Department of Government Enablement, Abu Dhabi",
+              "url": "https://dge.gov.ae/en/news/2025-gitex-tamm-4",
+              "date": "2025-10-14",
+              "type": "company"
             }
           ],
           "confidence": "low"
         },
         "SA": {
           "status": "none",
-          "note": "We found no Saudi government AI assistant that finishes public-service tasks. Absher, the Interior Ministry's portal for residents, businesses and government staff, lists no AI features.",
+          "note": "We found no Saudi government AI assistant that finishes public-service tasks. Absher, the Interior Ministry's portal for residents, businesses and government staff, lists no AI features, and ZATCA's Ask Ziyad assistant only answers tax questions. A December 2025 report of an Absher Assistant could not be opened.",
           "evidence": [
             {
               "title": "Absher: Individuals, Business and Government portals",
               "publisher": "Ministry of Interior (Absher)",
               "url": "https://www.absher.sa/",
               "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Ask Ziyad: ZATCA's AI digital assistant",
+              "publisher": "ZATCA",
+              "url": "https://zatca.gov.sa/en/MediaCenter/News/Pages/Askziyad-zatca-digital-assistant-2025.aspx",
+              "date": "2025-11-06",
               "type": "company"
             }
           ],
