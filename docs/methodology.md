@@ -78,9 +78,22 @@ Stars measure attention, not use. A repo can trend for a week and never run anyw
 
 Limits: downloads include CI machines and mirrors, Docker pulls are lifetime and include automated pulls, and images on other registries (such as ghcr.io) cannot be counted. Treat a tier as an order of magnitude, not a census.
 
+## Use beside the index
+
+The index measures what agents can do, not how many people use AI. To show both, `data/adoption.json` holds two outside numbers for every tracked country. The countries page shows them under "Who uses AI here". They never change a score.
+
+| Measure | What it counts | Source |
+| --- | --- | --- |
+| People who use AI | The share of people aged 15 to 64 who used a generative AI product in the quarter (April to June 2026). Microsoft builds it from its own anonymous usage data, adjusted for device share, internet use and population. | Microsoft AI Economy Institute, Global AI Diffusion Q2 2026 |
+| Claude use per person | A country's share of Claude.ai use divided by its share of the world's people aged 15 to 64 (May 2026). 1 means use in line with its population. | Anthropic Economic Index, release 2026-06-26 |
+
+The page also puts two places side by side: the country's rank for what agents can do, and its rank for people who use AI. A gap of 6 places or more gets said out loud ("Here the agents are ahead of the people"). `npm run validate` checks that every tracked country has every number, and that each source is dated no later than `asOf`.
+
+To refresh it, take the newest Microsoft report and Anthropic release, update the numbers and each measure's `says`, `period` and `source`, then run `npm run validate`.
+
 ## Known limits
 
 - Availability changes every week. Each dataset carries an `asOf` date.
-- "Live" means available, not widely used. Adoption of products is not measured; only open-source repos get a real-use tier.
+- "Live" means available, not widely used. Adoption of products is not measured; only open-source repos get a real-use tier. For context, each country page shows how many people use AI there (see "Use beside the index").
 - Language support is noted, but it is not scored separately.
 - The list of capabilities is opinionated. Add a capability by adding an entry to a category file in `data/`.
