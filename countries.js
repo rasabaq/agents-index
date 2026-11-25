@@ -1,10 +1,11 @@
 // The countries page: one fact sheet per country, beside a rail of every country, best first.
 // The link holds the country in the home page's format (#country=CL), so links match and back and forward step
 // through the countries you opened. Every check row opens the shared cell detail (detail.js).
-import { STATUSES, mergeCompanies, useCategoryWords, startCountry, readHash, writeHash, verdict, tierOf, THEMES, themeScores, regionCompare, liveBy, gapCounts, gapLabel, tiedWith, sourcesOf, placeName, join } from './src/observatory.js';
+import { STATUSES, mergeCompanies, useCategoryWords, startCountry, readHash, writeHash, verdict, tierOf, THEMES, themeScores, regionCompare, liveBy, gapCounts, gapLabel, tiedWith, sourcesOf, placeName, join, ordinal } from './src/observatory.js';
 import { ERRANDS, BUSINESS_ERRANDS } from './src/errands.js';
 import { pix } from './src/icons.js';
-import { data } from './data.js';
+import { data, getJson } from './data.js';
+import { useRanks, useLine, fmtUse } from './src/adoption.js';
 import { $, esc, flag, chip, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
 import { openDetail, siteOf } from './detail.js';
 
@@ -12,6 +13,8 @@ const plural = (n, one, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 const ORDER = Object.keys(STATUSES);
 // site: what the shared cell detail needs (detail.js). code: the country on show.
 let meta, categories, site, ranking, byCode, companies, code;
+// adoption: how many people use AI in each country (data/adoption.json), or null when it did not load.
+let adoption;
 
 // One country's cells in category order, as { cap, cell } pairs.
 const cellsOf = (c) => categories.flatMap((cat) => cat.capabilities.map((cap) => ({ cap: site.capIndex[cap.id], cell: cap.countries[c] })));
@@ -97,6 +100,32 @@ function compare({ r }) {
   </section>`;
 }
 
+// Who uses AI here: outside numbers on how many people use AI, set beside what agents can do. One row per measure:
+// the number, what it counts and its source, the place among the tracked countries, and a track with a tick for
+// every country, this one lit. Context only: it never changes the score. Without the file the block is left out.
+function use({ r }) {
+  const mine = adoption?.countries[r.code];
+  if (!mine) return '';
+  const codes = ranking.map((x) => x.code);
+  const place = (id) => useRanks(adoption, codes, id)[r.code];
+  const row = (m) => {
+    const top = Math.max(...codes.map((c) => adoption.countries[c][m.id]));
+    const at = (c) => `${((adoption.countries[c][m.id] / top) * 100).toFixed(1)}%`;
+    return `<li>
+      <p class="use-n">${fmtUse(m, mine[m.id])}</p>
+      <p class="use-t">${esc(m.says)}<a href="${esc(m.source.url)}" target="_blank" rel="noopener noreferrer">${esc(m.source.publisher)}</a></p>
+      <p class="use-rk">${ordinal(place(m.id))}<small> of ${codes.length}</small></p>
+      <span class="use-track" aria-hidden="true">${codes.filter((c) => c !== r.code).map((c) => `<i style="left:${at(c)}"></i>`).join('')}<b style="left:${at(r.code)}"></b></span>
+    </li>`;
+  };
+  return `<section class="blk" aria-labelledby="h-use">
+    <div class="blk-h"><div><p class="label">Use · from outside sources</p><h3 id="h-use">Who uses AI here</h3></div></div>
+    <p class="blk-lede">${esc(useLine(r.name, r.rank, place(adoption.measures[0].id), codes.length))}</p>
+    <ul class="use">${adoption.measures.map(row).join('')}</ul>
+    <p class="cmp-key">Each tick is one of the ${codes.length} countries we track; further right means more use. These numbers come from outside sources and do not change the score.</p>
+  </section>`;
+}
+
 // One card per area: its pixel icon lit by the score, then a row per check. A row opens the cell detail.
 function areas({ r, mine }) {
   const row = ({ cap, cell }) => {
@@ -145,7 +174,7 @@ function renderProfile() {
   const here = companies.filter((co) => co.markets.includes(r.code));
   const p = { r, mine: cellsOf(code), here, home: here.filter((co) => co.hq === r.code).length };
   document.title = `${r.name} · Countries · Agent Index`;
-  $('[data-pane]').innerHTML = `${head(p)}${compare(p)}${areas(p)}${builders(p)}
+  $('[data-pane]').innerHTML = `${head(p)}${use(p)}${compare(p)}${areas(p)}${builders(p)}
     <p class="p-foot">Data as of ${fmtDate(meta.asOf)}. Seen something out of date? Open a row and suggest a correction.</p>`;
 }
 
@@ -203,7 +232,8 @@ function wire() {
 wireNav();
 wireLogos();
 try {
-  ({ meta, categories } = await data);
+  // adoption.json is extra: if it fails to load, the page still works without its block.
+  [{ meta, categories }, adoption] = await Promise.all([data, getJson('adoption').catch(() => null)]);
   useCategoryWords(meta.categories);
   site = siteOf(meta, categories);
   ({ ranking, byCode } = site);

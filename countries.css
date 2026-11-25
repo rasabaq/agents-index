@@ -29,6 +29,24 @@
 /* the tier letter, always on its tier colour with dark text (styles.css sets --c) */
 .tier { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 5px; background: var(--c); color: var(--page); font: 400 17px/1 var(--pixel); }
 
+/* Who uses AI here: per measure, the number, what it counts with its source, the place, then a track of every country */
+.use { display: grid; gap: 0; margin: 14px 0 0; padding: 0; list-style: none; }
+.use li { display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; grid-template-areas: 'n t rk' '. tr tr'; align-items: baseline; gap: 6px 16px; padding: 14px 0 16px; border-top: 1px solid rgba(255, 255, 255, 0.055); }
+.use li:first-child { border-top: 0; }
+.use p { margin: 0; }
+.use-n { grid-area: n; font: 500 26px/1 var(--mono); letter-spacing: -0.03em; color: var(--sunrise); font-variant-numeric: tabular-nums; }
+.use-t { grid-area: t; font-size: 14px; line-height: 1.45; color: var(--ink-2); text-wrap: pretty; }
+.use-t a { margin-left: 8px; font: 400 11px/1 var(--mono); white-space: nowrap; color: var(--muted); }
+.use-t a::after { content: ' ↗'; }
+.use-t a:hover { color: var(--ink); }
+.use-rk { grid-area: rk; font: 500 13px/1 var(--mono); color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.use-rk small { font-size: 11px; font-weight: 400; color: var(--muted); }
+/* the track: a hairline with a faint tick per country and this country's tick lit */
+.use-track { grid-area: tr; position: relative; height: 16px; margin-top: 4px; }
+.use-track::before { content: ''; position: absolute; inset: 7.5px 0 auto; height: 1px; background: var(--line); }
+.use-track :is(i, b) { position: absolute; top: 3px; width: 2px; height: 10px; margin-left: -1px; border-radius: 1px; background: var(--line-strong); }
+.use-track b { top: 0; width: 3px; height: 16px; margin-left: -1.5px; background: var(--sunrise); box-shadow: 0 0 8px color-mix(in srgb, var(--sunrise) 55%, transparent); }
+
 /* the profile */
 .pane { min-width: 0; padding: 28px 32px 36px; }
 .p-head { display: grid; grid-template-columns: minmax(0, 1fr) 300px; align-items: start; gap: 28px 36px; }
@@ -109,7 +127,7 @@
 .cmp td.me.top::before { background: var(--sunrise); }
 .cmp tr.all :is(th, td) { border-top-color: var(--line-strong); color: var(--ink); font-weight: 500; }
 .cmp tr.all td.me { color: var(--sunrise); }
-.cmp-key { margin: 10px 0 0; font: 400 10.5px/1.5 var(--mono); color: var(--muted); }
+.cmp-key { margin: 10px 0 0; font: 400 10.5px/1.5 var(--mono); color: var(--muted); text-wrap: pretty; }
 
 /* one card per area: its pixel icon on the left, its name and score beside it, then its checks */
 .area { display: grid; grid-template-columns: 72px minmax(0, 1fr); grid-template-areas: 'ic hd' 'ic tb'; align-items: start; column-gap: 24px; margin-top: 14px; padding: 20px 20px 20px 22px; }
@@ -198,6 +216,9 @@
   .cmp thead small { font-size: 8.5px; letter-spacing: 0; white-space: normal; }
   .p-legend { gap: 8px 10px; }
   .cmp tbody th { font-size: 12.5px; }
+  /* the number above its words, the place to the right */
+  .use li { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'n rk' 't t' 'tr tr'; gap: 8px 12px; }
+  .use-n { font-size: 22px; }
   /* the checks go under the icon and its heading, edge to edge */
   .area { grid-template-areas: 'ic hd' 'tb tb'; column-gap: 16px; padding: 14px 12px 0; }
   .checks { margin: 14px -12px 0; border: 0; border-top: 1px solid rgba(255, 255, 255, 0.055); border-radius: 0 0 11px 11px; }
