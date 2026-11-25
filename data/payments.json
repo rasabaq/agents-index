@@ -246,7 +246,7 @@
         "CA": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Visa's Agentic Ready program (May 2026) lets BMO, CIBC, RBC, Scotiabank and TD test agent payments with live cards and real merchants in a controlled setting, and Mastercard Agent Pay ran Canada's first agent purchase with a Rogers Bank card through Flybits in September 2026. Neither is open to all cardholders yet.",
+          "note": "Visa's Agentic Ready program (May 2026) lets BMO, CIBC, RBC, Scotiabank and TD test agent payments with live cards and real merchants in a controlled setting, and Mastercard Agent Pay ran Canada's first agent purchase with a Rogers Bank card through Flybits in September 2026. Neither is open to all cardholders yet. A Visa release of 18 November 2026 says Moneris is helping Canadian merchants prepare for agentic commerce. It names no Canadian issuer.",
           "evidence": [
             {
               "title": "Visa Expands 'Agentic Ready' Program to Canada to Advance AI Driven Commerce",
@@ -260,6 +260,13 @@
               "publisher": "Mastercard (Newswire)",
               "url": "https://www.newswire.ca/news-releases/mastercard-flybits-and-rogers-establish-benchmark-for-secure-consumer-controlled-agentic-commerce-in-canada-811876786.html",
               "date": "2026-09-21",
+              "type": "company"
+            },
+            {
+              "title": "Visa Expands Agentic Ready to Help Scale Trusted AI Commerce Globally",
+              "publisher": "Visa",
+              "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22986.html",
+              "date": "2026-11-18",
               "type": "company"
             }
           ]
@@ -322,7 +329,7 @@
         },
         "KR": {
           "status": "limited",
-          "note": "Mastercard says it completed Korea's first live agent payments in March 2026, reported as a ride booking, so the rollout is still small. Visa launched its Agentic Ready program in April 2026 with six Korean partners, including KB Kookmin Card and Samsung Card, but no live Visa agent purchase in Korea was found.",
+          "note": "Mastercard says it completed Korea's first live agent payments in March 2026, reported as a ride booking, so the rollout is still small. Visa launched its Agentic Ready program in April 2026 with six Korean partners, including KB Kookmin Card and Samsung Card, but no live Visa agent purchase in Korea was found. A November 2026 search of Korean and Visa press found no new Korean launch.",
           "evidence": [
             {
               "title": "Mastercard completes Korea's first live agentic transactions, unlocking trusted AI-powered commerce",
@@ -366,10 +373,16 @@
               "url": "https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-delivers-its-first-live-agentic-transaction-in-singapore-with-dbs-and-uob/",
               "date": "2026-03",
               "type": "company"
+            },
+            {
+              "title": "Visa Launches Agentic Ready Programme in Singapore with 13 Banks and Fintech Partners",
+              "publisher": "Visa Singapore",
+              "url": "https://www.visa.com.sg/about-visa/newsroom/press-releases/visa-launches-agentic-ready-programme-in-singapore-with-13-banks-and-fintech-partners.html",
+              "date": "2026-04-30",
+              "type": "company"
             }
           ],
-          "gapReason": "pilot-only",
-          "confidence": "low"
+          "gapReason": "pilot-only"
         },
         "ID": {
           "status": "none",
@@ -651,7 +664,7 @@
         "MX": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Press says Mercado Pago's Mago assistant makes transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI, but no source says Mago sends money over SPEI, so it stays limited. Searched Mercado Pago Mexico pages and Mercado Libre news (Nov 2026); the Mercado Pago pages returned 403 and no primary source was found.",
+          "note": "Press says Mercado Pago's Mago assistant makes transfers in Mexico that the user confirms, and Mercado Pago connects directly to SPEI, but no source says Mago sends money over SPEI, so it stays limited. Searched Mercado Pago Mexico pages and Mercado Libre news (Nov 2026); the Mercado Pago pages returned 403 and no primary source was found. A November 2026 search found no Mexican source that names SPEI for Mago.",
           "evidence": [
             {
               "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
@@ -680,7 +693,7 @@
         "CL": {
           "status": "limited",
           "gapReason": "assist-only",
-          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms, but no source says it sends money to other banks over TEF, so it stays limited. Searched Mercado Pago Chile pages and Mercado Libre news (Nov 2026); the Chile pages returned 403 and no primary source was found.",
+          "note": "Mercado Pago's Mago assistant arrived in Chile in September 2026 and prepares transfers that the user confirms, but no source says it sends money to other banks over TEF, so it stays limited. Searched Mercado Pago Chile pages and Mercado Libre news (Nov 2026); the Chile pages returned 403 and no primary source was found. A November 2026 search found no source that names TEF for Mago.",
           "evidence": [
             {
               "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
@@ -700,14 +713,21 @@
           "confidence": "low"
         },
         "CO": {
-          "status": "limited",
-          "note": "Press says Tpaga launched a WhatsApp AI agent in July 2026 that sends money over Bre-B from text or voice notes. Tpaga's site lists AI agents and Bre-B transfers, but not the WhatsApp agent, and the central bank's Bre-B page does not mention AI agents. It stays limited because only the press covers the WhatsApp agent and Tpaga has not said how many users can use it. Searched Tpaga's site and the Bre-B page (Nov 2026); no primary source for the agent.",
+          "status": "live",
+          "note": "Tpaga's WhatsApp AI agent sends money to any bank over Bre-B and pays public utility bills, according to Tpaga's agent page. Anyone who messages the number can use it. Balances and transfers need an active tpaga wallet.",
           "evidence": [
             {
               "title": "Tpaga home page (AI agents and Bre-B transfers listed)",
               "publisher": "Tpaga",
               "url": "https://tpaga.co/",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "Tpaga AI agent page (WhatsApp agent)",
+              "publisher": "Tpaga",
+              "url": "https://tpaga.co/agentes",
+              "date": "2026-11",
               "type": "company"
             },
             {
@@ -718,21 +738,13 @@
               "type": "news"
             },
             {
-              "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
-              "publisher": "Descubre",
-              "url": "https://www.descubre.vc/noticia/tpaga-lanza-primer-agente-de-ia-en-colombia-para-pagos-por-whatsapp-2026-07-08",
-              "date": "2026-07-08",
-              "type": "news"
-            },
-            {
               "title": "Bre-B (pagos inmediatos)",
               "publisher": "Banco de la República",
               "url": "https://www.banrep.gov.co/es/bre-b",
               "date": "2026-10-13",
               "type": "report"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "IN": {
           "status": "limited",
@@ -797,8 +809,8 @@
           ]
         },
         "CA": {
-          "status": "limited",
-          "note": "CIBC's Virtual Assistant pays bills, moves money between accounts and sends Interac e-Transfers, the everyday way Canadians send money in minutes. e-Transfer is not a true real-time rail. Payments Canada's Real-Time Rail is still in participant testing, with launch targeted for Q4 2026, so no agent uses it yet. Searched CIBC's page and Payments Canada (Nov 2026); no primary source shows an agent on a real-time rail.",
+          "status": "none",
+          "note": "Payments Canada's Real-Time Rail is now live, and more approved members join through 2027. We found no AI agent that sends money over it. CIBC's Virtual Assistant sends Interac e-Transfers, but e-Transfer is not the Real-Time Rail, so it does not count here. Checked the CIBC and Payments Canada pages in November 2026.",
           "evidence": [
             {
               "title": "CIBC Virtual Assistant",
@@ -850,7 +862,7 @@
         "NG": {
           "status": "limited",
           "gapReason": "pilot-only",
-          "note": "Through Paystack Index (early access, Nigeria only), Claude, ChatGPT or OpenClaw can send money with Zap, Paystack's app that pays any Nigerian commercial bank account within seconds. Paystack says money moves on its existing infrastructure and does not name NIBSS Instant Payments (NIP), so NIP use is inferred.",
+          "note": "Through Paystack Index (early access, Nigeria only), Claude, ChatGPT or OpenClaw can send money with Zap, Paystack's app that pays any Nigerian commercial bank account within seconds. Paystack says money moves on its existing infrastructure and does not name NIBSS Instant Payments (NIP), so NIP use is inferred. A November 2026 check of the Paystack Index home page found Nigeria marked live and an early-access sign-up. It does not name NIP or bank accounts.",
           "evidence": [
             {
               "title": "What is Paystack Index?",
@@ -1000,7 +1012,7 @@
         },
         "KE": {
           "status": "none",
-          "note": "Agents cannot yet use M-PESA or PesaLink to send payments. Safaricom's M-PESA API already lets developers start payments, but agent-driven payments were still described as in development in April 2026.",
+          "note": "Agents cannot yet use M-PESA or PesaLink to send payments. Safaricom's M-PESA API already lets developers start payments, but agent-driven payments were still described as in development in April 2026. A November 2026 search found M-PESA's AI Pay (October 2026), which is not an agent-started payment.",
           "evidence": [
             {
               "title": "How Safaricom Is Building for Automated Commerce",
@@ -1015,7 +1027,7 @@
         },
         "AR": {
           "status": "limited",
-          "note": "No outside agent can yet start payments over Transferencias 3.0, Argentina's bank transfer system, because the open finance rules are not in force. Banks and wallets let their own assistants set up transfers in chat, such as MacroChat at Banco Macro and Mercado Pago's assistant, and reports say the account holder confirms each transfer.",
+          "note": "No outside agent can yet start payments over Transferencias 3.0, Argentina's bank transfer system, because the open finance rules are not in force. Banks and wallets let their own assistants set up transfers in chat, such as MacroChat at Banco Macro and Mercado Pago's assistant, and reports say the account holder confirms each transfer. A November 2026 check of Fiskil's Argentina tracker says open finance is not yet operational. It does not say who can start Transferencias 3.0 payments.",
           "evidence": [
             {
               "title": "Banco Macro lanzó MacroChat",
@@ -1147,7 +1159,7 @@
         },
         "CL": {
           "status": "live",
-          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Only the press covers the Chile launch. Searched Mercado Pago Chile pages and Mercado Libre news (Nov 2026); the Chile pages returned 403 and no primary source was found.",
+          "note": "Mercado Pago's Mago agent arrived in Chile in September 2026 and pays bills and prepares transfers that the user confirms. Searched Mercado Pago Chile pages and Mercado Libre news (Nov 2026); the Chile pages returned 403 and no primary source was found. A Mercado Pago press release of 10 September 2026, repeated by Chilean press, says Mago runs an action only after the user confirms it.",
           "evidence": [
             {
               "title": "Mago llega a Chile: el asistente personal de Mercado Pago que simplifica el día a día de personas y negocios",
@@ -1167,8 +1179,8 @@
           "confidence": "low"
         },
         "CO": {
-          "status": "limited",
-          "note": "Tpaga's WhatsApp AI agent, launched in July 2026, pays bills and sends money for users, per the press. Tpaga's site lists AI agents for businesses but does not describe the WhatsApp agent. It stays limited because only the press covers it and Tpaga has not said how many users can use it. Mercado Pago's Mago is not offered in Colombia. Searched Tpaga's site (Nov 2026); no primary source for the WhatsApp agent.",
+          "status": "live",
+          "note": "Tpaga's WhatsApp AI agent pays public utility bills and sends money for users, according to Tpaga's agent page. Anyone who messages the number can use it, but balances and transfers need an active tpaga wallet.",
           "evidence": [
             {
               "title": "Tpaga home page (AI agents listed for businesses)",
@@ -1178,11 +1190,11 @@
               "type": "company"
             },
             {
-              "title": "Tpaga lanza primer agente de IA en Colombia para pagos por WhatsApp",
-              "publisher": "Descubre",
-              "url": "https://www.descubre.vc/noticia/tpaga-lanza-primer-agente-de-ia-en-colombia-para-pagos-por-whatsapp-2026-07-08",
-              "date": "2026-07-08",
-              "type": "news"
+              "title": "Tpaga AI agent page (WhatsApp agent)",
+              "publisher": "Tpaga",
+              "url": "https://tpaga.co/agentes",
+              "date": "2026-11",
+              "type": "company"
             },
             {
               "title": "Tpaga lanzó el primer agente de inteligencia artificial en Colombia para pagar por PSE",
@@ -1190,16 +1202,8 @@
               "url": "https://www.larepublica.co/finanzas/tpaga-lanzo-el-primer-agente-de-inteligencia-artificial-en-colombia-para-pagar-por-pse-4431714",
               "date": "2026-07-08",
               "type": "news"
-            },
-            {
-              "title": "Mercado Pago lanza Mago, su nuevo asistente de IA financiera",
-              "publisher": "Descubre",
-              "url": "https://www.descubre.vc/noticia/mercado-pago-lanza-mago-su-nuevo-asistente-de-ia-financiera-2026-09-28",
-              "date": "2026-09-28",
-              "type": "news"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "IN": {
           "status": "limited",
@@ -1348,7 +1352,7 @@
         },
         "KR": {
           "status": "announced",
-          "note": "Kakao Pay showed AI agents paying from its wallet with stablecoins in a September 2026 demo, and it plans to launch once the rules are in place. Naver Pay is running a proof of concept with the Korea Financial Telecommunications and Clearings Institute in which an agent gets payment authority, so customers cannot pay through an agent yet.",
+          "note": "Kakao Pay showed AI agents paying from its wallet with stablecoins in a September 2026 demo, and it plans to launch once the rules are in place. Naver Pay is running a proof of concept with the Korea Financial Telecommunications and Clearings Institute in which an agent gets payment authority, so customers cannot pay through an agent yet. A November 2026 search found no new Kakao Pay or Naver Pay launch.",
           "evidence": [
             {
               "title": "카카오페이, AI 대리 결제 구매-판매 양방향 실증",
@@ -1377,7 +1381,7 @@
         },
         "SG": {
           "status": "none",
-          "note": "Stripe's shared payment tokens, which let an agent pay with a customer's card, are offered to customers in the US, Canada and several European countries, but not Singapore. Stripe's Link Agent Wallet is for US and Canadian customers only. We found no Singapore wallet or fintech app that lets an agent pay for you.",
+          "note": "Stripe's shared payment tokens, which let an agent pay with a customer's card, are offered to customers in the US, Canada and several European countries, but not Singapore. Stripe's Link Agent Wallet is for US and Canadian customers only. We found no Singapore wallet or fintech app that lets an agent pay for you. A November 2026 check of Stripe's country list for shared payment tokens found no Singapore entry.",
           "evidence": [
             {
               "title": "Shared payment tokens",
@@ -1423,27 +1427,25 @@
               "type": "company"
             }
           ],
-          "gapReason": "pilot-only",
-          "confidence": "low"
+          "gapReason": "pilot-only"
         },
         "NL": {
-          "status": "none",
-          "note": "I found no Dutch wallet or fintech app that lets an AI agent pay for you. Stripe supports Dutch accounts, but I could not confirm any agent payment feature open in the Netherlands.",
+          "status": "limited",
+          "note": "Stripe's shared payment tokens, which let an agent pay with a customer's card, list the Netherlands as a supported country, but the API is still a preview. We found no Dutch wallet or fintech app that lets an agent pay for you.",
           "evidence": [
             {
-              "title": "Stripe: countries and regions",
+              "title": "Shared payment tokens",
               "publisher": "Stripe",
-              "url": "https://stripe.com/global",
+              "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens.md?agent-seller=agent",
               "date": "2026-11",
               "type": "company"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "pilot-only"
         },
         "AE": {
           "status": "limited",
-          "note": "Botim, a UAE fintech wallet, says its AI assistant is live and can make money transfers through conversation. I found no wallet agent that pays merchants for you and no UAE launch of Stripe agent payment tokens. The article does not say whether every Botim user has the assistant.",
+          "note": "Botim, a UAE fintech wallet, says its AI assistant is live and can make money transfers through conversation. I found no wallet agent that pays merchants for you and no UAE launch of Stripe agent payment tokens. The article does not say whether every Botim user has the assistant. A November 2026 check of the Zawya release found the 'now live' wording, but the release has no date.",
           "evidence": [
             {
               "title": "Botim enhances AI capabilities with Microsoft Azure's Voice Live API integration",
@@ -1486,7 +1488,7 @@
         },
         "KE": {
           "status": "none",
-          "note": "No wallet or fintech app lets an AI agent pay for a Kenyan today. Stripe's Link Agent Wallet serves US and Canadian customers only, and Stripe's shared payment tokens list no Kenya support. Safaricom has talked about agentic wallets for M-PESA, but that is still in development.",
+          "note": "No wallet or fintech app lets an AI agent pay for a Kenyan today. Stripe's Link Agent Wallet serves US and Canadian customers only, and Stripe's shared payment tokens list no Kenya support. Safaricom has talked about agentic wallets for M-PESA, but that is still in development. A November 2026 search found M-PESA's AI Pay (October 2026). It lets users scan a receipt to pay, not an agent that pays for the user.",
           "evidence": [
             {
               "title": "Link Agent Wallet",
@@ -1515,7 +1517,7 @@
         },
         "AR": {
           "status": "limited",
-          "note": "Mercado Pago's personal assistant is open to all of its digital-account customers in Argentina, and it can set up bill payments and transfers from text or voice commands. Reports say the account holder must confirm each operation before it runs. It does not buy from shops, and we found no wallet that lets an outside agent pay for users.",
+          "note": "Mercado Pago's personal assistant can set up transfers from text or voice commands. Its Argentina page lists transfers as the only action that moves money, and it does not say who can use the assistant. Reports say the account holder must confirm each operation before it runs. It does not buy from shops, and we found no wallet that lets an outside agent pay for users. Checked the Argentina page in November 2026.",
           "evidence": [
             {
               "title": "Mercado Libre, Tiendanube y las tarjetas impulsan pagos agénticos para comprar en ChatGPT sin clics",
@@ -1633,7 +1635,8 @@
         "ES",
         "FR",
         "CA",
-        "IT"
+        "IT",
+        "NL"
       ],
       "capabilities": [
         "payments.wallet-agent",
