@@ -1,5 +1,6 @@
 // Small helpers shared by every page: the home page (app.js), the countries page (countries.js) and the companies page (lists.js).
 import { STATUSES } from './src/observatory.js';
+import { cellsCsv } from './src/csv.js';
 
 export const $ = (sel) => document.querySelector(sel);
 // A data date ("2026-11-04") as the site shows it: "Nov 4, 2026".
@@ -32,4 +33,16 @@ export function wireNav() {
   menu.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
   nav.querySelector('nav').addEventListener('click', (e) => e.target.closest('a') && setMenu(false));
   addEventListener('keydown', (e) => e.key === 'Escape' && nav.classList.contains('open') && (setMenu(false), menu.focus()));
+}
+
+// "Download CSV" in the footer: every cell as one CSV file, built from the data the page already loaded, so it always
+// matches what the page shows. The leading byte-order mark makes spreadsheet apps read the accents right.
+export function wireCsv(dataPromise) {
+  document.querySelectorAll('[data-csv]').forEach((a) => a.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const { meta, categories } = await dataPromise;
+    const url = URL.createObjectURL(new Blob(['\ufeff', cellsCsv(meta, categories)], { type: 'text/csv;charset=utf-8' }));
+    Object.assign(document.createElement('a'), { href: url, download: `agent-index-${meta.asOf}.csv` }).click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }));
 }

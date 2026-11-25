@@ -86,10 +86,10 @@ Ranked by impact for the effort. Impact and effort are high, medium or low.
 | 1 | Who uses AI here: a second number per country, beside the score | High | Low | **Built** | `data/adoption.json`, `src/adoption.js`, `countries.js`, `countries.css`, `scripts/validate.mjs`, `scripts/check-links.mjs`, `test/adoption.test.mjs`, docs |
 | 2 | `llms.txt`, so AI assistants can find and cite the data | Medium | Low | **Built** | `llms.txt`, `test/llms.test.mjs`, `README.md`, `.assetsignore` comment |
 | 3 | Fresh leads for the data refresh | High | Medium | Plan (needs data edits) | `data/autonomy.json`, `data/payments.json`, `data/rules.json` |
-| 4 | Agents vs people: one chart of all 24 countries | High | Medium | Plan | `charts/viz-use.js`, `charts/charts.js`, `index.html` or `countries.html` |
-| 5 | What changed: a feed of status moves from git history | High | Medium | Plan | `scripts/changes.mjs`, generated `data/changes.json` and `changes.xml`, a section on `index.html` |
+| 4 | Agents vs people: one chart of all 24 countries | High | Medium | **Built** (countries page, in Who uses AI here) | `countries.js`, `countries.css` |
+| 5 | What changed: a feed of status moves from git history | High | Medium | **Built** (home page, under the method line) | `scripts/changes.mjs`, `src/feed.js`, generated `data/changes.json` and `changes.xml`, `index.html`, `app.js`, the deploy job |
 | 6 | Which assistant does what, where: a matrix that replaces the saturated Access checks | High | High | Plan (new dataset) | `data/assistants.json`, a check in `src/observatory.js`, a table on `countries.html` |
-| 7 | Download every cell as CSV | Medium | Low | Plan | `ui.js`, the footer of the three pages |
+| 7 | Download every cell as CSV | Medium | Low | **Built** (footer of every page) | `src/csv.js`, `ui.js`, the footer of the three pages |
 
 ### Idea 1: Who uses AI here (built)
 
@@ -117,21 +117,21 @@ Another session owns the data files during this run, so these are written up, no
 6. `rules.ai-law` / GB: stays `none`. Add the FCA speech as evidence: `{ "title": "<page title>", "publisher": "Financial Conduct Authority", "url": "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai", "date": "2026-10-19", "type": "regulation" }`.
 7. Watch: the EU AI Act grace period for generative AI already on the market ends on 2026-12-02 (law-firm summaries; no Official Journal source found). Re-check the EU `rules.ai-law` cells after that date.
 
-### Idea 4: Agents vs people chart (plan)
+### Idea 4: Agents vs people chart (built)
 
-A scatter of all 24 countries: agent score across, share of people who use AI up. Countries 6 or more places apart are colored by which side is ahead. It reads `data/adoption.json`, so it needs no new data. Put it on the home page after Compare, or at the top of the countries page. The image is the one people would share.
+Inside "Who uses AI here" on each country page: one dot per country, agent score across and the share of people who use AI up, with the country on show lit. It replaced the tick tracks, so the block got simpler, not busier. It reads `data/adoption.json` and needs no new data. We kept it off the home page, which stays light on purpose.
 
-### Idea 5: What changed (plan)
+### Idea 5: What changed (built)
 
-A script walks the git history of `data/` and lists every status move with its date, cell and note. The last 30 data commits hold 30 moves (13 up, 17 down). Show the latest five on the home page and publish an RSS file, so each refresh becomes news.
+`npm run changes` walks the git history of `data/` and writes every status move to `data/changes.json` and `changes.xml` (RSS). The deploy job runs it on every merge to main. The home page shows the latest five moves under the method line, one row per day, check and change, with Show all. See "What changed" in `docs/maintaining.md`.
 
 ### Idea 6: Which assistant does what, where (plan)
 
 Access is live everywhere, so it no longer ranks anyone. A new dataset would hold one row per assistant feature (Alexa+, Tasks in Gemini, Gemini in Chrome auto browse, Claude in Chrome, ChatGPT Wallet, Copilot Actions) and one cell per country, with the same status and evidence rules. Today's notes fill part of it; about 120 cells need a source. Amazon's Alexa+ country page and Google's Tasks help page above cover two rows already.
 
-### Idea 7: CSV download (plan)
+### Idea 7: CSV download (built)
 
-A "Download CSV" button in the footer builds one row per country and check from the data already loaded, so the file is never out of date: country, category, check, status, unsure, gap reason, number of sources, first source.
+"Download CSV" in the footer of every page builds one row per country and check from the data the page already loaded: country, category, check, status, unsure, gap reason, note, number of sources, source links and the data date.
 
 ## Defaults we chose
 

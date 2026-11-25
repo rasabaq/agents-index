@@ -308,6 +308,19 @@
 .trust-t b { font: 600 0.9em/1 var(--mono); color: var(--sunrise); }
 .trust-n { margin: 0; font: 400 12.5px/1.6 var(--mono); color: var(--ink-2); }
 .trust-n a { color: var(--accent-ink); }
+/* what changed: one row per move (a check, its countries, the old and new status), five until Show all */
+.changes { flex: 1 0 100%; margin-top: 28px; }
+.changes-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.changes-h a { font: 400 11px/1 var(--mono); color: var(--muted); }
+.changes-h a:hover { color: var(--ink); }
+.changes ol { margin: 0; padding: 0; list-style: none; }
+.changes li { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; align-items: center; gap: 4px 16px; padding: 11px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.055); }
+.changes time { font: 400 11.5px/1.4 var(--mono); color: var(--muted); }
+.ch-n { min-width: 0; font-size: 14px; color: var(--ink); }
+.ch-n small { display: block; margin-top: 2px; font-size: 12.5px; color: var(--ink-2); }
+.ch-s { display: flex; align-items: center; gap: 6px; font: 400 11px/1 var(--mono); color: var(--muted); }
+.changes-more { display: flex; justify-content: center; margin-top: 14px; }
+.changes-more:empty { display: none; }
 
 .foot-site { gap: 0; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
@@ -384,6 +397,11 @@
   .foot-site p + p { padding: 8px 0 0; border-top: 0; }
 }
 @media (max-width: 760px) {
+  /* the date and the change on top, the check and its countries across the whole row */
+  .changes li { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'd s' 'n n'; gap: 8px 12px; }
+  .changes time { grid-area: d; }
+  .ch-s { grid-area: s; }
+  .ch-n { grid-area: n; }
   /* tables become one card per row */
   .table thead { display: none; }
   .table tr { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 14px; border-top: 1px solid rgba(255, 255, 255, 0.055); }
