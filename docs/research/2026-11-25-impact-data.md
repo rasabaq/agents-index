@@ -86,7 +86,7 @@ Ranked by impact for the effort. Impact and effort are high, medium or low.
 | 1 | Who uses AI here: a second number per country, beside the score | High | Low | **Built** | `data/adoption.json`, `src/adoption.js`, `countries.js`, `countries.css`, `scripts/validate.mjs`, `scripts/check-links.mjs`, `test/adoption.test.mjs`, docs |
 | 2 | `llms.txt`, so AI assistants can find and cite the data | Medium | Low | **Built** | `llms.txt`, `test/llms.test.mjs`, `README.md`, `.assetsignore` comment |
 | 3 | Fresh leads for the data refresh | High | Medium | Plan (needs data edits) | `data/autonomy.json`, `data/payments.json`, `data/rules.json` |
-| 4 | Agents vs people: one chart of all 24 countries | High | Medium | Plan | `charts/viz-use.js`, `charts/charts.js`, `index.html` or `countries.html` |
+| 4 | Agents vs people: one chart of all 24 countries | High | Medium | **Built** (countries page, in Who uses AI here) | `countries.js`, `countries.css` |
 | 5 | What changed: a feed of status moves from git history | High | Medium | Plan | `scripts/changes.mjs`, generated `data/changes.json` and `changes.xml`, a section on `index.html` |
 | 6 | Which assistant does what, where: a matrix that replaces the saturated Access checks | High | High | Plan (new dataset) | `data/assistants.json`, a check in `src/observatory.js`, a table on `countries.html` |
 | 7 | Download every cell as CSV | Medium | Low | **Built** (footer of every page) | `src/csv.js`, `ui.js`, the footer of the three pages |
@@ -117,9 +117,9 @@ Another session owns the data files during this run, so these are written up, no
 6. `rules.ai-law` / GB: stays `none`. Add the FCA speech as evidence: `{ "title": "<page title>", "publisher": "Financial Conduct Authority", "url": "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai", "date": "2026-10-19", "type": "regulation" }`.
 7. Watch: the EU AI Act grace period for generative AI already on the market ends on 2026-12-02 (law-firm summaries; no Official Journal source found). Re-check the EU `rules.ai-law` cells after that date.
 
-### Idea 4: Agents vs people chart (plan)
+### Idea 4: Agents vs people chart (built)
 
-A scatter of all 24 countries: agent score across, share of people who use AI up. Countries 6 or more places apart are colored by which side is ahead. It reads `data/adoption.json`, so it needs no new data. Put it on the home page after Compare, or at the top of the countries page. The image is the one people would share.
+Inside "Who uses AI here" on each country page: one dot per country, agent score across and the share of people who use AI up, with the country on show lit. It replaced the tick tracks, so the block got simpler, not busier. It reads `data/adoption.json` and needs no new data. We kept it off the home page, which stays light on purpose.
 
 ### Idea 5: What changed (plan)
 

@@ -100,30 +100,54 @@ function compare({ r }) {
   </section>`;
 }
 
-// Who uses AI here: outside numbers on how many people use AI, set beside what agents can do. One row per measure:
-// the number, what it counts and its source, the place among the tracked countries, and a track with a tick for
-// every country, this one lit. Context only: it never changes the score. Without the file the block is left out.
+// Who uses AI here: outside numbers on how many people use AI, set beside what agents can do. One row per measure
+// (the number, what it counts and its source, the place among the tracked countries), and a chart of every country:
+// what agents can do across, the share of people who use AI up, this country lit. Context only: it never changes the
+// score. Without the file the block is left out.
 function use({ r }) {
   const mine = adoption?.countries[r.code];
   if (!mine) return '';
   const codes = ranking.map((x) => x.code);
+  const [first] = adoption.measures;
   const place = (id) => useRanks(adoption, codes, id)[r.code];
-  const row = (m) => {
-    const top = Math.max(...codes.map((c) => adoption.countries[c][m.id]));
-    const at = (c) => `${((adoption.countries[c][m.id] / top) * 100).toFixed(1)}%`;
-    return `<li>
+  const row = (m) => `<li>
       <p class="use-n">${fmtUse(m, mine[m.id])}</p>
       <p class="use-t">${esc(m.says)}<a href="${esc(m.source.url)}" target="_blank" rel="noopener noreferrer">${esc(m.source.publisher)}</a></p>
       <p class="use-rk">${ordinal(place(m.id))}<small> of ${codes.length}</small></p>
-      <span class="use-track" aria-hidden="true">${codes.filter((c) => c !== r.code).map((c) => `<i style="left:${at(c)}"></i>`).join('')}<b style="left:${at(r.code)}"></b></span>
     </li>`;
-  };
   return `<section class="blk" aria-labelledby="h-use">
     <div class="blk-h"><div><p class="label">Use · from outside sources</p><h3 id="h-use">Who uses AI here</h3></div></div>
-    <p class="blk-lede">${esc(useLine(r.name, r.rank, place(adoption.measures[0].id), codes.length))}</p>
-    <ul class="use">${adoption.measures.map(row).join('')}</ul>
-    <p class="cmp-key">Each tick is one of the ${codes.length} countries we track; further right means more use. These numbers come from outside sources and do not change the score.</p>
+    <p class="blk-lede">${esc(useLine(r.name, r.rank, place(first.id), codes.length))}</p>
+    <div class="use-body">
+      <ul class="use">${adoption.measures.map(row).join('')}</ul>
+      ${useChart(r, first)}
+    </div>
+    <p class="cmp-key">These numbers come from outside sources and do not change the score.</p>
   </section>`;
+}
+
+// The chart: one dot per country, score (0 to 100) across and the first measure up. The axis stops at the next
+// 20% above the highest country, so the dots fill the box.
+function useChart(r, m) {
+  const W = 340, H = 236, L = 34, R = 12, T = 22, B = 30;
+  const top = Math.ceil(Math.max(...ranking.map((x) => adoption.countries[x.code][m.id])) / 20) * 20;
+  const x = (v) => (L + (v / 100) * (W - L - R)).toFixed(1);
+  const y = (v) => (T + (1 - v / top) * (H - T - B)).toFixed(1);
+  const val = (c) => adoption.countries[c][m.id];
+  const grid = [0, top / 2, top].map((v) => `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${+y(v) + 3.5}" text-anchor="end">${v}%</text>`).join('');
+  const ticks = [0, 50, 100].map((v) => `<text x="${x(v)}" y="${H - B + 15}" text-anchor="middle">${v}</text>`).join('');
+  const dots = ranking.filter((o) => o.code !== r.code).map((o) => `<circle cx="${x(o.score)}" cy="${y(val(o.code))}" r="3.5"/>`).join('');
+  const mx = +x(r.score), my = +y(val(r.code));
+  const right = mx > W - 60;
+  const label = `${esc(placeName(r.name))}: ${r.score} for what agents can do, ${fmtUse(m, val(r.code))} of people use AI. One dot per country we track.`;
+  return `<svg class="use-chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}">
+      <g class="uc-grid">${grid}${ticks}</g>
+      <text class="uc-ax" x="${L}" y="11">People who use AI ↑</text>
+      <text class="uc-ax" x="${W - R}" y="${H - 2}" text-anchor="end">What agents can do →</text>
+      <g class="uc-dots">${dots}</g>
+      <circle class="uc-me" cx="${mx}" cy="${my}" r="5.5"/>
+      <text class="uc-me-t" x="${right ? mx - 9 : mx + 9}" y="${my + 4}"${right ? ' text-anchor="end"' : ''}>${r.code}</text>
+    </svg>`;
 }
 
 // One card per area: its pixel icon lit by the score, then a row per check. A row opens the cell detail.
