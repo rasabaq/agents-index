@@ -57,7 +57,7 @@
         "DE": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Doctolib's AI phone assistant answers patient calls and books visits straight into the calendar of practices that switch it on; since 2026 it can also move and cancel visits within the practice's rules. Doctolib says more than 5,000 practices in Germany use it. It works only at practices that pay for it, Doctolib has no patient-side booking agent, and no AI booking was found on the public 116117 service.",
+          "note": "Doctolib's AI phone assistant answers patient calls and books visits straight into the calendar of practices that switch it on; since 2026 it can also move and cancel visits within the practice's rules. Doctolib says more than 5,000 practices in Germany use it, and its figures put the calls the assistant took in 2026 at about 15 million (reported November 2026). It works only at practices that pay for it, Doctolib has no patient-side booking agent, and no AI booking was found on the public 116117 service.",
           "evidence": [
             {
               "title": "Ein Jahr KI-Telefonassistent – das ist bisher passiert",
@@ -79,6 +79,13 @@
               "url": "https://www.zwp-online.info/zwpnews/dental-news/branchenmeldungen/doctolib-fuhrt-digitalen-patientennavigator-fur-arztpraxen-ein",
               "date": "2026-05-28",
               "type": "news"
+            },
+            {
+              "title": "Branchenmeldungen 11.11.2026",
+              "publisher": "ZWP online",
+              "url": "https://www.zwp-online.info/zwpnews/dental-news/branchenmeldungen/zehn-jahre-doctolib-in-deutschland-gesundheitsbegleiter-fur-30-millionen-menschen",
+              "date": "2026-11-11",
+              "type": "news"
             }
           ]
         },
@@ -86,7 +93,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "No AI agent that books a doctor was found: Practo, Apollo 24|7, Tata 1mg and Eka Care book through ordinary apps, and only vendor marketing and an old Apollo Alexa skill turned up (searched October 2026). Searched Practo and ABDM again (Nov 2026): nothing confirmed."
+          "note": "No AI agent that books a doctor was found: Practo, Apollo 24|7, Tata 1mg and Eka Care book through ordinary apps. A Ringg AI case study says its voice agent takes Practo's booking calls. Practo has not confirmed this, so the cell stays none (searched Nov 2026)."
         },
         "BR": {
           "status": "none",
@@ -209,7 +216,7 @@
         "AU": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Healthengine's Helen AI receptionist answers calls and books, moves or cancels appointments straight into the practice system, but only at practices that use Best Practice or Pracsoft and pay for it. No patient-side booking agent was found, and Gemini's Zocdoc booking is US-only.",
+          "note": "Healthengine's Helen AI receptionist takes patient calls and books, moves or cancels appointments in the practice system. Its demo page says it works only with Best Practice and Pracsoft, but its FAQ says it works with most major systems. We found no patient-side booking agent. Healthdirect's AI assistant is a June 2026 proof of concept for invited consumers only. Gemini's Zocdoc booking is US-only.",
           "evidence": [
             {
               "title": "Voice AI receptionist (Helen AI)",
@@ -223,6 +230,13 @@
               "publisher": "Google Gemini Help",
               "url": "https://support.google.com/gemini/table/17434654?hl=en",
               "date": "2026-10",
+              "type": "company"
+            },
+            {
+              "title": "An AI health assistant Australians can trust, with a nurse always one step away",
+              "publisher": "Healthdirect Australia",
+              "url": "https://about.healthdirect.gov.au/resources/news/an-ai-health-assistant-australians-can-trust-with-a-nurse-always-one-step-away",
+              "date": "2026-06-24",
               "type": "company"
             }
           ]
@@ -244,8 +258,15 @@
         },
         "KR": {
           "status": "limited",
-          "note": "Hallym University Kangnam Sacred Heart Hospital's CareChat, inside KakaoTalk, books, changes and cancels appointments, and it opened in July 2025. That is one hospital's service, and I found no agent that books a doctor across hospitals for you.",
+          "note": "Hospital chatbots inside KakaoTalk book, change and cancel visits. Hanyang University Hospital opened its Care Chat in February 2024, and Hallym Kangnam Sacred Heart followed in July 2025. Each serves its own hospital. We found no agent that books a doctor across hospitals.",
           "evidence": [
+            {
+              "title": "AI 챗봇 ‘케어챗’ 채널 오픈",
+              "publisher": "Hanyang University Hospital (한양대학교병원)",
+              "url": "https://seoul.hyumc.com/board/commBoardNewsView.do?no=2582",
+              "date": "2024-02-28",
+              "type": "company"
+            },
             {
               "title": "비대면 원스톱 서비스 '케어챗' 오픈",
               "publisher": "Newsis",
@@ -254,8 +275,7 @@
               "type": "news"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "not-launched"
         },
         "SG": {
           "status": "none",
@@ -289,7 +309,7 @@
         },
         "IT": {
           "status": "none",
-          "note": "No AI agent that books a doctor's visit in Italy was found.",
+          "note": "No AI agent that books a doctor's visit in Italy was found. Searched Doctoralia Italia and its AI tools again (Nov 2026): no Italian patient booking agent was confirmed.",
           "evidence": [],
           "gapReason": "not-launched",
           "confidence": "low"
@@ -853,7 +873,7 @@
         "CA": {
           "status": "limited",
           "gapReason": "not-launched",
-          "note": "Sun Life's Canadian support page says members can use Alexa to check the status of a medical or dental claim (now also short- and long-term disability) and to get plan details. Alexa was launched in 2019. The page is undated and our fetch was blocked, so this comes from a search result (Nov 2026). We found no 2026 Canadian chat assistant at Sun Life; Manulife and provincial plans were not checked.",
+          "note": "Sun Life's Alexa skill checks medical and dental claim status for claims from the past 30 days, on group plans whose employer allows Alexa (search results, Nov 2026). Sun Life's pages blocked our fetch, so this is not confirmed on a page we opened. Manulife and provincial plans were not checked.",
           "evidence": [
             {
               "title": "Sun Life on Alexa",
