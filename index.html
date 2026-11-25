@@ -112,7 +112,13 @@
 
     <section id="method" class="wrap sec trust">
       <p class="trust-t">Every answer links to a source. Unsure answers are marked with a <b>?</b></p>
-      <p class="trust-n"><span data-trust-count></span> · <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">How we score</a></p>
+      <p class="trust-n"><span data-trust-count></span><span class="nowrap"> · <a href="https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md" target="_blank" rel="noopener noreferrer">How we score</a></span></p>
+      <!-- What changed: the latest status moves, from data/changes.json (scripts/changes.mjs). Hidden without the file. -->
+      <div class="changes" aria-labelledby="changes-h" data-changes hidden>
+        <div class="changes-h"><h2 id="changes-h" class="label">What changed lately</h2><a href="changes.xml">RSS</a></div>
+        <ol data-changes-list></ol>
+        <div class="changes-more" data-changes-more></div>
+      </div>
     </section>
   </main>
 

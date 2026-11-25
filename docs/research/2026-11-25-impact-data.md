@@ -87,7 +87,7 @@ Ranked by impact for the effort. Impact and effort are high, medium or low.
 | 2 | `llms.txt`, so AI assistants can find and cite the data | Medium | Low | **Built** | `llms.txt`, `test/llms.test.mjs`, `README.md`, `.assetsignore` comment |
 | 3 | Fresh leads for the data refresh | High | Medium | Plan (needs data edits) | `data/autonomy.json`, `data/payments.json`, `data/rules.json` |
 | 4 | Agents vs people: one chart of all 24 countries | High | Medium | **Built** (countries page, in Who uses AI here) | `countries.js`, `countries.css` |
-| 5 | What changed: a feed of status moves from git history | High | Medium | Plan | `scripts/changes.mjs`, generated `data/changes.json` and `changes.xml`, a section on `index.html` |
+| 5 | What changed: a feed of status moves from git history | High | Medium | **Built** (home page, under the method line) | `scripts/changes.mjs`, `src/feed.js`, generated `data/changes.json` and `changes.xml`, `index.html`, `app.js`, the deploy job |
 | 6 | Which assistant does what, where: a matrix that replaces the saturated Access checks | High | High | Plan (new dataset) | `data/assistants.json`, a check in `src/observatory.js`, a table on `countries.html` |
 | 7 | Download every cell as CSV | Medium | Low | **Built** (footer of every page) | `src/csv.js`, `ui.js`, the footer of the three pages |
 
@@ -121,9 +121,9 @@ Another session owns the data files during this run, so these are written up, no
 
 Inside "Who uses AI here" on each country page: one dot per country, agent score across and the share of people who use AI up, with the country on show lit. It replaced the tick tracks, so the block got simpler, not busier. It reads `data/adoption.json` and needs no new data. We kept it off the home page, which stays light on purpose.
 
-### Idea 5: What changed (plan)
+### Idea 5: What changed (built)
 
-A script walks the git history of `data/` and lists every status move with its date, cell and note. The last 30 data commits hold 30 moves (13 up, 17 down). Show the latest five on the home page and publish an RSS file, so each refresh becomes news.
+`npm run changes` walks the git history of `data/` and writes every status move to `data/changes.json` and `changes.xml` (RSS). The deploy job runs it on every merge to main. The home page shows the latest five moves under the method line, one row per day, check and change, with Show all. See "What changed" in `docs/maintaining.md`.
 
 ### Idea 6: Which assistant does what, where (plan)
 

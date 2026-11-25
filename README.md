@@ -40,6 +40,7 @@ npm run validate   # checks every data file and prints the ranking
 npm run check-links  # fails on dead source links (404/410)
 npm run refresh-repos  # measures the open-source repos: stars, installs, last commit
 npm run refresh-sites  # reads each company homepage for its logo
+npm run changes      # writes what changed (data/changes.json, changes.xml) from the git history
 ```
 
 The site has no build step and no dependencies. Node 20 or later runs the checks.
@@ -53,11 +54,11 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `src/adoption.js` | Checks `data/adoption.json`, ranks the countries on it, and writes the "agents vs people" sentence |
-| `src/csv.js` | Every cell as a CSV file, for Download CSV in the footer of every page |
+| `src/feed.js`, `src/csv.js` | What changed, one row per move for the home page; and every cell as a CSV file for the footer's Download CSV |
 | `src/errands.js`, `src/icons.js` | The everyday errands (the checks each step uses) and the twelve pixel icons, one per category |
 | `docs/methodology.md` | How the data is collected and scored |
 | `llms.txt` | A plain guide for AI assistants: what the index is, how a cell reads, and a link to every data file. A test keeps it in step with `data/` |
-| `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, the errands, then the matrix, closed), Compare two countries, Who builds it, and one line on the method |
+| `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, the errands, then the matrix, closed), Compare two countries, Who builds it, and one line on the method with what changed lately |
 | `countries.html` | One fact sheet per country: a rail of every country, then the chosen one's verdict, gap reasons, facts, who uses AI there (with a chart of every country), its region compared by theme, every check by area, and its companies (`#country=CL`) |
 | `companies.html` | The companies table, the flows chart and the open-source table |
 | `app.js`, `hero.js`, `countries.js`, `lists.js` | The console, the hero, the countries page and the companies page tables |
