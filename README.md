@@ -51,6 +51,7 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | --- | --- |
 | `data/meta.json` | Countries, categories and the `asOf` date |
 | `data/adoption.json` | How many people use AI in each country, from Microsoft and Anthropic. Shown beside the index, never scored |
+| `data/assistants.json` | Which agent features of the big AI assistants work in each country, with its own `asOf`. Shown on the countries page, never scored |
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `src/adoption.js` | Checks `data/adoption.json`, ranks the countries on it, and writes the "agents vs people" sentence |

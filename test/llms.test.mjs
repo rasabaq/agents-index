@@ -9,7 +9,7 @@ const llms = read('llms.txt');
 const meta = JSON.parse(read('data/meta.json'));
 
 test('llms.txt links every data file the site serves', () => {
-  const files = ['meta', 'adoption', ...meta.categories.map((c) => c.id)];
+  const files = ['meta', 'adoption', 'assistants', ...meta.categories.map((c) => c.id)];
   for (const id of files) assert.ok(llms.includes(`(https://agentindex.art/data/${id}.json)`), `llms.txt does not link data/${id}.json`);
 });
 

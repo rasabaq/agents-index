@@ -7,7 +7,7 @@ The data is plain JSON on this site. Start with `data/meta.json`: it lists the c
 ## Pages
 
 - [Home](https://agentindex.art/): the world map, one country's view with everyday errands, the matrix, and compare two countries. `#country=CL` picks a country.
-- [Countries](https://agentindex.art/countries.html): one fact sheet per country, with every check, its sources, who uses AI there, and its companies. `#country=CL` picks a country.
+- [Countries](https://agentindex.art/countries.html): one fact sheet per country, with every check, its sources, who uses AI there, which assistant features work there, and its companies. `#country=CL` picks a country.
 - [Companies](https://agentindex.art/companies.html): the companies that make agents work in each country, and the open-source projects behind them. `#market=CL` filters to one country.
 
 ## Data
@@ -26,6 +26,7 @@ The data is plain JSON on this site. Start with `data/meta.json`: it lists the c
 - [work.json](https://agentindex.art/data/work.json): applying for jobs, and payroll and HR paperwork for a small business
 - [insurance.json](https://agentindex.art/data/insurance.json): buying a car, home or travel policy, and filing a claim
 - [adoption.json](https://agentindex.art/data/adoption.json): how many people use AI in each country (Microsoft, Anthropic). Context only, never scored
+- [assistants.json](https://agentindex.art/data/assistants.json): which agent features of the big AI assistants (Alexa+, Gemini, Claude, ChatGPT) work in each country, with the same cells. It has its own `asOf`. A country with no cell is not checked yet. Never scored
 
 ## Method and code
 
