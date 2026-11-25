@@ -375,7 +375,8 @@ async function renderChanges() {
   if (!rows.length) return;
   const name = (code) => byCode[code]?.name ?? code;
   const day = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  const li = (r) => `<li><time datetime="${r.date}">${day(r.date)}</time>
+  // The date shows once per day: rows that repeat the day above keep its place but hide it.
+  const li = (r, i, list) => `<li><time datetime="${r.date}"${i && list[i - 1].date === r.date ? ' class="again"' : ''}>${day(r.date)}</time>
     <span class="ch-n">${esc(r.name)}<small>${esc(countryList(r.countries.map(name)))}</small></span>
     <span class="ch-s">${chip(r.from)}<span aria-label="to">→</span>${chip(r.to)}</span></li>`;
   let all = false;
