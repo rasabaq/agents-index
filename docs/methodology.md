@@ -91,6 +91,28 @@ The page also puts two places side by side: the country's rank for what agents c
 
 To refresh it, take the newest Microsoft report and Anthropic release, update the numbers and each measure's `says`, `period` and `source`, then run `npm run validate`.
 
+## The big assistants, feature by feature
+
+The Access category asks whether you can sign up for the big assistants. It is Live in every tracked country, so it no longer tells countries apart. `data/assistants.json` goes one level down: one row per agent feature of a big assistant, and one cell per country. The countries page shows it as one table, "The big assistants here", for the country and its neighbours. It never changes a score.
+
+| Feature | Vendor | What it does |
+| --- | --- | --- |
+| Alexa+ | Amazon | Books and orders for you by voice |
+| Gemini connected apps | Google | Calls and sends messages for you from the Gemini app |
+| Tasks in Gemini | Google | Shops and books on websites for you |
+| Chrome auto browse | Google | Does tasks for you in the Chrome browser |
+| Claude in Chrome | Anthropic | Does tasks for you in the Chrome browser |
+| ChatGPT cloud browser | OpenAI | Uses websites for you, including ones you sign in to |
+
+Rules:
+
+- A cell has the same shape and statuses as a cell in a category file, and the same source rules. A feature that needs a paid plan is Live when anyone can buy that plan there. Early Access by invitation is Limited.
+- The vendor's own country page comes first. Most vendors publish one page that lists every country, so one source fills a whole row.
+- The file has its own `asOf`, the day its cells were checked. No source may be later than that day.
+- A country with no cell has not been checked. The table shows a plain "?".
+
+We dropped two features: ChatGPT agent (OpenAI retired it for ChatGPT Work and its cloud browser) and ChatGPT Instant Checkout (OpenAI moved checkout to merchant apps in March 2026). `npm run validate` checks the file.
+
 ## Known limits
 
 - Availability changes every week. Each dataset carries an `asOf` date.

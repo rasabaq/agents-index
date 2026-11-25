@@ -6,15 +6,17 @@ import { ERRANDS, BUSINESS_ERRANDS } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { data, getJson } from './data.js';
 import { useRanks, useLine, fmtUse } from './src/adoption.js';
+import { liveCount } from './src/assistants.js';
 import { $, esc, flag, chip, logo, wireLogos, wireNav, wireCsv, fmtDate, scrollBehavior } from './ui.js';
-import { openDetail, siteOf } from './detail.js';
+import { openDetail, openFeatureDetail, siteOf } from './detail.js';
 
 const plural = (n, one, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 const ORDER = Object.keys(STATUSES);
 // site: what the shared cell detail needs (detail.js). code: the country on show.
 let meta, categories, site, ranking, byCode, companies, code;
-// adoption: how many people use AI in each country (data/adoption.json), or null when it did not load.
-let adoption;
+// adoption: how many people use AI in each country (data/adoption.json); assistants: the big assistants' agent
+// features by country (data/assistants.json). Either is null when it did not load.
+let adoption, assistants;
 
 // One country's cells in category order, as { cap, cell } pairs.
 const cellsOf = (c) => categories.flatMap((cat) => cat.capabilities.map((cap) => ({ cap: site.capIndex[cap.id], cell: cap.countries[c] })));
@@ -74,18 +76,26 @@ function head({ r, mine, here, home }) {
     </div>`;
 }
 
-// Compared with its region: the four themes and the score, for the country, its neighbours, the leader (or the next
-// best) and the average of all. A country alone in its region is compared with the leader only.
-function compare({ r }) {
+// The countries both tables put side by side: this one, its neighbours, and the leader (or the next best) when it is
+// not one of them. A country alone in its region sits beside the leader only. `colHead` is the header cell of each.
+function sideBySide(r) {
   const { peers, ref, refLabel, line } = regionCompare(ranking, r.code);
   const cols = [r, ...peers, ...(ref && !peers.includes(ref) ? [ref] : [])];
+  const sub = (x) => (x === r ? 'this' : x === ref ? refLabel : 'region');
+  const colHead = (x) => `<th scope="col"${x === r ? ' class="me"' : ''}><span class="sr-only">${esc(x.name)}, </span>${flag(x.code)}<span aria-hidden="true">${x.code}</span><small>${sub(x)}</small></th>`;
+  return { peers, ref, refLabel, line, cols, colHead };
+}
+
+// Compared with its region: the four themes and the score, for the country, its neighbours, the leader (or the next
+// best) and the average of all.
+function compare({ r }) {
+  const { peers, ref, refLabel, line, cols, colHead } = sideBySide(r);
   const themes = Object.fromEntries(ranking.map((x) => [x.code, themeScores(x.byCategory)]));
   const rows = [
     ...THEMES.map((t, i) => ({ name: t.name, areas: t.categories.map((id) => meta.categories.find((c) => c.id === id).short).join(', '), get: (x) => themes[x.code][i].score })),
     { name: 'Overall score', all: true, get: (x) => x.score },
   ];
   const avg = (get) => Math.round(ranking.reduce((sum, x) => sum + get(x), 0) / ranking.length);
-  const sub = (x) => (x === r ? 'this' : x === ref ? refLabel : 'region');
   const body = rows.map((row) => {
     const top = Math.max(...cols.map(row.get));
     return `<tr${row.all ? ' class="all"' : ''}><th scope="row">${esc(row.name)}${row.areas ? `<small>${esc(row.areas)}</small>` : ''}</th>${cols.map((x) => `<td class="${[x === r && 'me', row.get(x) === top && 'top'].filter(Boolean).join(' ')}">${row.get(x)}</td>`).join('')}<td>${avg(row.get)}</td></tr>`;
@@ -94,7 +104,7 @@ function compare({ r }) {
     <div class="blk-h"><div><p class="label">By theme · out of 100</p><h3 id="h-region">${peers.length || !ref ? 'Compared with its region' : `Compared with the ${refLabel}`}</h3></div></div>
     <p class="blk-lede">${esc(line)}</p>
     <table class="cmp">
-      <thead><tr><th scope="col"><span class="sr-only">Theme</span></th>${cols.map((x) => `<th scope="col"${x === r ? ' class="me"' : ''}><span class="sr-only">${esc(x.name)}, </span>${flag(x.code)}<span aria-hidden="true">${x.code}</span><small>${sub(x)}</small></th>`).join('')}<th scope="col">avg<small>all ${ranking.length}</small></th></tr></thead>
+      <thead><tr><th scope="col"><span class="sr-only">Theme</span></th>${cols.map(colHead).join('')}<th scope="col">avg<small>all ${ranking.length}</small></th></tr></thead>
       <tbody>${body}</tbody></table>
     <p class="cmp-key"><i></i>Highest in the row. Each theme groups the areas named under it.</p>
   </section>`;
@@ -150,6 +160,31 @@ function useChart(r, m) {
     </svg>`;
 }
 
+// The big assistants here: one row per agent feature (data/assistants.json), with a chip for this country and the same
+// neighbours as the region table. A chip opens its note and sources; a cell nobody has checked is a plain "?". The
+// table scrolls inside its own box on a phone. Context only: it never changes the score. Without the file it is left out.
+function assistantsHere({ r }) {
+  if (!assistants) return '';
+  const { cols, colHead } = sideBySide(r);
+  const { live, checked } = liveCount(assistants, r.code);
+  const n = assistants.features.length;
+  const lede = `${live} of ${checked === n ? `these ${n}` : `the ${checked} we checked`} ${live === 1 ? 'works' : 'work'} in ${placeName(r.name)} today.`;
+  const cell = (f, x) => {
+    const c = f.countries[x.code];
+    const me = x === r ? ' class="me"' : '';
+    if (!c) return `<td${me}><span class="unk" title="Not checked yet" aria-label="${esc(`${f.name} in ${x.name}: not checked yet`)}">?</span></td>`;
+    return `<td${me}><button type="button" data-feature="${esc(f.id)}" data-code="${x.code}" aria-label="${esc(`${f.name} in ${x.name}: ${STATUSES[c.status].label}${c.confidence ? ', unsure' : ''}. Show details`)}">${chip(c.status, c.confidence)}</button></td>`;
+  };
+  return `<section class="blk" aria-labelledby="h-assist">
+    <div class="blk-h"><div><p class="label">Agent features · checked ${fmtDate(assistants.asOf)}</p><h3 id="h-assist">The big assistants here</h3></div></div>
+    <p class="blk-lede">${esc(lede)}</p>
+    <div class="ax-box"><table class="cmp ax" style="--cols: ${cols.length}">
+      <thead><tr><th scope="col"><span class="sr-only">Feature</span></th>${cols.map(colHead).join('')}</tr></thead>
+      <tbody>${assistants.features.map((f) => `<tr><th scope="row">${esc(f.name)}<small>${esc(f.vendor)} · ${esc(f.does)}</small></th>${cols.map((x) => cell(f, x)).join('')}</tr>`).join('')}</tbody>
+    </table></div>
+  </section>`;
+}
+
 // One card per area: its pixel icon lit by the score, then a row per check. A row opens the cell detail.
 function areas({ r, mine }) {
   const row = ({ cap, cell }) => {
@@ -198,7 +233,7 @@ function renderProfile() {
   const here = companies.filter((co) => co.markets.includes(r.code));
   const p = { r, mine: cellsOf(code), here, home: here.filter((co) => co.hq === r.code).length };
   document.title = `${r.name} · Countries · Agent Index`;
-  $('[data-pane]').innerHTML = `${head(p)}${use(p)}${compare(p)}${areas(p)}${builders(p)}
+  $('[data-pane]').innerHTML = `${head(p)}${use(p)}${compare(p)}${assistantsHere(p)}${areas(p)}${builders(p)}
     <p class="p-foot">Data as of ${fmtDate(meta.asOf)}. Seen something out of date? Open a row and suggest a correction.</p>`;
 }
 
@@ -237,6 +272,8 @@ function wire() {
   $('[data-pane]').addEventListener('click', (e) => {
     const b = e.target.closest('[data-cap]');
     if (b) return openDetail(site, b.dataset.cap, b.dataset.code, [...ERRANDS, ...BUSINESS_ERRANDS]);
+    const f = e.target.closest('[data-feature]');
+    if (f) return openFeatureDetail(site, assistants.features.find((x) => x.id === f.dataset.feature), f.dataset.code);
     // An area icon goes to its card, and keyboard focus goes with it.
     const j = e.target.closest('[data-jump]');
     if (!j) return;
@@ -257,8 +294,8 @@ wireNav();
 wireCsv(data);
 wireLogos();
 try {
-  // adoption.json is extra: if it fails to load, the page still works without its block.
-  [{ meta, categories }, adoption] = await Promise.all([data, getJson('adoption').catch(() => null)]);
+  // adoption.json and assistants.json are extra: if one fails to load, the page still works without its block.
+  [{ meta, categories }, adoption, assistants] = await Promise.all([data, getJson('adoption').catch(() => null), getJson('assistants').catch(() => null)]);
   useCategoryWords(meta.categories);
   site = siteOf(meta, categories);
   ({ ranking, byCode } = site);

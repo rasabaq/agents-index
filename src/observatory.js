@@ -71,18 +71,7 @@ export function validate(meta, categories) {
           errors.push(`${where}/${code}: missing`);
           continue;
         }
-        if (!STATUSES[cell.status]) errors.push(`${where}/${code}: bad status "${cell.status}"`);
-        if (!cell.note) errors.push(`${where}/${code}: needs a note`);
-        if (cell.confidence !== undefined && cell.confidence !== 'low') errors.push(`${where}/${code}: confidence can only be "low"`);
-        // Why a cell is not live yet: one of the ids in meta.gapReasons, never on a live cell.
-        if (cell.gapReason !== undefined) {
-          if (!gapReasons.has(cell.gapReason)) errors.push(`${where}/${code}: unknown gapReason "${cell.gapReason}"`);
-          if (cell.status === 'live') errors.push(`${where}/${code}: a live cell has no gapReason`);
-          // A pilot, or help that leaves you the last step, is partial availability: only a Limited cell.
-          else if (LIMITED_ONLY.includes(cell.gapReason) && cell.status !== 'limited') errors.push(`${where}/${code}: gapReason "${cell.gapReason}" goes only on a limited cell`);
-        }
-        if (cell.status !== 'none' && !cell.evidence?.length) errors.push(`${where}/${code}: "${cell.status}" needs evidence`);
-        for (const ev of cell.evidence ?? []) checkEvidence(ev, `${where}/${code}`, meta.asOf, errors);
+        checkCell(cell, `${where}/${code}`, meta.asOf, gapReasons, errors);
       }
       for (const code of Object.keys(cap.countries ?? {})) {
         if (!codes.has(code)) errors.push(`${where}: unknown country "${code}"`);
@@ -162,6 +151,23 @@ export function rankRepos(categories) {
     .sort((a, b) => order.indexOf(a.use) - order.indexOf(b.use)
       || (b.usage.downloadsMonth ?? 0) - (a.usage.downloadsMonth ?? 0)
       || b.usage.stars - a.usage.stars);
+}
+
+// One country cell: a known status, a note, "low" as the only confidence, a gap reason that fits its status, and a
+// dated source for anything that is not Not yet. The category files and data/assistants.json share it.
+export function checkCell(cell, where, asOf, gapReasons, errors) {
+  if (!STATUSES[cell.status]) errors.push(`${where}: bad status "${cell.status}"`);
+  if (!cell.note) errors.push(`${where}: needs a note`);
+  if (cell.confidence !== undefined && cell.confidence !== 'low') errors.push(`${where}: confidence can only be "low"`);
+  // Why a cell is not live yet: one of the ids in meta.gapReasons, never on a live cell.
+  if (cell.gapReason !== undefined) {
+    if (!gapReasons.has(cell.gapReason)) errors.push(`${where}: unknown gapReason "${cell.gapReason}"`);
+    if (cell.status === 'live') errors.push(`${where}: a live cell has no gapReason`);
+    // A pilot, or help that leaves you the last step, is partial availability: only a Limited cell.
+    else if (LIMITED_ONLY.includes(cell.gapReason) && cell.status !== 'limited') errors.push(`${where}: gapReason "${cell.gapReason}" goes only on a limited cell`);
+  }
+  if (cell.status !== 'none' && !cell.evidence?.length) errors.push(`${where}: "${cell.status}" needs evidence`);
+  for (const ev of cell.evidence ?? []) checkEvidence(ev, where, asOf, errors);
 }
 
 // Dates are "YYYY-MM-DD" or "YYYY-MM", and not after the dataset's asOf. String order is date order here.
