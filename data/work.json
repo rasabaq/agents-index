@@ -103,7 +103,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Mexico, among the boards it searches, but LoopCV does not list Mexico as a market or say it applies here. We searched Computrabajo and OCC Mundial (Nov 2026); no primary source shows a job board here with its own agent that applies for candidates.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Mexico, among the boards it searches, but LoopCV does not list Mexico as a market or say it applies here. We searched Computrabajo and OCC Mundial (Nov 2026); no primary source shows a job board here with its own agent that applies for candidates. A November 2026 check of LoopCV's Spanish agent page found no Mexico listing.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -118,7 +118,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Chile, among the boards it searches, but LoopCV does not list Chile as a market or say it applies here. We searched Computrabajo, Laborum and Bumeran (Nov 2026); their AI tools screen profiles for recruiters, and no primary source shows an agent that applies for candidates.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Chile, among the boards it searches, but LoopCV does not list Chile as a market or say it applies here. We searched Computrabajo, Laborum and Bumeran (Nov 2026); their AI tools screen profiles for recruiters, and no primary source shows an agent that applies for candidates. A November 2026 check of LoopCV's Spanish agent page found no Chile listing.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -133,7 +133,7 @@
           "status": "none",
           "gapReason": "not-launched",
           "confidence": "low",
-          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Colombia, among the boards it searches, but LoopCV does not list Colombia as a market or say it applies here. We searched Computrabajo and elempleo (Nov 2026); no primary source shows a job board here with its own agent that applies for candidates.",
+          "note": "LoopCV's Spanish blog names Computrabajo, which runs job sites in Colombia, among the boards it searches, but LoopCV does not list Colombia as a market or say it applies here. We searched Computrabajo and elempleo (Nov 2026); no primary source shows a job board here with its own agent that applies for candidates. A November 2026 check of LoopCV's Spanish agent page found no Colombia listing.",
           "evidence": [
             {
               "title": "Postular a ofertas automáticamente con IA: cómo funciona (InfoJobs, Computrabajo)",
@@ -159,7 +159,7 @@
         },
         "FR": {
           "status": "limited",
-          "note": "LoopCV can apply to jobs in France through LinkedIn, which its help page says covers Europe. Its board list names no French board, such as France Travail or Welcome to the Jungle. France Travail's AI tool (ChatFT) is for its advisers, not job seekers.",
+          "note": "LoopCV can apply to jobs in France through LinkedIn, which its help page says covers Europe. Its board list names no French board, such as France Travail or Welcome to the Jungle. France Travail's AI tool (ChatFT) is for its advisers, not job seekers. A November 2026 check of LoopCV's help page found France only as a location example.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -346,8 +346,8 @@
           "confidence": "low"
         },
         "AE": {
-          "status": "limited",
-          "note": "LoopCV's help page says NaukriGulf covers roles across the UAE, and it lists GulfTalent as an Easy Apply board. The page does not name the UAE as a market itself, and it warns that job board coverage varies by country, so this is partial.",
+          "status": "live",
+          "note": "LoopCV's help page names the UAE under NaukriGulf, which covers roles across the UAE, and lists GulfTalent as a board you apply to with its Chrome extension while you are logged in. LoopCV sends applications for you by email or web form. The page warns that board coverage can vary by country and region.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
@@ -356,8 +356,7 @@
               "date": "2026-08-19",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "SA": {
           "status": "live",
@@ -370,12 +369,11 @@
               "date": "2026-08-19",
               "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "ZA": {
           "status": "limited",
-          "note": "No big South African job board has an agent that applies for you: Pnet and CareerJunction show no such feature, and LoopCV does not search South African boards. A small app, Career Agent, said in July 2025 that it sends applications for paying users when a listing has a contact email; otherwise you apply by hand. We could not confirm that it still runs.",
+          "note": "No big South African job board has an agent that applies for you: Pnet and CareerJunction show no such feature, and LoopCV does not search South African boards. A small app, Career Agent, said in July 2025 that it sends applications for paying users when a listing has a contact email; otherwise you apply by hand. We could not confirm that it still runs. A November 2026 search found no newer report on Career Agent.",
           "evidence": [
             {
               "title": "Stellenbosch PhD student's app applies for jobs while users sleep",
@@ -404,7 +402,7 @@
         },
         "AR": {
           "status": "none",
-          "note": "We found no AI agent in Argentina that finds jobs and sends applications for you. LoopCV, which does this in the UK, Germany and India, does not name Argentina or its local job boards, such as Computrabajo, Bumeran and ZonaJobs.",
+          "note": "We found no AI agent in Argentina that finds jobs and sends applications for you. LoopCV, which does this in the UK, Germany and India, does not name Argentina or its local job boards, such as Computrabajo, Bumeran and ZonaJobs. A November 2026 check of LoopCV's Spanish agent page found no Argentina listing.",
           "evidence": [
             {
               "title": "Knowledge Base (job location, and the job boards LoopCV searches in each market)",
