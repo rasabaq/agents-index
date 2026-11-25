@@ -451,7 +451,7 @@
         },
         "KR": {
           "status": "limited",
-          "note": "AI services can already read account data with consent through MyData, such as Hana Bank's MyData-based AI financial advice from March 2026. Agents starting payments through open banking is still a proof of concept, and industry speakers in May 2026 said the rules for agent-made payments are not yet set.",
+          "note": "AI services can already read account data with consent through MyData, such as Hana Bank's MyData-based AI financial advice from March 2026. Agents starting payments through open banking is still a proof of concept, and industry speakers in May 2026 said the rules for agent-made payments are not yet set. A November 2026 search of Hana Bank and FSC news found MyData and AI services for reading data, but no AI payment product through open banking.",
           "evidence": [
             {
               "title": "Hana Bank Launches Customized Financial Consultation Service Combining MyData and AI",
@@ -495,7 +495,7 @@
         },
         "ID": {
           "status": "limited",
-          "note": "Indonesia's SNAP open API standard, set by Bank Indonesia, is in force. Banks and payment providers have to adopt it, and non-bank firms can join to serve their own customers, with customer consent and Bank Indonesia approval. We found no consumer app or AI agent that reads bank balances or starts payments through it yet.",
+          "note": "Indonesia's SNAP open API standard, set by Bank Indonesia in PADG 23/15/PADG/2021, is in force. Licensed payment service providers must adopt it, and non-bank firms can join to serve their own customers under the same rules for users. A November 2026 read of the regulation confirmed this. We found no consumer app or AI agent that reads bank balances or starts payments through it yet.",
           "evidence": [
             {
               "title": "PADG 23/15/PADG/2021 on SNAP, the national open payment API standard",
@@ -540,8 +540,7 @@
               "date": "2015-11",
               "type": "regulation"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "NL": {
           "status": "live",
@@ -565,7 +564,7 @@
         },
         "AE": {
           "status": "limited",
-          "note": "The UAE Open Finance Regulation is issued and banks are rolling it out. ADIB says it has rolled out open finance on Central Bank-certified APIs, and Pay10 went live in April 2025 for payment initiation, including variable recurring payments. I found no bank or app that lets an AI agent read accounts or start payments, and the later rollout phases have no date.",
+          "note": "The UAE Open Finance Regulation is issued and banks are rolling it out. ADIB says it has rolled out open finance on Central Bank-certified APIs, and Pay10 went live in April 2025 for payment initiation, including variable recurring payments. I found no bank or app that lets an AI agent read accounts or start payments, and the later rollout phases have no date. In November 2026 the Central Bank's own open finance page returned HTTP 403, so this rests on news.",
           "evidence": [
             {
               "title": "ADIB rolls out open finance under UAE Central Bank framework",
@@ -625,8 +624,7 @@
               "type": "report"
             }
           ],
-          "gapReason": "not-launched",
-          "confidence": "low"
+          "gapReason": "not-launched"
         },
         "ZA": {
           "status": "none",
@@ -667,7 +665,7 @@
         },
         "AR": {
           "status": "announced",
-          "note": "Decree 353/2025 created Argentina's open finance system (Sistema de Finanzas Abiertas) and names the central bank, BCRA, as its enforcing authority. The BCRA has not yet published the technical standards or timeline, so no bank or app can yet let an AI agent read accounts or start payments. The first use the BCRA described was credit, with lenders reading income data.",
+          "note": "Decree 353/2025 created Argentina's open finance system (Sistema de Finanzas Abiertas) and names the central bank, BCRA, as its enforcing authority. We found no BCRA-published technical standards or timetable. Press reports from October and November 2026 describe a two-stage schedule with wider use around 2027, which we could not check on a BCRA page. No bank or app can yet let an AI agent read accounts or start payments. The first use the BCRA described was credit, with lenders reading income data.",
           "evidence": [
             {
               "title": "BCRA lanzó Open Finance: un sistema que cambiará el acceso a los créditos",
@@ -814,12 +812,12 @@
         },
         "BR": {
           "status": "live",
-          "note": "Nubank's AI sends Pix from a text, photo or voice message in the app and on WhatsApp (WhatsApp capped at R$800 per transfer). Bradesco's BIA makes Pix transfers and pays bills by voice or text in its app and by text on WhatsApp, and Itaú's ia.i also does transactions by chat.",
+          "note": "Nubank's AI sends Pix from a text, photo or voice message in the app and on WhatsApp. Its December 2024 test capped WhatsApp transfers at R$800 each. Bradesco's BIA makes Pix transfers and pays bills by voice or text in its app and by text on WhatsApp, and Itaú's ia.i also does transactions by chat.",
           "evidence": [
             {
               "title": "Pix com Inteligência Artificial agora no App e WhatsApp do Nu",
               "publisher": "Nubank",
-              "url": "https://international.nubank.com.br/pt-br/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu/",
+              "url": "https://nu.com/pt/sala-de-imprensa/consumidores/pix-com-inteligencia-artificial-agora-no-app-e-whatsapp-do-nu",
               "date": "2024-12-10",
               "type": "company"
             },
@@ -883,7 +881,7 @@
         },
         "CO": {
           "status": "limited",
-          "note": "Davivienda's DaviPlata wallet let users move money by voice or AI chat in a first, limited phase announced in June 2024. We could not open Davivienda's blog (HTTP 403), and we found no current page saying all users have it. Bancolombia's Tabot only answers questions. Nequi's site offers a help chat for questions only. Tpaga is not a bank, so we left it out. We kept the flag: we searched DaviPlata, Tabot and Nequi (Nov 2026); no current primary source confirms open access.",
+          "note": "Davivienda's DaviPlata wallet let users move money by voice or AI chat in a first, limited phase announced in June 2024. We could not open Davivienda's blog (HTTP 403). The DaviPlata home page we checked in November 2026 does not mention voice or AI transfers, and we found no current page saying all users have it. Bancolombia's Tabot page says it only answers questions. Nequi's site offers a help chat for questions only. Tpaga is not a bank, so we left it out. We kept the flag: we searched DaviPlata, Tabot and Nequi (Nov 2026); no current primary source confirms open access.",
           "evidence": [
             {
               "title": "En DaviPlata ahora podrá manejar su dinero con la voz",
@@ -905,7 +903,7 @@
         },
         "IN": {
           "status": "limited",
-          "note": "News reports say Indian Bank's AI-TARA voice assistant (unveiled 10 Sept 2026) does fund transfers and IMPS in 10 languages. We could not reach Indian Bank's own site or find its press release, so no bank source confirms it or says all customers have it. NPCI's Hello! UPI voice payments launched in 2023 through UPI apps; NPCI's product page did not show its live bank list to us. SBI's YONO Ji is an information assistant for YONO Business, not a transfer tool. HDFC's EVA page says voice is for search. We found no ICICI assistant that moves money in 2026; its 2018 to 2020 Siri and Alexa features covered remittance and balances. We kept the flag: we searched Indian Bank, NPCI, SBI, HDFC and ICICI (Nov 2026); no primary source confirms the rollout.",
+          "note": "News reports say Indian Bank's AI-TARA voice assistant (unveiled 10 Sept 2026) does fund transfers and IMPS in 10 languages. We could not reach Indian Bank's own site or find its press release, so no bank source confirms it or says all customers have it. NPCI's Hello! UPI voice payments launched in 2023 through UPI apps; NPCI's product page did not show its live bank list to us. SBI's YONO Ji is an information assistant for YONO Business, not a transfer tool. HDFC's EVA page says voice is for search. We found no ICICI assistant that moves money in 2026. ICICI's iPal page does not say what iPal does. Its 2018 to 2020 Siri and Alexa features covered remittance and balances. We kept the flag: we searched Indian Bank, NPCI, SBI, HDFC and ICICI (Nov 2026); no primary source confirms the rollout.",
           "evidence": [
             {
               "title": "Indian Bank debuts AI-TARA voice banking in 10 languages at Global Fintech Fest 2026",
@@ -961,7 +959,8 @@
         },
         "FR": {
           "status": "limited",
-          "note": "Sumeria's SIA assistant can act for you in its app, but Sumeria's page does not say it makes transfers. Hello bank's HelloïZ press release says you can ask for transfers in the chat, while another report puts transfers by end-2026, so the sources conflict. Revolut's AIR reached France on 1 September 2026; reports describe card and subscription actions, not transfers. Searched BNP Paribas, Société Générale and Qonto (Nov 2026): no bank agent that moves money found.",
+          "gapReason": "assist-only",
+          "note": "Sumeria's SIA assistant can prepare a transfer for you, but you confirm it yourself. Hello bank's HelloïZ, in its second version since March 2026, points customers to 25 kinds of transactions, and the bank says it will carry them out in the chat by the end of 2026. Revolut's AIR reached France on 1 September 2026; reports describe card and subscription actions, not transfers. We searched BNP Paribas, Société Générale and Qonto (Nov 2026): no bank agent that moves money on its own was found.",
           "evidence": [
             {
               "title": "Sumeria (SIA assistant)",
@@ -983,10 +982,16 @@
               "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-septembre/revolut-deploie-air-son-assistant-ia-en-europe.html",
               "date": "2026-09-04",
               "type": "news"
+            },
+            {
+              "title": "SIA, l'assistant IA de Sumeria lancé en février 2026",
+              "publisher": "Meilleurtaux",
+              "url": "https://banque.meilleurtaux.com/banque-en-ligne/actualites/2026-avril/sia-lassistant-ia-de-sumeria-lance-en-fevrier-2026.html",
+              "date": "2026-04",
+              "type": "news"
             }
           ],
-          "confidence": "low",
-          "gapReason": "assist-only"
+          "confidence": "low"
         },
         "CA": {
           "status": "live",
@@ -1087,14 +1092,14 @@
         },
         "SG": {
           "status": "limited",
-          "note": "DBS says some features of its Joy assistant, which now use generative and agentic AI, let customers finish a banking task in the chat. The article does not name those tasks, so we could not confirm that Joy sends money or pays bills. OCBC's assistant is described only for portfolio questions, and we found no UOB assistant that moves money.",
+          "note": "DBS says its Joy assistant became agentic for corporate and SME clients in Singapore on 28 July 2026, and that it can execute everyday banking tasks in one conversation. The examples DBS gives are lookups, such as payment status and transfer history. No transfer or bill payment is named as a task. Retail agentic features, planned for Q4 2026, cover cards and fee waivers. So we could not confirm that Joy sends money or pays bills. OCBC's assistant is described only for portfolio questions, and we found no UOB assistant that moves money.",
           "evidence": [
             {
-              "title": "How DBS, OCBC and UOB are betting on AI in 2026",
-              "publisher": "Fintech News Singapore",
-              "url": "https://fintechnews.sg/137393/ai/how-dbs-ocbc-and-uob-are-betting-on-ai-in-2026/",
-              "date": "2026-10-14",
-              "type": "news"
+              "title": "DBS' Gen AI-enabled virtual assistants reach 10 million customers and go agentic",
+              "publisher": "DBS",
+              "url": "https://www.dbs.com/newsroom/DBS_Gen_AI_enabled_virtual_assistants_reach_10_million_customers_and_go_agentic",
+              "date": "2026-07-28",
+              "type": "company"
             }
           ],
           "confidence": "low"
@@ -1146,15 +1151,8 @@
         },
         "AE": {
           "status": "limited",
-          "note": "ADCB unveiled a new app on 11 May 2026 with an AI assistant that takes voice or text commands. The launch coverage says it can check balances, move money, manage cards and track goals, but it does not say all customers have it or that it pays bills. I found no UAE bank assistant that pays bills.",
+          "note": "ADCB's own release on its May 2026 app says customers can use voice or text commands to check balances, move money, manage cards and services, and track goals. It does not name bill payments, and it does not say how many customers have the assistant. We found no UAE bank assistant that pays bills.",
           "evidence": [
-            {
-              "title": "ADCB puts AI at mobile banking core",
-              "publisher": "The Arabian Post",
-              "url": "https://thearabianpost.com/adcb-puts-ai-at-mobile-banking-core/",
-              "date": "2026-05-12",
-              "type": "news"
-            },
             {
               "title": "ADCB unveils to customers its unrivalled mobile banking application",
               "publisher": "ADCB via Zawya",
@@ -1211,7 +1209,7 @@
         },
         "AR": {
           "status": "limited",
-          "note": "Banco Macro's MacroChat, launched in August 2026, takes text, voice or photo requests on WhatsApp for transfers to the customer's own accounts and to third parties, bill payments and phone top-ups, with a handoff to a human agent. Launch reach is unclear, so we rate it limited. We found no money-moving assistant at Galicia, Santander, BBVA or Naranja X.",
+          "note": "Banco Macro's MacroChat, launched in August 2026, takes text, voice or photo requests on WhatsApp for transfers to the customer's own accounts and to third parties, bill payments and phone top-ups, with a handoff to a human agent. Macro's home page (Nov 2026) links to MacroChat but does not describe its payments, so the launch coverage is bank-sourced. Launch reach is unclear, so we rate it limited. We found no money-moving assistant at Galicia, Santander, BBVA or Naranja X.",
           "evidence": [
             {
               "title": "Banco Macro lanzó MacroChat",
