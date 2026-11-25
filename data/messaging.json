@@ -27,8 +27,8 @@
           ]
         },
         "GB": {
-          "status": "live",
-          "note": "Meta began opening Meta Business Agent to businesses globally in June 2026, and WhatsApp partner 360dialog deploys it and says the regional limits now appear lifted. Meta's developer docs say a business must be based in \"a country authorized for Meta Business Agent\" but do not publish that list. Searched Meta's June 2026 announcement, Meta's developer overview and 360dialog's eligibility page (Nov 2026): none names the UK or lists excluded countries, so the flag stays.",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" No source we checked names the UK. Meta's developer docs say a business must be in an authorized country, but publish no list. 360dialog says the regional limits appear lifted, but it does not name the UK. The UK stays limited until a source names it.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -50,8 +50,16 @@
               "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
+          "gapReason": "not-launched",
           "confidence": "low"
         },
         "DE": {
@@ -299,8 +307,8 @@
           ]
         },
         "CA": {
-          "status": "live",
-          "note": "Meta says it is expanding Meta Business Agent to businesses globally, starting with a select number of businesses on WhatsApp, Messenger, Instagram and Meta Business Suite. Meta's developer page says the business must be based in a country authorized for the agent, but names no countries. We found no Canada-specific page (Meta, developer docs and web search, Nov 2026).",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" We found no Canada-specific page from Meta, its developer docs or web search (Nov 2026). Canada stays limited until a source names it.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -322,13 +330,21 @@
               "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
+          "gapReason": "not-launched",
           "confidence": "low"
         },
         "JP": {
-          "status": "live",
-          "note": "Meta says it is expanding Meta Business Agent to businesses globally, starting with a select number of businesses on WhatsApp, Messenger, Instagram and Meta Business Suite. Meta's developer page says the business must be in an authorized country but names none, and no Meta page names Japan. On LINE, the chat app most people in Japan use, LINE Yahoo's AI mode for Official Accounts has no release date (LY Corporation page, Nov 2026). Only Agent i Biz, a web app, launched in limited form in late October 2026.",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" No Meta page names Japan, and a Nov 2026 search of Japanese sources found no Meta launch for Japan. On LINE, the chat app most people in Japan use, LINE Official Account's AI chatbot is a paid beta, added in November 2025. LINE Yahoo's AI mode for Official Accounts has no release date (LY Corporation, Nov 2026). Agent i Biz, a web app, launched in limited form in late October 2026.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -357,13 +373,28 @@
               "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "「LINE公式アカウント」の有料オプションに 生成AIを活用した新機能「AIチャットボット(β)」を追加",
+              "publisher": "LY Corporation",
+              "url": "https://www.lycbiz.com/jp/news/line-official-account/20251113/",
+              "date": "2025-11-13",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
+          "gapReason": "not-launched",
           "confidence": "low"
         },
         "AU": {
-          "status": "live",
-          "note": "Meta began opening Meta Business Agent to businesses globally on WhatsApp, Messenger and Instagram in June 2026, and WhatsApp partner 360dialog says the regional limits now appear lifted. We found no Australia-specific page, and finance, health and some other business types are excluded.",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" 360dialog says the regional limits appear lifted, but no source names Australia. We found no Australia-specific page. Finance, government, health, alcohol and gambling businesses are excluded.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -378,8 +409,17 @@
               "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
               "date": "2026-10",
               "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
-          ]
+          ],
+          "gapReason": "not-launched",
+          "confidence": "low"
         },
         "NG": {
           "status": "live",
@@ -410,31 +450,50 @@
         },
         "KR": {
           "status": "live",
-          "note": "Kakao launched Kanana Customer Manager for KakaoTalk Channels in September 2025, so a business can have an AI agent answer customers in chat. It answers from the business's own posts, menus and store details, and no sign that it takes orders or payments was found. Meta Business Agent on WhatsApp is not confirmed for Korea.",
+          "note": "Kakao officially launched Kanana Customer Manager for KakaoTalk Channels in September 2025, and it is open to all channels. It answers customers from store details, menus and posts. It also takes orders and reservations. A September 2026 update made the answers generative, and when a customer asks for a person, the chat offers to call the owner. No payment is named. Meta Business Agent on WhatsApp is not confirmed for Korea.",
           "evidence": [
             {
-              "title": "카카오 고객 응대용 AI 채팅 서비스 '카나나 상담매니저'",
-              "publisher": "CIO Korea",
-              "url": "https://www.cio.com/article/4062884/%ec%b9%b4%ec%b9%b4%ec%98%a4-%ea%b3%a0%ea%b0%9d-%ec%9d%91%eb%8c%80%ec%9a%a9-ai-%ec%b1%84%ed%8c%85-%ec%84%9c%eb%b9%84%ec%8a%a4-%ec%b9%b4%eb%82%98%eb%82%98-%ec%83%81%eb%8b%b4%eb%a7%a4%eb%8b%88.html",
-              "date": "2025-09",
-              "type": "news"
+              "title": "카카오, ‘카나나 상담매니저’ 정식 출시",
+              "publisher": "Kakao",
+              "url": "https://www.kakaocorp.com/page/detail/11719?lang=ENG",
+              "date": "2025-09-25",
+              "type": "company"
+            },
+            {
+              "title": "카카오, '카나나 상담매니저' 업데이트",
+              "publisher": "Kakao",
+              "url": "https://www.kakaocorp.com/page/detail/12151",
+              "date": "2026-09-29",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "SG": {
           "status": "live",
-          "note": "Meta made Meta Business Agent available worldwide inside WhatsApp in June 2026, so businesses in Singapore can use it. Meta has not published a country list, and one vendor blog says finance and health businesses are excluded, which we could not confirm.",
+          "note": "Meta's June 2026 announcement expanded Meta Business Agent to businesses of all sizes globally. In November 2026, Meta's Singapore post showed SpeakEasy Lab, a Singapore business, using the agent on WhatsApp. Meta also ran Business Agent training for Singapore businesses. Meta's developer docs exclude finance, government, health, alcohol and gambling businesses.",
           "evidence": [
             {
-              "title": "Meta's AI agent for WhatsApp Business is now available globally",
-              "publisher": "TechCrunch",
-              "url": "https://www.techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
               "date": "2026-06-03",
-              "type": "news"
+              "type": "company"
+            },
+            {
+              "title": "94% of Singapore Small Business Owners Surveyed Say More AI Guidance Is Needed",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/11/94-of-singapore-small-business-owners-surveyed-say-more-ai-guidance-is-needed/",
+              "date": "2026-11",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent Platform overview",
+              "publisher": "Meta for Developers",
+              "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
+              "date": "2026-11",
+              "type": "company"
             }
-          ],
-          "confidence": "low"
+          ]
         },
         "ID": {
           "status": "live",
@@ -458,7 +517,7 @@
         },
         "IT": {
           "status": "live",
-          "note": "Meta opened Business Agent for WhatsApp and Messenger to businesses worldwide in June 2026, and the WhatsApp partner 360dialog says it reached the EU in mid-July 2026. We found no Italy-specific launch page from Meta, so this is low confidence. Some business types, such as finance, health and alcohol, are excluded.",
+          "note": "Meta opened Business Agent for WhatsApp and Messenger to businesses worldwide in June 2026, and the WhatsApp partner 360dialog says it reached the EU in mid-July 2026. We found no Italy-specific launch page from Meta, so this is low confidence. WhatsApp's product page says it is \"available to eligible businesses in select markets,\" so the flag stays. Some business types, such as finance, health and alcohol, are excluded.",
           "evidence": [
             {
               "title": "1. Check Eligibility (Meta Business Agent)",
@@ -473,13 +532,20 @@
               "url": "https://www.milanofinanza.it/news/meta-entra-nella-corsa-dell-ai-per-le-imprese-lancia-il-nuovo-business-agent-202606031716252700",
               "date": "2026-06-03",
               "type": "news"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "confidence": "low"
         },
         "NL": {
           "status": "live",
-          "note": "Meta Business Agent, which Meta opened to businesses of all sizes worldwide in June 2026, has reached the EU since mid-July 2026, according to the WhatsApp partner 360dialog. Dutch businesses on the WhatsApp Business Platform can use it, with some business types excluded, such as finance, health, government, alcohol and gambling. Neither Meta nor 360dialog names the Netherlands.",
+          "note": "Meta Business Agent, which Meta opened to businesses of all sizes worldwide in June 2026, has reached the EU since mid-July 2026, according to the WhatsApp partner 360dialog. Dutch businesses on the WhatsApp Business Platform can use it, with some business types excluded, such as finance, health, government, alcohol and gambling. Neither Meta nor 360dialog names the Netherlands. WhatsApp's product page says it is \"available to eligible businesses in select markets,\" so the flag stays.",
           "evidence": [
             {
               "title": "Meta Business Agent (announcement)",
@@ -501,21 +567,21 @@
               "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
           "confidence": "low"
         },
         "AE": {
-          "status": "live",
-          "note": "Meta Business Agent became available globally in WhatsApp in June 2026, and 360dialog says its regional limit appears lifted after the Brazil and EU rollouts. Meta publishes no country list and excludes finance, health and government businesses, so UAE eligibility is checked number by number.",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" No source we checked names the UAE. Meta publishes no country list, and its developer docs exclude finance, government, health, alcohol and gambling businesses. UAE eligibility is checked number by number.",
           "evidence": [
-            {
-              "title": "Meta's AI agent for WhatsApp Business is now available globally",
-              "publisher": "TechCrunch",
-              "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
-              "date": "2026-06-03",
-              "type": "news"
-            },
             {
               "title": "1. Check Eligibility (Meta Business Agent)",
               "publisher": "360dialog",
@@ -529,13 +595,28 @@
               "url": "https://developers.facebook.com/documentation/meta-business-agent/overview",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+              "date": "2026-06-03",
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
+          "gapReason": "not-launched",
           "confidence": "low"
         },
         "SA": {
-          "status": "live",
-          "note": "Meta Business Agent, which Meta opened to businesses of all sizes globally in June 2026, appears open to Saudi businesses on WhatsApp. Meta's developer page names no countries, and the WhatsApp partner 360dialog says the regional limits appear lifted, but Meta says it is starting with a select number of businesses on the WhatsApp Business app, and I found no Saudi-specific confirmation.",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" Meta's developer page names no countries. 360dialog says the regional limits appear lifted. We found no Saudi-specific confirmation, so Saudi Arabia stays limited.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -557,13 +638,21 @@
               "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
+          "gapReason": "not-launched",
           "confidence": "low"
         },
         "ZA": {
-          "status": "live",
-          "note": "Meta opened Meta Business Agent to businesses of all sizes worldwide in June 2026, and WhatsApp partners such as 360dialog offer it. Meta's developer docs say a business must be in an authorised country and publish no list, and South Africa is not named, so confidence is low. Finance, government, health and some other business types are excluded.",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" Meta's developer docs say a business must be in an authorized country and publish no list. South Africa is not named. Finance, government, health, alcohol and gambling businesses are excluded.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -585,27 +674,43 @@
               "url": "https://docs.360dialog.com/docs/mba/meta-business-agent/1.-check-eligibility",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
+          "gapReason": "not-launched",
           "confidence": "low"
         },
         "KE": {
-          "status": "live",
-          "note": "Meta Business Agent, the AI support bot inside WhatsApp, became available to businesses globally in June 2026, according to TechCrunch. Meta has not published a country list that I could check, so this is low confidence.",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" Meta has not published a country list, and no source we checked names Kenya.",
           "evidence": [
             {
-              "title": "Meta's AI agent for WhatsApp Business is now available globally",
-              "publisher": "TechCrunch",
-              "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+              "title": "Be There for Every Customer With Meta Business Agent",
+              "publisher": "Meta",
+              "url": "https://about.fb.com/news/2026/06/meta-business-agent/",
               "date": "2026-06-03",
-              "type": "news"
+              "type": "company"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
+          "gapReason": "not-launched",
           "confidence": "low"
         },
         "AR": {
-          "status": "live",
-          "note": "Meta Business Agent, which businesses can use on WhatsApp, was opened to businesses of all sizes worldwide in June 2026. Meta's docs exclude finance and health businesses and do not publish a country list, so Argentina is not confirmed directly. Banco Macro's MacroChat, an AI assistant on WhatsApp, launched in August 2026, which shows businesses already run AI agents in chat here.",
+          "status": "limited",
+          "note": "Meta says businesses of all sizes can use Meta Business Agent globally. But WhatsApp's product page says it is \"available to eligible businesses in select markets, with additional markets launching soon.\" Meta's docs exclude finance and health businesses and publish no country list, so Argentina is not confirmed directly. Banco Macro's MacroChat, an AI assistant on WhatsApp, launched in August 2026. That shows at least one Argentine business runs an AI agent in chat.",
           "evidence": [
             {
               "title": "Be There for Every Customer With Meta Business Agent",
@@ -627,8 +732,16 @@
               "url": "https://eleconomista.com.ar/finanzas/banco-macro-lanzo-macrochat-permite-transferir-pagar-servicios-operar-whatsapp-inteligencia-artificial-n97297",
               "date": "2026-08-11",
               "type": "news"
+            },
+            {
+              "title": "Meta Business Agent in the WhatsApp Business app",
+              "publisher": "WhatsApp",
+              "url": "https://whatsappbusiness.com/products/business-app-ai-agent/",
+              "date": "2026-11",
+              "type": "company"
             }
           ],
+          "gapReason": "not-launched",
           "confidence": "low"
         }
       }
@@ -890,8 +1003,7 @@
         },
         "FR": {
           "status": "limited",
-          "gapReason": "not-launched",
-          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats (in France since 2018), which few businesses offer. WhatsApp payments are not offered in France.",
+          "note": "Only niche channels: Telegram bot payments through Stripe, and Apple Pay inside Apple Messages for Business chats, which few businesses offer. Apple's page names no countries. WhatsApp payments are not offered in France.",
           "evidence": [
             {
               "title": "Bot Payments API",
@@ -921,7 +1033,8 @@
               "date": "2026-10",
               "type": "company"
             }
-          ]
+          ],
+          "gapReason": "not-launched"
         },
         "CA": {
           "status": "limited",
@@ -1039,14 +1152,23 @@
           "confidence": "low"
         },
         "KR": {
-          "status": "none",
-          "note": "No way for a Korean customer to pay a business inside KakaoTalk or Naver TalkTalk was found.",
-          "evidence": [],
+          "status": "announced",
+          "note": "Kakao said on its May 2026 earnings call that it will launch a KakaoTalk AI agent. The agent takes a user from search and recommendations to payment inside a chat. The formal launch is planned for the second half of 2026, and a gift-shopping version is in beta. We found no launch notice by late November 2026, and no way to pay a Korean business inside KakaoTalk or Naver TalkTalk today.",
+          "evidence": [
+            {
+              "title": "검색부터 결제까지 카톡 안에서…카카오 AI 에이전트 나온다",
+              "publisher": "MTN",
+              "url": "https://news.mtn.co.kr/news-detail/2026050711360865784",
+              "date": "2026-05-07",
+              "type": "news"
+            }
+          ],
+          "gapReason": "not-launched",
           "confidence": "low"
         },
         "SG": {
           "status": "limited",
-          "note": "Only niche options exist. Telegram bots can take card payments through providers such as Stripe, and Telegram says payments are accepted from over 200 countries through more than 20 providers. We found no WhatsApp payments service open to Singapore businesses.",
+          "note": "WhatsApp payments with Stripe opened in Singapore in May 2023 to a small number of businesses. Buyers can pay by card or PayNow. Stripe's 2023 announcement is the latest source we found, and we found no 2026 update, so the flag stays. Telegram bot payments through Stripe are another niche route.",
           "evidence": [
             {
               "title": "Telegram Bot Payments",
@@ -1054,9 +1176,16 @@
               "url": "https://core.telegram.org/bots/payments",
               "date": "2026-11",
               "type": "company"
+            },
+            {
+              "title": "WhatsApp and Stripe help Singapore businesses accept payments directly in chats",
+              "publisher": "Stripe",
+              "url": "https://stripe.com/en-au/newsroom/news/whatsapp-stripe-singapore",
+              "date": "2023-05-08",
+              "type": "company"
             }
           ],
-          "gapReason": "not-launched",
+          "gapReason": "pilot-only",
           "confidence": "low"
         },
         "ID": {
@@ -1113,13 +1242,13 @@
         },
         "AE": {
           "status": "none",
-          "note": "I found no in-chat payment live for UAE customers in WhatsApp, Telegram or Apple Messages. A headline says First Abu Dhabi Bank and PLATX will support WhatsApp transactions in the UAE, but I could not open the article.",
+          "note": "A 2021 launch let UAE merchants collect payments through WhatsApp. It used Payit, the wallet from First Abu Dhabi Bank, and PLATX. We found no 2026 source that it still runs. We found no other way for a UAE customer to pay a business inside WhatsApp, Telegram or Apple Messages.",
           "evidence": [
             {
               "title": "WhatsApp Enabled Transactions to be Supported in UAE with Assistance from First Abu Dhabi Bank and PLATX",
               "publisher": "Crowdfund Insider",
               "url": "https://www.crowdfundinsider.com/?p=178875",
-              "date": "2026-11",
+              "date": "2021-08",
               "type": "news"
             }
           ],
