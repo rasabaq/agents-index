@@ -1,0 +1,33 @@
+# Agent Index
+
+> What AI agents can actually do for ordinary people and businesses, country by country. Each country gets a status for every capability (Live, Limited, Announced or Not yet), every status cites a source, and countries are ranked by the share of capabilities that work today. Data under CC BY 4.0: reuse it with credit to the Agent Index (https://agentindex.art).
+
+The data is plain JSON on this site. Start with `data/meta.json`: it lists the countries, the categories and the `asOf` date (no source is dated later). Each category file has `capabilities[]`, and each capability has one cell per country: `{ status, note, evidence[], confidence?, gapReason? }`. A cell with `"confidence": "low"` has thin sources: treat it as a lead, not a finding. Status points: live 1, limited 0.5, announced 0.25, none 0. A category score is the mean of its capabilities × 100; a country score is the mean of its category scores.
+
+## Pages
+
+- [Home](https://agentindex.art/): the world map, one country's view with everyday errands, the matrix, and compare two countries. `#country=CL` picks a country.
+- [Countries](https://agentindex.art/countries.html): one fact sheet per country, with every check, its sources, who uses AI there, and its companies. `#country=CL` picks a country.
+- [Companies](https://agentindex.art/companies.html): the companies that make agents work in each country, and the open-source projects behind them. `#market=CL` filters to one country.
+
+## Data
+
+- [meta.json](https://agentindex.art/data/meta.json): countries, categories, gap reasons and the `asOf` date
+- [commerce.json](https://agentindex.art/data/commerce.json): shopping and checkout inside AI assistants and marketplaces
+- [payments.json](https://agentindex.art/data/payments.json): card-network agent tokens, instant-payment rails and wallets
+- [services.json](https://agentindex.art/data/services.json): restaurant bookings, travel, food, groceries and rides
+- [autonomy.json](https://agentindex.art/data/autonomy.json): browser agents, agents that phone businesses, and assistants that act across apps
+- [banking.json](https://agentindex.art/data/banking.json): open banking access and bank assistants that move money
+- [messaging.json](https://agentindex.art/data/messaging.json): business AI agents in chat apps, and paying inside a chat
+- [government.json](https://agentindex.art/data/government.json): digital ID that apps can use, and government AI assistants
+- [access.json](https://agentindex.art/data/access.json): signing up for the big AI assistants and using their agent features in the local language
+- [rules.json](https://agentindex.art/data/rules.json): laws that cover AI agents, and refunds when an agent buys the wrong thing
+- [health.json](https://agentindex.art/data/health.json): booking a doctor, renewing a prescription, checking health cover
+- [work.json](https://agentindex.art/data/work.json): applying for jobs, and payroll and HR paperwork for a small business
+- [insurance.json](https://agentindex.art/data/insurance.json): buying a car, home or travel policy, and filing a claim
+- [adoption.json](https://agentindex.art/data/adoption.json): how many people use AI in each country (Microsoft, Anthropic). Context only, never scored
+
+## Method and code
+
+- [Methodology](https://github.com/rasabaq/agents-index/blob/main/docs/methodology.md): status levels, sources, scoring and known limits
+- [Source code](https://github.com/rasabaq/agents-index): MIT. Report a wrong status with a data correction issue
