@@ -1,0 +1,61 @@
+{
+  "about": "How many people use AI in each country, from two outside sources. It sits beside the index as context and never changes a score.",
+  "measures": [
+    {
+      "id": "ai-users",
+      "name": "People who use AI",
+      "unit": "percent",
+      "says": "of people aged 15 to 64 used an AI tool, April to June 2026",
+      "how": "Microsoft counts the share of people aged 15 to 64 who used a generative AI product in the quarter. It comes from Microsoft's own anonymous usage data, adjusted for device share, internet use and population.",
+      "period": "2026-04/2026-06",
+      "source": {
+        "title": "Global AI Diffusion Q2 2026: Trends and Insights",
+        "publisher": "Microsoft AI Economy Institute",
+        "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/Microsoft-AI-Diffusion-Report-2026-Q2.pdf",
+        "date": "2026-09",
+        "type": "report"
+      }
+    },
+    {
+      "id": "claude-per-person",
+      "name": "Claude use per person",
+      "unit": "index",
+      "says": "the world average use of Claude per person, May 2026",
+      "how": "Anthropic's AI Usage Index: a country's share of Claude.ai use divided by its share of the world's people aged 15 to 64. 1 means use in line with its population.",
+      "period": "2026-05",
+      "source": {
+        "title": "Anthropic Economic Index, release 2026-06-26",
+        "publisher": "Anthropic",
+        "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/tree/main/release_2026_06_26",
+        "date": "2026-06-26",
+        "type": "report"
+      }
+    }
+  ],
+  "countries": {
+    "US": { "ai-users": 33.0, "claude-per-person": 3.87 },
+    "GB": { "ai-users": 43.7, "claude-per-person": 3.35 },
+    "DE": { "ai-users": 32.3, "claude-per-person": 2.4 },
+    "IN": { "ai-users": 18.5, "claude-per-person": 0.3 },
+    "BR": { "ai-users": 20.2, "claude-per-person": 0.96 },
+    "MX": { "ai-users": 21.4, "claude-per-person": 0.63 },
+    "CL": { "ai-users": 24.0, "claude-per-person": 1.84 },
+    "CO": { "ai-users": 25.9, "claude-per-person": 1.18 },
+    "ES": { "ai-users": 45.1, "claude-per-person": 2.69 },
+    "FR": { "ai-users": 49.6, "claude-per-person": 3.97 },
+    "CA": { "ai-users": 38.5, "claude-per-person": 4.13 },
+    "JP": { "ai-users": 24.7, "claude-per-person": 1.91 },
+    "AU": { "ai-users": 40.7, "claude-per-person": 6.4 },
+    "NG": { "ai-users": 10.4, "claude-per-person": 0.24 },
+    "KR": { "ai-users": 40.6, "claude-per-person": 3.78 },
+    "SG": { "ai-users": 64.3, "claude-per-person": 5.81 },
+    "ID": { "ai-users": 14.8, "claude-per-person": 0.46 },
+    "IT": { "ai-users": 31.4, "claude-per-person": 1.7 },
+    "NL": { "ai-users": 43.5, "claude-per-person": 3.9 },
+    "AE": { "ai-users": 73.3, "claude-per-person": 2.84 },
+    "SA": { "ai-users": 31.4, "claude-per-person": 0.93 },
+    "ZA": { "ai-users": 23.9, "claude-per-person": 0.46 },
+    "KE": { "ai-users": 8.9, "claude-per-person": 0.34 },
+    "AR": { "ai-users": 23.4, "claude-per-person": 1.48 }
+  }
+}

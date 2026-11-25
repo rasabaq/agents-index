@@ -49,8 +49,10 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | Path | What it holds |
 | --- | --- |
 | `data/meta.json` | Countries, categories and the `asOf` date |
+| `data/adoption.json` | How many people use AI in each country, from Microsoft and Anthropic. Shown beside the index, never scored |
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
+| `src/adoption.js` | Checks `data/adoption.json`, ranks the countries on it, and writes the "agents vs people" sentence |
 | `src/errands.js`, `src/icons.js` | The everyday errands (the checks each step uses) and the twelve pixel icons, one per category |
 | `docs/methodology.md` | How the data is collected and scored |
 | `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, the errands, then the matrix, closed), Compare two countries, Who builds it, and one line on the method |

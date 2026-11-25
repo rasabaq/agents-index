@@ -165,7 +165,7 @@ export function rankRepos(categories) {
 }
 
 // Dates are "YYYY-MM-DD" or "YYYY-MM", and not after the dataset's asOf. String order is date order here.
-function checkEvidence(ev, where, asOf, errors) {
+export function checkEvidence(ev, where, asOf, errors) {
   if (!ev.title) errors.push(`${where}: evidence needs a title`);
   if (!isUrl(ev.url)) errors.push(`${where}: bad evidence url "${ev.url}"`);
   if (!EVIDENCE_TYPES.includes(ev.type)) errors.push(`${where}: bad evidence type "${ev.type}"`);
