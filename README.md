@@ -61,7 +61,7 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `docs/methodology.md` | How the data is collected and scored |
 | `llms.txt` | A plain guide for AI assistants: what the index is, how a cell reads, and a link to every data file. A test keeps it in step with `data/` |
 | `index.html` | The home page, top to bottom: the hero, the world map, the console (country view, country picker, the errands, then the matrix, closed), Compare two countries, Who builds it, and one line on the method with what changed lately |
-| `countries.html` | One fact sheet per country: a rail of every country, then the chosen one's verdict, gap reasons, facts, who uses AI there (with a chart of every country), its region compared by theme, every check by area, and its companies (`#country=CL`) |
+| `countries.html` | One fact sheet per country: a rail of every country, then the chosen one's verdict, gap reasons, facts, who uses AI there (with a chart of every country), its region compared by theme, which assistant features work there, every check by area, and its companies (`#country=CL`) |
 | `companies.html` | The companies table, the flows chart and the open-source table |
 | `app.js`, `hero.js`, `countries.js`, `lists.js` | The console, the hero, the countries page and the companies page tables |
 | `overview.js` | The home country view's overview: a mosaic of every check by gap reason, and the small fingerprint beside the country name |
