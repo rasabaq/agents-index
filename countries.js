@@ -6,7 +6,7 @@ import { ERRANDS, BUSINESS_ERRANDS } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { data, getJson } from './data.js';
 import { useRanks, useLine, fmtUse } from './src/adoption.js';
-import { $, esc, flag, chip, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
+import { $, esc, flag, chip, logo, wireLogos, wireNav, wireCsv, fmtDate, scrollBehavior } from './ui.js';
 import { openDetail, siteOf } from './detail.js';
 
 const plural = (n, one, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
@@ -230,6 +230,7 @@ function wire() {
 }
 
 wireNav();
+wireCsv(data);
 wireLogos();
 try {
   // adoption.json is extra: if it fails to load, the page still works without its block.

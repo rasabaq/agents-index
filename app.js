@@ -3,7 +3,7 @@ import { ERRANDS, BUSINESS_ERRANDS, errandIn } from './src/errands.js';
 import { pix } from './src/icons.js';
 import { mosaic, fingerprint } from './overview.js';
 import { data } from './data.js';
-import { $, esc, flag, chip, logo, wireLogos, wireNav, fmtDate, scrollBehavior } from './ui.js';
+import { $, esc, flag, chip, logo, wireLogos, wireNav, wireCsv, fmtDate, scrollBehavior } from './ui.js';
 import { openDetail, sourceList, showDetail, siteOf } from './detail.js';
 
 // errand: the open errand's id; null opens the view's first one.
@@ -33,6 +33,7 @@ function init() {
   renderCountry();
   wire();
   wireNav();
+  wireCsv(data);
   wireTooltip();
   $('#matrix').addEventListener('toggle', showSelectedColumn);
   wireLogos();

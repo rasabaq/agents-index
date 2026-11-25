@@ -89,7 +89,7 @@ Ranked by impact for the effort. Impact and effort are high, medium or low.
 | 4 | Agents vs people: one chart of all 24 countries | High | Medium | Plan | `charts/viz-use.js`, `charts/charts.js`, `index.html` or `countries.html` |
 | 5 | What changed: a feed of status moves from git history | High | Medium | Plan | `scripts/changes.mjs`, generated `data/changes.json` and `changes.xml`, a section on `index.html` |
 | 6 | Which assistant does what, where: a matrix that replaces the saturated Access checks | High | High | Plan (new dataset) | `data/assistants.json`, a check in `src/observatory.js`, a table on `countries.html` |
-| 7 | Download every cell as CSV | Medium | Low | Plan | `ui.js`, the footer of the three pages |
+| 7 | Download every cell as CSV | Medium | Low | **Built** (footer of every page) | `src/csv.js`, `ui.js`, the footer of the three pages |
 
 ### Idea 1: Who uses AI here (built)
 
@@ -129,9 +129,9 @@ A script walks the git history of `data/` and lists every status move with its d
 
 Access is live everywhere, so it no longer ranks anyone. A new dataset would hold one row per assistant feature (Alexa+, Tasks in Gemini, Gemini in Chrome auto browse, Claude in Chrome, ChatGPT Wallet, Copilot Actions) and one cell per country, with the same status and evidence rules. Today's notes fill part of it; about 120 cells need a source. Amazon's Alexa+ country page and Google's Tasks help page above cover two rows already.
 
-### Idea 7: CSV download (plan)
+### Idea 7: CSV download (built)
 
-A "Download CSV" button in the footer builds one row per country and check from the data already loaded, so the file is never out of date: country, category, check, status, unsure, gap reason, number of sources, first source.
+"Download CSV" in the footer of every page builds one row per country and check from the data the page already loaded: country, category, check, status, unsure, gap reason, note, number of sources, source links and the data date.
 
 ## Defaults we chose
 

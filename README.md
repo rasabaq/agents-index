@@ -53,6 +53,7 @@ The site has no build step and no dependencies. Node 20 or later runs the checks
 | `data/<category>.json` | Capabilities, the status in each country with sources, and the companies that enable them |
 | `src/observatory.js` | Scoring and validation, shared by the site and Node |
 | `src/adoption.js` | Checks `data/adoption.json`, ranks the countries on it, and writes the "agents vs people" sentence |
+| `src/csv.js` | Every cell as a CSV file, for Download CSV in the footer of every page |
 | `src/errands.js`, `src/icons.js` | The everyday errands (the checks each step uses) and the twelve pixel icons, one per category |
 | `docs/methodology.md` | How the data is collected and scored |
 | `llms.txt` | A plain guide for AI assistants: what the index is, how a cell reads, and a link to every data file. A test keeps it in step with `data/` |
